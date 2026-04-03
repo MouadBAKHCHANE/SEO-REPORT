@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rapport SEO V2 — naoenergy.ch (avec preuves WordPress Admin)</title>
+<style>
+:root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --card: #1e293b;
+    --card-border: #334155;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent: #6366f1;
+    --accent-glow: rgba(99, 102, 241, 0.3);
+    --green: #22c55e;
+    --yellow: #eab308;
+    --red: #ef4444;
+    --orange: #f97316;
+    --cyan: #06b6d4;
+    --radius: 12px;
+}
+[data-theme="light"] {
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --card: #ffffff;
+    --card-border: #e2e8f0;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --accent-glow: rgba(99, 102, 241, 0.15);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+.header {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+    padding: 48px 0 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(ellipse at center, rgba(99,102,241,0.15) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
+.header h1 { font-size: 2rem; font-weight: 700; color: white; position: relative; }
+.header .domain { font-size: 1.1rem; color: #a5b4fc; margin-top: 8px; position: relative; }
+.header .timestamp { font-size: 0.85rem; color: #818cf8; margin-top: 4px; position: relative; }
+.header .version-badge { display: inline-block; background: rgba(34,197,94,0.2); color: #86efac; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-top: 10px; position: relative; }
+.theme-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 100;
+    background: var(--surface); border: 1px solid var(--card-border);
+    border-radius: 50%; width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 1.2rem; transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+.theme-toggle:hover { transform: scale(1.1); }
+.score-hero {
+    display: flex; justify-content: center; align-items: center;
+    gap: 48px; padding: 40px 0; flex-wrap: wrap;
+}
+.score-gauge { position: relative; width: 180px; height: 180px; }
+.score-gauge svg { width: 100%; height: 100%; }
+.score-gauge .gauge-value {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    text-align: center;
+}
+.score-gauge .gauge-number { font-size: 3rem; font-weight: 800; color: #f97316; }
+.score-gauge .gauge-grade { font-size: 1rem; color: var(--text-muted); }
+.score-stats { display: flex; gap: 24px; }
+.stat-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 20px 28px; text-align: center;
+    min-width: 100px;
+}
+.stat-value { font-size: 2rem; font-weight: 700; }
+.stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+.stat-critical .stat-value { color: var(--red); }
+.stat-warning .stat-value { color: var(--yellow); }
+.stat-pass .stat-value { color: var(--green); }
+.categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin: 32px 0; }
+.category-card {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: var(--radius); padding: 20px; text-align: center;
+    cursor: pointer; transition: all 0.3s;
+    position: relative;
+}
+.category-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px var(--accent-glow); border-color: var(--accent); }
+.category-card .ring { width: 70px; height: 70px; margin: 0 auto 8px; }
+.category-card .ring-label {
+    position: absolute; top: 52px; left: 50%; transform: translate(-50%, -50%);
+    font-size: 1.1rem; font-weight: 700;
+}
+.ring-progress { transition: stroke-dasharray 1s ease; }
+.category-icon { font-size: 1.3rem; margin: 4px 0; }
+.category-name { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+.section {
+    background: var(--card); border: 1px solid var(--card-border);
+    border-radius: var(--radius); margin: 24px 0; overflow: hidden;
+}
+.section-header {
+    padding: 20px 24px; cursor: pointer; display: flex;
+    align-items: center; justify-content: space-between;
+    transition: background 0.2s;
+}
+.section-header:hover { background: rgba(99,102,241,0.05); }
+.section-header h2 { font-size: 1.15rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+.section-header .chevron { transition: transform 0.3s; font-size: 1.2rem; color: var(--text-muted); }
+.section-header .chevron.open { transform: rotate(180deg); }
+.section-body { padding: 0 24px 24px; display: none; }
+.section-body.open { display: block; animation: fadeIn 0.3s; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9rem; }
+th { text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--card-border); color: var(--text-muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
+td { padding: 10px 12px; border-bottom: 1px solid var(--card-border); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: rgba(99,102,241,0.03); }
+.mono { font-family: 'JetBrains Mono', 'Fira Code', monospace; font-size: 0.85rem; }
+.link-url { word-break: break-all; max-width: 400px; color: var(--accent); }
+.badge {
+    display: inline-block; padding: 2px 10px; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.badge.critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.badge.warning { background: rgba(234,179,8,0.15); color: var(--yellow); }
+.badge.pass { background: rgba(34,197,94,0.15); color: var(--green); }
+.badge.info { background: rgba(99,102,241,0.15); color: var(--accent); }
+.badge.new { background: rgba(6,182,212,0.15); color: var(--cyan); }
+.issue-item {
+    padding: 12px 16px; border-radius: 8px; margin: 6px 0;
+    font-size: 0.9rem; display: flex; align-items: flex-start; gap: 10px;
+}
+.issue-item.critical { background: rgba(239,68,68,0.08); border-left: 3px solid var(--red); }
+.issue-item.warning { background: rgba(234,179,8,0.08); border-left: 3px solid var(--yellow); }
+.issue-item.info { background: rgba(99,102,241,0.08); border-left: 3px solid var(--accent); }
+.issue-item.new { background: rgba(6,182,212,0.08); border-left: 3px solid var(--cyan); }
+.issue-badge { flex-shrink: 0; }
+.bar-row { display: flex; align-items: center; gap: 10px; margin: 6px 0; }
+.bar-label { width: 150px; font-size: 0.85rem; text-align: right; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-muted); }
+.bar-track { flex: 1; height: 22px; background: var(--card-border); border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), #818cf8); border-radius: 4px; transition: width 1s ease; }
+.bar-value { width: 30px; font-size: 0.85rem; font-weight: 600; }
+.summary-row { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+.summary-item {
+    flex: 1; min-width: 120px; background: var(--bg); border-radius: 8px;
+    padding: 16px; text-align: center;
+}
+.summary-item .val { font-size: 1.5rem; font-weight: 700; }
+.summary-item .lbl { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.footer { text-align: center; padding: 32px 0; color: var(--text-muted); font-size: 0.8rem; }
+
+/* Evidence Cards */
+.evidence-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin: 16px 0; }
+.evidence-card {
+    background: var(--bg); border: 1px solid var(--card-border); border-radius: 10px;
+    padding: 20px; position: relative; overflow: hidden;
+}
+.evidence-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+}
+.evidence-card.ev-critical::before { background: var(--red); }
+.evidence-card.ev-warning::before { background: var(--yellow); }
+.evidence-card.ev-pass::before { background: var(--green); }
+.evidence-card.ev-info::before { background: var(--accent); }
+.evidence-card.ev-new::before { background: var(--cyan); }
+.ev-icon { font-size: 1.5rem; margin-bottom: 8px; }
+.ev-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 6px; }
+.ev-detail { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
+.ev-source { font-size: 0.75rem; color: var(--accent); margin-top: 8px; font-style: italic; }
+.ev-value { font-size: 1.8rem; font-weight: 800; margin: 8px 0; }
+.ev-value.red { color: var(--red); }
+.ev-value.yellow { color: var(--yellow); }
+.ev-value.green { color: var(--green); }
+
+/* Correction Banner */
+.correction-banner {
+    background: linear-gradient(135deg, rgba(6,182,212,0.1), rgba(99,102,241,0.1));
+    border: 1px solid rgba(6,182,212,0.3);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 0.9rem;
+}
+.correction-banner strong { color: var(--cyan); }
+
+@media (max-width: 768px) {
+    .score-hero { flex-direction: column; gap: 24px; }
+    .score-stats { flex-wrap: wrap; justify-content: center; }
+    .categories { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
+    .container { padding: 16px; }
+    .evidence-grid { grid-template-columns: 1fr; }
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="theme-toggle" onclick="toggleTheme()" title="Changer le th&#232;me">&#127769;</div>
+
+<div class="header">
+    <div class="container">
+        <h1>Rapport d'analyse SEO</h1>
+        <div class="domain">naoenergy.ch</div>
+        <div class="timestamp">Mis &#224; jour : 3 avril 2026 — avec preuves WordPress Admin</div>
+        <div class="version-badge">V2 — V&#233;rifi&#233; &amp; corrig&#233;</div>
+    </div>
+</div>
+
+<div class="container">
+
+    <!-- Score global -->
+    <div class="score-hero">
+        <div class="score-gauge">
+            <svg viewBox="0 0 200 200">
+                <circle cx="100" cy="100" r="85" fill="none" stroke="var(--card-border)" stroke-width="12"/>
+                <circle cx="100" cy="100" r="85" fill="none" stroke="#f97316" stroke-width="12"
+                    stroke-dasharray="283.5 534.07" stroke-linecap="round"
+                    transform="rotate(-90 100 100)"/>
+            </svg>
+            <div class="gauge-value">
+                <div class="gauge-number">53</div>
+                <div class="gauge-grade">Note : D+</div>
+            </div>
+        </div>
+        <div class="score-stats">
+            <div class="stat-card stat-critical">
+                <div class="stat-value">8</div>
+                <div class="stat-label">Critique</div>
+            </div>
+            <div class="stat-card stat-warning">
+                <div class="stat-value">19</div>
+                <div class="stat-label">Attention</div>
+            </div>
+            <div class="stat-card stat-pass">
+                <div class="stat-value">9</div>
+                <div class="stat-label">Valid&#233;</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="correction-banner">
+        <strong>&#9888;&#65039; Notes de mise &#224; jour V2 :</strong> Ce rapport a &#233;t&#233; mis &#224; jour avec les r&#233;sultats d'un audit WordPress admin r&#233;alis&#233; le 3 avril 2026.
+        Corrections cl&#233;s : le balisage Schema EST pr&#233;sent (Yoast SEO g&#233;n&#232;re du JSON-LD). Nouveaux probl&#232;mes critiques ajout&#233;s pour la performance (JS WP Rocket d&#233;sactiv&#233;), 9 864 erreurs 404,
+        quota Imagify &#233;puis&#233; et images WebP manquantes. Le score global a &#233;t&#233; r&#233;vis&#233; &#224; la baisse de 62 &#224; 53 en raison de probl&#232;mes c&#244;t&#233; serveur nouvellement d&#233;couverts.
+    </div>
+
+    <!-- Cartes de cat&#233;gories -->
+    <div class="categories">
+        <div class="category-card" onclick="scrollToSection('wp_admin')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="100.5 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">40</div>
+            <div class="category-icon">&#9881;&#65039;</div>
+            <div class="category-name">WP Admin</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('performance')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="50.3 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">20</div>
+            <div class="category-icon">&#9889;</div>
+            <div class="category-name">Performance</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('security')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="113.1 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">45</div>
+            <div class="category-icon">&#128274;</div>
+            <div class="category-name">S&#233;curit&#233;</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('schema')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#eab308" stroke-width="6"
+                    stroke-dasharray="150.8 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">60</div>
+            <div class="category-icon">&#128300;</div>
+            <div class="category-name">Schema</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('social')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#22c55e" stroke-width="6"
+                    stroke-dasharray="213.6 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">85</div>
+            <div class="category-icon">&#128241;</div>
+            <div class="category-name">M&#233;ta social</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('onpage')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#22c55e" stroke-width="6"
+                    stroke-dasharray="251.3 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">100</div>
+            <div class="category-icon">&#128221;</div>
+            <div class="category-name">On-Page</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('images')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="75.4 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">30</div>
+            <div class="category-icon">&#128444;&#65039;</div>
+            <div class="category-name">Images</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('hreflang')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="0.0 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">0</div>
+            <div class="category-icon">&#127757;</div>
+            <div class="category-name">Hreflang</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('errors404')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="25.1 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">10</div>
+            <div class="category-icon">&#128680;</div>
+            <div class="category-name">Erreurs 404</div>
+        </div>
+        <div class="category-card" onclick="scrollToSection('entity')">
+            <svg class="ring" viewBox="0 0 90 90">
+                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
+                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
+                    stroke-dasharray="25.1 251.327" stroke-linecap="round"
+                    transform="rotate(-90 45 45)" class="ring-progress"/>
+            </svg>
+            <div class="ring-label">10</div>
+            <div class="category-icon">&#127963;&#65039;</div>
+            <div class="category-name">SEO Entit&#233;</div>
+        </div>
+    </div>
+
+    <!-- ===================== PREUVES WP ADMIN ===================== -->
+    <div class="section" id="section-wp_admin" style="border-color: var(--cyan);">
+        <div class="section-header" onclick="toggleSection('wp_admin')">
+            <h2>&#9881;&#65039; Preuves WordPress Admin <span class="badge new">NOUVEAU — Audit Admin</span></h2>
+            <span class="chevron" id="chevron-wp_admin">&#9660;</span>
+        </div>
+        <div class="section-body open" id="body-wp_admin">
+            <p style="color:var(--text-muted); margin-bottom:16px;">Les constatations suivantes ont &#233;t&#233; recueillies directement depuis le tableau de bord WordPress admin (wp-admin) le 3 avril 2026. Chaque carte repr&#233;sente une observation v&#233;rifi&#233;e avec sa source.</p>
+
+            <h3 style="margin:20px 0 12px; font-size:1rem;">&#128269; Sant&#233; du site &amp; Serveur</h3>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#128680;</div>
+                    <div class="ev-title">1 probl&#232;me critique + 5 recommandations</div>
+                    <div class="ev-detail">
+                        <strong>Critique :</strong> Mise &#224; jour du th&#232;me en attente (risque de s&#233;curit&#233;)<br>
+                        <strong>Recommandations :</strong><br>
+                        &bull; Supprimer les extensions inactives<br>
+                        &bull; PHP 8.1.34 obsol&#232;te — mise &#224; niveau n&#233;cessaire<br>
+                        &bull; Serveur SQL obsol&#232;te<br>
+                        &bull; &#201;v&#233;nement planifi&#233; en retard<br>
+                        &bull; Pas de cache objet persistant
+                    </div>
+                    <div class="ev-source">Source : WP Admin &rarr; Outils &rarr; Sant&#233; du site</div>
+                </div>
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon">&#128268;</div>
+                    <div class="ev-title">32 extensions install&#233;es (29 actives)</div>
+                    <div class="ev-detail">
+                        <strong>3 d&#233;sactiv&#233;es mais non supprim&#233;es :</strong> MonsterInsights, WP Headers And Footers, WPCode Lite<br>
+                        <strong>Extensions SEO cl&#233;s :</strong> Yoast SEO (gratuit), WP Rocket, Imagify, Redirection, Polylang Pro, Site Kit, PixelYourSite<br>
+                        <strong>Polylang Pro</strong> a une mise &#224; jour en attente (3.6.6 &rarr; 3.8.1)
+                    </div>
+                    <div class="ev-source">Source : WP Admin &rarr; Extensions</div>
+                </div>
+                <div class="evidence-card ev-pass">
+                    <div class="ev-icon">&#128279;</div>
+                    <div class="ev-title">Permaliens : compatibles SEO</div>
+                    <div class="ev-detail">
+                        Utilisation de la structure <code>/%postname%/</code> (Nom de l'article). Les URL sont propres et optimis&#233;es pour les mots-cl&#233;s.
+                    </div>
+                    <div class="ev-source">Source : WP Admin &rarr; R&#233;glages &rarr; Permaliens</div>
+                </div>
+                <div class="evidence-card ev-pass">
+                    <div class="ev-icon">&#128196;</div>
+                    <div class="ev-title">R&#233;glages de lecture : corrects</div>
+                    <div class="ev-detail">
+                        Page d'accueil statique d&#233;finie. Page de blog configur&#233;e comme "Nos actualites". Visibilit&#233; moteurs de recherche : <strong>indexable</strong> (non bloqu&#233;).
+                    </div>
+                    <div class="ev-source">Source : WP Admin &rarr; R&#233;glages &rarr; Lecture</div>
+                </div>
+            </div>
+
+            <h3 style="margin:20px 0 12px; font-size:1rem;">&#128270; Extension Yoast SEO</h3>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-pass">
+                    <div class="ev-icon">&#9989;</div>
+                    <div class="ev-title">Scores Yoast SEO : 112 articles "Bon"</div>
+                    <div class="ev-detail">
+                        Les 112 articles ont un score "Bon". 0 articles &#224; am&#233;liorer. 0 non analys&#233;s. Utilisation de <strong>Yoast SEO gratuit</strong> (pas Premium).
+                    </div>
+                    <div class="ev-source">Source : WP Admin &rarr; Yoast SEO &rarr; Tableau de bord</div>
+                </div>
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon">&#127970;</div>
+                    <div class="ev-title">Schema Organisation : incomplet</div>
+                    <div class="ev-detail">
+                        Type d'entit&#233; : Organisation &#9989;<br>
+                        Nom : "naoenergy - durablement different" &#9989;<br>
+                        <strong style="color:var(--red)">Description de l'organisation : VIDE</strong><br>
+                        <strong style="color:var(--red)">E-mail de l'organisation : VIDE</strong><br>
+                        Instagram &amp; LinkedIn : configur&#233;s &#9989;<br>
+                        <strong style="color:var(--red)">Twitter/X : VIDE</strong>
+                    </div>
+                    <div class="ev-source">Source : WP Admin &rarr; Yoast SEO &rarr; Repr&#233;sentation du site</div>
+                </div>
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#128275;</div>
+                    <div class="ev-title">V&#233;rifications Webmaster : TOUTES vides</div>
+                    <div class="ev-detail">
+                        <strong style="color:var(--red)">Aucune v&#233;rification via Yoast :</strong><br>
+                        &bull; Google Search Console : vide<br>
+                        &bull; Bing Webmaster : vide<br>
+                        &bull; Ahrefs : vide<br>
+                        &bull; Pinterest : vide<br>
+                        Note : peut &#234;tre v&#233;rifi&#233; via Site Kit ou la m&#233;thode fichier HTML.
+                    </div>
+                    <div class="ev-source">Source : WP Admin &rarr; Yoast SEO &rarr; Connexions</div>
+                </div>
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon">&#128279;</div>
+                    <div class="ev-title">Google Site Kit : non connect&#233;</div>
+                    <div class="ev-detail">
+                        Site Kit est install&#233; mais <strong>non connect&#233;</strong> pour le compte admin actuel. Aucune donn&#233;e Search Console ou Analytics visible dans le tableau de bord WordPress.
+                    </div>
+                    <div class="ev-source">Source : WP Admin &rarr; Site Kit</div>
+                </div>
+            </div>
+
+            <h3 style="margin:20px 0 12px; font-size:1rem;">&#9889; WP Rocket &amp; Performance</h3>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#128308;</div>
+                    <div class="ev-title">Optimisation JavaScript : TOUT D&#201;SACTIV&#201;</div>
+                    <div class="ev-value red">0/4</div>
+                    <div class="ev-detail">
+                        &bull; Minifier JS : <strong style="color:var(--red)">D&#201;SACTIV&#201;</strong><br>
+                        &bull; Combiner JS : <strong style="color:var(--red)">D&#201;SACTIV&#201;</strong><br>
+                        &bull; Diff&#233;rer le chargement JS : <strong style="color:var(--red)">D&#201;SACTIV&#201;</strong><br>
+                        &bull; Retarder l'ex&#233;cution JS : <strong style="color:var(--red)">D&#201;SACTIV&#201;</strong><br>
+                        <em>C'est la cause principale des mauvais Core Web Vitals.</em>
+                    </div>
+                    <div class="ev-source">Source : WP Admin &rarr; WP Rocket &rarr; Optimisation des fichiers</div>
+                </div>
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon">&#127912;</div>
+                    <div class="ev-title">Optimisation CSS : partielle</div>
+                    <div class="ev-detail">
+                        &bull; Minifier CSS : <strong style="color:var(--red)">D&#201;SACTIV&#201;</strong><br>
+                        &bull; Optimiser le chargement CSS (async) : <strong style="color:var(--green)">ACTIV&#201;</strong><br>
+                        &bull; Supprimer le CSS inutilis&#233; : <strong style="color:var(--red)">D&#201;SACTIV&#201;</strong> (recommand&#233; par WP Rocket)
+                    </div>
+                    <div class="ev-source">Source : WP Admin &rarr; WP Rocket &rarr; Optimisation des fichiers</div>
+                </div>
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#128247;</div>
+                    <div class="ev-title">Dimensions d'images &amp; polices : d&#233;sactiv&#233;es</div>
+                    <div class="ev-detail">
+                        &bull; Ajouter les dimensions d'images manquantes : <strong style="color:var(--red)">D&#201;SACTIV&#201;</strong> (cause des probl&#232;mes de CLS)<br>
+                        &bull; Pr&#233;charger les polices : <strong style="color:var(--red)">D&#201;SACTIV&#201;</strong> (impact sur le LCP)<br>
+                        &bull; H&#233;berger les Google Fonts localement : <strong style="color:var(--red)">D&#201;SACTIV&#201;</strong> (blocage du rendu)
+                    </div>
+                    <div class="ev-source">Source : WP Admin &rarr; WP Rocket &rarr; M&#233;dias</div>
+                </div>
+                <div class="evidence-card ev-pass">
+                    <div class="ev-icon">&#128260;</div>
+                    <div class="ev-title">Chargement diff&#233;r&#233; (Lazy Loading) : activ&#233;</div>
+                    <div class="ev-detail">
+                        LazyLoad actif pour les images, les arri&#232;re-plans CSS et les iframes. Remplacement iframe YouTube d&#233;sactiv&#233;. WP Rocket utilise le lazy loading bas&#233; sur JS (pas le natif <code>loading="lazy"</code>).
+                    </div>
+                    <div class="ev-source">Source : WP Admin &rarr; WP Rocket &rarr; M&#233;dias</div>
+                </div>
+            </div>
+
+            <h3 style="margin:20px 0 12px; font-size:1rem;">&#128444;&#65039; Imagify &amp; Optimisation d'images</h3>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#128308;</div>
+                    <div class="ev-title">Cr&#233;dit Imagify : &#201;PUIS&#201;</div>
+                    <div class="ev-value red">0%</div>
+                    <div class="ev-detail">
+                        Quota du plan gratuit compl&#232;tement &#233;puis&#233;. Aucune nouvelle image ne peut &#234;tre optimis&#233;e. L'optimisation automatique est activ&#233;e mais &#233;chouera silencieusement.
+                    </div>
+                    <div class="ev-source">Source : WP Admin &rarr; Imagify &rarr; R&#233;glages</div>
+                </div>
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#128444;&#65039;</div>
+                    <div class="ev-title">81 images sans WebP</div>
+                    <div class="ev-value red">81</div>
+                    <div class="ev-detail">
+                        81 images optimis&#233;es n'ont pas de versions Next-Gen (WebP/AVIF). Le th&#232;me "Naoenergy" est d&#233;tect&#233; mais non ajout&#233; &#224; l'optimisation d'images.
+                    </div>
+                    <div class="ev-source">Source : WP Admin &rarr; Imagify &rarr; Optimisation</div>
+                </div>
+            </div>
+
+            <h3 style="margin:20px 0 12px; font-size:1rem;">&#127760; Analyse Front-End (extraction JavaScript)</h3>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon">&#128196;</div>
+                    <div class="ev-title">Poids de la page : lourd</div>
+                    <div class="ev-detail">
+                        &bull; Scripts externes : <strong style="color:var(--red)">42</strong><br>
+                        &bull; Feuilles de style : <strong style="color:var(--red)">17</strong><br>
+                        &bull; Indices preconnect : <strong style="color:var(--red)">0</strong><br>
+                        &bull; Indices DNS prefetch : 3
+                    </div>
+                    <div class="ev-source">Source : Analyse DOM de la page d'accueil via JavaScript</div>
+                </div>
+                <div class="evidence-card ev-pass">
+                    <div class="ev-icon">&#128200;</div>
+                    <div class="ev-title">Balisage Schema : Pr&#233;sent</div>
+                    <div class="ev-detail">
+                        2 blocs JSON-LD g&#233;n&#233;r&#233;s par Yoast SEO contenant :<br>
+                        &#9989; Organization, WebSite, WebPage, Article, BreadcrumbList, ImageObject, Person<br>
+                        <strong style="color:var(--yellow)">Manquant :</strong> LocalBusiness, Service
+                    </div>
+                    <div class="ev-source">Source : Extraction &lt;script type="application/ld+json"&gt; de la page d'accueil</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== PERFORMANCE (NOUVEAU) ===================== -->
+    <div class="section" id="section-performance" style="border-color: var(--red);">
+        <div class="section-header" onclick="toggleSection('performance')">
+            <h2>&#9889; Performance &amp; Core Web Vitals <span class="badge critical">20/100</span> <span class="badge new">MIS &#192; JOUR</span></h2>
+            <span class="chevron" id="chevron-performance">&#9660;</span>
+        </div>
+        <div class="section-body" id="body-performance">
+            <div class="correction-banner">
+                <strong>&#128260; Correction :</strong> Le rapport original indiquait 0/100 en raison d'une erreur de l'API PageSpeed. Apr&#232;s investigation dans l'admin WordPress, nous avons identifi&#233; les causes profondes de la mauvaise performance. Score mis &#224; jour &#224; 20/100 sur la base des preuves de configuration.
+            </div>
+            <div class="summary-row">
+                <div class="summary-item"><div class="val" style="color:var(--red)">20</div><div class="lbl">Score performance</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">42</div><div class="lbl">Fichiers JS</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">17</div><div class="lbl">Fichiers CSS</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">0</div><div class="lbl">Preconnect</div></div>
+            </div>
+            <h3 style="margin:16px 0 8px; font-size:0.95rem;">Causes profondes identifi&#233;es dans WP Admin</h3>
+            <table>
+                <thead><tr><th>Probl&#232;me</th><th>Statut</th><th>Impact</th><th>Source</th></tr></thead>
+                <tbody>
+                    <tr><td>Minification JS</td><td><span class="badge critical">D&#233;sactiv&#233;</span></td><td>Fichiers plus volumineux, analyse plus lente</td><td>WP Rocket</td></tr>
+                    <tr><td>Diff&#233;rer/Retarder JS</td><td><span class="badge critical">D&#233;sactiv&#233;</span></td><td>JS bloquant le rendu, mauvais TBT/INP</td><td>WP Rocket</td></tr>
+                    <tr><td>Minification CSS</td><td><span class="badge critical">D&#233;sactiv&#233;</span></td><td>Fichiers CSS plus volumineux</td><td>WP Rocket</td></tr>
+                    <tr><td>Supprimer CSS inutilis&#233;</td><td><span class="badge critical">D&#233;sactiv&#233;</span></td><td>Octets inutiles envoy&#233;s au navigateur</td><td>WP Rocket</td></tr>
+                    <tr><td>Dimensions d'images</td><td><span class="badge critical">D&#233;sactiv&#233;</span></td><td>CLS (d&#233;calage de mise en page)</td><td>WP Rocket</td></tr>
+                    <tr><td>Pr&#233;chargement des polices</td><td><span class="badge critical">D&#233;sactiv&#233;</span></td><td>Retard LCP (flash de changement de police)</td><td>WP Rocket</td></tr>
+                    <tr><td>H&#233;berger Google Fonts localement</td><td><span class="badge warning">D&#233;sactiv&#233;</span></td><td>DNS + connexion suppl&#233;mentaire vers Google</td><td>WP Rocket</td></tr>
+                    <tr><td>Images WebP</td><td><span class="badge critical">81 manquantes</span></td><td>Images plus lourdes servies (pas de next-gen)</td><td>Imagify</td></tr>
+                    <tr><td>Quota Imagify</td><td><span class="badge critical">0% restant</span></td><td>Aucune nouvelle image ne peut &#234;tre optimis&#233;e</td><td>Imagify</td></tr>
+                    <tr><td>CDN</td><td><span class="badge warning">Non configur&#233;</span></td><td>Pas de cache en bordure, TTFB plus &#233;lev&#233;</td><td>WP Rocket</td></tr>
+                    <tr><td>Indices Preconnect</td><td><span class="badge warning">0 configur&#233;</span></td><td>Chargement plus lent des ressources tierces</td><td>Source de la page</td></tr>
+                    <tr><td>Pr&#233;chargement/Cache</td><td><span class="badge pass">Actif</span></td><td>Les pages sont pr&#233;-cach&#233;es</td><td>WP Rocket</td></tr>
+                    <tr><td>LazyLoad</td><td><span class="badge pass">Actif</span></td><td>Images hors &#233;cran diff&#233;r&#233;es</td><td>WP Rocket</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ===================== ERREURS 404 (NOUVEAU) ===================== -->
+    <div class="section" id="section-errors404" style="border-color: var(--red);">
+        <div class="section-header" onclick="toggleSection('errors404')">
+            <h2>&#128680; Erreurs 404 <span class="badge critical">9 864 erreurs</span> <span class="badge new">NOUVEAU</span></h2>
+            <span class="chevron" id="chevron-errors404">&#9660;</span>
+        </div>
+        <div class="section-body" id="body-errors404">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val" style="color:var(--red)">9 864</div><div class="lbl">Total 404</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">395</div><div class="lbl">Pages</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--yellow)">71</div><div class="lbl">Redirections actives</div></div>
+            </div>
+            <div class="issue-item critical"><span class="issue-badge">CRITIQUE</span><div><strong>Inondation massive de 404 /meta.json par les robots Facebook</strong><br><span style="color:var(--text-muted)">Les journaux du plugin Redirection montrent des milliers de requ&#234;tes 404 pour <code>/meta.json</code> provenant de <code>facebookexternalhit/1.1</code>. Cela indique que le robot d'exploration de Facebook recherche des m&#233;tadonn&#233;es inexistantes, probablement d&#233;clench&#233; par des liens partag&#233;s.</span><br><strong>Correction :</strong> Cr&#233;er un fichier <code>/meta.json</code> valide &#224; la racine du site, ou ajouter une r&#232;gle de redirection/blocage pour ce chemin dans le plugin Redirection.</div></div>
+            <div class="issue-item warning"><span class="issue-badge">ATTENTION</span><div><strong>71 redirections 301 actives sont correctement g&#233;r&#233;es</strong><br><span style="color:var(--text-muted)">Les redirections &#224; fort trafic incluent <code>/solutions/heat-pumps/</code> (489 visites), <code>/mentions-legales/</code> (350 visites) et <code>/solutions/charging-stations/</code> (317 visites). Elles fonctionnent correctement.</span></div></div>
+            <div class="ev-source">Source : WP Admin &rarr; Outils &rarr; Redirection &rarr; Onglet 404</div>
+        </div>
+    </div>
+
+    <!-- ===================== SCHEMA (CORRIG&#201;) ===================== -->
+    <div class="section" id="section-schema">
+        <div class="section-header" onclick="toggleSection('schema')">
+            <h2>&#128300; Donn&#233;es structur&#233;es / Schema <span class="badge warning">60/100</span> <span class="badge new">CORRIG&#201;</span></h2>
+            <span class="chevron" id="chevron-schema">&#9660;</span>
+        </div>
+        <div class="section-body" id="body-schema">
+            <div class="correction-banner">
+                <strong>&#128260; Correction :</strong> Le rapport original indiquait "Aucun balisage schema d&#233;tect&#233;." C'&#233;tait incorrect. Yoast SEO g&#233;n&#232;re automatiquement le schema JSON-LD. Le script de d&#233;tection a peut-&#234;tre &#233;chou&#233; &#224; analyser correctement la page. Le schema EST pr&#233;sent mais incomplet.
+            </div>
+            <div class="summary-row">
+                <div class="summary-item"><div class="val" style="color:var(--green)">2</div><div class="lbl">Blocs JSON-LD</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--green)">7</div><div class="lbl">Types de schema</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--yellow)">2</div><div class="lbl">Types manquants</div></div>
+            </div>
+            <h3 style="margin:16px 0 8px; font-size:0.95rem;">Types de schema pr&#233;sents</h3>
+            <table>
+                <thead><tr><th>Type</th><th>Statut</th><th>D&#233;tails</th></tr></thead>
+                <tbody>
+                    <tr><td>Organization</td><td><span class="badge pass">Pr&#233;sent</span></td><td>name : "naoenergy - durablement different", url : naoenergy.ch</td></tr>
+                    <tr><td>WebSite</td><td><span class="badge pass">Pr&#233;sent</span></td><td>name : "naoenergy - durablement different"</td></tr>
+                    <tr><td>WebPage</td><td><span class="badge pass">Pr&#233;sent</span></td><td>Titre et URL complets de la page</td></tr>
+                    <tr><td>Article</td><td><span class="badge pass">Pr&#233;sent</span></td><td>G&#233;n&#233;r&#233; automatiquement par Yoast pour les articles</td></tr>
+                    <tr><td>BreadcrumbList</td><td><span class="badge pass">Pr&#233;sent</span></td><td>Fil d'Ariane de navigation</td></tr>
+                    <tr><td>ImageObject</td><td><span class="badge pass">Pr&#233;sent</span></td><td>Image principale avec URL</td></tr>
+                    <tr><td>Person</td><td><span class="badge pass">Pr&#233;sent</span></td><td>Auteur : "developer"</td></tr>
+                    <tr><td>LocalBusiness</td><td><span class="badge critical">Manquant</span></td><td>N&#233;cessaire pour la visibilit&#233; en recherche locale sur le march&#233; suisse</td></tr>
+                    <tr><td>Service</td><td><span class="badge critical">Manquant</span></td><td>Panneaux solaires, pompes &#224; chaleur, bornes de recharge non d&#233;crits</td></tr>
+                </tbody>
+            </table>
+            <div class="issue-item warning"><span class="issue-badge">ACTION</span><div><strong>Ajouter les schemas LocalBusiness et Service</strong><br><span style="color:var(--text-muted)">Bien que Yoast g&#233;n&#232;re les schemas basiques Organization/WebPage, le site manque de LocalBusiness (pour Google Maps/pack local) et de schemas Service (pour les r&#233;sultats enrichis sur les requ&#234;tes de services). Ceux-ci n&#233;cessitent Yoast Premium ou du code JSON-LD personnalis&#233;.</span></div></div>
+            <div class="issue-item warning"><span class="issue-badge">ACTION</span><div><strong>Remplir la description et l'e-mail de l'organisation dans Yoast</strong><br><span style="color:var(--text-muted)">Les champs description et e-mail de l'organisation sont vides dans Yoast SEO &rarr; Repr&#233;sentation du site. Ceux-ci enrichissent la sortie schema pour le Knowledge Graph.</span></div></div>
+        </div>
+    </div>
+
+    <!-- ===================== IMAGES (NOUVEAU) ===================== -->
+    <div class="section" id="section-images" style="border-color: var(--red);">
+        <div class="section-header" onclick="toggleSection('images')">
+            <h2>&#128444;&#65039; SEO Images &amp; Optimisation <span class="badge critical">30/100</span> <span class="badge new">NOUVEAU</span></h2>
+            <span class="chevron" id="chevron-images">&#9660;</span>
+        </div>
+        <div class="section-body" id="body-images">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">39</div><div class="lbl">Images sur la page d'accueil</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">18</div><div class="lbl">Texte alt manquant</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">81</div><div class="lbl">WebP manquants</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">0%</div><div class="lbl">Cr&#233;dit Imagify</div></div>
+            </div>
+            <table>
+                <thead><tr><th>Probl&#232;me</th><th>Nombre</th><th>Impact</th><th>Correction</th></tr></thead>
+                <tbody>
+                    <tr><td>Images sans texte alt</td><td><span class="badge critical">18 / 39 (46%)</span></td><td>Accessibilit&#233; &amp; classement en recherche d'images</td><td>Ajouter un texte alt descriptif &#224; toutes les images</td></tr>
+                    <tr><td>Versions WebP/AVIF manquantes</td><td><span class="badge critical">81 images</span></td><td>Fichiers plus volumineux, LCP plus lent</td><td>Passer au plan payant Imagify ou utiliser une alternative gratuite</td></tr>
+                    <tr><td>Quota Imagify &#233;puis&#233;</td><td><span class="badge critical">0% restant</span></td><td>Pas d'optimisation automatique</td><td>Passer au plan payant (5,99 $/mois)</td></tr>
+                    <tr><td>Dimensions d'images non d&#233;finies</td><td><span class="badge warning">D&#233;sactiv&#233; dans WP Rocket</span></td><td>CLS (d&#233;calage de mise en page)</td><td>Activer dans WP Rocket &rarr; M&#233;dias</td></tr>
+                    <tr><td>Th&#232;me non optimis&#233;</td><td><span class="badge warning">Non ajout&#233;</span></td><td>Images du th&#232;me non compress&#233;es</td><td>Ajouter le th&#232;me &#224; l'optimisation Imagify</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ===================== S&#201;CURIT&#201; (inchang&#233;) ===================== -->
+    <div class="section" id="section-security">
+        <div class="section-header" onclick="toggleSection('security')">
+            <h2>&#128274; En-t&#234;tes de s&#233;curit&#233; <span class="badge critical">45/100</span></h2>
+            <span class="chevron" id="chevron-security">&#9660;</span>
+        </div>
+        <div class="section-body" id="body-security">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">&#9989;</div><div class="lbl">HTTPS</div></div>
+                <div class="summary-item"><div class="val">1</div><div class="lbl">Pr&#233;sent</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">5</div><div class="lbl">Manquant</div></div>
+            </div>
+            <table>
+                <thead><tr><th>En-t&#234;te</th><th>Statut</th><th>D&#233;tails</th></tr></thead>
+                <tbody>
+                    <tr><td>HSTS</td><td><span class="badge pass">Pr&#233;sent</span></td><td class="mono">max-age=16000000 (includeSubDomains manquant)</td></tr>
+                    <tr><td>Content-Security-Policy</td><td><span class="badge critical">Manquant</span></td><td>Pr&#233;vient les attaques XSS et l'injection de code</td></tr>
+                    <tr><td>X-Frame-Options</td><td><span class="badge critical">Manquant</span></td><td>Pr&#233;vient le clickjacking</td></tr>
+                    <tr><td>X-Content-Type-Options</td><td><span class="badge critical">Manquant</span></td><td>Pr&#233;vient le sniffing de type MIME</td></tr>
+                    <tr><td>Referrer-Policy</td><td><span class="badge critical">Manquant</span></td><td>Contr&#244;le le partage des informations de r&#233;f&#233;rent</td></tr>
+                    <tr><td>Permissions-Policy</td><td><span class="badge critical">Manquant</span></td><td>Contr&#244;le l'acc&#232;s aux fonctionnalit&#233;s du navigateur</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ===================== M&#201;TA SOCIAL (inchang&#233;) ===================== -->
+    <div class="section" id="section-social">
+        <div class="section-header" onclick="toggleSection('social')">
+            <h2>&#128241; Balises m&#233;ta sociales <span class="badge pass">85/100</span></h2>
+            <span class="chevron" id="chevron-social">&#9660;</span>
+        </div>
+        <div class="section-body" id="body-social">
+            <table>
+                <thead><tr><th>Balise</th><th>Statut</th><th>Valeur</th></tr></thead>
+                <tbody>
+                    <tr><td>og:title</td><td><span class="badge pass">&#9989;</span></td><td>naoenergy - durablement different</td></tr>
+                    <tr><td>og:description</td><td><span class="badge pass">&#9989;</span></td><td>Decouvrez des solutions innovantes pour une energie plus durable...</td></tr>
+                    <tr><td>og:image</td><td><span class="badge pass">&#9989;</span></td><td>D&#233;fini (image de marque naoenergy)</td></tr>
+                    <tr><td>og:url</td><td><span class="badge pass">&#9989;</span></td><td>https://naoenergy.ch/</td></tr>
+                    <tr><td>og:type</td><td><span class="badge pass">&#9989;</span></td><td>website</td></tr>
+                    <tr><td>twitter:card</td><td><span class="badge pass">&#9989;</span></td><td>summary_large_image</td></tr>
+                    <tr><td>twitter:site</td><td><span class="badge warning">Manquant</span></td><td>Profil Twitter/X non configur&#233; dans Yoast</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ===================== SEO ON-PAGE (inchang&#233;) ===================== -->
+    <div class="section" id="section-onpage">
+        <div class="section-header" onclick="toggleSection('onpage')">
+            <h2>&#128221; SEO On-Page <span class="badge pass">100/100</span></h2>
+            <span class="chevron" id="chevron-onpage">&#9660;</span>
+        </div>
+        <div class="section-body" id="body-onpage">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">&#9989;</div><div class="lbl">Titre</div></div>
+                <div class="summary-item"><div class="val">&#9989;</div><div class="lbl">M&#233;ta desc.</div></div>
+                <div class="summary-item"><div class="val">&#9989;</div><div class="lbl">H1</div></div>
+                <div class="summary-item"><div class="val">&#9989;</div><div class="lbl">Canonical</div></div>
+            </div>
+            <table>
+                <thead><tr><th>&#201;l&#233;ment</th><th>Valeur</th><th>Longueur</th></tr></thead>
+                <tbody>
+                    <tr><td>Titre</td><td>Panneaux solaires et pompe a chaleur en Suisse romande | naoenergy</td><td>66</td></tr>
+                    <tr><td>M&#233;ta description</td><td>Installation de panneaux solaires, pompe a chaleur et batterie de stockage en Suisse romande depuis 2016...</td><td>156</td></tr>
+                    <tr><td>H1</td><td>(re)imaginez la transition energetique avec naoenergy</td><td>52</td></tr>
+                    <tr><td>Canonical</td><td class="link-url">https://naoenergy.ch/</td><td>-</td></tr>
+                    <tr><td>HTML lang</td><td class="mono">fr-FR</td><td>-</td></tr>
+                    <tr><td>robots meta</td><td class="mono">index, follow, max-image-preview:large</td><td>-</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- ===================== HREFLANG (mis &#224; jour avec preuves) ===================== -->
+    <div class="section" id="section-hreflang">
+        <div class="section-header" onclick="toggleSection('hreflang')">
+            <h2>&#127757; Hreflang / SEO International <span class="badge critical">0/100</span> <span class="badge new">MIS &#192; JOUR</span></h2>
+            <span class="chevron" id="chevron-hreflang">&#9660;</span>
+        </div>
+        <div class="section-body" id="body-hreflang">
+            <div class="correction-banner">
+                <strong>&#128260; Mise &#224; jour :</strong> Le rapport original notait 0 balises hreflang et indiquait "attendu pour les sites monolingues." Apr&#232;s investigation dans l'admin, nous avons constat&#233; qu'il s'agit d'une opportunit&#233; manqu&#233;e — le site utilise Polylang Pro (une extension multilingue) mais seul le fran&#231;ais est configur&#233;. Pour un site ciblant le march&#233; suisse, des versions en allemand et en italien &#233;largiraient consid&#233;rablement la port&#233;e.
+            </div>
+            <div class="summary-row">
+                <div class="summary-item"><div class="val" style="color:var(--red)">0</div><div class="lbl">Balises Hreflang</div></div>
+                <div class="summary-item"><div class="val">1</div><div class="lbl">Langue (fr_FR)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">360</div><div class="lbl">Articles en fran&#231;ais</div></div>
+            </div>
+            <div class="issue-item warning"><span class="issue-badge">OPPORTUNIT&#201;</span><div><strong>Polylang Pro est install&#233; mais seul le fran&#231;ais est configur&#233;</strong><br><span style="color:var(--text-muted)">Le site cible la Suisse romande (fran&#231;ais) mais pourrait s'&#233;tendre aux march&#233;s germanophone (Deutschschweiz) et italophone (Svizzera italiana). Polylang Pro prend en charge la g&#233;n&#233;ration automatique de hreflang une fois les langues suppl&#233;mentaires ajout&#233;es.</span></div></div>
+            <div class="ev-source">Source : WP Admin &rarr; Langues (Polylang)</div>
+        </div>
+    </div>
+
+    <!-- ===================== SEO ENTIT&#201; (inchang&#233;) ===================== -->
+    <div class="section" id="section-entity">
+        <div class="section-header" onclick="toggleSection('entity')">
+            <h2>&#127963;&#65039; SEO Entit&#233; <span class="badge critical">10/100</span></h2>
+            <span class="chevron" id="chevron-entity">&#9660;</span>
+        </div>
+        <div class="section-body" id="body-entity">
+            <div class="summary-row">
+                <div class="summary-item"><div class="val">&#10060;</div><div class="lbl">Wikidata</div></div>
+                <div class="summary-item"><div class="val">&#10060;</div><div class="lbl">Wikipedia</div></div>
+                <div class="summary-item"><div class="val">4</div><div class="lbl">Liens sameAs</div></div>
+            </div>
+            <div class="issue-item warning"><span class="issue-badge">ATTENTION</span><div>Aucune entr&#233;e Wikidata trouv&#233;e. Cr&#233;ez un &#233;l&#233;ment Wikidata pour "naoenergy" afin d'am&#233;liorer la pr&#233;sence dans le Knowledge Graph.</div></div>
+            <div class="issue-item warning"><span class="issue-badge">ATTENTION</span><div>Lien sameAs vers Twitter/X manquant. <strong>Confirm&#233; dans Yoast SEO : le champ Twitter est vide.</strong></div></div>
+            <div class="issue-item warning"><span class="issue-badge">ATTENTION</span><div>Liens sameAs vers Wikipedia et Wikidata manquants.</div></div>
+            <div class="issue-item info"><span class="issue-badge">INFO</span><div><strong>La description de l'organisation Yoast est vide.</strong> Ce champ alimente directement la propri&#233;t&#233; description du schema Organization. Remplissez-le avec une description claire des services de naoenergy.</div></div>
+        </div>
+    </div>
+
+    <!-- ===================== SITEMAP & ROBOTS (NOUVEAU) ===================== -->
+    <div class="section" id="section-sitemap">
+        <div class="section-header" onclick="toggleSection('sitemap')">
+            <h2>&#128506; Sitemap &amp; Robots.txt <span class="badge pass">85/100</span></h2>
+            <span class="chevron" id="chevron-sitemap">&#9660;</span>
+        </div>
+        <div class="section-body" id="body-sitemap">
+            <h3 style="margin:8px 0; font-size:0.95rem;">Sitemap XML (Yoast SEO)</h3>
+            <div class="summary-row">
+                <div class="summary-item"><div class="val" style="color:var(--green)">9</div><div class="lbl">Sitemaps</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--green)">&#9989;</div><div class="lbl">Accessible</div></div>
+            </div>
+            <table>
+                <thead><tr><th>Sitemap</th><th>Derni&#232;re modification</th></tr></thead>
+                <tbody>
+                    <tr><td class="link-url">post-sitemap.xml</td><td>2026-03-26</td></tr>
+                    <tr><td class="link-url">page-sitemap.xml</td><td>2026-03-31</td></tr>
+                    <tr><td class="link-url">event-sitemap.xml</td><td>2025-02-26</td></tr>
+                    <tr><td class="link-url">partner-sitemap.xml</td><td>2025-06-23</td></tr>
+                    <tr><td class="link-url">solution-sitemap.xml</td><td>2026-04-01</td></tr>
+                    <tr><td class="link-url">category-sitemap.xml</td><td>2026-03-26</td></tr>
+                    <tr><td class="link-url">realisation_type-sitemap.xml</td><td>2025-12-09</td></tr>
+                    <tr><td class="link-url">p_type-sitemap.xml</td><td>2025-06-23</td></tr>
+                    <tr><td class="link-url">author-sitemap.xml</td><td>2025-07-08</td></tr>
+                </tbody>
+            </table>
+            <h3 style="margin:16px 0 8px; font-size:0.95rem;">robots.txt</h3>
+            <pre style="background:var(--bg); padding:16px; border-radius:8px; font-size:0.85rem; font-family:monospace; overflow-x:auto;">User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /item/
+Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
+            <div class="issue-item warning"><span class="issue-badge">NOTE</span><div><code>Disallow: /item/</code> pourrait bloquer du contenu indexable — v&#233;rifiez si les URL /item/ contiennent des pages de valeur.</div></div>
+            <div class="issue-item warning"><span class="issue-badge">NOTE</span><div>11 robots IA (GPTBot, ClaudeBot, PerplexityBot, etc.) ne sont pas explicitement g&#233;r&#233;s dans le robots.txt.</div></div>
+        </div>
+    </div>
+
+    <!-- ===================== RECOMMANDATIONS (MIS &#192; JOUR) ===================== -->
+    <div class="section" id="section-recs">
+        <div class="section-header" onclick="toggleSection('recs')">
+            <h2>&#128161; Plan d'actions prioritaires</h2>
+            <span class="chevron" id="chevron-recs">&#9660;</span>
+        </div>
+        <div class="section-body" id="body-recs">
+
+            <h3 style="margin:0 0 16px; font-size:1.1rem; color:var(--red);">&#128308; Critique — &#192; corriger cette semaine</h3>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:16px; margin-bottom:32px;">
+
+                <div style="background:var(--surface); border:2px solid var(--red); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--red);">1. Activer l'optimisation JS de WP Rocket</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Aller dans WP Rocket &rarr; Optimisation des fichiers &rarr; JavaScript. Activer : Minifier JS, Diff&#233;rer le chargement JS et Retarder l'ex&#233;cution JS. Tester minutieusement apr&#232;s chaque modification.</p>
+                    <span style="display:inline-block; margin-top:10px; font-size:0.75rem; padding:3px 10px; border-radius:20px; background:rgba(239,68,68,0.15); color:var(--red);">Impact : Core Web Vitals TBT/INP</span>
+                </div>
+
+                <div style="background:var(--surface); border:2px solid var(--red); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--red);">2. Corriger l'optimisation des images</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Passer au plan payant Imagify (5,99 $/mois) ou basculer vers ShortPixel gratuit. G&#233;n&#233;rer les 81 versions WebP manquantes. Activer "Ajouter les dimensions d'images manquantes" dans WP Rocket. Ajouter le texte alt aux 18 images.</p>
+                    <span style="display:inline-block; margin-top:10px; font-size:0.75rem; padding:3px 10px; border-radius:20px; background:rgba(239,68,68,0.15); color:var(--red);">Impact : LCP + CLS + SEO Images</span>
+                </div>
+
+                <div style="background:var(--surface); border:2px solid var(--red); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--red);">3. Corriger les 9 864 erreurs 404</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Cr&#233;er un fichier /meta.json valide ou ajouter une r&#232;gle de redirection. Purger les anciens journaux 404 dans le plugin Redirection. Surveiller les nouveaux motifs.</p>
+                    <span style="display:inline-block; margin-top:10px; font-size:0.75rem; padding:3px 10px; border-radius:20px; background:rgba(239,68,68,0.15); color:var(--red);">Impact : Budget de crawl + Charge serveur</span>
+                </div>
+
+                <div style="background:var(--surface); border:2px solid var(--red); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--red);">4. Corriger les en-t&#234;tes de s&#233;curit&#233;</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Ajouter CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy et Permissions-Policy via la configuration serveur ou un CDN. Envisager l'ajout d'un CDN (Cloudflare gratuit).</p>
+                    <span style="display:inline-block; margin-top:10px; font-size:0.75rem; padding:3px 10px; border-radius:20px; background:rgba(239,68,68,0.15); color:var(--red);">Impact : S&#233;curit&#233; + Signaux de confiance</span>
+                </div>
+
+                <div style="background:var(--surface); border:2px solid var(--red); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--red);">5. Mettre &#224; jour le th&#232;me &amp; les extensions</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Mettre &#224; jour le th&#232;me en attente (critique pour la s&#233;curit&#233;). Mettre &#224; jour Polylang Pro 3.6.6 &rarr; 3.8.1. Supprimer les 3 extensions d&#233;sactiv&#233;es. Passer PHP de 8.1 &#224; 8.2+.</p>
+                    <span style="display:inline-block; margin-top:10px; font-size:0.75rem; padding:3px 10px; border-radius:20px; background:rgba(239,68,68,0.15); color:var(--red);">Impact : S&#233;curit&#233; + Performance</span>
+                </div>
+            </div>
+
+            <h3 style="margin:0 0 16px; font-size:1.1rem; color:var(--yellow);">&#128992; Haute priorit&#233; — &#192; corriger sous 2 semaines</h3>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:16px; margin-bottom:32px;">
+
+                <div style="background:var(--surface); border:2px solid var(--yellow); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--yellow);">6. Activer la minification CSS + Supprimer le CSS inutilis&#233;</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">WP Rocket &rarr; Optimisation des fichiers &rarr; CSS. Activer la minification et passer du CSS async &#224; "Supprimer le CSS inutilis&#233;" comme le recommande WP Rocket.</p>
+                </div>
+
+                <div style="background:var(--surface); border:2px solid var(--yellow); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--yellow);">7. Activer le pr&#233;chargement des polices &amp; l'h&#233;bergement local des Google Fonts</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">WP Rocket &rarr; M&#233;dias. Activer les deux options pour r&#233;duire le LCP et &#233;liminer les requ&#234;tes de polices bloquant le rendu vers les serveurs Google.</p>
+                </div>
+
+                <div style="background:var(--surface); border:2px solid var(--yellow); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--yellow);">8. Ajouter les schemas LocalBusiness + Service</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Ajouter le schema LocalBusiness avec adresse, t&#233;l&#233;phone, horaires. Ajouter le schema Service pour les panneaux solaires, pompes &#224; chaleur, bornes de recharge. Utiliser Yoast Premium ou du JSON-LD personnalis&#233; via le plugin Code Snippets.</p>
+                </div>
+
+                <div style="background:var(--surface); border:2px solid var(--yellow); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--yellow);">9. Compl&#233;ter le profil Organisation dans Yoast</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Remplir la description de l'organisation, l'e-mail et le profil Twitter/X dans Yoast SEO &rarr; Repr&#233;sentation du site. Cela enrichit la sortie schema pour le Knowledge Graph de Google.</p>
+                </div>
+
+                <div style="background:var(--surface); border:2px solid var(--yellow); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--yellow);">10. Corriger le maillage interne (18 pages orphelines)</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Ajouter des liens internes depuis les pages de contenu pertinentes vers les 18 pages orphelines identifi&#233;es. Corriger les 36 liens sans texte d'ancrage.</p>
+                </div>
+            </div>
+
+            <h3 style="margin:0 0 16px; font-size:1.1rem; color:var(--accent);">&#128309; Priorit&#233; moyenne — &#192; corriger sous 1 mois</h3>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:16px; margin-bottom:32px;">
+
+                <div style="background:var(--surface); border:2px solid var(--accent); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--accent);">11. Cr&#233;er /llms.txt pour la recherche IA</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Cr&#233;er llms.txt &#224; la racine du site avec la description du site et les liens vers les pages cl&#233;s. G&#233;rer les robots IA (GPTBot, ClaudeBot, etc.) dans le robots.txt.</p>
+                </div>
+
+                <div style="background:var(--surface); border:2px solid var(--accent); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--accent);">12. Envisager l'expansion multilingue</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Polylang Pro est d&#233;j&#224; install&#233;. Ajouter du contenu en allemand (de_CH) d&#233;bloquerait le march&#233; de Suisse al&#233;manique. M&#234;me les pages d'atterrissage cl&#233;s g&#233;n&#233;reraient des balises hreflang.</p>
+                </div>
+
+                <div style="background:var(--surface); border:2px solid var(--accent); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--accent);">13. Am&#233;liorer la lisibilit&#233; du contenu</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Score Flesch 35,5 (tr&#232;s difficile). Raccourcir les phrases &#224; 15-20 mots. Fractionner les longs paragraphes. Simplifier le vocabulaire technique pour un public plus large.</p>
+                </div>
+
+                <div style="background:var(--surface); border:2px solid var(--accent); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--accent);">14. Connecter Google Site Kit + Ajouter les indices Preconnect</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Se connecter &#224; Site Kit pour acc&#233;der aux donn&#233;es Search Console dans le tableau de bord WP. Ajouter des indices preconnect pour Google Fonts, Analytics et les autres ressources tierces.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="footer">
+    <p>G&#233;n&#233;r&#233; par Agentic SEO Skill &middot; Mis &#224; jour le 3 avril 2026 avec preuves WordPress Admin</p>
+    <p style="margin-top:4px;">V2 — V&#233;rifi&#233; &amp; corrig&#233; avec les r&#233;sultats de l'audit wp-admin</p>
+</div>
+
+<script>
+function toggleSection(id) {
+    const body = document.getElementById('body-' + id);
+    const chevron = document.getElementById('chevron-' + id);
+    body.classList.toggle('open');
+    chevron.classList.toggle('open');
+}
+function scrollToSection(id) {
+    const el = document.getElementById('section-' + id);
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        const body = document.getElementById('body-' + id);
+        const chevron = document.getElementById('chevron-' + id);
+        if (!body.classList.contains('open')) {
+            body.classList.add('open');
+            chevron.classList.add('open');
+        }
+    }
+}
+function toggleTheme() {
+    const html = document.documentElement;
+    const btn = document.querySelector('.theme-toggle');
+    if (html.getAttribute('data-theme') === 'light') {
+        html.removeAttribute('data-theme');
+        btn.innerHTML = '&#127769;';
+    } else {
+        html.setAttribute('data-theme', 'light');
+        btn.innerHTML = '&#9728;&#65039;';
+    }
+}
+// Auto-open WP admin and recommendations sections
+document.getElementById('body-wp_admin').classList.add('open');
+document.getElementById('chevron-wp_admin').classList.add('open');
+document.getElementById('body-recs').classList.add('open');
+document.getElementById('chevron-recs').classList.add('open');
+</script>
+
+</body>
+</html>
