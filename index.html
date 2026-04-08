@@ -1131,13 +1131,14 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                 <div class="summary-item"><div class="val" style="color:var(--red)">731</div><div class="lbl">Visiteurs (-66,2 %)</div></div>
                 <div class="summary-item"><div class="val" style="color:var(--red)">1,6 K</div><div class="lbl">Pages vues (-73,5 %)</div></div>
                 <div class="summary-item"><div class="val" style="color:var(--red)">1,67</div><div class="lbl">Pages / visite (-12,4 %)</div></div>
-                <div class="summary-item"><div class="val" style="color:var(--green)">154 K</div><div class="lbl">Impressions SC (+15,9 %)</div></div>
-                <div class="summary-item"><div class="val" style="color:var(--green)">2,5 K</div><div class="lbl">Clics SC (+16,2 %)</div></div>
-                <div class="summary-item"><div class="val" style="color:var(--green)">849</div><div class="lbl">Visiteurs Search (+92 %)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--green)">155 K</div><div class="lbl">Impressions SC (+16,4 %)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--green)">2,5 K</div><div class="lbl">Clics SC (+16,5 %)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">84</div><div class="lbl">Visiteurs Search (-92 %)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">19</div><div class="lbl">Key Events (-88,3 %)</div></div>
             </div>
 
             <div class="correction-banner" style="background:linear-gradient(135deg, rgba(239,68,68,0.1), rgba(234,179,8,0.1)); border-color:rgba(239,68,68,0.3);">
-                <strong style="color:var(--red);">&#9888;&#65039; Divergence majeure GA4 vs Search Console :</strong> Search Console montre une croissance saine (+15,9 % impressions, +16,2 % clics, +92 % visiteurs Search), alors que GA4 affiche une chute brutale (-66,2 % visiteurs, -73,5 % pages vues). Cette divergence indique un probl&#232;me de tracking GA4 (cookies bloqu&#233;s, tag manquant sur certaines pages, ou filtrage des bots cass&#233;) <strong>OU</strong> que le trafic GA4 historique &#233;tait en grande partie compos&#233; de bots qui ne sont plus comptabilis&#233;s. &#192; investiguer en priorit&#233;.
+                <strong style="color:var(--red);">&#9888;&#65039; Paradoxe Search Console vs visiteurs r&#233;els :</strong> Search Console affiche une croissance de la visibilit&#233; (+16,4 % impressions, +16,5 % clics), mais le widget Site Kit "Visiteurs uniques provenant de la recherche Google" s'effondre &#224; <strong>84 visiteurs (&minus;92 %)</strong> sur 90 jours. Combin&#233; &#224; la chute GA4 (&minus;66,2 % visiteurs, &minus;73,5 % pages vues) et &#224; l'effondrement des Key Events (&minus;88,3 %), cela confirme un <strong>probl&#232;me de mesure GA4 critique</strong> (tag manquant, filtrage bots cass&#233;, ou consentement cookies bloqu&#233;) plut&#244;t qu'une vraie chute du trafic. Search Console (qui n'utilise pas GA4) reste fiable, GA4 ne l'est plus. &#192; investiguer en priorit&#233; absolue.
             </div>
 
             <!-- Probl&#232;mes critiques -->
@@ -1205,7 +1206,7 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                     <div class="ev-title">Part Organic Search faible</div>
                     <div class="ev-value yellow">11,3 %</div>
                     <div class="ev-detail">
-                        Pour un site qui investit dans le SEO, voir la part Organic Search &#224; seulement 11,3 % du trafic total est faible. Search Console r&#233;v&#232;le pourtant 154 K impressions et 2,5 K clics : le potentiel existe, mais les conversions ne sont pas attribu&#233;es correctement &#224; ce canal dans GA4.
+                        Pour un site qui investit dans le SEO, voir la part Organic Search &#224; seulement 11,3 % du trafic total est faible. Search Console r&#233;v&#232;le pourtant 155 K impressions et 2,5 K clics : le potentiel existe, mais les conversions ne sont pas attribu&#233;es correctement &#224; ce canal dans GA4.
                     </div>
                     <div class="ev-source">Source : GA4 + Search Console</div>
                 </div>
@@ -1283,7 +1284,7 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             <h3 style="margin:24px 0 12px; font-size:1rem; color:var(--accent);">&#128161; Actions recommand&#233;es suite &#224; cet audit Site Kit</h3>
             <ol style="margin-left:20px; line-height:1.9; font-size:0.92rem;">
                 <li><strong>Filtrer le trafic bot dans GA4</strong> &mdash; Activer "Bot filtering" dans les param&#232;tres de la propri&#233;t&#233; GA4. Ajouter une exclusion d'IP/de pays pour Lanzhou, Singapore et Tunis si confirm&#233; comme spam.</li>
-                <li><strong>V&#233;rifier l'installation du tag GA4</strong> &mdash; Tester sur 5 pages cl&#233;s avec l'extension Tag Assistant. La chute -66 % visiteurs combin&#233;e &#224; +92 % visiteurs Search dans Search Console sugg&#232;re fortement un probl&#232;me de mesure.</li>
+                <li><strong>V&#233;rifier l'installation du tag GA4 (urgence absolue)</strong> &mdash; La chute simultan&#233;e de &minus;66 % visiteurs GA4, &minus;92 % visiteurs Search (widget Site Kit) et &minus;88,3 % Key Events, alors que Search Console (qui n'utilise pas GA4) progresse de +16,4 %, indique fortement un tag GA4 cass&#233; ou bloqu&#233; par le consentement cookies. Tester sur 5 pages cl&#233;s avec Tag Assistant.</li>
                 <li><strong>Auditer les sources "Direct"</strong> &mdash; Ajouter des UTM aux campagnes (newsletters, signatures e-mail, QR codes) pour r&#233;duire la part Direct artificielle.</li>
                 <li><strong>R&#233;soudre les 9 864 erreurs 404</strong> (d&#233;j&#224; en plan d'action) &mdash; confirmation par Site Kit que les 404 dominent les m&#233;triques d'engagement.</li>
                 <li><strong>Optimiser le title/meta de la page "Batterie Atmoce"</strong> &mdash; 584 impressions pour seulement 19 clics (CTR 3,3 %). Premier gain non-marque facile.</li>
