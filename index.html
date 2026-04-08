@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,91 +37,272 @@ body {
     color: var(--text);
     line-height: 1.6;
     min-height: 100vh;
+    overflow-x: hidden;
 }
-.container { max-width: 1200px; margin: 0 auto; padding: 24px; }
-.header {
-    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
-    padding: 48px 0 60px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+
+/* ============ DASHBOARD LAYOUT ============ */
+.app {
+    display: flex;
+    min-height: 100vh;
 }
-.header::before {
-    content: '';
-    position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: radial-gradient(ellipse at center, rgba(99,102,241,0.15) 0%, transparent 70%);
-    animation: pulse 4s ease-in-out infinite;
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    background: var(--surface);
+    border-right: 1px solid var(--card-border);
+    padding: 24px 18px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
-@keyframes pulse { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
-.header h1 { font-size: 2rem; font-weight: 700; color: white; position: relative; }
-.header .domain { font-size: 1.1rem; color: #a5b4fc; margin-top: 8px; position: relative; }
-.header .timestamp { font-size: 0.85rem; color: #818cf8; margin-top: 4px; position: relative; }
-.header .version-badge { display: inline-block; background: rgba(34,197,94,0.2); color: #86efac; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-top: 10px; position: relative; }
-.theme-toggle {
-    position: fixed; top: 16px; right: 16px; z-index: 100;
-    background: var(--surface); border: 1px solid var(--card-border);
-    border-radius: 50%; width: 44px; height: 44px;
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer; font-size: 1.2rem; transition: all 0.3s;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+.sidebar::-webkit-scrollbar { width: 6px; }
+.sidebar::-webkit-scrollbar-thumb { background: var(--card-border); border-radius: 3px; }
+
+.brand {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+    padding: 4px 8px 16px;
+    border-bottom: 1px solid var(--card-border);
 }
-.theme-toggle:hover { transform: scale(1.1); }
-.score-hero {
-    display: flex; justify-content: center; align-items: center;
-    gap: 48px; padding: 40px 0; flex-wrap: wrap;
+.brand-logo {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    display: block;
 }
-.score-gauge { position: relative; width: 180px; height: 180px; }
+.logo-light-theme { display: none; }
+[data-theme="light"] .logo-dark-theme { display: none; }
+[data-theme="light"] .logo-light-theme { display: block; }
+.brand-sub { font-size: 0.72rem; color: var(--text-muted); padding-left: 2px; }
+
+.sidebar-score {
+    display: flex; align-items: center; gap: 14px;
+    padding: 14px;
+    background: var(--bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+}
+.score-gauge { position: relative; width: 84px; height: 84px; flex-shrink: 0; }
 .score-gauge svg { width: 100%; height: 100%; }
 .score-gauge .gauge-value {
     position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
     text-align: center;
 }
-.score-gauge .gauge-number { font-size: 3rem; font-weight: 800; color: #f97316; }
-.score-gauge .gauge-grade { font-size: 1rem; color: var(--text-muted); }
-.score-stats { display: flex; gap: 24px; }
-.stat-card {
-    background: var(--card); border: 1px solid var(--card-border);
-    border-radius: var(--radius); padding: 20px 28px; text-align: center;
-    min-width: 100px;
+.score-gauge .gauge-number { font-size: 1.6rem; font-weight: 800; color: #f97316; }
+.score-gauge .gauge-grade { font-size: 0.65rem; color: var(--text-muted); }
+.sidebar-score-info { flex: 1; }
+.sidebar-score-info .label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); }
+.sidebar-score-info .domain { font-size: 0.85rem; font-weight: 700; color: var(--text); margin-top: 2px; }
+.sidebar-score-info .version { display: inline-block; font-size: 0.65rem; padding: 2px 8px; border-radius: 100px; background: rgba(34,197,94,0.15); color: #86efac; margin-top: 4px; font-weight: 600; }
+
+.sidebar-section-title {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    padding: 0 8px;
+    font-weight: 600;
 }
-.stat-value { font-size: 2rem; font-weight: 700; }
-.stat-label { font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-.stat-critical .stat-value { color: var(--red); }
-.stat-warning .stat-value { color: var(--yellow); }
-.stat-pass .stat-value { color: var(--green); }
-.categories { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; margin: 32px 0; }
-.category-card {
-    background: var(--card); border: 1px solid var(--card-border);
-    border-radius: var(--radius); padding: 20px; text-align: center;
-    cursor: pointer; transition: all 0.3s;
-    position: relative;
+
+/* Nav groups (collapsible categories) */
+.nav-group { display: flex; flex-direction: column; }
+.nav-group-header {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 8px 6px;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    user-select: none;
+    transition: color 0.2s;
 }
-.category-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px var(--accent-glow); border-color: var(--accent); }
-.category-card .ring { width: 70px; height: 70px; margin: 0 auto 8px; }
-.category-card .ring-label {
-    position: absolute; top: 52px; left: 50%; transform: translate(-50%, -50%);
-    font-size: 1.1rem; font-weight: 700;
+.nav-group-header:hover { color: var(--text); }
+.nav-group-header .caret {
+    transition: transform 0.25s;
+    font-size: 0.6rem;
+    color: var(--text-muted);
 }
-.ring-progress { transition: stroke-dasharray 1s ease; }
-.category-icon { font-size: 1.3rem; margin: 4px 0; }
-.category-name { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
+.nav-group.collapsed .caret { transform: rotate(-90deg); }
+.nav-group-items {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.2s;
+    max-height: 800px;
+    opacity: 1;
+}
+.nav-group.collapsed .nav-group-items {
+    max-height: 0;
+    opacity: 0;
+}
+
+.nav-list { display: flex; flex-direction: column; gap: 4px; }
+
+/* Featured item (Audit Site Kit) */
+.nav-featured {
+    background: linear-gradient(135deg, rgba(6,182,212,0.12), rgba(99,102,241,0.08)) !important;
+    border-color: rgba(6,182,212,0.35) !important;
+    margin-bottom: 8px;
+}
+.nav-featured .nav-icon {
+    background: linear-gradient(135deg, var(--cyan), var(--accent)) !important;
+    color: white !important;
+}
+.nav-featured .nav-label { font-weight: 700; }
+.nav-featured.active {
+    background: linear-gradient(135deg, rgba(6,182,212,0.22), rgba(99,102,241,0.15)) !important;
+    border-color: var(--cyan) !important;
+    box-shadow: 0 4px 14px rgba(6,182,212,0.25) !important;
+}
+.nav-item {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    color: var(--text);
+    font-family: inherit;
+}
+.nav-item:hover {
+    background: rgba(99,102,241,0.08);
+    border-color: rgba(99,102,241,0.2);
+}
+.nav-item.active {
+    background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.05));
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+.nav-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    background: var(--card-border);
+    flex-shrink: 0;
+}
+.nav-item.active .nav-icon { background: var(--accent); color: white; }
+.nav-label { flex: 1; font-size: 0.85rem; font-weight: 500; }
+.nav-score {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 100px;
+    background: var(--card-border);
+    color: var(--text-muted);
+    min-width: 32px;
+    text-align: center;
+}
+.nav-score.s-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.nav-score.s-warning { background: rgba(234,179,8,0.15); color: var(--yellow); }
+.nav-score.s-pass { background: rgba(34,197,94,0.15); color: var(--green); }
+.nav-score.s-new { background: rgba(6,182,212,0.15); color: var(--cyan); }
+
+/* ============ MAIN CONTENT ============ */
+.main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 20px 32px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--card-border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+}
+.topbar-left h1 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text);
+}
+.topbar-left .update-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+.topbar-left .update-note strong { color: var(--cyan); }
+.topbar-kpis { display: flex; gap: 12px; align-items: center; }
+.kpi-card {
+    background: var(--bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 10px 16px;
+    text-align: center;
+    min-width: 70px;
+}
+.kpi-value { font-size: 1.4rem; font-weight: 800; line-height: 1.1; }
+.kpi-label { font-size: 0.65rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+.kpi-card.k-critical .kpi-value { color: var(--red); }
+.kpi-card.k-warning .kpi-value { color: var(--yellow); }
+.kpi-card.k-pass .kpi-value { color: var(--green); }
+.theme-toggle {
+    background: var(--bg); border: 1px solid var(--card-border);
+    border-radius: 50%; width: 38px; height: 38px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; font-size: 1rem; transition: all 0.3s;
+    flex-shrink: 0;
+}
+.theme-toggle:hover { transform: scale(1.1); }
+
+.content {
+    flex: 1;
+    padding: 28px 32px;
+    overflow-x: hidden;
+}
+
+/* Panels - only one visible at a time */
+.panel { display: none; animation: fadeIn 0.3s; }
+.panel.active { display: block; }
+.panel-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--card-border);
+}
+.panel-header h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 .section {
     background: var(--card); border: 1px solid var(--card-border);
-    border-radius: var(--radius); margin: 24px 0; overflow: hidden;
+    border-radius: var(--radius); overflow: hidden;
+    display: none;
+    animation: fadeIn 0.3s;
 }
+.section.active { display: block; }
 .section-header {
-    padding: 20px 24px; cursor: pointer; display: flex;
-    align-items: center; justify-content: space-between;
-    transition: background 0.2s;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(135deg, rgba(99,102,241,0.06), transparent);
+    border-bottom: 1px solid var(--card-border);
 }
-.section-header:hover { background: rgba(99,102,241,0.05); }
-.section-header h2 { font-size: 1.15rem; font-weight: 600; display: flex; align-items: center; gap: 10px; }
-.section-header .chevron { transition: transform 0.3s; font-size: 1.2rem; color: var(--text-muted); }
-.section-header .chevron.open { transform: rotate(180deg); }
-.section-body { padding: 0 24px 24px; display: none; }
-.section-body.open { display: block; animation: fadeIn 0.3s; }
+.section-header h2 { font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.section-header .chevron { display: none; }
+.section-body { padding: 24px; display: block; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
 table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.9rem; }
 th { text-align: left; padding: 10px 12px; border-bottom: 2px solid var(--card-border); color: var(--text-muted); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -197,12 +378,90 @@ tr:hover td { background: rgba(99,102,241,0.03); }
 }
 .correction-banner strong { color: var(--cyan); }
 
-@media (max-width: 768px) {
-    .score-hero { flex-direction: column; gap: 24px; }
-    .score-stats { flex-wrap: wrap; justify-content: center; }
-    .categories { grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); }
-    .container { padding: 16px; }
+/* Hamburger button - hidden on desktop */
+.menu-toggle {
+    display: none;
+    background: var(--bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    width: 42px; height: 42px;
+    cursor: pointer;
+    font-size: 1.3rem;
+    color: var(--text);
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.menu-toggle:hover { background: var(--card-border); }
+
+/* Backdrop for slide-out menu */
+.sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 150;
+    backdrop-filter: blur(3px);
+    animation: fadeIn 0.25s;
+}
+.sidebar-backdrop.open { display: block; }
+
+@media (max-width: 1024px) {
+    .app { display: block; }
+
+    /* Sidebar becomes a slide-out drawer */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 290px;
+        height: 100vh;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 200;
+        box-shadow: 4px 0 24px rgba(0,0,0,0.4);
+    }
+    .sidebar.open { transform: translateX(0); }
+
+    .menu-toggle { display: flex; }
+
+    .main { width: 100%; }
+
+    .topbar {
+        flex-wrap: wrap;
+        padding: 14px 16px;
+        gap: 12px;
+        align-items: flex-start;
+    }
+    .topbar-left {
+        flex: 1;
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .topbar-left-text { flex: 1; min-width: 0; }
+    .topbar-left h1 { font-size: 1.15rem; }
+    .topbar-left .update-note { font-size: 0.7rem; }
+    .topbar-kpis {
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 8px;
+        order: 3;
+    }
+    .kpi-card { flex: 1; min-width: 70px; padding: 8px 10px; }
+    .theme-toggle { margin-left: auto; }
+
+    .content { padding: 16px; }
     .evidence-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+    .topbar-left h1 { font-size: 1rem; }
+    .kpi-value { font-size: 1.2rem; }
+    .kpi-label { font-size: 0.6rem; }
 }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -211,168 +470,190 @@ tr:hover td { background: rgba(99,102,241,0.03); }
 </head>
 <body>
 
-<div class="theme-toggle" onclick="toggleTheme()" title="Changer le th&#232;me">&#127769;</div>
+<div class="app">
 
-<div class="header">
-    <div class="container">
-        <h1>Rapport d'analyse SEO</h1>
-        <div class="domain">naoenergy.ch</div>
-        <div class="timestamp">Mis &#224; jour : 3 avril 2026 — avec preuves WordPress Admin</div>
-        <div class="version-badge">V2 — V&#233;rifi&#233; &amp; corrig&#233;</div>
-    </div>
-</div>
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar">
+        <div class="brand">
+            <img src="imgi_29_logo-light.svg" alt="naoenergy" class="brand-logo logo-dark-theme">
+            <img src="imgi_2_logo-light-1.svg" alt="naoenergy" class="brand-logo logo-light-theme">
+            <span class="brand-sub">Rapport d'analyse SEO</span>
+        </div>
 
-<div class="container">
-
-    <!-- Score global -->
-    <div class="score-hero">
-        <div class="score-gauge">
-            <svg viewBox="0 0 200 200">
-                <circle cx="100" cy="100" r="85" fill="none" stroke="var(--card-border)" stroke-width="12"/>
-                <circle cx="100" cy="100" r="85" fill="none" stroke="#f97316" stroke-width="12"
-                    stroke-dasharray="283.5 534.07" stroke-linecap="round"
-                    transform="rotate(-90 100 100)"/>
-            </svg>
-            <div class="gauge-value">
-                <div class="gauge-number">53</div>
-                <div class="gauge-grade">Note : D+</div>
+        <div class="sidebar-score">
+            <div class="score-gauge">
+                <svg viewBox="0 0 200 200">
+                    <circle cx="100" cy="100" r="85" fill="none" stroke="var(--card-border)" stroke-width="14"/>
+                    <circle cx="100" cy="100" r="85" fill="none" stroke="#f97316" stroke-width="14"
+                        stroke-dasharray="283.5 534.07" stroke-linecap="round"
+                        transform="rotate(-90 100 100)"/>
+                </svg>
+                <div class="gauge-value">
+                    <div class="gauge-number">53</div>
+                    <div class="gauge-grade">D+</div>
+                </div>
+            </div>
+            <div class="sidebar-score-info">
+                <div class="label">Score global</div>
+                <div class="domain">naoenergy.ch</div>
+                <div class="version">V2 — V&#233;rifi&#233;</div>
             </div>
         </div>
-        <div class="score-stats">
-            <div class="stat-card stat-critical">
-                <div class="stat-value">8</div>
-                <div class="stat-label">Critique</div>
-            </div>
-            <div class="stat-card stat-warning">
-                <div class="stat-value">19</div>
-                <div class="stat-label">Attention</div>
-            </div>
-            <div class="stat-card stat-pass">
-                <div class="stat-value">9</div>
-                <div class="stat-label">Valid&#233;</div>
-            </div>
-        </div>
-    </div>
 
-    <div class="correction-banner">
-        <strong>&#9888;&#65039; Notes de mise &#224; jour V2 :</strong> Ce rapport a &#233;t&#233; mis &#224; jour avec les r&#233;sultats d'un audit WordPress admin r&#233;alis&#233; le 3 avril 2026.
-        Corrections cl&#233;s : le balisage Schema EST pr&#233;sent (Yoast SEO g&#233;n&#232;re du JSON-LD). Nouveaux probl&#232;mes critiques ajout&#233;s pour la performance (JS WP Rocket d&#233;sactiv&#233;), 9 864 erreurs 404,
-        quota Imagify &#233;puis&#233; et images WebP manquantes. Le score global a &#233;t&#233; r&#233;vis&#233; &#224; la baisse de 62 &#224; 53 en raison de probl&#232;mes c&#244;t&#233; serveur nouvellement d&#233;couverts.
-    </div>
+        <!-- Featured: Audit Site Kit -->
+        <nav class="nav-list">
+            <button class="nav-item nav-featured active" data-target="sitekit">
+                <span class="nav-icon">&#128202;</span>
+                <span class="nav-label">Audit Site Kit</span>
+                <span class="nav-score s-new">NEW</span>
+            </button>
+        </nav>
 
-    <!-- Cartes de cat&#233;gories -->
-    <div class="categories">
-        <div class="category-card" onclick="scrollToSection('wp_admin')">
-            <svg class="ring" viewBox="0 0 90 90">
-                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
-                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
-                    stroke-dasharray="100.5 251.327" stroke-linecap="round"
-                    transform="rotate(-90 45 45)" class="ring-progress"/>
-            </svg>
-            <div class="ring-label">40</div>
-            <div class="category-icon">&#9881;&#65039;</div>
-            <div class="category-name">WP Admin</div>
+        <!-- Group: Configuration -->
+        <div class="nav-group">
+            <div class="nav-group-header" onclick="toggleGroup(this)">
+                <span class="caret">&#9662;</span>
+                <span>Configuration</span>
+            </div>
+            <div class="nav-group-items">
+                <button class="nav-item" data-target="wp_admin">
+                    <span class="nav-icon">&#9881;&#65039;</span>
+                    <span class="nav-label">WP Admin</span>
+                    <span class="nav-score s-critical">40</span>
+                </button>
+            </div>
         </div>
-        <div class="category-card" onclick="scrollToSection('performance')">
-            <svg class="ring" viewBox="0 0 90 90">
-                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
-                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
-                    stroke-dasharray="50.3 251.327" stroke-linecap="round"
-                    transform="rotate(-90 45 45)" class="ring-progress"/>
-            </svg>
-            <div class="ring-label">20</div>
-            <div class="category-icon">&#9889;</div>
-            <div class="category-name">Performance</div>
+
+        <!-- Group: SEO Technique -->
+        <div class="nav-group">
+            <div class="nav-group-header" onclick="toggleGroup(this)">
+                <span class="caret">&#9662;</span>
+                <span>SEO Technique</span>
+            </div>
+            <div class="nav-group-items">
+                <button class="nav-item" data-target="performance">
+                    <span class="nav-icon">&#9889;</span>
+                    <span class="nav-label">Performance</span>
+                    <span class="nav-score s-critical">20</span>
+                </button>
+                <button class="nav-item" data-target="security">
+                    <span class="nav-icon">&#128274;</span>
+                    <span class="nav-label">S&#233;curit&#233;</span>
+                    <span class="nav-score s-critical">45</span>
+                </button>
+                <button class="nav-item" data-target="schema">
+                    <span class="nav-icon">&#128300;</span>
+                    <span class="nav-label">Schema</span>
+                    <span class="nav-score s-warning">60</span>
+                </button>
+                <button class="nav-item" data-target="hreflang">
+                    <span class="nav-icon">&#127757;</span>
+                    <span class="nav-label">Hreflang</span>
+                    <span class="nav-score s-critical">0</span>
+                </button>
+                <button class="nav-item" data-target="errors404">
+                    <span class="nav-icon">&#128680;</span>
+                    <span class="nav-label">Erreurs 404</span>
+                    <span class="nav-score s-critical">10</span>
+                </button>
+                <button class="nav-item" data-target="sitemap">
+                    <span class="nav-icon">&#128506;</span>
+                    <span class="nav-label">Sitemap &amp; Robots</span>
+                    <span class="nav-score s-pass">85</span>
+                </button>
+            </div>
         </div>
-        <div class="category-card" onclick="scrollToSection('security')">
-            <svg class="ring" viewBox="0 0 90 90">
-                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
-                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
-                    stroke-dasharray="113.1 251.327" stroke-linecap="round"
-                    transform="rotate(-90 45 45)" class="ring-progress"/>
-            </svg>
-            <div class="ring-label">45</div>
-            <div class="category-icon">&#128274;</div>
-            <div class="category-name">S&#233;curit&#233;</div>
+
+        <!-- Group: SEO Contenu / On-Page -->
+        <div class="nav-group">
+            <div class="nav-group-header" onclick="toggleGroup(this)">
+                <span class="caret">&#9662;</span>
+                <span>SEO Contenu</span>
+            </div>
+            <div class="nav-group-items">
+                <button class="nav-item" data-target="onpage">
+                    <span class="nav-icon">&#128221;</span>
+                    <span class="nav-label">On-Page</span>
+                    <span class="nav-score s-pass">100</span>
+                </button>
+                <button class="nav-item" data-target="social">
+                    <span class="nav-icon">&#128241;</span>
+                    <span class="nav-label">M&#233;ta social</span>
+                    <span class="nav-score s-pass">85</span>
+                </button>
+                <button class="nav-item" data-target="images">
+                    <span class="nav-icon">&#128444;&#65039;</span>
+                    <span class="nav-label">Images</span>
+                    <span class="nav-score s-critical">30</span>
+                </button>
+            </div>
         </div>
-        <div class="category-card" onclick="scrollToSection('schema')">
-            <svg class="ring" viewBox="0 0 90 90">
-                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
-                <circle cx="45" cy="45" r="40" fill="none" stroke="#eab308" stroke-width="6"
-                    stroke-dasharray="150.8 251.327" stroke-linecap="round"
-                    transform="rotate(-90 45 45)" class="ring-progress"/>
-            </svg>
-            <div class="ring-label">60</div>
-            <div class="category-icon">&#128300;</div>
-            <div class="category-name">Schema</div>
+
+        <!-- Group: Autorit&#233; & E-E-A-T -->
+        <div class="nav-group">
+            <div class="nav-group-header" onclick="toggleGroup(this)">
+                <span class="caret">&#9662;</span>
+                <span>Autorit&#233; &amp; E-E-A-T</span>
+            </div>
+            <div class="nav-group-items">
+                <button class="nav-item" data-target="entity">
+                    <span class="nav-icon">&#127963;&#65039;</span>
+                    <span class="nav-label">SEO Entit&#233;</span>
+                    <span class="nav-score s-critical">10</span>
+                </button>
+            </div>
         </div>
-        <div class="category-card" onclick="scrollToSection('social')">
-            <svg class="ring" viewBox="0 0 90 90">
-                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
-                <circle cx="45" cy="45" r="40" fill="none" stroke="#22c55e" stroke-width="6"
-                    stroke-dasharray="213.6 251.327" stroke-linecap="round"
-                    transform="rotate(-90 45 45)" class="ring-progress"/>
-            </svg>
-            <div class="ring-label">85</div>
-            <div class="category-icon">&#128241;</div>
-            <div class="category-name">M&#233;ta social</div>
+
+        <!-- Group: Actions -->
+        <div class="nav-group">
+            <div class="nav-group-header" onclick="toggleGroup(this)">
+                <span class="caret">&#9662;</span>
+                <span>Actions</span>
+            </div>
+            <div class="nav-group-items">
+                <button class="nav-item" data-target="recs">
+                    <span class="nav-icon">&#128161;</span>
+                    <span class="nav-label">Plan d'actions</span>
+                    <span class="nav-score">14</span>
+                </button>
+            </div>
         </div>
-        <div class="category-card" onclick="scrollToSection('onpage')">
-            <svg class="ring" viewBox="0 0 90 90">
-                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
-                <circle cx="45" cy="45" r="40" fill="none" stroke="#22c55e" stroke-width="6"
-                    stroke-dasharray="251.3 251.327" stroke-linecap="round"
-                    transform="rotate(-90 45 45)" class="ring-progress"/>
-            </svg>
-            <div class="ring-label">100</div>
-            <div class="category-icon">&#128221;</div>
-            <div class="category-name">On-Page</div>
+    </aside>
+
+    <!-- Backdrop for mobile slide-out -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeMenu()"></div>
+
+    <!-- ============ MAIN ============ -->
+    <main class="main">
+
+        <!-- ============ TOP BAR ============ -->
+        <div class="topbar">
+            <div class="topbar-left">
+                <button class="menu-toggle" onclick="openMenu()" aria-label="Ouvrir le menu">&#9776;</button>
+                <div class="topbar-left-text">
+                    <h1>Tableau de bord SEO</h1>
+                    <div class="update-note"><strong>Note de mise &#224; jour :</strong> 8 avril 2026</div>
+                </div>
+            </div>
+            <div class="topbar-kpis">
+                <div class="kpi-card k-critical">
+                    <div class="kpi-value">8</div>
+                    <div class="kpi-label">Critique</div>
+                </div>
+                <div class="kpi-card k-warning">
+                    <div class="kpi-value">19</div>
+                    <div class="kpi-label">Attention</div>
+                </div>
+                <div class="kpi-card k-pass">
+                    <div class="kpi-value">9</div>
+                    <div class="kpi-label">Valid&#233;</div>
+                </div>
+                <div class="theme-toggle" onclick="toggleTheme()" title="Changer le th&#232;me">&#9728;&#65039;</div>
+            </div>
         </div>
-        <div class="category-card" onclick="scrollToSection('images')">
-            <svg class="ring" viewBox="0 0 90 90">
-                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
-                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
-                    stroke-dasharray="75.4 251.327" stroke-linecap="round"
-                    transform="rotate(-90 45 45)" class="ring-progress"/>
-            </svg>
-            <div class="ring-label">30</div>
-            <div class="category-icon">&#128444;&#65039;</div>
-            <div class="category-name">Images</div>
-        </div>
-        <div class="category-card" onclick="scrollToSection('hreflang')">
-            <svg class="ring" viewBox="0 0 90 90">
-                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
-                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
-                    stroke-dasharray="0.0 251.327" stroke-linecap="round"
-                    transform="rotate(-90 45 45)" class="ring-progress"/>
-            </svg>
-            <div class="ring-label">0</div>
-            <div class="category-icon">&#127757;</div>
-            <div class="category-name">Hreflang</div>
-        </div>
-        <div class="category-card" onclick="scrollToSection('errors404')">
-            <svg class="ring" viewBox="0 0 90 90">
-                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
-                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
-                    stroke-dasharray="25.1 251.327" stroke-linecap="round"
-                    transform="rotate(-90 45 45)" class="ring-progress"/>
-            </svg>
-            <div class="ring-label">10</div>
-            <div class="category-icon">&#128680;</div>
-            <div class="category-name">Erreurs 404</div>
-        </div>
-        <div class="category-card" onclick="scrollToSection('entity')">
-            <svg class="ring" viewBox="0 0 90 90">
-                <circle cx="45" cy="45" r="40" fill="none" stroke="var(--card-border)" stroke-width="6"/>
-                <circle cx="45" cy="45" r="40" fill="none" stroke="#ef4444" stroke-width="6"
-                    stroke-dasharray="25.1 251.327" stroke-linecap="round"
-                    transform="rotate(-90 45 45)" class="ring-progress"/>
-            </svg>
-            <div class="ring-label">10</div>
-            <div class="category-icon">&#127963;&#65039;</div>
-            <div class="category-name">SEO Entit&#233;</div>
-        </div>
-    </div>
+
+        <!-- ============ CONTENT (PANELS) ============ -->
+        <div class="content">
 
     <!-- ===================== PREUVES WP ADMIN ===================== -->
     <div class="section" id="section-wp_admin" style="border-color: var(--cyan);">
@@ -835,6 +1116,186 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
         </div>
     </div>
 
+    <!-- ===================== AUDIT GOOGLE SITE KIT (NOUVEAU) ===================== -->
+    <div class="section" id="section-sitekit" style="border-color: var(--cyan);">
+        <div class="section-header" onclick="toggleSection('sitekit')">
+            <h2>&#128202; Audit Google Site Kit <span class="badge new">NOUVEAU — Donn&#233;es GA4 + Search Console</span></h2>
+            <span class="chevron" id="chevron-sitekit">&#9660;</span>
+        </div>
+        <div class="section-body open" id="body-sitekit">
+            <p style="color:var(--text-muted); margin-bottom:16px;">Donn&#233;es extraites en direct depuis le tableau de bord <strong>Site Kit by Google</strong> de naoenergy.ch (wp-admin &rarr; Site Kit). P&#233;riode analys&#233;e : <strong>9 janvier &rarr; 8 avril 2026 (90 derniers jours)</strong>. Sources : Google Analytics 4 + Google Search Console.</p>
+
+            <!-- Vue d'ensemble -->
+            <h3 style="margin:20px 0 12px; font-size:1rem;">&#128200; Vue d'ensemble (90 derniers jours)</h3>
+            <div class="summary-row">
+                <div class="summary-item"><div class="val" style="color:var(--red)">731</div><div class="lbl">Visiteurs (-66,2 %)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">1,6 K</div><div class="lbl">Pages vues (-73,5 %)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">1,67</div><div class="lbl">Pages / visite (-12,4 %)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--green)">154 K</div><div class="lbl">Impressions SC (+15,9 %)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--green)">2,5 K</div><div class="lbl">Clics SC (+16,2 %)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--green)">849</div><div class="lbl">Visiteurs Search (+92 %)</div></div>
+            </div>
+
+            <div class="correction-banner" style="background:linear-gradient(135deg, rgba(239,68,68,0.1), rgba(234,179,8,0.1)); border-color:rgba(239,68,68,0.3);">
+                <strong style="color:var(--red);">&#9888;&#65039; Divergence majeure GA4 vs Search Console :</strong> Search Console montre une croissance saine (+15,9 % impressions, +16,2 % clics, +92 % visiteurs Search), alors que GA4 affiche une chute brutale (-66,2 % visiteurs, -73,5 % pages vues). Cette divergence indique un probl&#232;me de tracking GA4 (cookies bloqu&#233;s, tag manquant sur certaines pages, ou filtrage des bots cass&#233;) <strong>OU</strong> que le trafic GA4 historique &#233;tait en grande partie compos&#233; de bots qui ne sont plus comptabilis&#233;s. &#192; investiguer en priorit&#233;.
+            </div>
+
+            <!-- Probl&#232;mes critiques -->
+            <h3 style="margin:24px 0 12px; font-size:1rem; color:var(--red);">&#128680; Probl&#232;mes critiques d&#233;tect&#233;s</h3>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#129302;</div>
+                    <div class="ev-title">40 % du trafic = bots / spam g&#233;ographique</div>
+                    <div class="ev-value red">40 %</div>
+                    <div class="ev-detail">
+                        Top villes du trafic GA4 :<br>
+                        &bull; <strong>Lanzhou (Chine)</strong> &mdash; 18,6 %<br>
+                        &bull; <strong>Singapore</strong> &mdash; 17,2 %<br>
+                        &bull; <strong>Tunis</strong> &mdash; 4,2 %<br>
+                        Aucune ville suisse dans le top 3 alors que la cible est la Suisse romande. Ces visites sont presque certainement du trafic bot/spam non filtr&#233;.
+                    </div>
+                    <div class="ev-source">Source : GA4 &rarr; Site Kit (Emplacements)</div>
+                </div>
+
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#10067;</div>
+                    <div class="ev-title">68,1 % de trafic Direct &mdash; anormalement &#233;lev&#233;</div>
+                    <div class="ev-value red">68,1 %</div>
+                    <div class="ev-detail">
+                        R&#233;partition par canal :<br>
+                        &bull; Direct &mdash; <strong>68,1 %</strong><br>
+                        &bull; Organic Social &mdash; 14,6 %<br>
+                        &bull; Organic Search &mdash; 11,3 %<br>
+                        &bull; Referral &mdash; 2,8 %<br>
+                        Un site PME dont le trafic est &#224; 68 % "Direct" est suspect : combinaison de bots, de campagnes sans UTM, ou d'un trackant cass&#233; sur les liens entrants.
+                    </div>
+                    <div class="ev-source">Source : GA4 &rarr; Site Kit (Canaux)</div>
+                </div>
+
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#128683;</div>
+                    <div class="ev-title">"Most engaging pages" = pages 404</div>
+                    <div class="ev-value red">100 %</div>
+                    <div class="ev-detail">
+                        Les 3 pages les plus engageantes selon Site Kit sont toutes intitul&#233;es <strong>"Page non trouv&#233;e &mdash; naoenergy"</strong> avec un taux d'engagement de 100 %. Cela signifie que les erreurs 404 sont si nombreuses qu'elles dominent les m&#233;triques d'engagement &mdash; en parfaite coh&#233;rence avec les <strong>9 864 erreurs 404</strong> d&#233;j&#224; identifi&#233;es dans l'audit WP Admin.
+                    </div>
+                    <div class="ev-source">Source : GA4 &rarr; Site Kit (Most engaging pages)</div>
+                </div>
+
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#128201;</div>
+                    <div class="ev-title">Chute brutale des visiteurs GA4</div>
+                    <div class="ev-value red">-66,2 %</div>
+                    <div class="ev-detail">
+                        731 visiteurs sur 90 jours contre ~2 165 sur la p&#233;riode pr&#233;c&#233;dente.<br>
+                        &bull; Pages vues : -73,5 %<br>
+                        &bull; Visites par visiteur : -11 %<br>
+                        &bull; Nouveaux visiteurs : -64,9 %<br>
+                        Soit le tracking GA4 est cass&#233; (probable), soit le trafic r&#233;el a effectivement chut&#233; &mdash; les deux n&#233;cessitent une action imm&#233;diate.
+                    </div>
+                    <div class="ev-source">Source : GA4 &rarr; Site Kit (Audience)</div>
+                </div>
+            </div>
+
+            <!-- Avertissements -->
+            <h3 style="margin:24px 0 12px; font-size:1rem; color:var(--yellow);">&#9888;&#65039; Avertissements</h3>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon">&#128269;</div>
+                    <div class="ev-title">Part Organic Search faible</div>
+                    <div class="ev-value yellow">11,3 %</div>
+                    <div class="ev-detail">
+                        Pour un site qui investit dans le SEO, voir la part Organic Search &#224; seulement 11,3 % du trafic total est faible. Search Console r&#233;v&#232;le pourtant 154 K impressions et 2,5 K clics : le potentiel existe, mais les conversions ne sont pas attribu&#233;es correctement &#224; ce canal dans GA4.
+                    </div>
+                    <div class="ev-source">Source : GA4 + Search Console</div>
+                </div>
+
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon">&#128176;</div>
+                    <div class="ev-title">Conversions principalement issues du Paid Search</div>
+                    <div class="ev-value yellow">20 %</div>
+                    <div class="ev-detail">
+                        Le canal qui d&#233;clenche le plus de "key events" est le <strong>Paid Search</strong> (20 % des visites convertissent, +15 %). Cela cr&#233;e une d&#233;pendance forte aux campagnes Google Ads. Renforcer le SEO permettrait de r&#233;duire le co&#251;t d'acquisition.
+                    </div>
+                    <div class="ev-source">Source : GA4 &rarr; Site Kit (Conversions)</div>
+                </div>
+
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon">&#128221;</div>
+                    <div class="ev-title">Faible diversit&#233; s&#233;mantique des mots-cl&#233;s</div>
+                    <div class="ev-value yellow">9 / 10</div>
+                    <div class="ev-detail">
+                        9 des 10 premiers mots-cl&#233;s Search Console sont des variantes du nom de marque (naoenergy, nao energy sa, naoenergie, neoenergy&hellip;). Seul <strong>"batterie atmoce avis"</strong> (19 clics, 584 impressions) est non-marque. Le SEO non-marque g&#233;n&#232;re tr&#232;s peu de trafic qualifi&#233;.
+                    </div>
+                    <div class="ev-source">Source : Search Console &rarr; Site Kit (Top queries)</div>
+                </div>
+
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon">&#128203;</div>
+                    <div class="ev-title">Confusion sur l'orthographe de la marque</div>
+                    <div class="ev-detail">
+                        Search Console r&#233;v&#232;le 6 variantes orthographiques pour la m&#234;me marque : naoenergy, nao energy, nao energy sa, nao energie, naoenergie, neoenergy. Cumul&#233;, cela repr&#233;sente plus de <strong>900 clics</strong>. N&#233;cessite une page "&#192; propos" optimis&#233;e + Schema Organization avec <code>alternateName</code>.
+                    </div>
+                    <div class="ev-source">Source : Search Console &rarr; Site Kit (Top queries)</div>
+                </div>
+            </div>
+
+            <!-- Top mots-cl&#233;s Search Console -->
+            <h3 style="margin:24px 0 12px; font-size:1rem;">&#128270; Top 10 mots-cl&#233;s &mdash; Search Console (90 derniers jours)</h3>
+            <table>
+                <thead><tr><th>Requ&#234;te</th><th>Type</th><th>Clics</th><th>Impressions</th><th>CTR estim&#233;</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>naoenergy</strong></td><td><span class="badge info">Marque</span></td><td>440</td><td>1 193</td><td>36,9 %</td></tr>
+                    <tr><td>nao energy</td><td><span class="badge info">Marque</span></td><td>149</td><td>547</td><td>27,2 %</td></tr>
+                    <tr><td>nao energy sa</td><td><span class="badge info">Marque</span></td><td>138</td><td>612</td><td>22,5 %</td></tr>
+                    <tr><td>naoenergy sa</td><td><span class="badge info">Marque</span></td><td>94</td><td>257</td><td>36,6 %</td></tr>
+                    <tr><td>naoenergy geneve</td><td><span class="badge info">Marque + g&#233;o</span></td><td>33</td><td>184</td><td>17,9 %</td></tr>
+                    <tr><td>naoenergy sa plan les ouates</td><td><span class="badge info">Marque + g&#233;o</span></td><td>20</td><td>120</td><td>16,7 %</td></tr>
+                    <tr><td><strong>batterie atmoce avis</strong></td><td><span class="badge new">Non-marque</span></td><td>19</td><td>584</td><td>3,3 %</td></tr>
+                    <tr><td>nao energie</td><td><span class="badge warning">Marque (faute)</span></td><td>18</td><td>81</td><td>22,2 %</td></tr>
+                    <tr><td>naoenergie</td><td><span class="badge warning">Marque (faute)</span></td><td>18</td><td>47</td><td>38,3 %</td></tr>
+                    <tr><td>neoenergy</td><td><span class="badge warning">Marque (faute)</span></td><td>18</td><td>65</td><td>27,7 %</td></tr>
+                </tbody>
+            </table>
+            <div class="issue-item warning"><span class="issue-badge">INSIGHT</span><div>Le seul mot-cl&#233; non-marque du top 10 (<strong>batterie atmoce avis</strong>) a un CTR tr&#232;s bas (3,3 %) malgr&#233; 584 impressions &mdash; opportunit&#233; d'optimisation du title/meta de la page correspondante.</div></div>
+
+            <!-- Top pages -->
+            <h3 style="margin:24px 0 12px; font-size:1rem;">&#128196; Top 10 pages les plus performantes (GA4 &mdash; 90 derniers jours)</h3>
+            <table>
+                <thead><tr><th>Page</th><th>Pages vues</th><th>Sessions</th><th>Engagement</th><th>Dur&#233;e moy.</th></tr></thead>
+                <tbody>
+                    <tr><td class="link-url">/ (Accueil &mdash; Panneaux solaires &amp; PAC)</td><td>413</td><td>349</td><td>57,88 %</td><td>1 min 32 s</td></tr>
+                    <tr><td class="link-url">/nos-realisations/</td><td>131</td><td>54</td><td><strong style="color:var(--green)">75,93 %</strong></td><td><strong>3 min 45 s</strong></td></tr>
+                    <tr><td class="link-url">/solutions/pompes-a-chaleur/</td><td>93</td><td>79</td><td>51,9 %</td><td>1 min 49 s</td></tr>
+                    <tr><td class="link-url">/solutions/panneaux-photovoltaiques/</td><td>83</td><td>60</td><td>48,33 %</td><td>2 min 27 s</td></tr>
+                    <tr><td class="link-url">/contact/</td><td>70</td><td>72</td><td>91,67 %</td><td>1 min 11 s</td></tr>
+                    <tr><td class="link-url">/solutions/batteries-de-stockage/</td><td>56</td><td>49</td><td>44,9 %</td><td>2 min 19 s</td></tr>
+                    <tr><td class="link-url">/actualites/</td><td>52</td><td>12</td><td>91,67 %</td><td>3 min 40 s</td></tr>
+                    <tr><td class="link-url">/toutes-nos-solutions-solaires-suisse/</td><td>50</td><td>45</td><td>57,78 %</td><td>1 min 36 s</td></tr>
+                    <tr><td class="link-url">/notre-equipe/</td><td>24</td><td>20</td><td>80 %</td><td>1 min 58 s</td></tr>
+                    <tr><td class="link-url">/nouvelles-reglementations-energie-2026-suisse-romande/</td><td>22</td><td>21</td><td>52,38 %</td><td>2 min 23 s</td></tr>
+                </tbody>
+            </table>
+            <div class="issue-item info"><span class="issue-badge">PASS</span><div><strong>/nos-realisations/</strong> est la page la plus performante en qualit&#233; (75,93 % engagement, 3 min 45 s de dur&#233;e moyenne) &mdash; capitaliser dessus avec plus de liens internes et de cas clients d&#233;taill&#233;s.</div></div>
+            <div class="issue-item warning"><span class="issue-badge">NOTE</span><div>Les pages "Solutions" (pompes &#224; chaleur, panneaux photovolta&#239;ques, batteries) ont un engagement &lt; 52 % &mdash; r&#233;viser le contenu, ajouter des CTAs et des t&#233;moignages clients.</div></div>
+
+            <!-- Recommandations sp&#233;cifiques Site Kit -->
+            <h3 style="margin:24px 0 12px; font-size:1rem; color:var(--accent);">&#128161; Actions recommand&#233;es suite &#224; cet audit Site Kit</h3>
+            <ol style="margin-left:20px; line-height:1.9; font-size:0.92rem;">
+                <li><strong>Filtrer le trafic bot dans GA4</strong> &mdash; Activer "Bot filtering" dans les param&#232;tres de la propri&#233;t&#233; GA4. Ajouter une exclusion d'IP/de pays pour Lanzhou, Singapore et Tunis si confirm&#233; comme spam.</li>
+                <li><strong>V&#233;rifier l'installation du tag GA4</strong> &mdash; Tester sur 5 pages cl&#233;s avec l'extension Tag Assistant. La chute -66 % visiteurs combin&#233;e &#224; +92 % visiteurs Search dans Search Console sugg&#232;re fortement un probl&#232;me de mesure.</li>
+                <li><strong>Auditer les sources "Direct"</strong> &mdash; Ajouter des UTM aux campagnes (newsletters, signatures e-mail, QR codes) pour r&#233;duire la part Direct artificielle.</li>
+                <li><strong>R&#233;soudre les 9 864 erreurs 404</strong> (d&#233;j&#224; en plan d'action) &mdash; confirmation par Site Kit que les 404 dominent les m&#233;triques d'engagement.</li>
+                <li><strong>Optimiser le title/meta de la page "Batterie Atmoce"</strong> &mdash; 584 impressions pour seulement 19 clics (CTR 3,3 %). Premier gain non-marque facile.</li>
+                <li><strong>Cr&#233;er du contenu non-marque</strong> &mdash; 9 mots-cl&#233;s sur 10 sont des variantes de marque. Cibler des requ&#234;tes informationnelles : "prix panneau solaire suisse romande", "subvention pompe &#224; chaleur Vaud", "batterie domestique avis"&hellip;</li>
+                <li><strong>Schema Organization avec <code>alternateName</code></strong> &mdash; D&#233;clarer toutes les variantes : "Nao Energy", "Nao Energy SA", "naoenergy sa". R&#233;duit la confusion d'orthographe (~900 clics cumul&#233;s).</li>
+                <li><strong>Configurer les conversions GA4 hors Paid Search</strong> &mdash; D&#233;finir les key events (formulaire de contact, t&#233;l&#233;phone cliqu&#233;, devis demand&#233;) et v&#233;rifier qu'ils sont attribu&#233;s correctement aux canaux Organic Search et Direct.</li>
+            </ol>
+
+            <p style="color:var(--text-muted); font-size:0.8rem; margin-top:20px; font-style:italic;">Audit Site Kit r&#233;alis&#233; le 8 avril 2026 via une lecture directe du tableau de bord wp-admin/admin.php?page=googlesitekit-dashboard. Toutes les valeurs sont issues du widget officiel Site Kit (GA4 + Search Console).</p>
+        </div>
+    </div>
+
     <!-- ===================== RECOMMANDATIONS (MIS &#192; JOUR) ===================== -->
     <div class="section" id="section-recs">
         <div class="section-header" onclick="toggleSection('recs')">
@@ -933,32 +1394,66 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
         </div>
     </div>
 
-</div>
+            <div class="footer" style="text-align:center; padding:32px 0 8px; color:var(--text-muted); font-size:0.78rem; border-top:1px solid var(--card-border); margin-top:32px;">
+                <p>G&#233;n&#233;r&#233; par Agentic SEO Skill &middot; Mis &#224; jour le 3 avril 2026 avec preuves WordPress Admin</p>
+                <p style="margin-top:4px;">V2 — V&#233;rifi&#233; &amp; corrig&#233; avec les r&#233;sultats de l'audit wp-admin</p>
+            </div>
 
-<div class="footer">
-    <p>G&#233;n&#233;r&#233; par Agentic SEO Skill &middot; Mis &#224; jour le 3 avril 2026 avec preuves WordPress Admin</p>
-    <p style="margin-top:4px;">V2 — V&#233;rifi&#233; &amp; corrig&#233; avec les r&#233;sultats de l'audit wp-admin</p>
-</div>
+        </div><!-- /.content -->
+    </main>
+</div><!-- /.app -->
 
 <script>
-function toggleSection(id) {
-    const body = document.getElementById('body-' + id);
-    const chevron = document.getElementById('chevron-' + id);
-    body.classList.toggle('open');
-    chevron.classList.toggle('open');
+function showPanel(id) {
+    // Hide all sections
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    // Show target
+    const target = document.getElementById('section-' + id);
+    if (target) target.classList.add('active');
+    // Update nav active state
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    const navBtn = document.querySelector('.nav-item[data-target="' + id + '"]');
+    if (navBtn) navBtn.classList.add('active');
+    // Scroll content area to top
+    const content = document.querySelector('.content');
+    if (content) content.scrollTop = 0;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
-function scrollToSection(id) {
-    const el = document.getElementById('section-' + id);
-    if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        const body = document.getElementById('body-' + id);
-        const chevron = document.getElementById('chevron-' + id);
-        if (!body.classList.contains('open')) {
-            body.classList.add('open');
-            chevron.classList.add('open');
-        }
-    }
+
+// Collapsible nav groups
+function toggleGroup(header) {
+    header.parentElement.classList.toggle('collapsed');
 }
+
+// Mobile slide-out menu
+function openMenu() {
+    document.querySelector('.sidebar').classList.add('open');
+    document.getElementById('sidebarBackdrop').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+function closeMenu() {
+    document.querySelector('.sidebar').classList.remove('open');
+    document.getElementById('sidebarBackdrop').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+// Bind nav clicks - auto-close menu on mobile
+document.querySelectorAll('.nav-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+        showPanel(btn.dataset.target);
+        if (window.innerWidth <= 1024) closeMenu();
+    });
+});
+
+// Close menu on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+});
+
+// Legacy stubs (kept in case any inline handler still references them)
+function toggleSection(id) { showPanel(id); }
+function scrollToSection(id) { showPanel(id); }
+
 function toggleTheme() {
     const html = document.documentElement;
     const btn = document.querySelector('.theme-toggle');
@@ -970,11 +1465,9 @@ function toggleTheme() {
         btn.innerHTML = '&#9728;&#65039;';
     }
 }
-// Auto-open WP admin and recommendations sections
-document.getElementById('body-wp_admin').classList.add('open');
-document.getElementById('chevron-wp_admin').classList.add('open');
-document.getElementById('body-recs').classList.add('open');
-document.getElementById('chevron-recs').classList.add('open');
+
+// Open Audit Site Kit by default (featured)
+showPanel('sitekit');
 </script>
 
 </body>
