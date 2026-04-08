@@ -835,6 +835,186 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
         </div>
     </div>
 
+    <!-- ===================== AUDIT GOOGLE SITE KIT (NOUVEAU) ===================== -->
+    <div class="section" id="section-sitekit" style="border-color: var(--cyan);">
+        <div class="section-header" onclick="toggleSection('sitekit')">
+            <h2>&#128202; Audit Google Site Kit <span class="badge new">NOUVEAU — Donn&#233;es GA4 + Search Console</span></h2>
+            <span class="chevron" id="chevron-sitekit">&#9660;</span>
+        </div>
+        <div class="section-body open" id="body-sitekit">
+            <p style="color:var(--text-muted); margin-bottom:16px;">Donn&#233;es extraites en direct depuis le tableau de bord <strong>Site Kit by Google</strong> de naoenergy.ch (wp-admin &rarr; Site Kit). P&#233;riode analys&#233;e : <strong>9 janvier &rarr; 8 avril 2026 (90 derniers jours)</strong>. Sources : Google Analytics 4 + Google Search Console.</p>
+
+            <!-- Vue d'ensemble -->
+            <h3 style="margin:20px 0 12px; font-size:1rem;">&#128200; Vue d'ensemble (90 derniers jours)</h3>
+            <div class="summary-row">
+                <div class="summary-item"><div class="val" style="color:var(--red)">731</div><div class="lbl">Visiteurs (-66,2 %)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">1,6 K</div><div class="lbl">Pages vues (-73,5 %)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">1,67</div><div class="lbl">Pages / visite (-12,4 %)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--green)">154 K</div><div class="lbl">Impressions SC (+15,9 %)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--green)">2,5 K</div><div class="lbl">Clics SC (+16,2 %)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--green)">849</div><div class="lbl">Visiteurs Search (+92 %)</div></div>
+            </div>
+
+            <div class="correction-banner" style="background:linear-gradient(135deg, rgba(239,68,68,0.1), rgba(234,179,8,0.1)); border-color:rgba(239,68,68,0.3);">
+                <strong style="color:var(--red);">&#9888;&#65039; Divergence majeure GA4 vs Search Console :</strong> Search Console montre une croissance saine (+15,9 % impressions, +16,2 % clics, +92 % visiteurs Search), alors que GA4 affiche une chute brutale (-66,2 % visiteurs, -73,5 % pages vues). Cette divergence indique un probl&#232;me de tracking GA4 (cookies bloqu&#233;s, tag manquant sur certaines pages, ou filtrage des bots cass&#233;) <strong>OU</strong> que le trafic GA4 historique &#233;tait en grande partie compos&#233; de bots qui ne sont plus comptabilis&#233;s. &#192; investiguer en priorit&#233;.
+            </div>
+
+            <!-- Probl&#232;mes critiques -->
+            <h3 style="margin:24px 0 12px; font-size:1rem; color:var(--red);">&#128680; Probl&#232;mes critiques d&#233;tect&#233;s</h3>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#129302;</div>
+                    <div class="ev-title">40 % du trafic = bots / spam g&#233;ographique</div>
+                    <div class="ev-value red">40 %</div>
+                    <div class="ev-detail">
+                        Top villes du trafic GA4 :<br>
+                        &bull; <strong>Lanzhou (Chine)</strong> &mdash; 18,6 %<br>
+                        &bull; <strong>Singapore</strong> &mdash; 17,2 %<br>
+                        &bull; <strong>Tunis</strong> &mdash; 4,2 %<br>
+                        Aucune ville suisse dans le top 3 alors que la cible est la Suisse romande. Ces visites sont presque certainement du trafic bot/spam non filtr&#233;.
+                    </div>
+                    <div class="ev-source">Source : GA4 &rarr; Site Kit (Emplacements)</div>
+                </div>
+
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#10067;</div>
+                    <div class="ev-title">68,1 % de trafic Direct &mdash; anormalement &#233;lev&#233;</div>
+                    <div class="ev-value red">68,1 %</div>
+                    <div class="ev-detail">
+                        R&#233;partition par canal :<br>
+                        &bull; Direct &mdash; <strong>68,1 %</strong><br>
+                        &bull; Organic Social &mdash; 14,6 %<br>
+                        &bull; Organic Search &mdash; 11,3 %<br>
+                        &bull; Referral &mdash; 2,8 %<br>
+                        Un site PME dont le trafic est &#224; 68 % "Direct" est suspect : combinaison de bots, de campagnes sans UTM, ou d'un trackant cass&#233; sur les liens entrants.
+                    </div>
+                    <div class="ev-source">Source : GA4 &rarr; Site Kit (Canaux)</div>
+                </div>
+
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#128683;</div>
+                    <div class="ev-title">"Most engaging pages" = pages 404</div>
+                    <div class="ev-value red">100 %</div>
+                    <div class="ev-detail">
+                        Les 3 pages les plus engageantes selon Site Kit sont toutes intitul&#233;es <strong>"Page non trouv&#233;e &mdash; naoenergy"</strong> avec un taux d'engagement de 100 %. Cela signifie que les erreurs 404 sont si nombreuses qu'elles dominent les m&#233;triques d'engagement &mdash; en parfaite coh&#233;rence avec les <strong>9 864 erreurs 404</strong> d&#233;j&#224; identifi&#233;es dans l'audit WP Admin.
+                    </div>
+                    <div class="ev-source">Source : GA4 &rarr; Site Kit (Most engaging pages)</div>
+                </div>
+
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#128201;</div>
+                    <div class="ev-title">Chute brutale des visiteurs GA4</div>
+                    <div class="ev-value red">-66,2 %</div>
+                    <div class="ev-detail">
+                        731 visiteurs sur 90 jours contre ~2 165 sur la p&#233;riode pr&#233;c&#233;dente.<br>
+                        &bull; Pages vues : -73,5 %<br>
+                        &bull; Visites par visiteur : -11 %<br>
+                        &bull; Nouveaux visiteurs : -64,9 %<br>
+                        Soit le tracking GA4 est cass&#233; (probable), soit le trafic r&#233;el a effectivement chut&#233; &mdash; les deux n&#233;cessitent une action imm&#233;diate.
+                    </div>
+                    <div class="ev-source">Source : GA4 &rarr; Site Kit (Audience)</div>
+                </div>
+            </div>
+
+            <!-- Avertissements -->
+            <h3 style="margin:24px 0 12px; font-size:1rem; color:var(--yellow);">&#9888;&#65039; Avertissements</h3>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon">&#128269;</div>
+                    <div class="ev-title">Part Organic Search faible</div>
+                    <div class="ev-value yellow">11,3 %</div>
+                    <div class="ev-detail">
+                        Pour un site qui investit dans le SEO, voir la part Organic Search &#224; seulement 11,3 % du trafic total est faible. Search Console r&#233;v&#232;le pourtant 154 K impressions et 2,5 K clics : le potentiel existe, mais les conversions ne sont pas attribu&#233;es correctement &#224; ce canal dans GA4.
+                    </div>
+                    <div class="ev-source">Source : GA4 + Search Console</div>
+                </div>
+
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon">&#128176;</div>
+                    <div class="ev-title">Conversions principalement issues du Paid Search</div>
+                    <div class="ev-value yellow">20 %</div>
+                    <div class="ev-detail">
+                        Le canal qui d&#233;clenche le plus de "key events" est le <strong>Paid Search</strong> (20 % des visites convertissent, +15 %). Cela cr&#233;e une d&#233;pendance forte aux campagnes Google Ads. Renforcer le SEO permettrait de r&#233;duire le co&#251;t d'acquisition.
+                    </div>
+                    <div class="ev-source">Source : GA4 &rarr; Site Kit (Conversions)</div>
+                </div>
+
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon">&#128221;</div>
+                    <div class="ev-title">Faible diversit&#233; s&#233;mantique des mots-cl&#233;s</div>
+                    <div class="ev-value yellow">9 / 10</div>
+                    <div class="ev-detail">
+                        9 des 10 premiers mots-cl&#233;s Search Console sont des variantes du nom de marque (naoenergy, nao energy sa, naoenergie, neoenergy&hellip;). Seul <strong>"batterie atmoce avis"</strong> (19 clics, 584 impressions) est non-marque. Le SEO non-marque g&#233;n&#232;re tr&#232;s peu de trafic qualifi&#233;.
+                    </div>
+                    <div class="ev-source">Source : Search Console &rarr; Site Kit (Top queries)</div>
+                </div>
+
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon">&#128203;</div>
+                    <div class="ev-title">Confusion sur l'orthographe de la marque</div>
+                    <div class="ev-detail">
+                        Search Console r&#233;v&#232;le 6 variantes orthographiques pour la m&#234;me marque : naoenergy, nao energy, nao energy sa, nao energie, naoenergie, neoenergy. Cumul&#233;, cela repr&#233;sente plus de <strong>900 clics</strong>. N&#233;cessite une page "&#192; propos" optimis&#233;e + Schema Organization avec <code>alternateName</code>.
+                    </div>
+                    <div class="ev-source">Source : Search Console &rarr; Site Kit (Top queries)</div>
+                </div>
+            </div>
+
+            <!-- Top mots-cl&#233;s Search Console -->
+            <h3 style="margin:24px 0 12px; font-size:1rem;">&#128270; Top 10 mots-cl&#233;s &mdash; Search Console (90 derniers jours)</h3>
+            <table>
+                <thead><tr><th>Requ&#234;te</th><th>Type</th><th>Clics</th><th>Impressions</th><th>CTR estim&#233;</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>naoenergy</strong></td><td><span class="badge info">Marque</span></td><td>440</td><td>1 193</td><td>36,9 %</td></tr>
+                    <tr><td>nao energy</td><td><span class="badge info">Marque</span></td><td>149</td><td>547</td><td>27,2 %</td></tr>
+                    <tr><td>nao energy sa</td><td><span class="badge info">Marque</span></td><td>138</td><td>612</td><td>22,5 %</td></tr>
+                    <tr><td>naoenergy sa</td><td><span class="badge info">Marque</span></td><td>94</td><td>257</td><td>36,6 %</td></tr>
+                    <tr><td>naoenergy geneve</td><td><span class="badge info">Marque + g&#233;o</span></td><td>33</td><td>184</td><td>17,9 %</td></tr>
+                    <tr><td>naoenergy sa plan les ouates</td><td><span class="badge info">Marque + g&#233;o</span></td><td>20</td><td>120</td><td>16,7 %</td></tr>
+                    <tr><td><strong>batterie atmoce avis</strong></td><td><span class="badge new">Non-marque</span></td><td>19</td><td>584</td><td>3,3 %</td></tr>
+                    <tr><td>nao energie</td><td><span class="badge warning">Marque (faute)</span></td><td>18</td><td>81</td><td>22,2 %</td></tr>
+                    <tr><td>naoenergie</td><td><span class="badge warning">Marque (faute)</span></td><td>18</td><td>47</td><td>38,3 %</td></tr>
+                    <tr><td>neoenergy</td><td><span class="badge warning">Marque (faute)</span></td><td>18</td><td>65</td><td>27,7 %</td></tr>
+                </tbody>
+            </table>
+            <div class="issue-item warning"><span class="issue-badge">INSIGHT</span><div>Le seul mot-cl&#233; non-marque du top 10 (<strong>batterie atmoce avis</strong>) a un CTR tr&#232;s bas (3,3 %) malgr&#233; 584 impressions &mdash; opportunit&#233; d'optimisation du title/meta de la page correspondante.</div></div>
+
+            <!-- Top pages -->
+            <h3 style="margin:24px 0 12px; font-size:1rem;">&#128196; Top 10 pages les plus performantes (GA4 &mdash; 90 derniers jours)</h3>
+            <table>
+                <thead><tr><th>Page</th><th>Pages vues</th><th>Sessions</th><th>Engagement</th><th>Dur&#233;e moy.</th></tr></thead>
+                <tbody>
+                    <tr><td class="link-url">/ (Accueil &mdash; Panneaux solaires &amp; PAC)</td><td>413</td><td>349</td><td>57,88 %</td><td>1 min 32 s</td></tr>
+                    <tr><td class="link-url">/nos-realisations/</td><td>131</td><td>54</td><td><strong style="color:var(--green)">75,93 %</strong></td><td><strong>3 min 45 s</strong></td></tr>
+                    <tr><td class="link-url">/solutions/pompes-a-chaleur/</td><td>93</td><td>79</td><td>51,9 %</td><td>1 min 49 s</td></tr>
+                    <tr><td class="link-url">/solutions/panneaux-photovoltaiques/</td><td>83</td><td>60</td><td>48,33 %</td><td>2 min 27 s</td></tr>
+                    <tr><td class="link-url">/contact/</td><td>70</td><td>72</td><td>91,67 %</td><td>1 min 11 s</td></tr>
+                    <tr><td class="link-url">/solutions/batteries-de-stockage/</td><td>56</td><td>49</td><td>44,9 %</td><td>2 min 19 s</td></tr>
+                    <tr><td class="link-url">/actualites/</td><td>52</td><td>12</td><td>91,67 %</td><td>3 min 40 s</td></tr>
+                    <tr><td class="link-url">/toutes-nos-solutions-solaires-suisse/</td><td>50</td><td>45</td><td>57,78 %</td><td>1 min 36 s</td></tr>
+                    <tr><td class="link-url">/notre-equipe/</td><td>24</td><td>20</td><td>80 %</td><td>1 min 58 s</td></tr>
+                    <tr><td class="link-url">/nouvelles-reglementations-energie-2026-suisse-romande/</td><td>22</td><td>21</td><td>52,38 %</td><td>2 min 23 s</td></tr>
+                </tbody>
+            </table>
+            <div class="issue-item info"><span class="issue-badge">PASS</span><div><strong>/nos-realisations/</strong> est la page la plus performante en qualit&#233; (75,93 % engagement, 3 min 45 s de dur&#233;e moyenne) &mdash; capitaliser dessus avec plus de liens internes et de cas clients d&#233;taill&#233;s.</div></div>
+            <div class="issue-item warning"><span class="issue-badge">NOTE</span><div>Les pages "Solutions" (pompes &#224; chaleur, panneaux photovolta&#239;ques, batteries) ont un engagement &lt; 52 % &mdash; r&#233;viser le contenu, ajouter des CTAs et des t&#233;moignages clients.</div></div>
+
+            <!-- Recommandations sp&#233;cifiques Site Kit -->
+            <h3 style="margin:24px 0 12px; font-size:1rem; color:var(--accent);">&#128161; Actions recommand&#233;es suite &#224; cet audit Site Kit</h3>
+            <ol style="margin-left:20px; line-height:1.9; font-size:0.92rem;">
+                <li><strong>Filtrer le trafic bot dans GA4</strong> &mdash; Activer "Bot filtering" dans les param&#232;tres de la propri&#233;t&#233; GA4. Ajouter une exclusion d'IP/de pays pour Lanzhou, Singapore et Tunis si confirm&#233; comme spam.</li>
+                <li><strong>V&#233;rifier l'installation du tag GA4</strong> &mdash; Tester sur 5 pages cl&#233;s avec l'extension Tag Assistant. La chute -66 % visiteurs combin&#233;e &#224; +92 % visiteurs Search dans Search Console sugg&#232;re fortement un probl&#232;me de mesure.</li>
+                <li><strong>Auditer les sources "Direct"</strong> &mdash; Ajouter des UTM aux campagnes (newsletters, signatures e-mail, QR codes) pour r&#233;duire la part Direct artificielle.</li>
+                <li><strong>R&#233;soudre les 9 864 erreurs 404</strong> (d&#233;j&#224; en plan d'action) &mdash; confirmation par Site Kit que les 404 dominent les m&#233;triques d'engagement.</li>
+                <li><strong>Optimiser le title/meta de la page "Batterie Atmoce"</strong> &mdash; 584 impressions pour seulement 19 clics (CTR 3,3 %). Premier gain non-marque facile.</li>
+                <li><strong>Cr&#233;er du contenu non-marque</strong> &mdash; 9 mots-cl&#233;s sur 10 sont des variantes de marque. Cibler des requ&#234;tes informationnelles : "prix panneau solaire suisse romande", "subvention pompe &#224; chaleur Vaud", "batterie domestique avis"&hellip;</li>
+                <li><strong>Schema Organization avec <code>alternateName</code></strong> &mdash; D&#233;clarer toutes les variantes : "Nao Energy", "Nao Energy SA", "naoenergy sa". R&#233;duit la confusion d'orthographe (~900 clics cumul&#233;s).</li>
+                <li><strong>Configurer les conversions GA4 hors Paid Search</strong> &mdash; D&#233;finir les key events (formulaire de contact, t&#233;l&#233;phone cliqu&#233;, devis demand&#233;) et v&#233;rifier qu'ils sont attribu&#233;s correctement aux canaux Organic Search et Direct.</li>
+            </ol>
+
+            <p style="color:var(--text-muted); font-size:0.8rem; margin-top:20px; font-style:italic;">Audit Site Kit r&#233;alis&#233; le 8 avril 2026 via une lecture directe du tableau de bord wp-admin/admin.php?page=googlesitekit-dashboard. Toutes les valeurs sont issues du widget officiel Site Kit (GA4 + Search Console).</p>
+        </div>
+    </div>
+
     <!-- ===================== RECOMMANDATIONS (MIS &#192; JOUR) ===================== -->
     <div class="section" id="section-recs">
         <div class="section-header" onclick="toggleSection('recs')">
