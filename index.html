@@ -880,21 +880,6 @@ button.kpi-card { display: block; width: 100%; }
 [data-theme="dark"] .theme-toggle .dark-icon { display: none; }
 
 /* ============ RESPONSIVE ============ */
-/* ============ TOPBAR LOGO (mobile only) ============ */
-.topbar-logo {
-    display: none;
-    align-items: center;
-    flex-shrink: 0;
-}
-.topbar-logo-img {
-    max-height: 32px;
-    max-width: 130px;
-    object-fit: contain;
-}
-.topbar-logo-dark { display: none; }
-[data-theme="dark"] .topbar-logo-light { display: none; }
-[data-theme="dark"] .topbar-logo-dark { display: block; }
-
 /* ============ MOBILE SEARCH BUTTON ============ */
 .search-mobile-btn { display: none; }
 
@@ -1203,7 +1188,6 @@ button.kpi-card { display: block; width: 100%; }
     }
     .sidebar-close { display: flex; }
     .sidebar-score-mobile { display: flex; }
-    .topbar-logo { display: flex; }
 
     /* Hide desktop topbar score card on tablet/mobile (replaced by sidebar version) */
     .topbar-score-combined { display: none; }
@@ -1216,7 +1200,6 @@ button.kpi-card { display: block; width: 100%; }
     .content { padding: 16px; }
     .topbar { padding: 0 14px; gap: 10px; }
     .menu-toggle { width: 38px; height: 38px; }
-    .topbar-logo-img { max-height: 28px; max-width: 110px; }
     .notif-dropdown { width: 320px; right: -8px; }
     .evidence-grid { grid-template-columns: 1fr; gap: 12px; }
     .action-grid { grid-template-columns: 1fr; gap: 12px; }
@@ -1248,7 +1231,6 @@ button.kpi-card { display: block; width: 100%; }
     .kpi-row { grid-template-columns: 1fr; gap: 10px; }
     .kpi-mini-row { grid-template-columns: 1fr; }
     .topbar { padding: 0 10px; gap: 8px; }
-    .topbar-logo-img { max-width: 80px; max-height: 26px; }
     .topbar-actions { gap: 8px; }
     .icon-btn { width: 36px; height: 36px; }
     .notif-dropdown { width: calc(100vw - 20px); right: -52px; }
@@ -2080,10 +2062,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             <button class="menu-toggle" onclick="openMenu()" aria-label="Ouvrir le menu" type="button">
                 <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
-            <div class="topbar-logo">
-                <img src="imgi_2_logo-light-1.svg" alt="naoenergy" class="topbar-logo-img topbar-logo-light">
-                <img src="imgi_29_logo-light.svg" alt="naoenergy" class="topbar-logo-img topbar-logo-dark">
-            </div>
             <button class="topbar-score-combined" onclick="showPanel('recs')" title="Voir le plan d'actions">
                 <div class="ts-icon">
                     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
