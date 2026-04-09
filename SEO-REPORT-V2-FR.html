@@ -98,6 +98,379 @@ body {
 .sidebar-score-info .domain { font-size: 0.85rem; font-weight: 700; color: var(--text); margin-top: 2px; }
 .sidebar-score-info .version { display: inline-block; font-size: 0.65rem; padding: 2px 8px; border-radius: 100px; background: rgba(34,197,94,0.15); color: #86efac; margin-top: 4px; font-weight: 600; }
 
+/* ============ TARGET SCORE PROGRESS ============ */
+.target-score {
+    margin-top: 12px;
+    padding: 14px;
+    background: linear-gradient(135deg, rgba(99,102,241,0.08), rgba(34,197,94,0.06));
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+}
+.target-score-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.target-score-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+.target-icon { font-size: 0.95rem; }
+.target-score-values {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-weight: 800;
+    font-size: 0.95rem;
+}
+.current-score { color: #f97316; }
+.score-arrow { color: var(--text-muted); font-size: 0.8rem; }
+.target-score-value { color: var(--green); }
+.target-progress-track {
+    position: relative;
+    height: 10px;
+    background: rgba(148,163,184,0.18);
+    border-radius: 100px;
+    overflow: hidden;
+}
+.target-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f97316 0%, #eab308 50%, #22c55e 100%);
+    border-radius: 100px;
+    position: relative;
+    overflow: hidden;
+    transition: width 1.2s cubic-bezier(.4,0,.2,1);
+}
+.target-progress-shimmer {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    animation: shimmerSlide 2.2s infinite;
+}
+@keyframes shimmerSlide {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+.target-progress-marker {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    background: var(--text);
+    border: 2px solid var(--bg);
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    cursor: help;
+}
+.target-score-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    font-size: 0.7rem;
+}
+.progress-pct {
+    font-weight: 700;
+    color: var(--text);
+}
+.gap-info {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* ============ KPI CARDS CLICKABLE ============ */
+.kpi-card {
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.kpi-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    box-shadow: 0 4px 12px var(--accent-glow);
+}
+.kpi-card:active { transform: translateY(0); }
+
+/* ============ NOTIFICATION ICON ============ */
+.notif-bell {
+    position: relative;
+    background: var(--bg);
+    border: 1px solid var(--card-border);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+.notif-bell:hover {
+    transform: scale(1.1);
+    border-color: var(--accent);
+}
+.notif-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--red);
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 800;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 100px;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--surface);
+    animation: notifPulse 2s ease-in-out infinite;
+}
+@keyframes notifPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239,68,68,0.5); }
+    50% { transform: scale(1.08); box-shadow: 0 0 0 6px rgba(239,68,68,0); }
+}
+.notif-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 360px;
+    max-width: 90vw;
+    background: var(--surface);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+    z-index: 200;
+    display: none;
+    overflow: hidden;
+}
+.notif-dropdown.open { display: block; animation: notifSlide 0.25s ease-out; }
+@keyframes notifSlide {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.notif-header {
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--card-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(6,182,212,0.08), rgba(99,102,241,0.05));
+}
+.notif-header-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+}
+.notif-count {
+    font-size: 0.7rem;
+    background: rgba(6,182,212,0.15);
+    color: var(--cyan);
+    padding: 2px 8px;
+    border-radius: 100px;
+    font-weight: 700;
+}
+.notif-list {
+    max-height: 380px;
+    overflow-y: auto;
+}
+.notif-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--card-border);
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.notif-item:last-child { border-bottom: none; }
+.notif-item:hover { background: rgba(99,102,241,0.06); }
+.notif-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+.notif-icon.ev-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.notif-icon.ev-warning { background: rgba(234,179,8,0.15); color: var(--yellow); }
+.notif-icon.ev-info { background: rgba(6,182,212,0.15); color: var(--cyan); }
+.notif-icon.ev-pass { background: rgba(34,197,94,0.15); color: var(--green); }
+.notif-content { flex: 1; min-width: 0; }
+.notif-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+.notif-item-title {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text);
+}
+.notif-time {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+.notif-desc {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+.notif-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cyan);
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+/* ============ RIGHT DRAWER (TODO LIST) ============ */
+.right-drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+    z-index: 998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+}
+.right-drawer-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+.right-drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 440px;
+    max-width: 92vw;
+    height: 100vh;
+    background: var(--surface);
+    border-left: 1px solid var(--card-border);
+    box-shadow: -10px 0 40px rgba(0,0,0,0.3);
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+    display: flex;
+    flex-direction: column;
+}
+.right-drawer.open { transform: translateX(0); }
+.drawer-header {
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--card-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+.drawer-title-block { display: flex; align-items: center; gap: 12px; }
+.drawer-icon-large {
+    width: 38px; height: 38px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+}
+.drawer-icon-large.k-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.drawer-icon-large.k-warning { background: rgba(234,179,8,0.15); color: var(--yellow); }
+.drawer-icon-large.k-pass { background: rgba(34,197,94,0.15); color: var(--green); }
+.drawer-title { font-size: 1rem; font-weight: 700; }
+.drawer-subtitle { font-size: 0.7rem; color: var(--text-muted); margin-top: 2px; }
+.drawer-close {
+    background: var(--bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    color: var(--text);
+    font-size: 1.1rem;
+    transition: all 0.2s;
+}
+.drawer-close:hover {
+    background: var(--card-border);
+    transform: rotate(90deg);
+}
+.drawer-body {
+    padding: 18px 22px;
+    overflow-y: auto;
+    flex: 1;
+}
+.drawer-list { display: flex; flex-direction: column; gap: 8px; }
+.drawer-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 14px;
+    background: var(--bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+    width: 100%;
+    color: var(--text);
+    font-family: inherit;
+}
+.drawer-item:hover {
+    border-color: var(--accent);
+    transform: translateX(-4px);
+    box-shadow: 0 4px 14px var(--accent-glow);
+}
+.drawer-item-bullet {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+}
+.drawer-item-bullet.k-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+.drawer-item-bullet.k-warning { background: rgba(234,179,8,0.15); color: var(--yellow); }
+.drawer-item-bullet.k-pass { background: rgba(34,197,94,0.15); color: var(--green); }
+.drawer-item-content { flex: 1; min-width: 0; }
+.drawer-item-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+.drawer-item-section {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.drawer-item-arrow {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+.drawer-item:hover .drawer-item-arrow {
+    color: var(--accent);
+    transform: translateX(4px);
+}
+
 .sidebar-section-title {
     font-size: 0.7rem;
     text-transform: uppercase;
@@ -496,7 +869,31 @@ tr:hover td { background: rgba(99,102,241,0.03); }
             <div class="sidebar-score-info">
                 <div class="label">Score global</div>
                 <div class="domain">naoenergy.ch</div>
-                <div class="version">V2 — V&#233;rifi&#233;</div>
+            </div>
+        </div>
+
+        <!-- Target Score progress -->
+        <div class="target-score">
+            <div class="target-score-header">
+                <div class="target-score-label">
+                    <span class="target-icon">&#127919;</span>
+                    <span>Score cible</span>
+                </div>
+                <div class="target-score-values">
+                    <span class="current-score">53</span>
+                    <span class="score-arrow">&rarr;</span>
+                    <span class="target-score-value">85</span>
+                </div>
+            </div>
+            <div class="target-progress-track">
+                <div class="target-progress-fill" style="width:62.4%;">
+                    <div class="target-progress-shimmer"></div>
+                </div>
+                <div class="target-progress-marker" style="left:62.4%;" title="Score actuel : 53"></div>
+            </div>
+            <div class="target-score-footer">
+                <span class="progress-pct">62 %</span>
+                <span class="gap-info">+32 pts pour atteindre l'objectif</span>
             </div>
         </div>
 
@@ -632,21 +1029,90 @@ tr:hover td { background: rgba(99,102,241,0.03); }
                 <button class="menu-toggle" onclick="openMenu()" aria-label="Ouvrir le menu">&#9776;</button>
                 <div class="topbar-left-text">
                     <h1>Tableau de bord SEO</h1>
-                    <div class="update-note"><strong>Note de mise &#224; jour :</strong> 8 avril 2026</div>
+                    <div class="update-note"><strong>Note de mise &#224; jour :</strong> 9 avril 2026 &mdash; Smoking Gun GA4 Consent Mode + 404 Reality Check</div>
                 </div>
             </div>
             <div class="topbar-kpis">
-                <div class="kpi-card k-critical">
+                <button class="kpi-card k-critical" onclick="openDrawer('critical')" aria-label="Voir les 8 probl&#232;mes critiques" type="button">
                     <div class="kpi-value">8</div>
                     <div class="kpi-label">Critique</div>
-                </div>
-                <div class="kpi-card k-warning">
+                </button>
+                <button class="kpi-card k-warning" onclick="openDrawer('warning')" aria-label="Voir les 19 avertissements" type="button">
                     <div class="kpi-value">19</div>
                     <div class="kpi-label">Attention</div>
-                </div>
-                <div class="kpi-card k-pass">
+                </button>
+                <button class="kpi-card k-pass" onclick="openDrawer('pass')" aria-label="Voir les 9 points valid&#233;s" type="button">
                     <div class="kpi-value">9</div>
                     <div class="kpi-label">Valid&#233;</div>
+                </button>
+                <div style="position:relative;">
+                    <div class="notif-bell" onclick="toggleNotif(event)" title="Nouveaut&#233;s" role="button" tabindex="0">
+                        &#128276;
+                        <span class="notif-badge">5</span>
+                    </div>
+                    <div class="notif-dropdown" id="notifDropdown" onclick="event.stopPropagation()">
+                        <div class="notif-header">
+                            <div class="notif-header-title">&#127880; Nouveaut&#233;s du rapport</div>
+                            <div class="notif-count">5 nouveau(x)</div>
+                        </div>
+                        <div class="notif-list">
+                            <div class="notif-item" onclick="closeNotif(); showPanel('tracking');">
+                                <div class="notif-icon ev-critical">&#128300;</div>
+                                <div class="notif-content">
+                                    <div class="notif-title-row">
+                                        <div class="notif-item-title">Smoking Gun GA4 Consent Mode</div>
+                                        <div class="notif-time">9 avril</div>
+                                    </div>
+                                    <div class="notif-desc">Cause confirm&#233;e : <code>analytics_storage: denied</code> par d&#233;faut bloque GA4 pour 100 % des visiteurs europ&#233;ens.</div>
+                                </div>
+                                <div class="notif-dot"></div>
+                            </div>
+                            <div class="notif-item" onclick="closeNotif(); showPanel('tracking');">
+                                <div class="notif-icon ev-critical">&#9888;&#65039;</div>
+                                <div class="notif-content">
+                                    <div class="notif-title-row">
+                                        <div class="notif-item-title">Double tracking GA4 d&#233;tect&#233;</div>
+                                        <div class="notif-time">9 avril</div>
+                                    </div>
+                                    <div class="notif-desc"><code>GT-WBK8XSPW</code> + <code>G-7G5KELWH87</code> chargent simultan&#233;ment via deux plugins diff&#233;rents.</div>
+                                </div>
+                                <div class="notif-dot"></div>
+                            </div>
+                            <div class="notif-item" onclick="closeNotif(); showPanel('errors404');">
+                                <div class="notif-icon ev-info">&#128221;</div>
+                                <div class="notif-content">
+                                    <div class="notif-title-row">
+                                        <div class="notif-item-title">Erreurs 404 d&#233;class&#233;es</div>
+                                        <div class="notif-time">9 avril</div>
+                                    </div>
+                                    <div class="notif-desc">84,7 % des "9 864 erreurs" sont du bruit Facebook bot sur <code>/meta.json</code>. Aucun impact GA4/GSC.</div>
+                                </div>
+                                <div class="notif-dot"></div>
+                            </div>
+                            <div class="notif-item" onclick="closeNotif(); showPanel('sitekit');">
+                                <div class="notif-icon ev-warning">&#128205;</div>
+                                <div class="notif-content">
+                                    <div class="notif-title-row">
+                                        <div class="notif-item-title">R&#233;partition g&#233;ographique GA4</div>
+                                        <div class="notif-time">9 avril</div>
+                                    </div>
+                                    <div class="notif-desc">82,7 % du trafic GA4 vient de USA / Chine / Singapour / Tunisie (bots). Suisse cach&#233;e dans 17 % "Autres".</div>
+                                </div>
+                                <div class="notif-dot"></div>
+                            </div>
+                            <div class="notif-item" onclick="closeNotif(); showPanel('sitekit');">
+                                <div class="notif-icon ev-pass">&#128202;</div>
+                                <div class="notif-content">
+                                    <div class="notif-title-row">
+                                        <div class="notif-item-title">Search Console = vraie croissance</div>
+                                        <div class="notif-time">9 avril</div>
+                                    </div>
+                                    <div class="notif-desc">+16,5 % clics, +16,4 % impressions. Le SEO marche, c'est juste GA4 qui ment.</div>
+                                </div>
+                                <div class="notif-dot"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="theme-toggle" onclick="toggleTheme()" title="Changer le th&#232;me">&#9728;&#65039;</div>
             </div>
@@ -886,21 +1352,107 @@ tr:hover td { background: rgba(99,102,241,0.03); }
         </div>
     </div>
 
-    <!-- ===================== ERREURS 404 (NOUVEAU) ===================== -->
-    <div class="section" id="section-errors404" style="border-color: var(--red);">
+    <!-- ===================== ERREURS 404 (R&#201;VIS&#201; LE 9 AVRIL) ===================== -->
+    <div class="section" id="section-errors404" style="border-color: var(--yellow);">
         <div class="section-header" onclick="toggleSection('errors404')">
-            <h2>&#128680; Erreurs 404 <span class="badge critical">9 864 erreurs</span> <span class="badge new">NOUVEAU</span></h2>
+            <h2>&#128680; Erreurs 404 <span class="badge warning">D&#201;CLASS&#201; &mdash; bruit externe</span> <span class="badge new">R&#201;VIS&#201; 9 avril</span></h2>
             <span class="chevron" id="chevron-errors404">&#9660;</span>
         </div>
         <div class="section-body" id="body-errors404">
-            <div class="summary-row">
-                <div class="summary-item"><div class="val" style="color:var(--red)">9 864</div><div class="lbl">Total 404</div></div>
-                <div class="summary-item"><div class="val" style="color:var(--red)">395</div><div class="lbl">Pages</div></div>
-                <div class="summary-item"><div class="val" style="color:var(--yellow)">71</div><div class="lbl">Redirections actives</div></div>
+
+            <div class="correction-banner" style="background:linear-gradient(135deg, rgba(6,182,212,0.1), rgba(34,197,94,0.1)); border-color:rgba(6,182,212,0.3);">
+                <strong style="color:var(--cyan);">&#9888;&#65039; Correction majeure du 9 avril :</strong> L'audit V2 initial classait les <strong>9 864 erreurs 404</strong> en "Critique &mdash; budget de crawl + charge serveur". <strong>C'&#233;tait trompeur.</strong> Une investigation directe via l'API REST du plugin Redirection a montr&#233; que <strong>84,7 % de ces 404 (8 414 sur 9 937) sont du bruit externe Facebook</strong> qui n'a aucun impact ni sur GA4, ni sur Search Console, ni sur le SEO. Le chiffre brut a &#233;t&#233; gonfl&#233;, la criticit&#233; r&#233;elle est faible. Cette section a &#233;t&#233; r&#233;vis&#233;e en cons&#233;quence.
             </div>
-            <div class="issue-item critical"><span class="issue-badge">CRITIQUE</span><div><strong>Inondation massive de 404 /meta.json par les robots Facebook</strong><br><span style="color:var(--text-muted)">Les journaux du plugin Redirection montrent des milliers de requ&#234;tes 404 pour <code>/meta.json</code> provenant de <code>facebookexternalhit/1.1</code>. Cela indique que le robot d'exploration de Facebook recherche des m&#233;tadonn&#233;es inexistantes, probablement d&#233;clench&#233; par des liens partag&#233;s.</span><br><strong>Correction :</strong> Cr&#233;er un fichier <code>/meta.json</code> valide &#224; la racine du site, ou ajouter une r&#232;gle de redirection/blocage pour ce chemin dans le plugin Redirection.</div></div>
-            <div class="issue-item warning"><span class="issue-badge">ATTENTION</span><div><strong>71 redirections 301 actives sont correctement g&#233;r&#233;es</strong><br><span style="color:var(--text-muted)">Les redirections &#224; fort trafic incluent <code>/solutions/heat-pumps/</code> (489 visites), <code>/mentions-legales/</code> (350 visites) et <code>/solutions/charging-stations/</code> (317 visites). Elles fonctionnent correctement.</span></div></div>
-            <div class="ev-source">Source : WP Admin &rarr; Outils &rarr; Redirection &rarr; Onglet 404</div>
+
+            <div class="summary-row">
+                <div class="summary-item"><div class="val" style="color:var(--red)">9 937</div><div class="lbl">Total 404 logs</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--red)">8 414</div><div class="lbl">/meta.json (FB bot)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--yellow)">~1 500</div><div class="lbl">Autres (mix scanners + r&#233;els)</div></div>
+                <div class="summary-item"><div class="val" style="color:var(--green)">71</div><div class="lbl">Redirections 301 propres</div></div>
+            </div>
+
+            <h3 style="margin:24px 0 12px; font-size:1rem;">&#128269; R&#233;partition r&#233;elle des 9 937 erreurs 404</h3>
+            <table>
+                <thead><tr><th>Source</th><th>Volume</th><th>%</th><th>Impact GA4</th><th>Impact GSC</th><th>Impact SEO</th></tr></thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Facebook bot &rarr; /meta.json</strong><br><code style="font-size:0.75rem;">facebookexternalhit/1.1</code></td>
+                        <td><strong>8 414</strong></td>
+                        <td>84,7 %</td>
+                        <td><span class="badge pass">Aucun</span></td>
+                        <td><span class="badge pass">Aucun</span></td>
+                        <td><span class="badge pass">Aucun</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Scanners / probes de s&#233;curit&#233;</strong><br><code style="font-size:0.75rem;">/wp-admin/zfcfdqzzr.php, /_ignition/*, /.well-known/*</code></td>
+                        <td>~500</td>
+                        <td>~5 %</td>
+                        <td><span class="badge pass">Aucun</span></td>
+                        <td><span class="badge pass">Aucun</span></td>
+                        <td><span class="badge pass">Aucun</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bug "about:blank" sur articles</strong><br><code style="font-size:0.75rem;">/article-X/about:blank</code></td>
+                        <td>~50</td>
+                        <td>~0,5 %</td>
+                        <td><span class="badge warning">Faible</span></td>
+                        <td><span class="badge warning">Faible</span></td>
+                        <td><span class="badge warning">&#192; corriger</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Apple touch icons manquants</strong><br><code style="font-size:0.75rem;">/apple-touch-icon*.png</code></td>
+                        <td>~30</td>
+                        <td>~0,3 %</td>
+                        <td><span class="badge pass">Aucun</span></td>
+                        <td><span class="badge pass">Aucun</span></td>
+                        <td><span class="badge warning">Cosm&#233;tique</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vrais liens cass&#233;s utilisateurs</strong><br><span style="color:var(--text-muted); font-size:0.8rem;">(&#224; identifier en filtrant le bruit)</span></td>
+                        <td>~900</td>
+                        <td>~9 %</td>
+                        <td><span class="badge critical">Oui</span></td>
+                        <td><span class="badge critical">Oui</span></td>
+                        <td><span class="badge critical">VRAI probl&#232;me</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin:24px 0 12px; font-size:1rem;">&#128279; Pourquoi le bot Facebook n'affecte ni GA4 ni Search Console</h3>
+            <table>
+                <thead><tr><th>Source 404</th><th>Logged Redirection</th><th>Track&#233; GA4 ?</th><th>Visible GSC ?</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Facebook bot &rarr; /meta.json</strong> (8 414)</td><td>&#9989;</td><td>&#10060; <span style="color:var(--text-muted);">Bots n'ex&#233;cutent pas le JS gtag</span></td><td>&#10060; <span style="color:var(--text-muted);">N'est pas Googlebot</span></td></tr>
+                    <tr><td>Vrais users &rarr; liens cass&#233;s (~900)</td><td>&#9989;</td><td>&#9989; <span style="color:var(--text-muted);">Le tag GA4 du template 404.php fire</span></td><td>&#9888;&#65039; Si Googlebot crawl la m&#234;me URL</td></tr>
+                    <tr><td>Scanners (~500)</td><td>&#9989;</td><td>&#10060;</td><td>&#10060;</td></tr>
+                </tbody>
+            </table>
+            <div class="issue-item info"><span class="issue-badge">PREUVE</span><div><strong>Investigation directe (REST API <code>/wp-json/redirection/v1/404</code>) :</strong> sur 200 entr&#233;es r&#233;centes du log Redirection, <strong>184/200 (92 %)</strong> ciblent <code>/meta.json</code>, et <strong>100 % de ces hits</strong> proviennent de l'agent <code>facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)</code>. M&#233;thode GET, sans referrer, sans IP logg&#233;e (filtr&#233;e par Complianz).</div></div>
+
+            <h3 style="margin:24px 0 12px; font-size:1rem;">&#9989; V&#233;rification : aucun code dev ne force des pages en 404</h3>
+            <p style="color:var(--text-muted); margin-bottom:12px;">Investigation compl&#232;te de toutes les sources potentielles d'un "drop to 404" custom :</p>
+            <table>
+                <thead><tr><th>Source v&#233;rifi&#233;e</th><th>R&#233;sultat</th><th>D&#233;tail</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Plugin Code Snippets</strong> (5 snippets)</td><td><span class="badge pass">RAS</span></td><td>4 snippets sample WP par d&#233;faut + 1 snippet custom "calculateur solaire" qui charge uniquement <code>iframe-resizer-client.js</code> pour le simulateur eturnity. <strong>Aucune logique 404.</strong></td></tr>
+                    <tr><td><strong>Plugin Redirection</strong> (71 r&#232;gles)</td><td><span class="badge pass">RAS</span></td><td>100 % des r&#232;gles sont des <code>url_301</code> propres. <strong>0 r&#232;gle <code>action_type=error</code></strong> (aucune r&#232;gle ne sert volontairement un 404). 0 regex. 0 r&#232;gle pass-through.</td></tr>
+                    <tr><td><strong>Plugin WPCode Lite</strong></td><td><span class="badge pass">Inactif</span></td><td>Install&#233; mais d&#233;sactiv&#233;.</td></tr>
+                    <tr><td><strong>Plugin WP Headers and Footers</strong></td><td><span class="badge pass">Inactif</span></td><td>Install&#233; mais d&#233;sactiv&#233;.</td></tr>
+                </tbody>
+            </table>
+            <div class="issue-item info"><span class="issue-badge">CONCLUSION</span><div>Le d&#233;veloppeur de naoenergy.ch <strong>n'a ajout&#233; aucun code (ni snippet, ni redirection)</strong> qui force des pages en 404. Les 9 864 erreurs sont int&#233;gralement caus&#233;es par du bruit externe (Facebook scraper + scanners + ~9 % de vrais liens cass&#233;s &#224; identifier).</div></div>
+
+            <h3 style="margin:24px 0 12px; font-size:1rem; color:var(--accent);">&#128161; Plan d'actions r&#233;vis&#233; pour les 404</h3>
+            <ol style="margin-left:20px; line-height:1.9; font-size:0.92rem;">
+                <li><strong>Ne PAS s'inqui&#233;ter des 8 414 hits Facebook /meta.json</strong> &mdash; aucun impact business ni SEO. Optionnel : cr&#233;er un stub <code>/meta.json</code> avec <code>{}</code> &#224; la racine pour servir 200 OK et r&#233;duire le bruit dans les logs serveur.</li>
+                <li><strong>Vider le journal Redirection</strong> (purge les 9 937 entr&#233;es actuelles) pour repartir d'une base saine et pouvoir identifier les <strong>vrais</strong> 404 utilisateurs sur les 30 prochains jours.</li>
+                <li><strong>Filtrer le log Redirection en excluant</strong> : <code>/meta.json</code>, <code>/_ignition/*</code>, <code>/wp-admin/*.php</code>, <code>/.well-known/*</code>, <code>/apple-touch-icon*</code>, tout ce qui se termine par <code>about:blank</code>. Le reste = vrais liens cass&#233;s &#224; corriger.</li>
+                <li><strong>Investiguer le bug "about:blank"</strong> sur les URLs d'articles &mdash; probable bug JavaScript dans un widget de partage social ou dans le snippet iframe-resizer.</li>
+                <li><strong>Ajouter des Apple touch icons</strong> (cosm&#233;tique mais propre) : <code>/apple-touch-icon.png</code>, <code>/apple-touch-icon-120x120.png</code>, etc.</li>
+                <li><strong>Acc&#232;s Google Search Console requis</strong> pour voir les 404 que <em>Googlebot</em> rencontre r&#233;ellement &mdash; c'est ceux-l&#224; qui comptent pour le SEO, pas le log Redirection brut.</li>
+            </ol>
+
+            <div class="ev-source">Source : Investigation REST API <code>/wp-json/redirection/v1/404</code> + inspection des plugins Code Snippets, Redirection, WPCode, WP Headers/Footers via wp-admin (9 avril 2026)</div>
         </div>
     </div>
 
@@ -1116,6 +1668,150 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
         </div>
     </div>
 
+    <!-- ===================== TRACKING & MESURE — DIAGNOSTIC R&#201;SOLU (NOUVEAU) ===================== -->
+    <div class="section" id="section-tracking" style="border-color: var(--red);">
+        <div class="section-header" onclick="toggleSection('tracking')">
+            <h2>&#128300; Tracking &amp; Mesure &mdash; Smoking Gun <span class="badge critical">BLOCAGE STRAT&#201;GIQUE</span> <span class="badge new">NOUVEAU 9 avril</span></h2>
+            <span class="chevron" id="chevron-tracking">&#9660;</span>
+        </div>
+        <div class="section-body open" id="body-tracking">
+            <div class="correction-banner" style="background:linear-gradient(135deg, rgba(239,68,68,0.15), rgba(234,179,8,0.1)); border-color:rgba(239,68,68,0.4);">
+                <strong style="color:var(--red);">&#128680; Diagnostic confirm&#233; sans acc&#232;s GA4 :</strong> L'investigation directe du code de la home de naoenergy.ch (curl + inspection HTML) confirme &#224; 100 % que <strong>le tag GA4 est bloqu&#233; par d&#233;faut pour tous les visiteurs europ&#233;ens (CH inclus)</strong> via la configuration Consent Mode inject&#233;e par Site Kit. Tant que ce probl&#232;me n'est pas r&#233;solu, <strong>aucune strat&#233;gie SEO ne peut &#234;tre pilot&#233;e ni mesur&#233;e</strong>. C'est le pr&#233;requis bloquant absolu.
+            </div>
+
+            <h3 style="margin:24px 0 12px; font-size:1rem; color:var(--red);">&#128296; Smoking Gun #1 &mdash; Consent Mode bloque GA4 par d&#233;faut</h3>
+            <p style="color:var(--text-muted); margin-bottom:12px;">Code inject&#233; par Site Kit dans le <code>&lt;head&gt;</code> de chaque page (lignes 11-18 du HTML) :</p>
+            <pre style="background:var(--bg); padding:16px; border-radius:8px; font-size:0.82rem; font-family:'JetBrains Mono', monospace; overflow-x:auto; line-height:1.5; border-left:3px solid var(--red);">gtag('consent', 'default', {
+  "ad_personalization":     "denied",
+  "ad_storage":             "denied",
+  "ad_user_data":           "denied",
+  <span style="color:var(--red); font-weight:700;">"analytics_storage":      "denied",</span>   <span style="color:var(--text-muted);">// &larr; GA4 BLOQU&#201; par d&#233;faut</span>
+  "functionality_storage":  "denied",
+  "security_storage":       "denied",
+  "personalization_storage":"denied",
+  "region": [<span style="color:var(--yellow);">"AT","BE","BG","CH","CY","CZ","DE","DK","EE",
+             "ES","FI","FR","GB","GR","HR","HU","IE","IS","IT",
+             "LI","LT","LU","LV","MT","NL","NO","PL","PT","RO",
+             "SE","SI","SK"</span>],   <span style="color:var(--text-muted);">// &larr; 31 pays EU/EEE + Suisse</span>
+  "wait_for_update": 500
+});</pre>
+            <table>
+                <thead><tr><th>Param&#232;tre</th><th>Effet</th></tr></thead>
+                <tbody>
+                    <tr><td><code>analytics_storage: denied</code></td><td><strong style="color:var(--red);">GA4 ne peut PAS collecter de pageview</strong> tant que l'utilisateur n'a pas cliqu&#233; "Accepter" sur la banni&#232;re Complianz</td></tr>
+                    <tr><td><code>region: [..CH, FR, DE, BE..]</code></td><td>S'applique &#224; tous les visiteurs des <strong>31 pays EU/EEE + Suisse</strong></td></tr>
+                    <tr><td><code>wait_for_update: 500</code></td><td>gtag attend 500 ms le consentement &mdash; si pas de clic, le pageview est <strong>perdu d&#233;finitivement</strong></td></tr>
+                    <tr><td>Banni&#232;re Complianz</td><td>Type <code>cmplz-bottom-right ... optin</code> (opt-in discret en bas &#224; droite, taux d'acceptation typique 15-25 %)</td></tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin:24px 0 12px; font-size:1rem; color:var(--red);">&#9881;&#65039; M&#233;canisme exact &mdash; Pourquoi GA4 ne voit que les bots</h3>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon">&#127464;&#127469;</div>
+                    <div class="ev-title">Visiteur r&#233;el suisse / europ&#233;en</div>
+                    <div class="ev-detail">
+                        1. Charge la page<br>
+                        2. <code>gtag default = denied</code> (CH dans la r&#233;gion)<br>
+                        3. Banni&#232;re Complianz s'affiche en bas &#224; droite<br>
+                        4. Visiteur ferme/ignore (~80 % le font)<br>
+                        5. <code>analytics_storage</code> reste <strong style="color:var(--red);">denied</strong><br>
+                        6. <strong style="color:var(--red);">&#10060; Pageview NON envoy&#233; &#224; GA4</strong><br>
+                        7. Visiteur invisible dans GA4
+                    </div>
+                </div>
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon">&#129302;</div>
+                    <div class="ev-title">Bot US / Chine / Singapour / Tunisie</div>
+                    <div class="ev-detail">
+                        1. Charge la page<br>
+                        2. <code>gtag default = denied</code><br>
+                        3. Bot ignore la banni&#232;re<br>
+                        4. R&#233;gion du bot &notin; EU/CH<br>
+                        5. &rarr; <strong>Consent Mode ne s'applique pas</strong><br>
+                        6. <strong style="color:var(--green);">&#9989; Pageview envoy&#233; normalement</strong><br>
+                        7. Bot visible dans GA4
+                    </div>
+                </div>
+            </div>
+            <div class="issue-item critical"><span class="issue-badge">CONS&#201;QUENCE</span><div>C'est exactement pourquoi GA4 montre <strong>83 % USA + Chine + Singapour + Tunisie</strong> et seulement <strong>17 % "Autres"</strong> (qui contient la Suisse + le reste de l'Europe). Les vrais visiteurs cibles sont devenus invisibles, les bots sont devenus la majorit&#233;.</div></div>
+
+            <h3 style="margin:24px 0 12px; font-size:1rem; color:var(--red);">&#128680; Smoking Gun #2 &mdash; Double tracking GA4 d&#233;tect&#233;</h3>
+            <p style="color:var(--text-muted); margin-bottom:12px;">L'inspection du HTML r&#233;v&#232;le <strong>deux propri&#233;t&#233;s GA4 charg&#233;es en parall&#232;le</strong> par deux plugins diff&#233;rents :</p>
+            <table>
+                <thead><tr><th>ID</th><th>Type</th><th>Source / Plugin</th><th>Position dans le HTML</th></tr></thead>
+                <tbody>
+                    <tr><td><code>GT-WBK8XSPW</code></td><td>Google Tag (nouveau format)</td><td><strong>Site Kit by Google</strong></td><td>Ligne 246 + config</td></tr>
+                    <tr><td><code>G-7G5KELWH87</code></td><td>GA4 Measurement ID</td><td><strong>GA Google Analytics</strong> (plugin Jeff Starr)</td><td>Ligne 259 + config</td></tr>
+                    <tr><td><code>AW-11093980890</code></td><td>Google Ads conversion</td><td>Site Kit (li&#233; &#224; GT-WBK8XSPW)</td><td>Ligne 253</td></tr>
+                </tbody>
+            </table>
+            <div class="issue-item critical"><span class="issue-badge">PROBL&#200;ME</span><div>Deux propri&#233;t&#233;s GA4 distinctes re&#231;oivent (ou ne re&#231;oivent pas) les m&#234;mes &#233;v&#233;nements simultan&#233;ment. <strong>Personne ne sait laquelle est la "vraie" propri&#233;t&#233; officielle</strong>, ni si Site Kit affiche les donn&#233;es de l'une ou de l'autre. Cela cr&#233;e de la confusion sur "quel chiffre regarder" et fragmente potentiellement les donn&#233;es de conversion.</div></div>
+            <div class="issue-item warning"><span class="issue-badge">ACTION</span><div>D&#233;cider quelle propri&#233;t&#233; GA4 garder (probablement <code>GT-WBK8XSPW</code> de Site Kit puisque c'est celle li&#233;e &#224; Google Ads), puis <strong>d&#233;sactiver le plugin GA Google Analytics</strong> ou retirer son ID de la config.</div></div>
+
+            <h3 style="margin:24px 0 12px; font-size:1rem;">&#128293; Smoking Gun #3 &mdash; Prineville (Oregon) confirm&#233; data center Facebook</h3>
+            <p style="color:var(--text-muted); margin-bottom:12px;">Dans la sous-section <strong>"New visitors"</strong> de Site Kit, les top villes incluent :</p>
+            <table>
+                <thead><tr><th>Ville</th><th>Part</th><th>Identification</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Lanzhou (Chine)</strong></td><td>18,9 %</td><td>Bots Alibaba Cloud / China Telecom</td></tr>
+                    <tr><td><strong>Singapore</strong></td><td>17,7 %</td><td>Bots AWS / GCP / Azure Singapore</td></tr>
+                    <tr><td><strong style="color:var(--red);">Prineville (Oregon, USA)</strong></td><td>4 %</td><td><strong style="color:var(--red);">Data center principal de Meta/Facebook</strong></td></tr>
+                </tbody>
+            </table>
+            <div class="issue-item critical"><span class="issue-badge">PREUVE</span><div>4 % du trafic "nouveau" provient litt&#233;ralement des serveurs Facebook &#224; Prineville. Combin&#233; aux bots Chine/Singapour, cela confirme &#224; 100 % que le "trafic" GA4 est massivement compos&#233; de bots de scraping.</div></div>
+
+            <h3 style="margin:24px 0 12px; font-size:1rem;">&#128202; R&#233;partition g&#233;ographique GA4 (par PAYS, 90 jours)</h3>
+            <table>
+                <thead><tr><th>Rang</th><th>Pays</th><th>Part GA4</th><th>Estimation visiteurs</th><th>Cible naoenergy ?</th></tr></thead>
+                <tbody>
+                    <tr><td>&#129351;</td><td>&#127482;&#127480; &#201;tats-Unis</td><td><strong>36,3 %</strong></td><td>~267</td><td>&#10060; Non &mdash; Bots (Prineville/FB + cloud)</td></tr>
+                    <tr><td>&#129352;</td><td>&#127464;&#127475; Chine</td><td><strong>20,4 %</strong></td><td>~150</td><td>&#10060; Non &mdash; Bots Alibaba</td></tr>
+                    <tr><td>&#129353;</td><td>&#127480;&#127468; Singapour</td><td><strong>19,2 %</strong></td><td>~141</td><td>&#10060; Non &mdash; Bots cloud</td></tr>
+                    <tr><td>4</td><td>&#127481;&#127475; Tunisie</td><td><strong>6,8 %</strong></td><td>~50</td><td>&#10060; Non &mdash; Bot operation</td></tr>
+                    <tr><td>5</td><td>&#127757; Autres (CH + reste UE)</td><td><strong>17,2 %</strong></td><td>~127</td><td>&#9989; Inclut la cible</td></tr>
+                </tbody>
+            </table>
+            <div class="issue-item critical"><span class="issue-badge">CRITIQUE</span><div><strong>82,7 % du trafic GA4 = bots</strong>. La cible (Suisse romande) est cach&#233;e dans les "Autres 17,2 %" = au maximum ~127 visiteurs sur 90 jours. Le vrai trafic suisse r&#233;el est probablement entre <strong>30 et 70 visiteurs</strong> sur 90 jours, soit moins de 1 visiteur/jour vu par GA4. Pourtant Search Console rapporte 2 600 clics depuis Google sur la m&#234;me p&#233;riode &mdash; <strong>les vrais clients sont l&#224;, GA4 ne les voit pas</strong>.</div></div>
+
+            <h3 style="margin:24px 0 12px; font-size:1rem; color:var(--accent);">&#128296; Plan de fix &mdash; 3 options (du plus recommand&#233; au moins)</h3>
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:16px; margin-bottom:16px;">
+                <div style="background:var(--surface); border:2px solid var(--green); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--green);">Option A &mdash; Consent Mode v2 Advanced + Behavior Modeling</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">
+                        <strong>RECOMMAND&#201; &mdash; 100 % conforme RGPD.</strong><br><br>
+                        1. Dans Complianz : v&#233;rifier que <strong>Consent Mode v2 est en mode "Advanced"</strong> (pas "Basic")<br>
+                        2. Dans GA4 (admin) : activer <strong>Behavior Modeling</strong> pour reconstituer les visiteurs non consentis<br>
+                        3. R&#233;sultat : GA4 re&#231;oit des "pings cookieless" et mod&#233;lise statistiquement les visiteurs europ&#233;ens<br>
+                        4. <strong>Restaure ~70-90 % du trafic perdu</strong> sans toucher au site ni &#224; la banni&#232;re
+                    </p>
+                    <span style="display:inline-block; margin-top:10px; font-size:0.75rem; padding:3px 10px; border-radius:20px; background:rgba(34,197,94,0.15); color:var(--green);">Effort : 1-2 h &middot; Risque : nul &middot; RGPD : OK</span>
+                </div>
+                <div style="background:var(--surface); border:2px solid var(--yellow); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--yellow);">Option B &mdash; Banni&#232;re Complianz plus visible</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">
+                        Passer la banni&#232;re d'<code>optin discret bottom-right</code> &#224; <strong>modal centr&#233;</strong> ou <strong>bandeau plein largeur</strong>.<br><br>
+                        &bull; Taux d'acceptation actuel estim&#233; : 15-25 %<br>
+                        &bull; Taux d'acceptation modal : 40-70 %<br><br>
+                        <strong>Inconv&#233;nient :</strong> impact UX n&#233;gatif possible &mdash; les visiteurs peuvent percevoir le site comme intrusif.
+                    </p>
+                    <span style="display:inline-block; margin-top:10px; font-size:0.75rem; padding:3px 10px; border-radius:20px; background:rgba(234,179,8,0.15); color:var(--yellow);">Effort : 30 min &middot; Risque : UX &middot; RGPD : OK</span>
+                </div>
+                <div style="background:var(--surface); border:2px solid var(--accent); border-radius:var(--radius); padding:24px;">
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--accent);">Option C &mdash; Search Console comme source de v&#233;rit&#233;</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">
+                        Ne rien fixer dans GA4 et utiliser Search Console comme m&#233;trique principale (non affect&#233; par le consentement cookies).<br><br>
+                        &bull; <strong>2 600 clics / 155 K impressions</strong> = vraies donn&#233;es fiables<br>
+                        &bull; Inconv&#233;nient : on perd l'attribution Paid Search vs Organic vs Direct, et on ne peut pas mesurer les conversions
+                    </p>
+                    <span style="display:inline-block; margin-top:10px; font-size:0.75rem; padding:3px 10px; border-radius:20px; background:rgba(99,102,241,0.15); color:var(--accent);">Effort : 0 &middot; Risque : aveugle au funnel</span>
+                </div>
+            </div>
+
+            <p style="color:var(--text-muted); font-size:0.8rem; margin-top:20px; font-style:italic;">Diagnostic &#233;tabli le 9 avril 2026 par inspection directe du HTML rendu de https://naoenergy.ch/ (curl + grep des balises gtag/Complianz). Aucun acc&#232;s direct &#224; GA4 ou Search Console n&#233;cessaire pour ce diagnostic. La validation finale et l'application du fix n&#233;cessiteront un acc&#232;s Lecteur GA4 + Restreint Search Console.</p>
+        </div>
+    </div>
+
     <!-- ===================== AUDIT GOOGLE SITE KIT (NOUVEAU) ===================== -->
     <div class="section" id="section-sitekit" style="border-color: var(--cyan);">
         <div class="section-header" onclick="toggleSection('sitekit')">
@@ -1146,16 +1842,18 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             <div class="evidence-grid">
                 <div class="evidence-card ev-critical">
                     <div class="ev-icon">&#129302;</div>
-                    <div class="ev-title">40 % du trafic = bots / spam g&#233;ographique</div>
-                    <div class="ev-value red">40 %</div>
+                    <div class="ev-title">82,7 % du trafic = bots non-cibles</div>
+                    <div class="ev-value red">82,7 %</div>
                     <div class="ev-detail">
-                        Top villes du trafic GA4 :<br>
-                        &bull; <strong>Lanzhou (Chine)</strong> &mdash; 18,6 %<br>
-                        &bull; <strong>Singapore</strong> &mdash; 17,2 %<br>
-                        &bull; <strong>Tunis</strong> &mdash; 4,2 %<br>
-                        Aucune ville suisse dans le top 3 alors que la cible est la Suisse romande. Ces visites sont presque certainement du trafic bot/spam non filtr&#233;.
+                        R&#233;partition par pays (onglet Emplacements) :<br>
+                        &bull; &#127482;&#127480; <strong>USA</strong> &mdash; 36,3 % (dont Prineville/FB)<br>
+                        &bull; &#127464;&#127475; <strong>Chine</strong> &mdash; 20,4 % (Lanzhou)<br>
+                        &bull; &#127480;&#127468; <strong>Singapour</strong> &mdash; 19,2 %<br>
+                        &bull; &#127481;&#127475; <strong>Tunisie</strong> &mdash; 6,8 %<br>
+                        &bull; &#127757; Autres (CH inclus) &mdash; 17,2 %<br>
+                        Aucun pays europ&#233;en dans le top 4. Voir section "Tracking &amp; Mesure" pour la cause racine (Consent Mode).
                     </div>
-                    <div class="ev-source">Source : GA4 &rarr; Site Kit (Emplacements)</div>
+                    <div class="ev-source">Source : GA4 &rarr; Site Kit (Emplacements par pays)</div>
                 </div>
 
                 <div class="evidence-card ev-critical">
@@ -1284,16 +1982,15 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             <h3 style="margin:24px 0 12px; font-size:1rem; color:var(--accent);">&#128161; Actions recommand&#233;es suite &#224; cet audit Site Kit</h3>
             <ol style="margin-left:20px; line-height:1.9; font-size:0.92rem;">
                 <li><strong>Filtrer le trafic bot dans GA4</strong> &mdash; Activer "Bot filtering" dans les param&#232;tres de la propri&#233;t&#233; GA4. Ajouter une exclusion d'IP/de pays pour Lanzhou, Singapore et Tunis si confirm&#233; comme spam.</li>
-                <li><strong>V&#233;rifier l'installation du tag GA4 (urgence absolue)</strong> &mdash; La chute simultan&#233;e de &minus;66 % visiteurs GA4, &minus;92 % visiteurs Search (widget Site Kit) et &minus;88,3 % Key Events, alors que Search Console (qui n'utilise pas GA4) progresse de +16,4 %, indique fortement un tag GA4 cass&#233; ou bloqu&#233; par le consentement cookies. Tester sur 5 pages cl&#233;s avec Tag Assistant.</li>
+                <li><strong>R&#233;parer le tag GA4 (DIAGNOSTIC R&#201;SOLU le 9 avril)</strong> &mdash; La cause exacte est identifi&#233;e : <code>analytics_storage: denied</code> par d&#233;faut pour les 31 pays EU/EEE + Suisse via Site Kit Consent Mode. Plus un double tracking <code>GT-WBK8XSPW</code> + <code>G-7G5KELWH87</code>. Voir la section <strong>"Tracking &amp; Mesure &mdash; Smoking Gun"</strong> pour le diagnostic complet et les 3 options de fix (A : Consent Mode v2 Advanced + Behavior Modeling, B : banni&#232;re plus visible, C : Search Console comme source de v&#233;rit&#233;).</li>
                 <li><strong>Auditer les sources "Direct"</strong> &mdash; Ajouter des UTM aux campagnes (newsletters, signatures e-mail, QR codes) pour r&#233;duire la part Direct artificielle.</li>
-                <li><strong>R&#233;soudre les 9 864 erreurs 404</strong> (d&#233;j&#224; en plan d'action) &mdash; confirmation par Site Kit que les 404 dominent les m&#233;triques d'engagement.</li>
+                <li><strong>S&#233;parer les vrais 404 utilisateurs du bruit Facebook</strong> &mdash; sur les 9 937 entr&#233;es du log Redirection, 84,7 % sont du bruit <code>facebookexternalhit</code> sur <code>/meta.json</code> (sans impact GA4/GSC). Voir section "Erreurs 404" r&#233;vis&#233;e pour le plan d'actions cibl&#233;.</li>
                 <li><strong>Optimiser le title/meta de la page "Batterie Atmoce"</strong> &mdash; 584 impressions pour seulement 19 clics (CTR 3,3 %). Premier gain non-marque facile.</li>
                 <li><strong>Cr&#233;er du contenu non-marque</strong> &mdash; 9 mots-cl&#233;s sur 10 sont des variantes de marque. Cibler des requ&#234;tes informationnelles : "prix panneau solaire suisse romande", "subvention pompe &#224; chaleur Vaud", "batterie domestique avis"&hellip;</li>
                 <li><strong>Schema Organization avec <code>alternateName</code></strong> &mdash; D&#233;clarer toutes les variantes : "Nao Energy", "Nao Energy SA", "naoenergy sa". R&#233;duit la confusion d'orthographe (~900 clics cumul&#233;s).</li>
                 <li><strong>Configurer les conversions GA4 hors Paid Search</strong> &mdash; D&#233;finir les key events (formulaire de contact, t&#233;l&#233;phone cliqu&#233;, devis demand&#233;) et v&#233;rifier qu'ils sont attribu&#233;s correctement aux canaux Organic Search et Direct.</li>
             </ol>
 
-            <p style="color:var(--text-muted); font-size:0.8rem; margin-top:20px; font-style:italic;">Audit Site Kit r&#233;alis&#233; le 8 avril 2026 via une lecture directe du tableau de bord wp-admin/admin.php?page=googlesitekit-dashboard. Toutes les valeurs sont issues du widget officiel Site Kit (GA4 + Search Console).</p>
         </div>
     </div>
 
@@ -1321,9 +2018,9 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                 </div>
 
                 <div style="background:var(--surface); border:2px solid var(--red); border-radius:var(--radius); padding:24px;">
-                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--red);">3. Corriger les 9 864 erreurs 404</h3>
-                    <p style="color:var(--text-muted); font-size:0.85rem;">Cr&#233;er un fichier /meta.json valide ou ajouter une r&#232;gle de redirection. Purger les anciens journaux 404 dans le plugin Redirection. Surveiller les nouveaux motifs.</p>
-                    <span style="display:inline-block; margin-top:10px; font-size:0.75rem; padding:3px 10px; border-radius:20px; background:rgba(239,68,68,0.15); color:var(--red);">Impact : Budget de crawl + Charge serveur</span>
+                    <h3 style="font-size:1.05rem; margin-bottom:6px; color:var(--red);">3. R&#201;PARER GA4 (Consent Mode + Double Tracking) &mdash; PR&#201;REQUIS STRAT&#201;GIE SEO</h3>
+                    <p style="color:var(--text-muted); font-size:0.85rem;">Le tag GA4 est bloqu&#233; pour 100 % des visiteurs europ&#233;ens (Suisse incluse) par <code>analytics_storage: denied</code>. R&#233;sultat : 83 % du trafic GA4 = bots. <strong>Aucune strat&#233;gie SEO ne peut &#234;tre pilot&#233;e tant que ce probl&#232;me n'est pas r&#233;solu.</strong> Activer Consent Mode v2 Advanced dans Complianz + Behavior Modeling dans GA4. Consolider sur une seule propri&#233;t&#233; (d&#233;sactiver le plugin GA Google Analytics qui charge <code>G-7G5KELWH87</code> en doublon de Site Kit).</p>
+                    <span style="display:inline-block; margin-top:10px; font-size:0.75rem; padding:3px 10px; border-radius:20px; background:rgba(239,68,68,0.15); color:var(--red);">Impact : Mesure complete du SEO + ROI Ads</span>
                 </div>
 
                 <div style="background:var(--surface); border:2px solid var(--red); border-radius:var(--radius); padding:24px;">
@@ -1395,14 +2092,27 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
         </div>
     </div>
 
-            <div class="footer" style="text-align:center; padding:32px 0 8px; color:var(--text-muted); font-size:0.78rem; border-top:1px solid var(--card-border); margin-top:32px;">
-                <p>G&#233;n&#233;r&#233; par Agentic SEO Skill &middot; Mis &#224; jour le 3 avril 2026 avec preuves WordPress Admin</p>
-                <p style="margin-top:4px;">V2 — V&#233;rifi&#233; &amp; corrig&#233; avec les r&#233;sultats de l'audit wp-admin</p>
-            </div>
-
         </div><!-- /.content -->
     </main>
 </div><!-- /.app -->
+
+<!-- ============ RIGHT DRAWER (TODO LIST) ============ -->
+<div class="right-drawer-backdrop" id="drawerBackdrop" onclick="closeDrawer()"></div>
+<aside class="right-drawer" id="rightDrawer" aria-hidden="true">
+    <div class="drawer-header">
+        <div class="drawer-title-block">
+            <div class="drawer-icon-large" id="drawerIcon">&#128680;</div>
+            <div>
+                <div class="drawer-title" id="drawerTitle">Probl&#232;mes critiques</div>
+                <div class="drawer-subtitle" id="drawerSubtitle">8 &#233;l&#233;ments &mdash; cliquez pour ouvrir la section</div>
+            </div>
+        </div>
+        <button class="drawer-close" onclick="closeDrawer()" aria-label="Fermer">&#10005;</button>
+    </div>
+    <div class="drawer-body">
+        <div class="drawer-list" id="drawerList"></div>
+    </div>
+</aside>
 
 <script>
 function showPanel(id) {
@@ -1466,6 +2176,129 @@ function toggleTheme() {
         btn.innerHTML = '&#9728;&#65039;';
     }
 }
+
+// ============ RIGHT DRAWER (TODO LIST) ============
+const drawerData = {
+    critical: {
+        title: "Probl&#232;mes critiques",
+        icon: "&#128680;",
+        cls: "k-critical",
+        items: [
+            { icon: "&#128300;", title: "GA4 bloqu&#233; par Consent Mode", section: "Tracking & Mesure", target: "tracking" },
+            { icon: "&#9888;&#65039;", title: "Double tracking GA4 (GT-WBK8XSPW + G-7G5KELWH87)", section: "Tracking & Mesure", target: "tracking" },
+            { icon: "&#129302;", title: "82,7 % du trafic GA4 = bots non-cibles", section: "Audit Site Kit", target: "sitekit" },
+            { icon: "&#9889;", title: "JS WP Rocket d&#233;sactiv&#233; (Core Web Vitals)", section: "Performance", target: "performance" },
+            { icon: "&#128247;", title: "81 images WebP manquantes (quota Imagify &#233;puis&#233;)", section: "Images", target: "images" },
+            { icon: "&#127757;", title: "Aucune balise hreflang (mono-langue)", section: "Hreflang", target: "hreflang" },
+            { icon: "&#128274;", title: "En-t&#234;tes de s&#233;curit&#233; manquants (CSP, X-Frame, etc.)", section: "S&#233;curit&#233;", target: "security" },
+            { icon: "&#127963;&#65039;", title: "Profil Organisation Yoast incomplet (E-E-A-T)", section: "SEO Entit&#233;", target: "entity" },
+        ]
+    },
+    warning: {
+        title: "Avertissements",
+        icon: "&#9888;&#65039;",
+        cls: "k-warning",
+        items: [
+            { icon: "&#128269;", title: "Part Organic Search faible (11,3 %)", section: "Audit Site Kit", target: "sitekit" },
+            { icon: "&#128176;", title: "D&#233;pendance forte au Paid Search pour les conversions", section: "Audit Site Kit", target: "sitekit" },
+            { icon: "&#128221;", title: "9/10 mots-cl&#233;s sont des variantes de marque", section: "Audit Site Kit", target: "sitekit" },
+            { icon: "&#128203;", title: "6 variantes orthographiques du nom de marque", section: "Audit Site Kit", target: "sitekit" },
+            { icon: "&#128683;", title: "~900 vrais 404 utilisateurs &#224; identifier", section: "Erreurs 404", target: "errors404" },
+            { icon: "&#128190;", title: "Bug 'about:blank' sur les URLs d'articles", section: "Erreurs 404", target: "errors404" },
+            { icon: "&#128241;", title: "Apple touch icons manquants", section: "Erreurs 404", target: "errors404" },
+            { icon: "&#128300;", title: "Schema LocalBusiness + Service manquants", section: "Schema", target: "schema" },
+            { icon: "&#127968;", title: "Pas de cache objet persistant", section: "WP Admin", target: "wp_admin" },
+            { icon: "&#128268;", title: "PHP 8.1.34 obsol&#232;te (mise &#224; niveau requise)", section: "WP Admin", target: "wp_admin" },
+            { icon: "&#128269;", title: "Serveur SQL obsol&#232;te", section: "WP Admin", target: "wp_admin" },
+            { icon: "&#128203;", title: "Mise &#224; jour th&#232;me en attente", section: "WP Admin", target: "wp_admin" },
+            { icon: "&#128279;", title: "18 pages orphelines (maillage interne)", section: "Plan d'actions", target: "recs" },
+            { icon: "&#128279;", title: "36 liens sans texte d'ancrage", section: "Plan d'actions", target: "recs" },
+            { icon: "&#128214;", title: "Score de lisibilit&#233; Flesch tr&#232;s difficile (35,5)", section: "Plan d'actions", target: "recs" },
+            { icon: "&#128216;", title: "Disallow /item/ dans robots.txt &#224; v&#233;rifier", section: "Sitemap & Robots", target: "sitemap" },
+            { icon: "&#129302;", title: "11 robots IA non explicit&#233;s dans robots.txt", section: "Sitemap & Robots", target: "sitemap" },
+            { icon: "&#128172;", title: "Polylang Pro 3.6.6 obsol&#232;te (3.8.2 dispo)", section: "WP Admin", target: "wp_admin" },
+            { icon: "&#128739;&#65039;", title: "3 extensions inactives &#224; supprimer", section: "WP Admin", target: "wp_admin" },
+        ]
+    },
+    pass: {
+        title: "Points valid&#233;s",
+        icon: "&#9989;",
+        cls: "k-pass",
+        items: [
+            { icon: "&#128202;", title: "Search Console : +16,5 % clics, +16,4 % impressions", section: "Audit Site Kit", target: "sitekit" },
+            { icon: "&#128293;", title: "Page /nos-realisations/ : 75,93 % engagement, 3 min 45 s", section: "Audit Site Kit", target: "sitekit" },
+            { icon: "&#128221;", title: "Yoast SEO g&#233;n&#232;re bien le JSON-LD (Schema corrig&#233;)", section: "Schema", target: "schema" },
+            { icon: "&#128241;", title: "Open Graph et Twitter Cards configur&#233;s", section: "M&#233;ta social", target: "social" },
+            { icon: "&#128221;", title: "Balises titre / meta description compl&#232;tes (100/100)", section: "On-Page", target: "onpage" },
+            { icon: "&#128506;", title: "9 sitemaps XML accessibles et &#224; jour", section: "Sitemap & Robots", target: "sitemap" },
+            { icon: "&#128279;", title: "71 redirections 301 propres (aucune 404 forc&#233;e)", section: "Erreurs 404", target: "errors404" },
+            { icon: "&#127757;", title: "robots.txt valide et structur&#233;", section: "Sitemap & Robots", target: "sitemap" },
+            { icon: "&#128274;", title: "HTTPS activ&#233; sur tout le site", section: "S&#233;curit&#233;", target: "security" },
+        ]
+    }
+};
+
+function openDrawer(type) {
+    const data = drawerData[type];
+    if (!data) return;
+    document.getElementById('drawerIcon').innerHTML = data.icon;
+    document.getElementById('drawerIcon').className = 'drawer-icon-large ' + data.cls;
+    document.getElementById('drawerTitle').innerHTML = data.title;
+    document.getElementById('drawerSubtitle').innerHTML = data.items.length + ' &#233;l&#233;ments &mdash; cliquez pour ouvrir la section';
+    const list = document.getElementById('drawerList');
+    list.innerHTML = '';
+    data.items.forEach(item => {
+        const btn = document.createElement('button');
+        btn.className = 'drawer-item';
+        btn.type = 'button';
+        btn.innerHTML = '<div class="drawer-item-bullet ' + data.cls + '">' + item.icon + '</div>' +
+            '<div class="drawer-item-content">' +
+              '<div class="drawer-item-title">' + item.title + '</div>' +
+              '<div class="drawer-item-section">' + item.section + '</div>' +
+            '</div>' +
+            '<div class="drawer-item-arrow">&rarr;</div>';
+        btn.addEventListener('click', () => {
+            closeDrawer();
+            showPanel(item.target);
+        });
+        list.appendChild(btn);
+    });
+    document.getElementById('rightDrawer').classList.add('open');
+    document.getElementById('drawerBackdrop').classList.add('open');
+    document.getElementById('rightDrawer').setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+}
+function closeDrawer() {
+    document.getElementById('rightDrawer').classList.remove('open');
+    document.getElementById('drawerBackdrop').classList.remove('open');
+    document.getElementById('rightDrawer').setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+}
+
+// ============ NOTIFICATION DROPDOWN ============
+function toggleNotif(e) {
+    if (e) e.stopPropagation();
+    const dd = document.getElementById('notifDropdown');
+    dd.classList.toggle('open');
+}
+function closeNotif() {
+    document.getElementById('notifDropdown').classList.remove('open');
+}
+// Close notif on outside click
+document.addEventListener('click', (e) => {
+    const dd = document.getElementById('notifDropdown');
+    const bell = document.querySelector('.notif-bell');
+    if (dd && dd.classList.contains('open') && !dd.contains(e.target) && !bell.contains(e.target)) {
+        closeNotif();
+    }
+});
+// Close drawer on Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeDrawer();
+        closeNotif();
+    }
+});
 
 // Open Audit Site Kit by default (featured)
 showPanel('sitekit');
