@@ -99,6 +99,8 @@ html, body {
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     transition: background 0.3s, color 0.3s;
+    overflow-x: hidden;
+    max-width: 100vw;
 }
 
 body { min-height: 100vh; }
@@ -110,6 +112,8 @@ a { color: var(--primary); text-decoration: none; }
     display: grid;
     grid-template-columns: 256px 1fr;
     min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 /* ============ SIDEBAR ============ */
@@ -135,13 +139,16 @@ a { color: var(--primary); text-decoration: none; }
     justify-content: center;
     padding: 4px 8px 0;
     min-height: 44px;
+    flex: 1;
+    min-width: 0;
 }
 .brand-logo {
-    max-width: 160px;
-    max-height: 44px;
-    width: auto;
+    max-width: 100%;
+    width: 160px;
     height: auto;
+    max-height: 44px;
     object-fit: contain;
+    display: block;
 }
 .brand-logo-dark { display: none; }
 [data-theme="dark"] .brand-logo-light { display: none; }
@@ -293,6 +300,8 @@ a { color: var(--primary); text-decoration: none; }
 /* ============ MAIN ============ */
 .main {
     min-width: 0;
+    max-width: 100%;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -310,6 +319,7 @@ a { color: var(--primary); text-decoration: none; }
     position: sticky;
     top: 0;
     z-index: 50;
+    max-width: 100%;
 }
 
 .topbar-search {
@@ -1203,17 +1213,49 @@ button.kpi-card { display: block; width: 100%; }
 }
 @media (max-width: 768px) {
     .kpi-row { grid-template-columns: repeat(2, 1fr); }
-    .content { padding: 20px; }
+    .content { padding: 16px; }
     .topbar { padding: 0 14px; gap: 10px; }
     .menu-toggle { width: 38px; height: 38px; }
     .topbar-logo-img { max-height: 28px; max-width: 110px; }
     .notif-dropdown { width: 320px; right: -8px; }
+    .evidence-grid { grid-template-columns: 1fr; gap: 12px; }
+    .action-grid { grid-template-columns: 1fr; gap: 12px; }
+    .kpi-mini-row { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .evidence-card { padding: 16px; }
+    .card-body { padding: 16px; }
+    .card-header { padding: 16px 18px; }
+    .page-title { font-size: 1.4rem; }
+    .page-subtitle { font-size: 0.8rem; white-space: normal; }
+    .card { overflow: hidden; }
+    /* Make tables horizontally scrollable inside cards */
+    .card .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .data-table thead, .data-table tbody, .data-table tr { display: table; width: 100%; }
+    /* Keep tables outside of cards scrollable too */
+    .panel > table.data-table {
+        display: block;
+        overflow-x: auto;
+    }
+    pre.code-block { font-size: 0.7rem; padding: 12px 14px; }
+    .info-banner { padding: 14px 16px; font-size: 0.8rem; }
+    .alert-banner { padding: 16px; gap: 12px; }
+    .alert-icon { width: 38px; height: 38px; }
 }
 @media (max-width: 480px) {
-    .kpi-row { grid-template-columns: 1fr; }
-    .topbar { padding: 0 12px; }
-    .topbar-logo-img { max-width: 90px; }
-    .notif-dropdown { width: calc(100vw - 24px); right: -52px; }
+    .kpi-row { grid-template-columns: 1fr; gap: 10px; }
+    .kpi-mini-row { grid-template-columns: 1fr; }
+    .topbar { padding: 0 10px; gap: 8px; }
+    .topbar-logo-img { max-width: 80px; max-height: 26px; }
+    .topbar-actions { gap: 8px; }
+    .icon-btn { width: 36px; height: 36px; }
+    .notif-dropdown { width: calc(100vw - 20px); right: -52px; }
+    .content { padding: 14px; }
+    .page-title { font-size: 1.25rem; }
+    .menu-toggle { width: 36px; height: 36px; }
+    .menu-toggle svg { width: 18px; height: 18px; }
 }
 
 /* ============ EVIDENCE CARDS (sections d'audit) ============ */
