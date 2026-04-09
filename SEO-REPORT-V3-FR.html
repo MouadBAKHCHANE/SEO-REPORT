@@ -870,6 +870,160 @@ button.kpi-card { display: block; width: 100%; }
 [data-theme="dark"] .theme-toggle .dark-icon { display: none; }
 
 /* ============ RESPONSIVE ============ */
+/* ============ TOPBAR LOGO (mobile only) ============ */
+.topbar-logo {
+    display: none;
+    align-items: center;
+    flex-shrink: 0;
+}
+.topbar-logo-img {
+    max-height: 32px;
+    max-width: 130px;
+    object-fit: contain;
+}
+.topbar-logo-dark { display: none; }
+[data-theme="dark"] .topbar-logo-light { display: none; }
+[data-theme="dark"] .topbar-logo-dark { display: block; }
+
+/* ============ MOBILE SEARCH BUTTON ============ */
+.search-mobile-btn { display: none; }
+
+/* ============ NOTIFICATION BELL & DROPDOWN ============ */
+.notif-wrap { position: relative; }
+.notif-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--red);
+    color: white;
+    font-size: 0.6rem;
+    font-weight: 800;
+    min-width: 17px;
+    height: 17px;
+    border-radius: 100px;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--surface);
+    animation: notifPulse 2.2s ease-in-out infinite;
+    pointer-events: none;
+}
+@keyframes notifPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(239,68,68,0.5); }
+    50% { transform: scale(1.08); box-shadow: 0 0 0 6px rgba(239,68,68,0); }
+}
+.notif-dropdown {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 380px;
+    max-width: 92vw;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(15,23,42,0.18);
+    z-index: 200;
+    display: none;
+    overflow: hidden;
+}
+.notif-dropdown.open { display: block; animation: notifSlide 0.25s ease-out; }
+@keyframes notifSlide {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.notif-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(124,177,196,0.10), rgba(124,177,196,0.04));
+}
+.notif-header-title {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--text);
+}
+.notif-count {
+    font-size: 0.7rem;
+    background: var(--primary-soft);
+    color: var(--primary);
+    padding: 3px 9px;
+    border-radius: 100px;
+    font-weight: 700;
+}
+.notif-list {
+    max-height: 420px;
+    overflow-y: auto;
+    padding: 6px;
+}
+.notif-item {
+    display: flex;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.15s;
+    background: transparent;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    color: inherit;
+    margin-bottom: 2px;
+}
+.notif-item:hover {
+    background: var(--surface-soft);
+    border-color: var(--border);
+}
+.notif-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+}
+.notif-icon.ev-critical { background: var(--red-soft); color: var(--red); }
+.notif-icon.ev-warning { background: var(--yellow-soft); color: var(--yellow); }
+.notif-icon.ev-info { background: var(--primary-soft); color: var(--primary); }
+.notif-icon.ev-pass { background: var(--green-soft); color: var(--green); }
+.notif-content { flex: 1; min-width: 0; }
+.notif-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 3px;
+}
+.notif-item-title {
+    font-size: 0.83rem;
+    font-weight: 700;
+    color: var(--text);
+}
+.notif-time {
+    font-size: 0.66rem;
+    color: var(--text-muted);
+    flex-shrink: 0;
+    font-weight: 600;
+}
+.notif-desc {
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    line-height: 1.45;
+}
+.notif-desc code {
+    background: var(--bg);
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text);
+}
+
 /* ============ MOBILE SIDEBAR HELPERS ============ */
 /* Hamburger button — hidden on desktop */
 .menu-toggle {
@@ -1029,7 +1183,7 @@ button.kpi-card { display: block; width: 100%; }
     .sidebar.open { transform: translateX(0); }
     .grid-2-1, .grid-1-2 { grid-template-columns: 1fr; }
 
-    /* Show hamburger + close button + mobile score card */
+    /* Show hamburger + close button + mobile score card + topbar logo */
     .menu-toggle { display: flex; }
     .sidebar-mobile-header {
         display: flex;
@@ -1039,23 +1193,27 @@ button.kpi-card { display: block; width: 100%; }
     }
     .sidebar-close { display: flex; }
     .sidebar-score-mobile { display: flex; }
+    .topbar-logo { display: flex; }
 
     /* Hide desktop topbar score card on tablet/mobile (replaced by sidebar version) */
     .topbar-score-combined { display: none; }
-}
-@media (max-width: 900px) {
-    .topbar-search { max-width: 220px; flex-basis: 220px; }
+    /* Hide search input on mobile, show icon button instead */
+    .topbar-search { display: none; }
+    .search-mobile-btn { display: flex; }
 }
 @media (max-width: 768px) {
     .kpi-row { grid-template-columns: repeat(2, 1fr); }
     .content { padding: 20px; }
-    .topbar { padding: 0 14px; gap: 12px; }
-    .topbar-search { display: none; }
+    .topbar { padding: 0 14px; gap: 10px; }
     .menu-toggle { width: 38px; height: 38px; }
+    .topbar-logo-img { max-height: 28px; max-width: 110px; }
+    .notif-dropdown { width: 320px; right: -8px; }
 }
 @media (max-width: 480px) {
     .kpi-row { grid-template-columns: 1fr; }
     .topbar { padding: 0 12px; }
+    .topbar-logo-img { max-width: 90px; }
+    .notif-dropdown { width: calc(100vw - 24px); right: -52px; }
 }
 
 /* ============ EVIDENCE CARDS (sections d'audit) ============ */
@@ -1880,6 +2038,10 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             <button class="menu-toggle" onclick="openMenu()" aria-label="Ouvrir le menu" type="button">
                 <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
+            <div class="topbar-logo">
+                <img src="imgi_2_logo-light-1.svg" alt="naoenergy" class="topbar-logo-img topbar-logo-light">
+                <img src="imgi_29_logo-light.svg" alt="naoenergy" class="topbar-logo-img topbar-logo-dark">
+            </div>
             <button class="topbar-score-combined" onclick="showPanel('recs')" title="Voir le plan d'actions">
                 <div class="ts-icon">
                     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
@@ -1905,14 +2067,77 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                     <input type="text" placeholder="Rechercher dans le rapport...">
                 </div>
+                <button class="icon-btn search-mobile-btn" onclick="toggleMobileSearch()" aria-label="Rechercher" type="button">
+                    <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </button>
                 <button class="icon-btn theme-toggle" onclick="toggleTheme()" title="Changer le thème">
                     <svg class="light-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
                     <svg class="dark-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
                 </button>
-                <button class="icon-btn" title="Notifications">
-                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
-                    <span class="badge-dot"></span>
-                </button>
+                <div class="notif-wrap">
+                    <button class="icon-btn notif-trigger" onclick="toggleNotif(event)" aria-label="Notifications" type="button">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                        <span class="notif-badge">5</span>
+                    </button>
+                    <div class="notif-dropdown" id="notifDropdown" onclick="event.stopPropagation()">
+                        <div class="notif-header">
+                            <div class="notif-header-title">🎉 Nouveautés du rapport</div>
+                            <div class="notif-count">5 nouveau(x)</div>
+                        </div>
+                        <div class="notif-list">
+                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('tracking');">
+                                <div class="notif-icon ev-critical">🔬</div>
+                                <div class="notif-content">
+                                    <div class="notif-title-row">
+                                        <div class="notif-item-title">Smoking Gun GA4 Consent Mode</div>
+                                        <div class="notif-time">9 avril</div>
+                                    </div>
+                                    <div class="notif-desc">Cause confirmée : <code>analytics_storage: denied</code> par défaut bloque GA4 pour 100 % des visiteurs européens.</div>
+                                </div>
+                            </button>
+                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('tracking');">
+                                <div class="notif-icon ev-critical">⚠️</div>
+                                <div class="notif-content">
+                                    <div class="notif-title-row">
+                                        <div class="notif-item-title">Double tracking GA4 détecté</div>
+                                        <div class="notif-time">9 avril</div>
+                                    </div>
+                                    <div class="notif-desc"><code>GT-WBK8XSPW</code> + <code>G-7G5KELWH87</code> chargent simultanément via deux plugins.</div>
+                                </div>
+                            </button>
+                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('errors404');">
+                                <div class="notif-icon ev-info">📝</div>
+                                <div class="notif-content">
+                                    <div class="notif-title-row">
+                                        <div class="notif-item-title">Erreurs 404 déclassées</div>
+                                        <div class="notif-time">9 avril</div>
+                                    </div>
+                                    <div class="notif-desc">84,7 % des "9 864 erreurs" sont du bruit Facebook bot. Aucun impact GA4/GSC.</div>
+                                </div>
+                            </button>
+                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('sitekit');">
+                                <div class="notif-icon ev-warning">📍</div>
+                                <div class="notif-content">
+                                    <div class="notif-title-row">
+                                        <div class="notif-item-title">Répartition géographique GA4</div>
+                                        <div class="notif-time">9 avril</div>
+                                    </div>
+                                    <div class="notif-desc">82,7 % du trafic GA4 vient de USA / Chine / Singapour / Tunisie (bots).</div>
+                                </div>
+                            </button>
+                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('sitekit');">
+                                <div class="notif-icon ev-pass">📊</div>
+                                <div class="notif-content">
+                                    <div class="notif-title-row">
+                                        <div class="notif-item-title">Search Console = vraie croissance</div>
+                                        <div class="notif-time">9 avril</div>
+                                    </div>
+                                    <div class="notif-desc">+16,5 % clics, +16,4 % impressions. Le SEO marche, c'est juste GA4 qui ment.</div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -3647,6 +3872,45 @@ function closeMenu() {
     document.body.style.overflow = '';
 }
 
+// ============ NOTIFICATION DROPDOWN ============
+function toggleNotif(e) {
+    if (e) e.stopPropagation();
+    document.getElementById('notifDropdown').classList.toggle('open');
+}
+function closeNotif() {
+    document.getElementById('notifDropdown').classList.remove('open');
+}
+document.addEventListener('click', (e) => {
+    const dd = document.getElementById('notifDropdown');
+    const trigger = document.querySelector('.notif-trigger');
+    if (dd && dd.classList.contains('open') && !dd.contains(e.target) && !trigger.contains(e.target)) {
+        closeNotif();
+    }
+});
+
+// ============ MOBILE SEARCH ============
+function toggleMobileSearch() {
+    const term = prompt('Rechercher dans le rapport :');
+    if (!term) return;
+    const t = term.toLowerCase();
+    const matches = [];
+    document.querySelectorAll('.nav-item[data-target]').forEach(btn => {
+        const label = btn.querySelector('.nav-label');
+        if (label && label.textContent.toLowerCase().includes(t)) {
+            matches.push({ target: btn.dataset.target, label: label.textContent });
+        }
+    });
+    if (matches.length === 0) {
+        alert('Aucune section ne correspond à « ' + term + ' »');
+    } else if (matches.length === 1) {
+        showPanel(matches[0].target);
+    } else {
+        const choice = prompt('Plusieurs résultats — choisir un numéro :\n' + matches.map((m, i) => (i+1) + '. ' + m.label).join('\n'));
+        const idx = parseInt(choice, 10) - 1;
+        if (matches[idx]) showPanel(matches[idx].target);
+    }
+}
+
 function toggleTheme() {
     const html = document.documentElement;
     const isDark = html.getAttribute('data-theme') === 'dark';
@@ -3953,6 +4217,7 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeDrawer();
         closeMenu();
+        closeNotif();
     }
 });
 
