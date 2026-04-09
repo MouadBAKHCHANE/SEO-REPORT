@@ -1200,7 +1200,15 @@ button.kpi-card { display: block; width: 100%; }
     .content { padding: 16px; }
     .topbar { padding: 0 14px; gap: 10px; }
     .menu-toggle { width: 38px; height: 38px; }
-    .notif-dropdown { width: 320px; right: -8px; }
+    .notif-dropdown {
+        position: fixed;
+        top: 70px;
+        right: 12px;
+        left: 12px;
+        width: auto;
+        max-width: none;
+        max-height: calc(100vh - 90px);
+    }
     .evidence-grid { grid-template-columns: 1fr; gap: 12px; }
     .action-grid { grid-template-columns: 1fr; gap: 12px; }
     .kpi-mini-row { grid-template-columns: repeat(2, 1fr); gap: 10px; }
@@ -1209,18 +1217,18 @@ button.kpi-card { display: block; width: 100%; }
     .card-header { padding: 16px 18px; }
     .page-title { font-size: 1.4rem; }
     .page-subtitle { font-size: 0.8rem; white-space: normal; }
-    .card { overflow: hidden; }
-    /* Make tables horizontally scrollable inside cards */
-    .card .data-table {
-        display: block;
-        overflow-x: auto;
+    /* Make tables horizontally scrollable on mobile */
+    .card { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .card .data-table { min-width: 580px; }
+    .data-table thead th {
         white-space: nowrap;
+        padding: 10px 14px;
+        font-size: 0.6rem;
     }
-    .data-table thead, .data-table tbody, .data-table tr { display: table; width: 100%; }
-    /* Keep tables outside of cards scrollable too */
-    .panel > table.data-table {
-        display: block;
-        overflow-x: auto;
+    .data-table tbody td {
+        white-space: nowrap;
+        padding: 12px 14px;
+        font-size: 0.78rem;
     }
     pre.code-block { font-size: 0.7rem; padding: 12px 14px; }
     .info-banner { padding: 14px 16px; font-size: 0.8rem; }
@@ -1233,7 +1241,7 @@ button.kpi-card { display: block; width: 100%; }
     .topbar { padding: 0 10px; gap: 8px; }
     .topbar-actions { gap: 8px; }
     .icon-btn { width: 36px; height: 36px; }
-    .notif-dropdown { width: calc(100vw - 20px); right: -52px; }
+    .notif-dropdown { top: 64px; right: 8px; left: 8px; }
     .content { padding: 14px; }
     .page-title { font-size: 1.25rem; }
     .menu-toggle { width: 36px; height: 36px; }
