@@ -870,42 +870,192 @@ button.kpi-card { display: block; width: 100%; }
 [data-theme="dark"] .theme-toggle .dark-icon { display: none; }
 
 /* ============ RESPONSIVE ============ */
+/* ============ MOBILE SIDEBAR HELPERS ============ */
+/* Hamburger button — hidden on desktop */
+.menu-toggle {
+    display: none;
+    width: 42px;
+    height: 42px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--text-body);
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    padding: 0;
+}
+.menu-toggle:hover { background: var(--surface-soft); border-color: var(--primary); color: var(--primary); }
+.menu-toggle svg { width: 20px; height: 20px; }
+
+/* Sidebar mobile header (wraps brand + close on mobile) */
+.sidebar-mobile-header {
+    display: contents;
+}
+.sidebar-close {
+    display: none;
+    width: 32px;
+    height: 32px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text-body);
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+    padding: 0;
+}
+.sidebar-close:hover { background: var(--red-soft); border-color: var(--red); color: var(--red); transform: rotate(90deg); }
+.sidebar-close svg { width: 16px; height: 16px; }
+
+/* Sidebar score card (mobile only) */
+.sidebar-score-mobile {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    background: linear-gradient(135deg, #7CB1C4 0%, #3D7A8F 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 14px rgba(124,177,196,0.3);
+    font-family: inherit;
+    color: #fff;
+    width: 100%;
+    text-align: left;
+}
+.sidebar-score-mobile:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 22px rgba(124,177,196,0.42);
+}
+.sidebar-score-mobile .ts-icon {
+    width: 32px; height: 32px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.18);
+    display: flex; align-items: center; justify-content: center;
+    color: #fff;
+    flex-shrink: 0;
+}
+.sidebar-score-mobile .ts-content { flex: 1; min-width: 0; }
+.sidebar-score-mobile .ts-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+.sidebar-score-mobile .ts-label {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    font-weight: 700;
+    opacity: 0.9;
+}
+.sidebar-score-mobile .ts-values {
+    font-size: 0.95rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+.sidebar-score-mobile .ts-arrow { opacity: 0.55; margin: 0 2px; font-weight: 600; }
+.sidebar-score-mobile .ts-track {
+    height: 5px;
+    background: rgba(255,255,255,0.22);
+    border-radius: 100px;
+    overflow: hidden;
+}
+.sidebar-score-mobile .ts-fill {
+    height: 100%;
+    width: 62%;
+    background: #fff;
+    border-radius: 100px;
+    box-shadow: 0 0 6px rgba(255,255,255,0.5);
+}
+.sidebar-score-mobile .ts-cta-mobile {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+    background: rgba(255,255,255,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Sidebar backdrop (mobile slide-out overlay) */
+.sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15,23,42,0.5);
+    backdrop-filter: blur(2px);
+    z-index: 150;
+    opacity: 0;
+    transition: opacity 0.25s;
+}
+.sidebar-backdrop.open {
+    display: block;
+    opacity: 1;
+}
+
 @media (max-width: 1280px) {
     .kpi-row { grid-template-columns: repeat(3, 1fr); }
     .kpi-card:nth-child(4), .kpi-card:nth-child(5) { grid-column: span 1; }
-}
-@media (max-width: 1024px) {
-    .app { grid-template-columns: 1fr; }
-    .sidebar {
-        position: fixed;
-        left: -260px;
-        z-index: 100;
-        transition: left 0.3s;
-        width: 240px;
-    }
-    .sidebar.open { left: 0; }
-    .grid-2-1, .grid-1-2 { grid-template-columns: 1fr; }
 }
 @media (max-width: 1180px) {
     .topbar-score-combined { min-width: 320px; }
     .topbar-search { max-width: 280px; flex-basis: 280px; }
 }
 @media (max-width: 1024px) {
-    .topbar-score-combined { min-width: 0; }
-    .topbar-score-combined .ts-cta-label { display: none; }
+    /* Sidebar becomes a slide-out drawer */
+    .app { grid-template-columns: 1fr; }
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100vh;
+        width: 290px;
+        max-width: 86vw;
+        transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+        z-index: 200;
+        box-shadow: 4px 0 24px rgba(15,23,42,0.18);
+    }
+    .sidebar.open { transform: translateX(0); }
+    .grid-2-1, .grid-1-2 { grid-template-columns: 1fr; }
+
+    /* Show hamburger + close button + mobile score card */
+    .menu-toggle { display: flex; }
+    .sidebar-mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+    .sidebar-close { display: flex; }
+    .sidebar-score-mobile { display: flex; }
+
+    /* Hide desktop topbar score card on tablet/mobile (replaced by sidebar version) */
+    .topbar-score-combined { display: none; }
 }
 @media (max-width: 900px) {
-    .topbar-score-combined .ts-content { display: none; }
-    .topbar-score-combined .ts-divider { display: none; }
+    .topbar-search { max-width: 220px; flex-basis: 220px; }
 }
 @media (max-width: 768px) {
     .kpi-row { grid-template-columns: repeat(2, 1fr); }
     .content { padding: 20px; }
-    .topbar { padding: 0 16px; }
+    .topbar { padding: 0 14px; gap: 12px; }
     .topbar-search { display: none; }
+    .menu-toggle { width: 38px; height: 38px; }
 }
 @media (max-width: 480px) {
     .kpi-row { grid-template-columns: 1fr; }
+    .topbar { padding: 0 12px; }
 }
 
 /* ============ EVIDENCE CARDS (sections d'audit) ============ */
@@ -1601,13 +1751,38 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
 
 <div class="app">
 
+    <!-- Backdrop for mobile slide-out sidebar -->
+    <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="closeMenu()"></div>
+
     <!-- ============ SIDEBAR ============ -->
-    <aside class="sidebar">
-        <div class="brand">
-            <img src="imgi_2_logo-light-1.svg" alt="naoenergy" class="brand-logo brand-logo-light">
-            <img src="imgi_29_logo-light.svg" alt="naoenergy" class="brand-logo brand-logo-dark">
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-mobile-header">
+            <div class="brand">
+                <img src="imgi_2_logo-light-1.svg" alt="naoenergy" class="brand-logo brand-logo-light">
+                <img src="imgi_29_logo-light.svg" alt="naoenergy" class="brand-logo brand-logo-dark">
+            </div>
+            <button class="sidebar-close" onclick="closeMenu()" aria-label="Fermer le menu" type="button">
+                <svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
         </div>
         <div class="brand-sub">Rapport d'analyse SEO</div>
+
+        <!-- Score card (mobile only — visible inside slide-out menu) -->
+        <button class="sidebar-score-mobile" onclick="closeMenu(); showPanel('recs');" title="Voir le plan d'actions">
+            <div class="ts-icon">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <div class="ts-content">
+                <div class="ts-top">
+                    <span class="ts-label">Score cible</span>
+                    <span class="ts-values">53 <span class="ts-arrow">→</span> 85</span>
+                </div>
+                <div class="ts-track"><div class="ts-fill"></div></div>
+            </div>
+            <div class="ts-cta-mobile">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </div>
+        </button>
 
         <div class="nav-section">
             <div class="nav-section-title">Vue globale</div>
@@ -1702,6 +1877,9 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
 
         <!-- TOPBAR -->
         <div class="topbar">
+            <button class="menu-toggle" onclick="openMenu()" aria-label="Ouvrir le menu" type="button">
+                <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
             <button class="topbar-score-combined" onclick="showPanel('recs')" title="Voir le plan d'actions">
                 <div class="ts-icon">
                     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
@@ -3450,10 +3628,24 @@ function showPanel(target) {
     if (navBtn) navBtn.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
     if (target === 'overview') setTimeout(renderChart, 50);
+    // Auto-close mobile menu when navigating
+    if (window.innerWidth <= 1024) closeMenu();
 }
 document.querySelectorAll('.nav-item[data-target]').forEach(btn => {
     btn.addEventListener('click', () => showPanel(btn.dataset.target));
 });
+
+// ============ MOBILE SIDEBAR ============
+function openMenu() {
+    document.getElementById('sidebar').classList.add('open');
+    document.getElementById('sidebarBackdrop').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+function closeMenu() {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('sidebarBackdrop').classList.remove('open');
+    document.body.style.overflow = '';
+}
 
 function toggleTheme() {
     const html = document.documentElement;
@@ -3758,7 +3950,10 @@ function closeDrawer() {
     document.body.style.overflow = '';
 }
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeDrawer();
+    if (e.key === 'Escape') {
+        closeDrawer();
+        closeMenu();
+    }
 });
 
 renderChart();
