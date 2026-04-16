@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audit SEO V3 — naoenergy.ch</title>
+<title>Digital Marketing Dashboard — naoenergy.ch</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -111,9 +111,9 @@ a { color: var(--primary); text-decoration: none; }
 .app {
     display: grid;
     grid-template-columns: 256px 1fr;
-    min-height: 100vh;
+    height: 100vh;
     max-width: 100vw;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 /* ============ SIDEBAR ============ */
@@ -173,6 +173,15 @@ a { color: var(--primary); text-decoration: none; }
     font-weight: 700;
     padding: 0 12px;
     margin-bottom: 6px;
+}
+.nav-sub-label {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-faint);
+    font-weight: 600;
+    padding: 6px 12px 2px 20px;
+    margin-top: 4px;
 }
 
 .nav-item {
@@ -301,21 +310,23 @@ a { color: var(--primary); text-decoration: none; }
 .main {
     min-width: 0;
     max-width: 100%;
+    height: 100vh;
     overflow-x: hidden;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
 }
 
 /* ============ TOPBAR ============ */
 .topbar {
-    background: var(--surface);
-    border-bottom: 1px solid var(--border);
-    height: 64px;
+    background: transparent;
+    border-bottom: none;
+    height: 48px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 32px;
-    gap: 24px;
+    justify-content: flex-end;
+    padding: 6px 16px;
+    gap: 6px;
     position: sticky;
     top: 0;
     z-index: 50;
@@ -323,48 +334,48 @@ a { color: var(--primary); text-decoration: none; }
 }
 
 .topbar-search {
-    flex: 0 0 280px;
-    width: 280px;
+    flex: 0 0 200px;
+    width: 200px;
     margin: 0;
     position: relative;
 }
 .topbar-search input {
     width: 100%;
-    height: 40px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 0 16px 0 42px;
-    font-size: 0.85rem;
+    height: 32px;
+    background: var(--surface);
+    border: none;
+    border-radius: 8px;
+    padding: 0 10px 0 32px;
+    font-size: 0.75rem;
     color: var(--text);
     font-family: inherit;
     transition: all 0.2s;
+    box-shadow: var(--shadow-sm);
 }
-.topbar-search input::placeholder { color: var(--text-muted); }
+.topbar-search input::placeholder { color: var(--text-faint); }
 .topbar-search input:focus {
     outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px var(--primary-glow);
+    box-shadow: 0 0 0 2px var(--primary-glow), var(--shadow-sm);
 }
 .topbar-search svg {
     position: absolute;
-    left: 14px;
+    left: 9px;
     top: 50%;
     transform: translateY(-50%);
-    width: 16px;
-    height: 16px;
-    color: var(--text-muted);
+    width: 13px;
+    height: 13px;
+    color: var(--text-faint);
 }
 
 .topbar-actions {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 2px;
 }
 
 /* Topbar combined card — Score cible + CTA Plan d'actions */
 .topbar-score-combined {
-    display: flex;
+    display: none;
     align-items: center;
     gap: 12px;
     padding: 8px 8px 8px 10px;
@@ -463,35 +474,36 @@ a { color: var(--primary); text-decoration: none; }
 }
 
 .icon-btn {
-    width: 38px;
-    height: 38px;
-    border-radius: 10px;
-    background: var(--bg);
-    border: 1px solid var(--border);
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    color: var(--text-body);
-    transition: all 0.2s;
+    color: var(--text-muted);
+    transition: all 0.15s;
     position: relative;
 }
 .icon-btn:hover {
-    background: var(--primary-soft);
-    color: var(--primary);
-    border-color: var(--primary);
-    transform: translateY(-1px);
+    background: var(--surface-soft);
+    color: var(--text);
 }
-.icon-btn svg { width: 18px; height: 18px; }
+.icon-btn:active {
+    transform: scale(0.92);
+}
+.icon-btn svg { width: 16px; height: 16px; }
 .icon-btn .badge-dot {
     position: absolute;
-    top: 6px;
-    right: 6px;
-    width: 8px;
-    height: 8px;
+    top: 5px;
+    right: 5px;
+    width: 7px;
+    height: 7px;
     background: var(--red);
     border-radius: 50%;
-    border: 2px solid var(--surface);
+    border: 1.5px solid var(--bg);
 }
 
 .topbar-user {
@@ -887,21 +899,20 @@ button.kpi-card { display: block; width: 100%; }
 .notif-wrap { position: relative; }
 .notif-badge {
     position: absolute;
-    top: -4px;
-    right: -4px;
+    top: -3px;
+    right: -3px;
     background: var(--red);
     color: white;
-    font-size: 0.6rem;
+    font-size: 0.5rem;
     font-weight: 800;
-    min-width: 17px;
-    height: 17px;
+    min-width: 15px;
+    height: 15px;
     border-radius: 100px;
-    padding: 0 4px;
+    padding: 0 3px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid var(--surface);
-    animation: notifPulse 2.2s ease-in-out infinite;
+    border: 1.5px solid var(--bg);
     pointer-events: none;
 }
 @keyframes notifPulse {
@@ -1061,34 +1072,24 @@ button.kpi-card { display: block; width: 100%; }
 .sidebar-close:hover { background: var(--red-soft); border-color: var(--red); color: var(--red); transform: rotate(90deg); }
 .sidebar-close svg { width: 16px; height: 16px; }
 
-/* Sidebar score card (mobile only) */
+/* Sidebar score card (always visible under logo) */
 .sidebar-score-mobile {
-    display: none;
+    display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 10px 12px;
-    background: linear-gradient(135deg, #7CB1C4 0%, #3D7A8F 100%);
-    border: none;
-    border-radius: 12px;
+    padding: 10px 14px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
     cursor: pointer;
     transition: all 0.2s;
-    box-shadow: 0 4px 14px rgba(124,177,196,0.3);
     font-family: inherit;
-    color: #fff;
+    color: var(--text);
     width: 100%;
     text-align: left;
 }
 .sidebar-score-mobile:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 22px rgba(124,177,196,0.42);
-}
-.sidebar-score-mobile .ts-icon {
-    width: 32px; height: 32px;
-    border-radius: 8px;
-    background: rgba(255,255,255,0.18);
-    display: flex; align-items: center; justify-content: center;
-    color: #fff;
-    flex-shrink: 0;
+    border-color: var(--primary);
+    background: var(--primary-soft);
 }
 .sidebar-score-mobile .ts-content { flex: 1; min-width: 0; }
 .sidebar-score-mobile .ts-top {
@@ -1096,42 +1097,33 @@ button.kpi-card { display: block; width: 100%; }
     justify-content: space-between;
     align-items: baseline;
     gap: 8px;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 .sidebar-score-mobile .ts-label {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
     text-transform: uppercase;
-    letter-spacing: 0.7px;
-    font-weight: 700;
-    opacity: 0.9;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+    color: var(--text-muted);
 }
 .sidebar-score-mobile .ts-values {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 800;
     white-space: nowrap;
+    color: var(--text);
 }
-.sidebar-score-mobile .ts-arrow { opacity: 0.55; margin: 0 2px; font-weight: 600; }
 .sidebar-score-mobile .ts-track {
-    height: 5px;
-    background: rgba(255,255,255,0.22);
+    height: 4px;
+    background: var(--border);
     border-radius: 100px;
     overflow: hidden;
 }
 .sidebar-score-mobile .ts-fill {
     height: 100%;
-    width: 62%;
-    background: #fff;
+    width: 53%;
+    background: var(--primary);
     border-radius: 100px;
-    box-shadow: 0 0 6px rgba(255,255,255,0.5);
-}
-.sidebar-score-mobile .ts-cta-mobile {
-    width: 28px;
-    height: 28px;
-    border-radius: 7px;
-    background: rgba(255,255,255,0.18);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    transition: width 0.6s ease;
     flex-shrink: 0;
 }
 
@@ -1187,10 +1179,7 @@ button.kpi-card { display: block; width: 100%; }
         gap: 12px;
     }
     .sidebar-close { display: flex; }
-    .sidebar-score-mobile { display: flex; }
-
-    /* Hide desktop topbar score card on tablet/mobile (replaced by sidebar version) */
-    .topbar-score-combined { display: none; }
+    /* Score cible always in sidebar, topbar version hidden */
     /* Hide search input on mobile, show icon button instead */
     .topbar-search { display: none; }
     .search-mobile-btn { display: flex; }
@@ -1198,11 +1187,11 @@ button.kpi-card { display: block; width: 100%; }
 @media (max-width: 768px) {
     .kpi-row { grid-template-columns: repeat(2, 1fr); }
     .content { padding: 16px; }
-    .topbar { padding: 0 14px; gap: 10px; }
-    .menu-toggle { width: 38px; height: 38px; }
+    .topbar { padding: 0 12px; gap: 6px; }
+    .menu-toggle { width: 34px; height: 34px; }
     .notif-dropdown {
         position: fixed;
-        top: 70px;
+        top: 56px;
         right: 12px;
         left: 12px;
         width: auto;
@@ -1241,7 +1230,7 @@ button.kpi-card { display: block; width: 100%; }
     .topbar { padding: 0 10px; gap: 8px; }
     .topbar-actions { gap: 8px; }
     .icon-btn { width: 36px; height: 36px; }
-    .notif-dropdown { top: 64px; right: 8px; left: 8px; }
+    .notif-dropdown { top: 56px; right: 8px; left: 8px; }
     .content { padding: 14px; }
     .page-title { font-size: 1.25rem; }
     .menu-toggle { width: 36px; height: 36px; }
@@ -1955,60 +1944,74 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 <svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
         </div>
-        <div class="brand-sub">Rapport d'analyse SEO</div>
+        <div class="brand-sub">Digital Marketing Dashboard</div>
 
-        <!-- Score card (mobile only — visible inside slide-out menu) -->
-        <button class="sidebar-score-mobile" onclick="closeMenu(); showPanel('recs');" title="Voir le plan d'actions">
-            <div class="ts-icon">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-            </div>
+        <!-- Score card -->
+        <button class="sidebar-score-mobile" onclick="showPanel('recs');" title="Voir le plan d'actions">
             <div class="ts-content">
                 <div class="ts-top">
-                    <span class="ts-label">Score cible</span>
-                    <span class="ts-values">53 <span class="ts-arrow">→</span> 85</span>
+                    <span class="ts-label">Score</span>
+                    <span class="ts-values">53<span style="font-weight:500;opacity:0.6;font-size:0.6rem"> /100</span></span>
                 </div>
                 <div class="ts-track"><div class="ts-fill"></div></div>
             </div>
-            <div class="ts-cta-mobile">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-            </div>
         </button>
 
+        <!-- Vue d'ensemble -->
         <div class="nav-section">
-            <div class="nav-section-title">Vue globale</div>
             <button class="nav-item active" data-target="overview">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V10"/></svg>
                 <span class="nav-label">Vue d'ensemble</span>
             </button>
-            <button class="nav-item" data-target="tracking">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-                <span class="nav-label">Tracking &amp; Mesure</span>
-                <span class="nav-badge dot"></span>
-            </button>
-            <button class="nav-item" data-target="sitekit">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
-                <span class="nav-label">Audit Site Kit</span>
+        </div>
+
+        <!-- Paid Media -->
+        <div class="nav-section">
+            <div class="nav-section-title">Paid Media</div>
+            <button class="nav-item" data-target="google_ads">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span class="nav-label">Google Ads</span>
                 <span class="nav-badge new">NEW</span>
             </button>
-        </div>
-
-        <div class="nav-section">
-            <div class="nav-section-title">Configuration</div>
-            <button class="nav-item" data-target="wp_admin">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/></svg>
-                <span class="nav-label">WP Admin</span>
+            <button class="nav-item disabled" data-target="" style="opacity:0.45;pointer-events:none">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"/></svg>
+                <span class="nav-label">Meta Ads</span>
+                <span class="nav-badge" style="background:var(--surface-soft);color:var(--text-muted);font-size:0.55rem">Bient&ocirc;t</span>
             </button>
         </div>
 
+        <!-- SEO -->
         <div class="nav-section">
-            <div class="nav-section-title">SEO Technique</div>
+            <div class="nav-section-title">SEO</div>
+
+            <!-- Sous-section : Contenu -->
+            <div class="nav-sub-label">Contenu</div>
+            <button class="nav-item" data-target="onpage">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <span class="nav-label">On-Page</span>
+            </button>
+            <button class="nav-item" data-target="social">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                <span class="nav-label">M&eacute;ta social</span>
+            </button>
+            <button class="nav-item" data-target="images">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                <span class="nav-label">Images</span>
+            </button>
+            <button class="nav-item" data-target="entity">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                <span class="nav-label">SEO Entit&eacute;</span>
+            </button>
+
+            <!-- Sous-section : Technique -->
+            <div class="nav-sub-label">Technique</div>
             <button class="nav-item" data-target="performance">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 <span class="nav-label">Performance</span>
             </button>
             <button class="nav-item" data-target="security">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
-                <span class="nav-label">Sécurité</span>
+                <span class="nav-label">S&eacute;curit&eacute;</span>
             </button>
             <button class="nav-item" data-target="schema">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 9h6v6H9z"/></svg>
@@ -2028,30 +2031,25 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             </button>
         </div>
 
+        <!-- Configuration -->
         <div class="nav-section">
-            <div class="nav-section-title">SEO Contenu</div>
-            <button class="nav-item" data-target="onpage">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                <span class="nav-label">On-Page</span>
+            <div class="nav-section-title">Configuration</div>
+            <button class="nav-item" data-target="tracking">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+                <span class="nav-label">Tracking &amp; Mesure</span>
+                <span class="nav-badge dot"></span>
             </button>
-            <button class="nav-item" data-target="social">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
-                <span class="nav-label">Méta social</span>
+            <button class="nav-item" data-target="sitekit">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <span class="nav-label">Audit Site Kit</span>
             </button>
-            <button class="nav-item" data-target="images">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                <span class="nav-label">Images</span>
+            <button class="nav-item" data-target="wp_admin">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/></svg>
+                <span class="nav-label">WP Admin</span>
             </button>
         </div>
 
-        <div class="nav-section">
-            <div class="nav-section-title">Autorité &amp; E-E-A-T</div>
-            <button class="nav-item" data-target="entity">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-                <span class="nav-label">SEO Entité</span>
-            </button>
-        </div>
-
+        <!-- Actions -->
         <div class="nav-section">
             <div class="nav-section-title">Actions</div>
             <button class="nav-item" data-target="recs">
@@ -2105,14 +2103,24 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 <div class="notif-wrap">
                     <button class="icon-btn notif-trigger" onclick="toggleNotif(event)" aria-label="Notifications" type="button">
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
-                        <span class="notif-badge">5</span>
+                        <span class="notif-badge">6</span>
                     </button>
                     <div class="notif-dropdown" id="notifDropdown" onclick="event.stopPropagation()">
                         <div class="notif-header">
                             <div class="notif-header-title">🎉 Nouveautés du rapport</div>
-                            <div class="notif-count">5 nouveau(x)</div>
+                            <div class="notif-count">6 nouveau(x)</div>
                         </div>
                         <div class="notif-list">
+                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('google_ads');">
+                                <div class="notif-icon ev-critical">💰</div>
+                                <div class="notif-content">
+                                    <div class="notif-title-row">
+                                        <div class="notif-item-title">Google Ads — Analyse du compte</div>
+                                        <div class="notif-time">16 avril</div>
+                                    </div>
+                                    <div class="notif-desc">Conversion tracking en panne (0 tag actif). 15 campagnes en pause. 118K interactions pour seulement 7 leads qualifiés.</div>
+                                </div>
+                            </button>
                             <button class="notif-item" type="button" onclick="closeNotif(); showPanel('tracking');">
                                 <div class="notif-icon ev-critical">🔬</div>
                                 <div class="notif-content">
@@ -2172,273 +2180,34 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
         <!-- CONTENT -->
         <div class="content">
 
-        <!-- ============ PANEL : VUE D'ENSEMBLE ============ -->
+        <!-- ============ PANEL : ACCUEIL ============ -->
         <div class="panel active" id="panel-overview">
-
-            <!-- Page header -->
-            <div class="page-header">
-                <div>
-                    <h1 class="page-title">Vue d'ensemble</h1>
-                    <p class="page-subtitle">Audit SEO complet de naoenergy.ch, analyse technique, mesure, contenu et plan d'actions priorisé.</p>
+            <div style="max-width:1100px;margin:0 auto;padding:20px 0">
+                <!-- Hero: left title + right strategy -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;align-items:start">
+                    <div style="padding:8px 0">
+                        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+                            <div style="width:44px;height:44px;border-radius:12px;background:var(--primary-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                                <svg width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm10 0a1 1 0 011-1h4a1 1 0 011 1v6a1 1 0 01-1 1h-4a1 1 0 01-1-1v-6z"/></svg>
+                            </div>
+                            <h1 style="font-size:1.6rem;font-weight:800;color:var(--text);margin:0;line-height:1.2">Digital Marketing Dashboard</h1>
+                        </div>
+                        <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin:0">Tableau de bord centralis&eacute; pour piloter la strat&eacute;gie digitale de <strong style="color:var(--text)">NAOenergy</strong>. SEO, publicit&eacute; payante, tracking et actions prioritaires.</p>
+                    </div>
+                    <div class="card" style="padding:20px 24px;margin:0;border-left:4px solid var(--primary)">
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--primary);font-weight:700;margin-bottom:8px">Strat&eacute;gie &amp; Vision</div>
+                        <p style="color:var(--text-body);font-size:0.82rem;line-height:1.7;margin-bottom:8px">Ce dashboard r&eacute;unit toutes les donn&eacute;es de performance digitale de naoenergy.ch pour permettre des d&eacute;cisions rapides et data-driven.</p>
+                        <p style="color:var(--text-body);font-size:0.82rem;line-height:1.7;margin:0">Chaque section fournit un diagnostic pr&eacute;cis avec des actions concr&egrave;tes. Les donn&eacute;es sont crois&eacute;es entre Google Ads, GA4, Search Console et l'audit technique pour identifier les fuites de budget et les leviers de croissance.</p>
+                    </div>
+                </div>
+                <div class="kpi-row" style="grid-template-columns:repeat(4,1fr)">
+                    <div class="kpi-card k2" style="cursor:pointer" onclick="openDrawer('critical')"><div class="kpi-label">Probl&egrave;mes critiques</div><div class="kpi-value">8</div><div class="kpi-trend down">Tracking + S&eacute;curit&eacute;</div></div>
+                    <div class="kpi-card k1" style="cursor:pointer" onclick="openDrawer('score')"><div class="kpi-label">Score actuel</div><div class="kpi-value">53<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600;margin-left:3px">/100</span></div><div class="kpi-trend neutral">D+</div></div>
+                    <div class="kpi-card k4" style="cursor:pointer" onclick="openDrawer('target')"><div class="kpi-label">Objectif cible</div><div class="kpi-value">85<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600;margin-left:3px">/100</span></div><div class="kpi-trend up">+32 pts</div></div>
+                    <div class="kpi-card k5" style="cursor:pointer" onclick="showPanel('recs')"><div class="kpi-label">Plan d'actions</div><div class="kpi-value">14</div><div class="kpi-trend neutral">Actions prioritaires</div></div>
                 </div>
             </div>
-
-            <!-- KPI ROW (5 cards — clickable) -->
-            <div class="kpi-row">
-                <button type="button" class="kpi-card k1" onclick="openDrawer('score')">
-                    <div class="kpi-label">Score global</div>
-                    <div class="kpi-value">53<span style="font-size:0.85rem; color:var(--text-muted); font-weight:600; margin-left:3px;">/100</span></div>
-                    <span class="kpi-trend neutral">D+</span>
-                </button>
-                <button type="button" class="kpi-card k2" onclick="openDrawer('critical')">
-                    <div class="kpi-label">Critiques</div>
-                    <div class="kpi-value">8</div>
-                    <span class="kpi-trend down">↓ 1 vs V1</span>
-                </button>
-                <button type="button" class="kpi-card k3" onclick="openDrawer('warning')">
-                    <div class="kpi-label">Avertissements</div>
-                    <div class="kpi-value">19</div>
-                    <span class="kpi-trend neutral">= stable</span>
-                </button>
-                <button type="button" class="kpi-card k4" onclick="openDrawer('pass')">
-                    <div class="kpi-label">Validés</div>
-                    <div class="kpi-value">9</div>
-                    <span class="kpi-trend up">↑ 3 vs V1</span>
-                </button>
-                <button type="button" class="kpi-card k5" onclick="openDrawer('target')">
-                    <div class="kpi-label">Score cible</div>
-                    <div class="kpi-value">85</div>
-                    <span class="kpi-trend up">+32 pts à gagner</span>
-                </button>
-            </div>
-
-            <!-- Alert banner -->
-            <div class="alert-banner" onclick="showPanel('tracking')" style="cursor:pointer;">
-                <div class="alert-icon">
-                    <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-                </div>
-                <div class="alert-content">
-                    <div class="alert-title">
-                        Tracking et mesure
-                        <span class="alert-badge">Blocage stratégie SEO</span>
-                    </div>
-                    <div class="alert-text">
-                        Le tag GA4 est bloqué par défaut pour les 31 pays EU/EEE + Suisse. Résultat : 82,7 % du trafic GA4 affiché = bots non-cibles, vrais visiteurs européens invisibles. <strong>Aucune stratégie SEO ne peut être pilotée tant que ce problème n'est pas résolu.</strong>
-                    </div>
-                    <span class="alert-cta">
-                        Voir le diagnostic complet
-                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                    </span>
-                </div>
-            </div>
-
-            <!-- 2 columns: Big chart + Top countries -->
-            <div class="grid-2-1">
-                <div class="card chart-card">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">Search Console — Évolution 90 jours</div>
-                            <div class="card-subtitle">Clics et impressions — la seule métrique fiable (non affectée par GA4)</div>
-                        </div>
-                        <button class="card-filter">
-                            90 derniers jours
-                            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <canvas id="mainChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">Top pays GA4</div>
-                            <div class="card-subtitle">82,7 % = bots</div>
-                        </div>
-                    </div>
-                    <div class="card-body" style="padding: 12px;">
-                        <div class="country-list">
-                            <div class="country-row bot">
-                                <div class="country-flag">🇺🇸</div>
-                                <div class="country-info">
-                                    <div class="country-name">United States</div>
-                                    <div class="country-bar"><div class="country-bar-fill" style="width:100%"></div></div>
-                                </div>
-                                <div>
-                                    <div class="country-value">267</div>
-                                    <div class="country-pct">36,3%</div>
-                                </div>
-                            </div>
-                            <div class="country-row bot">
-                                <div class="country-flag">🇨🇳</div>
-                                <div class="country-info">
-                                    <div class="country-name">Chine</div>
-                                    <div class="country-bar"><div class="country-bar-fill" style="width:56%"></div></div>
-                                </div>
-                                <div>
-                                    <div class="country-value">150</div>
-                                    <div class="country-pct">20,4%</div>
-                                </div>
-                            </div>
-                            <div class="country-row bot">
-                                <div class="country-flag">🇸🇬</div>
-                                <div class="country-info">
-                                    <div class="country-name">Singapour</div>
-                                    <div class="country-bar"><div class="country-bar-fill" style="width:53%"></div></div>
-                                </div>
-                                <div>
-                                    <div class="country-value">141</div>
-                                    <div class="country-pct">19,2%</div>
-                                </div>
-                            </div>
-                            <div class="country-row bot">
-                                <div class="country-flag">🇹🇳</div>
-                                <div class="country-info">
-                                    <div class="country-name">Tunisie</div>
-                                    <div class="country-bar"><div class="country-bar-fill" style="width:19%"></div></div>
-                                </div>
-                                <div>
-                                    <div class="country-value">50</div>
-                                    <div class="country-pct">6,8%</div>
-                                </div>
-                            </div>
-                            <div class="country-row">
-                                <div class="country-flag">🌍</div>
-                                <div class="country-info">
-                                    <div class="country-name">Autres (CH inclus)</div>
-                                    <div class="country-bar"><div class="country-bar-fill" style="width:47%"></div></div>
-                                </div>
-                                <div>
-                                    <div class="country-value">127</div>
-                                    <div class="country-pct">17,2%</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 2 columns: Top keywords (table) + Plan d'actions résumé -->
-            <div class="grid-2-1">
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">Top mots-clés Search Console</div>
-                            <div class="card-subtitle">Période : 90 derniers jours — 9 sur 10 sont des variantes de marque</div>
-                        </div>
-                        <button class="card-filter">
-                            Voir tout
-                            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                        </button>
-                    </div>
-                    <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Requête</th>
-                                <th>Type</th>
-                                <th class="num">Clics</th>
-                                <th class="num">Impressions</th>
-                                <th class="num">CTR</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="bold">naoenergy</td>
-                                <td><span class="tag brand">Marque</span></td>
-                                <td class="num">440</td>
-                                <td class="num">1 193</td>
-                                <td class="num">36,9 %</td>
-                            </tr>
-                            <tr>
-                                <td class="bold">nao energy</td>
-                                <td><span class="tag brand">Marque</span></td>
-                                <td class="num">149</td>
-                                <td class="num">547</td>
-                                <td class="num">27,2 %</td>
-                            </tr>
-                            <tr>
-                                <td class="bold">nao energy sa</td>
-                                <td><span class="tag brand">Marque</span></td>
-                                <td class="num">138</td>
-                                <td class="num">612</td>
-                                <td class="num">22,5 %</td>
-                            </tr>
-                            <tr>
-                                <td class="bold">naoenergy geneve</td>
-                                <td><span class="tag geo">Marque + géo</span></td>
-                                <td class="num">33</td>
-                                <td class="num">184</td>
-                                <td class="num">17,9 %</td>
-                            </tr>
-                            <tr>
-                                <td class="bold">batterie atmoce avis</td>
-                                <td><span class="tag non-brand">Non-marque</span></td>
-                                <td class="num">19</td>
-                                <td class="num">584</td>
-                                <td class="num">3,3 %</td>
-                            </tr>
-                            <tr>
-                                <td class="bold">naoenergie</td>
-                                <td><span class="tag typo">Faute marque</span></td>
-                                <td class="num">18</td>
-                                <td class="num">47</td>
-                                <td class="num">38,3 %</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <div class="card-title">Top priorités</div>
-                            <div class="card-subtitle">Cette semaine</div>
-                        </div>
-                    </div>
-                    <div class="card-body" style="padding:12px 16px 20px;">
-                        <div style="display:flex; flex-direction:column; gap:8px;">
-                            <div style="display:flex; gap:12px; padding:12px; border-radius:10px; background:var(--red-soft); border-left:3px solid var(--red);">
-                                <div style="font-weight:800; color:var(--red); font-size:0.85rem;">1.</div>
-                                <div>
-                                    <div style="font-weight:700; font-size:0.85rem; color:var(--text); margin-bottom:2px;">Réparer GA4 Consent Mode</div>
-                                    <div style="font-size:0.75rem; color:var(--text-muted);">Prérequis stratégie SEO</div>
-                                </div>
-                            </div>
-                            <div style="display:flex; gap:12px; padding:12px; border-radius:10px; background:var(--red-soft); border-left:3px solid var(--red);">
-                                <div style="font-weight:800; color:var(--red); font-size:0.85rem;">2.</div>
-                                <div>
-                                    <div style="font-weight:700; font-size:0.85rem; color:var(--text); margin-bottom:2px;">Activer JS WP Rocket</div>
-                                    <div style="font-size:0.75rem; color:var(--text-muted);">Core Web Vitals TBT/INP</div>
-                                </div>
-                            </div>
-                            <div style="display:flex; gap:12px; padding:12px; border-radius:10px; background:var(--red-soft); border-left:3px solid var(--red);">
-                                <div style="font-weight:800; color:var(--red); font-size:0.85rem;">3.</div>
-                                <div>
-                                    <div style="font-weight:700; font-size:0.85rem; color:var(--text); margin-bottom:2px;">Consolider double tracking GA4</div>
-                                    <div style="font-size:0.75rem; color:var(--text-muted);">Désactiver plugin GA Google Analytics</div>
-                                </div>
-                            </div>
-                            <div style="display:flex; gap:12px; padding:12px; border-radius:10px; background:var(--yellow-soft); border-left:3px solid var(--yellow);">
-                                <div style="font-weight:800; color:var(--yellow); font-size:0.85rem;">4.</div>
-                                <div>
-                                    <div style="font-weight:700; font-size:0.85rem; color:var(--text); margin-bottom:2px;">Schema LocalBusiness</div>
-                                    <div style="font-size:0.75rem; color:var(--text-muted);">Knowledge Graph + Rich Snippets</div>
-                                </div>
-                            </div>
-                            <div style="display:flex; gap:12px; padding:12px; border-radius:10px; background:var(--yellow-soft); border-left:3px solid var(--yellow);">
-                                <div style="font-weight:800; color:var(--yellow); font-size:0.85rem;">5.</div>
-                                <div>
-                                    <div style="font-weight:700; font-size:0.85rem; color:var(--text); margin-bottom:2px;">Contenu non-marque</div>
-                                    <div style="font-size:0.75rem; color:var(--text-muted);">Cibler requêtes informationnelles</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div><!-- /panel#overview -->
+        </div>
 
         <!-- ============ PANEL : TRACKING & MESURE ============ -->
         <div class="panel" id="panel-tracking">
@@ -3844,6 +3613,370 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                         <div class="action-title">Ajouter les indices Preconnect</div>
                     </div>
                     <span class="action-impact">Impact : Vitesse des ressources tierces</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ GOOGLE ADS ============ -->
+        <div class="panel" id="panel-google_ads">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">Google Ads — Analyse du compte</h1>
+                        <span class="badge critical">Actions requises</span>
+                        <span class="badge new">16 avril 2026</span>
+                    </div>
+                    <p class="page-subtitle">Analyse compl&egrave;te du compte NAOenergy (221-239-6660) — P&eacute;riode : f&eacute;vrier 2023 &agrave; avril 2026. Toutes les campagnes sont actuellement en pause.</p>
+                </div>
+            </div>
+
+            <!-- Alertes critiques -->
+            <div class="info-banner critical">
+                <strong>Alertes critiques :</strong> Le suivi des conversions est totalement inactif (0 tag en enregistrement). La facturation signale un risque de suspension du service. Toutes les campagnes sont en pause.
+            </div>
+
+            <!-- KPI globaux -->
+            <div class="kpi-row" style="grid-template-columns:repeat(4,1fr)">
+                <div class="kpi-card k1">
+                    <div class="kpi-label">Interactions totales</div>
+                    <div class="kpi-value">118 366</div>
+                    <div class="kpi-trend neutral">Toutes campagnes</div>
+                </div>
+                <div class="kpi-card k3">
+                    <div class="kpi-label">Leads bruts</div>
+                    <div class="kpi-value">152</div>
+                    <div class="kpi-trend down">0,13 % conversion</div>
+                </div>
+                <div class="kpi-card k2">
+                    <div class="kpi-label">Leads qualifi&eacute;s</div>
+                    <div class="kpi-value">7</div>
+                    <div class="kpi-trend down">4,6 % qualification</div>
+                </div>
+                <div class="kpi-card k5">
+                    <div class="kpi-label">Campagnes</div>
+                    <div class="kpi-value">15</div>
+                    <div class="kpi-trend down">Toutes en pause</div>
+                </div>
+            </div>
+
+            <!-- Top campagnes -->
+            <h3 class="panel-h3">Top 5 campagnes par d&eacute;penses</h3>
+            <div class="card" style="overflow-x:auto">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Campagne</th>
+                            <th style="text-align:right">Co&ucirc;t (CHF)</th>
+                            <th style="text-align:right">Clics</th>
+                            <th style="text-align:right">CTR</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="bold">Search - Panneaux photovolta&iuml;ques 2024</td>
+                            <td class="num">14 667</td>
+                            <td class="num">2 909</td>
+                            <td class="num">6,00 %</td>
+                            <td><span class="badge" style="background:var(--yellow-soft);color:var(--yellow)">Pause</span></td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Search-G&eacute;n&eacute;rique</td>
+                            <td class="num">12 505</td>
+                            <td class="num">6 027</td>
+                            <td class="num" style="color:var(--red)">1,29 %</td>
+                            <td><span class="badge" style="background:var(--yellow-soft);color:var(--yellow)">Pause</span></td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Search - Pompe &agrave; chaleur 2024</td>
+                            <td class="num">11 208</td>
+                            <td class="num">1 998</td>
+                            <td class="num" style="color:var(--green)">7,37 %</td>
+                            <td><span class="badge" style="background:var(--yellow-soft);color:var(--yellow)">Pause</span></td>
+                        </tr>
+                        <tr>
+                            <td class="bold">HH-NAO_CH_PV_Search_2025M09</td>
+                            <td class="num">5 530</td>
+                            <td class="num">1 461</td>
+                            <td class="num">4,36 %</td>
+                            <td><span class="badge" style="background:var(--yellow-soft);color:var(--yellow)">Pause</span></td>
+                        </tr>
+                        <tr>
+                            <td class="bold">HH-NAO_CH_PAC_Search_2025M09</td>
+                            <td class="num">5 483</td>
+                            <td class="num">3 270</td>
+                            <td class="num">2,04 %</td>
+                            <td><span class="badge" style="background:var(--yellow-soft);color:var(--yellow)">Pause</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Funnel de leads -->
+            <h3 class="panel-h3">Entonnoir de conversion</h3>
+            <div class="card">
+                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:16px 0">
+                    <div style="flex:1;text-align:center;padding:18px 12px;background:var(--primary-soft);border-radius:var(--radius-sm)">
+                        <div style="font-size:1.5rem;font-weight:800;color:var(--primary)">118 366</div>
+                        <div style="font-size:0.78rem;color:var(--text-muted);margin-top:4px">Interactions</div>
+                    </div>
+                    <svg width="24" height="24" fill="none" stroke="var(--text-faint)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    <div style="flex:1;text-align:center;padding:18px 12px;background:var(--yellow-soft);border-radius:var(--radius-sm)">
+                        <div style="font-size:1.5rem;font-weight:800;color:var(--yellow)">152</div>
+                        <div style="font-size:0.78rem;color:var(--text-muted);margin-top:4px">Leads bruts</div>
+                    </div>
+                    <svg width="24" height="24" fill="none" stroke="var(--text-faint)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    <div style="flex:1;text-align:center;padding:18px 12px;background:var(--orange-soft);border-radius:var(--radius-sm)">
+                        <div style="font-size:1.5rem;font-weight:800;color:var(--orange)">7</div>
+                        <div style="font-size:0.78rem;color:var(--text-muted);margin-top:4px">Leads qualifi&eacute;s</div>
+                    </div>
+                    <svg width="24" height="24" fill="none" stroke="var(--text-faint)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    <div style="flex:1;text-align:center;padding:18px 12px;background:var(--red-soft);border-radius:var(--radius-sm)">
+                        <div style="font-size:1.5rem;font-weight:800;color:var(--red)">~0</div>
+                        <div style="font-size:0.78rem;color:var(--text-muted);margin-top:4px">Leads convertis</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suivi des conversions -->
+            <h3 class="panel-h3" style="color:var(--red)">Suivi des conversions — EN PANNE</h3>
+            <div class="card" style="overflow-x:auto">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Statut du tag</th><th style="text-align:right">Nombre</th><th>Diagnostic</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge" style="background:var(--red-soft);color:var(--red)">Inactif / Mal li&eacute;</span></td>
+                            <td class="num">4</td>
+                            <td style="color:var(--text-muted)">Tags non fonctionnels, &agrave; reconfigurer</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge" style="background:var(--yellow-soft);color:var(--yellow)">Aucune conversion r&eacute;cente</span></td>
+                            <td class="num">16</td>
+                            <td style="color:var(--text-muted)">Tags configur&eacute;s mais sans donn&eacute;es</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge" style="background:var(--green-soft);color:var(--green)">En enregistrement</span></td>
+                            <td class="num" style="color:var(--red);font-weight:800">0</td>
+                            <td style="color:var(--red)"><strong>Aucun tag ne fonctionne</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mots-cl&eacute;s -->
+            <h3 class="panel-h3">Top mots-cl&eacute;s par d&eacute;penses</h3>
+            <div class="card" style="overflow-x:auto">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>Mot-cl&eacute;</th><th style="text-align:right">Co&ucirc;t (CHF)</th><th style="text-align:right">Clics</th><th style="text-align:right">CTR</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="bold">"installation pompe a chaleur"</td>
+                            <td class="num">2 780</td>
+                            <td class="num">356</td>
+                            <td class="num" style="color:var(--green)">8,29 %</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">"entreprise panneau solaire"</td>
+                            <td class="num">2 554</td>
+                            <td class="num">552</td>
+                            <td class="num">5,41 %</td>
+                        </tr>
+                        <tr>
+                            <td>entreprise panneau solaire <span style="color:var(--text-muted);font-size:0.8em">(broad)</span></td>
+                            <td class="num">2 138</td>
+                            <td class="num">247</td>
+                            <td class="num">6,50 %</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">"devis pac"</td>
+                            <td class="num">1 846</td>
+                            <td class="num">361</td>
+                            <td class="num" style="color:var(--green)">8,91 %</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">&eacute;nergie solaire</td>
+                            <td class="num">1 387</td>
+                            <td class="num">300</td>
+                            <td class="num">6,27 %</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Appareils -->
+            <h3 class="panel-h3">R&eacute;partition par appareil</h3>
+            <div class="kpi-row" style="grid-template-columns:repeat(3,1fr)">
+                <div class="kpi-card k1">
+                    <div class="kpi-label">Mobile</div>
+                    <div class="kpi-value">73,5 %</div>
+                    <div class="kpi-trend neutral">76,7 % des clics</div>
+                </div>
+                <div class="kpi-card k3">
+                    <div class="kpi-label">Ordinateur</div>
+                    <div class="kpi-value">21,7 %</div>
+                    <div class="kpi-trend neutral">14,1 % des clics</div>
+                </div>
+                <div class="kpi-card k5">
+                    <div class="kpi-label">Tablette</div>
+                    <div class="kpi-value">4,2 %</div>
+                    <div class="kpi-trend neutral">9,3 % des clics</div>
+                </div>
+            </div>
+
+            <!-- R&eacute;seaux -->
+            <h3 class="panel-h3">R&eacute;partition par r&eacute;seau</h3>
+            <div class="card" style="overflow-x:auto">
+                <table class="data-table">
+                    <thead>
+                        <tr><th>R&eacute;seau</th><th style="text-align:right">Clics (%)</th><th style="text-align:right">Co&ucirc;t (%)</th><th style="text-align:right">CPC moyen</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="bold">Google Search</td>
+                            <td class="num">47,8 %</td>
+                            <td class="num" style="color:var(--red)">84,8 %</td>
+                            <td class="num">CHF 3,21</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Search Partners</td>
+                            <td class="num">14,4 %</td>
+                            <td class="num">4,1 %</td>
+                            <td class="num" style="color:var(--green)">CHF 0,52</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Display Network</td>
+                            <td class="num">35,9 %</td>
+                            <td class="num">8,8 %</td>
+                            <td class="num" style="color:var(--green)">CHF 0,45</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">YouTube</td>
+                            <td class="num">0,6 %</td>
+                            <td class="num">1,0 %</td>
+                            <td class="num">CHF 3,24</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Cross-network</td>
+                            <td class="num">1,3 %</td>
+                            <td class="num">1,2 %</td>
+                            <td class="num">CHF 1,70</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Concurrence -->
+            <h3 class="panel-h3">Concurrents (Auction Insights)</h3>
+            <div class="card" style="padding:24px 28px">
+                <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:18px">
+                    <div>
+                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);font-weight:700;margin-bottom:4px">Part d'impressions NAOenergy</div>
+                        <div style="font-size:1.5rem;font-weight:800;color:var(--yellow)">15 – 20 %</div>
+                    </div>
+                    <div class="kpi-trend down">Les concurrents captent la majorit&eacute;</div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px">
+                    <div style="background:var(--surface-soft);border:1px solid var(--border);border-radius:10px;padding:14px 12px;text-align:center">
+                        <div style="font-size:0.82rem;font-weight:700;color:var(--text);margin-bottom:2px">helvetia-energy.ch</div>
+                        <div style="font-size:0.62rem;color:var(--text-muted)">Concurrent #1</div>
+                    </div>
+                    <div style="background:var(--surface-soft);border:1px solid var(--border);border-radius:10px;padding:14px 12px;text-align:center">
+                        <div style="font-size:0.82rem;font-weight:700;color:var(--text);margin-bottom:2px">devis.ch</div>
+                        <div style="font-size:0.62rem;color:var(--text-muted)">Concurrent #2</div>
+                    </div>
+                    <div style="background:var(--surface-soft);border:1px solid var(--border);border-radius:10px;padding:14px 12px;text-align:center">
+                        <div style="font-size:0.82rem;font-weight:700;color:var(--text);margin-bottom:2px">stiebel-eltron.ch</div>
+                        <div style="font-size:0.62rem;color:var(--text-muted)">Concurrent #3</div>
+                    </div>
+                    <div style="background:var(--surface-soft);border:1px solid var(--border);border-radius:10px;padding:14px 12px;text-align:center">
+                        <div style="font-size:0.82rem;font-weight:700;color:var(--text);margin-bottom:2px">younergy.ch</div>
+                        <div style="font-size:0.62rem;color:var(--text-muted)">Concurrent #4</div>
+                    </div>
+                    <div style="background:var(--surface-soft);border:1px solid var(--border);border-radius:10px;padding:14px 12px;text-align:center">
+                        <div style="font-size:0.82rem;font-weight:700;color:var(--text);margin-bottom:2px">energie-sa.ch</div>
+                        <div style="font-size:0.62rem;color:var(--text-muted)">Concurrent #5</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vid&eacute;o -->
+            <h3 class="panel-h3">Campagne vid&eacute;o</h3>
+            <div class="kpi-row" style="grid-template-columns:repeat(3,1fr)">
+                <div class="kpi-card k1">
+                    <div class="kpi-label">Impressions vid&eacute;o</div>
+                    <div class="kpi-value">147 936</div>
+                    <div class="kpi-trend neutral">Vid&eacute;o de vues 2024</div>
+                </div>
+                <div class="kpi-card k3">
+                    <div class="kpi-label">Co&ucirc;t vid&eacute;o</div>
+                    <div class="kpi-value">CHF 537</div>
+                    <div class="kpi-trend neutral">Budget total</div>
+                </div>
+                <div class="kpi-card k4">
+                    <div class="kpi-label">CPV moyen</div>
+                    <div class="kpi-value">CHF 0,01</div>
+                    <div class="kpi-trend up">Tr&egrave;s performant</div>
+                </div>
+            </div>
+
+            <!-- Facturation -->
+            <h3 class="panel-h3" style="color:var(--yellow)">Facturation</h3>
+            <div class="info-banner" style="background:var(--yellow-soft);border-left:4px solid var(--yellow)">
+                <strong>Solde : CHF 1 502,25</strong> — Prochain paiement automatique : 1er mai 2026.<br>
+                Moyen de paiement : Mastercard &#8226;&#8226;&#8226;&#8226; 9992 (principal). <strong style="color:var(--red)">Aucun moyen de secours configur&eacute; — risque de suspension du service.</strong>
+            </div>
+
+            <!-- Plan d'actions Google Ads -->
+            <h3 class="panel-h3">Plan d'actions prioritaires Google Ads</h3>
+            <div class="priority-header critical">
+                <span class="priority-dot"></span>
+                Critique — &Agrave; corriger imm&eacute;diatement
+            </div>
+            <div class="action-grid">
+                <div class="action-card k-critical">
+                    <div class="action-card-header">
+                        <div class="action-num">1</div>
+                        <div class="action-title">R&eacute;parer le suivi des conversions</div>
+                    </div>
+                    <span class="action-impact">0 tag actif — tout le budget est d&eacute;pens&eacute; sans mesure de ROI</span>
+                </div>
+                <div class="action-card k-critical">
+                    <div class="action-card-header">
+                        <div class="action-num">2</div>
+                        <div class="action-title">Corriger la facturation</div>
+                    </div>
+                    <span class="action-impact">Ajouter un moyen de paiement de secours pour &eacute;viter la suspension</span>
+                </div>
+            </div>
+            <div class="priority-header" style="border-left:4px solid var(--yellow);color:var(--yellow)">
+                <span class="priority-dot" style="background:var(--yellow)"></span>
+                Haute priorit&eacute; — Avant relance des campagnes
+            </div>
+            <div class="action-grid">
+                <div class="action-card" style="border-left:3px solid var(--yellow)">
+                    <div class="action-card-header">
+                        <div class="action-num">3</div>
+                        <div class="action-title">Supprimer ou refondre &laquo; Search-G&eacute;n&eacute;rique &raquo;</div>
+                    </div>
+                    <span class="action-impact">CTR 1,29 % avec CHF 12 505 de d&eacute;penses — trafic non qualifi&eacute;</span>
+                </div>
+                <div class="action-card" style="border-left:3px solid var(--yellow)">
+                    <div class="action-card-header">
+                        <div class="action-num">4</div>
+                        <div class="action-title">Consolider les mots-cl&eacute;s en doublon</div>
+                    </div>
+                    <span class="action-impact">&laquo; entreprise panneau solaire &raquo; en exact + broad se cannibalisent</span>
+                </div>
+                <div class="action-card" style="border-left:3px solid var(--yellow)">
+                    <div class="action-card-header">
+                        <div class="action-num">5</div>
+                        <div class="action-title">Am&eacute;liorer l'entonnoir de conversion</div>
+                    </div>
+                    <span class="action-impact">118K interactions pour 7 leads qualifi&eacute;s — probl&egrave;me de landing page et/ou ciblage</span>
                 </div>
             </div>
         </div>
