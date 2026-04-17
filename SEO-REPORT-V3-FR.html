@@ -1146,6 +1146,8 @@ button.kpi-card { display: block; width: 100%; }
 @media (max-width: 1280px) {
     .kpi-row { grid-template-columns: repeat(3, 1fr); }
     .kpi-card:nth-child(4), .kpi-card:nth-child(5) { grid-column: span 1; }
+    /* Override inline 4-col grids to 3 */
+    .kpi-row[style*="repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
 }
 @media (max-width: 1180px) {
     .topbar-score-combined { min-width: 320px; }
@@ -1183,9 +1185,25 @@ button.kpi-card { display: block; width: 100%; }
     /* Hide search input on mobile, show icon button instead */
     .topbar-search { display: none; }
     .search-mobile-btn { display: flex; }
+
+    /* Hero side-by-side → stack */
+    #panel-overview > div > div[style*="grid-template-columns: 1fr 1fr"],
+    #panel-overview > div > div[style*="grid-template-columns:1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+    }
+
+    /* Competitor 5-col grid → 3 on tablet */
+    div[style*="grid-template-columns:repeat(5"] {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+
+    /* Nav card grid 2-col stays 2-col */
 }
 @media (max-width: 768px) {
     .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .kpi-row[style*="repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
+    .kpi-row[style*="repeat(3"] { grid-template-columns: repeat(2, 1fr) !important; }
     .content { padding: 16px; }
     .topbar { padding: 0 12px; gap: 6px; }
     .menu-toggle { width: 34px; height: 34px; }
@@ -1223,18 +1241,98 @@ button.kpi-card { display: block; width: 100%; }
     .info-banner { padding: 14px 16px; font-size: 0.8rem; }
     .alert-banner { padding: 16px; gap: 12px; }
     .alert-icon { width: 38px; height: 38px; }
+
+    /* Competitor 5-col → 2 on mobile */
+    div[style*="grid-template-columns:repeat(5"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    /* Funnel: stack vertically */
+    .card > div[style*="display:flex"][style*="flex-wrap:wrap"] {
+        flex-direction: column !important;
+    }
+    .card > div[style*="display:flex"][style*="flex-wrap:wrap"] > svg {
+        display: none;
+    }
+    .card > div[style*="display:flex"][style*="flex-wrap:wrap"] > div[style*="flex:1"] {
+        flex: none !important;
+        width: 100% !important;
+    }
+
+    /* Nav card grid → 1 col */
+    div[style*="grid-template-columns:repeat(2,1fr)"][style*="gap:14px"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Funnel → stack vertically */
+    .funnel-row {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+    .funnel-row > svg { transform: rotate(90deg); margin: 4px 0; }
+    .funnel-row > div[style*="flex:1"] {
+        flex: none !important;
+        width: 100% !important;
+    }
+
+    /* Google Ads cards with inline padding */
+    .card[style*="padding:24px 28px"] {
+        padding: 16px !important;
+    }
+    .card[style*="padding:24px 28px"] div[style*="font-size:1.5rem"] {
+        font-size: 1.2rem !important;
+    }
+
+    /* Right drawer full width */
+    .right-drawer {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
 }
 @media (max-width: 480px) {
     .kpi-row { grid-template-columns: 1fr; gap: 10px; }
+    .kpi-row[style*="repeat(4"] { grid-template-columns: 1fr !important; }
+    .kpi-row[style*="repeat(3"] { grid-template-columns: 1fr !important; }
     .kpi-mini-row { grid-template-columns: 1fr; }
     .topbar { padding: 0 10px; gap: 8px; }
     .topbar-actions { gap: 8px; }
     .icon-btn { width: 36px; height: 36px; }
     .notif-dropdown { top: 56px; right: 8px; left: 8px; }
     .content { padding: 14px; }
-    .page-title { font-size: 1.25rem; }
+    .page-title { font-size: 1.15rem; }
+    .page-subtitle { font-size: 0.75rem; }
     .menu-toggle { width: 36px; height: 36px; }
     .menu-toggle svg { width: 18px; height: 18px; }
+
+    /* Competitor grid → 1 col */
+    div[style*="grid-template-columns:repeat(5"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Hero title smaller */
+    #panel-overview h1[style*="font-size:1.6rem"] {
+        font-size: 1.2rem !important;
+    }
+    #panel-overview p[style*="font-size:0.88rem"] {
+        font-size: 0.8rem !important;
+    }
+
+    /* Priority headers */
+    .priority-header { font-size: 0.75rem; padding: 10px 14px; }
+
+    /* Action cards compact */
+    .action-card { padding: 12px 14px; }
+    .action-card .action-title { font-size: 0.82rem; }
+    .action-impact { font-size: 0.7rem; }
+
+    /* Brand sub */
+    .brand-sub { font-size: 0.6rem; }
+
+    /* Panel h3 */
+    .panel-h3 { font-size: 0.82rem; }
+
+    /* KPI value smaller */
+    .kpi-value { font-size: 1.2rem; }
 }
 
 /* ============ EVIDENCE CARDS (sections d'audit) ============ */
@@ -3750,7 +3848,7 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             <!-- Funnel de leads -->
             <h3 class="panel-h3">Entonnoir de conversion</h3>
             <div class="card">
-                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:16px 0">
+                <div class="funnel-row" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:16px 0">
                     <div style="flex:1;text-align:center;padding:18px 12px;background:var(--primary-soft);border-radius:var(--radius-sm)">
                         <div style="font-size:1.5rem;font-weight:800;color:var(--primary)">118 366</div>
                         <div style="font-size:0.78rem;color:var(--text-muted);margin-top:4px">Interactions</div>
