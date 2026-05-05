@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap 90 jours — NaoEnergy · MouaDev</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg:            #FAF8F4;
+    --surface:       #FFFFFF;
+    --surface-2:     #F4F1EB;
+    --surface-3:     #EDE8DF;
+    --border:        rgba(20,20,20,0.08);
+    --border-strong: rgba(20,20,20,0.16);
+    --text:          #1A1A1A;
+    --text-body:     #3D3D3D;
+    --text-muted:    #807A70;
+    --text-faint:    #B5AFA4;
+    --accent:        #E85D2C;
+    --accent-soft:   rgba(232,93,44,0.10);
+    --accent-glow:   rgba(232,93,44,0.18);
+    --serif:         'Cormorant Garamond', Georgia, serif;
+    --sans:          'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    background-image: linear-gradient(135deg, #FBF9F5 0%, #F4F0E8 100%);
+    min-height: 100vh;
+}
+
+.page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 56px 72px;
+}
+
+/* ============== HEADER ============== */
+.hero {
+    background: var(--surface);
+    border-radius: 4px;
+    padding: 40px 44px;
+    margin-bottom: 40px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(60,40,20,0.04);
+}
+.hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 24px;
+}
+.brand {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+.brand .bracket { color: var(--accent); font-weight: 400; }
+.brand .pipe { color: var(--accent); font-weight: 400; margin-left: 6px; }
+.brand-sub {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-weight: 500;
+}
+.hero-meta {
+    text-align: right;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+.hero-meta .label { color: var(--text-faint); display: block; margin-top: 8px; }
+.hero-meta .value { color: var(--text); font-size: 12px; letter-spacing: 0.5px; text-transform: none; }
+
+.hero-divider {
+    height: 1px;
+    background: var(--accent);
+    width: 64px;
+    margin: 28px 0 24px;
+}
+
+.hero h1 {
+    font-family: var(--serif);
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.8px;
+    margin-bottom: 12px;
+    color: var(--text);
+}
+.hero-tagline {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.hero-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+.hero-info-block .info-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.hero-info-block .info-value {
+    font-size: 13px;
+    color: var(--text);
+}
+
+/* ============== SECTION ============== */
+.section {
+    margin-bottom: 44px;
+}
+.section-num {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+.section-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: var(--text);
+    letter-spacing: -0.4px;
+}
+
+/* ============== ALERT BLOCK ============== */
+.alert {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding: 18px 22px;
+    margin-bottom: 28px;
+    border-radius: 2px;
+}
+.alert-title {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.alert-body {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* ============== PHASES ============== */
+.phase {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+.phase-head {
+    background: linear-gradient(90deg, var(--surface-2) 0%, var(--surface) 100%);
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+}
+.phase {
+    box-shadow: 0 2px 8px rgba(60,40,20,0.03);
+}
+.phase-head-left { display: flex; align-items: center; gap: 18px; }
+.phase-num {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 40px;
+}
+.phase-titles .phase-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+.phase-titles .phase-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+.phase-period {
+    background: var(--accent-soft);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.phase-body {
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+.phase-col-title {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+}
+.phase-list {
+    list-style: none;
+    padding: 0;
+}
+.phase-list li {
+    font-size: 12.5px;
+    color: var(--text-body);
+    padding: 5px 0 5px 16px;
+    position: relative;
+    line-height: 1.5;
+}
+.phase-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.phase-kpi {
+    grid-column: 1 / -1;
+    margin-top: 12px;
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.kpi-pill {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-body);
+    font-size: 11px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    letter-spacing: 0.3px;
+}
+.kpi-pill .kpi-label {
+    color: var(--text-muted);
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-right: 6px;
+}
+
+/* ============== TIMELINE ============== */
+.timeline {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 28px;
+    box-shadow: 0 2px 8px rgba(60,40,20,0.03);
+}
+.tl-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.tl-bar {
+    position: relative;
+    height: 56px;
+    background: var(--surface-2);
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    border: 1px solid var(--border);
+}
+.tl-block {
+    flex: 1;
+    border-right: 1px solid rgba(255,255,255,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+}
+.tl-block:last-child { border-right: none; }
+.tl-1 { background: linear-gradient(135deg, #E85D2C, #F07A4A); }
+.tl-2 { background: linear-gradient(135deg, #D44A1A, #E85D2C); }
+.tl-3 { background: linear-gradient(135deg, #B83D14, #D44A1A); }
+.tl-4 { background: linear-gradient(135deg, #8E2F0E, #B83D14); }
+
+.tl-weeks {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 9px;
+    color: var(--text-faint);
+    letter-spacing: 1px;
+}
+
+/* ============== KEY METRICS ============== */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+}
+.metric {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 20px 18px;
+    box-shadow: 0 1px 4px rgba(60,40,20,0.03);
+}
+.metric-label {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.metric-value {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+.metric-sub {
+    font-size: 11px;
+    color: var(--text-body);
+}
+
+/* ============== FOOTER ============== */
+.footer {
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+}
+.footer-block .ft-label {
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.footer-block .ft-value {
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 4px;
+}
+.footer-block .ft-meta {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.tag-recommended {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 3px 8px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    margin-right: 8px;
+}
+
+/* ============== HEATMAP ============== */
+.heatmap {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 28px;
+    box-shadow: 0 2px 8px rgba(60,40,20,0.03);
+    margin-bottom: 16px;
+}
+.hm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    font-size: 10px;
+    color: var(--text-muted);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.hm-legend {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.hm-legend-label {
+    font-size: 9px;
+    color: var(--text-faint);
+    letter-spacing: 1px;
+}
+.hm-legend-cells {
+    display: flex;
+    gap: 3px;
+}
+.hm-legend-cell {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+}
+
+.hm-grid {
+    display: grid;
+    grid-template-columns: 180px repeat(12, 1fr);
+    gap: 4px;
+    align-items: center;
+}
+.hm-grid-head {
+    display: contents;
+}
+.hm-corner { font-size: 9px; color: var(--text-faint); letter-spacing: 1px; text-transform: uppercase; }
+.hm-week-head {
+    font-size: 9px;
+    color: var(--text-muted);
+    text-align: center;
+    font-weight: 600;
+    padding: 4px 0;
+    letter-spacing: 0.5px;
+}
+.hm-row {
+    display: contents;
+}
+.hm-track-label {
+    font-size: 11.5px;
+    color: var(--text);
+    font-weight: 600;
+    padding: 8px 12px 8px 0;
+    border-right: 1px solid var(--border);
+}
+.hm-track-label .hm-track-num {
+    color: var(--accent);
+    font-family: var(--serif);
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 6px;
+}
+.hm-cell {
+    aspect-ratio: 1 / 1;
+    min-height: 28px;
+    border-radius: 3px;
+    border: 1px solid var(--border);
+    background: var(--surface-2);
+    position: relative;
+}
+.hm-cell.lvl-0 { background: #F4F0E8; }
+.hm-cell.lvl-1 { background: rgba(232,93,44,0.18); border-color: rgba(232,93,44,0.20); }
+.hm-cell.lvl-2 { background: rgba(232,93,44,0.42); border-color: rgba(232,93,44,0.45); }
+.hm-cell.lvl-3 { background: rgba(232,93,44,0.70); border-color: rgba(232,93,44,0.72); }
+.hm-cell.lvl-4 { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent-glow); }
+
+.hm-divider {
+    grid-column: 1 / -1;
+    height: 1px;
+    background: var(--border);
+    margin: 4px 0;
+}
+
+.hm-footer {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 10px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    letter-spacing: 0.3px;
+}
+
+/* ============== ACCESS BLOCK ============== */
+.access-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 0;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(60,40,20,0.03);
+}
+.access-banner {
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--border);
+}
+.access-banner-title {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.access-banner-body {
+    font-size: 12.5px;
+    color: var(--text);
+    line-height: 1.5;
+}
+.access-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+.access-col {
+    padding: 22px 24px;
+}
+.access-col + .access-col {
+    border-left: 1px solid var(--border);
+}
+.access-col-title {
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.access-col-title.todo { color: #C44A1F; }
+.access-col-title.done { color: #2A8F4D; }
+.access-col-title .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+.access-col-title.todo .dot { background: #E85D2C; }
+.access-col-title.done .dot { background: #3FB76C; }
+
+.access-list {
+    list-style: none;
+    padding: 0;
+}
+.access-list li {
+    font-size: 12px;
+    color: var(--text-body);
+    padding: 7px 0 7px 18px;
+    position: relative;
+    line-height: 1.5;
+    border-bottom: 1px dashed var(--border);
+}
+.access-list li:last-child { border-bottom: none; }
+.access-list li strong { color: var(--text); font-weight: 600; }
+.access-list li .access-meta {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+.access-list.todo li::before {
+    content: '□';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    color: #E85D2C;
+    font-weight: 700;
+    font-size: 14px;
+}
+.access-list.done li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    color: #3FB76C;
+    font-weight: 700;
+    font-size: 13px;
+}
+.access-note {
+    background: var(--surface-2);
+    padding: 14px 22px;
+    border-top: 1px solid var(--border);
+    font-size: 11.5px;
+    color: var(--text-body);
+    line-height: 1.6;
+}
+.access-note strong { color: var(--accent); font-weight: 700; }
+.access-procedure {
+    background: var(--surface-2);
+    margin-top: 8px;
+    padding: 10px 12px;
+    border-radius: 2px;
+    border-left: 2px solid var(--accent);
+    font-size: 11px;
+    color: var(--text-body);
+    line-height: 1.6;
+}
+.access-procedure-label {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-right: 6px;
+}
+
+/* ============== PHASE 0 — MEET KICKOFF ============== */
+.phase-zero {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 3px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(60,40,20,0.04);
+}
+.phase-zero-head {
+    background: linear-gradient(90deg, var(--accent-soft) 0%, var(--surface) 100%);
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+}
+.phase-zero-left { display: flex; align-items: center; gap: 18px; }
+.phase-zero-num {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--accent);
+    line-height: 1;
+    min-width: 40px;
+}
+.phase-zero-title {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+.phase-zero-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+.phase-zero-badge {
+    background: var(--accent);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.discovery-grid {
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+.discovery-card {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 16px 18px;
+}
+.discovery-card-title {
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+}
+.discovery-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.discovery-list li {
+    font-size: 12px;
+    color: var(--text-body);
+    padding: 6px 0 6px 14px;
+    position: relative;
+    line-height: 1.5;
+}
+.discovery-list li::before {
+    content: '?';
+    position: absolute;
+    left: 0;
+    top: 6px;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.diagnostic-link {
+    grid-column: 1 / -1;
+    background: linear-gradient(90deg, var(--accent-soft) 0%, var(--surface) 100%);
+    border: 1px dashed var(--accent);
+    border-radius: 3px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+.diagnostic-link-text {
+    font-size: 12.5px;
+    color: var(--text);
+    line-height: 1.5;
+}
+.diagnostic-link-text strong {
+    color: var(--accent);
+    font-weight: 700;
+}
+.diagnostic-link a {
+    background: var(--accent);
+    color: #fff;
+    padding: 9px 18px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+.diagnostic-link a:hover { background: #C44A1F; }
+
+/* mini-bar pour le header de chaque axe */
+.intensity-bar {
+    display: inline-flex;
+    gap: 2px;
+    align-items: center;
+    background: var(--surface-2);
+    padding: 5px 10px;
+    border-radius: 2px;
+    border: 1px solid var(--border);
+}
+.intensity-bar .ib-label {
+    font-size: 9px;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-right: 6px;
+    font-weight: 600;
+}
+.ib-cell {
+    width: 6px;
+    height: 14px;
+    border-radius: 1px;
+    background: rgba(232,93,44,0.15);
+}
+.ib-cell.on { background: var(--accent); }
+
+@media print {
+    body { background: var(--bg); }
+    .page { padding: 24px 32px; }
+    .phase { break-inside: avoid; }
+    .timeline { break-inside: avoid; }
+    .heatmap { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-top">
+            <div>
+                <div class="brand">
+                    <span class="bracket">{</span> MouaDev <span class="pipe">|</span>
+                </div>
+                <div class="brand-sub">WEB DEVELOPMENT SERVICES</div>
+            </div>
+            <div class="hero-meta">
+                <span class="label">RÉFÉRENCE</span>
+                <span class="value">ROADMAP-2026-001</span>
+                <span class="label">DATE</span>
+                <span class="value">5 mai 2026</span>
+            </div>
+        </div>
+
+        <div class="hero-divider"></div>
+
+        <h1>Roadmap stratégique 90 jours<br>NaoEnergy.ch</h1>
+        <p class="hero-tagline">Maintenance · SEO &amp; AIO · Acquisition Google &amp; Meta Ads · Local SEO</p>
+
+        <div class="hero-info">
+            <div class="hero-info-block">
+                <div class="info-label">CLIENT</div>
+                <div class="info-value">NaoEnergy SA</div>
+            </div>
+            <div class="hero-info-block">
+                <div class="info-label">PÉRIMÈTRE</div>
+                <div class="info-value">3 sites web</div>
+            </div>
+            <div class="hero-info-block">
+                <div class="info-label">DURÉE</div>
+                <div class="info-value">12 semaines</div>
+            </div>
+            <div class="hero-info-block">
+                <div class="info-label">PRIORITÉ</div>
+                <div class="info-value">NaoEnergy WP</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ALERT P0 + ACCÈS -->
+    <div class="access-block">
+        <div class="access-banner">
+            <div class="access-banner-title">🚨 PRIORITÉ ZÉRO — À TRAITER SEMAINE 1</div>
+            <div class="access-banner-body">
+                Compte <strong>Google Ads en alerte de suspension</strong> (paiement en retard, 16 campagnes en pause).
+                Régularisation + complétion des accès digitaux = condition de démarrage opérationnel.
+                <em style="color: var(--text-muted); font-size: 11px; display: block; margin-top: 4px;">Détail des accès envoyé par email au Client.</em>
+            </div>
+        </div>
+
+        <div class="access-grid">
+            <!-- TODO COLUMN -->
+            <div class="access-col">
+                <div class="access-col-title todo">
+                    <span class="dot"></span>
+                    🔴 ACCÈS À COMPLÉTER
+                </div>
+                <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">
+                    Site Kit (WordPress) ne suffit pas. Invitations directes nominatives requises sur
+                    <strong style="color: var(--text);">bakhchanemouad@gmail.com</strong> :
+                </div>
+                <ul class="access-list todo">
+                    <li>
+                        <strong>Google Analytics 4</strong> — Editor
+                        <span class="access-meta"> · 3 propriétés (NaoEnergy, Iso-Tradition, Zen Energies)</span>
+                    </li>
+                    <li>
+                        <strong>Google Search Console</strong> — Full user
+                        <span class="access-meta"> · 3 propriétés</span>
+                    </li>
+                    <li>
+                        <strong>Google Tag Manager</strong> — Edit + Publish
+                    </li>
+                    <li>
+                        <strong>Meta Business Manager</strong> — Admin
+                        <span class="access-meta"> · Page FB NaoEnergy, Instagram, compte publicitaire Meta Ads, Pixel, domaine naoenergy.ch</span>
+                        <div class="access-procedure">
+                            <span class="access-procedure-label">Procédure</span>
+                            business.facebook.com → Paramètres de l'entreprise → Personnes → Ajouter →
+                            bakhchanemouad@gmail.com → rôle Admin → attribuer les actifs ci-dessus.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- DONE COLUMN -->
+            <div class="access-col">
+                <div class="access-col-title done">
+                    <span class="dot"></span>
+                    ✅ DÉJÀ OK
+                </div>
+                <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">
+                    Accès opérationnels ou en cours de mise en conformité :
+                </div>
+                <ul class="access-list done">
+                    <li>
+                        <strong>Google Ads</strong> — accès confirmé
+                        <span class="access-meta"> · compte 221-239-6660</span>
+                    </li>
+                    <li>
+                        <strong>Meta Ads</strong> — connexion fonctionnelle via login Client
+                        <span class="access-meta"> · à remplacer par invitation nominative (voir colonne gauche)</span>
+                    </li>
+                    <li>
+                        <strong>WordPress NaoEnergy</strong> — création d'un compte admin nominatif Mouâd
+                        <span class="access-meta"> · avec 2FA activée + notification automatique au Client</span>
+                    </li>
+                    <li>
+                        <strong>Sites Next.js / Sanity</strong> — accès dev complets
+                        <span class="access-meta"> · Iso-Tradition + Zen Energies (en tant que développeur)</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="access-note">
+            <strong>Important — Sécurité :</strong> à ce jour, je me connecte à Meta &amp; WordPress avec
+            les identifiants personnels du Client. Cela présente un risque de blocage automatique
+            (connexions depuis le Maroc) et empêche toute traçabilité nominative des interventions.
+            Les invitations nominatives ci-dessus protègent le Client autant que le Prestataire.
+        </div>
+    </div>
+
+    <!-- KEY METRICS -->
+    <div class="metrics-grid">
+        <div class="metric">
+            <div class="metric-label">Sites couverts</div>
+            <div class="metric-value">3</div>
+            <div class="metric-sub">WP + 2× Next.js/Sanity</div>
+        </div>
+        <div class="metric">
+            <div class="metric-label">Campagnes Ads</div>
+            <div class="metric-value">16</div>
+            <div class="metric-sub">À restructurer</div>
+        </div>
+        <div class="metric">
+            <div class="metric-label">Avis Google</div>
+            <div class="metric-value">100</div>
+            <div class="metric-sub">4,5 ★ — actif local fort</div>
+        </div>
+        <div class="metric">
+            <div class="metric-label">Heures / mois</div>
+            <div class="metric-value">40h</div>
+            <div class="metric-sub">Périmètre forfait</div>
+        </div>
+    </div>
+
+    <!-- SECTION 01 — HEATMAP -->
+    <div class="section">
+        <div class="section-num">01 · VUE D'ENSEMBLE</div>
+        <div class="section-title">Intensité des 4 axes sur 12 semaines</div>
+
+        <div class="heatmap">
+            <div class="hm-header">
+                <span>4 AXES MENÉS EN PARALLÈLE DÈS LA SEMAINE 1</span>
+                <div class="hm-legend">
+                    <span class="hm-legend-label">FAIBLE</span>
+                    <div class="hm-legend-cells">
+                        <div class="hm-legend-cell lvl-0" style="background:#F4F0E8;"></div>
+                        <div class="hm-legend-cell" style="background:rgba(232,93,44,0.18);"></div>
+                        <div class="hm-legend-cell" style="background:rgba(232,93,44,0.42);"></div>
+                        <div class="hm-legend-cell" style="background:rgba(232,93,44,0.70);"></div>
+                        <div class="hm-legend-cell" style="background:#E85D2C;"></div>
+                    </div>
+                    <span class="hm-legend-label">PIC</span>
+                </div>
+            </div>
+
+            <div class="hm-grid">
+                <!-- Header row -->
+                <div class="hm-grid-head">
+                    <div class="hm-corner">AXE / SEMAINE</div>
+                    <div class="hm-week-head">S1</div>
+                    <div class="hm-week-head">S2</div>
+                    <div class="hm-week-head">S3</div>
+                    <div class="hm-week-head">S4</div>
+                    <div class="hm-week-head">S5</div>
+                    <div class="hm-week-head">S6</div>
+                    <div class="hm-week-head">S7</div>
+                    <div class="hm-week-head">S8</div>
+                    <div class="hm-week-head">S9</div>
+                    <div class="hm-week-head">S10</div>
+                    <div class="hm-week-head">S11</div>
+                    <div class="hm-week-head">S12</div>
+                </div>
+
+                <div class="hm-divider"></div>
+
+                <!-- Track 1 — Stabilisation -->
+                <div class="hm-row">
+                    <div class="hm-track-label"><span class="hm-track-num">01</span>Stabilisation &amp; Audit</div>
+                    <div class="hm-cell lvl-4"></div>
+                    <div class="hm-cell lvl-4"></div>
+                    <div class="hm-cell lvl-3"></div>
+                    <div class="hm-cell lvl-2"></div>
+                    <div class="hm-cell lvl-2"></div>
+                    <div class="hm-cell lvl-2"></div>
+                    <div class="hm-cell lvl-1"></div>
+                    <div class="hm-cell lvl-1"></div>
+                    <div class="hm-cell lvl-1"></div>
+                    <div class="hm-cell lvl-1"></div>
+                    <div class="hm-cell lvl-1"></div>
+                    <div class="hm-cell lvl-1"></div>
+                </div>
+
+                <!-- Track 2 — SEO & Tech -->
+                <div class="hm-row">
+                    <div class="hm-track-label"><span class="hm-track-num">02</span>SEO &amp; Tech</div>
+                    <div class="hm-cell lvl-1"></div>
+                    <div class="hm-cell lvl-2"></div>
+                    <div class="hm-cell lvl-3"></div>
+                    <div class="hm-cell lvl-3"></div>
+                    <div class="hm-cell lvl-4"></div>
+                    <div class="hm-cell lvl-4"></div>
+                    <div class="hm-cell lvl-3"></div>
+                    <div class="hm-cell lvl-3"></div>
+                    <div class="hm-cell lvl-2"></div>
+                    <div class="hm-cell lvl-2"></div>
+                    <div class="hm-cell lvl-2"></div>
+                    <div class="hm-cell lvl-2"></div>
+                </div>
+
+                <!-- Track 3 — Ads & CRO -->
+                <div class="hm-row">
+                    <div class="hm-track-label"><span class="hm-track-num">03</span>Ads &amp; CRO</div>
+                    <div class="hm-cell lvl-4"></div>
+                    <div class="hm-cell lvl-3"></div>
+                    <div class="hm-cell lvl-2"></div>
+                    <div class="hm-cell lvl-2"></div>
+                    <div class="hm-cell lvl-3"></div>
+                    <div class="hm-cell lvl-4"></div>
+                    <div class="hm-cell lvl-4"></div>
+                    <div class="hm-cell lvl-3"></div>
+                    <div class="hm-cell lvl-3"></div>
+                    <div class="hm-cell lvl-2"></div>
+                    <div class="hm-cell lvl-2"></div>
+                    <div class="hm-cell lvl-2"></div>
+                </div>
+
+                <!-- Track 4 — AIO/GEO -->
+                <div class="hm-row">
+                    <div class="hm-track-label"><span class="hm-track-num">04</span>AIO / GEO &amp; Local</div>
+                    <div class="hm-cell lvl-1"></div>
+                    <div class="hm-cell lvl-1"></div>
+                    <div class="hm-cell lvl-2"></div>
+                    <div class="hm-cell lvl-2"></div>
+                    <div class="hm-cell lvl-2"></div>
+                    <div class="hm-cell lvl-3"></div>
+                    <div class="hm-cell lvl-3"></div>
+                    <div class="hm-cell lvl-3"></div>
+                    <div class="hm-cell lvl-4"></div>
+                    <div class="hm-cell lvl-4"></div>
+                    <div class="hm-cell lvl-4"></div>
+                    <div class="hm-cell lvl-4"></div>
+                </div>
+            </div>
+
+            <div class="hm-footer">
+                <strong style="color:var(--text);">Lecture :</strong> chaque axe est actif dès la première semaine.
+                L'intensité (de faible à pic) reflète l'allocation d'effort réelle au cours du trimestre.
+                Stabilisation &amp; Ads démarrent en pic (urgence Google Ads). Le SEO Tech monte en puissance dès la S3.
+                AIO/GEO s'amplifie en fin de trimestre une fois les fondations posées.
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 02 — AXES -->
+    <div class="section">
+        <div class="section-num">02 · DÉTAIL DES AXES</div>
+        <div class="section-title">Plan d'action mené en parallèle</div>
+
+        <!-- PHASE 0 — MEET LANCEMENT -->
+        <div class="phase-zero">
+            <div class="phase-zero-head">
+                <div class="phase-zero-left">
+                    <div class="phase-zero-num">00</div>
+                    <div>
+                        <div class="phase-zero-title">Meet de lancement &amp; Discovery</div>
+                        <div class="phase-zero-sub">Cadrage stratégique · Diagnostic flash · Validation roadmap</div>
+                    </div>
+                </div>
+                <div class="phase-zero-badge">PHASE 0 · KICKOFF</div>
+            </div>
+
+            <div class="discovery-grid">
+                <!-- BUSINESS -->
+                <div class="discovery-card">
+                    <div class="discovery-card-title">▸ Sur le business</div>
+                    <ul class="discovery-list">
+                        <li>Objectif business des 90 prochains jours ? (volume leads / CPL / notoriété / autre)</li>
+                        <li>Combien de leads/mois aujourd'hui vs cible ?</li>
+                        <li>Services les plus rentables ? (PV, pompes à chaleur, batteries, bornes…)</li>
+                        <li>Saisonnalité : printemps/été = pic ? quel rythme ?</li>
+                        <li>Périmètre géographique prioritaire ? (Crans VD = siège, mais quelles zones cibler ?)</li>
+                    </ul>
+                </div>
+
+                <!-- CONCURRENCE -->
+                <div class="discovery-card">
+                    <div class="discovery-card-title">▸ Sur la concurrence</div>
+                    <ul class="discovery-list">
+                        <li>Top 3 concurrents en Suisse romande ?</li>
+                        <li>Différenciateurs NaoEnergy ?</li>
+                    </ul>
+                </div>
+
+                <!-- FUNNEL -->
+                <div class="discovery-card">
+                    <div class="discovery-card-title">▸ Sur le funnel</div>
+                    <ul class="discovery-list">
+                        <li>Comment les leads sont traités aujourd'hui ?</li>
+                        <li>CRM utilisé ? (HubSpot, Salesforce, Pipedrive, Notion, rien ?)</li>
+                        <li>Cycle de vente : combien de temps entre lead → devis → signature ?</li>
+                        <li>Taux de conversion moyen lead → client ?</li>
+                    </ul>
+                </div>
+
+                <!-- HISTORIQUE -->
+                <div class="discovery-card">
+                    <div class="discovery-card-title">▸ Sur l'historique</div>
+                    <ul class="discovery-list">
+                        <li>Y a-t-il eu une agence avant ? Quels résultats ?</li>
+                        <li>Pourquoi ce changement / cette évolution maintenant ?</li>
+                    </ul>
+                </div>
+
+                <!-- DIAGNOSTIC LINK -->
+                <div class="diagnostic-link">
+                    <div class="diagnostic-link-text">
+                        <strong>Diagnostic flash NaoEnergy</strong> — déjà préparé en amont du meet.
+                        Audit SEO, technique, tracking et opportunités prioritaires identifiées.
+                    </div>
+                    <a href="https://seo-report-tau.vercel.app/" target="_blank">Consulter le rapport →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- AXE 1 -->
+        <div class="phase">
+            <div class="phase-head">
+                <div class="phase-head-left">
+                    <div class="phase-num">01</div>
+                    <div class="phase-titles">
+                        <div class="phase-title">Stabilisation &amp; Audit</div>
+                        <div class="phase-sub">Sécuriser les fondations · Préparer la croissance</div>
+                    </div>
+                </div>
+                <div class="intensity-bar">
+                    <span class="ib-label">Pic S1-S2</span>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                </div>
+            </div>
+            <div class="phase-body">
+                <div>
+                    <div class="phase-col-title">Livrables</div>
+                    <ul class="phase-list">
+                        <li>Régularisation paiement &amp; réactivation Google Ads</li>
+                        <li>Audit technique complet des 3 sites</li>
+                        <li>Correction de l'écart de tracking GA4 / GSC sur NaoEnergy</li>
+                        <li>Documentation baseline KPIs (référence trimestrielle)</li>
+                        <li>Plan SEO 90 jours détaillé</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="phase-col-title">Actions techniques</div>
+                    <ul class="phase-list">
+                        <li>Compte admin WordPress nominatif + 2FA</li>
+                        <li>Audit Lighthouse (Perf · SEO · A11y · Best Practices)</li>
+                        <li>Cartographie des conversions GA4 existantes</li>
+                        <li>Inventaire des plugins WP / dépendances Next.js</li>
+                        <li>Setup gestionnaire de mots de passe partagé</li>
+                    </ul>
+                </div>
+                <div class="phase-kpi">
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> Accès complets</span>
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> Tracking propre</span>
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> Compte Ads actif</span>
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> Baseline figée</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- AXE 2 -->
+        <div class="phase">
+            <div class="phase-head">
+                <div class="phase-head-left">
+                    <div class="phase-num">02</div>
+                    <div class="phase-titles">
+                        <div class="phase-title">SEO &amp; Tech</div>
+                        <div class="phase-sub">Visibilité organique · Performance · Local SEO</div>
+                    </div>
+                </div>
+                <div class="intensity-bar">
+                    <span class="ib-label">Pic S5-S6</span>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                </div>
+            </div>
+            <div class="phase-body">
+                <div>
+                    <div class="phase-col-title">Livrables</div>
+                    <ul class="phase-list">
+                        <li>Optimisation Core Web Vitals (LCP · INP · CLS)</li>
+                        <li>Schema.org : LocalBusiness, Service, FAQ</li>
+                        <li>On-page top 10 pages (titles, metas, Hn, maillage)</li>
+                        <li>Reporting Search Console hebdomadaire</li>
+                        <li>Activation du calendrier Google Business Profile</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="phase-col-title">Actions techniques</div>
+                    <ul class="phase-list">
+                        <li>Compression images, lazy loading, fonts optim</li>
+                        <li>Sitemap XML &amp; robots.txt audité + soumis</li>
+                        <li>Maillage interne entre les 3 sites de l'écosystème</li>
+                        <li>Posts GMB hebdomadaires sur services prioritaires</li>
+                        <li>Suivi positions top 100 mots-clés (local + national)</li>
+                    </ul>
+                </div>
+                <div class="phase-kpi">
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> LCP &lt; 2.5s</span>
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> Trafic organique</span>
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> Positions top 100</span>
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> Rich snippets actifs</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- AXE 3 -->
+        <div class="phase">
+            <div class="phase-head">
+                <div class="phase-head-left">
+                    <div class="phase-num">03</div>
+                    <div class="phase-titles">
+                        <div class="phase-title">Ads &amp; CRO</div>
+                        <div class="phase-sub">Génération de leads · Optimisation des conversions</div>
+                    </div>
+                </div>
+                <div class="intensity-bar">
+                    <span class="ib-label">Pic S1 + S6-S7</span>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                </div>
+            </div>
+            <div class="phase-body">
+                <div>
+                    <div class="phase-col-title">Livrables</div>
+                    <ul class="phase-list">
+                        <li>Restructuration des 16 campagnes Google Ads (par service)</li>
+                        <li>Configuration des conversions GA4 + GTM</li>
+                        <li>Premiers tests Meta lead gen (Facebook + Instagram)</li>
+                        <li>Optimisation des landing pages prioritaires</li>
+                        <li>Reporting Ads mensuel (CPL · ROAS · ROI)</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="phase-col-title">Actions techniques</div>
+                    <ul class="phase-list">
+                        <li>Audit mots-clés négatifs &amp; nettoyage</li>
+                        <li>A/B testing des annonces (titres, descriptions)</li>
+                        <li>Pixel Meta installé &amp; événements custom</li>
+                        <li>Heatmaps + sessions enregistrées (Hotjar / Clarity)</li>
+                        <li>Recos UX/UI sur les pages de conversion</li>
+                    </ul>
+                </div>
+                <div class="phase-kpi">
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> CPL en baisse</span>
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> CTR &gt; benchmark</span>
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> Taux conversion landing</span>
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> Volume leads qualifiés</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- AXE 4 -->
+        <div class="phase">
+            <div class="phase-head">
+                <div class="phase-head-left">
+                    <div class="phase-num">04</div>
+                    <div class="phase-titles">
+                        <div class="phase-title">AIO / GEO &amp; Local</div>
+                        <div class="phase-sub">Visibilité IA · GMB · Reporting consolidé</div>
+                    </div>
+                </div>
+                <div class="intensity-bar">
+                    <span class="ib-label">Pic S9-S12</span>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                    <div class="ib-cell on"></div>
+                </div>
+            </div>
+            <div class="phase-body">
+                <div>
+                    <div class="phase-col-title">Livrables</div>
+                    <ul class="phase-list">
+                        <li>Optimisation contenu pour ChatGPT, Perplexity, AI Overviews</li>
+                        <li>FAQ schema déployé sur pages stratégiques</li>
+                        <li>Premier reporting trimestriel consolidé</li>
+                        <li>Plan d'action trimestre 2 validé avec le Client</li>
+                        <li>Recommandations stratégiques annuelles</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="phase-col-title">Actions techniques</div>
+                    <ul class="phase-list">
+                        <li>Restructuration sémantique pour parsing IA</li>
+                        <li>Citations &amp; mentions naoenergy dans réponses IA</li>
+                        <li>Optimisation E-E-A-T (auteur, dates, sources)</li>
+                        <li>Veille concurrentielle automatisée</li>
+                        <li>Itération continue sur Ads &amp; SEO</li>
+                    </ul>
+                </div>
+                <div class="phase-kpi">
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> Citations IA</span>
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> Avis GMB +20%</span>
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> ROI global mesuré</span>
+                    <span class="kpi-pill"><span class="kpi-label">KPI</span> Plan T2 validé</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footer-block">
+            <div class="ft-label">PRESTATAIRE</div>
+            <div class="ft-value">Mouad Bakhchane · MouaDev</div>
+            <div class="ft-meta">+212 611 714 711</div>
+            <div class="ft-meta">bakhchanemouad@gmail.com</div>
+        </div>
+        <div class="footer-block" style="text-align: right;">
+            <div class="ft-label">CLIENT</div>
+            <div class="ft-value">Charline Fabbro · NaoEnergy</div>
+            <div class="ft-meta">Responsable Marketing</div>
+            <div class="ft-meta">naoenergy.ch</div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
