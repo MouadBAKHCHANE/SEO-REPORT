@@ -16,23 +16,26 @@
    ================================================================ */
 
 :root {
-    /* Backgrounds — Shakuro warm cream */
-    --bg:            #EFEDE8;
-    --bg-gradient:   linear-gradient(135deg, #F4F2EE 0%, #EBE7DF 60%, #F0EBE2 100%);
+    /* Backgrounds — Cool gray gradient (Shakuro-inspired) */
+    --bg:            #EEF1F5;
+    --bg-gradient:   linear-gradient(135deg, #F4F6F9 0%, #E5E9EE 55%, #EDF0F4 100%);
     --surface:       #FFFFFF;
-    --surface-soft:  #FAF8F4;
-    --glass:         rgba(255,255,255,0.62);
-    --glass-strong:  rgba(255,255,255,0.78);
+    --surface-soft:  #F4F6FA;
+    --glass:         rgba(255,255,255,0.65);
+    --glass-strong:  rgba(255,255,255,0.85);
 
-    /* Borders — barely there */
-    --border:        rgba(60,40,20,0.06);
-    --border-strong: rgba(60,40,20,0.12);
+    /* Borders — cool neutral */
+    --border:        rgba(20,40,80,0.07);
+    --border-strong: rgba(20,40,80,0.16);
 
     /* Texte */
     --text:          #1A1A1A;
-    --text-body:     #3D3D3D;
-    --text-muted:    #9A958C;
-    --text-faint:    #C7C2BA;
+    --text-body:     #2D3748;
+    --text-muted:    #7C828D;
+    --text-faint:    #B8BCC4;
+
+    /* Icon color — dark navy blue (Shakuro theme) */
+    --icon-color:    #1F3A5F;
 
     /* Accent principal — naoenergy logo teal */
     --primary:        #5A98AE;
@@ -159,6 +162,31 @@
 [data-theme="dark"] .sidebar::-webkit-scrollbar-thumb { background: rgba(124,177,196,0.18); }
 [data-theme="dark"] .sidebar::-webkit-scrollbar-thumb:hover { background: rgba(124,177,196,0.30); }
 [data-theme="dark"] .sidebar { scrollbar-color: rgba(124,177,196,0.18) transparent; }
+
+/* Sidebar gradient gray bg + navy icons (Shakuro theme) */
+.sidebar { background: linear-gradient(180deg, #F4F6F9 0%, #EAEEF3 100%); }
+[data-theme="dark"] .sidebar { background: linear-gradient(180deg, #131A1E 0%, #0F1417 100%); }
+
+.sidebar .nav-item:not(.active) > svg,
+.sidebar .nav-group > svg.nav-icon,
+.sidebar .nav-child > svg,
+.sidebar .nav-section > .nav-item:not(.active) svg:not(.nav-chevron),
+.menu-toggle > svg,
+.icon-btn > svg:first-of-type,
+.search-mobile-btn > svg,
+.theme-toggle > svg,
+.notif-trigger > svg,
+.drive-btn > svg,
+.roadmap-btn > svg {
+    color: #1F3A5F;
+}
+[data-theme="dark"] .sidebar .nav-item:not(.active) > svg,
+[data-theme="dark"] .sidebar .nav-group > svg.nav-icon,
+[data-theme="dark"] .sidebar .nav-child > svg,
+[data-theme="dark"] .menu-toggle > svg,
+[data-theme="dark"] .icon-btn > svg:first-of-type {
+    color: #9BC5D5;
+}
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 

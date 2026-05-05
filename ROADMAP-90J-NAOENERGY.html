@@ -803,6 +803,127 @@ html, body {
 }
 .ib-cell.on { background: var(--accent); }
 
+/* ============== MOBILE RESPONSIVE ============== */
+@media (max-width: 768px) {
+    .page { padding: 24px 18px 48px; }
+
+    /* Hero */
+    .hero { padding: 24px 20px; }
+    .hero-top { flex-wrap: wrap; gap: 14px; }
+    .hero-meta { text-align: left; }
+    .brand { font-size: 22px; }
+    .brand-sub { font-size: 8px; }
+    .hero h1 { font-size: 26px; line-height: 1.2; }
+    .hero-tagline { font-size: 11.5px; margin-bottom: 22px; }
+    .hero-info { grid-template-columns: 1fr 1fr; gap: 14px; padding-top: 18px; }
+    .hero-info-block .info-value { font-size: 12px; }
+    .hero-divider { margin: 22px 0 18px; }
+
+    /* Section titles */
+    .section-title { font-size: 22px; }
+    .section { margin-bottom: 32px; }
+
+    /* Metrics grid 4 → 2 */
+    .metrics-grid { grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 22px; }
+    .metric { padding: 16px 14px; }
+    .metric-value { font-size: 24px; }
+    .metric-sub { font-size: 10px; }
+
+    /* Alert / Access block */
+    .access-banner { padding: 14px 18px; }
+    .access-grid { grid-template-columns: 1fr; }
+    .access-col + .access-col { border-left: none; border-top: 1px solid var(--border); }
+    .access-col { padding: 18px 18px; }
+    .access-list li { font-size: 11.5px; padding: 6px 0 6px 18px; }
+    .access-note { padding: 14px 18px; font-size: 11px; }
+
+    /* Heatmap — scroll horizontally on mobile */
+    .heatmap { padding: 18px 16px; }
+    .hm-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .hm-grid { grid-template-columns: 100px repeat(12, minmax(20px, 1fr)); gap: 3px; }
+    .hm-track-label { font-size: 10px; padding: 6px 8px 6px 0; }
+    .hm-track-label .hm-track-num { font-size: 12px; margin-right: 4px; }
+    .hm-week-head { font-size: 8px; padding: 3px 0; }
+    .hm-cell { min-height: 22px; }
+    .hm-corner { font-size: 8px; }
+    .hm-footer { font-size: 10px; padding-top: 12px; margin-top: 14px; }
+
+    /* Phase cards */
+    .phase-head { padding: 16px 18px; flex-wrap: wrap; gap: 10px; }
+    .phase-head-left { gap: 12px; }
+    .phase-num { font-size: 26px; min-width: 32px; }
+    .phase-titles .phase-title { font-size: 17px; }
+    .phase-titles .phase-sub { font-size: 10.5px; }
+    .phase-body { grid-template-columns: 1fr; gap: 18px; padding: 18px 20px; }
+    .phase-period { font-size: 10px; padding: 5px 10px; }
+    .phase-list li { font-size: 12px; padding: 5px 0 5px 14px; }
+    .phase-kpi { gap: 6px; padding-top: 14px; }
+    .kpi-pill { font-size: 10.5px; padding: 4px 10px; }
+
+    /* Intensity bar — wraps under title on small screens */
+    .intensity-bar { padding: 4px 8px; align-self: flex-start; }
+    .intensity-bar .ib-label { font-size: 8px; margin-right: 4px; }
+    .ib-cell { width: 5px; height: 12px; }
+
+    /* Phase 0 — Discovery */
+    .phase-zero-head { padding: 16px 18px; flex-wrap: wrap; gap: 10px; }
+    .phase-zero-num { font-size: 26px; }
+    .phase-zero-title { font-size: 17px; }
+    .phase-zero-sub { font-size: 10.5px; }
+    .phase-zero-badge { font-size: 10px; padding: 5px 10px; }
+    .discovery-grid { grid-template-columns: 1fr; gap: 12px; padding: 18px 18px; }
+    .discovery-card { padding: 14px 16px; }
+    .discovery-card-title { font-size: 9.5px; }
+    .discovery-list li { font-size: 11.5px; padding: 5px 0 5px 12px; }
+    .diagnostic-link { flex-direction: column; gap: 12px; align-items: stretch; padding: 14px 16px; }
+    .diagnostic-link a { text-align: center; padding: 11px 18px; }
+
+    /* Footer */
+    .footer { grid-template-columns: 1fr; gap: 22px; }
+    .footer-block:last-child { text-align: left !important; }
+
+    /* Procedure block tighter */
+    .access-procedure { padding: 8px 10px; font-size: 10.5px; }
+    .access-procedure-label { font-size: 8px; }
+}
+
+@media (max-width: 480px) {
+    .page { padding: 20px 14px 40px; }
+
+    .hero { padding: 20px 16px; }
+    .hero h1 { font-size: 22px; }
+    .hero-info { grid-template-columns: 1fr; gap: 10px; }
+    .hero-tagline { font-size: 11px; }
+
+    .section-title { font-size: 19px; }
+
+    /* Metrics 4 → 2 still, but tighter */
+    .metric-value { font-size: 22px; }
+    .metric-label { font-size: 8px; }
+
+    /* Heatmap — even tighter, cells smaller */
+    .hm-grid { grid-template-columns: 80px repeat(12, minmax(14px, 1fr)); gap: 2px; }
+    .hm-track-label { font-size: 9px; }
+    .hm-track-label .hm-track-num { display: none; }
+    .hm-cell { min-height: 18px; }
+    .hm-week-head { font-size: 7px; }
+    .hm-header { font-size: 8px; }
+
+    /* Phase tighter */
+    .phase-num, .phase-zero-num { font-size: 22px; }
+    .phase-titles .phase-title, .phase-zero-title { font-size: 15px; }
+    .phase-list li, .discovery-list li { font-size: 11px; }
+    .phase-body, .discovery-grid { padding: 16px; }
+
+    /* Footer fonts */
+    .footer-block .ft-value { font-size: 12px; }
+    .footer-block .ft-meta { font-size: 10px; }
+
+    /* Access banner tighter */
+    .access-banner-title { font-size: 10px; }
+    .access-banner-body { font-size: 11.5px; }
+}
+
 @media print {
     body { background: var(--bg); }
     .page { padding: 24px 32px; }
