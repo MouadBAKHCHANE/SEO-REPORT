@@ -232,8 +232,8 @@ a { color: var(--primary); text-decoration: none; }
 
 /* ============ SIDEBAR ============ */
 .sidebar {
-    background: transparent;
-    border-right: none;
+    background: linear-gradient(180deg, #F4F6F9 0%, #EAEEF3 100%);
+    border-right: 1px solid var(--border);
     padding: 20px 14px;
     display: flex;
     flex-direction: column;
@@ -245,6 +245,10 @@ a { color: var(--primary); text-decoration: none; }
     overflow-x: hidden;
     scrollbar-gutter: stable;
     overscroll-behavior: contain;
+}
+[data-theme="dark"] .sidebar {
+    background: linear-gradient(180deg, #131A1E 0%, #0F1417 100%);
+    border-right-color: rgba(124,177,196,0.10);
 }
 .sidebar > * { flex-shrink: 0; }
 
