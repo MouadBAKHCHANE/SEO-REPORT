@@ -1257,15 +1257,18 @@ button.kpi-card { display: block; width: 100%; }
     right: 0;
     width: 380px;
     max-width: 92vw;
-    background: var(--glass-strong);
-    backdrop-filter: blur(28px) saturate(180%);
-    -webkit-backdrop-filter: blur(28px) saturate(180%);
-    border: 1px solid rgba(255,255,255,0.6);
+    background: rgba(255,255,255,0.98);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    border: 1px solid var(--border-strong);
     border-radius: 22px;
     box-shadow: 0 24px 60px rgba(60,40,20,0.14);
     z-index: 200;
     display: none;
     overflow: hidden;
+}
+[data-theme="dark"] .notif-dropdown {
+    background: rgba(26,34,39,0.98);
 }
 .notif-dropdown.open { display: block; animation: notifSlide 0.25s ease-out; }
 @keyframes notifSlide {
@@ -2577,7 +2580,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     </button>
                     <div class="notif-dropdown" id="notifDropdown" onclick="event.stopPropagation()">
                         <div class="notif-header">
-                            <div class="notif-header-title">🎉 Nouveautés du rapport</div>
+                            <div class="notif-header-title">Nouveautés du rapport</div>
                             <div class="notif-count">6 nouveau(x)</div>
                         </div>
                         <div class="notif-list">
