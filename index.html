@@ -1270,6 +1270,14 @@ button.kpi-card { display: block; width: 100%; }
 [data-theme="dark"] .notif-dropdown {
     background: rgba(26,34,39,0.98);
 }
+
+/* Topbar Roadmap pill button */
+.roadmap-btn { width: auto !important; min-width: 0; height: 38px; border-radius: 100px !important; }
+.roadmap-btn:hover { background: linear-gradient(135deg, rgba(90,152,174,0.18) 0%, rgba(90,152,174,0.08) 100%) !important; }
+@media (max-width: 768px) {
+    .roadmap-btn .roadmap-btn-label { display: none; }
+    .roadmap-btn { padding: 0 10px !important; }
+}
 .notif-dropdown.open { display: block; animation: notifSlide 0.25s ease-out; }
 @keyframes notifSlide {
     from { opacity: 0; transform: translateY(-8px); }
@@ -2397,28 +2405,12 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
         </div>
         <div class="brand-sub">Digital Marketing Dashboard</div>
 
-        <!-- Score card -->
-        <button class="sidebar-score-mobile" onclick="showPanel('recs');" title="Voir le plan d'actions">
-            <div class="ts-content">
-                <div class="ts-top">
-                    <span class="ts-label">Score</span>
-                    <span class="ts-values">53<span style="font-weight:500;opacity:0.6;font-size:0.6rem"> /100</span></span>
-                </div>
-                <div class="ts-track"><div class="ts-fill"></div></div>
-            </div>
-        </button>
-
         <!-- Vue d'ensemble -->
         <div class="nav-section">
             <button class="nav-item active" data-target="overview">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V10"/></svg>
                 <span class="nav-label">Vue d'ensemble</span>
             </button>
-            <a href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" class="nav-item nav-item-cta" style="text-decoration:none;background:linear-gradient(90deg, rgba(90,152,174,0.12) 0%, rgba(90,152,174,0.02) 100%);border:1px solid rgba(90,152,174,0.30);color:#3D7A8F;font-weight:700;margin-top:6px;border-radius:8px;display:flex;align-items:center;gap:10px;padding:10px 12px">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:18px;height:18px;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-                <span class="nav-label" style="flex:1">Roadmap 90 jours</span>
-                <svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24" style="width:13px;height:13px;opacity:0.7"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </a>
         </div>
 
         <!-- Paid Media (collapsible group) -->
@@ -2576,6 +2568,11 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 <a class="icon-btn drive-btn" href="https://drive.google.com/drive/folders/1HLC9sZsveuzHFQfOzLF-3K2z5tK3SjRa?usp=sharing" target="_blank" rel="noopener" title="Documents Drive — Discovery NaoEnergy" aria-label="Drive NaoEnergy" style="position:relative;text-decoration:none;display:inline-flex;align-items:center;justify-content:center">
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
                     <span style="position:absolute;top:6px;right:6px;width:8px;height:8px;border-radius:50%;background:#5A98AE;border:2px solid var(--surface);box-shadow:0 0 0 1px rgba(90,152,174,0.30)"></span>
+                </a>
+                <a class="icon-btn roadmap-btn" href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" title="Roadmap stratégique 90 jours — NaoEnergy" aria-label="Roadmap 90 jours" style="text-decoration:none;display:inline-flex;align-items:center;gap:7px;padding:0 14px;background:linear-gradient(135deg, rgba(90,152,174,0.12) 0%, rgba(90,152,174,0.04) 100%);border:1px solid rgba(90,152,174,0.30);color:#3D7A8F;font-weight:700;font-size:0.74rem;letter-spacing:0.2px;white-space:nowrap">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:16px;height:16px;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                    <span class="roadmap-btn-label">Roadmap 90j</span>
+                    <svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24" style="width:11px;height:11px;opacity:0.7;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
                 <div class="notif-wrap">
                     <button class="icon-btn notif-trigger" onclick="toggleNotif(event)" aria-label="Notifications" type="button">
