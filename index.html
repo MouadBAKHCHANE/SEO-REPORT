@@ -1687,6 +1687,176 @@ button.kpi-card { display: block; width: 100%; }
     .kpi-value { font-size: 1.2rem; }
 }
 
+/* ============ KICKOFF SECTION — MOBILE OPTIMIZATIONS ============ */
+@media (max-width: 768px) {
+    /* Roadmap CTA banner — stack 3 cols → 1 col, center align */
+    #panel-overview a[href="ROADMAP-90J-NAOENERGY.html"] > div {
+        grid-template-columns: 1fr !important;
+        gap: 14px !important;
+        text-align: center;
+        padding: 18px 18px !important;
+    }
+    #panel-overview a[href="ROADMAP-90J-NAOENERGY.html"] > div > div:first-child {
+        margin: 0 auto;
+        width: 48px !important;
+        height: 48px !important;
+    }
+    #panel-overview a[href="ROADMAP-90J-NAOENERGY.html"] > div > div:first-child svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+    #panel-overview a[href="ROADMAP-90J-NAOENERGY.html"] h3 {
+        font-size: 0.95rem !important;
+    }
+    #panel-overview a[href="ROADMAP-90J-NAOENERGY.html"] p {
+        font-size: 0.76rem !important;
+    }
+    #panel-overview a[href="ROADMAP-90J-NAOENERGY.html"] > div > div:last-child {
+        justify-content: center;
+        padding: 11px 18px !important;
+    }
+
+    /* Phase 0 header (badge + title + date) — wrap nicely */
+    #panel-overview h2[style*="font-size:1.15rem"] { font-size: 0.92rem !important; }
+    #panel-overview > div > div > div[style*="margin-bottom:16px"][style*="gap:12px"] {
+        flex-wrap: wrap !important;
+        gap: 8px !important;
+    }
+    #panel-overview > div > div > div[style*="margin-bottom:16px"] > span[style*="margin-left:auto"] {
+        margin-left: 0 !important;
+        width: 100%;
+        font-size: 0.65rem !important;
+    }
+
+    /* All inner 2-col grids in Phase 0 → stack */
+    #panel-overview div[style*="grid-template-columns:1fr 1fr;gap:18px"],
+    #panel-overview div[style*="grid-template-columns:1fr 1fr;gap:14px"],
+    #panel-overview div[style*="grid-template-columns:1fr 1fr;gap:12px"],
+    #panel-overview div[style*="grid-template-columns:repeat(2,1fr);gap:12px"],
+    #panel-overview div[style*="grid-template-columns:1.3fr 1fr;gap:14px"] {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    /* Phase 0 cards: tighter padding */
+    #panel-overview > div > div > .card {
+        padding: 16px 18px !important;
+    }
+
+    /* Funnel breadcrumb chips */
+    #panel-overview .card > div[style*="display:flex;align-items:center;gap:8px;flex-wrap:wrap"] {
+        gap: 6px !important;
+    }
+    #panel-overview .card > div[style*="display:flex;align-items:center;gap:8px;flex-wrap:wrap"] span {
+        font-size: 0.7rem !important;
+        padding: 5px 8px !important;
+    }
+
+    /* Funnel 3-col KPI block: stay 3 col but tighter */
+    #panel-overview div[style*="grid-template-columns:repeat(3,1fr);gap:10px"] {
+        gap: 6px !important;
+    }
+    #panel-overview div[style*="grid-template-columns:repeat(3,1fr);gap:10px"] > div {
+        padding: 8px 4px !important;
+    }
+    #panel-overview div[style*="grid-template-columns:repeat(3,1fr);gap:10px"] > div > div:first-child {
+        font-size: 0.55rem !important;
+        letter-spacing: 0.4px !important;
+    }
+    #panel-overview div[style*="grid-template-columns:repeat(3,1fr);gap:10px"] > div > div:last-child {
+        font-size: 1rem !important;
+    }
+
+    /* Service tags in services card */
+    #panel-overview .card span[style*="border-radius:100px"][style*="padding:6px 12px"] {
+        padding: 5px 10px !important;
+        font-size: 0.68rem !important;
+    }
+
+    /* Action attendue Drive button: stack vertically */
+    #panel-overview > div > div > div[style*="border-left:4px solid #E8A82E"] {
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+        padding: 14px 16px !important;
+    }
+    #panel-overview > div > div > div[style*="border-left:4px solid #E8A82E"] > div[style*="font-size:1.4rem"] {
+        font-size: 1.2rem !important;
+    }
+    #panel-overview > div > div > div[style*="border-left:4px solid #E8A82E"] a[href*="drive.google"] {
+        width: 100%;
+        justify-content: center;
+        padding: 10px 16px !important;
+    }
+
+    /* Existant business — leads cards */
+    #panel-overview div[style*="background:rgba(90,152,174,0.08)"][style*="padding:10px 14px"],
+    #panel-overview div[style*="background:#5A98AE"][style*="padding:10px 14px"] {
+        padding: 9px 12px !important;
+    }
+
+    /* Budget Ads tables — readability */
+    #panel-overview .card table[style*="width:100%"] td {
+        padding: 6px 0 !important;
+        font-size: 0.78rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Roadmap CTA: smaller paddings */
+    #panel-overview a[href="ROADMAP-90J-NAOENERGY.html"] > div {
+        padding: 14px !important;
+    }
+    #panel-overview a[href="ROADMAP-90J-NAOENERGY.html"] h3 {
+        font-size: 0.88rem !important;
+    }
+    #panel-overview a[href="ROADMAP-90J-NAOENERGY.html"] p {
+        font-size: 0.72rem !important;
+    }
+
+    /* Phase 0 KPI 3-col → 1 col */
+    #panel-overview div[style*="grid-template-columns:repeat(3,1fr);gap:10px"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Phase 0 title smaller */
+    #panel-overview h2[style*="font-size:1.15rem"] { font-size: 0.86rem !important; }
+
+    /* Phase 0 badge tightening */
+    #panel-overview > div > div > div[style*="margin-bottom:16px"] > span[style*="background:#5A98AE"] {
+        font-size: 0.55rem !important;
+        padding: 3px 8px !important;
+    }
+
+    /* LP pill tags */
+    #panel-overview .card span[style*="border-radius:100px"][style*="padding:4px 10px"] {
+        font-size: 0.6rem !important;
+        padding: 3px 8px !important;
+    }
+
+    /* Funnel breadcrumb: stack vertical */
+    #panel-overview .card > div[style*="display:flex;align-items:center;gap:8px;flex-wrap:wrap"][style*="margin-bottom:14px"] {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    #panel-overview .card > div[style*="display:flex;align-items:center;gap:8px;flex-wrap:wrap"][style*="margin-bottom:14px"] span {
+        text-align: center;
+    }
+
+    /* LP cards (color-block) compact */
+    #panel-overview div[style*="border-left:3px solid #E85D4A"][style*="padding:14px 16px"],
+    #panel-overview div[style*="border-left:3px solid #E8A82E"][style*="padding:14px 16px"],
+    #panel-overview div[style*="border-left:3px solid #5A98AE"][style*="padding:14px 16px"] {
+        padding: 12px 14px !important;
+    }
+
+    /* Acquisition status rows — stack title and badge */
+    #panel-overview div[style*="border-left:3px solid #5A98AE"][style*="padding:10px 14px"],
+    #panel-overview div[style*="border-left:3px solid #E85D4A"][style*="padding:10px 14px"] {
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+    }
+}
+
 /* ============ EVIDENCE CARDS (sections d'audit) ============ */
 .evidence-grid {
     display: grid;
