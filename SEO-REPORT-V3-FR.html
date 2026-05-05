@@ -2704,7 +2704,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
 
                     <!-- Objectifs business -->
                     <div class="card" style="padding:20px 24px;margin-bottom:14px;border-left:4px solid #5A98AE">
-                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:10px">🎯 Objectifs business</div>
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px"><div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800">🎯 Objectifs business</div><span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);background:var(--surface-soft);padding:3px 9px;border-radius:100px;font-weight:700">Existant</span></div>
                         <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
                             <div>
                                 <div style="font-size:0.78rem;color:var(--text-body);line-height:1.7;margin-bottom:8px"><strong style="color:var(--text)">Génération de leads</strong> · Notoriété · Image de confiance</div>
@@ -2759,7 +2759,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
                             <div style="text-align:center;padding:10px;background:rgba(63,183,108,0.08);border-radius:8px"><div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:4px">Lead → R1</div><div style="font-size:1.2rem;font-weight:800;color:#2A8F4D">50%</div></div>
                             <div style="text-align:center;padding:10px;background:rgba(63,183,108,0.08);border-radius:8px"><div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:4px">R1 → R2</div><div style="font-size:1.2rem;font-weight:800;color:#2A8F4D">40%</div></div>
-                            <div style="text-align:center;padding:10px;background:rgba(90,152,174,0.10);border-radius:8px"><div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:4px">Lead → Client</div><div style="font-size:1.2rem;font-weight:800;color:#3D7A8F">~20%</div></div>
+                            <div style="text-align:center;padding:10px;background:rgba(90,152,174,0.10);border-radius:8px"><div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:4px">Lead → Client</div><div style="font-size:1.2rem;font-weight:800;color:#3D7A8F">~40%</div></div>
                         </div>
                     </div>
 
@@ -2775,13 +2775,55 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         </div>
                         <div class="card" style="padding:20px 24px;margin:0">
                             <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:12px">💰 Budget Ads</div>
-                            <table style="width:100%;border-collapse:collapse;font-size:0.74rem">
-                                <tr><td style="padding:6px 0;color:var(--text-body)">Batterie</td><td style="text-align:right;font-weight:700;color:var(--text)">40 CHF/j</td></tr>
-                                <tr><td style="padding:6px 0;color:var(--text-body)">Panneau + Pompe</td><td style="text-align:right;font-weight:700;color:var(--text)">40 CHF/j</td></tr>
-                                <tr><td style="padding:6px 0;color:var(--text-body)">Notoriété</td><td style="text-align:right;font-weight:700;color:var(--text)">5 CHF/j</td></tr>
-                                <tr style="border-top:1px solid var(--border)"><td style="padding:8px 0;font-weight:800;color:var(--text)">Total/jour</td><td style="text-align:right;font-weight:800;color:#3D7A8F;font-size:0.85rem">~80 CHF</td></tr>
-                                <tr><td style="padding:4px 0;font-weight:800;color:var(--text)">Total/mois</td><td style="text-align:right;font-weight:800;color:#3D7A8F;font-size:0.85rem">~2 000 CHF</td></tr>
+                            <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:#3D7A8F;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:6px"><span style="width:14px;height:14px;border-radius:3px;background:#4285F4;display:inline-block"></span>Google Ads</div>
+                            <table style="width:100%;border-collapse:collapse;font-size:0.74rem;margin-bottom:10px">
+                                <tr><td style="padding:5px 0;color:var(--text-body)">Batterie</td><td style="text-align:right;font-weight:700;color:var(--text)">40 CHF/j</td></tr>
+                                <tr><td style="padding:5px 0;color:var(--text-body)">Panneau + Pompe</td><td style="text-align:right;font-weight:700;color:var(--text)">40 CHF/j</td></tr>
+                                <tr style="border-top:1px dashed var(--border)"><td style="padding:6px 0;font-weight:700;color:var(--text);font-size:0.7rem">Sous-total</td><td style="text-align:right;font-weight:800;color:#3D7A8F;font-size:0.78rem">80 CHF/j</td></tr>
                             </table>
+                            <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:#3D7A8F;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:6px"><span style="width:14px;height:14px;border-radius:3px;background:#1877F2;display:inline-block"></span>Meta Ads (Facebook)</div>
+                            <table style="width:100%;border-collapse:collapse;font-size:0.74rem;margin-bottom:10px">
+                                <tr><td style="padding:5px 0;color:var(--text-body)">Notoriété</td><td style="text-align:right;font-weight:700;color:var(--text)">5 CHF/j</td></tr>
+                                <tr><td style="padding:5px 0;color:var(--text-body)">Lead gen</td><td style="text-align:right;font-weight:700;color:var(--text)">25 CHF/j</td></tr>
+                                <tr style="border-top:1px dashed var(--border)"><td style="padding:6px 0;font-weight:700;color:var(--text);font-size:0.7rem">Sous-total</td><td style="text-align:right;font-weight:800;color:#3D7A8F;font-size:0.78rem">30 CHF/j</td></tr>
+                            </table>
+                            <div style="border-top:2px solid #5A98AE;padding-top:8px">
+                                <table style="width:100%;border-collapse:collapse;font-size:0.74rem">
+                                    <tr><td style="padding:3px 0;font-weight:800;color:var(--text)">Total/jour</td><td style="text-align:right;font-weight:800;color:#3D7A8F;font-size:0.88rem">~110 CHF</td></tr>
+                                    <tr><td style="padding:3px 0;font-weight:800;color:var(--text)">Total/mois</td><td style="text-align:right;font-weight:800;color:#3D7A8F;font-size:0.88rem">~3 300 CHF</td></tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Landing pages & site à améliorer -->
+                    <div class="card" style="padding:20px 24px;margin-bottom:14px;border-left:4px solid #E85D4A">
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px"><div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#E85D4A;font-weight:800">🚧 Landing pages &amp; site web à améliorer</div><span style="font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:#fff;background:#E85D4A;padding:3px 9px;border-radius:100px;font-weight:700">Priorité</span></div>
+                        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:14px">
+                            <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-left:3px solid #E85D4A">
+                                <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span style="background:#5A98AE;color:#fff;font-size:0.55rem;font-weight:800;padding:2px 7px;border-radius:3px;letter-spacing:0.5px">LP PRODUIT</span><strong style="font-size:0.82rem;color:var(--text)">Panneaux photovoltaïques</strong></div>
+                                <div style="font-size:0.72rem;color:var(--text-muted);line-height:1.5">Refonte de la landing pour conversion Google Ads · CTA clair · preuve sociale · CWV à optimiser.</div>
+                            </div>
+                            <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-left:3px solid #E85D4A">
+                                <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span style="background:#5A98AE;color:#fff;font-size:0.55rem;font-weight:800;padding:2px 7px;border-radius:3px;letter-spacing:0.5px">LP PRODUIT</span><strong style="font-size:0.82rem;color:var(--text)">Pompes à chaleur</strong></div>
+                                <div style="font-size:0.72rem;color:var(--text-muted);line-height:1.5">Page dédiée orientée hiver · arguments économies énergétiques · simulateur ou Typeform direct.</div>
+                            </div>
+                            <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-left:3px solid #E8A82E">
+                                <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span style="background:#E8A82E;color:#fff;font-size:0.55rem;font-weight:800;padding:2px 7px;border-radius:3px;letter-spacing:0.5px">FORMULAIRE</span><strong style="font-size:0.82rem;color:var(--text)">Typeform · capture lead</strong></div>
+                                <div style="font-size:0.72rem;color:var(--text-muted);line-height:1.5">Optimisation du flow de qualification · réduction des champs · tracking des étapes · suivi de conversion vers Odoo.</div>
+                            </div>
+                            <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-left:3px solid #5A98AE">
+                                <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span style="background:#3D7A8F;color:#fff;font-size:0.55rem;font-weight:800;padding:2px 7px;border-radius:3px;letter-spacing:0.5px">SITE GLOBAL</span><strong style="font-size:0.82rem;color:var(--text)">Theme &amp; expérience</strong></div>
+                                <div style="font-size:0.72rem;color:var(--text-muted);line-height:1.5">Cohérence visuelle · hiérarchie des CTA · navigation mobile · cohérence avec la nouvelle identité de marque.</div>
+                            </div>
+                        </div>
+                        <div style="display:flex;flex-wrap:wrap;gap:8px;padding-top:10px;border-top:1px dashed var(--border)">
+                            <span style="background:rgba(232,93,74,0.10);color:#C44A1F;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">CTA &amp; conversion</span>
+                            <span style="background:rgba(232,93,74,0.10);color:#C44A1F;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Core Web Vitals</span>
+                            <span style="background:rgba(232,93,74,0.10);color:#C44A1F;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Tracking GA4 · GTM</span>
+                            <span style="background:rgba(232,93,74,0.10);color:#C44A1F;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Schema.org</span>
+                            <span style="background:rgba(232,93,74,0.10);color:#C44A1F;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Mobile UX</span>
+                            <span style="background:rgba(232,93,74,0.10);color:#C44A1F;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">A/B testing</span>
                         </div>
                     </div>
 
