@@ -261,17 +261,26 @@ a { color: var(--primary); text-decoration: none; }
 .brand {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 4px 8px 0;
-    min-height: 44px;
-    flex: 1;
+    justify-content: flex-start;
+    padding: 10px 12px 8px;
+    flex: none;
     min-width: 0;
+    position: sticky;
+    top: -20px;
+    z-index: 10;
+    background: linear-gradient(180deg, #F4F6F9 88%, rgba(244,246,249,0.4) 100%);
+    margin: -20px -14px 4px -14px;
+    padding-top: 20px;
+    border-bottom: 1px solid var(--border);
+}
+[data-theme="dark"] .brand {
+    background: linear-gradient(180deg, #131A1E 88%, rgba(19,26,30,0.4) 100%);
 }
 .brand-logo {
-    max-width: 100%;
-    width: 160px;
+    max-width: 110px;
+    width: auto;
     height: auto;
-    max-height: 44px;
+    max-height: 28px;
     object-fit: contain;
     display: block;
 }
@@ -279,14 +288,7 @@ a { color: var(--primary); text-decoration: none; }
 [data-theme="dark"] .brand-logo-light { display: none; }
 [data-theme="dark"] .brand-logo-dark { display: block; }
 .brand-sub {
-    font-size: 0.68rem;
-    color: var(--text-muted);
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-    font-weight: 600;
-    margin-top: -8px;
-    margin-bottom: 4px;
+    display: none;
 }
 
 .nav-section { display: flex; flex-direction: column; gap: 4px; }
@@ -2928,7 +2930,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     </div>
                     <div class="card" style="padding:20px 24px;margin:0;border-left:4px solid var(--primary)">
                         <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--primary);font-weight:700;margin-bottom:8px">Strat&eacute;gie &amp; Vision</div>
-                        <p style="color:var(--text-body);font-size:0.82rem;line-height:1.7;margin:0">Ce dashboard r&eacute;unit toutes les donn&eacute;es de performance digitale de naoenergy.ch pour permettre des d&eacute;cisions rapides et data-driven.</p>
+                        <p style="color:var(--text-body);font-size:0.82rem;line-height:1.7;margin:0"><strong style="color:var(--text)">Mission :</strong> faire de NaoEnergy la r&eacute;f&eacute;rence solaire en Suisse romande &mdash; 110 leads qualifi&eacute;s/mois, marque de confiance, acquisition data-driven. Trois leviers orchestr&eacute;s ici : <strong style="color:var(--text)">SEO de fond</strong>, <strong style="color:var(--text)">acquisition pay&eacute;e optimis&eacute;e</strong>, <strong style="color:var(--text)">exp&eacute;rience produit premium</strong>.</p>
                     </div>
                 </div>
 
