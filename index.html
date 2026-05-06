@@ -1779,6 +1779,9 @@ button.kpi-card { display: block; width: 100%; }
     .comp-grid { grid-template-columns: repeat(2, 1fr) !important; }
     .raccourcis-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
+@media (max-width: 540px) {
+    .raccourcis-grid { grid-template-columns: 1fr !important; }
+}
 @media (max-width: 480px) {
     .comp-grid { grid-template-columns: 1fr !important; }
     .raccourcis-grid { grid-template-columns: 1fr !important; }
@@ -3136,9 +3139,12 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 <!-- ⚡ Raccourcis rapides (en tête de page) -->
                 <div style="margin-bottom:28px">
                     <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);font-weight:700;margin-bottom:12px">⚡ Raccourcis rapides</div>
-                    <div class="raccourcis-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+                    <div class="raccourcis-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
                         <button class="comp-card" onclick="showPanel('objectives')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">🎯</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Objectifs &amp; missions</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Marketing digital naoenergy</div></div></button>
                         <a href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;background:linear-gradient(135deg, #FFF6F0 0%, #FFEDDF 100%);border:1px solid rgba(232,93,44,0.30);border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:12px;transition:all 0.15s"><span style="font-size:1.4rem">📋</span><div><div style="font-size:0.78rem;font-weight:700;color:#E85D2C">Roadmap 90 jours</div><div style="font-size:0.65rem;color:#C44A1F;margin-top:2px">MouaDev · 4 axes parallèles</div></div></a>
+                        <button class="comp-card" onclick="openDrawer('critical')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-left:3px solid #E85D4A;border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">⚠️</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Problèmes critiques</div><div style="font-size:0.65rem;color:#C44A1F;margin-top:2px">→ Voir la liste</div></div></button>
+                        <button class="comp-card" onclick="openDrawer('score')" style="text-align:left;background:linear-gradient(135deg, rgba(90,152,174,0.06) 0%, rgba(63,183,108,0.06) 100%);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">📊</span><div style="flex:1;min-width:0"><div style="font-size:0.78rem;font-weight:700;color:var(--text);margin-bottom:4px">Score actuel <span style="color:var(--text-muted);font-weight:500;font-size:0.7rem">vs</span> Objectif cible</div><div style="display:flex;align-items:center;gap:6px"><span style="background:rgba(232,93,74,0.14);color:#C44A1F;font-size:0.7rem;font-weight:800;padding:2px 7px;border-radius:4px">53/100</span><span style="color:var(--text-muted);font-size:0.68rem">→</span><span style="background:rgba(63,183,108,0.14);color:#2A8F4D;font-size:0.7rem;font-weight:800;padding:2px 7px;border-radius:4px">85/100</span><span style="color:#2A8F4D;font-size:0.62rem;font-weight:700;margin-left:2px">+32</span></div></div></button>
+                        <button class="comp-card" onclick="showPanel('recs')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-left:3px solid #5A98AE;border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">📋</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Plan d'actions</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">→ Voir le plan</div></div></button>
                     </div>
                 </div>
 
@@ -3199,18 +3205,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div class="kpi-card kpi-info k3" onclick="openDrawer('typeform')"><div class="kpi-label">💬 Typeform</div><div class="kpi-info-cta">→ Voir explication</div></div>
                 </div>
 
-                <!-- ═══════════ KPI SECTION 5 — SANTÉ DU DASHBOARD ═══════════ -->
-                <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px;flex-wrap:wrap">
-                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);font-weight:800">🩺 Santé du dashboard</div>
-                    <div style="flex:1;height:1px;background:var(--border)"></div>
-                    <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Score &amp; actions</span>
-                </div>
-                <div class="kpi-row" style="grid-template-columns:repeat(4,1fr)">
-                    <div class="kpi-card kpi-info k2" onclick="openDrawer('critical')"><div class="kpi-label">Probl&egrave;mes critiques</div><div class="kpi-info-cta">→ Voir liste</div></div>
-                    <div class="kpi-card kpi-info k1" onclick="openDrawer('score')"><div class="kpi-label">Score actuel</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k4" onclick="openDrawer('target')"><div class="kpi-label">Objectif cible</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k5" onclick="showPanel('recs')"><div class="kpi-label">Plan d'actions</div><div class="kpi-info-cta">→ Voir le plan</div></div>
-                </div>
 
             </div>
         </div>
