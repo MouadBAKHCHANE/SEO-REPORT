@@ -1313,9 +1313,9 @@ button.kpi-card { display: block; width: 100%; }
     .roadmap-btn { padding: 0 10px !important; }
 }
 
-/* Topbar logo — always visible (header is the single home for logo + sandwich) */
+/* Topbar logo — visible only on mobile/tablet (sidebar carries it on desktop) */
 .topbar-logo {
-    display: inline-flex;
+    display: none;
     align-items: center;
     background: transparent;
     border: none;
@@ -1335,6 +1335,9 @@ button.kpi-card { display: block; width: 100%; }
 .topbar-logo .brand-logo-dark { display: none; }
 [data-theme="dark"] .topbar-logo .brand-logo-light { display: none; }
 [data-theme="dark"] .topbar-logo .brand-logo-dark { display: block; }
+@media (max-width: 1024px) {
+    .topbar-logo { display: inline-flex; }
+}
 @media (max-width: 480px) {
     .topbar-logo img { max-height: 22px; }
     .topbar-logo { padding: 4px 6px; }
@@ -1458,20 +1461,17 @@ button.kpi-card { display: block; width: 100%; }
 }
 .menu-toggle:hover { background: var(--surface); color: var(--primary); transform: translateY(-1px); }
 
-/* App grid — sidebar collapsible (desktop only) */
+/* App grid — sidebar collapsible (desktop only, dormant — no toggle button on desktop) */
 .app { transition: grid-template-columns 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
 .app.sidebar-collapsed { grid-template-columns: 0 1fr; }
 .app.sidebar-collapsed .sidebar { transform: translateX(-100%); transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
 .sidebar { transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
 
-/* Logo + Sandwich both live in the HEADER (topbar) at all times.
-   The sidebar no longer carries them (cleaner UX, single source of truth). */
-.sidebar > .brand,
-.sidebar > .sidebar-mobile-header > .brand,
-.sidebar > .brand-sub { display: none !important; }
+/* Menu-toggle — desktop hidden (sidebar always visible), mobile/tablet visible (drawer trigger) */
+@media (min-width: 1025px) { .menu-toggle { display: none; } }
 
-/* The brand-toggle inside .brand is auto-hidden because .brand is hidden. */
-.brand-toggle { display: none; }
+/* Brand-toggle (sandwich inside sidebar brand) — removed entirely, sandwich lives in topbar on mobile only */
+.brand-toggle { display: none !important; }
 .menu-toggle svg { width: 20px; height: 20px; }
 
 /* Sidebar mobile header (wraps brand + close on mobile) */
@@ -3032,21 +3032,15 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
         <!-- ============ PANEL : ACCUEIL ============ -->
         <div class="panel active" id="panel-overview">
             <div style="max-width:1100px;margin:0 auto;padding:20px 0">
-                <!-- Hero: left title + right strategy -->
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:32px;align-items:start">
-                    <div style="padding:8px 0">
-                        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
-                            <div style="width:44px;height:44px;border-radius:12px;background:var(--primary-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0">
-                                <svg width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm10 0a1 1 0 011-1h4a1 1 0 011 1v6a1 1 0 01-1 1h-4a1 1 0 01-1-1v-6z"/></svg>
-                            </div>
-                            <h1 style="font-size:1.6rem;font-weight:800;color:var(--text);margin:0;line-height:1.2">Digital Marketing Dashboard</h1>
+                <!-- Hero: title only (Strategy & Vision card removed) -->
+                <div style="margin-bottom:32px">
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+                        <div style="width:44px;height:44px;border-radius:12px;background:var(--primary-soft);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                            <svg width="22" height="22" fill="none" stroke="var(--primary)" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zm0 8a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zm10 0a1 1 0 011-1h4a1 1 0 011 1v6a1 1 0 01-1 1h-4a1 1 0 01-1-1v-6z"/></svg>
                         </div>
-                        <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin:0">Tableau de bord centralis&eacute; pour piloter la strat&eacute;gie digitale de <strong style="color:var(--text)">NAOenergy</strong>. SEO, publicit&eacute; payante, tracking et actions prioritaires.</p>
+                        <h1 style="font-size:1.6rem;font-weight:800;color:var(--text);margin:0;line-height:1.2">Digital Marketing Dashboard</h1>
                     </div>
-                    <div class="card" style="padding:20px 24px;margin:0;border-left:4px solid var(--primary)">
-                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--primary);font-weight:700;margin-bottom:8px">Strat&eacute;gie &amp; Vision</div>
-                        <p style="color:var(--text-body);font-size:0.82rem;line-height:1.7;margin:0"><strong style="color:var(--text)">Mission :</strong> faire de NaoEnergy la r&eacute;f&eacute;rence solaire en Suisse romande. Trois leviers orchestr&eacute;s ici : <strong style="color:var(--text)">SEO de fond</strong>, <strong style="color:var(--text)">acquisition pay&eacute;e optimis&eacute;e</strong>, <strong style="color:var(--text)">exp&eacute;rience produit premium</strong>.</p>
-                    </div>
+                    <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin:0">Tableau de bord centralis&eacute; pour piloter la strat&eacute;gie digitale de <strong style="color:var(--text)">NAOenergy</strong>. SEO, publicit&eacute; payante, tracking et actions prioritaires.</p>
                 </div>
 
                 <!-- ⚡ Raccourcis rapides (en tête de page) -->
