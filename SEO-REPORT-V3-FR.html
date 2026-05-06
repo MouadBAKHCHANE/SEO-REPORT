@@ -1312,6 +1312,34 @@ button.kpi-card { display: block; width: 100%; }
     .roadmap-btn .roadmap-btn-label { display: none; }
     .roadmap-btn { padding: 0 10px !important; }
 }
+
+/* Topbar logo — visible only on mobile/tablet (sidebar handles it on desktop) */
+.topbar-logo {
+    display: none;
+    align-items: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px 8px;
+    height: 38px;
+    flex-shrink: 0;
+}
+.topbar-logo img {
+    max-height: 26px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+.topbar-logo .brand-logo-dark { display: none; }
+[data-theme="dark"] .topbar-logo .brand-logo-light { display: none; }
+[data-theme="dark"] .topbar-logo .brand-logo-dark { display: block; }
+@media (max-width: 1024px) {
+    .topbar-logo { display: inline-flex; }
+}
+@media (max-width: 480px) {
+    .topbar-logo img { max-height: 22px; }
+    .topbar-logo { padding: 4px 4px; }
+}
 .notif-dropdown.open { display: block; animation: notifSlide 0.25s ease-out; }
 @keyframes notifSlide {
     from { opacity: 0; transform: translateY(-8px); }
@@ -2779,6 +2807,10 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             <button class="menu-toggle" onclick="openMenu()" aria-label="Ouvrir le menu" type="button">
                 <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
+            <button class="topbar-logo" onclick="showPanel('overview')" type="button" aria-label="Accueil naoenergy">
+                <img src="imgi_2_logo-light-1.svg" alt="naoenergy" class="brand-logo-light">
+                <img src="imgi_29_logo-light.svg" alt="naoenergy" class="brand-logo-dark">
+            </button>
             <button class="topbar-score-combined" onclick="showPanel('recs')" title="Voir le plan d'actions">
                 <div class="ts-icon">
                     <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
@@ -2997,11 +3029,31 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     </div>
                 </a>
 
+                <!-- KPI Business — pilotage stratégique -->
                 <div class="kpi-row" style="grid-template-columns:repeat(4,1fr)">
+                    <div class="kpi-card k1" style="cursor:pointer" onclick="showPanel('profile')"><div class="kpi-label">🎯 Objectif leads/mois</div><div class="kpi-value">110</div><div class="kpi-trend up">Genève 40 · Lausanne 70</div></div>
+                    <div class="kpi-card k3" style="cursor:pointer" onclick="showPanel('google_ads')"><div class="kpi-label">💰 Budget Ads/mois</div><div class="kpi-value">~3 300 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">CHF</span></div><div class="kpi-trend">Google 80 + Meta 30 CHF/j</div></div>
+                    <div class="kpi-card k2" style="cursor:pointer" onclick="showPanel('competitors')"><div class="kpi-label">🏆 Concurrents identifiés</div><div class="kpi-value">16</div><div class="kpi-trend">acteurs · Suisse romande</div></div>
+                    <div class="kpi-card k4" style="cursor:pointer" onclick="window.open('https://business.google.com/','_blank')"><div class="kpi-label">⭐ Avis Google</div><div class="kpi-value">100 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">· 4,5★</span></div><div class="kpi-trend up">Crans (VD) — actif local fort</div></div>
+                </div>
+
+                <!-- KPI Internes — santé du dashboard (compact) -->
+                <div class="kpi-row" style="grid-template-columns:repeat(4,1fr);margin-top:12px">
                     <div class="kpi-card k2" style="cursor:pointer" onclick="openDrawer('critical')"><div class="kpi-label">Probl&egrave;mes critiques</div><div class="kpi-value">10</div><div class="kpi-trend down">&uarr; 2 — Ads tracking + facturation</div></div>
                     <div class="kpi-card k1" style="cursor:pointer" onclick="openDrawer('score')"><div class="kpi-label">Score actuel</div><div class="kpi-value">53<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600;margin-left:3px">/100</span></div><div class="kpi-trend down">0 conversion Ads track&eacute;e</div></div>
                     <div class="kpi-card k4" style="cursor:pointer" onclick="openDrawer('target')"><div class="kpi-label">Objectif cible</div><div class="kpi-value">85<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600;margin-left:3px">/100</span></div><div class="kpi-trend up">+32 pts &mdash; SEO + Ads fix</div></div>
                     <div class="kpi-card k5" style="cursor:pointer" onclick="showPanel('recs')"><div class="kpi-label">Plan d'actions</div><div class="kpi-value">19</div><div class="kpi-trend down">&uarr; 5 — nouvelles actions Ads</div></div>
+                </div>
+
+                <!-- Raccourcis rapides -->
+                <div style="margin-top:24px">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);font-weight:700;margin-bottom:12px">⚡ Raccourcis rapides</div>
+                    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+                        <button class="comp-card" onclick="showPanel('profile')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">🏢</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Profil entreprise</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Identité · forces · zones</div></div></button>
+                        <button class="comp-card" onclick="showPanel('competitors')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">🎯</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Contexte concurrentiel</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">16 acteurs · Suisse romande</div></div></button>
+                        <button class="comp-card" onclick="showPanel('energy')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">⚡</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Contexte énergétique</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Subventions · tendances 2026</div></div></button>
+                        <a href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;background:linear-gradient(135deg, #FFF6F0 0%, #FFEDDF 100%);border:1px solid rgba(232,93,44,0.30);border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:12px;transition:all 0.15s"><span style="font-size:1.4rem">📋</span><div><div style="font-size:0.78rem;font-weight:700;color:#E85D2C">Roadmap 90 jours</div><div style="font-size:0.65rem;color:#C44A1F;margin-top:2px">MouaDev · 4 axes parallèles</div></div></a>
+                    </div>
                 </div>
             </div>
         </div>
