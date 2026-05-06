@@ -1834,6 +1834,50 @@ button.kpi-card { display: block; width: 100%; }
     #panel-overview .kpi-card .kpi-trend { font-size: 0.7rem; }
 }
 
+/* KPI info card — variant without numbers, opens drawer with explanation */
+.kpi-card.kpi-info {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 110px;
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+.kpi-card.kpi-info:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(60,40,20,0.06);
+}
+[data-theme="dark"] .kpi-card.kpi-info:hover {
+    box-shadow: 0 6px 18px rgba(124,177,196,0.08);
+}
+.kpi-card.kpi-info .kpi-label {
+    font-size: 0.85rem;
+    line-height: 1.35;
+    margin-bottom: auto;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+}
+.kpi-info-cta {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
+    font-size: 0.7rem;
+    color: var(--primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.2px;
+}
+.kpi-card.kpi-info.k2 .kpi-info-cta { color: var(--red); }
+@media (max-width: 480px) {
+    .kpi-card.kpi-info { min-height: 90px; padding: 14px 16px; }
+    .kpi-card.kpi-info .kpi-label { font-size: 0.78rem; }
+    .kpi-info-cta { font-size: 0.65rem; margin-top: 10px; padding-top: 10px; }
+}
+
 /* Sidebar logo visible on mobile/tablet (alongside close button) */
 @media (max-width: 1024px) {
     .sidebar > .brand,
@@ -3105,10 +3149,10 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Funnel + leads</span>
                 </div>
                 <div class="kpi-row" style="grid-template-columns:repeat(4,1fr);margin-bottom:18px">
-                    <div class="kpi-card k1" style="cursor:pointer" onclick="showPanel('objectives')"><div class="kpi-label">📥 Leads ce mois</div><div class="kpi-value">47 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">/ 110</span></div><div class="kpi-trend up">43% de la cible · 12 jours restants</div></div>
-                    <div class="kpi-card k2" style="cursor:pointer" onclick="showPanel('google_ads')"><div class="kpi-label">💸 CPL moyen</div><div class="kpi-value">~65 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">CHF</span></div><div class="kpi-trend down">cible 50 CHF · à optimiser</div></div>
-                    <div class="kpi-card k4" style="cursor:pointer" onclick="showPanel('objectives')"><div class="kpi-label">🔄 Lead → Client</div><div class="kpi-value">42<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">%</span></div><div class="kpi-trend up">+2 pts vs M-1 · funnel sain</div></div>
-                    <div class="kpi-card k2" style="cursor:pointer" onclick="showPanel('tracking')"><div class="kpi-label">🎯 Conv. Ads trackées</div><div class="kpi-value">0 <span style="font-size:0.85rem;color:#C44A1F;font-weight:700">⚠️</span></div><div class="kpi-trend down">Smoking gun GA4 à fixer</div></div>
+                    <div class="kpi-card kpi-info k1" onclick="openDrawer('leads-mois')"><div class="kpi-label">📥 Leads ce mois</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k2" onclick="openDrawer('cpl-moyen')"><div class="kpi-label">💸 CPL moyen</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k4" onclick="openDrawer('lead-client')"><div class="kpi-label">🔄 Lead → Client</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k2" onclick="openDrawer('conv-trackees')"><div class="kpi-label">🎯 Conv. Ads trackées</div><div class="kpi-info-cta">⚠️ Smoking gun</div></div>
                 </div>
 
                 <!-- ═══════════ KPI SECTION 2 — ADS PERFORMANCE ═══════════ -->
@@ -3118,11 +3162,11 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Google + Meta</span>
                 </div>
                 <div class="kpi-row" style="grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px">
-                    <div class="kpi-card k3" style="cursor:pointer" onclick="showPanel('google_ads')"><div class="kpi-label">🎯 ROAS Google Ads</div><div class="kpi-value">N/A</div><div class="kpi-trend down">Sans tracking · indispo</div></div>
-                    <div class="kpi-card k1" style="cursor:pointer" onclick="showPanel('objectives')"><div class="kpi-label">📱 CTR Meta Ads</div><div class="kpi-value">2,4<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">%</span></div><div class="kpi-trend up">benchmark ~1,5%</div></div>
-                    <div class="kpi-card k4" style="cursor:pointer" onclick="showPanel('objectives')"><div class="kpi-label">💰 Taux util. budget</div><div class="kpi-value">87<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">%</span></div><div class="kpi-trend">2 870 / 3 300 CHF</div></div>
-                    <div class="kpi-card k2" style="cursor:pointer" onclick="showPanel('objectives')"><div class="kpi-label">🌍 Leads zone cible</div><div class="kpi-value">68<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">%</span></div><div class="kpi-trend down">⚠️ fix géo Meta requis</div></div>
-                    <div class="kpi-card k5" style="cursor:pointer" onclick="showPanel('profile')"><div class="kpi-label">📅 Saison active</div><div class="kpi-value" style="font-size:1.2rem;line-height:1.1;padding-top:6px">PV + Batterie</div><div class="kpi-trend up">printemps/été · à pousser</div></div>
+                    <div class="kpi-card kpi-info k3" onclick="openDrawer('roas-google')"><div class="kpi-label">🎯 ROAS Google Ads</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k1" onclick="openDrawer('ctr-meta')"><div class="kpi-label">📱 CTR Meta Ads</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k4" onclick="openDrawer('util-budget')"><div class="kpi-label">💰 Taux util. budget</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k2" onclick="openDrawer('leads-zone')"><div class="kpi-label">🌍 Leads zone cible</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k5" onclick="openDrawer('saison-active')"><div class="kpi-label">📅 Saison active</div><div class="kpi-info-cta">→ Voir explication</div></div>
                 </div>
 
                 <!-- ═══════════ KPI SECTION 3 — VISIBILITÉ SEO ═══════════ -->
@@ -3132,14 +3176,14 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Trafic + position + index</span>
                 </div>
                 <div class="kpi-row" style="grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px">
-                    <div class="kpi-card k4" style="cursor:pointer" onclick="showPanel('sitekit')"><div class="kpi-label">📈 Trafic organique</div><div class="kpi-value">12,4<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">k</span> <span style="font-size:0.7rem;color:var(--text-muted);font-weight:500">sessions</span></div><div class="kpi-trend up">↑ +18% vs M-1</div></div>
-                    <div class="kpi-card k4" style="cursor:pointer" onclick="showPanel('onpage')"><div class="kpi-label">🔍 Position moyenne</div><div class="kpi-value">12,3</div><div class="kpi-trend up">↑ -2,4 vs M-1 (meilleur)</div></div>
-                    <div class="kpi-card k1" style="cursor:pointer" onclick="showPanel('sitemap')"><div class="kpi-label">🌐 Pages indexées</div><div class="kpi-value">247<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600"> / 312</span></div><div class="kpi-trend">couverture 79%</div></div>
+                    <div class="kpi-card kpi-info k4" onclick="openDrawer('trafic-org')"><div class="kpi-label">📈 Trafic organique</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k4" onclick="openDrawer('position-moy')"><div class="kpi-label">🔍 Position moyenne</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k1" onclick="openDrawer('pages-indexed')"><div class="kpi-label">🌐 Pages indexées</div><div class="kpi-info-cta">→ Voir explication</div></div>
                 </div>
                 <div class="kpi-row" style="grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px">
-                    <div class="kpi-card k1" style="cursor:pointer" onclick="showPanel('sitekit')"><div class="kpi-label">🎯 Impressions GSC</div><div class="kpi-value">145<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">k</span></div><div class="kpi-trend up">↑ +16,5% (4 sem.)</div></div>
-                    <div class="kpi-card k4" style="cursor:pointer" onclick="showPanel('performance')"><div class="kpi-label">⚡ Core Web Vitals</div><div class="kpi-value">78<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">% bons</span></div><div class="kpi-trend up">seuil Google 75%</div></div>
-                    <div class="kpi-card k3" style="cursor:pointer" onclick="window.open('https://business.google.com/','_blank')"><div class="kpi-label">⭐ Avis Google ce mois</div><div class="kpi-value">+4 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">→ 104</span></div><div class="kpi-trend up">4,5★ · Crans (VD)</div></div>
+                    <div class="kpi-card kpi-info k1" onclick="openDrawer('impressions-gsc')"><div class="kpi-label">🎯 Impressions GSC</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k4" onclick="openDrawer('cwv')"><div class="kpi-label">⚡ Core Web Vitals</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k3" onclick="openDrawer('avis-google-mois')"><div class="kpi-label">⭐ Avis Google ce mois</div><div class="kpi-info-cta">→ Voir explication</div></div>
                 </div>
 
                 <!-- ═══════════ KPI SECTION 4 — SITE / CRO ═══════════ -->
@@ -3149,10 +3193,10 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Conversion + UX</span>
                 </div>
                 <div class="kpi-row" style="grid-template-columns:repeat(4,1fr);margin-bottom:18px">
-                    <div class="kpi-card k3" style="cursor:pointer" onclick="showPanel('onpage')"><div class="kpi-label">🔄 Conv. landing</div><div class="kpi-value">3,2<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">%</span></div><div class="kpi-trend down">cible 5% (benchmark sect.)</div></div>
-                    <div class="kpi-card k1" style="cursor:pointer" onclick="showPanel('performance')"><div class="kpi-label">⚡ Page Speed</div><div class="kpi-value">84<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">/100</span></div><div class="kpi-trend up">Lighthouse desktop</div></div>
-                    <div class="kpi-card k1" style="cursor:pointer" onclick="showPanel('sitekit')"><div class="kpi-label">📱 Mobile / Desktop</div><div class="kpi-value">62 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">/ 38%</span></div><div class="kpi-trend">mobile dominant</div></div>
-                    <div class="kpi-card k3" style="cursor:pointer" onclick="showPanel('objectives')"><div class="kpi-label">💬 Typeform</div><div class="kpi-value">124<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600"> → 47</span></div><div class="kpi-trend">complétion 38%</div></div>
+                    <div class="kpi-card kpi-info k3" onclick="openDrawer('conv-landing')"><div class="kpi-label">🔄 Conv. landing</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k1" onclick="openDrawer('page-speed')"><div class="kpi-label">⚡ Page Speed</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k1" onclick="openDrawer('mobile-desktop')"><div class="kpi-label">📱 Mobile / Desktop</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k3" onclick="openDrawer('typeform')"><div class="kpi-label">💬 Typeform</div><div class="kpi-info-cta">→ Voir explication</div></div>
                 </div>
 
                 <!-- ═══════════ KPI SECTION 5 — SANTÉ DU DASHBOARD ═══════════ -->
@@ -3162,10 +3206,10 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Score &amp; actions</span>
                 </div>
                 <div class="kpi-row" style="grid-template-columns:repeat(4,1fr)">
-                    <div class="kpi-card k2" style="cursor:pointer" onclick="openDrawer('critical')"><div class="kpi-label">Probl&egrave;mes critiques</div><div class="kpi-value">10</div><div class="kpi-trend down">&uarr; 2 — Ads tracking + facturation</div></div>
-                    <div class="kpi-card k1" style="cursor:pointer" onclick="openDrawer('score')"><div class="kpi-label">Score actuel</div><div class="kpi-value">53<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600;margin-left:3px">/100</span></div><div class="kpi-trend down">0 conversion Ads track&eacute;e</div></div>
-                    <div class="kpi-card k4" style="cursor:pointer" onclick="openDrawer('target')"><div class="kpi-label">Objectif cible</div><div class="kpi-value">85<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600;margin-left:3px">/100</span></div><div class="kpi-trend up">+32 pts &mdash; SEO + Ads fix</div></div>
-                    <div class="kpi-card k5" style="cursor:pointer" onclick="showPanel('recs')"><div class="kpi-label">Plan d'actions</div><div class="kpi-value">19</div><div class="kpi-trend down">&uarr; 5 — nouvelles actions Ads</div></div>
+                    <div class="kpi-card kpi-info k2" onclick="openDrawer('critical')"><div class="kpi-label">Probl&egrave;mes critiques</div><div class="kpi-info-cta">→ Voir liste</div></div>
+                    <div class="kpi-card kpi-info k1" onclick="openDrawer('score')"><div class="kpi-label">Score actuel</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k4" onclick="openDrawer('target')"><div class="kpi-label">Objectif cible</div><div class="kpi-info-cta">→ Voir explication</div></div>
+                    <div class="kpi-card kpi-info k5" onclick="showPanel('recs')"><div class="kpi-label">Plan d'actions</div><div class="kpi-info-cta">→ Voir le plan</div></div>
                 </div>
 
             </div>
@@ -5843,6 +5887,325 @@ const drawerData = {
                 <span class="drawer-stat-label">🔧 Consolider mots-clés doublons</span>
                 <span class="drawer-stat-value" style="color:var(--green);">Meilleur Quality Score</span>
             </div>
+        `
+    },
+
+    // ===== KPI EXPLAINERS — Performance Acquisition =====
+    'leads-mois': {
+        title: '📥 Leads ce mois',
+        subtitle: 'Compteur cumulé de la cible mensuelle',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>',
+        cls: 'k-target',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Le total cumulé de leads générés ce mois sur l'ensemble des canaux : organique (SEO), Google Ads, Meta Ads, formulaires Typeform et contacts directs.</p>
+            <div class="drawer-section-title">Cible</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Genève</span><span class="drawer-stat-value" style="color:#3D7A8F">40 leads/mois</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Lausanne</span><span class="drawer-stat-value" style="color:#3D7A8F">70 leads/mois</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Total</span><span class="drawer-stat-value" style="color:var(--green)">110 leads/mois</span></div>
+            <div class="drawer-section-title">Pourquoi c'est important</div>
+            <p class="drawer-explanation">C'est le KPI nord de la stratégie d'acquisition. Sans atteinte de cette cible, l'écosystème commercial Odoo ne peut pas alimenter les agences en RDV qualifiés.</p>
+            <div class="drawer-section-title">Comment l'interpréter</div>
+            <p class="drawer-explanation">Compare le compteur au % du mois écoulé : à mi-mois (J+15), il faut être à ≥50% de la cible. Si en retard, accélérer Google Ads + relancer Meta lead gen.</p>
+        `
+    },
+    'cpl-moyen': {
+        title: '💸 CPL moyen',
+        subtitle: 'Coût par lead — métrique #1 de rentabilité Ads',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/></svg>',
+        cls: 'k-warning',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Coût d'acquisition d'un lead : <code>budget total Ads / nombre de leads générés</code>.</p>
+            <div class="drawer-section-title">Cibles</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Excellent</span><span class="drawer-stat-value" style="color:var(--green)">≤ 50 CHF</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Acceptable</span><span class="drawer-stat-value">50–80 CHF</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Critique</span><span class="drawer-stat-value" style="color:var(--red)">&gt; 80 CHF</span></div>
+            <div class="drawer-section-title">Pourquoi c'est important</div>
+            <p class="drawer-explanation">Avec un panier moyen de 35 000 CHF et un taux de conversion lead→client de 40%, un CPL &lt; 50 CHF garantit une rentabilité largement positive.</p>
+            <div class="drawer-section-title">Si CPL trop élevé</div>
+            <p class="drawer-explanation">Audit ciblage (mots-clés trop larges) · qualité créa (CTR Meta &lt; benchmark) · landing pages (taux conversion bas) · enchères (Smart Bidding mal calibré).</p>
+        `
+    },
+    'lead-client': {
+        title: '🔄 Lead → Client',
+        subtitle: 'Taux de conversion finale du funnel Odoo',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>',
+        cls: 'k-pass',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Pourcentage de leads qualifiés qui deviennent clients (signature finale RBE) à travers le funnel : Lead → RDV1 (Sign1 BDC) → Visite tech → RDV2 (Sign2 Client).</p>
+            <div class="drawer-section-title">Décomposition funnel</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Lead → RDV1</span><span class="drawer-stat-value">50%</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">RDV1 → RDV2</span><span class="drawer-stat-value">40%</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Total Lead → Client</span><span class="drawer-stat-value" style="color:var(--green)">~40%</span></div>
+            <div class="drawer-section-title">Cible</div>
+            <p class="drawer-explanation">≥ 40% est très bon pour le secteur BTP/énergie (benchmark 25-30%). Indique des leads bien qualifiés et un funnel commercial efficace.</p>
+            <div class="drawer-section-title">Si baisse</div>
+            <p class="drawer-explanation">Vérifier qualité des leads (sources, intention) · délai 1er contact (cible &lt; 48h) · formation commerciale · qualité offre RBE.</p>
+        `
+    },
+    'conv-trackees': {
+        title: '🎯 Conversions Ads trackées',
+        subtitle: '⚠️ SMOKING GUN — bloquant absolu',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>',
+        cls: 'k-critical',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Nombre de conversions remontées dans Google Ads / Meta Ads via les pixels de tracking. Sans ce signal, l'algorithme d'enchères ne peut pas optimiser.</p>
+            <div class="drawer-section-title">Situation actuelle</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Valeur</span><span class="drawer-stat-value" style="color:var(--red)">0 conversion ⚠️</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Cause</span><span class="drawer-stat-value" style="color:var(--red)">Smoking Gun GA4</span></div>
+            <div class="drawer-section-title">Diagnostic</div>
+            <p class="drawer-explanation">Le tag GA4 est bloqué par défaut pour 100% des visiteurs européens via la configuration <code>analytics_storage: denied</code> du Consent Mode injecté par Site Kit. Tant que ce blocage est actif, GA4 ne reçoit AUCUN pageview, donc aucune conversion ne peut être trackée vers Ads.</p>
+            <div class="drawer-section-title">Action prioritaire #1</div>
+            <p class="drawer-explanation">Réparer la configuration Consent Mode + corriger le double tracking GA4 (GT-WBK8XSPW + G-7G5KELWH87 chargent simultanément). Voir panneau <strong>Tracking &amp; Mesure</strong>.</p>
+        `
+    },
+
+    // ===== KPI EXPLAINERS — Acquisition / Ads =====
+    'roas-google': {
+        title: '🎯 ROAS Google Ads',
+        subtitle: 'Return On Ad Spend — rentabilité directe',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>',
+        cls: 'k-warning',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Return On Ad Spend = revenu généré / budget dépensé. Un ROAS de 3× signifie que 1 CHF investi rapporte 3 CHF.</p>
+            <div class="drawer-section-title">Cibles</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Minimum rentable</span><span class="drawer-stat-value">≥ 2×</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Bon</span><span class="drawer-stat-value" style="color:var(--green)">≥ 3×</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Excellent</span><span class="drawer-stat-value" style="color:var(--green)">≥ 5×</span></div>
+            <div class="drawer-section-title">Indisponible actuellement</div>
+            <p class="drawer-explanation">Sans tracking de conversion (cf. Smoking Gun GA4), impossible de calculer le ROAS. C'est le KPI #1 à débloquer après réparation du tracking.</p>
+        `
+    },
+    'ctr-meta': {
+        title: '📱 CTR Meta Ads',
+        subtitle: 'Click-Through Rate — qualité des créas',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"/></svg>',
+        cls: 'k-pass',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Click-Through Rate = clics / impressions. Indique si la créa attire l'attention et provoque l'engagement.</p>
+            <div class="drawer-section-title">Benchmark sectoriel BTP/énergie</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Faible</span><span class="drawer-stat-value" style="color:var(--red)">&lt; 1%</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Moyen</span><span class="drawer-stat-value">1 – 1,5%</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Bon</span><span class="drawer-stat-value" style="color:var(--green)">&gt; 2%</span></div>
+            <div class="drawer-section-title">Si CTR faible</div>
+            <p class="drawer-explanation">Refonte des visuels (vidéos &gt; images statiques) · A/B test des accroches · ciblage trop large à resserrer · saturation publicitaire (refresh créatif).</p>
+        `
+    },
+    'util-budget': {
+        title: '💰 Taux d\'utilisation budget',
+        subtitle: 'Pourcentage du budget mensuel dépensé',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>',
+        cls: 'k-pass',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Pourcentage du budget Ads alloué qui a été effectivement dépensé sur la période.</p>
+            <div class="drawer-section-title">Interprétation</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">&lt; 80%</span><span class="drawer-stat-value" style="color:var(--yellow)">Sous-utilisation — opportunité manquée</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">90 – 100%</span><span class="drawer-stat-value" style="color:var(--green)">Cible idéale</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">&gt; 100%</span><span class="drawer-stat-value" style="color:var(--red)">Dépassement à arbitrer</span></div>
+            <div class="drawer-section-title">Action si sous-utilisé</div>
+            <p class="drawer-explanation">Élargir le ciblage géo · augmenter les enchères max · ajouter des campagnes complémentaires (Display Remarketing, Performance Max).</p>
+        `
+    },
+    'leads-zone': {
+        title: '🌍 Leads dans la zone cible',
+        subtitle: '% de leads générés dans GE/VD (zones principales)',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>',
+        cls: 'k-warning',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Pourcentage de leads générés dans les cantons cibles principaux (Genève, Vaud) par rapport au total des leads.</p>
+            <div class="drawer-section-title">Cibles</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Cible</span><span class="drawer-stat-value" style="color:var(--green)">&gt; 85%</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Acceptable</span><span class="drawer-stat-value">75 – 85%</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Problème</span><span class="drawer-stat-value" style="color:var(--red)">&lt; 75%</span></div>
+            <div class="drawer-section-title">Issue identifiée</div>
+            <p class="drawer-explanation">Les nouvelles campagnes Meta génèrent des leads HORS zones sélectionnées. Probable mauvaise configuration du ciblage géographique (radius trop large, audiences lookalike sans contrainte géo).</p>
+            <div class="drawer-section-title">Action</div>
+            <p class="drawer-explanation">Audit complet du géo-ciblage Meta · resserrer les rayons à 30km autour des centres GE/Lausanne · exclusion des cantons non-cibles.</p>
+        `
+    },
+    'saison-active': {
+        title: '📅 Saison active',
+        subtitle: 'Cycle saisonnier — services à pousser',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>',
+        cls: 'k-target',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Indicateur du cycle saisonnier qui dicte quels services mettre en avant prioritairement dans les campagnes Ads et le contenu SEO.</p>
+            <div class="drawer-section-title">Cycle annuel</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">🌞 Printemps / Été</span><span class="drawer-stat-value" style="color:var(--yellow)">Panneaux PV + Batteries</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">❄️ Automne / Hiver</span><span class="drawer-stat-value" style="color:#3D7A8F">Pompes à chaleur (PAC)</span></div>
+            <div class="drawer-section-title">Pourquoi c'est important</div>
+            <p class="drawer-explanation">Aligner les campagnes Ads et le contenu SEO sur la saisonnalité maximise le CTR (intention de recherche élevée) et réduit le CPL. Pousser des PAC en plein été = mauvais ROAS garanti.</p>
+        `
+    },
+
+    // ===== KPI EXPLAINERS — Visibilité SEO =====
+    'trafic-org': {
+        title: '📈 Trafic organique',
+        subtitle: 'Sessions générées par le SEO (mois courant)',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>',
+        cls: 'k-pass',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Sessions provenant des moteurs de recherche (Google, Bing) hors paid. Indicateur principal de la santé SEO globale.</p>
+            <div class="drawer-section-title">Source</div>
+            <p class="drawer-explanation">Données Google Search Console (clics) + Google Analytics 4 (Default Channel : Organic Search).</p>
+            <div class="drawer-section-title">Cibles de croissance</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Stagne / décline</span><span class="drawer-stat-value" style="color:var(--red)">≤ 0%</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Sain</span><span class="drawer-stat-value">+5 à +10% MoM</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Excellent</span><span class="drawer-stat-value" style="color:var(--green)">&gt; +15% MoM</span></div>
+            <div class="drawer-section-title">Action si déclin</div>
+            <p class="drawer-explanation">Audit positions perdues · vérifier mises à jour Google récentes · analyse contenu déclassé · réoptimiser pages stratégiques.</p>
+        `
+    },
+    'position-moy': {
+        title: '🔍 Position moyenne',
+        subtitle: 'Ranking pondéré sur les mots-clés stratégiques',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>',
+        cls: 'k-pass',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Position moyenne pondérée sur les top 100 mots-clés stratégiques (services, marque, zones). <strong>Plus la valeur est basse, mieux c'est</strong> (1 = top).</p>
+            <div class="drawer-section-title">Cibles</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Top 3</span><span class="drawer-stat-value" style="color:var(--green)">&lt; 3</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Top 10</span><span class="drawer-stat-value" style="color:var(--green)">&lt; 10</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Top 20</span><span class="drawer-stat-value">10 – 20</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Hors top 20</span><span class="drawer-stat-value" style="color:var(--red)">&gt; 20</span></div>
+            <div class="drawer-section-title">Pourquoi c'est important</div>
+            <p class="drawer-explanation">Le top 3 capture ~75% des clics. Passer de la position 11 à la position 3 peut tripler le trafic organique sans aucune action publicitaire.</p>
+        `
+    },
+    'pages-indexed': {
+        title: '🌐 Pages indexées Google',
+        subtitle: 'Couverture index — pages présentes dans Google',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>',
+        cls: 'k-warning',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Nombre de pages du site présentes dans l'index Google (visibles dans les résultats de recherche).</p>
+            <div class="drawer-section-title">Calcul</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Source</span><span class="drawer-stat-value">Search Console (Couverture)</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Cible</span><span class="drawer-stat-value" style="color:var(--green)">100% des pages stratégiques</span></div>
+            <div class="drawer-section-title">Causes possibles de non-indexation</div>
+            <ul style="margin:8px 0 0 18px;font-size:0.82rem;color:var(--text-body);line-height:1.7">
+                <li><code>noindex</code> dans les meta robots</li>
+                <li>Bloquage <code>robots.txt</code> mal configuré</li>
+                <li>Canonical pointant vers une autre URL</li>
+                <li>Contenu dupliqué (canonical implicite)</li>
+                <li>Qualité jugée insuffisante par Google</li>
+                <li>Page orpheline (aucun lien interne)</li>
+            </ul>
+        `
+    },
+    'impressions-gsc': {
+        title: '🎯 Impressions GSC',
+        subtitle: 'Visibilité brute dans les résultats Google',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>',
+        cls: 'k-pass',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Nombre de fois où le site apparaît dans les résultats Google (peu importe la position et le clic). Indicateur de visibilité brute.</p>
+            <div class="drawer-section-title">Différence avec clics</div>
+            <p class="drawer-explanation">Impressions = présence dans les résultats. Clics = utilisateurs ayant cliqué. Le ratio Clics/Impressions = CTR organique. Si impressions ↑ mais clics ↘, problème de title/meta description.</p>
+            <div class="drawer-section-title">Cibles de croissance</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Sain</span><span class="drawer-stat-value">+10% MoM</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Excellent</span><span class="drawer-stat-value" style="color:var(--green)">&gt; +20% MoM</span></div>
+        `
+    },
+    'cwv': {
+        title: '⚡ Core Web Vitals',
+        subtitle: 'Performance UX — facteur de ranking Google',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>',
+        cls: 'k-pass',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Pourcentage de pages dont les 3 métriques Core Web Vitals sont "bonnes" selon Google (LCP, INP, CLS).</p>
+            <div class="drawer-section-title">Les 3 métriques</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">LCP (Largest Contentful Paint)</span><span class="drawer-stat-value">&lt; 2,5s</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">INP (Interaction to Next Paint)</span><span class="drawer-stat-value">&lt; 200ms</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">CLS (Cumulative Layout Shift)</span><span class="drawer-stat-value">&lt; 0,1</span></div>
+            <div class="drawer-section-title">Seuil ranking</div>
+            <p class="drawer-explanation">Google utilise les CWV comme facteur de classement. <strong>≥ 75% des pages doivent être "bonnes"</strong> pour ne pas pénaliser le SEO. En-dessous, perte de positions sur mobile prioritairement.</p>
+        `
+    },
+    'avis-google-mois': {
+        title: '⭐ Nouveaux avis Google',
+        subtitle: 'Croissance mensuelle de l\'actif local',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>',
+        cls: 'k-pass',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Nouveaux avis collectés ce mois sur la fiche Google Business Profile NaoEnergy Crans (VD).</p>
+            <div class="drawer-section-title">Cibles mensuelles</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Stagnation</span><span class="drawer-stat-value" style="color:var(--red)">0 nouveau</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Sain</span><span class="drawer-stat-value">3 – 5/mois</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Excellent</span><span class="drawer-stat-value" style="color:var(--green)">&gt; 5/mois</span></div>
+            <div class="drawer-section-title">Pourquoi c'est important</div>
+            <p class="drawer-explanation">Les avis Google sont un facteur de ranking SEO local majeur (Pack Local) ET un facteur de conversion (preuve sociale). 100 avis · 4,5★ = actif fort à entretenir. Demande post-installation par SMS/email automatisé recommandée.</p>
+        `
+    },
+
+    // ===== KPI EXPLAINERS — Site / CRO =====
+    'conv-landing': {
+        title: '🔄 Taux de conversion landing',
+        subtitle: '% visiteurs → leads sur les pages produits',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>',
+        cls: 'k-warning',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Pourcentage de visiteurs qui complètent une action de conversion (formulaire, Typeform, appel) sur les landing pages produits (PV, PAC, Batteries).</p>
+            <div class="drawer-section-title">Benchmarks sectoriels</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Moyen BTP/énergie</span><span class="drawer-stat-value">2 – 4%</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Cible</span><span class="drawer-stat-value" style="color:var(--green)">≥ 5%</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Excellent</span><span class="drawer-stat-value" style="color:var(--green)">&gt; 7%</span></div>
+            <div class="drawer-section-title">Leviers d'amélioration</div>
+            <ul style="margin:8px 0 0 18px;font-size:0.82rem;color:var(--text-body);line-height:1.7">
+                <li>CTA plus clairs et plus haut sur la page</li>
+                <li>Réduire le nombre de champs Typeform</li>
+                <li>Preuve sociale (avis, photos installations)</li>
+                <li>Garantie / réassurance (subventions, financement)</li>
+                <li>A/B testing des accroches</li>
+            </ul>
+        `
+    },
+    'page-speed': {
+        title: '⚡ Page Speed (Lighthouse)',
+        subtitle: 'Score de performance technique',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>',
+        cls: 'k-pass',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Score Lighthouse de Google (0-100) sur la performance de la page : vitesse, optimisations techniques, réactivité.</p>
+            <div class="drawer-section-title">Cibles</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Médiocre</span><span class="drawer-stat-value" style="color:var(--red)">&lt; 50</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Acceptable</span><span class="drawer-stat-value">50 – 89</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Excellent</span><span class="drawer-stat-value" style="color:var(--green)">≥ 90</span></div>
+            <div class="drawer-section-title">Leviers d'amélioration</div>
+            <p class="drawer-explanation">Compression images (WebP) · lazy loading · cache navigateur · minification CSS/JS · CDN · réduction code tiers · serveur PHP/MySQL à jour.</p>
+        `
+    },
+    'mobile-desktop': {
+        title: '📱 Répartition Mobile / Desktop',
+        subtitle: 'Type d\'appareil des visiteurs / leads',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>',
+        cls: 'k-pass',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Pourcentage de visiteurs (et de leads) selon leur type d'appareil : mobile vs desktop vs tablette.</p>
+            <div class="drawer-section-title">Tendance secteur BTP/énergie</div>
+            <p class="drawer-explanation">Le mobile représente généralement 55-65% du trafic en BTP. Les leads desktop convertissent souvent mieux (intention plus mature) mais le volume vient du mobile.</p>
+            <div class="drawer-section-title">Implications design</div>
+            <ul style="margin:8px 0 0 18px;font-size:0.82rem;color:var(--text-body);line-height:1.7">
+                <li><strong>Mobile-first</strong> obligatoire pour la conception</li>
+                <li>Formulaires courts (≤5 champs) sur mobile</li>
+                <li>Vitesse de chargement &lt; 2s</li>
+                <li>CTA "Cliquer pour appeler" prominent</li>
+                <li>Lazy loading agressif des images</li>
+            </ul>
+        `
+    },
+    'typeform': {
+        title: '💬 Volume Typeform',
+        subtitle: 'Taux de complétion du formulaire principal',
+        icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>',
+        cls: 'k-warning',
+        body: `
+            <p class="drawer-explanation"><strong>Que mesure ce KPI ?</strong> Volume de conversations entamées sur le Typeform principal et taux de complétion (starts → completions).</p>
+            <div class="drawer-section-title">Calcul</div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Starts</span><span class="drawer-stat-value">Visiteurs ayant commencé</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Completions</span><span class="drawer-stat-value">Visiteurs ayant terminé</span></div>
+            <div class="drawer-stat-row"><span class="drawer-stat-label">Taux idéal</span><span class="drawer-stat-value" style="color:var(--green)">≥ 50%</span></div>
+            <div class="drawer-section-title">Si taux faible</div>
+            <p class="drawer-explanation">Réduire le nombre de questions · regrouper les questions ouvertes en fin de flow · ajouter une barre de progression · améliorer les transitions visuelles · supprimer les champs facultatifs non-stratégiques.</p>
         `
     }
 };
