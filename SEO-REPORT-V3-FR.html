@@ -1787,6 +1787,53 @@ button.kpi-card { display: block; width: 100%; }
     .leadgen-platforms { grid-template-columns: 1fr !important; }
 }
 
+/* ============ KPI ROWS — RESPONSIVE FOR ALL COLUMN COUNTS (3, 4, 5) ============ */
+/* Tablet large (≤ 1280px) */
+@media (max-width: 1280px) {
+    .kpi-row[style*="repeat(5"] { grid-template-columns: repeat(3, 1fr) !important; }
+}
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+    .kpi-row[style*="repeat(5"] { grid-template-columns: repeat(2, 1fr) !important; }
+    .kpi-row[style*="repeat(3,1fr"],
+    .kpi-row[style*="repeat(3, 1fr"] { grid-template-columns: repeat(2, 1fr) !important; }
+}
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+    .kpi-row[style*="repeat(5"] { grid-template-columns: repeat(2, 1fr) !important; }
+    .kpi-row[style*="repeat(3,1fr"],
+    .kpi-row[style*="repeat(3, 1fr"] { grid-template-columns: repeat(2, 1fr) !important; }
+}
+/* Mobile compact (≤ 480px) */
+@media (max-width: 480px) {
+    .kpi-row[style*="repeat(5"],
+    .kpi-row[style*="repeat(3,1fr"],
+    .kpi-row[style*="repeat(3, 1fr"] { grid-template-columns: 1fr !important; }
+}
+
+/* KPI section headers — responsive */
+@media (max-width: 768px) {
+    #panel-overview > div > div[style*="display:flex"][style*="margin:8px 0 12px"] {
+        margin: 4px 0 10px !important;
+        gap: 8px !important;
+    }
+    #panel-overview > div > div[style*="display:flex"][style*="margin:8px 0 12px"] > div:first-child {
+        font-size: 0.58rem !important;
+        letter-spacing: 1.2px !important;
+    }
+    #panel-overview > div > div[style*="display:flex"][style*="margin:8px 0 12px"] > span {
+        font-size: 0.55rem !important;
+    }
+}
+
+/* KPI cards on small screens — tighter padding for readability */
+@media (max-width: 480px) {
+    #panel-overview .kpi-card { padding: 14px 16px; }
+    #panel-overview .kpi-card .kpi-label { font-size: 0.65rem; }
+    #panel-overview .kpi-card .kpi-value { font-size: 1.3rem; }
+    #panel-overview .kpi-card .kpi-trend { font-size: 0.7rem; }
+}
+
 /* Sidebar logo visible on mobile/tablet (alongside close button) */
 @media (max-width: 1024px) {
     .sidebar > .brand,
