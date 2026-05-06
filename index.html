@@ -1780,12 +1780,10 @@ button.kpi-card { display: block; width: 100%; }
     .leadgen-platforms { grid-template-columns: 1fr !important; }
 }
 
-/* Hide sidebar logo on mobile/tablet (topbar already shows it) */
+/* Sidebar logo visible on mobile/tablet (alongside close button) */
 @media (max-width: 1024px) {
     .sidebar > .brand,
-    .sidebar > .sidebar-mobile-header > .brand,
-    .sidebar > .brand-sub { display: none !important; }
-    .sidebar { padding-top: 14px; }
+    .sidebar > .sidebar-mobile-header > .brand { display: flex !important; }
 }
 
 /* ============ KICKOFF SECTION — MOBILE OPTIMIZATIONS ============ */
