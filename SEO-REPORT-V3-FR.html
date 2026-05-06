@@ -1756,14 +1756,20 @@ button.kpi-card { display: block; width: 100%; }
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(90,152,174,0.10);
 }
+@media (max-width: 1280px) {
+    .raccourcis-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
 @media (max-width: 1024px) {
     .comp-grid { grid-template-columns: repeat(3, 1fr) !important; }
+    .raccourcis-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
 @media (max-width: 768px) {
     .comp-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .raccourcis-grid { grid-template-columns: repeat(2, 1fr) !important; }
 }
 @media (max-width: 480px) {
     .comp-grid { grid-template-columns: 1fr !important; }
+    .raccourcis-grid { grid-template-columns: 1fr !important; }
 }
 
 /* ============ KICKOFF SECTION — MOBILE OPTIMIZATIONS ============ */
@@ -2681,6 +2687,9 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     </button>
                     <button class="nav-child" data-target="energy" type="button">
                         <span class="nav-label">Contexte énergétique</span>
+                    </button>
+                    <button class="nav-child" data-target="objectives" type="button">
+                        <span class="nav-label">Objectifs &amp; missions</span>
                         <span class="nav-badge new">NEW</span>
                     </button>
                 </div>
@@ -2836,6 +2845,9 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                     <input type="text" placeholder="Rechercher dans le rapport...">
                 </div>
+                <button class="icon-btn home-btn" onclick="showPanel('overview')" aria-label="Accueil" title="Vue d'ensemble" type="button">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V10"/></svg>
+                </button>
                 <button class="icon-btn search-mobile-btn" onclick="toggleMobileSearch()" aria-label="Rechercher" type="button">
                     <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 </button>
@@ -3012,22 +3024,17 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     </div>
                 </div>
 
-                <!-- ============ ROADMAP 90J CTA — MouaDev branded ============ -->
-                <a href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" style="display:block;text-decoration:none;margin-bottom:32px">
-                    <div style="background:linear-gradient(135deg, #FFF6F0 0%, #FFEDDF 100%);border:1px solid rgba(232,93,44,0.30);border-left:4px solid #E85D2C;border-radius:12px;padding:22px 28px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;box-shadow:0 4px 16px rgba(232,93,44,0.10);transition:transform 0.2s, box-shadow 0.2s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(232,93,44,0.20)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 16px rgba(232,93,44,0.10)'">
-                        <div style="width:56px;height:56px;border-radius:14px;background:#E85D2C;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(232,93,44,0.35)">
-                            <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-                        </div>
-                        <div>
-                            <h3 style="margin:0 0 4px 0;font-size:1.05rem;font-weight:800;color:#1A1A1A;line-height:1.3">Roadmap stratégique 90 jours — NaoEnergy <span style="color:#E85D2C;font-weight:700">| MouaDev</span></h3>
-                            <p style="margin:0;font-size:0.82rem;color:#3D3D3D;line-height:1.55">Plan d'action sur 12 semaines · 4 axes en parallèle · Heatmap d'intensité · Checklist d'accès · Discovery questions du meet de lancement.</p>
-                        </div>
-                        <div style="background:#E85D2C;color:#fff;padding:12px 22px;border-radius:8px;font-size:0.78rem;font-weight:700;letter-spacing:0.5px;display:flex;align-items:center;gap:8px;white-space:nowrap;box-shadow:0 2px 8px rgba(232,93,44,0.30)">
-                            Ouvrir la roadmap
-                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </div>
+                <!-- ⚡ Raccourcis rapides (en tête de page) -->
+                <div style="margin-bottom:28px">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);font-weight:700;margin-bottom:12px">⚡ Raccourcis rapides</div>
+                    <div class="raccourcis-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px">
+                        <button class="comp-card" onclick="showPanel('profile')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">🏢</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Profil entreprise</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Identité · forces · zones</div></div></button>
+                        <button class="comp-card" onclick="showPanel('competitors')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">🎯</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Contexte concurrentiel</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">16 acteurs · Suisse romande</div></div></button>
+                        <button class="comp-card" onclick="showPanel('energy')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">⚡</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Contexte énergétique</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Subventions · tendances 2026</div></div></button>
+                        <button class="comp-card" onclick="showPanel('objectives')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">🎯</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Objectifs &amp; missions</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Marketing digital naoenergy</div></div></button>
+                        <a href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;background:linear-gradient(135deg, #FFF6F0 0%, #FFEDDF 100%);border:1px solid rgba(232,93,44,0.30);border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:12px;transition:all 0.15s"><span style="font-size:1.4rem">📋</span><div><div style="font-size:0.78rem;font-weight:700;color:#E85D2C">Roadmap 90 jours</div><div style="font-size:0.65rem;color:#C44A1F;margin-top:2px">MouaDev · 4 axes parallèles</div></div></a>
                     </div>
-                </a>
+                </div>
 
                 <!-- KPI Business — pilotage stratégique -->
                 <div class="kpi-row" style="grid-template-columns:repeat(4,1fr)">
@@ -3045,16 +3052,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div class="kpi-card k5" style="cursor:pointer" onclick="showPanel('recs')"><div class="kpi-label">Plan d'actions</div><div class="kpi-value">19</div><div class="kpi-trend down">&uarr; 5 — nouvelles actions Ads</div></div>
                 </div>
 
-                <!-- Raccourcis rapides -->
-                <div style="margin-top:24px">
-                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);font-weight:700;margin-bottom:12px">⚡ Raccourcis rapides</div>
-                    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
-                        <button class="comp-card" onclick="showPanel('profile')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">🏢</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Profil entreprise</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Identité · forces · zones</div></div></button>
-                        <button class="comp-card" onclick="showPanel('competitors')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">🎯</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Contexte concurrentiel</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">16 acteurs · Suisse romande</div></div></button>
-                        <button class="comp-card" onclick="showPanel('energy')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">⚡</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Contexte énergétique</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Subventions · tendances 2026</div></div></button>
-                        <a href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;background:linear-gradient(135deg, #FFF6F0 0%, #FFEDDF 100%);border:1px solid rgba(232,93,44,0.30);border-radius:10px;padding:14px 16px;display:flex;align-items:center;gap:12px;transition:all 0.15s"><span style="font-size:1.4rem">📋</span><div><div style="font-size:0.78rem;font-weight:700;color:#E85D2C">Roadmap 90 jours</div><div style="font-size:0.65rem;color:#C44A1F;margin-top:2px">MouaDev · 4 axes parallèles</div></div></a>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -3323,6 +3320,164 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--surface-soft);border-radius:8px"><span style="display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#3FB76C;color:#fff;font-size:0.78rem;font-weight:800;flex-shrink:0">5</span><div style="font-size:0.78rem;color:var(--text-body);line-height:1.4"><strong style="color:var(--text)">Baisse des émissions de CO₂</strong></div></div>
                     <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--surface-soft);border-radius:8px"><span style="display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#3FB76C;color:#fff;font-size:0.78rem;font-weight:800;flex-shrink:0">6</span><div style="font-size:0.78rem;color:var(--text-body);line-height:1.4"><strong style="color:var(--text)">Confort énergétique durable</strong></div></div>
                     <div style="display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--surface-soft);border-radius:8px;grid-column:span 2"><span style="display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#3FB76C;color:#fff;font-size:0.78rem;font-weight:800;flex-shrink:0">7</span><div style="font-size:0.78rem;color:var(--text-body);line-height:1.4"><strong style="color:var(--text)">Conformité aux nouvelles normes &amp; règlementations cantonales</strong> en matière d'efficacité énergétique</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ PANEL : OBJECTIFS & MISSIONS ============ -->
+        <div class="panel" id="panel-objectives">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">Objectifs, missions &amp; axes de travail — Marketing digital naoenergy SA</h1>
+                        <span class="badge new">Nouveau</span>
+                    </div>
+                    <p class="page-subtitle">Source : doc Charline · génération de leads, SEO/tech, réseaux sociaux + sites Zen &amp; Iso-Tradition.</p>
+                </div>
+            </div>
+
+            <!-- ===== AXE 1 — GÉNÉRATION DE LEADS ===== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #5A98AE">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+                    <div style="font-size:0.9rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px"><span style="background:#5A98AE;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">AXE 1</span>🎯 Génération de leads</div>
+                    <span style="background:rgba(63,183,108,0.14);color:#2A8F4D;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Cible 110 leads/mois</span>
+                </div>
+
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px">Objectifs</div>
+                <ul style="margin:0 0 14px 18px;padding:0;font-size:0.78rem;color:var(--text-body);line-height:1.7">
+                    <li><strong style="color:var(--text)">110 leads/mois</strong> toutes plateformes confondues (organique site, Meta Ads, Google Ads)</li>
+                    <li><strong style="color:var(--text)">Légitimité &amp; image de marque</strong> — confiance, fiabilité</li>
+                </ul>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px">
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">📊 Résultats jan-avril 2026</div>
+                        <div style="font-size:0.74rem;color:var(--text-body);line-height:1.5">Équipe Genève + Équipe Lausanne — données détaillées dans le doc.</div>
+                    </div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px">
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">📊 Résultats 2025</div>
+                        <div style="font-size:0.74rem;color:var(--text-body);line-height:1.5">Référence historique pour benchmark — données détaillées dans le doc.</div>
+                    </div>
+                </div>
+
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px;margin-top:6px">Produits les plus rentables</div>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px">
+                    <span style="background:rgba(90,152,174,0.12);color:#3D7A8F;padding:6px 12px;border-radius:100px;font-size:0.74rem;font-weight:700">🔥 Pompe à chaleur (PAC)</span>
+                    <span style="background:rgba(232,168,46,0.14);color:#B8821F;padding:6px 12px;border-radius:100px;font-size:0.74rem;font-weight:700">☀️ Panneaux solaires (PV)</span>
+                    <span style="background:rgba(63,183,108,0.14);color:#2A8F4D;padding:6px 12px;border-radius:100px;font-size:0.74rem;font-weight:700">🔋 Batteries de stockage</span>
+                </div>
+
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px">💰 Budget Lead Gen — répartition</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px">
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-left:3px solid #4285F4">
+                        <div style="font-size:0.7rem;font-weight:800;color:var(--text);margin-bottom:8px">Google Ads · 2 campagnes saisonnières</div>
+                        <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6">
+                            <div>• <strong>40 CHF/j</strong> — Campagne 1 (PV ou PAC selon saison)</div>
+                            <div>• <strong>40 CHF/j</strong> — Campagne 2 (Batterie de stockage)</div>
+                        </div>
+                        <div style="margin-top:10px;padding-top:8px;border-top:1px dashed var(--border);font-size:0.7rem;color:var(--text-muted)"><strong style="color:var(--text)">Zones :</strong> GE, VD · FR &amp; NE secondaires</div>
+                    </div>
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-left:3px solid #1877F2">
+                        <div style="font-size:0.7rem;font-weight:800;color:var(--text);margin-bottom:8px">Meta Ads · 2 000 CHF/mois total</div>
+                        <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6">
+                            <div>• Campagne notoriété</div>
+                            <div>• Campagnes lead gen (batterie continu · PV/PAC alternance)</div>
+                        </div>
+                        <div style="margin-top:10px;padding-top:8px;border-top:1px dashed var(--border);font-size:0.7rem;color:var(--text-muted)"><strong style="color:var(--text)">Zones :</strong> 1 500 GE + 500 VD CHF/mois</div>
+                    </div>
+                </div>
+
+                <div style="padding:12px 14px;background:rgba(232,168,46,0.10);border-radius:8px;border-left:3px solid #E8A82E;font-size:0.74rem;color:var(--text-body);line-height:1.6;margin-bottom:14px">
+                    ⚠️ <strong style="color:var(--text)">À noter :</strong> les campagnes <strong style="color:#3D7A8F">PAC + Batterie performent</strong>, mais les <strong style="color:#C44A1F">campagnes PV ne dégagent pas assez de résultats sur Meta</strong>.
+                </div>
+
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px">🔄 Traitement des leads</div>
+                <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:0.72rem;margin-bottom:14px">
+                    <span style="background:#5A98AE;color:#fff;padding:6px 10px;border-radius:6px;font-weight:700">Charline (Marketing)</span>
+                    <span style="color:var(--text-muted)">→ distribution quotidienne →</span>
+                    <span style="background:rgba(90,152,174,0.14);color:#3D7A8F;padding:6px 10px;border-radius:6px;font-weight:700">Directeurs agences GE / LS</span>
+                    <span style="color:var(--text-muted)">→</span>
+                    <span style="background:rgba(63,183,108,0.14);color:#2A8F4D;padding:6px 10px;border-radius:6px;font-weight:700">Appel sous 24-48h · RDV semaine suivante</span>
+                </div>
+
+                <div style="padding:14px 16px;background:rgba(232,93,74,0.06);border-radius:10px;border-left:3px solid #E85D4A;margin-bottom:14px">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#C44A1F;font-weight:800;margin-bottom:8px">📜 Historique freelance précédent</div>
+                    <ul style="margin:0 0 0 18px;padding:0;font-size:0.74rem;color:var(--text-body);line-height:1.6">
+                        <li>Compétences SEO technique <strong style="color:#C44A1F">insuffisantes</strong></li>
+                        <li>Pas de suivi quotidien des campagnes</li>
+                        <li>Google Ads : <strong style="color:#C44A1F">presque aucun résultat concret</strong></li>
+                        <li>Pas de solution aux problèmes majeurs (parcours conversion, etc.)</li>
+                    </ul>
+                </div>
+
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px">🎯 Missions attendues &amp; axes de travail (en plus de la roadmap)</div>
+                <ul style="margin:0 0 14px 18px;padding:0;font-size:0.76rem;color:var(--text-body);line-height:1.7">
+                    <li><strong style="color:var(--text)">Google Ads :</strong> stratégie optimale (mots-clés, objectifs, contenu éditorial performant) pour rentabiliser le budget + suivi régulier pour adapter et corriger</li>
+                    <li><strong style="color:var(--text)">Meta Ads :</strong> analyser les campagnes actuelles · améliorer la qualité visuelle &amp; les paramétrages · fix géo-ciblage (leads hors zones) · relancer campagne PV qui sous-performe</li>
+                </ul>
+
+                <div style="padding:12px 14px;background:rgba(232,168,46,0.10);border-radius:8px;border-left:3px solid #E8A82E;font-size:0.74rem;color:var(--text-body);line-height:1.6">
+                    💸 <strong style="color:var(--text)">Contrainte budget :</strong> 2 000 CHF/mois depuis avril 2026 (vs 3 500-4 000 CHF en début d'année). Trouver des leviers pour maintenir un taux de leads acceptable malgré la baisse.
+                </div>
+            </div>
+
+            <!-- ===== AXE 2 — SEO & SEO TECHNIQUE ===== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #5A98AE">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+                    <div style="font-size:0.9rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px"><span style="background:#5A98AE;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">AXE 2</span>🔍 SEO &amp; SEO technique</div>
+                    <span style="background:rgba(232,93,74,0.12);color:#C44A1F;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Position leader à reconquérir</span>
+                </div>
+
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px">Objectifs</div>
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.7;margin-bottom:14px">Être <strong style="color:var(--text)">mieux référencé</strong> sur les moteurs de recherche et gagner en position sur les <strong style="color:var(--text)">produits principaux</strong>. Encore <strong style="color:#C44A1F">très loin</strong> d'avoir des résultats à la hauteur de la position de leader sectoriel.</p>
+
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px">🎯 Missions attendues &amp; axes de travail (en plus de la roadmap)</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;border-left:3px solid #5A98AE;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Recommandations audit</strong> — implémenter les actions identifiées</div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;border-left:3px solid #5A98AE;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Bugs d'affichage</strong> &amp; optimisation technique (visuels, menus, mise en page)</div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;border-left:3px solid #5A98AE;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Version mobile vs desktop</strong> — parité &amp; cohérence</div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;border-left:3px solid #5A98AE;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Améliorer le site sans le refaire</strong> — ajustements ciblés</div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;border-left:3px solid #5A98AE;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Maintenance &amp; sécurité</strong> WordPress (core, plugins, thèmes)</div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;border-left:3px solid #5A98AE;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Évaluer, corriger &amp; développer</strong> la stratégie SEO globale</div>
+                </div>
+
+                <div style="padding:12px 14px;background:rgba(232,168,46,0.10);border-radius:8px;border-left:3px solid #E8A82E;font-size:0.74rem;color:var(--text-body);line-height:1.6">
+                    ⚠️ <strong style="color:var(--text)">Point d'attention :</strong> Formulaires &amp; <strong style="color:#3D7A8F">Typeform</strong> du site + <strong style="color:#3D7A8F">landing pages</strong>.
+                </div>
+            </div>
+
+            <!-- ===== AXE 3 — RÉSEAUX SOCIAUX ===== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #5A98AE">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+                    <div style="font-size:0.9rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px"><span style="background:#5A98AE;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">AXE 3</span>📱 Réseaux sociaux</div>
+                </div>
+
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.7;margin-bottom:14px">Beaucoup de contenu publié sur <strong style="color:var(--text)">Instagram</strong> et <strong style="color:var(--text)">LinkedIn</strong>. Objectif : <strong style="color:var(--text)">optimiser les impressions, vues, abonnés</strong> — réflexion à mener sur une stratégie sociale dédiée.</p>
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-left:3px solid #E1306C">
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span style="font-size:1.1rem">📸</span><strong style="font-size:0.82rem;color:var(--text)">Instagram</strong></div>
+                        <div style="font-size:0.72rem;color:var(--text-muted);line-height:1.5">Optimisation impressions · vues · abonnés · stratégie de contenu visuelle.</div>
+                    </div>
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-left:3px solid #0A66C2">
+                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><span style="font-size:1.1rem">💼</span><strong style="font-size:0.82rem;color:var(--text)">LinkedIn</strong></div>
+                        <div style="font-size:0.72rem;color:var(--text-muted);line-height:1.5">Positionnement B2B · expertise métier 10 ans · contenu thought leadership.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== ZEN & ISO-TRADITION (sites secondaires) ===== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:14px;border-left:4px solid #807A70">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+                    <div style="font-size:0.9rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px"><span style="background:#807A70;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">SITES SECONDAIRES</span>🌐 Zen Energies &amp; Iso-Tradition</div>
+                </div>
+
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.6;margin-bottom:14px">Sites Next.js / Sanity opérationnels — périmètre d'intervention plus léger que NaoEnergy.</p>
+
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">🛡️ Maintenance &amp; sécurité</strong><div style="margin-top:4px;font-size:0.7rem;color:var(--text-muted)">Updates dépendances, monitoring, backups</div></div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">⚙️ Améliorations techniques</strong><div style="margin-top:4px;font-size:0.7rem;color:var(--text-muted)">Performance, accessibilité, CWV</div></div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">🔍 SEO de base</strong><div style="margin-top:4px;font-size:0.7rem;color:var(--text-muted)">Recommandations + on-page essentiel</div></div>
                 </div>
             </div>
         </div>
