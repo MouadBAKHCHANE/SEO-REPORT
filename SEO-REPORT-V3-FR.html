@@ -2994,14 +2994,24 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 <div class="notif-wrap">
                     <button class="icon-btn notif-trigger" onclick="toggleNotif(event)" aria-label="Notifications" type="button">
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
-                        <span class="notif-badge">12</span>
+                        <span class="notif-badge">9</span>
                     </button>
                     <div class="notif-dropdown" id="notifDropdown" onclick="event.stopPropagation()">
                         <div class="notif-header">
                             <div class="notif-header-title">Nouveautés du rapport</div>
-                            <div class="notif-count">12 nouveau(x)</div>
+                            <div class="notif-count">9 nouveau(x)</div>
                         </div>
                         <div class="notif-list">
+                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('overview'); window.scrollTo({top:0,behavior:'smooth'});">
+                                <div class="notif-icon ev-pass">🛠️</div>
+                                <div class="notif-content">
+                                    <div class="notif-title-row">
+                                        <div class="notif-item-title">Refonte du dashboard — itération du jour</div>
+                                        <div class="notif-time">6 mai</div>
+                                    </div>
+                                    <div class="notif-desc">Nouveau groupe sidebar « Entreprise » (Profil naoenergy, Contexte concurrentiel · 16 acteurs, Contexte énergétique 2026, Objectifs &amp; missions). Refonte des KPIs en 4 sections (Acquisition, Ads, SEO, CRO) avec popup explicatif au clic. Logo agrandi, sandwich + Roadmap orange dans la topbar, mobile responsive complet.</div>
+                                </div>
+                            </button>
                             <button class="notif-item" type="button" onclick="closeNotif(); showPanel('overview'); window.scrollTo({top:0,behavior:'smooth'});">
                                 <div class="notif-icon ev-pass">🤝</div>
                                 <div class="notif-content">
@@ -3009,7 +3019,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                                         <div class="notif-item-title">Meeting kick-off NaoEnergy — CR ajouté</div>
                                         <div class="notif-time">5 mai</div>
                                     </div>
-                                    <div class="notif-desc">Compte-rendu complet du meet de lancement avec Charline : objectifs (110 leads/mois), funnel Odoo, services prioritaires, saisonnalité, budget Ads détaillé.</div>
+                                    <div class="notif-desc">Compte-rendu complet du meet de lancement avec Charline.</div>
                                 </div>
                             </button>
                             <a class="notif-item" href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" onclick="closeNotif();" style="text-decoration:none">
@@ -3022,36 +3032,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                                     <div class="notif-desc">Plan d'action sur 12 semaines · 4 axes en parallèle · Heatmap d'intensité · Checklist d'accès · Discovery questions du meet.</div>
                                 </div>
                             </a>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('overview');">
-                                <div class="notif-icon ev-warning">🚧</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Section Landing pages &amp; site web</div>
-                                        <div class="notif-time">5 mai</div>
-                                    </div>
-                                    <div class="notif-desc">Nouvelle section identifiant les LP produits (PV, PC), Typeform et theme global à améliorer en priorité.</div>
-                                </div>
-                            </button>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('overview');">
-                                <div class="notif-icon ev-info">💰</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Budget Ads ventilé Google / Meta</div>
-                                        <div class="notif-time">5 mai</div>
-                                    </div>
-                                    <div class="notif-desc">Split clair : Google Ads 80 CHF/j (Batterie + PV+PC) · Meta Ads 30 CHF/j (Notoriété 5 + Lead gen 25). Total ~3 300 CHF/mois.</div>
-                                </div>
-                            </button>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('overview');">
-                                <div class="notif-icon ev-pass">📈</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Taux Lead → Client revu à ~40%</div>
-                                        <div class="notif-time">5 mai</div>
-                                    </div>
-                                    <div class="notif-desc">Mise à jour du funnel Odoo selon les chiffres communiqués par Charline lors du kick-off.</div>
-                                </div>
-                            </button>
                             <a class="notif-item" href="https://drive.google.com/drive/folders/1HLC9sZsveuzHFQfOzLF-3K2z5tK3SjRa?usp=sharing" target="_blank" rel="noopener" onclick="closeNotif();" style="text-decoration:none">
                                 <div class="notif-icon ev-info">📁</div>
                                 <div class="notif-content">
@@ -3062,16 +3042,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                                     <div class="notif-desc">Raccourci Drive ajouté dans la topbar pour le suivi des documents discovery et livrables côté Charline.</div>
                                 </div>
                             </a>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('google_ads');">
-                                <div class="notif-icon ev-critical">💰</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Google Ads — Analyse du compte</div>
-                                        <div class="notif-time">16 avril</div>
-                                    </div>
-                                    <div class="notif-desc">Conversion tracking en panne (0 tag actif). 15 campagnes en pause. 118K interactions pour seulement 7 leads qualifiés.</div>
-                                </div>
-                            </button>
                             <button class="notif-item" type="button" onclick="closeNotif(); showPanel('tracking');">
                                 <div class="notif-icon ev-critical">🔬</div>
                                 <div class="notif-content">
