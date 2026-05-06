@@ -1464,6 +1464,42 @@ button.kpi-card { display: block; width: 100%; }
 .app.sidebar-collapsed { grid-template-columns: 0 1fr; }
 .app.sidebar-collapsed .sidebar { transform: translateX(-100%); transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
 .sidebar { transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
+
+/* Sandwich button INSIDE the sidebar brand area (desktop) */
+.brand-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text-body);
+    margin-right: 8px;
+    flex-shrink: 0;
+    padding: 0;
+    transition: all 0.15s;
+}
+.brand-toggle svg { width: 18px; height: 18px; color: #1F3A5F; }
+[data-theme="dark"] .brand-toggle svg { color: #9BC5D5; }
+.brand-toggle:hover {
+    background: rgba(20,40,80,0.06);
+    border-color: var(--border-strong);
+}
+[data-theme="dark"] .brand-toggle:hover { background: rgba(124,177,196,0.10); }
+
+/* Desktop: hide topbar menu-toggle when sidebar is open (brand-toggle handles it).
+   Topbar menu-toggle reappears only when sidebar is collapsed. */
+@media (min-width: 1025px) {
+    .menu-toggle { display: none; }
+    .app.sidebar-collapsed .menu-toggle { display: flex; }
+}
+/* Mobile/tablet: brand-toggle hidden (the topbar menu-toggle opens the drawer). */
+@media (max-width: 1024px) {
+    .brand-toggle { display: none; }
+}
 .menu-toggle svg { width: 20px; height: 20px; }
 
 /* Sidebar mobile header (wraps brand + close on mobile) */
@@ -2665,6 +2701,9 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-mobile-header">
             <div class="brand">
+                <button class="brand-toggle" onclick="toggleSidebar()" aria-label="Replier le menu" title="Replier le menu" type="button">
+                    <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
                 <img src="imgi_2_logo-light-1.svg" alt="naoenergy" class="brand-logo brand-logo-light">
                 <img src="imgi_29_logo-light.svg" alt="naoenergy" class="brand-logo brand-logo-dark">
             </div>
