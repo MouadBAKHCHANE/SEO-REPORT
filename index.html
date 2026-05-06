@@ -3051,16 +3051,70 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     </div>
                 </div>
 
-                <!-- KPI Business — pilotage stratégique -->
-                <div class="kpi-row" style="grid-template-columns:repeat(4,1fr)">
-                    <div class="kpi-card k1" style="cursor:pointer" onclick="showPanel('profile')"><div class="kpi-label">🎯 Objectif leads/mois</div><div class="kpi-value">110</div><div class="kpi-trend up">Genève 40 · Lausanne 70</div></div>
-                    <div class="kpi-card k3" style="cursor:pointer" onclick="showPanel('google_ads')"><div class="kpi-label">💰 Budget Ads/mois</div><div class="kpi-value">~3 300 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">CHF</span></div><div class="kpi-trend">Google 80 + Meta 30 CHF/j</div></div>
-                    <div class="kpi-card k2" style="cursor:pointer" onclick="showPanel('competitors')"><div class="kpi-label">🏆 Concurrents identifiés</div><div class="kpi-value">16</div><div class="kpi-trend">acteurs · Suisse romande</div></div>
-                    <div class="kpi-card k4" style="cursor:pointer" onclick="window.open('https://business.google.com/','_blank')"><div class="kpi-label">⭐ Avis Google</div><div class="kpi-value">100 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">· 4,5★</span></div><div class="kpi-trend up">Crans (VD) — actif local fort</div></div>
+                <!-- ═══════════ KPI SECTION 1 — PERFORMANCE ACQUISITION ═══════════ -->
+                <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px;flex-wrap:wrap">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#5A98AE;font-weight:800">🎯 Performance Acquisition</div>
+                    <div style="flex:1;height:1px;background:var(--border)"></div>
+                    <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Funnel + leads</span>
+                </div>
+                <div class="kpi-row" style="grid-template-columns:repeat(4,1fr);margin-bottom:18px">
+                    <div class="kpi-card k1" style="cursor:pointer" onclick="showPanel('objectives')"><div class="kpi-label">📥 Leads ce mois</div><div class="kpi-value">47 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">/ 110</span></div><div class="kpi-trend up">43% de la cible · 12 jours restants</div></div>
+                    <div class="kpi-card k2" style="cursor:pointer" onclick="showPanel('google_ads')"><div class="kpi-label">💸 CPL moyen</div><div class="kpi-value">~65 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">CHF</span></div><div class="kpi-trend down">cible 50 CHF · à optimiser</div></div>
+                    <div class="kpi-card k4" style="cursor:pointer" onclick="showPanel('objectives')"><div class="kpi-label">🔄 Lead → Client</div><div class="kpi-value">42<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">%</span></div><div class="kpi-trend up">+2 pts vs M-1 · funnel sain</div></div>
+                    <div class="kpi-card k2" style="cursor:pointer" onclick="showPanel('tracking')"><div class="kpi-label">🎯 Conv. Ads trackées</div><div class="kpi-value">0 <span style="font-size:0.85rem;color:#C44A1F;font-weight:700">⚠️</span></div><div class="kpi-trend down">Smoking gun GA4 à fixer</div></div>
                 </div>
 
-                <!-- KPI Internes — santé du dashboard (compact) -->
-                <div class="kpi-row" style="grid-template-columns:repeat(4,1fr);margin-top:12px">
+                <!-- ═══════════ KPI SECTION 2 — ADS PERFORMANCE ═══════════ -->
+                <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px;flex-wrap:wrap">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#5A98AE;font-weight:800">📡 Acquisition / Ads</div>
+                    <div style="flex:1;height:1px;background:var(--border)"></div>
+                    <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Google + Meta</span>
+                </div>
+                <div class="kpi-row" style="grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px">
+                    <div class="kpi-card k3" style="cursor:pointer" onclick="showPanel('google_ads')"><div class="kpi-label">🎯 ROAS Google Ads</div><div class="kpi-value">N/A</div><div class="kpi-trend down">Sans tracking · indispo</div></div>
+                    <div class="kpi-card k1" style="cursor:pointer" onclick="showPanel('objectives')"><div class="kpi-label">📱 CTR Meta Ads</div><div class="kpi-value">2,4<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">%</span></div><div class="kpi-trend up">benchmark ~1,5%</div></div>
+                    <div class="kpi-card k4" style="cursor:pointer" onclick="showPanel('objectives')"><div class="kpi-label">💰 Taux util. budget</div><div class="kpi-value">87<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">%</span></div><div class="kpi-trend">2 870 / 3 300 CHF</div></div>
+                    <div class="kpi-card k2" style="cursor:pointer" onclick="showPanel('objectives')"><div class="kpi-label">🌍 Leads zone cible</div><div class="kpi-value">68<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">%</span></div><div class="kpi-trend down">⚠️ fix géo Meta requis</div></div>
+                    <div class="kpi-card k5" style="cursor:pointer" onclick="showPanel('profile')"><div class="kpi-label">📅 Saison active</div><div class="kpi-value" style="font-size:1.2rem;line-height:1.1;padding-top:6px">PV + Batterie</div><div class="kpi-trend up">printemps/été · à pousser</div></div>
+                </div>
+
+                <!-- ═══════════ KPI SECTION 3 — VISIBILITÉ SEO ═══════════ -->
+                <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px;flex-wrap:wrap">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#5A98AE;font-weight:800">🔍 Visibilité SEO</div>
+                    <div style="flex:1;height:1px;background:var(--border)"></div>
+                    <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Trafic + position + index</span>
+                </div>
+                <div class="kpi-row" style="grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px">
+                    <div class="kpi-card k4" style="cursor:pointer" onclick="showPanel('sitekit')"><div class="kpi-label">📈 Trafic organique</div><div class="kpi-value">12,4<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">k</span> <span style="font-size:0.7rem;color:var(--text-muted);font-weight:500">sessions</span></div><div class="kpi-trend up">↑ +18% vs M-1</div></div>
+                    <div class="kpi-card k4" style="cursor:pointer" onclick="showPanel('onpage')"><div class="kpi-label">🔍 Position moyenne</div><div class="kpi-value">12,3</div><div class="kpi-trend up">↑ -2,4 vs M-1 (meilleur)</div></div>
+                    <div class="kpi-card k1" style="cursor:pointer" onclick="showPanel('sitemap')"><div class="kpi-label">🌐 Pages indexées</div><div class="kpi-value">247<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600"> / 312</span></div><div class="kpi-trend">couverture 79%</div></div>
+                </div>
+                <div class="kpi-row" style="grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px">
+                    <div class="kpi-card k1" style="cursor:pointer" onclick="showPanel('sitekit')"><div class="kpi-label">🎯 Impressions GSC</div><div class="kpi-value">145<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">k</span></div><div class="kpi-trend up">↑ +16,5% (4 sem.)</div></div>
+                    <div class="kpi-card k4" style="cursor:pointer" onclick="showPanel('performance')"><div class="kpi-label">⚡ Core Web Vitals</div><div class="kpi-value">78<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">% bons</span></div><div class="kpi-trend up">seuil Google 75%</div></div>
+                    <div class="kpi-card k3" style="cursor:pointer" onclick="window.open('https://business.google.com/','_blank')"><div class="kpi-label">⭐ Avis Google ce mois</div><div class="kpi-value">+4 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">→ 104</span></div><div class="kpi-trend up">4,5★ · Crans (VD)</div></div>
+                </div>
+
+                <!-- ═══════════ KPI SECTION 4 — SITE / CRO ═══════════ -->
+                <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px;flex-wrap:wrap">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#5A98AE;font-weight:800">🟣 Site / CRO</div>
+                    <div style="flex:1;height:1px;background:var(--border)"></div>
+                    <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Conversion + UX</span>
+                </div>
+                <div class="kpi-row" style="grid-template-columns:repeat(4,1fr);margin-bottom:18px">
+                    <div class="kpi-card k3" style="cursor:pointer" onclick="showPanel('onpage')"><div class="kpi-label">🔄 Conv. landing</div><div class="kpi-value">3,2<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">%</span></div><div class="kpi-trend down">cible 5% (benchmark sect.)</div></div>
+                    <div class="kpi-card k1" style="cursor:pointer" onclick="showPanel('performance')"><div class="kpi-label">⚡ Page Speed</div><div class="kpi-value">84<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">/100</span></div><div class="kpi-trend up">Lighthouse desktop</div></div>
+                    <div class="kpi-card k1" style="cursor:pointer" onclick="showPanel('sitekit')"><div class="kpi-label">📱 Mobile / Desktop</div><div class="kpi-value">62 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">/ 38%</span></div><div class="kpi-trend">mobile dominant</div></div>
+                    <div class="kpi-card k3" style="cursor:pointer" onclick="showPanel('objectives')"><div class="kpi-label">💬 Typeform</div><div class="kpi-value">124<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600"> → 47</span></div><div class="kpi-trend">complétion 38%</div></div>
+                </div>
+
+                <!-- ═══════════ KPI SECTION 5 — SANTÉ DU DASHBOARD ═══════════ -->
+                <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px;flex-wrap:wrap">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);font-weight:800">🩺 Santé du dashboard</div>
+                    <div style="flex:1;height:1px;background:var(--border)"></div>
+                    <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Score &amp; actions</span>
+                </div>
+                <div class="kpi-row" style="grid-template-columns:repeat(4,1fr)">
                     <div class="kpi-card k2" style="cursor:pointer" onclick="openDrawer('critical')"><div class="kpi-label">Probl&egrave;mes critiques</div><div class="kpi-value">10</div><div class="kpi-trend down">&uarr; 2 — Ads tracking + facturation</div></div>
                     <div class="kpi-card k1" style="cursor:pointer" onclick="openDrawer('score')"><div class="kpi-label">Score actuel</div><div class="kpi-value">53<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600;margin-left:3px">/100</span></div><div class="kpi-trend down">0 conversion Ads track&eacute;e</div></div>
                     <div class="kpi-card k4" style="cursor:pointer" onclick="openDrawer('target')"><div class="kpi-label">Objectif cible</div><div class="kpi-value">85<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600;margin-left:3px">/100</span></div><div class="kpi-trend up">+32 pts &mdash; SEO + Ads fix</div></div>
