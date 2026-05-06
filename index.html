@@ -1440,13 +1440,13 @@ button.kpi-card { display: block; width: 100%; }
 /* ============ MOBILE SIDEBAR HELPERS ============ */
 /* Hamburger button — hidden on desktop */
 .menu-toggle {
-    display: none;
+    display: flex;
     width: 40px;
     height: 40px;
     background: var(--glass-strong);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255,255,255,0.6);
+    border: 1px solid var(--border-strong);
     border-radius: 50%;
     cursor: pointer;
     color: var(--text-body);
@@ -1455,10 +1455,15 @@ button.kpi-card { display: block; width: 100%; }
     flex-shrink: 0;
     transition: all 0.2s;
     padding: 0;
-    margin-right: auto;
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
 }
 .menu-toggle:hover { background: var(--surface); color: var(--primary); transform: translateY(-1px); }
+
+/* App grid — sidebar collapsible (desktop only) */
+.app { transition: grid-template-columns 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
+.app.sidebar-collapsed { grid-template-columns: 0 1fr; }
+.app.sidebar-collapsed .sidebar { transform: translateX(-100%); transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
+.sidebar { transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
 .menu-toggle svg { width: 20px; height: 20px; }
 
 /* Sidebar mobile header (wraps brand + close on mobile) */
@@ -1773,6 +1778,14 @@ button.kpi-card { display: block; width: 100%; }
 }
 @media (max-width: 900px) {
     .leadgen-platforms { grid-template-columns: 1fr !important; }
+}
+
+/* Hide sidebar logo on mobile/tablet (topbar already shows it) */
+@media (max-width: 1024px) {
+    .sidebar > .brand,
+    .sidebar > .sidebar-mobile-header > .brand,
+    .sidebar > .brand-sub { display: none !important; }
+    .sidebar { padding-top: 14px; }
 }
 
 /* ============ KICKOFF SECTION — MOBILE OPTIMIZATIONS ============ */
@@ -2816,7 +2829,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
 
         <!-- TOPBAR -->
         <div class="topbar">
-            <button class="menu-toggle" onclick="openMenu()" aria-label="Ouvrir le menu" type="button">
+            <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Basculer le menu" title="Afficher / masquer le menu" type="button">
                 <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
             <button class="topbar-logo" onclick="showPanel('overview')" type="button" aria-label="Accueil naoenergy">
@@ -5369,7 +5382,19 @@ document.querySelectorAll('.nav-item[data-target], .nav-child[data-target]').for
     btn.addEventListener('click', () => { if (btn.dataset.target) showPanel(btn.dataset.target); });
 });
 
-// ============ MOBILE SIDEBAR ============
+// ============ SIDEBAR TOGGLE (mobile drawer + desktop collapse) ============
+function toggleSidebar() {
+    if (window.innerWidth <= 1024) {
+        // Mobile/tablet: off-canvas drawer
+        const sb = document.getElementById('sidebar');
+        if (sb.classList.contains('open')) closeMenu();
+        else openMenu();
+    } else {
+        // Desktop: collapse/expand sidebar
+        document.querySelector('.app').classList.toggle('sidebar-collapsed');
+        try { localStorage.setItem('sidebarCollapsed', document.querySelector('.app').classList.contains('sidebar-collapsed') ? '1' : '0'); } catch(e) {}
+    }
+}
 function openMenu() {
     document.getElementById('sidebar').classList.add('open');
     document.getElementById('sidebarBackdrop').classList.add('open');
@@ -5380,6 +5405,14 @@ function closeMenu() {
     document.getElementById('sidebarBackdrop').classList.remove('open');
     document.body.style.overflow = '';
 }
+// Restore desktop sidebar state from localStorage
+(function restoreSidebarState() {
+    try {
+        if (window.innerWidth > 1024 && localStorage.getItem('sidebarCollapsed') === '1') {
+            document.querySelector('.app').classList.add('sidebar-collapsed');
+        }
+    } catch(e) {}
+})();
 
 // ============ NOTIFICATION DROPDOWN ============
 function toggleNotif(e) {
