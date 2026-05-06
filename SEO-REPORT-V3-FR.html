@@ -2634,6 +2634,27 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             </button>
         </div>
 
+        <!-- Entreprise (collapsible group) -->
+        <div class="nav-section">
+            <button class="nav-group open" type="button" onclick="this.classList.toggle('open')">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                <span class="nav-label">Entreprise</span>
+                <span class="nav-badge new">NEW</span>
+                <svg class="nav-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="nav-children">
+                <div class="nav-children-inner">
+                    <button class="nav-child" data-target="profile" type="button">
+                        <span class="nav-label">Profil naoenergy</span>
+                    </button>
+                    <button class="nav-child" data-target="competitors" type="button">
+                        <span class="nav-label">Études concurrentielles</span>
+                        <span class="nav-badge" style="background:rgba(232,168,46,0.18);color:#B8821F">16</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- Paid Media (collapsible group) -->
         <div class="nav-section">
             <button class="nav-group open" type="button" onclick="this.classList.toggle('open')">
@@ -2955,22 +2976,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     </div>
                 </div>
 
-                <!-- ============ ROADMAP 90J CTA — MouaDev branded ============ -->
-                <a href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" style="display:block;text-decoration:none;margin-bottom:32px">
-                    <div style="background:linear-gradient(135deg, #FFF6F0 0%, #FFEDDF 100%);border:1px solid rgba(232,93,44,0.30);border-left:4px solid #E85D2C;border-radius:12px;padding:22px 28px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;box-shadow:0 4px 16px rgba(232,93,44,0.10);transition:transform 0.2s, box-shadow 0.2s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(232,93,44,0.20)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 16px rgba(232,93,44,0.10)'">
-                        <div style="width:56px;height:56px;border-radius:14px;background:#E85D2C;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(232,93,44,0.35)">
-                            <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-                        </div>
-                        <div>
-                            <h3 style="margin:0 0 4px 0;font-size:1.05rem;font-weight:800;color:#1A1A1A;line-height:1.3">Roadmap stratégique 90 jours — NaoEnergy <span style="color:#E85D2C;font-weight:700">| MouaDev</span></h3>
-                            <p style="margin:0;font-size:0.82rem;color:#3D3D3D;line-height:1.55">Plan d'action sur 12 semaines · 4 axes en parallèle · Heatmap d'intensité · Checklist d'accès · Discovery questions du meet de lancement.</p>
-                        </div>
-                        <div style="background:#E85D2C;color:#fff;padding:12px 22px;border-radius:8px;font-size:0.78rem;font-weight:700;letter-spacing:0.5px;display:flex;align-items:center;gap:8px;white-space:nowrap;box-shadow:0 2px 8px rgba(232,93,44,0.30)">
-                            Ouvrir la roadmap
-                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                        </div>
-                    </div>
-                </a>
                 <!-- ============ PHASE 0 — KICK-OFF MEETING NOTES ============ -->
                 <div style="margin-bottom:32px">
                     <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px">
@@ -3118,166 +3123,184 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     </div>
                 </div>
 
-                <!-- ============ PROFIL ENTREPRISE NAOENERGY ============ -->
-                <div style="margin-bottom:32px">
-                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap">
-                        <span style="background:#5A98AE;color:#fff;font-size:0.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:3px">PROFIL ENTREPRISE</span>
-                        <h2 style="font-size:1.15rem;font-weight:800;color:var(--text);margin:0">naoenergy SA — Fiche d'identité</h2>
-                        <span style="font-size:0.7rem;color:var(--text-muted);margin-left:auto">Source : doc Charline · 6 mai 2026</span>
-                    </div>
-
-                    <!-- Identité -->
-                    <div class="card" style="padding:20px 24px;margin-bottom:14px;border-left:4px solid #5A98AE">
-                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:10px">🏢 Identité</div>
-                        <p style="font-size:0.82rem;color:var(--text-body);line-height:1.7;margin-bottom:10px"><strong style="color:var(--text)">naoenergy.ch</strong> — Entreprise spécialisée depuis <strong style="color:var(--text)">2016</strong> dans l'installation de solutions énergétiques durables pour particuliers et professionnels en Suisse romande. <span style="background:rgba(232,168,46,0.16);color:#B8821F;padding:3px 9px;border-radius:100px;font-size:0.7rem;font-weight:700;margin-left:4px;display:inline-block">🎉 10 ans en 2026</span></p>
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px">
-                            <div>
-                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:4px">Positionnement</div>
-                                <div style="font-size:0.78rem;color:var(--text-body);line-height:1.5">Leader innovant et spécialisé pour le confort énergétique durable en Suisse romande</div>
-                            </div>
-                            <div>
-                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:4px">Segment produits-prix</div>
-                                <div style="font-size:0.78rem;color:var(--text-body);line-height:1.5">Premium et qualité</div>
-                            </div>
+                <!-- ============ ROADMAP 90J CTA — MouaDev branded ============ -->
+                <a href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" style="display:block;text-decoration:none;margin-bottom:32px">
+                    <div style="background:linear-gradient(135deg, #FFF6F0 0%, #FFEDDF 100%);border:1px solid rgba(232,93,44,0.30);border-left:4px solid #E85D2C;border-radius:12px;padding:22px 28px;display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;box-shadow:0 4px 16px rgba(232,93,44,0.10);transition:transform 0.2s, box-shadow 0.2s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 24px rgba(232,93,44,0.20)'" onmouseout="this.style.transform='translateY(0)';this.style.boxShadow='0 4px 16px rgba(232,93,44,0.10)'">
+                        <div style="width:56px;height:56px;border-radius:14px;background:#E85D2C;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 12px rgba(232,93,44,0.35)">
+                            <svg width="28" height="28" fill="none" stroke="#fff" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                        </div>
+                        <div>
+                            <h3 style="margin:0 0 4px 0;font-size:1.05rem;font-weight:800;color:#1A1A1A;line-height:1.3">Roadmap stratégique 90 jours — NaoEnergy <span style="color:#E85D2C;font-weight:700">| MouaDev</span></h3>
+                            <p style="margin:0;font-size:0.82rem;color:#3D3D3D;line-height:1.55">Plan d'action sur 12 semaines · 4 axes en parallèle · Heatmap d'intensité · Checklist d'accès · Discovery questions du meet de lancement.</p>
+                        </div>
+                        <div style="background:#E85D2C;color:#fff;padding:12px 22px;border-radius:8px;font-size:0.78rem;font-weight:700;letter-spacing:0.5px;display:flex;align-items:center;gap:8px;white-space:nowrap;box-shadow:0 2px 8px rgba(232,93,44,0.30)">
+                            Ouvrir la roadmap
+                            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                         </div>
                     </div>
-
-                    <!-- Produits & Marques -->
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
-                        <div class="card" style="padding:18px 22px;margin:0">
-                            <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:10px">📦 Produits</div>
-                            <div style="display:flex;flex-direction:column;gap:5px;font-size:0.76rem;color:var(--text-body);line-height:1.5">
-                                <div>• Panneaux solaires (photovoltaïques)</div>
-                                <div>• Pompes à chaleur (air-eau, air-air)</div>
-                                <div>• Batteries de stockage solaires</div>
-                                <div>• Boilers thermodynamiques</div>
-                                <div>• Carport solaire</div>
-                                <div>• Borne de recharge VE</div>
-                            </div>
-                        </div>
-                        <div class="card" style="padding:18px 22px;margin:0">
-                            <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:10px">🤝 Marques partenaires</div>
-                            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
-                                <span style="background:rgba(90,152,174,0.12);color:#3D7A8F;padding:6px 12px;border-radius:100px;font-size:0.72rem;font-weight:700">Enphase</span>
-                                <span style="background:rgba(90,152,174,0.12);color:#3D7A8F;padding:6px 12px;border-radius:100px;font-size:0.72rem;font-weight:700">Longi</span>
-                                <span style="background:rgba(90,152,174,0.12);color:#3D7A8F;padding:6px 12px;border-radius:100px;font-size:0.72rem;font-weight:700">Buderus</span>
-                                <span style="background:rgba(90,152,174,0.12);color:#3D7A8F;padding:6px 12px;border-radius:100px;font-size:0.72rem;font-weight:700">Atmoce</span>
-                                <span style="background:rgba(90,152,174,0.12);color:#3D7A8F;padding:6px 12px;border-radius:100px;font-size:0.72rem;font-weight:700">Mitsubishi</span>
-                            </div>
-                            <div style="padding-top:12px;border-top:1px dashed var(--border);font-size:0.72rem;color:var(--text-body);line-height:1.7">
-                                <div><strong style="color:var(--text)">Cibles :</strong> Propriétaires 35-70 ans en Suisse romande + B2B</div>
-                                <div><strong style="color:var(--text)">Panier moyen :</strong> ~35 000 CHF</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Forces -->
-                    <div class="card" style="padding:20px 24px;margin-bottom:14px">
-                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:12px">⚡ Nos forces</div>
-                        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
-                            <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;border-left:3px solid #5A98AE;font-size:0.76rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Leader & pionnier</strong> du secteur des énergies vertes en Suisse romande</div>
-                            <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;border-left:3px solid #5A98AE;font-size:0.76rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Branding premium</strong> différenciant face à la concurrence</div>
-                            <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;border-left:3px solid #5A98AE;font-size:0.76rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Process 100% internalisé</strong> (vente, BE, technique, SAV)</div>
-                            <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;border-left:3px solid #5A98AE;font-size:0.76rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Force commerciale</strong> + culture innovation + marques de renom</div>
-                        </div>
-                    </div>
-
-                    <!-- Zones d'activité -->
-                    <div class="card" style="padding:20px 24px;margin-bottom:14px">
-                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:12px">🗺️ Zones d'activité — Suisse romande</div>
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-                            <div>
-                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Cantons couverts</div>
-                                <div style="display:flex;flex-direction:column;gap:6px">
-                                    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:rgba(90,152,174,0.10);border-radius:6px;font-size:0.74rem"><span style="color:var(--text-body)">Canton de Genève</span><span style="color:#3D7A8F;font-weight:700">Principal</span></div>
-                                    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:rgba(90,152,174,0.10);border-radius:6px;font-size:0.74rem"><span style="color:var(--text-body)">Canton de Vaud</span><span style="color:#3D7A8F;font-weight:700">Principal</span></div>
-                                    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:var(--surface-soft);border-radius:6px;font-size:0.74rem"><span style="color:var(--text-body)">Canton de Fribourg</span><span style="color:var(--text-muted);font-weight:600">Secondaire</span></div>
-                                    <div style="display:flex;justify-content:space-between;padding:8px 12px;background:var(--surface-soft);border-radius:6px;font-size:0.74rem"><span style="color:var(--text-body)">Canton de Neuchâtel</span><span style="color:var(--text-muted);font-weight:600">Secondaire</span></div>
-                                </div>
-                            </div>
-                            <div>
-                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">3 agences locales</div>
-                                <div style="display:flex;flex-direction:column;gap:6px">
-                                    <div style="padding:8px 12px;background:var(--surface-soft);border-radius:6px;font-size:0.74rem;color:var(--text-body)"><strong style="color:var(--text)">Plan-les-Ouates</strong> (Genève) — Équipe GE</div>
-                                    <div style="padding:8px 12px;background:var(--surface-soft);border-radius:6px;font-size:0.74rem;color:var(--text-body)"><strong style="color:var(--text)">Crans</strong> (Vaud) — siège</div>
-                                    <div style="padding:8px 12px;background:var(--surface-soft);border-radius:6px;font-size:0.74rem;color:var(--text-body)"><strong style="color:var(--text)">Renens</strong> (Vaud)</div>
-                                </div>
-                                <div style="margin-top:10px;font-size:0.7rem;color:var(--text-muted);line-height:1.5;font-style:italic">📍 2 secteurs commerciaux : Genève (canton GE + début VD) · Lausanne (canton VD + reste cantons romands sauf Jura)</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Cycle de vente complet -->
-                    <div class="card" style="padding:20px 24px;margin-bottom:14px">
-                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:12px">🔄 Cycle de vente complet</div>
-                        <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:0.72rem">
-                            <span style="background:#5A98AE;color:#fff;padding:6px 10px;border-radius:6px;font-weight:700">RDV 1</span>
-                            <span style="color:var(--text-muted)">→</span>
-                            <span style="background:rgba(90,152,174,0.14);color:#3D7A8F;padding:6px 10px;border-radius:6px;font-weight:700">Signature 1 BDC</span>
-                            <span style="color:var(--text-muted)">→</span>
-                            <span style="background:rgba(90,152,174,0.14);color:#3D7A8F;padding:6px 10px;border-radius:6px;font-weight:700">Visite tech</span>
-                            <span style="color:var(--text-muted)">→</span>
-                            <span style="background:rgba(90,152,174,0.14);color:#3D7A8F;padding:6px 10px;border-radius:6px;font-weight:700">Étude RBE</span>
-                            <span style="color:var(--text-muted)">→</span>
-                            <span style="background:#5A98AE;color:#fff;padding:6px 10px;border-radius:6px;font-weight:700">RDV 2</span>
-                            <span style="color:var(--text-muted)">→</span>
-                            <span style="background:rgba(63,183,108,0.14);color:#2A8F4D;padding:6px 10px;border-radius:6px;font-weight:700">Signature 2 ✓ Client</span>
-                            <span style="color:var(--text-muted)">→</span>
-                            <span style="background:var(--surface-soft);padding:6px 10px;border-radius:6px;color:var(--text-body)">Acompte</span>
-                            <span style="color:var(--text-muted)">→</span>
-                            <span style="background:var(--surface-soft);padding:6px 10px;border-radius:6px;color:var(--text-body)">Subventions</span>
-                            <span style="color:var(--text-muted)">→</span>
-                            <span style="background:var(--surface-soft);padding:6px 10px;border-radius:6px;color:var(--text-body)">Installation</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ============ ÉTUDES CONCURRENTIELLES ============ -->
-                <div style="margin-bottom:32px">
-                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;flex-wrap:wrap">
-                        <span style="background:#5A98AE;color:#fff;font-size:0.6rem;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:3px">ÉTUDES CONCURRENTIELLES</span>
-                        <h2 style="font-size:1.15rem;font-weight:800;color:var(--text);margin:0">16 acteurs identifiés en Suisse romande</h2>
-                        <span style="font-size:0.7rem;color:var(--text-muted);margin-left:auto">Mise à jour : 6 mai 2026</span>
-                    </div>
-
-                    <!-- Contexte concurrentiel -->
-                    <div class="card" style="padding:18px 22px;margin-bottom:14px;border-left:4px solid #E8A82E">
-                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#B8821F;font-weight:800;margin-bottom:8px">⚠️ Contexte concurrentiel</div>
-                        <div style="font-size:0.78rem;color:var(--text-body);line-height:1.6">Secteur hautement concurrentiel avec l'arrivée de nombreux petits acteurs depuis quelques années (souvent casseurs de prix qui dégradent l'image du secteur). <strong style="color:var(--text)">L'enjeu : se démarquer par une image premium, rassurante et de confiance — valoriser les 10 ans d'expérience comme valeur ajoutée différenciante.</strong></div>
-                    </div>
-
-                    <!-- Grille concurrents -->
-                    <div class="card" style="padding:20px 24px">
-                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:14px">🎯 Concurrents directs identifiés (16)</div>
-                        <div class="comp-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
-                            <a href="https://www.terasolar.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Tera Solar</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">terasolar.ch ↗</div></a>
-                            <a href="https://www.solstis.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Solstis</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">solstis.ch ↗</div></a>
-                            <a href="https://helios-energies.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Helios</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">helios-energies.ch ↗</div></a>
-                            <a href="https://afm-energie.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">AFM Energie</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">afm-energie.ch ↗</div></a>
-                            <a href="https://sunkraft.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Sunkraft</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">sunkraft.ch ↗</div></a>
-                            <a href="https://www.helvetia-energy.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Helvetia Energy</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">helvetia-energy.ch ↗</div></a>
-                            <a href="https://www.younergy.ch/fr" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Younergy</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">younergy.ch ↗</div></a>
-                            <a href="https://stg-energy.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">STG Energy</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">stg-energy.ch ↗</div></a>
-                            <a href="https://habitavenir.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Habit'Avenir</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">habitavenir.ch ↗</div></a>
-                            <a href="https://www.finergy.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Finergy</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">finergy.ch ↗</div></a>
-                            <a href="https://groupe-solaire.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">GSS</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">groupe-solaire.ch ↗</div></a>
-                            <a href="https://macullo-solaire.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Macullo Solar</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">macullo-solaire.ch ↗</div></a>
-                            <a href="https://www.cgc-energie.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">CGC Energie</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">cgc-energie.ch ↗</div></a>
-                            <a href="https://www.cap-energie.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">CAP Energie</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">cap-energie.ch ↗</div></a>
-                            <a href="https://photosun.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Photosun</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">photosun.ch ↗</div></a>
-                            <a href="https://proswissenergy.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">ProSwissEnergy</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">proswissenergy.ch ↗</div></a>
-                        </div>
-                        <div style="margin-top:14px;padding-top:12px;border-top:1px dashed var(--border);font-size:0.7rem;color:var(--text-muted);line-height:1.6">
-                            📊 <strong style="color:var(--text)">Prochaines étapes :</strong> audit SEO comparatif (positions, backlinks, content) · benchmark prix &amp; offres · analyse Ads (SEMrush/Similarweb) · matrice de positionnement.
-                        </div>
-                    </div>
-                </div>
+                </a>
 
                 <div class="kpi-row" style="grid-template-columns:repeat(4,1fr)">
                     <div class="kpi-card k2" style="cursor:pointer" onclick="openDrawer('critical')"><div class="kpi-label">Probl&egrave;mes critiques</div><div class="kpi-value">10</div><div class="kpi-trend down">&uarr; 2 — Ads tracking + facturation</div></div>
                     <div class="kpi-card k1" style="cursor:pointer" onclick="openDrawer('score')"><div class="kpi-label">Score actuel</div><div class="kpi-value">53<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600;margin-left:3px">/100</span></div><div class="kpi-trend down">0 conversion Ads track&eacute;e</div></div>
                     <div class="kpi-card k4" style="cursor:pointer" onclick="openDrawer('target')"><div class="kpi-label">Objectif cible</div><div class="kpi-value">85<span style="font-size:0.85rem;color:var(--text-muted);font-weight:600;margin-left:3px">/100</span></div><div class="kpi-trend up">+32 pts &mdash; SEO + Ads fix</div></div>
                     <div class="kpi-card k5" style="cursor:pointer" onclick="showPanel('recs')"><div class="kpi-label">Plan d'actions</div><div class="kpi-value">19</div><div class="kpi-trend down">&uarr; 5 — nouvelles actions Ads</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ PANEL : PROFIL ENTREPRISE ============ -->
+        <div class="panel" id="panel-profile">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">Profil entreprise — naoenergy SA</h1>
+                        <span class="badge new">Mis à jour 6 mai</span>
+                    </div>
+                    <p class="page-subtitle">Fiche d'identité, produits, marques, zones d'activité, cycle de vente — source : doc Charline.</p>
+                </div>
+            </div>
+
+            <div class="card" style="padding:20px 24px;margin-bottom:14px;border-left:4px solid #5A98AE">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:10px">🏢 Identité</div>
+                <p style="font-size:0.82rem;color:var(--text-body);line-height:1.7;margin-bottom:10px"><strong style="color:var(--text)">naoenergy.ch</strong> — Entreprise spécialisée depuis <strong style="color:var(--text)">2016</strong> dans l'installation de solutions énergétiques durables pour particuliers et professionnels en Suisse romande. <span style="background:rgba(232,168,46,0.16);color:#B8821F;padding:3px 9px;border-radius:100px;font-size:0.7rem;font-weight:700;margin-left:4px;display:inline-block">🎉 10 ans en 2026</span></p>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px">
+                    <div>
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:4px">Positionnement</div>
+                        <div style="font-size:0.78rem;color:var(--text-body);line-height:1.5">Leader innovant et spécialisé pour le confort énergétique durable en Suisse romande</div>
+                    </div>
+                    <div>
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:4px">Segment produits-prix</div>
+                        <div style="font-size:0.78rem;color:var(--text-body);line-height:1.5">Premium et qualité</div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+                <div class="card" style="padding:18px 22px;margin:0">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:10px">📦 Produits</div>
+                    <div style="display:flex;flex-direction:column;gap:5px;font-size:0.76rem;color:var(--text-body);line-height:1.5">
+                        <div>• Panneaux solaires (photovoltaïques)</div>
+                        <div>• Pompes à chaleur (air-eau, air-air)</div>
+                        <div>• Batteries de stockage solaires</div>
+                        <div>• Boilers thermodynamiques</div>
+                        <div>• Carport solaire</div>
+                        <div>• Borne de recharge VE</div>
+                    </div>
+                </div>
+                <div class="card" style="padding:18px 22px;margin:0">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:10px">🤝 Marques partenaires</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
+                        <span style="background:rgba(90,152,174,0.12);color:#3D7A8F;padding:6px 12px;border-radius:100px;font-size:0.72rem;font-weight:700">Enphase</span>
+                        <span style="background:rgba(90,152,174,0.12);color:#3D7A8F;padding:6px 12px;border-radius:100px;font-size:0.72rem;font-weight:700">Longi</span>
+                        <span style="background:rgba(90,152,174,0.12);color:#3D7A8F;padding:6px 12px;border-radius:100px;font-size:0.72rem;font-weight:700">Buderus</span>
+                        <span style="background:rgba(90,152,174,0.12);color:#3D7A8F;padding:6px 12px;border-radius:100px;font-size:0.72rem;font-weight:700">Atmoce</span>
+                        <span style="background:rgba(90,152,174,0.12);color:#3D7A8F;padding:6px 12px;border-radius:100px;font-size:0.72rem;font-weight:700">Mitsubishi</span>
+                    </div>
+                    <div style="padding-top:12px;border-top:1px dashed var(--border);font-size:0.72rem;color:var(--text-body);line-height:1.7">
+                        <div><strong style="color:var(--text)">Cibles :</strong> Propriétaires 35-70 ans en Suisse romande + B2B</div>
+                        <div><strong style="color:var(--text)">Panier moyen :</strong> ~35 000 CHF</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="padding:20px 24px;margin-bottom:14px">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:12px">⚡ Nos forces</div>
+                <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px">
+                    <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;border-left:3px solid #5A98AE;font-size:0.76rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Leader & pionnier</strong> du secteur des énergies vertes en Suisse romande</div>
+                    <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;border-left:3px solid #5A98AE;font-size:0.76rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Branding premium</strong> différenciant face à la concurrence</div>
+                    <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;border-left:3px solid #5A98AE;font-size:0.76rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Process 100% internalisé</strong> (vente, BE, technique, SAV)</div>
+                    <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;border-left:3px solid #5A98AE;font-size:0.76rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Force commerciale</strong> + culture innovation + marques de renom</div>
+                </div>
+            </div>
+
+            <div class="card" style="padding:20px 24px;margin-bottom:14px">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:12px">🗺️ Zones d'activité — Suisse romande</div>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+                    <div>
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Cantons couverts</div>
+                        <div style="display:flex;flex-direction:column;gap:6px">
+                            <div style="display:flex;justify-content:space-between;padding:8px 12px;background:rgba(90,152,174,0.10);border-radius:6px;font-size:0.74rem"><span style="color:var(--text-body)">Canton de Genève</span><span style="color:#3D7A8F;font-weight:700">Principal</span></div>
+                            <div style="display:flex;justify-content:space-between;padding:8px 12px;background:rgba(90,152,174,0.10);border-radius:6px;font-size:0.74rem"><span style="color:var(--text-body)">Canton de Vaud</span><span style="color:#3D7A8F;font-weight:700">Principal</span></div>
+                            <div style="display:flex;justify-content:space-between;padding:8px 12px;background:var(--surface-soft);border-radius:6px;font-size:0.74rem"><span style="color:var(--text-body)">Canton de Fribourg</span><span style="color:var(--text-muted);font-weight:600">Secondaire</span></div>
+                            <div style="display:flex;justify-content:space-between;padding:8px 12px;background:var(--surface-soft);border-radius:6px;font-size:0.74rem"><span style="color:var(--text-body)">Canton de Neuchâtel</span><span style="color:var(--text-muted);font-weight:600">Secondaire</span></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">3 agences locales</div>
+                        <div style="display:flex;flex-direction:column;gap:6px">
+                            <div style="padding:8px 12px;background:var(--surface-soft);border-radius:6px;font-size:0.74rem;color:var(--text-body)"><strong style="color:var(--text)">Plan-les-Ouates</strong> (Genève) — Équipe GE</div>
+                            <div style="padding:8px 12px;background:var(--surface-soft);border-radius:6px;font-size:0.74rem;color:var(--text-body)"><strong style="color:var(--text)">Crans</strong> (Vaud) — siège</div>
+                            <div style="padding:8px 12px;background:var(--surface-soft);border-radius:6px;font-size:0.74rem;color:var(--text-body)"><strong style="color:var(--text)">Renens</strong> (Vaud)</div>
+                        </div>
+                        <div style="margin-top:10px;font-size:0.7rem;color:var(--text-muted);line-height:1.5;font-style:italic">📍 2 secteurs commerciaux : Genève (canton GE + début VD) · Lausanne (canton VD + reste cantons romands sauf Jura)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="padding:20px 24px;margin-bottom:14px">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:12px">🔄 Cycle de vente complet</div>
+                <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:0.72rem">
+                    <span style="background:#5A98AE;color:#fff;padding:6px 10px;border-radius:6px;font-weight:700">RDV 1</span>
+                    <span style="color:var(--text-muted)">→</span>
+                    <span style="background:rgba(90,152,174,0.14);color:#3D7A8F;padding:6px 10px;border-radius:6px;font-weight:700">Signature 1 BDC</span>
+                    <span style="color:var(--text-muted)">→</span>
+                    <span style="background:rgba(90,152,174,0.14);color:#3D7A8F;padding:6px 10px;border-radius:6px;font-weight:700">Visite tech</span>
+                    <span style="color:var(--text-muted)">→</span>
+                    <span style="background:rgba(90,152,174,0.14);color:#3D7A8F;padding:6px 10px;border-radius:6px;font-weight:700">Étude RBE</span>
+                    <span style="color:var(--text-muted)">→</span>
+                    <span style="background:#5A98AE;color:#fff;padding:6px 10px;border-radius:6px;font-weight:700">RDV 2</span>
+                    <span style="color:var(--text-muted)">→</span>
+                    <span style="background:rgba(63,183,108,0.14);color:#2A8F4D;padding:6px 10px;border-radius:6px;font-weight:700">Signature 2 ✓ Client</span>
+                    <span style="color:var(--text-muted)">→</span>
+                    <span style="background:var(--surface-soft);padding:6px 10px;border-radius:6px;color:var(--text-body)">Acompte</span>
+                    <span style="color:var(--text-muted)">→</span>
+                    <span style="background:var(--surface-soft);padding:6px 10px;border-radius:6px;color:var(--text-body)">Subventions</span>
+                    <span style="color:var(--text-muted)">→</span>
+                    <span style="background:var(--surface-soft);padding:6px 10px;border-radius:6px;color:var(--text-body)">Installation</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ PANEL : ÉTUDES CONCURRENTIELLES ============ -->
+        <div class="panel" id="panel-competitors">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">Études concurrentielles</h1>
+                        <span class="badge new">Mis à jour 6 mai</span>
+                    </div>
+                    <p class="page-subtitle">16 acteurs identifiés en Suisse romande — contexte concurrentiel et différenciation NaoEnergy.</p>
+                </div>
+            </div>
+
+            <div class="card" style="padding:18px 22px;margin-bottom:14px;border-left:4px solid #E8A82E">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#B8821F;font-weight:800;margin-bottom:8px">⚠️ Contexte concurrentiel</div>
+                <div style="font-size:0.78rem;color:var(--text-body);line-height:1.6">Secteur hautement concurrentiel avec l'arrivée de nombreux petits acteurs depuis quelques années (souvent casseurs de prix qui dégradent l'image du secteur). <strong style="color:var(--text)">L'enjeu : se démarquer par une image premium, rassurante et de confiance — valoriser les 10 ans d'expérience comme valeur ajoutée différenciante.</strong></div>
+            </div>
+
+            <div class="card" style="padding:20px 24px">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:14px">🎯 Concurrents directs identifiés (16)</div>
+                <div class="comp-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+                    <a href="https://www.terasolar.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Tera Solar</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">terasolar.ch ↗</div></a>
+                    <a href="https://www.solstis.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Solstis</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">solstis.ch ↗</div></a>
+                    <a href="https://helios-energies.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Helios</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">helios-energies.ch ↗</div></a>
+                    <a href="https://afm-energie.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">AFM Energie</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">afm-energie.ch ↗</div></a>
+                    <a href="https://sunkraft.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Sunkraft</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">sunkraft.ch ↗</div></a>
+                    <a href="https://www.helvetia-energy.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Helvetia Energy</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">helvetia-energy.ch ↗</div></a>
+                    <a href="https://www.younergy.ch/fr" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Younergy</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">younergy.ch ↗</div></a>
+                    <a href="https://stg-energy.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">STG Energy</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">stg-energy.ch ↗</div></a>
+                    <a href="https://habitavenir.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Habit'Avenir</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">habitavenir.ch ↗</div></a>
+                    <a href="https://www.finergy.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Finergy</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">finergy.ch ↗</div></a>
+                    <a href="https://groupe-solaire.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">GSS</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">groupe-solaire.ch ↗</div></a>
+                    <a href="https://macullo-solaire.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Macullo Solar</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">macullo-solaire.ch ↗</div></a>
+                    <a href="https://www.cgc-energie.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">CGC Energie</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">cgc-energie.ch ↗</div></a>
+                    <a href="https://www.cap-energie.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">CAP Energie</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">cap-energie.ch ↗</div></a>
+                    <a href="https://photosun.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">Photosun</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">photosun.ch ↗</div></a>
+                    <a href="https://proswissenergy.ch/" target="_blank" rel="noopener" class="comp-card" style="text-decoration:none;padding:12px 14px;background:var(--surface-soft);border:1px solid var(--border);border-radius:8px;display:block;transition:all 0.15s"><div style="font-size:0.82rem;font-weight:700;color:var(--text)">ProSwissEnergy</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">proswissenergy.ch ↗</div></a>
+                </div>
+                <div style="margin-top:14px;padding-top:12px;border-top:1px dashed var(--border);font-size:0.7rem;color:var(--text-muted);line-height:1.6">
+                    📊 <strong style="color:var(--text)">Prochaines étapes :</strong> audit SEO comparatif (positions, backlinks, content) · benchmark prix &amp; offres · analyse Ads (SEMrush/Similarweb) · matrice de positionnement.
                 </div>
             </div>
         </div>
