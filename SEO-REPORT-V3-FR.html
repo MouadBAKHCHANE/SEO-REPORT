@@ -1313,19 +1313,21 @@ button.kpi-card { display: block; width: 100%; }
     .roadmap-btn { padding: 0 10px !important; }
 }
 
-/* Topbar logo — visible only on mobile/tablet (sidebar handles it on desktop) */
+/* Topbar logo — always visible (header is the single home for logo + sandwich) */
 .topbar-logo {
-    display: none;
+    display: inline-flex;
     align-items: center;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 4px 8px;
+    padding: 4px 10px;
     height: 38px;
     flex-shrink: 0;
+    transition: opacity 0.15s;
 }
+.topbar-logo:hover { opacity: 0.75; }
 .topbar-logo img {
-    max-height: 26px;
+    max-height: 28px;
     width: auto;
     object-fit: contain;
     display: block;
@@ -1333,12 +1335,9 @@ button.kpi-card { display: block; width: 100%; }
 .topbar-logo .brand-logo-dark { display: none; }
 [data-theme="dark"] .topbar-logo .brand-logo-light { display: none; }
 [data-theme="dark"] .topbar-logo .brand-logo-dark { display: block; }
-@media (max-width: 1024px) {
-    .topbar-logo { display: inline-flex; }
-}
 @media (max-width: 480px) {
     .topbar-logo img { max-height: 22px; }
-    .topbar-logo { padding: 4px 4px; }
+    .topbar-logo { padding: 4px 6px; }
 }
 .notif-dropdown.open { display: block; animation: notifSlide 0.25s ease-out; }
 @keyframes notifSlide {
@@ -1465,41 +1464,14 @@ button.kpi-card { display: block; width: 100%; }
 .app.sidebar-collapsed .sidebar { transform: translateX(-100%); transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
 .sidebar { transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1); }
 
-/* Sandwich button INSIDE the sidebar brand area (desktop) */
-.brand-toggle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    background: transparent;
-    border: 1px solid transparent;
-    border-radius: 8px;
-    cursor: pointer;
-    color: var(--text-body);
-    margin-right: 8px;
-    flex-shrink: 0;
-    padding: 0;
-    transition: all 0.15s;
-}
-.brand-toggle svg { width: 18px; height: 18px; color: #1F3A5F; }
-[data-theme="dark"] .brand-toggle svg { color: #9BC5D5; }
-.brand-toggle:hover {
-    background: rgba(20,40,80,0.06);
-    border-color: var(--border-strong);
-}
-[data-theme="dark"] .brand-toggle:hover { background: rgba(124,177,196,0.10); }
+/* Logo + Sandwich both live in the HEADER (topbar) at all times.
+   The sidebar no longer carries them (cleaner UX, single source of truth). */
+.sidebar > .brand,
+.sidebar > .sidebar-mobile-header > .brand,
+.sidebar > .brand-sub { display: none !important; }
 
-/* Desktop: hide topbar menu-toggle when sidebar is open (brand-toggle handles it).
-   Topbar menu-toggle reappears only when sidebar is collapsed. */
-@media (min-width: 1025px) {
-    .menu-toggle { display: none; }
-    .app.sidebar-collapsed .menu-toggle { display: flex; }
-}
-/* Mobile/tablet: brand-toggle hidden (the topbar menu-toggle opens the drawer). */
-@media (max-width: 1024px) {
-    .brand-toggle { display: none; }
-}
+/* The brand-toggle inside .brand is auto-hidden because .brand is hidden. */
+.brand-toggle { display: none; }
 .menu-toggle svg { width: 20px; height: 20px; }
 
 /* Sidebar mobile header (wraps brand + close on mobile) */
