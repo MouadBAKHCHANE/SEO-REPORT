@@ -2833,8 +2833,13 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <span class="nav-label">Google Ads</span>
                         <span class="nav-badge new">NEW</span>
                     </button>
-                    <button class="nav-child" data-target="meta_ads" type="button">
-                        <span class="nav-label">Meta Ads</span>
+                    <div class="nav-sub-label" style="padding-left:0">Meta Ads</div>
+                    <button class="nav-child" data-target="meta_notoriete" type="button">
+                        <span class="nav-label">📢 Notoriété</span>
+                        <span class="nav-badge new">NEW</span>
+                    </button>
+                    <button class="nav-child" data-target="meta_leadgen" type="button">
+                        <span class="nav-label">🎯 Lead Generation</span>
                         <span class="nav-badge new">NEW</span>
                     </button>
                 </div>
@@ -5458,29 +5463,448 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             </div>
         </div>
 
-        <!-- ============ PANEL : META ADS ============ -->
-        <div class="panel" id="panel-meta_ads">
+        <!-- ============ PANEL : META ADS — NOTORIÉTÉ ============ -->
+        <div class="panel" id="panel-meta_notoriete">
             <div class="page-header">
                 <div>
                     <div class="page-title-row">
-                        <h1 class="page-title">📱 Meta Ads — Analyse opérationnelle</h1>
+                        <h1 class="page-title">📢 Meta Ads — Notoriété (Awareness)</h1>
                         <span class="badge new">7 mai 2026</span>
                     </div>
-                    <p class="page-subtitle">Analyse media buyer · 3 campagnes actives · time-normalized par durée de lancement · Mars / Avril / Mai 2026.</p>
+                    <p class="page-subtitle">Analyse historique 24 mois · 12 campagnes Notoriété · campagne actuelle "Notoriété avril 2026" · recommandations stratégiques.</p>
                 </div>
             </div>
 
-            <!-- ===== Synthèse exécutive ===== -->
+            <!-- ===== Synthèse Notoriété ===== -->
+            <div class="card" style="padding:20px 24px;margin-bottom:16px;border-left:4px solid #5A98AE">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:10px">📊 Synthèse stratégique Notoriété</div>
+                <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px">
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;text-align:center">
+                        <div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:6px">Campagnes lancées</div>
+                        <div style="font-size:1.3rem;font-weight:800;color:#3D7A8F">12</div>
+                        <div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Sur 24 mois (Fév 2024 → Avril 2026)</div>
+                    </div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;text-align:center">
+                        <div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:6px">Reach lifetime</div>
+                        <div style="font-size:1.3rem;font-weight:800;color:#2A8F4D">1,75M</div>
+                        <div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Cumul brut (avec doublons inter-campagnes)</div>
+                    </div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;text-align:center">
+                        <div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:6px">Spend total</div>
+                        <div style="font-size:1.3rem;font-weight:800;color:#3D7A8F">€3 200</div>
+                        <div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">CPM moyen €1,02</div>
+                    </div>
+                    <div style="padding:12px 14px;background:rgba(63,183,108,0.10);border-radius:8px;text-align:center;border-left:3px solid #3FB76C">
+                        <div style="font-size:0.6rem;color:#2A8F4D;text-transform:uppercase;letter-spacing:0.8px;font-weight:800;margin-bottom:6px">⭐ Champ. juin 2025</div>
+                        <div style="font-size:1.3rem;font-weight:800;color:#2A8F4D">€0,45</div>
+                        <div style="font-size:0.65rem;color:#2A8F4D;margin-top:2px">CPM record · 514k reach</div>
+                    </div>
+                </div>
+                <div style="font-size:0.78rem;color:var(--text-body);line-height:1.6;padding-top:12px;border-top:1px dashed var(--border)">
+                    <strong style="color:var(--text)">Verdict global :</strong> 24 mois d'historique avec une stratégie "always-on relancée mensuellement" inefficace. <strong>Une seule campagne (juin 2025) a été exceptionnelle</strong> avec un CPM de €0,45 et 514 101 personnes touchées. Toutes les autres oscillent entre €0,88 et €1,43 de CPM (médiocre). La campagne actuelle reproduit le pattern moyen sans levier différentiant.
+                </div>
+            </div>
+
+            <!-- ====== SECTION 1 — ANALYSE HISTORIQUE ====== -->
+            <h3 class="panel-h3" style="margin-top:28px">📚 1. Analyse historique — 12 campagnes Notoriété sur 24 mois</h3>
+            <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:14px">Données extraites de Meta Ads Manager · période Apr 2023 → May 2026 · classement par Reach (volume produit)</p>
+
+            <div class="card" style="padding:0;overflow-x:auto;margin-bottom:14px">
+                <table class="data-table" style="margin:0">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Campagne</th>
+                            <th>Période estimée</th>
+                            <th>Spend</th>
+                            <th>Reach</th>
+                            <th>Impressions</th>
+                            <th>Frequency</th>
+                            <th>CPM</th>
+                            <th>CTR (link)</th>
+                            <th>CPC link</th>
+                            <th>Cost/1k reach</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:rgba(63,183,108,0.08)">
+                            <td><strong>🏆 1</strong></td>
+                            <td><strong>Notoriété juin 2025</strong></td>
+                            <td>Juin 2025</td>
+                            <td>€354,59</td>
+                            <td><strong>514 101</strong></td>
+                            <td>796 290</td>
+                            <td>1,55</td>
+                            <td><strong style="color:var(--green)">€0,45</strong> ⭐</td>
+                            <td>0,02%</td>
+                            <td>€2,22</td>
+                            <td><strong style="color:var(--green)">€0,69</strong> ⭐</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>campagne Notoriété [28/03...]</td>
+                            <td>28/03/2024-25</td>
+                            <td>€631,14</td>
+                            <td>249 551</td>
+                            <td>499 663</td>
+                            <td>2,00</td>
+                            <td>€1,26</td>
+                            <td>0,05%</td>
+                            <td>€2,34</td>
+                            <td>€2,53</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Notoriété décembre 2025</td>
+                            <td>Décembre 2025</td>
+                            <td>€442,98</td>
+                            <td>184 530</td>
+                            <td>501 473</td>
+                            <td>2,72</td>
+                            <td>€0,88</td>
+                            <td>0,02%</td>
+                            <td>€3,57</td>
+                            <td>€2,40</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Notoriété Mai</td>
+                            <td>Mai 2024-25?</td>
+                            <td>€311,85</td>
+                            <td>146 511</td>
+                            <td>233 570</td>
+                            <td>1,59</td>
+                            <td>€1,34</td>
+                            <td><strong>0,05%</strong></td>
+                            <td>€2,78</td>
+                            <td>€2,13</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Notoriété juillet 2025</td>
+                            <td>Juillet 2025</td>
+                            <td>€270,11</td>
+                            <td>127 366</td>
+                            <td>250 238</td>
+                            <td>1,96</td>
+                            <td>€1,08</td>
+                            <td>0,04%</td>
+                            <td>€3,07</td>
+                            <td>€2,12</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Notoriété mars 2026</td>
+                            <td>Mars 2026</td>
+                            <td>€270,49</td>
+                            <td>120 304</td>
+                            <td>262 842</td>
+                            <td>2,18</td>
+                            <td>€1,03</td>
+                            <td>0,04%</td>
+                            <td>€2,50</td>
+                            <td>€2,25</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Notoriété août 2025</td>
+                            <td>Août 2025</td>
+                            <td>€139,70</td>
+                            <td>83 764</td>
+                            <td>131 788</td>
+                            <td>1,57</td>
+                            <td>€1,06</td>
+                            <td>0,03%</td>
+                            <td>€3,25</td>
+                            <td>€1,67</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>Notoriété octobre 2025</td>
+                            <td>Octobre 2025</td>
+                            <td>€222,87</td>
+                            <td>82 492</td>
+                            <td>164 778</td>
+                            <td>2,00</td>
+                            <td>€1,35</td>
+                            <td>0,04%</td>
+                            <td>€3,23</td>
+                            <td>€2,70</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Notoriété septembre 2025</td>
+                            <td>Septembre 2025</td>
+                            <td>€173,84</td>
+                            <td>77 022</td>
+                            <td>125 375</td>
+                            <td>1,63</td>
+                            <td>€1,39</td>
+                            <td>0,02%</td>
+                            <td><strong style="color:var(--red)">€6,44</strong> 🔴</td>
+                            <td>€2,26</td>
+                        </tr>
+                        <tr style="background:rgba(232,93,74,0.06)">
+                            <td>10</td>
+                            <td>[HH] 12/11 Notoriété</td>
+                            <td>Date inconnue</td>
+                            <td>€280,66</td>
+                            <td>75 171</td>
+                            <td>196 081</td>
+                            <td>2,61</td>
+                            <td><strong style="color:var(--red)">€1,43</strong> 🔴</td>
+                            <td><strong>0,05%</strong></td>
+                            <td>€2,86</td>
+                            <td><strong style="color:var(--red)">€3,73</strong> 🔴</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>campagne Notoriété 02 2024</td>
+                            <td>Février 2024</td>
+                            <td>€56,19</td>
+                            <td>53 621</td>
+                            <td>61 185</td>
+                            <td>1,14</td>
+                            <td>€0,92</td>
+                            <td>0,03%</td>
+                            <td>€3,51</td>
+                            <td>€1,05</td>
+                        </tr>
+                        <tr style="background:rgba(124,177,196,0.08)">
+                            <td>12</td>
+                            <td><strong>Notoriété avril 2026</strong> (active)</td>
+                            <td>27/04/2026 — 11j</td>
+                            <td>€47,83</td>
+                            <td>36 967</td>
+                            <td>46 651</td>
+                            <td>1,26</td>
+                            <td>€1,03</td>
+                            <td>0,03%</td>
+                            <td>€2,99</td>
+                            <td>€1,29</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Insight 1 — Champion juin 2025 -->
+            <div class="card" style="padding:20px 24px;margin-bottom:14px;border-left:4px solid #3FB76C">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#2A8F4D;font-weight:800;margin-bottom:12px">🏆 Insight 1 — Notoriété juin 2025 = la championne absolue</div>
+                <pre class="code-block" style="font-size:0.78rem;line-height:1.5;background:rgba(63,183,108,0.08)">CPM €0,45  → 70% sous la moyenne du compte (€1,02)
+Reach 514 101 personnes en 1 mois (~20% du marché Suisse romande)
+Cost per 1000 reach €0,69  → 2× moins cher que toutes les autres
+Budget €10/jour seulement — mais ROI maximal</pre>
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.6;margin-top:12px"><strong>Hypothèses pour expliquer cette explosion :</strong></p>
+                <ul style="margin:8px 0 0 18px;padding:0;font-size:0.76rem;color:var(--text-body);line-height:1.7">
+                    <li><strong>Saisonnalité optimale</strong> : Juin = pic des recherches PV/batterie + faible compétition BTP</li>
+                    <li><strong>Créa adaptée</strong> : probablement vidéo virale ou format hyper-engageant</li>
+                    <li><strong>Audience large mais qualifiée</strong> : Meta a eu de la place pour optimiser</li>
+                    <li><strong>CPC link €2,22</strong> = un des meilleurs ratios</li>
+                </ul>
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.6;margin-top:12px;padding-top:12px;border-top:1px dashed var(--border)"><strong style="color:#2A8F4D">→ Cette campagne mérite une autopsie complète.</strong> Voir les créas + audiences + placements pour pouvoir <strong>reproduire la formule en juin 2026</strong> (500k+ reach pour ~€350).</p>
+            </div>
+
+            <!-- Insight 2 — Anti-pattern -->
+            <div class="card" style="padding:20px 24px;margin-bottom:14px;border-left:4px solid #E85D4A">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#C44A1F;font-weight:800;margin-bottom:12px">🚨 Insight 2 — Stratégie "1 campagne par mois" = anti-pattern</div>
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.6;margin-bottom:12px">12 campagnes en 24 mois = <strong>une nouvelle campagne lancée chaque mois</strong>. C'est un anti-pattern Meta Ads majeur.</p>
+                <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px">
+                    <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">🔴 Phase d'apprentissage répétée</strong> — chaque nouvelle campagne = 7 jours de Learning Phase Meta = budget gaspillé sur l'apprentissage</div>
+                    <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">🔴 Pas de cumul d'audience</strong> — pas de Custom Audience consolidée pour retargeting Lead Gen</div>
+                    <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">🔴 Fragmentation du budget</strong> — 12 × €150-300 = €2-4k éclatés sans capitaliser</div>
+                    <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">🔴 Pas de capitalisation algo</strong> — les apprentissages sont perdus à chaque relance</div>
+                </div>
+            </div>
+
+            <!-- Insight 3 — Saisonnalité CPM -->
+            <div class="card" style="padding:20px 24px;margin-bottom:14px;border-left:4px solid #5A98AE">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:12px">📊 Insight 3 — Patterns saisonniers du CPM</div>
+                <pre class="code-block" style="font-size:0.78rem;line-height:1.5">Mois         CPM    Verdict
+─────────────────────────────────────
+Février 2024 €0,92
+Mars 2024-25 €1,26
+Mai 2024-25  €1,34  Hausse compétition pré-été
+Juin 2025    €0,45  ⭐ MIN absolu
+Juillet 2025 €1,08  Reste bon
+Août 2025    €1,06  Reste bon
+Septembre    €1,39  Hausse rentrée
+Octobre 2025 €1,35
+Nov-Déc      €1,43  🔴 MAX (Black Friday)
+Décembre     €0,88  Re-baisse fin d'année
+Mars 2026    €1,03
+Avril 2026   €1,03</pre>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px">
+                    <div style="padding:10px 14px;background:rgba(63,183,108,0.10);border-radius:8px;font-size:0.74rem;color:var(--text-body);line-height:1.5;border-left:3px solid #3FB76C"><strong style="color:#2A8F4D">🟢 Été (juin-août)</strong><br>CPM le plus bas (€0,45-1,08)<br>= meilleure période</div>
+                    <div style="padding:10px 14px;background:rgba(232,168,46,0.10);border-radius:8px;font-size:0.74rem;color:var(--text-body);line-height:1.5;border-left:3px solid #E8A82E"><strong style="color:#B8821F">🟡 Automne (sept-nov)</strong><br>CPM le plus haut (€1,35-1,43)<br>BTP/énergie en compétition</div>
+                    <div style="padding:10px 14px;background:rgba(63,183,108,0.10);border-radius:8px;font-size:0.74rem;color:var(--text-body);line-height:1.5;border-left:3px solid #3FB76C"><strong style="color:#2A8F4D">🟢 Décembre</strong><br>Creux saisonnier B2C<br>CPM redescend</div>
+                </div>
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.6;margin-top:12px;padding-top:12px;border-top:1px dashed var(--border)"><strong>→ Conclusion :</strong> Pour maximiser le reach mémoriel, <strong>doubler le budget en juin-août</strong> (CPM optimal). Pour avril/mai, le CPM est moyen mais OK.</p>
+            </div>
+
+            <!-- Insight 4 — Suspectes -->
+            <div class="card" style="padding:20px 24px;margin-bottom:14px;border-left:4px solid #E8A82E">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#B8821F;font-weight:800;margin-bottom:12px">🔍 Insight 4 — 3 campagnes "fausses ongoing" suspectes</div>
+                <div style="display:flex;flex-direction:column;gap:8px">
+                    <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.76rem;color:var(--text-body);line-height:1.6"><strong style="color:var(--text)">[HH] 12/11 Notoriété</strong> — CPM €1,43 + Cost/reach €3,73 (pires) · préfixe "[HH]" non identifié → probablement campagne ancienne mal gérée par freelance buxumlunic</div>
+                    <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.76rem;color:var(--text-body);line-height:1.6"><strong style="color:var(--text)">campagne de Notoriété [28/03...]</strong> — Spend max €631 mais CPM €1,26 médian → peut-être 28/03/2024 — campagne longue durée laissée tourner</div>
+                    <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.76rem;color:var(--text-body);line-height:1.6"><strong style="color:var(--text)">Notoriété septembre 2025</strong> — CPC link €6,44 (record) · audience trop restreinte ou créa mal calibrée</div>
+                </div>
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.6;margin-top:12px;padding-top:12px;border-top:1px dashed var(--border)"><strong>→ Action :</strong> Vérifier auprès de Charline qu'elles sont bien en pause. Si encore actives → <strong>budget gaspillé en silence</strong>.</p>
+            </div>
+
+            <!-- ====== SECTION 2 — ANALYSE ACTUELLE ====== -->
+            <h3 class="panel-h3" style="margin-top:32px">🔍 2. Analyse actuelle — Notoriété avril 2026 (campagne en cours)</h3>
+
+            <div class="card" style="padding:0;overflow-x:auto;margin-bottom:14px">
+                <table class="data-table" style="margin:0">
+                    <thead><tr><th>Métrique</th><th>Valeur actuelle</th><th>Moyenne historique</th><th>Verdict</th></tr></thead>
+                    <tbody>
+                        <tr><td>CPM</td><td>€1,03</td><td>€1,02</td><td><span style="color:#B8821F;font-weight:700">🟡 Dans la moyenne</span></td></tr>
+                        <tr><td>Reach</td><td>36 967 (11j)</td><td>147 000 (par campagne)</td><td><span style="color:var(--text-muted);font-weight:700">⏳ Encore en cours</span></td></tr>
+                        <tr><td>Frequency</td><td>1,26</td><td>1,86</td><td><span style="color:#3D7A8F;font-weight:700">🟢 Plus saine</span></td></tr>
+                        <tr><td>CTR (link)</td><td><strong>0,03%</strong></td><td>0,034%</td><td><span style="color:var(--red);font-weight:700">🔴 Médiocre comme la moyenne</span></td></tr>
+                        <tr><td>CPC link</td><td>€2,99</td><td>€3,06</td><td><span style="color:#B8821F;font-weight:700">🟡 Dans la moyenne</span></td></tr>
+                        <tr><td>Spend journalier</td><td>€4,35/j</td><td>€7-15/j</td><td><span style="color:var(--red);font-weight:700">🔴 Sub-scale</span></td></tr>
+                        <tr><td>Cost per 1k reach</td><td>€1,29</td><td>€2,21</td><td><span style="color:#3D7A8F;font-weight:700">🟢 Mieux que moyenne</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+                <div class="card" style="padding:18px 22px;margin:0;border-left:4px solid #3FB76C">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#2A8F4D;font-weight:800;margin-bottom:10px">✅ Ce qui marche</div>
+                    <ul style="margin:0 0 0 18px;padding:0;font-size:0.78rem;color:var(--text-body);line-height:1.7">
+                        <li>CPM €1,03 raisonnable (en ligne avec moyenne)</li>
+                        <li>Cost per 1k reach €1,29 (meilleur que moyenne €2,21)</li>
+                        <li>Frequency 1,26 saine (pas saturation)</li>
+                        <li>L'algorithme livre bien le reach demandé</li>
+                    </ul>
+                </div>
+                <div class="card" style="padding:18px 22px;margin:0;border-left:4px solid #E85D4A">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#C44A1F;font-weight:800;margin-bottom:10px">🔴 Ce qui ne marche pas</div>
+                    <ul style="margin:0 0 0 18px;padding:0;font-size:0.78rem;color:var(--text-body);line-height:1.7">
+                        <li><strong>CTR link 0,03%</strong> = 30× sous benchmark Lead Gen — créa non engageante</li>
+                        <li><strong>Budget €4,35/j</strong> = sub-scale (sous seuil mémoriel)</li>
+                        <li>Aucun KPI mesurable (pas de "thru-play rate" trackée)</li>
+                        <li>Aucun funnel descendant vers Lead Gen</li>
+                        <li>Reproduit le pattern moyen sans levier différentiant</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card" style="padding:20px 24px;margin-bottom:14px;border-left:4px solid #E8A82E">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#B8821F;font-weight:800;margin-bottom:12px">🔍 Pourquoi ça ne marche pas — 3 causes structurelles</div>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                    <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.76rem;color:var(--text-body);line-height:1.6"><strong style="color:var(--text)">Cause #1 — Budget sous le seuil mémoriel.</strong> Pour un effet branding sur Suisse romande (~700k propriétaires cibles), il faut 3-5 expositions par personne sur 30 jours. À €150/mois et CPM €1, on est à 0,5 expo/personne = aucun effet mnémonique.</div>
+                    <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.76rem;color:var(--text-body);line-height:1.6"><strong style="color:var(--text)">Cause #2 — Créa non-engageante (problème historique).</strong> CTR link 0,03% est <em>la norme</em> sur ce compte (moyenne 0,034% sur 12 campagnes). C'est un problème de patterns créatifs, pas un raté ponctuel.</div>
+                    <div style="padding:10px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.76rem;color:var(--text-body);line-height:1.6"><strong style="color:var(--text)">Cause #3 — Pas de funnel descendant.</strong> Aucun pipeline retargeting ne réutilise les ~37k personnes touchées. Pas de Custom Audience "video_views ≥75%" → dépense pure sans suite.</div>
+                </div>
+            </div>
+
+            <!-- ====== SECTION 3 — RECOMMANDATIONS ====== -->
+            <h3 class="panel-h3" style="margin-top:32px">🎯 3. Ce qui doit être changé — Plan d'action stratégique</h3>
+
+            <!-- Action 1 -->
+            <div class="card" style="padding:20px 24px;margin-bottom:14px;border-left:4px solid #E85D4A">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+                    <span style="background:#E85D4A;color:#fff;font-size:0.7rem;font-weight:800;padding:3px 9px;border-radius:4px;letter-spacing:1px">PRIORITÉ 1</span>
+                    <h4 style="font-size:0.95rem;font-weight:800;color:var(--text);margin:0">Audit créa "Juin 2025" et reproduction</h4>
+                </div>
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.6;margin-bottom:10px">Va dans Meta Ads Manager → ouvre la campagne <strong>"Notoriété juin 2025"</strong> → onglet <strong>Ads</strong> → screenshot de la créa + audience + placements.</p>
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.6;margin:0"><strong>→ Objectif :</strong> Comprendre pourquoi cette campagne a eu CPM €0,45 et 514k reach. Reproduire la formule en juin 2026 = potentiel <strong>500k+ reach pour ~€350</strong>.</p>
+            </div>
+
+            <!-- Action 2 -->
+            <div class="card" style="padding:20px 24px;margin-bottom:14px;border-left:4px solid #E85D4A">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+                    <span style="background:#E85D4A;color:#fff;font-size:0.7rem;font-weight:800;padding:3px 9px;border-radius:4px;letter-spacing:1px">PRIORITÉ 2</span>
+                    <h4 style="font-size:0.95rem;font-weight:800;color:var(--text);margin:0">Refonte stratégique : 1 seule campagne always-on</h4>
+                </div>
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.6;margin-bottom:12px">Au lieu de relancer mensuellement, créer <strong>une seule campagne</strong> qui tourne en continu avec refresh créatif périodique.</p>
+                <pre class="code-block" style="font-size:0.76rem;line-height:1.5">📢 "Naoenergy Awareness 2026" — campagne unique
+   ├── Adset 1 : Audience large (intérêts énergie + immobilier)
+   ├── Adset 2 : Lookalike 1-3% clients Odoo (à constituer)
+   └── Adset 3 : Retargeting site visitors 90j
+
+📋 Budget : €20-25/jour daily (vs €5/j actuel)
+📋 Refresh créatif tous les 60 jours (changer ad ≠ relancer campagne)
+
+🎯 KPI cibles :
+   • CPM &lt; €1,00
+   • Frequency 1,5-2,5 (sweet spot)
+   • Reach mensuel ≥ 100 000
+   • CTR link ≥ 0,1% (×3 actuel)</pre>
+            </div>
+
+            <!-- Action 3 -->
+            <div class="card" style="padding:20px 24px;margin-bottom:14px;border-left:4px solid #E8A82E">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+                    <span style="background:#E8A82E;color:#fff;font-size:0.7rem;font-weight:800;padding:3px 9px;border-radius:4px;letter-spacing:1px">PRIORITÉ 3</span>
+                    <h4 style="font-size:0.95rem;font-weight:800;color:var(--text);margin:0">Setup funnel descendant — la pierre angulaire manquante</h4>
+                </div>
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.6;margin-bottom:12px">Créer 3 Custom Audiences depuis la Notoriété pour alimenter les campagnes Lead Gen :</p>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px">
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:#3D7A8F">CA Video Views ≥75%</strong><br>Audience chaude pour Lead Gen direct</div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:#3D7A8F">CA Page Engagers</strong><br>Likes / Saves / Comments</div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:#3D7A8F">CA Thru-plays + Clicks</strong><br>Audience ultra-qualifiée</div>
+                </div>
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.6;margin:0"><strong>→ Effet :</strong> Ces 3 audiences servent ensuite à <strong>alimenter les Lookalikes (1-3%)</strong> en source pour les Lead Gen Batterie/PV. La Notoriété ne sera plus une dépense isolée mais le <strong>carburant du funnel Lead Gen</strong>.</p>
+            </div>
+
+            <!-- Action 4 -->
+            <div class="card" style="padding:20px 24px;margin-bottom:14px;border-left:4px solid #5A98AE">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+                    <span style="background:#5A98AE;color:#fff;font-size:0.7rem;font-weight:800;padding:3px 9px;border-radius:4px;letter-spacing:1px">PRIORITÉ 4</span>
+                    <h4 style="font-size:0.95rem;font-weight:800;color:var(--text);margin:0">Cleanup des 11 anciennes "Ongoing"</h4>
+                </div>
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.6;margin:0">Identifier les 11 anciennes campagnes Notoriété marquées "Ongoing" mais probablement inactives. Les <strong>archiver proprement</strong> (pas supprimer — pour conserver l'historique). Vérifier qu'aucune ne dépense encore en silence (anciens préfixes [HH] suspect).</p>
+            </div>
+
+            <!-- Action 5 -->
+            <div class="card" style="padding:20px 24px;margin-bottom:14px;border-left:4px solid #5A98AE">
+                <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">
+                    <span style="background:#5A98AE;color:#fff;font-size:0.7rem;font-weight:800;padding:3px 9px;border-radius:4px;letter-spacing:1px">PRIORITÉ 5</span>
+                    <h4 style="font-size:0.95rem;font-weight:800;color:var(--text);margin:0">Capitaliser sur le pattern saisonnier</h4>
+                </div>
+                <p style="font-size:0.78rem;color:var(--text-body);line-height:1.6;margin:0">Doubler le budget Notoriété en <strong>juin-août 2026</strong> (CPM minimum prouvé). Un budget €30-40/j sur juillet-août pourrait atteindre <strong>~600k reach</strong> en 2 mois (×4 du reach actuel) pour le même investissement total qu'aujourd'hui mensuellement.</p>
+            </div>
+
+            <!-- Données complémentaires Notoriété -->
+            <div class="card" style="padding:20px 24px;margin-top:22px;border-left:4px dashed var(--border-strong)">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);font-weight:800;margin-bottom:12px">📥 Données complémentaires nécessaires</div>
+                <ol style="margin:0 0 0 18px;padding:0;font-size:0.78rem;color:var(--text-body);line-height:1.7">
+                    <li>🎬 Créa de "Notoriété juin 2025" (la championne) — pour reverse-engineer la formule</li>
+                    <li>🎯 Adset breakdown (audiences) de juin 2025 vs avril 2026</li>
+                    <li>📍 Placements utilisés sur juin 2025 (FB Feed vs Reels vs Stories vs Audience Network)</li>
+                    <li>📊 Status réel des 11 "Ongoing" : combien dépensent encore ?</li>
+                    <li>🗓️ Date exacte de "[HH] 12/11" et "campagne [28/03...]" — historique</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- ============ PANEL : META ADS — LEAD GENERATION ============ -->
+        <div class="panel" id="panel-meta_leadgen">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">🎯 Meta Ads — Lead Generation</h1>
+                        <span class="badge new">7 mai 2026</span>
+                    </div>
+                    <p class="page-subtitle">Campagnes batterie (active 65j) et PV (learning phase 11j) · time-normalized par durée · diagnostic + plan d'optimisation.</p>
+                </div>
+            </div>
+
+            <!-- ===== Synthèse Lead Gen ===== -->
             <div class="card" style="padding:20px 24px;margin-bottom:16px;border-left:4px solid #5A98AE">
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;flex-wrap:wrap;gap:8px">
-                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800">📊 Synthèse exécutive — données lifetime</div>
-                    <span style="font-size:0.6rem;color:var(--text-muted);background:var(--surface-soft);padding:3px 9px;border-radius:100px;font-weight:700">Cumul depuis lancement</span>
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800">📊 Synthèse Lead Generation — données lifetime</div>
+                    <span style="font-size:0.6rem;color:var(--text-muted);background:var(--surface-soft);padding:3px 9px;border-radius:100px;font-weight:700">Cumul Mars → Mai 7 2026</span>
                 </div>
                 <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px">
                     <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;text-align:center">
-                        <div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:6px">Spend total compte</div>
-                        <div style="font-size:1.3rem;font-weight:800;color:#3D7A8F">€3 209</div>
-                        <div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Lifetime (Mars→Mai 7)</div>
+                        <div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:6px">Spend Lead Gen</div>
+                        <div style="font-size:1.3rem;font-weight:800;color:#3D7A8F">€3 161</div>
+                        <div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Batterie €2 710 · PV €451</div>
                     </div>
                     <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;text-align:center">
                         <div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:6px">Leads générés</div>
@@ -5489,23 +5913,89 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                     </div>
                     <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;text-align:center">
                         <div style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:6px">CPL moyen lifetime</div>
-                        <div style="font-size:1.3rem;font-weight:800;color:#3D7A8F">€29,17</div>
+                        <div style="font-size:1.3rem;font-weight:800;color:#3D7A8F">€28,74</div>
                         <div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Cible secteur ≤ 50 CHF</div>
                     </div>
                     <div style="padding:12px 14px;background:rgba(232,168,46,0.10);border-radius:8px;text-align:center;border-left:3px solid #E8A82E">
                         <div style="font-size:0.6rem;color:#B8821F;text-transform:uppercase;letter-spacing:0.8px;font-weight:800;margin-bottom:6px">⚠️ Freq Batterie lifetime</div>
                         <div style="font-size:1.3rem;font-weight:800;color:#C44A1F">4,45</div>
-                        <div style="font-size:0.65rem;color:#B8821F;margin-top:2px">Saturation audience confirmée</div>
+                        <div style="font-size:0.65rem;color:#B8821F;margin-top:2px">Saturation audience</div>
                     </div>
                 </div>
                 <div style="font-size:0.78rem;color:var(--text-body);line-height:1.6;padding-top:12px;border-top:1px dashed var(--border)">
-                    <strong style="color:var(--text)">Verdict :</strong> Le compte est <strong style="color:#C44A1F">en sous-régime opérationnel depuis avril</strong>. La machine batterie qui produisait 2,3 leads/jour à €21,89 CPL en mars a été démantelée par une coupure budget de -86%. <strong style="color:var(--text)">La frequency lifetime 4,45 confirme la saturation audience</strong> — chaque utilisateur unique a vu la pub batterie ~4-5× sur les 65 jours de campagne. <strong>Le diagnostic est double</strong> : budget cassé ET fatigue créative cumulative. Les nouvelles campagnes PV + Notoriété (lancées le 27/04) sont encore en learning phase.
+                    <strong style="color:var(--text)">Verdict :</strong> Le Lead Gen Meta est <strong style="color:#C44A1F">en sous-régime opérationnel depuis avril</strong>. La machine batterie qui produisait 2,3 leads/jour à €21,89 CPL en mars a été démantelée par une coupure budget de -86%. <strong style="color:var(--text)">Frequency lifetime 4,45 confirme la saturation audience cumulative</strong>. <strong>Le diagnostic est double</strong> : budget cassé ET fatigue créative. La campagne PV (lancée le 27/04) est encore en learning phase avec indicateurs préliminaires défavorables.
                 </div>
             </div>
 
-            <!-- ===== Tableau récapitulatif ===== -->
-            <h3 class="panel-h3" style="margin-top:24px">📋 Tableau récapitulatif — 3 campagnes actives (données lifetime)</h3>
-            <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:14px">État au 7 mai 2026 · cumul depuis lancement de chaque campagne · source : Meta Ads Manager (data Maximum Apr 7, 2023 → May 7, 2026)</p>
+            <!-- ===== Tableau récapitulatif Lead Gen ===== -->
+            <h3 class="panel-h3" style="margin-top:24px">📋 Tableau récapitulatif — campagnes Lead Gen actives</h3>
+            <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:14px">Données lifetime cumulées · source : Meta Ads Manager</p>
+
+            <div class="card" style="padding:0;overflow-x:auto;margin-bottom:14px">
+                <table class="data-table" style="margin:0">
+                    <thead>
+                        <tr>
+                            <th>Campagne</th>
+                            <th>Lancement</th>
+                            <th>Jours</th>
+                            <th>Spend</th>
+                            <th>€/jour</th>
+                            <th>Reach</th>
+                            <th>Impressions</th>
+                            <th>Frequency</th>
+                            <th>CPM</th>
+                            <th>Link clicks</th>
+                            <th>CTR (link)</th>
+                            <th>CPC link</th>
+                            <th>Leads</th>
+                            <th>CPL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Campagne PV avril 2026</strong></td>
+                            <td>27/04/2026</td>
+                            <td>11</td>
+                            <td>€450,76</td>
+                            <td>€40,98</td>
+                            <td>11 527</td>
+                            <td>22 241</td>
+                            <td>1,93</td>
+                            <td>€20,27</td>
+                            <td>122</td>
+                            <td>0,55%</td>
+                            <td>€3,70</td>
+                            <td>4</td>
+                            <td><strong style="color:var(--red)">€112,69</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Campagne batterie mars 2026</strong></td>
+                            <td>04/03/2026</td>
+                            <td>65</td>
+                            <td>€2 709,97</td>
+                            <td>€41,69</td>
+                            <td>38 700</td>
+                            <td>172 213</td>
+                            <td><strong style="color:var(--red)">4,45 ⚠️</strong></td>
+                            <td>€15,74</td>
+                            <td>1 424</td>
+                            <td><strong style="color:var(--green)">0,83%</strong></td>
+                            <td>€1,90</td>
+                            <td><strong style="color:var(--green)">106</strong></td>
+                            <td><strong style="color:var(--green)">€25,57</strong> ⭐</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="padding:12px 14px;background:rgba(232,168,46,0.10);border-radius:8px;border-left:3px solid #E8A82E;margin-bottom:14px;font-size:0.78rem;color:var(--text-body);line-height:1.6">
+                <strong style="color:#B8821F">📌 Note frequency :</strong> La frequency lifetime 4,45 sur Batterie correspond à la mention "fréquence 4.4" de Charline. Elle confirme une <strong>saturation cumulative réelle</strong> sur 65 jours — chaque utilisateur unique (38 700) a vu la pub ~4-5 fois. <strong>Le refresh créatif est urgent</strong> : peu importe le budget, on ne peut plus toucher la même audience efficacement avec les mêmes visuels.
+            </div>
+
+            <!-- ===== LEGACY HIDDEN BLOCK (déprécié, voir panel-meta_notoriete pour Notoriété) ===== -->
+            <div style="display:none" aria-hidden="true">
+            <h3 class="panel-h3" style="margin-top:24px">📋 Tableau récapitulatif — legacy</h3>
+            <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:14px">État au 7 mai 2026</p>
 
             <div class="card" style="padding:0;overflow-x:auto">
                 <table class="data-table" style="margin:0">
@@ -5641,8 +6131,11 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                 </table>
             </div>
 
-            <!-- ===== Analyse #2 — Batterie ===== -->
-            <h3 class="panel-h3" style="margin-top:32px">🔋 Analyse #2 — Lead Generation Batterie (la machine cassée)</h3>
+            </div>
+            <!-- ===== /LEGACY HIDDEN BLOCK ===== -->
+
+            <!-- ===== Analyse — Batterie ===== -->
+            <h3 class="panel-h3" style="margin-top:32px">🔋 Analyse — Campagne Batterie (la machine cassée)</h3>
             <p style="color:var(--text-muted);font-size:0.85rem;margin-bottom:14px">Évolution time-normalized par jour · Mars / Avril / Mai 1-7</p>
 
             <div class="card" style="padding:0;overflow-x:auto;margin-bottom:14px">
@@ -5742,8 +6235,8 @@ Mai   : Freq 1,27 ×  2 275 reach =  2 889 imp →  1 lead  = 0,035% conv/imp</p
                 </table>
             </div>
 
-            <!-- ===== Analyse #3 — PV ===== -->
-            <h3 class="panel-h3" style="margin-top:32px">☀️ Analyse #3 — Lead Generation PV (en learning phase)</h3>
+            <!-- ===== Analyse — PV ===== -->
+            <h3 class="panel-h3" style="margin-top:32px">☀️ Analyse — Campagne PV (en learning phase)</h3>
 
             <div class="info-banner" style="background:rgba(232,168,46,0.10);border-left:4px solid #E8A82E;padding:14px 18px;margin-bottom:14px">
                 <strong style="color:#B8821F">⚠️ Attention learning phase :</strong> Meta requiert 50 conversions en 7 jours pour qu'un adset sorte du Learning. Avec 4 conversions en 11 jours, on est à 8% de l'objectif. La performance est <strong>non-représentative</strong> — elle peut osciller fortement.
@@ -5791,30 +6284,24 @@ Mai   : Freq 1,27 ×  2 275 reach =  2 889 imp →  1 lead  = 0,035% conv/imp</p
                 </div>
             </div>
 
-            <!-- ===== Synthèse comparative ===== -->
-            <h3 class="panel-h3" style="margin-top:32px">📋 Synthèse comparative — par campagne</h3>
+            <!-- ===== Synthèse comparative Lead Gen ===== -->
+            <h3 class="panel-h3" style="margin-top:32px">📋 Synthèse comparative — campagnes Lead Gen</h3>
 
             <div class="card" style="padding:0;overflow-x:auto">
                 <table class="data-table" style="margin:0">
                     <thead><tr><th>Campagne</th><th>Statut</th><th>Diagnostic</th><th>Action recommandée</th></tr></thead>
                     <tbody>
                         <tr>
-                            <td>📢 <strong>Notoriété</strong></td>
-                            <td><span style="background:rgba(232,168,46,0.14);color:#B8821F;padding:3px 9px;border-radius:100px;font-size:0.7rem;font-weight:700">Sub-scale</span></td>
-                            <td>Pas de KPI · aucun funnel · budget sous seuil mémoriel</td>
-                            <td>Boost €15-20/j ou pause · définir métrique cible · créer audience retargeting</td>
-                        </tr>
-                        <tr>
                             <td>🔋 <strong>Batterie</strong></td>
                             <td><span style="background:rgba(232,93,74,0.14);color:#C44A1F;padding:3px 9px;border-radius:100px;font-size:0.7rem;font-weight:700">Cassée</span></td>
-                            <td>Sweet spot mars · effet seuil franchi · audience fatigue</td>
+                            <td>Sweet spot mars · effet seuil franchi · audience fatigue (freq lifetime 4,45)</td>
                             <td>Restaurer €40-50/j · refresh 4-6 visuels · tester nouveau lookalike</td>
                         </tr>
                         <tr>
                             <td>☀️ <strong>PV</strong></td>
                             <td><span style="background:rgba(124,177,196,0.14);color:#3D7A8F;padding:3px 9px;border-radius:100px;font-size:0.7rem;font-weight:700">Learning</span></td>
-                            <td>CPL critique · marché obsolète · funnel cassé</td>
-                            <td>+14j patience puis pivot "PV + Battery hybride"</td>
+                            <td>CPL critique €112 · marché obsolète (PV pur) · funnel cassé (Smoking Gun GA4)</td>
+                            <td>+14j patience puis pivot "PV + Batterie hybride autoconsommation"</td>
                         </tr>
                     </tbody>
                 </table>
