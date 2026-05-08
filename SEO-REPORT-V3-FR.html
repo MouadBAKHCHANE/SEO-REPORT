@@ -3125,63 +3125,46 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     </div>
                 </div>
 
-                <!-- ═══════════ KPI SECTION 1 — PERFORMANCE ACQUISITION ═══════════ -->
+                <!-- ═══════════ MAIN KPIs — 4 SECTIONS REDIRECT ═══════════ -->
                 <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px;flex-wrap:wrap">
-                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#5A98AE;font-weight:800">🎯 Performance Acquisition</div>
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#5A98AE;font-weight:800">📊 Sections principales</div>
                     <div style="flex:1;height:1px;background:var(--border)"></div>
-                    <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Funnel + leads</span>
+                    <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Cliquer pour accéder</span>
                 </div>
-                <div class="kpi-row" style="grid-template-columns:repeat(4,1fr);margin-bottom:18px">
-                    <div class="kpi-card kpi-info k1" onclick="openDrawer('leads-mois')"><div class="kpi-label">📥 Leads ce mois</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k2" onclick="openDrawer('cpl-moyen')"><div class="kpi-label">💸 CPL moyen</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k4" onclick="openDrawer('lead-client')"><div class="kpi-label">🔄 Lead → Client</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k2" onclick="openDrawer('conv-trackees')"><div class="kpi-label">🎯 Conv. Ads trackées</div><div class="kpi-info-cta">⚠️ Smoking gun</div></div>
+                <div class="raccourcis-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px">
+                    <button onclick="showPanel('google_ads')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-top:4px solid #4285F4;border-radius:12px;padding:18px 20px;cursor:pointer;transition:all 0.15s;display:flex;flex-direction:column;gap:10px">
+                        <div style="display:flex;align-items:center;gap:10px">
+                            <span style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#4285F4;color:#fff;font-weight:800;font-size:1rem">G</span>
+                            <div style="font-size:0.95rem;font-weight:800;color:var(--text)">Google Ads</div>
+                        </div>
+                        <div style="font-size:0.7rem;color:var(--text-muted);line-height:1.5">2 campagnes saisonnières · 80 CHF/jour · GE + VD</div>
+                        <div style="font-size:0.7rem;font-weight:700;color:#4285F4;margin-top:auto">→ Voir le détail</div>
+                    </button>
+                    <button onclick="showPanel('meta_ads')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-top:4px solid #1877F2;border-radius:12px;padding:18px 20px;cursor:pointer;transition:all 0.15s;display:flex;flex-direction:column;gap:10px">
+                        <div style="display:flex;align-items:center;gap:10px">
+                            <span style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#1877F2;color:#fff;font-weight:800;font-size:1rem">M</span>
+                            <div style="font-size:0.95rem;font-weight:800;color:var(--text)">Meta Ads</div>
+                        </div>
+                        <div style="font-size:0.7rem;color:var(--text-muted);line-height:1.5">Lead Gen + Notoriété · 2 000 CHF/mois · 65 CHF/jour</div>
+                        <div style="font-size:0.7rem;font-weight:700;color:#1877F2;margin-top:auto">→ Voir le détail</div>
+                    </button>
+                    <button onclick="showPanel('onpage')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-top:4px solid #3FB76C;border-radius:12px;padding:18px 20px;cursor:pointer;transition:all 0.15s;display:flex;flex-direction:column;gap:10px">
+                        <div style="display:flex;align-items:center;gap:10px">
+                            <span style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#3FB76C;color:#fff;font-weight:800;font-size:1rem">S</span>
+                            <div style="font-size:0.95rem;font-weight:800;color:var(--text)">SEO</div>
+                        </div>
+                        <div style="font-size:0.7rem;color:var(--text-muted);line-height:1.5">122 publications scorées · audit on-page · technique · Yoast</div>
+                        <div style="font-size:0.7rem;font-weight:700;color:#2A8F4D;margin-top:auto">→ Voir le détail</div>
+                    </button>
+                    <button onclick="showPanel('wp_admin')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-top:4px solid #21759B;border-radius:12px;padding:18px 20px;cursor:pointer;transition:all 0.15s;display:flex;flex-direction:column;gap:10px">
+                        <div style="display:flex;align-items:center;gap:10px">
+                            <span style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#21759B;color:#fff;font-weight:800;font-size:1rem">W</span>
+                            <div style="font-size:0.95rem;font-weight:800;color:var(--text)">WordPress</div>
+                        </div>
+                        <div style="font-size:0.7rem;color:var(--text-muted);line-height:1.5">Audit santé site · 29 plugins · backups · sécurité</div>
+                        <div style="font-size:0.7rem;font-weight:700;color:#21759B;margin-top:auto">→ Voir le détail</div>
+                    </button>
                 </div>
-
-                <!-- ═══════════ KPI SECTION 2 — ADS PERFORMANCE ═══════════ -->
-                <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px;flex-wrap:wrap">
-                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#5A98AE;font-weight:800">📡 Acquisition / Ads</div>
-                    <div style="flex:1;height:1px;background:var(--border)"></div>
-                    <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Google + Meta</span>
-                </div>
-                <div class="kpi-row" style="grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px">
-                    <div class="kpi-card kpi-info k3" onclick="openDrawer('roas-google')"><div class="kpi-label">🎯 ROAS Google Ads</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k1" onclick="openDrawer('ctr-meta')"><div class="kpi-label">📱 CTR Meta Ads</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k4" onclick="openDrawer('util-budget')"><div class="kpi-label">💰 Taux util. budget</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k2" onclick="openDrawer('leads-zone')"><div class="kpi-label">🌍 Leads zone cible</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k5" onclick="openDrawer('saison-active')"><div class="kpi-label">📅 Saison active</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                </div>
-
-                <!-- ═══════════ KPI SECTION 3 — VISIBILITÉ SEO ═══════════ -->
-                <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px;flex-wrap:wrap">
-                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#5A98AE;font-weight:800">🔍 Visibilité SEO</div>
-                    <div style="flex:1;height:1px;background:var(--border)"></div>
-                    <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Trafic + position + index</span>
-                </div>
-                <div class="kpi-row" style="grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:10px">
-                    <div class="kpi-card kpi-info k4" onclick="openDrawer('trafic-org')"><div class="kpi-label">📈 Trafic organique</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k4" onclick="openDrawer('position-moy')"><div class="kpi-label">🔍 Position moyenne</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k1" onclick="openDrawer('pages-indexed')"><div class="kpi-label">🌐 Pages indexées</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                </div>
-                <div class="kpi-row" style="grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px">
-                    <div class="kpi-card kpi-info k1" onclick="openDrawer('impressions-gsc')"><div class="kpi-label">🎯 Impressions GSC</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k4" onclick="openDrawer('cwv')"><div class="kpi-label">⚡ Core Web Vitals</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k3" onclick="openDrawer('avis-google-mois')"><div class="kpi-label">⭐ Avis Google ce mois</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                </div>
-
-                <!-- ═══════════ KPI SECTION 4 — SITE / CRO ═══════════ -->
-                <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px;flex-wrap:wrap">
-                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#5A98AE;font-weight:800">🟣 Site / CRO</div>
-                    <div style="flex:1;height:1px;background:var(--border)"></div>
-                    <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Conversion + UX</span>
-                </div>
-                <div class="kpi-row" style="grid-template-columns:repeat(4,1fr);margin-bottom:18px">
-                    <div class="kpi-card kpi-info k3" onclick="openDrawer('conv-landing')"><div class="kpi-label">🔄 Conv. landing</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k1" onclick="openDrawer('page-speed')"><div class="kpi-label">⚡ Page Speed</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k1" onclick="openDrawer('mobile-desktop')"><div class="kpi-label">📱 Mobile / Desktop</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                    <div class="kpi-card kpi-info k3" onclick="openDrawer('typeform')"><div class="kpi-label">💬 Typeform</div><div class="kpi-info-cta">→ Voir explication</div></div>
-                </div>
-
 
             </div>
         </div>
