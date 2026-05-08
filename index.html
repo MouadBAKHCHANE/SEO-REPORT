@@ -4021,13 +4021,13 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 </div>
                 <div class="evidence-card ev-warning">
                     <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
-                    <div class="ev-title">32 extensions installées (29 actives)</div>
+                    <div class="ev-title">32 extensions installées (29 actives) · WP 6.9.4</div>
                     <div class="ev-detail">
                         <strong>3 désactivées mais non supprimées :</strong> MonsterInsights, WP Headers And Footers, WPCode Lite<br>
-                        <strong>Extensions SEO clés :</strong> Yoast SEO (gratuit), WP Rocket, Imagify, Redirection, Polylang Pro, Site Kit, PixelYourSite<br>
-                        <strong>Polylang Pro</strong> a une mise à jour en attente (3.6.6 → 3.8.1)
+                        <strong>Extensions SEO/perf clés actives :</strong> Yoast SEO 27.5, WP Rocket 3.21.3, Imagify 2.2.7, Redirection 5.7.5, Polylang Pro 3.6.6, Site Kit 1.178.0, PixelYourSite 11.2.0.4, Complianz 7.4.6, WP Consent API 2.0.1, Safe SVG 2.4.0<br>
+                        <strong class="text-red">2 mises à jour en attente :</strong> Polylang Pro (3.6.6 → 3.8.3, MAJ auto indisponible — licence à vérifier), Duplicate Page (4.5.8 → 4.5.9)
                     </div>
-                    <div class="ev-source">Source : WP Admin → Extensions</div>
+                    <div class="ev-source">Source : WP Admin → Extensions (relevé 8 mai 2026)</div>
                 </div>
                 <div class="evidence-card ev-pass">
                     <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></div>
@@ -5495,25 +5495,50 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                     </div>
                 </div>
 
-                <!-- Allocation par enveloppe -->
-                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px;padding-top:8px;border-top:1px dashed var(--border)">Allocation proposée (validation Charline)</div>
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #5A98AE">
-                        <div style="font-size:0.7rem;font-weight:800;color:var(--text);margin-bottom:8px">🏔️ Vaud — 1 000 CHF</div>
-                        <div style="font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                            <div>☀️ PV Lead Gen · <strong>~23 CHF/j</strong> · 690 CHF</div>
-                            <div>🔋 Battery Lead Gen · <strong>~7 CHF/j</strong> · 210 CHF</div>
-                            <div>📢 Notoriété · <strong>~3 CHF/j</strong> · 100 CHF</div>
-                        </div>
-                    </div>
-                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #E8A82E">
-                        <div style="font-size:0.7rem;font-weight:800;color:var(--text);margin-bottom:8px">🌆 Genève — 1 000 CHF</div>
-                        <div style="font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                            <div>🔋 Battery Lead Gen · <strong>~20 CHF/j</strong> · 600 CHF</div>
-                            <div>📢 Notoriété · <strong>~13 CHF/j</strong> · 400 CHF</div>
-                            <div style="color:var(--text-muted);font-style:italic">PV en pause · PAC reporté septembre</div>
-                        </div>
-                    </div>
+                <!-- Allocation Lead Generation -->
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px;padding-top:8px;border-top:1px dashed var(--border)">Allocation Lead Generation (validation Charline)</div>
+                <table style="width:100%;border-collapse:collapse;font-size:0.78rem;margin-bottom:14px">
+                    <thead>
+                        <tr style="background:var(--surface-soft)">
+                            <th style="text-align:left;padding:10px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">Produit</th>
+                            <th style="text-align:right;padding:10px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">🏔️ Vaud</th>
+                            <th style="text-align:right;padding:10px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">🌆 Genève</th>
+                            <th style="text-align:right;padding:10px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid var(--border)">
+                            <td style="padding:10px 12px;font-weight:600">🔥 PAC Lead Gen</td>
+                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">calcul</td>
+                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">calcul</td>
+                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">—</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border)">
+                            <td style="padding:10px 12px;font-weight:600">🔋 Battery Lead Gen</td>
+                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">calcul</td>
+                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">calcul</td>
+                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">—</td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border)">
+                            <td style="padding:10px 12px;font-weight:600">☀️ PV Lead Gen <span style="color:var(--text-muted);font-weight:400;font-size:0.68rem">(à tester nouvelle stratégie)</span></td>
+                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">calcul</td>
+                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">calcul</td>
+                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">—</td>
+                        </tr>
+                        <tr style="background:rgba(90,152,174,0.08);font-weight:800">
+                            <td style="padding:10px 12px;color:var(--text)">Total enveloppe</td>
+                            <td style="padding:10px 12px;text-align:right;color:#3D7A8F">1 000 CHF</td>
+                            <td style="padding:10px 12px;text-align:right;color:#3D7A8F">1 000 CHF</td>
+                            <td style="padding:10px 12px;text-align:right;color:#3D7A8F">2 000 CHF</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Notoriété : 1 campagne globale -->
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px;padding-top:8px;border-top:1px dashed var(--border)">Notoriété</div>
+                <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+                    <div style="font-size:0.78rem;color:var(--text-body)"><strong style="color:var(--text)">📢 1 campagne globale</strong> — Vaud + Genève (toutes audiences confondues)</div>
+                    <div style="font-size:0.78rem;font-weight:800;color:#3D7A8F">5 CHF/jour</div>
                 </div>
             </div>
 
@@ -5535,35 +5560,21 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                     <thead>
                         <tr style="background:var(--surface-soft)">
                             <th style="text-align:left;padding:10px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">Produit</th>
-                            <th style="text-align:left;padding:10px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">CPL cible</th>
-                            <th style="text-align:left;padding:10px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">État actuel</th>
-                            <th style="text-align:left;padding:10px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">Statut</th>
+                            <th style="text-align:left;padding:10px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">Coût par lead</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr style="border-bottom:1px solid var(--border)">
                             <td style="padding:10px 12px;font-weight:600">🔋 Batterie</td>
                             <td style="padding:10px 12px"><strong style="color:var(--text)">25 — 35 CHF</strong></td>
-                            <td style="padding:10px 12px;color:var(--text-muted)">Sous-investi (7 CHF/j)</td>
-                            <td style="padding:10px 12px"><span style="background:rgba(232,168,46,0.14);color:#B8821F;padding:3px 8px;border-radius:100px;font-size:0.65rem;font-weight:700">🟠 À relancer</span></td>
                         </tr>
                         <tr style="border-bottom:1px solid var(--border)">
                             <td style="padding:10px 12px;font-weight:600">🔥 PAC</td>
                             <td style="padding:10px 12px"><strong style="color:var(--text)">35 — 45 CHF</strong></td>
-                            <td style="padding:10px 12px;color:var(--text-muted)">Off-season (mai)</td>
-                            <td style="padding:10px 12px"><span style="background:rgba(120,120,120,0.12);color:var(--text-muted);padding:3px 8px;border-radius:100px;font-size:0.65rem;font-weight:700">⚫ Reporté sept.</span></td>
-                        </tr>
-                        <tr style="border-bottom:1px solid var(--border)">
-                            <td style="padding:10px 12px;font-weight:600">☀️ PV Vaud</td>
-                            <td style="padding:10px 12px"><strong style="color:var(--text)">à calibrer</strong></td>
-                            <td style="padding:10px 12px;color:var(--text-muted)">€41 CPL · 3 leads</td>
-                            <td style="padding:10px 12px"><span style="background:rgba(63,183,108,0.14);color:#2A8F4D;padding:3px 8px;border-radius:100px;font-size:0.65rem;font-weight:700">🟢 Fonctionne</span></td>
                         </tr>
                         <tr>
-                            <td style="padding:10px 12px;font-weight:600">☀️ PV Genève</td>
-                            <td style="padding:10px 12px;color:var(--text-muted)">—</td>
-                            <td style="padding:10px 12px;color:var(--text-muted)">€191 dépensés · 0 lead</td>
-                            <td style="padding:10px 12px"><span style="background:rgba(238,77,77,0.12);color:#C44;padding:3px 8px;border-radius:100px;font-size:0.65rem;font-weight:700">🔴 Pause</span></td>
+                            <td style="padding:10px 12px;font-weight:600">☀️ PV</td>
+                            <td style="padding:10px 12px"><strong style="color:var(--text)">à calibrer</strong></td>
                         </tr>
                     </tbody>
                 </table>
@@ -5580,16 +5591,6 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                         <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Panier moyen</div>
                         <div style="font-size:1.3rem;font-weight:800;color:var(--text)">35 000 <span style="font-size:0.7rem;color:var(--text-muted);font-weight:600">CHF</span></div>
                     </div>
-                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px">
-                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Leads cible mois</div>
-                        <div style="font-size:1.3rem;font-weight:800;color:var(--text)">45 — 67</div>
-                        <div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">Sur 24 jours restants</div>
-                    </div>
-                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px">
-                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">CA potentiel</div>
-                        <div style="font-size:1.3rem;font-weight:800;color:var(--text)">105 — 175 <span style="font-size:0.7rem;color:var(--text-muted);font-weight:600">k CHF</span></div>
-                        <div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">3-5 installations</div>
-                    </div>
                 </div>
             </div>
 
@@ -5604,18 +5605,8 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                     </div>
                 </div>
 
-                <!-- Principes -->
-                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#B8821F;font-weight:800;margin-bottom:8px">Principes directeurs</div>
-                <ul style="margin:0 0 14px 18px;padding:0;font-size:0.78rem;color:var(--text-body);line-height:1.7">
-                    <li><strong style="color:var(--text)">Concentrer sur ce qui marche</strong> — ne pas diluer le budget</li>
-                    <li><strong style="color:var(--text)">Fix avant d'amplifier</strong> — geo-targeting "Reach more people" décoché en priorité</li>
-                    <li><strong style="color:var(--text)">Saisonnalité respectée</strong> — Mai = PV + Battery · PAC en septembre</li>
-                    <li><strong style="color:var(--text)">Ciblage broad</strong> — pas d'intérêts détaillés (Advantage+ s'optimise sur Pixel)</li>
-                    <li><strong style="color:var(--text)">2 secteurs équilibrés</strong> — 1 000 CHF Vaud + 1 000 CHF Genève (cohérence sales)</li>
-                </ul>
-
-                <!-- Vision globale -->
-                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#B8821F;font-weight:800;margin-bottom:8px;padding-top:8px;border-top:1px dashed var(--border)">Plan saisonnier 2026</div>
+                <!-- Plan saisonnier -->
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#B8821F;font-weight:800;margin-bottom:8px">Plan saisonnier 2026</div>
                 <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;font-size:0.74rem;font-family:'Courier New',monospace;line-height:1.8;overflow-x:auto">
                     <div>          <strong style="color:var(--text)">J  F  M  A  M  J  J  A  S  O  N  D</strong></div>
                     <div>☀️ PV       🟢 🟢 🟢 🟢 <span style="background:rgba(232,168,46,0.2);padding:0 4px">🟢</span> 🟢 🟢 🟢 🟡 🟡 ⚫ ⚫</div>
@@ -5624,26 +5615,6 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                     <div>📢 Notoriété 🟢 🟢 🟢 🟢 <span style="background:rgba(232,168,46,0.2);padding:0 4px">🟢</span> 🟢 🟢 🟢 🟢 🟢 🟢 🟢</div>
                 </div>
                 <div style="font-size:0.66rem;color:var(--text-muted);margin-top:8px;font-style:italic">🟢 Pic de saison · 🟡 Transition · ⚫ Off-season · case grise = mois courant</div>
-
-                <!-- Actions stratégiques en cours -->
-                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#B8821F;font-weight:800;margin-bottom:8px;margin-top:14px;padding-top:8px;border-top:1px dashed var(--border)">3 leviers d'optimisation prioritaires</div>
-                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:12px">
-                    <div style="padding:14px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #EE4D4D">
-                        <div style="font-size:0.7rem;font-weight:800;color:var(--text);margin-bottom:6px">🎯 Levier #1</div>
-                        <div style="font-size:0.74rem;font-weight:700;color:var(--text);margin-bottom:6px">Fix géo-targeting</div>
-                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Décocher "Reach more people likely to respond" + supprimer intérêts détaillés sur tous les adsets actifs.</div>
-                    </div>
-                    <div style="padding:14px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #E8A82E">
-                        <div style="font-size:0.7rem;font-weight:800;color:var(--text);margin-bottom:6px">🎯 Levier #2</div>
-                        <div style="font-size:0.74rem;font-weight:700;color:var(--text);margin-bottom:6px">Refresh créas Battery</div>
-                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Visuels avril 2026 de Charline · audience pas encore brûlée · A/B vs anciens.</div>
-                    </div>
-                    <div style="padding:14px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #3FB76C">
-                        <div style="font-size:0.7rem;font-weight:800;color:var(--text);margin-bottom:6px">🎯 Levier #3</div>
-                        <div style="font-size:0.74rem;font-weight:700;color:var(--text);margin-bottom:6px">Consolider ads Vaud PV</div>
-                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">7 ads → 2-3 max · Pub 3 winner + 1 challenger · sortir du sub-scale.</div>
-                    </div>
-                </div>
             </div>
 
             <!-- ============================================== -->
@@ -5677,7 +5648,6 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                         <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
                             <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
                                 <li><strong>Audit complet WordPress</strong> · 4 alertes critiques identifiées (backups, Pixel consent, PHP EOL, Polylang auto-MAJ)</li>
-                                <li><strong>Email Charline envoyé</strong> · validation des 4 actions urgentes en attente</li>
                                 <li><strong>Découverte critique</strong> · "Reach more people likely to respond" = source des leads hors zone</li>
                                 <li><strong>Reco budget mai</strong> · split 1 000 / 1 000 Vaud + Genève, validé par Charline</li>
                             </ul>
@@ -5708,7 +5678,6 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                         <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
                             <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
                                 <li><strong>Reçu doc business Charline</strong> · profil entreprise, cibles, budget Ads, concurrence (16 acteurs)</li>
-                                <li><strong>Mapping funnel</strong> · RDV1 → Sig1 → Visite tech → RBE → Sig2 → Acompte → Subventions → Install</li>
                             </ul>
                         </div>
                     </div>
