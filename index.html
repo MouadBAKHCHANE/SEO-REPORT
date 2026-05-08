@@ -3992,9 +3992,52 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             <div class="page-header">
                 <div>
                     <h1 class="page-title">Preuves WordPress Admin</h1>
-                    <p class="page-subtitle">16 observations vérifiées directement depuis le dashboard wp-admin de naoenergy.ch (audit du 3 avril 2026).</p>
+                    <p class="page-subtitle">16 observations vérifiées depuis le dashboard wp-admin de naoenergy.ch — audit initial 3 avril 2026, mis à jour 8 mai 2026 (voir Journal quotidien ci-dessous).</p>
                 </div>
             </div>
+
+            <!-- Sub-section 0 : Journal quotidien (Actions par date) -->
+            <div class="subsection-header">
+                <div class="subsection-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                <div>
+                    <div class="subsection-title">Actions par date · Journal quotidien</div>
+                    <div class="subsection-meta">Suivi chronologique des actions correctrices — chaque modification documentée et datée</div>
+                </div>
+            </div>
+            <div style="background:var(--surface-soft); border-radius:8px; padding:16px; border-left:3px solid #5A98AE; margin-bottom:20px;">
+                <p style="font-size:0.85rem; color:var(--text-body); margin:0 0 8px 0;">
+                    <strong>Politique d'intervention :</strong> Aucune modification du site naoenergy.ch sans validation préalable de Charline. Chaque action exécutée est consignée ici avec sa date, sa nature, son statut, et son validateur.
+                </p>
+                <p style="font-size:0.78rem; color:var(--text-muted); margin:0;">
+                    Site en production · Budget Ads 3 300 CHF/mois · Audit lecture seule par défaut · Toute action corrective passe par ce journal.
+                </p>
+            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width:100px">Date</th>
+                        <th>Action</th>
+                        <th style="width:140px">Catégorie</th>
+                        <th style="width:110px">Statut</th>
+                        <th style="width:100px">Validé par</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>8 mai 2026</strong></td>
+                        <td>Inventaire complet des extensions WP (32 plugins relevés via wp-admin/plugins.php) + tri essentiels (15) / à investiguer (17). Identification de 2 mises à jour en attente : Polylang Pro (3.6.6 → 3.8.3, MAJ auto indisponible) et Duplicate Page (4.5.8 → 4.5.9).</td>
+                        <td><span class="badge info">Audit / Baseline</span></td>
+                        <td><span class="badge pass">Complété</span></td>
+                        <td>Mouad</td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" style="text-align:center; color:var(--text-muted); font-style:italic; font-size:0.78rem; padding:14px;">
+                            — Aucune action corrective effectuée à ce jour. Prochaines entrées dépendent de validation Charline. —
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="section-source" style="margin-top:8px; margin-bottom:30px;">Source : Journal interne d'audit · Mouad BAKHCHANE · Mis à jour le 8 mai 2026</div>
 
             <!-- Sub-section 1 : Santé du site & Serveur -->
             <div class="subsection-header">
@@ -5457,7 +5500,7 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                         <h1 class="page-title">📱 Meta Ads</h1>
                         <span class="badge new">Live</span>
                     </div>
-                    <p class="page-subtitle">Pilotage quotidien des campagnes Meta · budget · objectifs · stratégie · actions par date.</p>
+                    <p class="page-subtitle">Pilotage quotidien des campagnes Meta · budget · objectifs · actions par date.</p>
                 </div>
             </div>
 
@@ -5496,7 +5539,8 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                 </div>
 
                 <!-- Allocation Lead Generation -->
-                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px;padding-top:8px;border-top:1px dashed var(--border)">Allocation Lead Generation (validation Charline)</div>
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px;padding-top:8px;border-top:1px dashed var(--border)">Allocation Lead Generation</div>
+                <div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:10px;font-style:italic">Base calcul : 2 000 − 155 (Notoriété) = <strong style="color:var(--text);font-style:normal">1 845 CHF/mois</strong> · split 50% par zone · pondération par historique perf.</div>
                 <table style="width:100%;border-collapse:collapse;font-size:0.78rem;margin-bottom:14px">
                     <thead>
                         <tr style="background:var(--surface-soft)">
@@ -5508,37 +5552,47 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                     </thead>
                     <tbody>
                         <tr style="border-bottom:1px solid var(--border)">
-                            <td style="padding:10px 12px;font-weight:600">🔥 PAC Lead Gen</td>
-                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">calcul</td>
-                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">calcul</td>
-                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">—</td>
+                            <td style="padding:10px 12px;font-weight:600">🔋 Battery Lead Gen <span style="color:var(--text-muted);font-weight:400;font-size:0.68rem">(40% · proven)</span></td>
+                            <td style="padding:10px 12px;text-align:right">12 CHF/j · <strong>372</strong></td>
+                            <td style="padding:10px 12px;text-align:right">12 CHF/j · <strong>372</strong></td>
+                            <td style="padding:10px 12px;text-align:right;color:#3D7A8F"><strong>744</strong></td>
                         </tr>
                         <tr style="border-bottom:1px solid var(--border)">
-                            <td style="padding:10px 12px;font-weight:600">🔋 Battery Lead Gen</td>
-                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">calcul</td>
-                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">calcul</td>
-                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">—</td>
+                            <td style="padding:10px 12px;font-weight:600">☀️ PV Lead Gen <span style="color:var(--text-muted);font-weight:400;font-size:0.68rem">(37% · test nouvelle stratégie)</span></td>
+                            <td style="padding:10px 12px;text-align:right">11 CHF/j · <strong>341</strong></td>
+                            <td style="padding:10px 12px;text-align:right">11 CHF/j · <strong>341</strong></td>
+                            <td style="padding:10px 12px;text-align:right;color:#3D7A8F"><strong>682</strong></td>
                         </tr>
                         <tr style="border-bottom:1px solid var(--border)">
-                            <td style="padding:10px 12px;font-weight:600">☀️ PV Lead Gen <span style="color:var(--text-muted);font-weight:400;font-size:0.68rem">(à tester nouvelle stratégie)</span></td>
-                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">calcul</td>
-                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">calcul</td>
-                            <td style="padding:10px 12px;text-align:right;color:var(--text-muted);font-style:italic">—</td>
+                            <td style="padding:10px 12px;font-weight:600">🔥 PAC Lead Gen <span style="color:var(--text-muted);font-weight:400;font-size:0.68rem">(23% · test off-season)</span></td>
+                            <td style="padding:10px 12px;text-align:right">7 CHF/j · <strong>217</strong></td>
+                            <td style="padding:10px 12px;text-align:right">7 CHF/j · <strong>217</strong></td>
+                            <td style="padding:10px 12px;text-align:right;color:#3D7A8F"><strong>434</strong></td>
                         </tr>
                         <tr style="background:rgba(90,152,174,0.08);font-weight:800">
                             <td style="padding:10px 12px;color:var(--text)">Total enveloppe</td>
-                            <td style="padding:10px 12px;text-align:right;color:#3D7A8F">1 000 CHF</td>
-                            <td style="padding:10px 12px;text-align:right;color:#3D7A8F">1 000 CHF</td>
-                            <td style="padding:10px 12px;text-align:right;color:#3D7A8F">2 000 CHF</td>
+                            <td style="padding:10px 12px;text-align:right;color:#3D7A8F">30 CHF/j · 930</td>
+                            <td style="padding:10px 12px;text-align:right;color:#3D7A8F">30 CHF/j · 930</td>
+                            <td style="padding:10px 12px;text-align:right;color:#3D7A8F">1 860 CHF</td>
                         </tr>
                     </tbody>
                 </table>
+                <div style="font-size:0.66rem;color:var(--text-muted);margin-bottom:14px;font-style:italic">Montants en CHF · base mensuelle 31 jours · arrondis (cible théorique 922.5 CHF/zone, réel 930 par effet d'arrondi journalier)</div>
 
                 <!-- Notoriété : 1 campagne globale -->
                 <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px;padding-top:8px;border-top:1px dashed var(--border)">Notoriété</div>
                 <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
-                    <div style="font-size:0.78rem;color:var(--text-body)"><strong style="color:var(--text)">📢 1 campagne globale</strong> — Vaud + Genève (toutes audiences confondues)</div>
-                    <div style="font-size:0.78rem;font-weight:800;color:#3D7A8F">5 CHF/jour</div>
+                    <div style="font-size:0.78rem;color:var(--text-body)"><strong style="color:var(--text)">📢 1 campagne globale</strong> — toutes audiences confondues</div>
+                    <div style="font-size:0.78rem;font-weight:800;color:#3D7A8F">5 CHF/jour · <span style="color:var(--text)">155 CHF/mois</span></div>
+                </div>
+
+                <!-- Récap total -->
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px;margin-top:14px;padding-top:8px;border-top:1px dashed var(--border)">Récap total</div>
+                <div style="padding:14px 16px;background:rgba(90,152,174,0.10);border-radius:10px;display:grid;grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));gap:12px;font-size:0.78rem">
+                    <div><span style="color:var(--text-muted)">Lead Gen</span><br><strong style="color:var(--text);font-size:1rem">1 860 CHF</strong></div>
+                    <div><span style="color:var(--text-muted)">+ Notoriété</span><br><strong style="color:var(--text);font-size:1rem">155 CHF</strong></div>
+                    <div><span style="color:var(--text-muted)">= Total Meta Ads</span><br><strong style="color:#3D7A8F;font-size:1rem">2 015 CHF</strong></div>
+                    <div><span style="color:var(--text-muted)">Daily total</span><br><strong style="color:var(--text);font-size:1rem">65 CHF/jour</strong></div>
                 </div>
             </div>
 
@@ -5595,35 +5649,12 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             </div>
 
             <!-- ============================================== -->
-            <!-- ===== SECTION 3 — STRATÉGIE ================== -->
-            <!-- ============================================== -->
-            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #E8A82E">
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
-                    <div style="font-size:0.95rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px">
-                        <span style="background:#E8A82E;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">03</span>
-                        🧭 Stratégie
-                    </div>
-                </div>
-
-                <!-- Plan saisonnier -->
-                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#B8821F;font-weight:800;margin-bottom:8px">Plan saisonnier 2026</div>
-                <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;font-size:0.74rem;font-family:'Courier New',monospace;line-height:1.8;overflow-x:auto">
-                    <div>          <strong style="color:var(--text)">J  F  M  A  M  J  J  A  S  O  N  D</strong></div>
-                    <div>☀️ PV       🟢 🟢 🟢 🟢 <span style="background:rgba(232,168,46,0.2);padding:0 4px">🟢</span> 🟢 🟢 🟢 🟡 🟡 ⚫ ⚫</div>
-                    <div>🔋 Battery  🟡 🟡 🟢 🟢 <span style="background:rgba(232,168,46,0.2);padding:0 4px">🟢</span> 🟢 🟢 🟢 🟡 🟡 🟡 🟡</div>
-                    <div>🔥 PAC      🟢 🟢 🟡 ⚫ <span style="background:rgba(232,168,46,0.2);padding:0 4px">⚫</span> ⚫ ⚫ ⚫ 🟡 🟢 🟢 🟢</div>
-                    <div>📢 Notoriété 🟢 🟢 🟢 🟢 <span style="background:rgba(232,168,46,0.2);padding:0 4px">🟢</span> 🟢 🟢 🟢 🟢 🟢 🟢 🟢</div>
-                </div>
-                <div style="font-size:0.66rem;color:var(--text-muted);margin-top:8px;font-style:italic">🟢 Pic de saison · 🟡 Transition · ⚫ Off-season · case grise = mois courant</div>
-            </div>
-
-            <!-- ============================================== -->
-            <!-- ===== SECTION 4 — ACTIONS PAR DATE =========== -->
+            <!-- ===== SECTION 3 — ACTIONS PAR DATE =========== -->
             <!-- ============================================== -->
             <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #6F3EAA">
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
                     <div style="font-size:0.95rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px">
-                        <span style="background:#6F3EAA;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">04</span>
+                        <span style="background:#6F3EAA;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">03</span>
                         📅 Actions par date
                     </div>
                     <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Journal quotidien</span>
