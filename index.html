@@ -2994,14 +2994,24 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 <div class="notif-wrap">
                     <button class="icon-btn notif-trigger" onclick="toggleNotif(event)" aria-label="Notifications" type="button">
                         <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
-                        <span class="notif-badge">15</span>
+                        <span class="notif-badge">16</span>
                     </button>
                     <div class="notif-dropdown" id="notifDropdown" onclick="event.stopPropagation()">
                         <div class="notif-header">
                             <div class="notif-header-title">Nouveautés du rapport</div>
-                            <div class="notif-count">15 nouveau(x)</div>
+                            <div class="notif-count">16 nouveau(x)</div>
                         </div>
                         <div class="notif-list">
+                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('wp_admin');">
+                                <div class="notif-icon ev-pass">🗑️</div>
+                                <div class="notif-content">
+                                    <div class="notif-title-row">
+                                        <div class="notif-item-title">3 plugins inactifs supprimés (sécurité)</div>
+                                        <div class="notif-time">11 mai</div>
+                                    </div>
+                                    <div class="notif-desc">Nettoyage : <code>MonsterInsights</code> · <code>WPCode Lite</code> · <code>WP Headers And Footers</code>. Réduction surface d'attaque · état post-nettoyage : 28 extensions actives, 0 inactives.</div>
+                                </div>
+                            </button>
                             <button class="notif-item" type="button" onclick="closeNotif(); showPanel('wp_admin');">
                                 <div class="notif-icon ev-pass">💾</div>
                                 <div class="notif-content">
@@ -4068,6 +4078,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                             <li><strong>UpdraftPlus offsite configuré</strong> · stockage distant <strong>Google Drive</strong> sélectionné · auth OK sur <code>bakhchanemouad@gmail.com</code> · dossier "UpdraftPlus" créé sur Drive</li>
                             <li><strong>Email alertes activées</strong> → rapports envoyés à <code>contact@naoenergy.ch</code></li>
                             <li><strong>Backup test manuel lancé</strong> · en cours d'exécution · validation offsite Google Drive à confirmer post-completion</li>
+                            <li><strong>3 plugins inactifs supprimés</strong> · <code>MonsterInsights</code> · <code>WPCode Lite</code> · <code>WP Headers And Footers</code> · réduction surface d'attaque · état post-nettoyage : 28 extensions actives, 0 inactives</li>
                         </ul>
                     </div>
                 </div>
