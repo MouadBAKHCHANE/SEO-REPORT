@@ -3250,12 +3250,43 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div style="position:relative;padding-left:24px">
                         <div style="position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom, #6F3EAA, var(--border))"></div>
 
-                        <!-- 13 mai 2026 -->
+                        <!-- 14 mai 2026 -->
                         <div style="position:relative;margin-bottom:18px">
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:#6F3EAA;border:3px solid var(--bg)"></div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mer. 13 mai 2026</span>
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Jeu. 14 mai 2026</span>
                                 <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:2px 8px;border-radius:100px;font-size:0.62rem;font-weight:700">Aujourd'hui</span>
+                            </div>
+                            <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🧹 WordPress / Nettoyage plugins</div>
+                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li><strong>Duplicator v1.5.16 supprimé</strong> · 0 sauvegarde présente · doublon avec UpdraftPlus (qui fait le backup vers Google Drive) · risque CVE historique éliminé · ~10 MB libérés</li>
+                                    <li><strong>Query Loop Filters v0.2.0 supprimé définitivement</strong> · déjà désactivé le 12 mai (cause du bug bandeau cookie fullscreen) · remplacé par dropdown custom AJAX sur /actualites/</li>
+                                    <li><strong>État post-nettoyage</strong> : <strong>26 extensions actives</strong> (vs 28) · surface d'attaque réduite · ~50-60 hooks WP en moins</li>
+                                </ul>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress / Fix filtre catégories /nos-realisations/</div>
+                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li><strong>Diagnostic</strong> · sur /nos-realisations/, le clic sur les filtres catégories (Pompes à chaleur, Panneaux PV, etc.) ne déclenchait pas la navigation · <code>clickDefaultPrevented:true</code> confirmé via Chrome DevTools</li>
+                                    <li><strong>Cause identifiée</strong> · event listeners JS résiduels (probablement du plugin Query Loop Filters désinstallé) attachés aux liens <code>.wp-block-categories-list a</code> en mode "bubble phase" → <code>preventDefault</code> sans navigation ni filtrage</li>
+                                    <li><strong>Tentative 1 ÉCHEC</strong> · clone des liens pour stripper les listeners → race condition timing, les listeners se réattachent après le clone</li>
+                                    <li><strong>Solution validée</strong> · snippet JS sitewide via Code Snippets · <strong>delegated listener en capture phase</strong> qui intercepte le clic AVANT le rogue listener · force <code>window.location.href = link.href</code> + <code>stopImmediatePropagation</code></li>
+                                    <li><strong>Test live validé via Chrome DevTools</strong> · navigation OK vers <code>/realisations/pompes-a-chaleur/</code> avec <strong>15 réalisations PAC</strong> affichées correctement · solution fonctionne pour toutes catégories (Panneaux PV, Batteries, Boiler, Borne de recharge)</li>
+                                </ul>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#E85D4A;font-weight:700;margin-bottom:6px">⚠️ WordPress / Investigation Gravity Forms désactivé</div>
+                                <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li><strong>Constat</strong> · Gravity Forms désactivé automatiquement sans action utilisateur · <strong>réactivé immédiatement</strong> (impact business : formulaires de contact/devis cassés en attendant)</li>
+                                    <li><strong>Investigation Stream</strong> · connecteur "Plugins" probablement décoché par défaut → action non tracée dans le log</li>
+                                    <li><strong>Pistes à creuser</strong> · licence Gravity Forms expirée · erreur PHP fatale · accès non autorisé · MAJ auto échouée · email envoyé à l'hébergeur pour récupérer les logs PHP des 48h · message envoyé à Charline pour validation/contexte</li>
+                                    <li><strong>Actions préventives</strong> · checklist sécurité : changer mot de passe admin · activer 2FA · scanner Wordfence à lancer · activer connecteur Plugins dans Stream pour tracer futures actions</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 13 mai 2026 -->
+                        <div style="position:relative;margin-bottom:18px">
+                            <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mer. 13 mai 2026</span>
                             </div>
                             <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
                                 <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress / Frontend</div>
