@@ -3236,6 +3236,155 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     </button>
                 </div>
 
+                <!-- ═══════════ JOURNAL ACTIONS PAR DATE (CENTRALISÉ) ═══════════ -->
+                <div style="display:flex;align-items:center;gap:10px;margin:28px 0 12px;flex-wrap:wrap">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#6F3EAA;font-weight:800">📅 Actions par date · Journal quotidien</div>
+                    <div style="flex:1;height:1px;background:var(--border)"></div>
+                    <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:4px 10px;border-radius:100px;font-size:0.6rem;font-weight:700">Toutes sections confondues</span>
+                </div>
+
+                <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #6F3EAA">
+                    <div style="font-size:0.65rem;color:var(--text-muted);margin-bottom:14px;font-style:italic">📝 Suivi chronologique unifié de toutes les actions (WordPress · Meta Ads · SEO · Google Ads) — alimenté chaque jour</div>
+
+                    <!-- Timeline (le plus récent en haut) -->
+                    <div style="position:relative;padding-left:24px">
+                        <div style="position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom, #6F3EAA, var(--border))"></div>
+
+                        <!-- 13 mai 2026 -->
+                        <div style="position:relative;margin-bottom:18px">
+                            <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:#6F3EAA;border:3px solid var(--bg)"></div>
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mer. 13 mai 2026</span>
+                                <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:2px 8px;border-radius:100px;font-size:0.62rem;font-weight:700">Aujourd'hui</span>
+                            </div>
+                            <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress / Frontend</div>
+                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li><strong>Refonte complète menu mobile/tablette</strong> · Bloc 1 CSS v13 (≤1200px) · burger <code>#switch-menu</code> noir épais centré verticalement (stroke #000, width 3px) · <code>position: fixed</code> + <code>transform: translateZ(0)</code> compat iOS Safari · plein écran au clic (100vw × 100vh) · zone tap 44×44 sur flèches · 2e burger Max Mega Menu masqué</li>
+                                    <li><strong>Cache du contenu menu fermé</strong> · règle <code>.header__menu:not(.open) > *:not(#switch-menu) { display: none }</code> · résout le bleeding des items sur le hero quand drawer fermé</li>
+                                    <li><strong>Sous-menus accordion</strong> · cachés par défaut · ouverts au clic sur la flèche · une seule flèche <code>›</code> propre (CSS pseudo-element, plus de doublons) · flèche tourne 135° quand ouvert</li>
+                                    <li><strong>Bug images articles invisibles résolu</strong> · cause : WP Rocket Lazy Load injectait un <code>data:image/svg+xml</code> placeholder dans <code>src</code> + vraie URL dans <code>data-lazy-src</code> · notre AJAX swap (innerHTML) ne re-déclenchait pas le lazy loader → placeholders restaient · fix : fonction JS <code>forceLoadLazyImages()</code> qui swap manuellement <code>data-lazy-src</code> → <code>src</code> + <code>data-lazy-srcset</code> → <code>srcset</code> après chaque injection</li>
+                                    <li><strong>Snippet JS sitewide ajouté</strong> · Code Snippets plugin · location footer site-wide · intercepte 1er clic sur "Nos solutions" / "À propos" (items avec sous-menu) sur mobile → ouvre le sous-menu au lieu de rediriger · 2e clic navigue normalement vers la page parent</li>
+                                    <li><strong>Vérification WP Rocket complète</strong> · réglages OK : Minify CSS/JS ON · exclusions megamenu/maxmegamenu/complianz/theme présentes · "Optimiser CSS" OFF (avait cassé le hamburger) · "Reporter JS" OFF · "Charger JS différé" ON avec exclusions · multiple purges cache + "Éléments prioritaires" pendant les tests</li>
+                                </ul>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads</div>
+                                <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li><strong>📊 Audit Lead Gen Batterie &amp; PAC historique</strong> · périmètre : 48 ads analysées (2023-2026) · <strong>Tier 1 winners batterie identifiés</strong> : Pub 1 Geneva (23 leads @ €16.57 CPL) · Pub 6 (6 leads @ €14.44 CPL ⭐ best CPL) · Pub 3 Geneva (33 leads @ €26.74 CPL ⭐ best volume) · Pub 8 Vaud (7 leads @ €19.79 CPL) · Pub 7 Geneva (9 leads @ €22.76 CPL) · MESSAGE 3 (14 leads @ €22.92 CPL) · <strong>Tier 3 à éviter</strong> (CPL >€50) : Pub 4 (€135), ATOUTS 1 (€90), New pub 1 (€72), STOCKAGE INTE (€68)</li>
+                                    <li><strong>🎯 Stratégie nouvelles campagnes définie</strong> · structure 2 ad sets par campagne (Genève / Vaud+Neuchâtel) · cross-tests des winners Geneva sur Vaud · budget cible €65-85/jour total (€1,950-2,550/mois) · CPL cible €22-28 · objectif 70-100 leads/mois</li>
+                                    <li><strong>🚀 2 campagnes Lead Gen lancées + 1 active (3 actives au total)</strong>
+                                        <ul style="margin:6px 0 0 0;padding-left:18px;font-size:0.72rem;color:var(--text-body);line-height:1.7">
+                                            <li><strong>Batterie-Mai-GL-MouaDev</strong> (Lead Gen Batterie · lancée 13 mai) · 2 ad sets · <strong>€42/jour</strong> · Ad Set Genève €21/j (Learning, 0 results yet) · Ad Set Vaud+Neuchâtel €21/j (Learning, <strong>1 lead à €0.34 spent, CTR 2.50% ⚡</strong>)</li>
+                                            <li><strong>PAC-GL-Mai-2026-MouaDev</strong> (Lead Gen PAC/PV solaire · lancée 13 mai) · 2 ad sets · <strong>€41/jour</strong> · Ad Set Geneva €21/j (<strong>1 lead à €10.67 CPL</strong>) · Ad Set Vaud+Neuchâtel €20/j (Learning, 526 impr, 6 clics)</li>
+                                            <li><strong>Notoriété avril 2026</strong> (Awareness · active depuis 27 avr) · €5/jour · 2,311 reach, CPM €1.33 🟢 efficient</li>
+                                            <li><strong>BUDGET TOTAL META ADS</strong> : <strong>€88/jour</strong> · ~<strong>€2,640/mois</strong> sur 3 campagnes actives</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 12 mai 2026 -->
+                        <div style="position:relative;margin-bottom:18px">
+                            <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mar. 12 mai 2026</span>
+                            </div>
+                            <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress / Sécurité</div>
+                                <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li><strong>Audit complet plugins WordPress</strong> · inventaire actifs/inactifs · identification des doublons et risques sécurité · audit Duplicator (potentiel doublon avec UpdraftPlus) → à investiguer</li>
+                                    <li><strong>UpdraftPlus reconfiguré + backup auto Google Drive activé</strong> · règle backup 3-2-1 respectée (local + cloud) · email alertes vers <code>contact@naoenergy.ch</code></li>
+                                    <li><strong>Complianz RGPD wizard relancé + réajusté</strong> · CSS du bandeau régénéré (v=45 → v=56) · cookies de consentement remis à zéro pour test propre</li>
+                                    <li><strong>🔧 BUG CRITIQUE RÉSOLU — Bandeau cookie fullscreen sur /actualites/</strong> · diagnostic : conflit entre plugin <code>Query Loop Filters</code> (Human Made v0.2.0) et Complianz · cause technique : Query Loop Filters utilisait l'API Interactivity WordPress qui cassait le CSS de Complianz lors d'un filtrage AJAX · <strong>solution</strong> : désactivation Query Loop Filters → bug immédiatement résolu</li>
+                                    <li><strong>✨ Nouveau filtre catégorie custom (zéro plugin)</strong> · dropdown HTML natif avec les 13 catégories du blog · design aligné CTA "Contact" header (classe <code>is-style-default</code>) · filtrage AJAX in-place sans reload ni scroll · URL synchronisée <code>/actualites/?cat=produits</code> (SEO + partage) · compatible bouton retour navigateur (popstate) · responsive mobile/tablette</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 11 mai 2026 -->
+                        <div style="position:relative;margin-bottom:18px">
+                            <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Lun. 11 mai 2026</span>
+                            </div>
+                            <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress / Backup</div>
+                                <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li><strong>UpdraftPlus offsite configuré</strong> · stockage distant <strong>Google Drive</strong> sélectionné · auth OK sur <code>bakhchanemouad@gmail.com</code> · dossier "UpdraftPlus" créé sur Drive</li>
+                                    <li><strong>Email alertes activées</strong> → rapports envoyés à <code>contact@naoenergy.ch</code></li>
+                                    <li><strong>Backup test manuel lancé</strong> · en cours d'exécution · validation offsite Google Drive à confirmer post-completion</li>
+                                    <li><strong>3 plugins inactifs supprimés</strong> · <code>MonsterInsights</code> · <code>WPCode Lite</code> · <code>WP Headers And Footers</code> · réduction surface d'attaque · état post-nettoyage : 28 extensions actives, 0 inactives</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 9 mai 2026 -->
+                        <div style="position:relative;margin-bottom:18px">
+                            <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Sam. 9 mai 2026</span>
+                            </div>
+                            <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress / Sécurité</div>
+                                <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li><strong>WP File Manager désactivé</strong> · plugin <code>wp-file-manager/file_folder_manager.php</code> v8.0.4 · réduction surface d'attaque · CVE historique (CVE-2020-25213 RCE) · version FREE sans garde-fous (filesystem complet accessible tout admin) · décision validée Mouâd</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 8 mai 2026 -->
+                        <div style="position:relative;margin-bottom:18px">
+                            <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Jeu. 8 mai 2026</span>
+                            </div>
+                            <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress</div>
+                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li><strong>Inventaire complet extensions WP</strong> · 32 plugins relevés via wp-admin/plugins.php · tri essentiels (15) / à investiguer (17) · 2 MAJ en attente : Polylang Pro 3.6.6 → 3.8.3 (auto indisponible) + Duplicate Page 4.5.8 → 4.5.9</li>
+                                </ul>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads</div>
+                                <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li><strong>Audit complet WordPress</strong> · 4 alertes critiques identifiées (backups, Pixel consent, PHP EOL, Polylang auto-MAJ)</li>
+                                    <li><strong>Découverte critique</strong> · "Reach more people likely to respond" = source des leads hors zone</li>
+                                    <li><strong>Reco budget mai</strong> · split 1 000 / 1 000 Vaud + Genève, validé par Charline</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 7 mai 2026 -->
+                        <div style="position:relative;margin-bottom:18px">
+                            <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mer. 7 mai 2026</span>
+                            </div>
+                            <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads</div>
+                                <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li><strong>Genève PV mis en pause</strong> · €191 dépensés / 0 lead · décision validée</li>
+                                    <li><strong>Analyse Vaud PV</strong> · 3 leads à €41 CPL · Pub 3 winner</li>
+                                    <li><strong>Diagnostic 7 ads sub-scale</strong> · €25/jour ÷ 7 ads = €3.50/ad → impossible d'atteindre Learning Phase</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 6 mai 2026 -->
+                        <div style="position:relative;margin-bottom:18px">
+                            <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mar. 6 mai 2026</span>
+                            </div>
+                            <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads · Business</div>
+                                <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li><strong>Reçu doc business Charline</strong> · profil entreprise, cibles, budget Ads, concurrence (16 acteurs)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -4045,25 +4194,14 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             <div class="page-header">
                 <div>
                     <h1 class="page-title">Preuves WordPress Admin</h1>
-                    <p class="page-subtitle">16 observations vérifiées depuis le dashboard wp-admin de naoenergy.ch — audit initial 3 avril 2026, mis à jour 8 mai 2026 (voir Journal quotidien ci-dessous).</p>
+                    <p class="page-subtitle">16 observations vérifiées depuis le dashboard wp-admin de naoenergy.ch — audit initial 3 avril 2026, mis à jour 13 mai 2026. <em>Le journal des actions par date est centralisé dans la <a href="#" onclick="showPanel('overview');return false;" style="color:#6F3EAA;font-weight:700">Vue d'ensemble</a>.</em></p>
                 </div>
             </div>
 
-            <!-- Sub-section 0 : Journal quotidien (Actions par date) -->
-            <div class="subsection-header">
-                <div class="subsection-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
-                <div>
-                    <div class="subsection-title">Actions par date · Journal quotidien</div>
-                    <div class="subsection-meta">Suivi chronologique des actions correctrices — chaque modification documentée et datée</div>
-                </div>
-            </div>
-            <!-- Filtres rapides -->
-            <div style="font-size:0.65rem;color:var(--text-muted);margin-bottom:12px;font-style:italic">📝 Alimenté chaque jour · description action · résultat observé · prochaine étape</div>
+            <!-- Sub-section 0 : Journal quotidien REMOVED — moved to Vue d'ensemble (panel-overview) -->
 
-            <!-- Timeline (le plus récent en haut) -->
-            <div style="position:relative;padding-left:24px;margin-bottom:30px">
-                <div style="position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom, #6F3EAA, var(--border))"></div>
-
+            <!-- HIDDEN — journal moved to overview panel -->
+            <div style="display:none">
                 <!-- ===== ENTRÉE TEMPLATE — copier-coller pour chaque nouvelle journée ===== -->
 
                 <!-- 13 mai 2026 -->
@@ -5901,87 +6039,9 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             </div>
 
             <!-- ============================================== -->
-            <!-- ===== SECTION 4 — ACTIONS PAR DATE =========== -->
+            <!-- ===== SECTION 4 — ACTIONS PAR DATE (MOVED) ==== -->
+            <!-- Journal Actions par date moved to Vue d'ensemble (panel-overview) for unified view -->
             <!-- ============================================== -->
-            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #6F3EAA">
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
-                    <div style="font-size:0.95rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px">
-                        <span style="background:#6F3EAA;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">04</span>
-                        📅 Actions par date
-                    </div>
-                    <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Journal quotidien</span>
-                </div>
-
-                <!-- Filtres rapides -->
-                <div style="font-size:0.65rem;color:var(--text-muted);margin-bottom:12px;font-style:italic">📝 Alimenté chaque jour · description action · résultat observé · prochaine étape</div>
-
-                <!-- Timeline (le plus récent en haut) -->
-                <div style="position:relative;padding-left:24px">
-                    <div style="position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom, #6F3EAA, var(--border))"></div>
-
-                    <!-- ===== ENTRÉE TEMPLATE — copier-coller pour chaque nouvelle journée ===== -->
-
-                    <!-- 8 mai 2026 -->
-                    <div style="position:relative;margin-bottom:18px">
-                        <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:#6F3EAA;border:3px solid var(--bg)"></div>
-                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                            <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Jeu. 8 mai 2026</span>
-                            <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:2px 8px;border-radius:100px;font-size:0.62rem;font-weight:700">Aujourd'hui</span>
-                        </div>
-                        <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                            <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                <li><strong>Audit complet WordPress</strong> · 4 alertes critiques identifiées (backups, Pixel consent, PHP EOL, Polylang auto-MAJ)</li>
-                                <li><strong>Découverte critique</strong> · "Reach more people likely to respond" = source des leads hors zone</li>
-                                <li><strong>Reco budget mai</strong> · split 1 000 / 1 000 Vaud + Genève, validé par Charline</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- 7 mai 2026 -->
-                    <div style="position:relative;margin-bottom:18px">
-                        <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
-                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                            <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mer. 7 mai 2026</span>
-                        </div>
-                        <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                            <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                <li><strong>Genève PV mis en pause</strong> · €191 dépensés / 0 lead · décision validée</li>
-                                <li><strong>Analyse Vaud PV</strong> · 3 leads à €41 CPL · Pub 3 winner</li>
-                                <li><strong>Diagnostic 7 ads sub-scale</strong> · €25/jour ÷ 7 ads = €3.50/ad → impossible d'atteindre Learning Phase</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- 6 mai 2026 -->
-                    <div style="position:relative;margin-bottom:18px">
-                        <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
-                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                            <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mar. 6 mai 2026</span>
-                        </div>
-                        <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                            <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                <li><strong>Reçu doc business Charline</strong> · profil entreprise, cibles, budget Ads, concurrence (16 acteurs)</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- ===== TEMPLATE entrée vide (à dupliquer chaque nouveau jour) =====
-                    <div style="position:relative;margin-bottom:18px">
-                        <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
-                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                            <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 [Jour] [Date]</span>
-                        </div>
-                        <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                            <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                <li><strong>Action 1</strong> · description · résultat</li>
-                                <li><strong>Action 2</strong> · description · résultat</li>
-                            </ul>
-                        </div>
-                    </div>
-                    ============================================================== -->
-
-                </div>
-            </div>
 
         </div>
 
