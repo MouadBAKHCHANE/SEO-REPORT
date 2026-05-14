@@ -2887,13 +2887,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     </button>
 
                     <div class="nav-sub-label" style="padding-left:0">Finding Keywords</div>
-                    <button class="nav-child" data-target="sitekit" type="button">
-                        <span class="nav-label">Search Console</span>
-                    </button>
-                    <button class="nav-child" data-target="tracking" type="button">
-                        <span class="nav-label">Tracking &amp; Mesure</span>
-                        <span class="nav-badge dot"></span>
-                    </button>
+                    <div style="padding:8px 16px;font-size:0.62rem;color:var(--text-muted);font-style:italic;opacity:0.7">À venir — recherche de mots-clés en cours d'élaboration</div>
                 </div>
             </div>
         </div>
@@ -2927,6 +2921,11 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             <button class="nav-item" data-target="recs">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                 <span class="nav-label">Plan d'actions</span>
+            </button>
+            <button class="nav-item" data-target="external_audits">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+                <span class="nav-label">Audits externes</span>
+                <span class="nav-badge dot" style="background:#6F3EAA"></span>
             </button>
         </div>
 
@@ -3190,7 +3189,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);font-weight:700;margin-bottom:12px">⚡ Raccourcis rapides</div>
                     <div class="raccourcis-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
                         <button class="comp-card" onclick="showPanel('objectives')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">🎯</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Objectifs &amp; missions</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Marketing digital naoenergy</div></div></button>
-                        <button class="comp-card" onclick="openDrawer('critical')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-left:3px solid #E85D4A;border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">⚠️</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Problèmes critiques <span style="font-size:0.58rem;color:var(--text-muted);font-weight:500;letter-spacing:0.3px">(situation avant lancement projet)</span></div><div style="font-size:0.65rem;color:#C44A1F;margin-top:2px">→ Voir la liste</div></div></button>
+                        <button class="comp-card" onclick="openDrawer('critical')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-left:3px solid #E85D4A;border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">⚠️</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Situation avant lancement projet</div><div style="font-size:0.62rem;color:var(--text-muted);margin-top:1px;font-weight:500">Problèmes critiques identifiés à l'audit initial</div><div style="font-size:0.65rem;color:#C44A1F;margin-top:3px">→ Voir la liste</div></div></button>
                         <button class="comp-card" onclick="showPanel('recs')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-left:3px solid #5A98AE;border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">📋</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Plan d'actions</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">→ Voir le plan</div></div></button>
                     </div>
                 </div>
@@ -3785,31 +3784,37 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                             <span style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:#1877F2;color:#fff;font-weight:800;font-size:0.95rem">M</span>
                             <div>
                                 <div style="font-size:0.92rem;font-weight:800;color:var(--text);line-height:1.2">Meta Ads</div>
-                                <div style="font-size:0.68rem;color:var(--text-muted);margin-top:2px">Lead gen + Notoriété · 2 000 CHF/mois</div>
+                                <div style="font-size:0.68rem;color:var(--text-muted);margin-top:2px">3 campagnes actives · 88 CHF/j · ~2 640 CHF/mois</div>
                             </div>
+                            <span style="margin-left:auto;background:#6F3EAA;color:#fff;font-size:0.58rem;padding:3px 8px;border-radius:100px;font-weight:800;letter-spacing:0.5px">NEW 13 MAI</span>
                         </div>
 
-                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:#3D7A8F;font-weight:800;margin-bottom:6px">💰 Budget actuel</div>
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:#3D7A8F;font-weight:800;margin-bottom:6px">💰 Budget actuel (post-refonte 13 mai)</div>
                         <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px">
-                            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:0.74rem"><span style="color:var(--text-body)">Vaud — PV + Battery + Notoriété</span><strong style="color:#3D7A8F">1 000 CHF/mois</strong></div>
-                            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:0.74rem"><span style="color:var(--text-body)">Genève — Battery + Notoriété</span><strong style="color:#3D7A8F">1 000 CHF/mois</strong></div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:0.74rem"><span style="color:var(--text-body)">🔋 Batterie-Mai-GL-MouaDev (2 adsets GE/VD+NE)</span><strong style="color:#3D7A8F">42 CHF/j</strong></div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:0.74rem"><span style="color:var(--text-body)">☀️ PAC-GL-Mai-2026-MouaDev (2 adsets GE/VD+NE)</span><strong style="color:#3D7A8F">41 CHF/j</strong></div>
+                            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 12px;background:var(--surface);border:1px solid var(--border);border-radius:6px;font-size:0.74rem"><span style="color:var(--text-body)">📢 Notoriété avril 2026 (Awareness, depuis 27 avr)</span><strong style="color:#3D7A8F">5 CHF/j</strong></div>
                         </div>
 
                         <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:#3D7A8F;font-weight:800;margin-bottom:6px">🗺️ Zones</div>
-                        <div style="font-size:0.72rem;color:var(--text-body);line-height:1.5;margin-bottom:14px">Canton de <strong style="color:var(--text)">Genève</strong> · Canton de <strong style="color:var(--text)">Vaud</strong> <em style="color:var(--text-muted)">(2 secteurs commerciaux équilibrés)</em></div>
+                        <div style="font-size:0.72rem;color:var(--text-body);line-height:1.5;margin-bottom:14px">Canton de <strong style="color:var(--text)">Genève</strong> · Canton de <strong style="color:var(--text)">Vaud</strong> · Canton de <strong style="color:var(--text)">Neuchâtel</strong> (cross-test) <em style="color:var(--text-muted)">(2 secteurs commerciaux GE / Lausanne)</em></div>
 
                         <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:#3D7A8F;font-weight:800;margin-bottom:6px">🎯 Missions &amp; axes de travail</div>
                         <ul style="margin:0 0 0 16px;padding:0;font-size:0.72rem;color:var(--text-body);line-height:1.6">
-                            <li><strong style="color:var(--text)">Fix géo-targeting</strong> (décocher "Reach more people")</li>
-                            <li><strong style="color:var(--text)">Ciblage broad</strong> sans intérêts détaillés (Advantage+ optimise sur Pixel)</li>
-                            <li><strong style="color:var(--text)">Refresh créas Battery</strong> (audience saturée freq 4.45)</li>
-                            <li><strong style="color:var(--text)">Pilotage CPL</strong> selon benchmarks Charline (Battery 25-35, PAC 35-45)</li>
+                            <li><strong style="color:var(--text)">Structure 2 ad sets par campagne</strong> (GE / VD+NE) basée sur audit 48 ads Tier 1 winners</li>
+                            <li><strong style="color:var(--text)">Concentration sur winners CPL bas</strong> : Pub 1 Geneva (€16.57), Pub 6 (€14.44), Pub 8 Vaud (€19.79)</li>
+                            <li><strong style="color:var(--text)">Cross-test winners Geneva sur Vaud+NE</strong> (expansion mesurée)</li>
+                            <li><strong style="color:var(--text)">CPL cible global €22-28</strong> · objectif 70-100 leads/mois</li>
+                            <li><strong style="color:var(--text)">Cibler Notoriété brand</strong> en complément Lead Gen (CPM 1.33 CHF actuel 🟢)</li>
                         </ul>
                     </div>
                 </div>
 
+                <div style="padding:12px 14px;background:rgba(63,183,108,0.10);border-radius:8px;border-left:3px solid #2A8F4D;font-size:0.74rem;color:var(--text-body);line-height:1.6;margin-bottom:8px">
+                    🚀 <strong style="color:var(--text)">Performance jour 1 (14 mai) :</strong> Batterie VD+NE = 1 lead à 0.34 € spent, CTR 2.50% ⚡ · PAC GE = 1 lead à 10.67 € CPL ⚡ · Learning phase en cours.
+                </div>
                 <div style="padding:12px 14px;background:rgba(232,168,46,0.10);border-radius:8px;border-left:3px solid #E8A82E;font-size:0.74rem;color:var(--text-body);line-height:1.6">
-                    💸 <strong style="color:var(--text)">Contrainte budget :</strong> 2 000 CHF/mois depuis avril 2026 (vs 3 500-4 000 CHF en début d'année). Trouver des leviers pour maintenir un taux de leads acceptable malgré la baisse.
+                    💸 <strong style="color:var(--text)">Budget validé Charline :</strong> 2 000 CHF/mois depuis avril 2026 · projection 88 CHF/j × 18j restants + 377 dépensés = ~1 961 CHF (dans l'enveloppe 🟢).
                 </div>
             </div>
 
@@ -5266,6 +5271,163 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>Lien sameAs vers Twitter/X manquant</strong> (champ Twitter vide dans Yoast SEO).</div></div>
             <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>Liens sameAs vers Wikipedia et Wikidata manquants.</strong></div></div>
             <div class="issue-item info"><span class="issue-badge">Info</span><div><strong>La description de l'organisation est vide.</strong> Ce champ alimente directement le schema Organization vu par Google.</div></div>
+        </div>
+
+        <!-- ============ PANEL : AUDITS EXTERNES (PREUVES D'AMÉLIORATION) ============ -->
+        <div class="panel" id="panel-external_audits">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">🔍 Audits externes &amp; preuves d'amélioration</h1>
+                        <span class="badge new">Baseline 14 mai 2026</span>
+                    </div>
+                    <p class="page-subtitle">Rapports indépendants d'outils tiers reconnus (PageSpeed Insights officiel Google, Lighthouse, etc.) pour prouver les améliorations apportées au site. URLs partageables + screenshots horodatés.</p>
+                </div>
+            </div>
+
+            <!-- ===== BASELINE 14 MAI 2026 ===== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #6F3EAA">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+                    <div style="font-size:0.95rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px">
+                        <span style="background:#6F3EAA;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">📊 BASELINE</span>
+                        Audit Google PageSpeed Insights — 14 mai 2026
+                    </div>
+                    <span style="background:rgba(111,62,170,0.14);color:#6F3EAA;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Avant fixes Sprint 1</span>
+                </div>
+
+                <div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:14px;font-style:italic">📌 Référence avant l'application des correctifs Sprint 1 (E-E-A-T, Yoast, Imagify WebP, alt textes, llms.txt, robots.txt AI crawlers). Utilisée pour mesurer les gains après chaque sprint.</div>
+
+                <!-- Mobile + Desktop scores grid -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+                    <!-- MOBILE -->
+                    <div style="padding:18px 20px;background:var(--surface-soft);border-radius:10px;border-top:4px solid #4285F4">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                            <span style="font-size:1.4rem">📱</span>
+                            <div style="font-size:0.9rem;font-weight:800;color:var(--text)">Mobile</div>
+                        </div>
+                        <table style="width:100%;border-collapse:collapse;font-size:0.74rem">
+                            <tbody>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">Performance</td><td style="text-align:right;font-weight:800;color:#E8A82E">61/100 🟡</td></tr>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">Accessibility</td><td style="text-align:right;font-weight:800;color:#2A8F4D">86/100 🟢</td></tr>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">Best Practices</td><td style="text-align:right;font-weight:800;color:#2A8F4D">96/100 🟢</td></tr>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">SEO</td><td style="text-align:right;font-weight:800;color:#2A8F4D">100/100 🟢</td></tr>
+                            </tbody>
+                        </table>
+                        <a href="https://pagespeed.web.dev/analysis/https-naoenergy-ch/dh1ck0659m?form_factor=mobile" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:0.7rem;color:#4285F4;text-decoration:none;font-weight:700">🔗 Voir le rapport public Google →</a>
+                    </div>
+                    <!-- DESKTOP -->
+                    <div style="padding:18px 20px;background:var(--surface-soft);border-radius:10px;border-top:4px solid #5A98AE">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                            <span style="font-size:1.4rem">🖥️</span>
+                            <div style="font-size:0.9rem;font-weight:800;color:var(--text)">Desktop</div>
+                        </div>
+                        <table style="width:100%;border-collapse:collapse;font-size:0.74rem">
+                            <tbody>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">Performance</td><td style="text-align:right;font-weight:800;color:#E8A82E">66/100 🟡</td></tr>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">Accessibility</td><td style="text-align:right;font-weight:800;color:#2A8F4D">86/100 🟢</td></tr>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">Best Practices</td><td style="text-align:right;font-weight:800;color:#2A8F4D">96/100 🟢</td></tr>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">SEO</td><td style="text-align:right;font-weight:800;color:#2A8F4D">100/100 🟢</td></tr>
+                            </tbody>
+                        </table>
+                        <a href="https://pagespeed.web.dev/analysis/https-naoenergy-ch/g7b0uh7atc?form_factor=desktop" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:0.7rem;color:#5A98AE;text-decoration:none;font-weight:700">🔗 Voir le rapport public Google →</a>
+                    </div>
+                </div>
+
+                <!-- Core Web Vitals (Field Data réelle) -->
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#6F3EAA;font-weight:800;margin-bottom:10px;padding-top:8px;border-top:1px dashed var(--border)">⚡ Core Web Vitals — Field Data (utilisateurs réels, CrUX 28 jours)</div>
+                <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-bottom:14px">
+                    <div style="padding:14px 16px;background:rgba(63,183,108,0.10);border-radius:8px;border:1px solid rgba(63,183,108,0.25);text-align:center">
+                        <div style="font-size:0.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:4px">LCP</div>
+                        <div style="font-size:1.4rem;font-weight:800;color:#2A8F4D">2.3 s</div>
+                        <div style="font-size:0.66rem;color:#2A8F4D;font-weight:700;margin-top:2px">🟢 GOOD (&lt; 2.5 s)</div>
+                    </div>
+                    <div style="padding:14px 16px;background:rgba(63,183,108,0.10);border-radius:8px;border:1px solid rgba(63,183,108,0.25);text-align:center">
+                        <div style="font-size:0.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:4px">INP</div>
+                        <div style="font-size:1.4rem;font-weight:800;color:#2A8F4D">121 ms</div>
+                        <div style="font-size:0.66rem;color:#2A8F4D;font-weight:700;margin-top:2px">🟢 GOOD (&lt; 200 ms)</div>
+                    </div>
+                    <div style="padding:14px 16px;background:rgba(63,183,108,0.10);border-radius:8px;border:1px solid rgba(63,183,108,0.25);text-align:center">
+                        <div style="font-size:0.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:4px">CLS</div>
+                        <div style="font-size:1.4rem;font-weight:800;color:#2A8F4D">0</div>
+                        <div style="font-size:0.66rem;color:#2A8F4D;font-weight:700;margin-top:2px">🟢 EXCELLENT</div>
+                    </div>
+                </div>
+
+                <div style="padding:12px 14px;background:rgba(63,183,108,0.10);border-radius:8px;border-left:3px solid #2A8F4D;font-size:0.74rem;color:var(--text-body);line-height:1.6">
+                    🎯 <strong style="color:var(--text)">Bon point découvert :</strong> les 3 Core Web Vitals sont déjà dans le <strong style="color:#2A8F4D">vert</strong> côté Field Data (utilisateurs réels Google). Les scores Lighthouse Performance (61/66) sont en Lab Data simulée — ce qui se voit moins côté utilisateur. Sprint 1 + 2 viseront à monter ces scores Lab via Imagify WebP, alt textes, security headers.
+                </div>
+            </div>
+
+            <!-- ===== AUDITS À VENIR ===== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #5A98AE">
+                <div style="font-size:0.95rem;font-weight:800;color:var(--text);margin-bottom:12px">📅 Planning audits de suivi (preuves d'amélioration)</div>
+                <table class="data-table">
+                    <thead><tr><th>Date</th><th>Sprint</th><th>Action audit</th><th>Cible</th><th>Statut</th></tr></thead>
+                    <tbody>
+                        <tr><td>14 mai 2026</td><td>—</td><td>Baseline PageSpeed mobile + desktop</td><td>Référence</td><td><span class="badge pass">✅ Fait</span></td></tr>
+                        <tr><td>~21 mai 2026</td><td>Sprint 1</td><td>Re-audit post : E-E-A-T + Yoast + Imagify + alt + llms.txt + robots.txt</td><td>Perf 61 → 75+ · Access 86 → 92+</td><td><span class="badge warning">À planifier</span></td></tr>
+                        <tr><td>~28 mai 2026</td><td>Sprint 2</td><td>Re-audit post : LocalBusiness Schema + Security headers + Mobile tap targets</td><td>Best Practices 96 → 100</td><td><span class="badge warning">À planifier</span></td></tr>
+                        <tr><td>~15 juin 2026</td><td>Sprint 3</td><td>Re-audit post : PHP 8.3 + Redis cache + CDN Cloudflare</td><td>Perf 75 → 85+</td><td><span class="badge warning">À planifier</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- ===== OUTILS EXTERNES UTILISÉS ===== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px">
+                <div style="font-size:0.95rem;font-weight:800;color:var(--text);margin-bottom:12px">🛠️ Outils tiers utilisés (rapports indépendants)</div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:12px">
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #4285F4">
+                        <div style="font-size:0.84rem;font-weight:800;color:var(--text);margin-bottom:4px">📊 PageSpeed Insights</div>
+                        <div style="font-size:0.66rem;color:var(--text-muted);margin-bottom:8px">Google officiel · gratuit</div>
+                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Performance + Core Web Vitals (data utilisateurs réels). Score 0-100 Lighthouse + URL permalink partageable.</div>
+                        <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:0.68rem;color:#4285F4;text-decoration:none;font-weight:700">→ pagespeed.web.dev</a>
+                    </div>
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #2A8F4D">
+                        <div style="font-size:0.84rem;font-weight:800;color:var(--text);margin-bottom:4px">🔍 Rich Results Test</div>
+                        <div style="font-size:0.66rem;color:var(--text-muted);margin-bottom:8px">Google officiel · gratuit</div>
+                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Validation Schema JSON-LD. Vérifie les rich snippets que Google va afficher.</div>
+                        <a href="https://search.google.com/test/rich-results?url=https%3A%2F%2Fnaoenergy.ch%2F" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:0.68rem;color:#2A8F4D;text-decoration:none;font-weight:700">→ Tester naoenergy.ch</a>
+                    </div>
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #E8A82E">
+                        <div style="font-size:0.84rem;font-weight:800;color:var(--text);margin-bottom:4px">⚡ GTmetrix</div>
+                        <div style="font-size:0.66rem;color:var(--text-muted);margin-bottom:8px">Tiers · gratuit · historique</div>
+                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Combine Lighthouse + WebPageTest. Historique 3 mois, waterfall détaillé, export PDF.</div>
+                        <a href="https://gtmetrix.com/?url=https%3A%2F%2Fnaoenergy.ch%2F" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:0.68rem;color:#E8A82E;text-decoration:none;font-weight:700">→ Tester naoenergy.ch</a>
+                    </div>
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #6F3EAA">
+                        <div style="font-size:0.84rem;font-weight:800;color:var(--text);margin-bottom:4px">🛡️ Security Headers</div>
+                        <div style="font-size:0.66rem;color:var(--text-muted);margin-bottom:8px">Tiers · gratuit</div>
+                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Note A-F sur les en-têtes HTTP (CSP, HSTS, X-Frame-Options, etc.). Score actuel : 45/100 🔴.</div>
+                        <a href="https://securityheaders.com/?q=https%3A%2F%2Fnaoenergy.ch%2F" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:0.68rem;color:#6F3EAA;text-decoration:none;font-weight:700">→ Tester naoenergy.ch</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SCREENSHOTS ARCHIVÉS ===== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #E8A82E">
+                <div style="font-size:0.95rem;font-weight:800;color:var(--text);margin-bottom:12px">📸 Screenshots archivés (preuves horodatées)</div>
+                <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6">
+                    <p style="margin:0 0 10px 0">Les rapports PageSpeed sont conservés ~30 jours côté Google. Les screenshots sont archivés localement en preuve permanente :</p>
+                    <ul style="margin:0 0 0 18px;padding:0;line-height:1.7">
+                        <li><code>BASELINE-2026-05-14.md</code> · Document baseline complet avec scores + cibles</li>
+                        <li><code>baseline-pagespeed-mobile-2026-05-14.png</code> · Screenshot officiel mobile</li>
+                        <li><code>baseline-pagespeed-desktop-2026-05-14.png</code> · Screenshot officiel desktop</li>
+                        <li><code>FULL-AUDIT-REPORT.md</code> · Audit interne complet (9 scripts + Lighthouse)</li>
+                        <li><code>ACTION-PLAN.md</code> · Plan d'actions Sprint 1/2/3 priorisé</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== POURQUOI CES AUDITS ===== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;background:rgba(90,152,174,0.05)">
+                <div style="font-size:0.85rem;font-weight:800;color:var(--text);margin-bottom:10px">💡 Pourquoi des audits externes ?</div>
+                <ul style="margin:0 0 0 18px;padding:0;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                    <li><strong style="color:var(--text)">Objectivité :</strong> les scores PageSpeed sont calculés par Google directement, pas par nous → pas de biais.</li>
+                    <li><strong style="color:var(--text)">Traçabilité :</strong> URL permalink à partager avec Charline et l'équipe pour vérification.</li>
+                    <li><strong style="color:var(--text)">Comparaison avant/après :</strong> baseline + re-audits permettent de quantifier précisément l'impact de chaque sprint.</li>
+                    <li><strong style="color:var(--text)">Crédibilité :</strong> en cas de revue par un autre consultant ou agence, les preuves Google sont incontestables.</li>
+                </ul>
+            </div>
         </div>
 
         <!-- ============ PANEL : PLAN D'ACTIONS ============ -->
