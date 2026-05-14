@@ -2922,11 +2922,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                 <span class="nav-label">Plan d'actions</span>
             </button>
-            <button class="nav-item" data-target="external_audits">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
-                <span class="nav-label">Audits externes</span>
-                <span class="nav-badge dot" style="background:#6F3EAA"></span>
-            </button>
         </div>
 
     </aside>
@@ -3187,10 +3182,11 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 <!-- ⚡ Raccourcis rapides (en tête de page) -->
                 <div style="margin-bottom:28px">
                     <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);font-weight:700;margin-bottom:12px">⚡ Raccourcis rapides</div>
-                    <div class="raccourcis-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+                    <div class="raccourcis-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
                         <button class="comp-card" onclick="showPanel('objectives')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">🎯</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Objectifs &amp; missions</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Marketing digital naoenergy</div></div></button>
-                        <button class="comp-card" onclick="openDrawer('critical')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-left:3px solid #E85D4A;border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">⚠️</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Situation avant lancement projet</div><div style="font-size:0.62rem;color:var(--text-muted);margin-top:1px;font-weight:500">Problèmes critiques identifiés à l'audit initial</div><div style="font-size:0.65rem;color:#C44A1F;margin-top:3px">→ Voir la liste</div></div></button>
+                        <button class="comp-card" onclick="openDrawer('critical')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-left:3px solid #E85D4A;border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">⚠️</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Situation avant projet</div><div style="font-size:0.65rem;color:#C44A1F;margin-top:2px">→ Voir la liste</div></div></button>
                         <button class="comp-card" onclick="showPanel('recs')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-left:3px solid #5A98AE;border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">📋</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Plan d'actions</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">→ Voir le plan</div></div></button>
+                        <button class="comp-card" onclick="showPanel('external_audits')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-left:3px solid #6F3EAA;border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">🔍</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Audits externes</div><div style="font-size:0.65rem;color:#6F3EAA;margin-top:2px">→ Preuves d'amélioration</div></div></button>
                     </div>
                 </div>
 
@@ -3271,12 +3267,10 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                                     <li><strong>Solution validée</strong> · snippet JS sitewide via Code Snippets · <strong>delegated listener en capture phase</strong> qui intercepte le clic AVANT le rogue listener · force <code>window.location.href = link.href</code> + <code>stopImmediatePropagation</code></li>
                                     <li><strong>Test live validé via Chrome DevTools</strong> · navigation OK vers <code>/realisations/pompes-a-chaleur/</code> avec <strong>15 réalisations PAC</strong> affichées correctement · solution fonctionne pour toutes catégories (Panneaux PV, Batteries, Boiler, Borne de recharge)</li>
                                 </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🎯 SEO / Audit complet + Sprint 1 amorcé</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🎯 SEO / Audit externe + Sprint 1 amorcé</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Audit SEO complet réalisé</strong> · score global <strong>70/100 🟡</strong> · 9 scripts deterministes (robots, llms, security, redirects, social meta, broken links, hreflang, internal links, readability) + Lighthouse mobile · 2 livrables générés : <code>FULL-AUDIT-REPORT.md</code> + <code>ACTION-PLAN.md</code> · scores : Technical 72/100 · Content 78/100 · On-Page <strong>92/100 🟢</strong> · Schema 68/100 · Performance 55/100 · Images 48/100 · GEO 25/100</li>
-                                    <li><strong>Lighthouse Mobile</strong> · SEO <strong>100/100 🟢</strong> · Accessibility 83 · Best Practices 77 · Agentic Browsing 50</li>
+                                    <li><strong>SEO audit externe</strong> · baseline Google PageSpeed Insights 14 mai · scores mobile/desktop sauvegardés · voir panel <strong>Audits externes</strong> pour détails + URLs partageables</li>
                                     <li><strong>✅ S1.1 — E-E-A-T fix critique appliqué</strong> · Schema homepage : auteur changé de <code>"developer"</code> (placeholder) vers <strong>"Charline Fabbro"</strong> · vérifié via Chrome DevTools sur le JSON-LD live · <code>Article.author.name</code> + <code>Person.name</code> = "Charline Fabbro" ✓ · plus de <code>localhost:10427</code> dans sameAs · 4 pages publiées additionnelles (Mentions légales, Espace client, Events, Legal notices) mises à jour vers Charline · impact estimé +10-30% rankings YMYL sur 3-6 mois</li>
-                                    <li><strong>🧹 Cleanup Google Tag Manager</strong> · suppression du compte GA4 inutilisé "ClixGadgets" (G-FJBP2G6B4G) → corbeille 35 jours · plus aucune propriété GA4 fantôme dans le compte Mouâd</li>
                                 </ul>
                                 <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#E85D4A;font-weight:700;margin-bottom:6px">⚠️ WordPress / Investigation Gravity Forms désactivé</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
@@ -6534,8 +6528,8 @@ const drawerData = {
         `
     },
     critical: {
-        title: "Problèmes critiques (situation avant lancement projet)",
-        subtitle: "10 éléments identifiés lors de l'audit initial (avril 2026) — à corriger en priorité",
+        title: "Situation avant projet",
+        subtitle: "10 problèmes critiques identifiés à l'audit initial (avril 2026)",
         icon: '<svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>',
         cls: "k-critical",
         items: [
