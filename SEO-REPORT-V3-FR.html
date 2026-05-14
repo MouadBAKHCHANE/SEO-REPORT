@@ -4790,7 +4790,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <tr><td class="bold">Article</td><td><span class="badge pass">Présent</span></td><td>Généré automatiquement par Yoast pour les articles</td></tr>
                         <tr><td class="bold">BreadcrumbList</td><td><span class="badge pass">Présent</span></td><td>Fil d'Ariane de navigation</td></tr>
                         <tr><td class="bold">ImageObject</td><td><span class="badge pass">Présent</span></td><td>Image principale avec URL</td></tr>
-                        <tr><td class="bold">Person</td><td><span class="badge pass">Présent</span></td><td>Auteur : "developer"</td></tr>
+                        <tr><td class="bold">Person</td><td><span class="badge critical">Critique</span></td><td><strong style="color:#C44A1F">Auteur "developer"</strong> (placeholder non remplacé) · sameAs pointe vers <code>http://localhost:10427</code> (résidu dev) · <strong>casse l'E-E-A-T</strong> sur 125 articles · Charline (124 publications) devrait être l'auteur réel</td></tr>
                         <tr><td class="bold">LocalBusiness</td><td><span class="badge critical">Manquant</span></td><td>Nécessaire pour la visibilité en recherche locale sur le marché suisse</td></tr>
                         <tr><td class="bold">Service</td><td><span class="badge critical">Manquant</span></td><td>Panneaux solaires, pompes à chaleur, bornes de recharge non décrits</td></tr>
                     </tbody>
@@ -5227,13 +5227,17 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                 <div>
                     <div class="page-title-row">
                         <h1 class="page-title">SEO Entité &amp; E-E-A-T</h1>
-                        <span class="badge critical">10/100</span>
+                        <span class="badge critical">5/100</span>
                     </div>
-                    <p class="page-subtitle">Knowledge Graph, profil Organisation, signaux d'autorité — aucune entrée Wikidata ni Wikipedia.</p>
+                    <p class="page-subtitle">Knowledge Graph, profil Organisation, signaux d'autorité — aucune entrée Wikidata ni Wikipedia · <strong>auteur Schema cassé sur 125 articles</strong>.</p>
                 </div>
             </div>
 
             <div class="kpi-mini-row">
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">Schema Author</div>
+                    <div class="kpi-mini-value">❌</div>
+                </div>
                 <div class="kpi-mini k-critical">
                     <div class="kpi-mini-label">Wikidata</div>
                     <div class="kpi-mini-value">❌</div>
@@ -5248,6 +5252,9 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                 </div>
             </div>
 
+            <div class="issue-item critical"><span class="issue-badge">🚨 Critique</span><div><strong>Schema Author = "developer"</strong> (placeholder non remplacé) — visible dans le JSON-LD de chaque page : <code>"author":{"name":"developer","url":"https://naoenergy.ch/author/developer/"}</code>. Sur un site YMYL (panier ~35 000 CHF, secteur énergie), Google attend un <strong>auteur identifiable avec expertise vérifiable</strong>. Le compte WP "developer" (email <code>alertes@buxumlunic.dev</code>, 0 publications) bloque le E-E-A-T sur les 125 articles publiés en réalité par <strong>Charline Fabbro (124 publications)</strong>. <strong>Action : renommer user_id=1 → "Charline Fabbro" avec bio, photo, URL LinkedIn dans le profil WP.</strong></div></div>
+            <div class="issue-item critical"><span class="issue-badge">🚨 Critique</span><div><strong>Person sameAs = <code>http://localhost:10427</code></strong> — résidu d'environnement de développement laissé en production. À supprimer ou remplacer par l'URL LinkedIn de l'auteur réel.</div></div>
+            <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>3 comptes admin BuxumLunic actifs</strong> (developer, e.dutertre, g.maimbourg avec emails <code>@buxumlunic.dev</code> / <code>@buxumlunic.ch</code>) — ancienne agence dev, toujours accès admin complet sans publications. <strong>Risque sécurité majeur</strong> + pollue le pool d'auteurs Yoast.</div></div>
             <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>Aucune entrée Wikidata trouvée pour "naoenergy".</strong> Impact direct sur la présence dans le Knowledge Graph Google.</div></div>
             <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>Lien sameAs vers Twitter/X manquant</strong> (champ Twitter vide dans Yoast SEO).</div></div>
             <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>Liens sameAs vers Wikipedia et Wikidata manquants.</strong></div></div>
