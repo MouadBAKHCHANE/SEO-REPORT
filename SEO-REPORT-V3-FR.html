@@ -2889,7 +2889,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div class="nav-sub-label" style="padding-left:0">AI Search</div>
                     <button class="nav-child" data-target="geo-aeo" type="button">
                         <span class="nav-label">🤖 GEO + AEO</span>
-                        <span class="nav-badge" style="background:rgba(232,93,74,0.15);color:#E85D4A">1/3</span>
+                        <span class="nav-badge" style="background:rgba(232,93,74,0.15);color:#E85D4A">1/5</span>
                     </button>
 
                     <div class="nav-sub-label" style="padding-left:0">Finding Keywords</div>
@@ -3251,9 +3251,51 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div style="position:relative;padding-left:24px">
                         <div style="position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom, #6F3EAA, var(--border))"></div>
 
-                        <!-- 15 mai 2026 -->
+                        <!-- 18 mai 2026 -->
                         <div style="position:relative;margin-bottom:18px">
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:#6F3EAA;border:3px solid var(--bg)"></div>
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Lun. 18 mai 2026</span>
+                                <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:2px 8px;border-radius:100px;font-size:0.62rem;font-weight:700">Aujourd'hui · Sprint 1 NaoEnergy 100% bouclé</span>
+                            </div>
+                            <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#6F3EAA;font-weight:700;margin-bottom:6px">🤖 GEO / S1.8 — robots.txt AI crawlers</div>
+                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li><strong>Diagnostic préalable</strong> · benchmark 9 concurrents Suisse romandie + Suisse : seul Helion (leader) avait déjà optimisé son robots.txt pour les AI crawlers (OAI-SearchBot, ChatGPT-User, PerplexityBot, FirecrawlAgent, AndiBot, ExaBot). NaoEnergy en retard d'1 an minimum.</li>
+                                    <li><strong>Baseline visibilité IA (16 mai)</strong> · 6 requêtes test sur ChatGPT + Perplexity + Gemini → NaoEnergy <strong>absent</strong> sur ChatGPT (PAC Genève + solaire Romandie) et Gemini (PAC Genève + solaire Romandie). Cité en #2 derrière Tera Solar sur Perplexity. Gemini connaît la fiche complète sur recherche directe "Naoenergy" mais ne recommande pas spontanément. <strong>Verdict : problème de ranking IA, pas de connaissance.</strong></li>
+                                    <li><strong>Code Snippet PHP créé</strong> (ID 10, Code Snippets plugin) · 2 mécanismes intégrés :
+                                        <ul style="margin:6px 0 0 0;padding-left:18px;font-size:0.72rem;color:var(--text-body);line-height:1.7">
+                                            <li>Filter WordPress <code>robots_txt</code> priorité 20 → génération dynamique avec règles AI</li>
+                                            <li>Trigger manuel <code>?naoenergy_write_robots=go</code> (admin only) → écriture filesystem directe via <code>file_put_contents()</code></li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Blocker découvert + résolu</strong> · fichier <code>/robots.txt</code> physique (139 bytes, CRLF Windows) servi par Apache avant invocation WordPress → filter dynamique inopérant. Diagnostic via fetch <code>/index.php?robots=1</code> qui révélait la version dynamique correcte. Backup UpdraftPlus complet pris avant intervention.</li>
+                                    <li><strong>Écriture filesystem live</strong> · trigger URL admin lancé · path identifié <code>/home/clients/.../sites/naoenergy.ch/public/robots.txt</code> · backup automatique <code>robots.txt.bak.20260518-050129</code> (139 bytes) · nouveau contenu <strong>1055 bytes (+662%)</strong> écrit avec succès · cache WP Rocket purgé automatiquement</li>
+                                    <li><strong>Vérification live</strong> · curl <code>/robots.txt</code> retourne 200 OK · tous les bots ciblés présents : GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Perplexity-User, Google-Extended, Applebot-Extended, FirecrawlAgent · bloqués : Bytespider, CCBot · Sitemap <code>llms.txt</code> référencé pour découverte LLM</li>
+                                </ul>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#6F3EAA;font-weight:700;margin-bottom:6px">🖼️ SEO / S1.3 — Alt textes images homepage (40/40 LIVE)</div>
+                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li><strong>Scan baseline</strong> · 41 images détectées sur naoenergy.ch · 21 avec alt OK · <strong>20 sans alt</strong> (1 = Facebook pixel ignoré → 19 réelles à fixer)</li>
+                                    <li><strong>Stratégie hybride 2 couches</strong> · Code Snippet PHP (ID 11) avec :
+                                        <ul style="margin:6px 0 0 0;padding-left:18px;font-size:0.72rem;color:var(--text-body);line-height:1.7">
+                                            <li>Couche 1 — Réécriture <code>post_content</code> (post=36) via <code>wp_update_post</code> + backup auto en <code>wp_options</code> (key <code>naoenergy_post36_backup_20260518-055502</code>) → 6 images Gutenberg blocks fixées</li>
+                                            <li>Couche 2 — Output buffer <code>ob_start</code> sur hook <code>template_redirect</code> → intercepte tout HTML rendu frontend, remplace alt vides pour 13 images théâtre/footer (logo header, social icons youtube/facebook/instagram/linkedin, logos partenaires SSES/CCIG/GSP/PlanetSolar, etc.)</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Résultat final</strong> · <strong>40/40 images avec alt text</strong> · 0 manquant · site live OK (231 KB) · aucun fichier thème modifié · réversible en 1 clic (disable snippet 11) · backup post_content conservé</li>
+                                    <li><strong>Alt textes orientés SEO local</strong> · cohérents avec stratégie Suisse romande + 10 ans naoenergy (ex: "10 ans de transition energetique avec naoenergy en Suisse romande", "Certification GSP - naoenergy installateur agree pompes a chaleur", "Membre SSES - Societe Suisse pour l Energie Solaire")</li>
+                                </ul>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">🏆 Sprint 1 NaoEnergy — 8/8 actions livrées (100%)</div>
+                                <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li>✅ <strong>S1.1</strong> E-E-A-T (Charline auteur 125 articles) · ✅ <strong>S1.2</strong> Article schema retiré home · ✅ <strong>S1.3</strong> Alt textes 40/40 (aujourd'hui) · ✅ <strong>S1.4</strong> WebP Express · ✅ <strong>S1.5</strong> og + twitter description 173 chars · ✅ <strong>S1.6</strong> alternateName 4 variantes · ✅ <strong>S1.7</strong> /llms.txt · ✅ <strong>S1.8</strong> robots.txt AI crawlers (aujourd'hui)</li>
+                                    <li><strong>Prochaine étape</strong> · re-tests GEO sur ChatGPT / Perplexity / Gemini dans 4-6 semaines pour mesurer l'impact des optimisations sur les citations IA · objectif minimal : passer de 1/5 à 3/5 sur les requêtes génériques · objectif idéal : dépasser Tera Solar en #1 sur Perplexity</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 15 mai 2026 -->
+                        <div style="position:relative;margin-bottom:18px">
+                            <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
                                 <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Ven. 15 mai 2026</span>
                                 <span style="background:rgba(24,119,242,0.12);color:#1877F2;padding:2px 8px;border-radius:100px;font-size:0.62rem;font-weight:700">Zen Énergie Services · Sister brand</span>
@@ -5526,8 +5568,8 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             </div>
 
             <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #E85D4A">
-                <div style="font-size:0.85rem;font-weight:800;color:var(--text);margin-bottom:8px">🚨 NaoEnergy quasi invisible sur ChatGPT</div>
-                <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:14px;font-style:italic">3 requêtes test sur les 2 principaux moteurs IA (ChatGPT, Perplexity). Mesure du nombre de citations actuelles pour comparer après implémentation du robots.txt AI crawlers + Sprint 2 contenu.</div>
+                <div style="font-size:0.85rem;font-weight:800;color:var(--text);margin-bottom:8px">🚨 NaoEnergy quasi invisible sur ChatGPT et Gemini · Connaissance OK mais ranking faible</div>
+                <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:14px;font-style:italic">6 requêtes test sur les 3 principaux moteurs IA (ChatGPT, Perplexity, Gemini). Mesure du nombre de citations actuelles pour comparer après implémentation du robots.txt AI crawlers + Sprint 2 contenu.</div>
 
                 <div style="overflow-x:auto">
                     <table style="width:100%;border-collapse:collapse;font-size:0.74rem">
@@ -5550,7 +5592,7 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                                 <td style="padding:10px 12px;border-bottom:1px solid var(--border);font-weight:700">ChatGPT</td>
                                 <td style="padding:10px 12px;border-bottom:1px solid var(--border)">"Qui sont les installateurs de PAC référents à Genève ?"</td>
                                 <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:#E85D4A;font-weight:700">❌ ABSENT</td>
-                                <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text-body);font-size:0.7rem">15 marques citées : Hélios, Helvetia, RB-Energies, Thorens, ID Climat, Aqua &amp; Tech, ADN, HelveticAir, Expert Sanitaire, Eco Rénove, Activ Energy, Sanitech-PAC, Vilela, Bosson+Rapo, FRB Frères</td>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text-body);font-size:0.7rem">15 marques : Hélios, Helvetia, RB-Energies, Thorens, ID Climat, Aqua &amp; Tech, ADN, HelveticAir, Expert Sanitaire, Eco Rénove, Activ Energy, Sanitech-PAC, Vilela, Bosson+Rapo, FRB Frères</td>
                             </tr>
                             <tr>
                                 <td style="padding:10px 12px;border-bottom:1px solid var(--border);font-weight:700">ChatGPT</td>
@@ -5558,15 +5600,34 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                                 <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:#E85D4A;font-weight:700">❌ ABSENT (2 réponses A/B testées)</td>
                                 <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text-body);font-size:0.7rem">10+ marques : Trisol, Hélios, Tera Solar, Swiss Solar System, CAP ENERGIE, Solstis, STG Energy, Atlas, TAMAR SOLAR, Volta Swiss, Swissolaire, HELVETIA energy</td>
                             </tr>
+                            <tr style="background:rgba(232,93,74,0.04)">
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border);font-weight:700">Gemini</td>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border)">"Pompe à chaleur Genève"</td>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:#E85D4A;font-weight:700">❌ ABSENT</td>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text-body);font-size:0.7rem">5 marques : Hélios Énergies (Carouge), EnR Léman (Plan-les-Ouates), Energymoov Swiss (Vernier), Devinaz SA (Lancy), Electro Climat (Plan-les-Ouates) — note : NaoEnergy a aussi un siège Plan-les-Ouates mais pas cité</td>
+                            </tr>
+                            <tr style="background:rgba(232,93,74,0.04)">
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border);font-weight:700">Gemini</td>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border)">"Meilleur installateur solaire Suisse romande"</td>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:#E85D4A;font-weight:700">❌ ABSENT</td>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text-body);font-size:0.7rem">5 marques : Tera Solar, STG Energy, Helios Energies, Energymoov Swiss, Solstis</td>
+                            </tr>
+                            <tr style="background:rgba(42,143,77,0.06)">
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border);font-weight:700">Gemini</td>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border)">"Naoenergy" (recherche directe marque)</td>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:#2A8F4D;font-weight:700">✅ Profil complet</td>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text-body);font-size:0.7rem">Gemini connaît NaoEnergy en détail : siège Crans VD + Renens + Plan-les-Ouates · 70-90 collaborateurs · PV (SunPower, Enphase, SolarEdge) · PAC (aérothermie + géothermie) · stockage BYD · bornes · USPs zéro sous-traitance, garanties 30 ans · certif Swissolar + GSP · 4.4/5</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
 
                 <div style="margin-top:18px;padding:14px 16px;background:rgba(232,93,74,0.08);border-radius:8px;border-left:3px solid #E85D4A">
-                    <div style="font-size:0.78rem;font-weight:800;color:#E85D4A;margin-bottom:8px">📊 Score GEO actuel : 1/3 (33%)</div>
+                    <div style="font-size:0.78rem;font-weight:800;color:#E85D4A;margin-bottom:8px">📊 Score GEO actuel : 1/5 requêtes génériques (20%) · +1/1 recherche marque (Gemini)</div>
                     <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6">
-                        Sur 3 requêtes types posées par un prospect potentiel à un chatbot IA, NaoEnergy n'apparaît que dans 1 réponse sur 3 (et en position #2 derrière Tera Solar).<br/><br/>
-                        <strong style="color:var(--text)">Impact business :</strong> les utilisateurs qui demandent à ChatGPT "qui installer ma PAC à Genève ?" (cas d'usage croissant en 2026) ne voient pas NaoEnergy → leads pré-qualifiés captés par les concurrents.
+                        Sur 5 requêtes <strong>génériques</strong> (prospect qui cherche un installateur sans connaître les marques), NaoEnergy n'apparaît que sur <strong>1 réponse Perplexity</strong> (et en #2 derrière Tera Solar). ABSENT sur ChatGPT (x2) et Gemini (x2).<br/><br/>
+                        💡 <strong>Mais paradoxe positif :</strong> sur une recherche <strong>directe</strong> du nom "Naoenergy", Gemini livre une fiche complète et précise (siège, effectif, produits, certifications, note 4.4/5). <strong>Le problème n'est pas la connaissance, c'est le ranking.</strong> Les IA savent qui est NaoEnergy mais ne le recommandent pas spontanément.<br/><br/>
+                        <strong style="color:var(--text)">Impact business :</strong> les utilisateurs qui demandent à ChatGPT/Gemini "qui installer ma PAC à Genève ?" (cas d'usage croissant en 2026) ne voient pas NaoEnergy → leads pré-qualifiés captés par les concurrents. Les optimisations Sprint 1 (E-E-A-T + llms.txt + robots.txt AI + schema) visent à corriger ce ranking sous 4-6 semaines.
                     </div>
                 </div>
             </div>
@@ -5655,9 +5716,9 @@ User-agent: ExaBot</code></pre>
 
             <!-- ===== Plan GEO Sprint 1 ===== -->
             <div style="display:flex;align-items:center;gap:10px;margin:28px 0 12px;flex-wrap:wrap">
-                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#6F3EAA;font-weight:800">✅ GEO · Sprint 1 — 5/6 actions livrées</div>
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#6F3EAA;font-weight:800">✅ GEO · Sprint 1 — 7/7 actions livrées</div>
                 <div style="flex:1;height:1px;background:var(--border)"></div>
-                <span style="background:rgba(42,143,77,0.14);color:#2A8F4D;padding:4px 10px;border-radius:100px;font-size:0.6rem;font-weight:700">83% complété</span>
+                <span style="background:rgba(42,143,77,0.14);color:#2A8F4D;padding:4px 10px;border-radius:100px;font-size:0.6rem;font-weight:700">100% complété ✅</span>
             </div>
 
             <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #2A8F4D">
@@ -5702,11 +5763,17 @@ User-agent: ExaBot</code></pre>
                                 <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:#2A8F4D;font-weight:700">✅ 16 mai</td>
                                 <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text-body)">Meta tags live confirmés</td>
                             </tr>
-                            <tr style="background:rgba(216,155,37,0.08)">
-                                <td style="padding:10px 12px;font-weight:700">S1.8</td>
-                                <td style="padding:10px 12px"><strong>robots.txt AI crawlers explicites</strong> (autoriser GPTBot, ClaudeBot, PerplexityBot + bloquer Bytespider, CCBot)</td>
-                                <td style="padding:10px 12px;color:#D89B25;font-weight:700">⏳ En attente validation Charline</td>
-                                <td style="padding:10px 12px;color:var(--text-body)">Code Snippet PHP via filter <code>robots_txt</code></td>
+                            <tr>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border);font-weight:700">S1.8</td>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border)"><strong>robots.txt AI crawlers explicites</strong> (autoriser GPTBot, ClaudeBot, PerplexityBot, Google-Extended + bloquer Bytespider, CCBot)</td>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:#2A8F4D;font-weight:700">✅ 18 mai LIVE</td>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text-body)">curl <code>/robots.txt</code> = 1055 bytes (+662% vs baseline 139 bytes) · Code Snippet PHP (filter + filesystem write) · backup conservé</td>
+                            </tr>
+                            <tr>
+                                <td style="padding:10px 12px;font-weight:700">S1.3</td>
+                                <td style="padding:10px 12px"><strong>Alt textes images homepage</strong> (19 manquants → 40/40 images avec alt, hybride post_content rewrite + output buffer PHP filter)</td>
+                                <td style="padding:10px 12px;color:#2A8F4D;font-weight:700">✅ 18 mai LIVE</td>
+                                <td style="padding:10px 12px;color:var(--text-body)">fetch live = 40/40 images avec alt · 0 manquant · site OK 231 KB · backup post_content auto · Snippet 11 réversible</td>
                             </tr>
                         </tbody>
                     </table>
