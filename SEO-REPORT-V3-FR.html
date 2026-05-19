@@ -1343,9 +1343,9 @@ button.kpi-card { display: block; width: 100%; }
 @media (max-width: 1024px) {
     .topbar-logo { display: inline-flex; }
 }
-@media (max-width: 480px) {
-    .topbar-logo img { max-height: 22px; }
-    .topbar-logo { padding: 4px 6px; }
+/* Small mobile: hide topbar logo (logo stays in sidebar drawer when opened) */
+@media (max-width: 600px) {
+    .topbar-logo { display: none !important; }
 }
 .notif-dropdown.open { display: block; animation: notifSlide 0.25s ease-out; }
 @keyframes notifSlide {
