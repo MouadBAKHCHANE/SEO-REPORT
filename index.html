@@ -4665,7 +4665,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <h1 class="page-title">🎨 Thème &amp; Stack technique</h1>
                         <span class="badge" style="background:rgba(124,177,196,0.15);color:#5A98AE">Audit 19 mai 2026</span>
                     </div>
-                    <p class="page-subtitle">Photographie complète de la stack actuelle, des 24 plugins, et plan d'amélioration UX éditeur pour Charline — <strong>SANS migration Elementor</strong>. Tout est résumé ici pour préparer le Sprint Redesign.</p>
+                    <p class="page-subtitle">Photographie complète de la stack actuelle, des 24 plugins, et plan d'amélioration UX de l'éditeur — <strong>SANS migration Elementor</strong>. Tout est résumé ici pour préparer le Sprint Redesign.</p>
                 </div>
             </div>
 
@@ -4676,7 +4676,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <table style="width:100%;font-size:0.78rem;border-collapse:collapse">
                         <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0;color:var(--text-muted);width:35%">Thème actif</td><td style="padding:8px 0;font-weight:700"><code>Naoenergy v1.1.8</code> par <a href="https://buxumlunic.ch" target="_blank" rel="noopener" style="color:#5A98AE">buxumlunic.ch</a></td></tr>
                         <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0;color:var(--text-muted)">Type</td><td style="padding:8px 0">Block Theme moderne (theme.json v3, FSE compatible)</td></tr>
-                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0;color:var(--text-muted)">Child theme</td><td style="padding:8px 0">❌ <strong>Aucun installé</strong> — à créer (Child Theme Configurator)</td></tr>
                         <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0;color:var(--text-muted)">Bundler</td><td style="padding:8px 0">Webpack via <code>@wordpress/scripts v30.3.0</code> (officiel WP)</td></tr>
                         <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0;color:var(--text-muted)">Stack source</td><td style="padding:8px 0">HTML5 + PHP + SCSS + Vanilla JS + Swiper + GSAP</td></tr>
                         <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0;color:var(--text-muted)">Node version</td><td style="padding:8px 0"><code>v20</code> (selon <code>.nvmrc</code>)</td></tr>
@@ -4689,7 +4688,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
 
             <!-- ===== 2. SITE EDITOR / BLOCS ÉDITEUR ===== -->
             <div class="ev-section" style="margin-top:32px">
-                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">🧱 2. Éditeur Gutenberg + Site Editor (FSE) — Ce que Charline a</div>
+                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">🧱 2. Éditeur Gutenberg + Site Editor (FSE)</div>
                 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:14px">
                     <div style="background:var(--surface-soft);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:800;color:#5A98AE">173</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px">blocs disponibles au total</div></div>
                     <div style="background:var(--surface-soft);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:800;color:#5A98AE">105</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px">blocs WP Core</div></div>
@@ -4698,29 +4697,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 </div>
                 <div style="background:rgba(42,143,77,0.08);border-left:3px solid #2A8F4D;border-radius:8px;padding:14px 16px">
                     <div style="font-size:0.78rem;font-weight:700;color:#2A8F4D;margin-bottom:6px">✅ Stack MODERNE confirmée</div>
-                    <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6">WordPress 6.9.4 + Block Editor + Site Editor (FSE) + Block Theme custom + ACF Pro. C'est le <strong>standard 2025-2026 officiel WordPress</strong>. Charline a accès au <strong>Site Editor</strong> pour modifier templates entiers (header/footer/single).</div>
-                </div>
-            </div>
-
-            <!-- ===== 3. DÉCISION ELEMENTOR ===== -->
-            <div class="ev-section" style="margin-top:32px">
-                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">❌ 3. Faut-il migrer vers Elementor ? — <strong style="color:#D14536">NON</strong></div>
-                <div style="background:var(--surface-soft);border-radius:12px;padding:18px 20px">
-                    <table style="width:100%;font-size:0.74rem;border-collapse:collapse">
-                        <thead><tr style="border-bottom:2px solid var(--border)"><th style="text-align:left;padding:8px 0">Critère</th><th style="text-align:left;padding:8px 12px">Gutenberg (actuel)</th><th style="text-align:left;padding:8px 0">Elementor</th></tr></thead>
-                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0">Architecture</td><td style="padding:8px 12px">🟢 Native WordPress</td><td style="padding:8px 0">🔴 Plugin externe</td></tr>
-                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0">Avenir</td><td style="padding:8px 12px">🟢 Standard officiel</td><td style="padding:8px 0">🟡 Décline (WP pousse Gutenberg)</td></tr>
-                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0">Performance</td><td style="padding:8px 12px">🟢 Léger (HTML/CSS natif)</td><td style="padding:8px 0">🔴 +200-400 KB JS/CSS</td></tr>
-                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0">Core Web Vitals</td><td style="padding:8px 12px">🟢 Bon</td><td style="padding:8px 0">🔴 LCP +1-2s souvent</td></tr>
-                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0">SEO</td><td style="padding:8px 12px">🟢 HTML propre</td><td style="padding:8px 0">🟡 Divs imbriquées</td></tr>
-                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0">Coût</td><td style="padding:8px 12px">🟢 Gratuit</td><td style="padding:8px 0">🔴 59-199 $/an</td></tr>
-                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0">Vendor lock-in</td><td style="padding:8px 12px">🟢 Aucun</td><td style="padding:8px 0">🔴 Énorme (désactivation = pages cassées)</td></tr>
-                        <tr><td style="padding:8px 0">Migration current → new</td><td style="padding:8px 12px">—</td><td style="padding:8px 0">🔴 Refonte de TOUTES les pages</td></tr>
-                    </table>
-                </div>
-                <div style="background:rgba(232,93,74,0.08);border-left:3px solid #E85D4A;border-radius:8px;padding:14px 16px;margin-top:14px">
-                    <div style="font-size:0.78rem;font-weight:700;color:#E85D4A;margin-bottom:6px">🎯 Verdict</div>
-                    <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6">Migrer vers Elementor = <strong>casser 5+ années d'investissement</strong> dans une stack moderne pour aller vers un système moins performant qui décline. <strong>Mauvaise direction.</strong> Mieux : améliorer l'UX éditeur Gutenberg actuelle (Patterns, Block Styles, mini-guide).</div>
+                    <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6">WordPress 6.9.4 + Block Editor + Site Editor (FSE) + Block Theme custom + ACF Pro. C'est le <strong>standard 2025-2026 officiel WordPress</strong>. Le <strong>Site Editor</strong> permet de modifier les templates entiers (header/footer/single) directement depuis l'admin.</div>
                 </div>
             </div>
 
@@ -4743,8 +4720,8 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div style="font-size:0.72rem;color:var(--text-body);line-height:1.7">WP Consent API · IP2Location Country Blocker · Redirection · Safe SVG · Simple Custom Post Order · Stream · <strong>Hotjar</strong> <em>(suggestion : remplacer par Microsoft Clarity, 100% gratuit illimité)</em></div>
                 </div>
                 <div style="background:var(--surface-soft);border-radius:12px;padding:14px 18px;margin-bottom:10px">
-                    <div style="font-size:0.72rem;font-weight:700;color:#FF9900;margin-bottom:6px">🟠 3 à vérifier usage avec Charline</div>
-                    <div style="font-size:0.72rem;color:var(--text-body);line-height:1.7"><strong>Blocks CSS</strong> (panneau CSS perso par bloc — utilisé ?) · <strong>Otter</strong> (44 blocs extra — quels blocs réellement utilisés ?) · <strong>Duplicate Page</strong> (Charline duplique des pages ?)</div>
+                    <div style="font-size:0.72rem;font-weight:700;color:#FF9900;margin-bottom:6px">🟠 3 à vérifier — usage à confirmer</div>
+                    <div style="font-size:0.72rem;color:var(--text-body);line-height:1.7"><strong>Blocks CSS</strong> (panneau CSS perso par bloc — utilisé ?) · <strong>Otter</strong> (44 blocs extra — quels blocs réellement utilisés ?) · <strong>Duplicate Page</strong> (fonction "Dupliquer page" utilisée ?)</div>
                 </div>
                 <div style="background:var(--surface-soft);border-radius:12px;padding:14px 18px;margin-bottom:10px">
                     <div style="font-size:0.72rem;font-weight:700;color:#E85D4A;margin-bottom:6px">🔴 1 remplaçable</div>
@@ -4773,7 +4750,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 </div>
                 <div style="background:rgba(245,166,35,0.08);border-left:3px solid #F5A623;border-radius:8px;padding:14px 16px;margin-top:12px">
                     <div style="font-size:0.78rem;font-weight:700;color:#F5A623;margin-bottom:6px">⏳ Action en attente validation</div>
-                    <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6">Désactiver les 2 blocs Yoast obsolètes dans Réglages → Yoast SEO → Intégrations. <strong>0 risque</strong> (aucune utilisation détectée). 2 min d'admin work, à faire après validation Mouad.</div>
+                    <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6">Désactiver les 2 blocs Yoast obsolètes dans Réglages → Yoast SEO → Intégrations. <strong>0 risque</strong> (aucune utilisation détectée). 2 min d'admin work, à faire après accord.</div>
                 </div>
             </div>
 
@@ -4785,7 +4762,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div style="display:grid;grid-template-columns:1fr;gap:10px">
                         <div style="background:var(--bg);border-radius:8px;padding:12px 14px;border-left:3px solid #2A8F4D">
                             <div style="font-size:0.76rem;font-weight:700;color:#2A8F4D;margin-bottom:4px">Couche 1 — CSS additionnel (90% des cas)</div>
-                            <div style="font-size:0.72rem;color:var(--text-body);line-height:1.6">Personnaliser → CSS additionnel. <strong>Save Draft + Share Preview Link</strong> = Charline valide via lien privé avant publication. <em>Déjà utilisé pour le fix CTA texte fantôme du 18 mai (1265 chars ajoutés, validé live).</em></div>
+                            <div style="font-size:0.72rem;color:var(--text-body);line-height:1.6">Personnaliser → CSS additionnel. <strong>Save Draft + Share Preview Link</strong> = validation via lien privé avant publication. <em>Déjà utilisé pour le fix CTA texte fantôme du 18 mai (1265 chars ajoutés, validé live).</em></div>
                         </div>
                         <div style="background:var(--bg);border-radius:8px;padding:12px 14px;border-left:3px solid #F5A623">
                             <div style="font-size:0.76rem;font-weight:700;color:#F5A623;margin-bottom:4px">Couche 2 — Code Snippets PHP (pour hooks &amp; filters)</div>
@@ -4802,44 +4779,15 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6"><strong>WP Staging Free</strong> (plugin gratuit officiel) → crée copie du site dans sous-dossier <code>/staging-XXX/</code> avec auth + noindex. Pas besoin d'accès Infomaniak panel. Réinitialisable 1 clic. <strong>10 min d'install.</strong></div>
                 </div>
                 <div style="background:rgba(111,62,170,0.08);border-left:3px solid #6F3EAA;border-radius:8px;padding:14px 16px">
-                    <div style="font-size:0.78rem;font-weight:700;color:#6F3EAA;margin-bottom:6px">🎯 Plan d'amélioration UX éditeur Charline (sans changer Gutenberg)</div>
+                    <div style="font-size:0.78rem;font-weight:700;color:#6F3EAA;margin-bottom:6px">🎯 Plan d'amélioration UX de l'éditeur (sans changer Gutenberg)</div>
                     <ul style="margin:0;padding-left:18px;font-size:0.72rem;color:var(--text-body);line-height:1.7">
-                        <li><strong>Créer 8-10 Patterns custom NaoEnergy</strong> (Hero, CTA, Solutions grid, Testimonial, À propos, FAQ, Article featured...) — gros gain UX, Charline crée une page en 30 sec</li>
+                        <li><strong>Créer 8-10 Patterns custom NaoEnergy</strong> (Hero, CTA, Solutions grid, Testimonial, À propos, FAQ, Article featured...) — gros gain UX, création d'une page en 30 sec</li>
                         <li><strong>Désactiver 80+ blocs inutiles</strong> via plugin Block Visibility (clarté éditeur, passer de 173 à ~70 blocs pertinents)</li>
                         <li><strong>Block Style Variations</strong> pour les 5 blocs naoenergy/* principaux (Solutions, News, Slider...) — 2-3 variantes pré-stylées par bloc</li>
-                        <li><strong>Mini-guide Loom 5 min</strong> pour Charline ("comment créer une page avec les patterns")</li>
+                        <li><strong>Mini-guide Loom 5 min</strong> ("comment créer une page avec les patterns")</li>
                         <li><strong>Désactiver blocs Yoast FAQ + HowTo</strong> (schemas obsolètes Google) — 0 utilisation, 0 risque</li>
                     </ul>
                 </div>
-            </div>
-
-            <!-- ===== 7. SPRINT DESIGN — BUGS RÉSOLUS ===== -->
-            <div class="ev-section" style="margin-top:32px">
-                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">🐛 7. Sprint Design — Bugs résolus + en cours</div>
-                <table style="width:100%;font-size:0.74rem;border-collapse:collapse;background:var(--surface-soft);border-radius:12px;overflow:hidden">
-                    <thead><tr style="background:rgba(124,177,196,0.10)"><th style="text-align:left;padding:10px 16px">ID</th><th style="text-align:left;padding:10px 16px">Bug</th><th style="text-align:left;padding:10px 16px">Statut</th><th style="text-align:left;padding:10px 16px">Date</th></tr></thead>
-                    <tr style="border-top:1px solid var(--border)"><td style="padding:10px 16px"><strong>D1+D2</strong></td><td style="padding:10px 16px">Audit visuel auto homepage + 5 pages clés (Desktop 1440 + Mobile 390)</td><td style="padding:10px 16px;color:#2A8F4D;font-weight:700">✅ Terminé</td><td style="padding:10px 16px;color:var(--text-muted)">18 mai</td></tr>
-                    <tr style="border-top:1px solid var(--border)"><td style="padding:10px 16px"><strong>D3</strong></td><td style="padding:10px 16px">Bug texte fantôme bloc CTA — fix CSS déployé live (custom_css[naoenergy] +1265 chars)</td><td style="padding:10px 16px;color:#2A8F4D;font-weight:700">✅ LIVE</td><td style="padding:10px 16px;color:var(--text-muted)">18 mai 23h57</td></tr>
-                    <tr style="border-top:1px solid var(--border)"><td style="padding:10px 16px"><strong>D4</strong></td><td style="padding:10px 16px">Widget Trustindex "vide" — <em>faux positif</em>, widget OK en lazy-load (48 avis Google chargés au scroll)</td><td style="padding:10px 16px;color:#2A8F4D;font-weight:700">✅ Résolu</td><td style="padding:10px 16px;color:var(--text-muted)">19 mai</td></tr>
-                    <tr style="border-top:1px solid var(--border)"><td style="padding:10px 16px"><strong>D5</strong></td><td style="padding:10px 16px">Image <code>RDV.jpg</code> manquante (404) — à restaurer via UpdraftPlus ou original Charline</td><td style="padding:10px 16px;color:#F5A623;font-weight:700">⏳ En attente</td><td style="padding:10px 16px;color:var(--text-muted)">—</td></tr>
-                </table>
-            </div>
-
-            <!-- ===== 8. ACTIONS PRIORITAIRES ===== -->
-            <div class="ev-section" style="margin-top:32px">
-                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">🎯 8. Actions prioritaires — Backlog</div>
-                <table style="width:100%;font-size:0.74rem;border-collapse:collapse;background:var(--surface-soft);border-radius:12px;overflow:hidden">
-                    <thead><tr style="background:rgba(124,177,196,0.10)"><th style="text-align:left;padding:10px 16px">#</th><th style="text-align:left;padding:10px 16px">Action</th><th style="text-align:left;padding:10px 16px">Effort</th><th style="text-align:left;padding:10px 16px">Risque</th><th style="text-align:left;padding:10px 16px">Reqd Charline ?</th></tr></thead>
-                    <tr style="border-top:1px solid var(--border)"><td style="padding:10px 16px">1</td><td style="padding:10px 16px">Désactiver blocs Yoast FAQ + HowTo (obsolètes)</td><td style="padding:10px 16px">2 min</td><td style="padding:10px 16px;color:#2A8F4D">🟢 0</td><td style="padding:10px 16px">Non (val Mouad)</td></tr>
-                    <tr style="border-top:1px solid var(--border)"><td style="padding:10px 16px">2</td><td style="padding:10px 16px">Installer WP Staging Free + créer staging copy</td><td style="padding:10px 16px">10 min</td><td style="padding:10px 16px;color:#2A8F4D">🟢 0</td><td style="padding:10px 16px">Non</td></tr>
-                    <tr style="border-top:1px solid var(--border)"><td style="padding:10px 16px">3</td><td style="padding:10px 16px">Créer <code>naoenergy-child</code> via Child Theme Configurator (sans activation)</td><td style="padding:10px 16px">7 min</td><td style="padding:10px 16px;color:#2A8F4D">🟢 0</td><td style="padding:10px 16px">Non</td></tr>
-                    <tr style="border-top:1px solid var(--border)"><td style="padding:10px 16px">4</td><td style="padding:10px 16px">Restaurer image <code>RDV.jpg</code> via UpdraftPlus ou original</td><td style="padding:10px 16px">20 min</td><td style="padding:10px 16px;color:#2A8F4D">🟢 0</td><td style="padding:10px 16px">Oui (original ?)</td></tr>
-                    <tr style="border-top:1px solid var(--border)"><td style="padding:10px 16px">5</td><td style="padding:10px 16px">Demander accès FTP/SFTP Infomaniak + Git buxumlunic.ch</td><td style="padding:10px 16px">—</td><td style="padding:10px 16px;color:#2A8F4D">🟢 0</td><td style="padding:10px 16px">Oui</td></tr>
-                    <tr style="border-top:1px solid var(--border)"><td style="padding:10px 16px">6</td><td style="padding:10px 16px">Vérifier usage live Blocks CSS + Otter + Duplicate Page + Hotjar + UserFeedback</td><td style="padding:10px 16px">15 min</td><td style="padding:10px 16px;color:#2A8F4D">🟢 0</td><td style="padding:10px 16px">Oui</td></tr>
-                    <tr style="border-top:1px solid var(--border)"><td style="padding:10px 16px">7</td><td style="padding:10px 16px">Créer 8-10 Patterns custom NaoEnergy (Hero, CTA, Solutions grid...)</td><td style="padding:10px 16px">4-6h</td><td style="padding:10px 16px;color:#F5A623">🟡 Faible (test sur staging)</td><td style="padding:10px 16px">Validation</td></tr>
-                    <tr style="border-top:1px solid var(--border)"><td style="padding:10px 16px">8</td><td style="padding:10px 16px">Block Style Variations pour 5 blocs naoenergy/* principaux</td><td style="padding:10px 16px">6-8h</td><td style="padding:10px 16px;color:#F5A623">🟡 Faible (via child theme)</td><td style="padding:10px 16px">Validation</td></tr>
-                    <tr style="border-top:1px solid var(--border)"><td style="padding:10px 16px">9</td><td style="padding:10px 16px">Mini-guide vidéo Loom 5 min pour Charline (autonomie édition)</td><td style="padding:10px 16px">30 min</td><td style="padding:10px 16px;color:#2A8F4D">🟢 0</td><td style="padding:10px 16px">Non</td></tr>
-                </table>
             </div>
 
         </div>
