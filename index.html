@@ -2944,6 +2944,11 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Basculer le menu" title="Afficher / masquer le menu" type="button">
                 <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
+            <a class="icon-btn roadmap-btn" href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" title="Roadmap stratégique 90 jours — MouaDev" aria-label="Roadmap 90 jours" style="text-decoration:none;display:inline-flex;align-items:center;gap:7px;padding:0 14px;background:linear-gradient(135deg, #FFF6F0 0%, #FFEDDF 100%);border:1px solid rgba(232,93,44,0.35);color:#E85D2C;font-weight:700;font-size:0.74rem;letter-spacing:0.2px;white-space:nowrap">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:16px;height:16px;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                <span class="roadmap-btn-label">Roadmap 90j</span>
+                <svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24" style="width:11px;height:11px;opacity:0.7;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+            </a>
             <button class="topbar-logo" onclick="showPanel('overview')" type="button" aria-label="Accueil naoenergy">
                 <img src="imgi_2_logo-light-1.svg" alt="naoenergy" class="brand-logo-light">
                 <img src="imgi_29_logo-light.svg" alt="naoenergy" class="brand-logo-dark">
@@ -2968,17 +2973,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
                 </div>
             </button>
-            <!-- LEFT group: home + Roadmap -->
-            <button class="icon-btn home-btn" onclick="showPanel('overview')" aria-label="Accueil" title="Vue d'ensemble" type="button">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V10"/></svg>
-            </button>
-            <a class="icon-btn roadmap-btn" href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" title="Roadmap stratégique 90 jours — MouaDev" aria-label="Roadmap 90 jours" style="text-decoration:none;display:inline-flex;align-items:center;gap:7px;padding:0 14px;background:linear-gradient(135deg, #FFF6F0 0%, #FFEDDF 100%);border:1px solid rgba(232,93,44,0.35);color:#E85D2C;font-weight:700;font-size:0.74rem;letter-spacing:0.2px;white-space:nowrap">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:16px;height:16px;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-                <span class="roadmap-btn-label">Roadmap 90j</span>
-                <svg fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24" style="width:11px;height:11px;opacity:0.7;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-            </a>
-
-            <!-- RIGHT group: search + theme + drive + notif -->
+            <!-- RIGHT group: search + drive + home -->
             <div class="topbar-actions">
                 <div class="topbar-search">
                     <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
@@ -2987,188 +2982,20 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 <button class="icon-btn search-mobile-btn" onclick="toggleMobileSearch()" aria-label="Rechercher" type="button">
                     <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 </button>
-                <button class="icon-btn theme-toggle" onclick="toggleTheme()" title="Changer le thème">
-                    <svg class="light-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
-                    <svg class="dark-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
-                </button>
                 <a class="icon-btn drive-btn" href="https://drive.google.com/drive/folders/1HLC9sZsveuzHFQfOzLF-3K2z5tK3SjRa?usp=sharing" target="_blank" rel="noopener" title="Documents Drive — Discovery NaoEnergy" aria-label="Drive NaoEnergy" style="position:relative;text-decoration:none;display:inline-flex;align-items:center;justify-content:center">
-                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    <svg viewBox="0 0 87.3 78" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px">
+                        <path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/>
+                        <path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="#00ac47"/>
+                        <path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="#ea4335"/>
+                        <path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d"/>
+                        <path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#2684fc"/>
+                        <path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00"/>
+                    </svg>
                     <span style="position:absolute;top:6px;right:6px;width:8px;height:8px;border-radius:50%;background:#5A98AE;border:2px solid var(--surface);box-shadow:0 0 0 1px rgba(90,152,174,0.30)"></span>
                 </a>
-                <div class="notif-wrap">
-                    <button class="icon-btn notif-trigger" onclick="toggleNotif(event)" aria-label="Notifications" type="button">
-                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
-                        <span class="notif-badge">16</span>
-                    </button>
-                    <div class="notif-dropdown" id="notifDropdown" onclick="event.stopPropagation()">
-                        <div class="notif-header">
-                            <div class="notif-header-title">Nouveautés du rapport</div>
-                            <div class="notif-count">16 nouveau(x)</div>
-                        </div>
-                        <div class="notif-list">
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('wp_admin');">
-                                <div class="notif-icon ev-pass">🗑️</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">3 plugins inactifs supprimés (sécurité)</div>
-                                        <div class="notif-time">11 mai</div>
-                                    </div>
-                                    <div class="notif-desc">Nettoyage : <code>MonsterInsights</code> · <code>WPCode Lite</code> · <code>WP Headers And Footers</code>. Réduction surface d'attaque · état post-nettoyage : 28 extensions actives, 0 inactives.</div>
-                                </div>
-                            </button>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('wp_admin');">
-                                <div class="notif-icon ev-pass">💾</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">UpdraftPlus offsite Google Drive configuré</div>
-                                        <div class="notif-time">11 mai</div>
-                                    </div>
-                                    <div class="notif-desc">Stockage distant Google Drive activé · auth OK sur <code>bakhchanemouad@gmail.com</code> · dossier "UpdraftPlus" créé · email alertes → <code>contact@naoenergy.ch</code> · backup test lancé pour validation 3-2-1.</div>
-                                </div>
-                            </button>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('wp_admin');">
-                                <div class="notif-icon ev-pass">🛡️</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">WP File Manager désactivé (sécurité)</div>
-                                        <div class="notif-time">9 mai</div>
-                                    </div>
-                                    <div class="notif-desc">Plugin <code>wp-file-manager</code> v8.0.4 désactivé · CVE-2020-25213 RCE historique · version FREE sans garde-fous (filesystem complet accessible tout admin) · une vulnérabilité majeure de moins.</div>
-                                </div>
-                            </button>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('wp_admin');">
-                                <div class="notif-icon ev-critical">🚨</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Audit WordPress urgent — 4 alertes critiques</div>
-                                        <div class="notif-time">8 mai</div>
-                                    </div>
-                                    <div class="notif-desc">Backup cassé 88 jours (10 fév → 8 mai) · Meta Pixel + Hotjar bypass consent (risque LPD CH) · PHP 8.1.34 EOL · Polylang Pro auto-MAJ programmée. Plan d'action validé Charline.</div>
-                                </div>
-                            </button>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('meta_ads');">
-                                <div class="notif-icon ev-pass">📱</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Section Meta Ads refondue — 4 sous-sections</div>
-                                        <div class="notif-time">8 mai</div>
-                                    </div>
-                                    <div class="notif-desc">Nouvelle structure : 01 Budget (table allocation 1000+1000 validée Charline) · 02 Objectifs · 03 Créatives & Angles · 04 Actions par date. Sidebar simplifiée (1 entrée vs 2).</div>
-                                </div>
-                            </button>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('meta_ads');">
-                                <div class="notif-icon ev-info">🎨</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Veille Meta Ads concurrence Solaire CH</div>
-                                        <div class="notif-time">8 mai</div>
-                                    </div>
-                                    <div class="notif-desc">Analyse 7 acteurs (Helvetia, Habit'Avenir, Solstis, Tera...) · Top 7 angles d'accroche · format dominant vidéo · 5 angles à tester pour NaoEnergy (10 ans premium, anti-Habit'Avenir).</div>
-                                </div>
-                            </button>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('overview'); window.scrollTo({top:0,behavior:'smooth'});">
-                                <div class="notif-icon ev-pass">📊</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Vue d'ensemble simplifiée — 4 cards redirect</div>
-                                        <div class="notif-time">8 mai</div>
-                                    </div>
-                                    <div class="notif-desc">Remplacement des 16 KPIs par 4 cards principales (Google Ads, Meta Ads, SEO, WordPress) avec accès direct aux sections. Raccourcis rapides conservés (Objectifs, Problèmes, Plan d'actions).</div>
-                                </div>
-                            </button>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('overview'); window.scrollTo({top:0,behavior:'smooth'});">
-                                <div class="notif-icon ev-pass">🛠️</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Refonte du dashboard — itération du jour</div>
-                                        <div class="notif-time">6 mai</div>
-                                    </div>
-                                    <div class="notif-desc">Nouveau groupe sidebar « Entreprise » (Profil naoenergy, Contexte concurrentiel · 16 acteurs, Contexte énergétique 2026, Objectifs &amp; missions). Refonte des KPIs en 4 sections (Acquisition, Ads, SEO, CRO) avec popup explicatif au clic. Logo agrandi, sandwich + Roadmap orange dans la topbar, mobile responsive complet.</div>
-                                </div>
-                            </button>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('overview'); window.scrollTo({top:0,behavior:'smooth'});">
-                                <div class="notif-icon ev-pass">🤝</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Meeting kick-off NaoEnergy — CR ajouté</div>
-                                        <div class="notif-time">5 mai</div>
-                                    </div>
-                                    <div class="notif-desc">Compte-rendu complet du meet de lancement avec Charline.</div>
-                                </div>
-                            </button>
-                            <a class="notif-item" href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" onclick="closeNotif();" style="text-decoration:none">
-                                <div class="notif-icon" style="background:rgba(232,93,44,0.14);color:#E85D2C">📋</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Roadmap 90 jours publiée</div>
-                                        <div class="notif-time">5 mai</div>
-                                    </div>
-                                    <div class="notif-desc">Plan d'action sur 12 semaines · 4 axes en parallèle · Heatmap d'intensité · Checklist d'accès · Discovery questions du meet.</div>
-                                </div>
-                            </a>
-                            <a class="notif-item" href="https://drive.google.com/drive/folders/1HLC9sZsveuzHFQfOzLF-3K2z5tK3SjRa?usp=sharing" target="_blank" rel="noopener" onclick="closeNotif();" style="text-decoration:none">
-                                <div class="notif-icon ev-info">📁</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Espace Drive partagé connecté</div>
-                                        <div class="notif-time">5 mai</div>
-                                    </div>
-                                    <div class="notif-desc">Raccourci Drive ajouté dans la topbar pour le suivi des documents discovery et livrables côté Charline.</div>
-                                </div>
-                            </a>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('tracking');">
-                                <div class="notif-icon ev-critical">🔬</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Smoking Gun GA4 Consent Mode</div>
-                                        <div class="notif-time">9 avril</div>
-                                    </div>
-                                    <div class="notif-desc">Cause confirmée : <code>analytics_storage: denied</code> par défaut bloque GA4 pour 100 % des visiteurs européens.</div>
-                                </div>
-                            </button>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('tracking');">
-                                <div class="notif-icon ev-critical">⚠️</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Double tracking GA4 détecté</div>
-                                        <div class="notif-time">9 avril</div>
-                                    </div>
-                                    <div class="notif-desc"><code>GT-WBK8XSPW</code> + <code>G-7G5KELWH87</code> chargent simultanément via deux plugins.</div>
-                                </div>
-                            </button>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('errors404');">
-                                <div class="notif-icon ev-info">📝</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Erreurs 404 déclassées</div>
-                                        <div class="notif-time">9 avril</div>
-                                    </div>
-                                    <div class="notif-desc">84,7 % des "9 864 erreurs" sont du bruit Facebook bot. Aucun impact GA4/GSC.</div>
-                                </div>
-                            </button>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('sitekit');">
-                                <div class="notif-icon ev-warning">📍</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Répartition géographique GA4</div>
-                                        <div class="notif-time">9 avril</div>
-                                    </div>
-                                    <div class="notif-desc">82,7 % du trafic GA4 vient de USA / Chine / Singapour / Tunisie (bots).</div>
-                                </div>
-                            </button>
-                            <button class="notif-item" type="button" onclick="closeNotif(); showPanel('sitekit');">
-                                <div class="notif-icon ev-pass">📊</div>
-                                <div class="notif-content">
-                                    <div class="notif-title-row">
-                                        <div class="notif-item-title">Search Console = vraie croissance</div>
-                                        <div class="notif-time">9 avril</div>
-                                    </div>
-                                    <div class="notif-desc">+16,5 % clics, +16,4 % impressions. Le SEO marche, c'est juste GA4 qui ment.</div>
-                                </div>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <button class="icon-btn home-btn" onclick="showPanel('overview')" aria-label="Accueil" title="Vue d'ensemble" type="button">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V10"/></svg>
+                </button>
             </div>
         </div>
 
@@ -3189,57 +3016,22 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;margin:0">Tableau de bord centralis&eacute; pour piloter la strat&eacute;gie digitale de <strong style="color:var(--text)">NAOenergy</strong>. SEO, publicit&eacute; payante, tracking et actions prioritaires.</p>
                 </div>
 
-                <!-- ⚡ Raccourcis rapides (en tête de page) -->
-                <div style="margin-bottom:28px">
-                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);font-weight:700;margin-bottom:12px">⚡ Raccourcis rapides</div>
-                    <div class="raccourcis-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
-                        <button class="comp-card" onclick="showPanel('objectives')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">🎯</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Objectifs &amp; missions</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">Marketing digital naoenergy</div></div></button>
-                        <button class="comp-card" onclick="openDrawer('critical')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-left:3px solid #E85D4A;border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">⚠️</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Situation avant projet</div><div style="font-size:0.65rem;color:#C44A1F;margin-top:2px">→ Voir la liste</div></div></button>
-                        <button class="comp-card" onclick="showPanel('recs')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-left:3px solid #5A98AE;border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">📋</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Plan d'actions</div><div style="font-size:0.65rem;color:var(--text-muted);margin-top:2px">→ Voir le plan</div></div></button>
-                        <button class="comp-card" onclick="showPanel('external_audits')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-left:3px solid #6F3EAA;border-radius:10px;padding:14px 16px;cursor:pointer;transition:all 0.15s;display:flex;align-items:center;gap:12px"><span style="font-size:1.4rem">🔍</span><div><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Audits externes</div><div style="font-size:0.65rem;color:#6F3EAA;margin-top:2px">→ Preuves d'amélioration</div></div></button>
-                    </div>
+                <!-- ═══════════ APP GRID — 8 EQUAL CARDS (4 per row) ═══════════ -->
+                <div class="app-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px">
+                    <button onclick="showPanel('objectives')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #7CB1C4;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><span style="font-size:2rem;line-height:1">🎯</span><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Objectifs &amp; missions</div></button>
+                    <button onclick="openDrawer('critical')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #E85D4A;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><span style="font-size:2rem;line-height:1">⚠️</span><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Situation avant projet</div></button>
+                    <button onclick="showPanel('recs')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #5A98AE;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><span style="font-size:2rem;line-height:1">📋</span><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Plan d'actions</div></button>
+                    <button onclick="showPanel('external_audits')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #6F3EAA;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><span style="font-size:2rem;line-height:1">🔍</span><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Audits externes</div></button>
+                    <button onclick="showPanel('google_ads')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #4285F4;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:#4285F4;color:#fff;font-weight:800;font-size:1.1rem">G</span><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Google Ads</div></button>
+                    <button onclick="showPanel('meta_ads')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #1877F2;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:#1877F2;color:#fff;font-weight:800;font-size:1.1rem">M</span><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Meta Ads</div></button>
+                    <button onclick="showPanel('onpage')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #3FB76C;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:#3FB76C;color:#fff;font-weight:800;font-size:1.1rem">S</span><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">SEO</div></button>
+                    <button onclick="showPanel('wp_admin')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #21759B;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:#21759B;color:#fff;font-weight:800;font-size:1.1rem">W</span><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">WordPress</div></button>
                 </div>
-
-                <!-- ═══════════ MAIN KPIs — 4 SECTIONS REDIRECT ═══════════ -->
-                <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px;flex-wrap:wrap">
-                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#5A98AE;font-weight:800">📊 Sections principales</div>
-                    <div style="flex:1;height:1px;background:var(--border)"></div>
-                    <span style="font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:600">Cliquer pour accéder</span>
-                </div>
-                <div class="raccourcis-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px">
-                    <button onclick="showPanel('google_ads')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-top:4px solid #4285F4;border-radius:12px;padding:18px 20px;cursor:pointer;transition:all 0.15s;display:flex;flex-direction:column;gap:10px">
-                        <div style="display:flex;align-items:center;gap:10px">
-                            <span style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#4285F4;color:#fff;font-weight:800;font-size:1rem">G</span>
-                            <div style="font-size:0.95rem;font-weight:800;color:var(--text)">Google Ads</div>
-                        </div>
-                        <div style="font-size:0.7rem;color:var(--text-muted);line-height:1.5">2 campagnes saisonnières · 80 CHF/jour · GE + VD</div>
-                        <div style="font-size:0.7rem;font-weight:700;color:#4285F4;margin-top:auto">→ Voir le détail</div>
-                    </button>
-                    <button onclick="showPanel('meta_ads')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-top:4px solid #1877F2;border-radius:12px;padding:18px 20px;cursor:pointer;transition:all 0.15s;display:flex;flex-direction:column;gap:10px">
-                        <div style="display:flex;align-items:center;gap:10px">
-                            <span style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#1877F2;color:#fff;font-weight:800;font-size:1rem">M</span>
-                            <div style="font-size:0.95rem;font-weight:800;color:var(--text)">Meta Ads</div>
-                        </div>
-                        <div style="font-size:0.7rem;color:var(--text-muted);line-height:1.5">Lead Gen + Notoriété · 2 000 CHF/mois · 65 CHF/jour</div>
-                        <div style="font-size:0.7rem;font-weight:700;color:#1877F2;margin-top:auto">→ Voir le détail</div>
-                    </button>
-                    <button onclick="showPanel('onpage')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-top:4px solid #3FB76C;border-radius:12px;padding:18px 20px;cursor:pointer;transition:all 0.15s;display:flex;flex-direction:column;gap:10px">
-                        <div style="display:flex;align-items:center;gap:10px">
-                            <span style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#3FB76C;color:#fff;font-weight:800;font-size:1rem">S</span>
-                            <div style="font-size:0.95rem;font-weight:800;color:var(--text)">SEO</div>
-                        </div>
-                        <div style="font-size:0.7rem;color:var(--text-muted);line-height:1.5">122 publications scorées · audit on-page · technique · Yoast</div>
-                        <div style="font-size:0.7rem;font-weight:700;color:#2A8F4D;margin-top:auto">→ Voir le détail</div>
-                    </button>
-                    <button onclick="showPanel('wp_admin')" style="text-align:left;background:var(--surface);border:1px solid var(--border);border-top:4px solid #21759B;border-radius:12px;padding:18px 20px;cursor:pointer;transition:all 0.15s;display:flex;flex-direction:column;gap:10px">
-                        <div style="display:flex;align-items:center;gap:10px">
-                            <span style="display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#21759B;color:#fff;font-weight:800;font-size:1rem">W</span>
-                            <div style="font-size:0.95rem;font-weight:800;color:var(--text)">WordPress</div>
-                        </div>
-                        <div style="font-size:0.7rem;color:var(--text-muted);line-height:1.5">Audit santé site · 29 plugins · backups · sécurité</div>
-                        <div style="font-size:0.7rem;font-weight:700;color:#21759B;margin-top:auto">→ Voir le détail</div>
-                    </button>
-                </div>
+                <style>
+                .app-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(35,48,54,0.08); border-color: rgba(124,177,196,0.30); }
+                @media (max-width: 1024px) { .app-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+                @media (max-width: 600px) { .app-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; } .app-card { padding: 18px 12px !important; min-height: 110px !important; } }
+                </style>
 
                 <!-- ═══════════ JOURNAL ACTIONS PAR DATE (CENTRALISÉ) ═══════════ -->
                 <div style="display:flex;align-items:center;gap:10px;margin:28px 0 12px;flex-wrap:wrap">
@@ -3276,12 +3068,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                                     <li><strong>Plugin Child Theme Configurator</strong> installé + activé (1ère position WP repo, 279 reviews, gratuit)</li>
                                     <li><strong>Child theme <code>naoenergy-child</code> créé</strong> via wizard CTC · option "Copier menus, widgets et autres réglages de l'outil de personnalisation" cochée · <strong>12 852 chars de CSS additionnel copiés du parent</strong> (incluant fix anti-ghost text déployé le 18 mai). État : thème <strong>dormant</strong>, parent reste actif pour visiteurs</li>
                                     <li><strong>Workflow Sprint Redesign établi</strong> · Customizer Live Preview du child + Save Draft + Share Preview Link pour validation Charline avant Publish · zéro impact sur le parent live · réversible 1 clic en cas de problème</li>
-                                </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#5A98AE;font-weight:700;margin-bottom:6px">📊 DASHBOARD restructure</div>
-                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Section "WordPress" déplacée</strong> dans la sidebar : maintenant <strong>sous Entreprise</strong> (avant : après SEO) — meilleure hiérarchie de lecture pour Charline</li>
-                                    <li><strong>Nouvelle subsection "🎨 Thème & Stack"</strong> ajoutée dans WordPress · panel-theme créé avec : stack technique complet · 173 blocs disponibles dans l'éditeur · décision Elementor (<strong>NON</strong> — garder Gutenberg, justifications détaillées) · audit 24 plugins (12 essentiels / 7 utiles / 3 à vérifier / 1 remplaçable / 1 dispensable) · audit Yoast FAQ/HowTo · stratégie Sprint Redesign · backlog 9 actions priorisées</li>
-                                    <li><strong>Mobile UX</strong> · logo masqué dans le topbar sur écrans &lt;600px (visible uniquement dans le drawer hamburger ouvert) — plus d'espace pour score + actions sur petits écrans</li>
                                 </ul>
                                 <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">💡 INSIGHT STRATÉGIQUE — 4 améliorations LIVE publiées</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
@@ -4701,9 +4487,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 <div>
                     <div class="page-title-row">
                         <h1 class="page-title">🎨 Thème &amp; Stack technique</h1>
-                        <span class="badge" style="background:rgba(124,177,196,0.15);color:#5A98AE">Audit 19 mai 2026</span>
                     </div>
-                    <p class="page-subtitle">Photographie complète de la stack actuelle, des 24 plugins, et plan d'amélioration UX de l'éditeur — <strong>SANS migration Elementor</strong>. Tout est résumé ici pour préparer le Sprint Redesign.</p>
                 </div>
             </div>
 
@@ -4733,63 +4517,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div style="background:var(--surface-soft);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:800;color:#5A98AE">44</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px">blocs Otter Free</div></div>
                     <div style="background:var(--surface-soft);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:800;color:#5A98AE">15</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px">blocs custom NaoEnergy</div></div>
                 </div>
-                <div style="background:rgba(42,143,77,0.08);border-left:3px solid #2A8F4D;border-radius:8px;padding:14px 16px">
-                    <div style="font-size:0.78rem;font-weight:700;color:#2A8F4D;margin-bottom:6px">✅ Stack MODERNE confirmée</div>
-                    <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6">WordPress 6.9.4 + Block Editor + Site Editor (FSE) + Block Theme custom + ACF Pro. C'est le <strong>standard 2025-2026 officiel WordPress</strong>. Le <strong>Site Editor</strong> permet de modifier les templates entiers (header/footer/single) directement depuis l'admin.</div>
-                </div>
-            </div>
-
-            <!-- ===== 4. AUDIT 24 PLUGINS ===== -->
-            <div class="ev-section" style="margin-top:32px">
-                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">🔌 4. Audit des 24 plugins actifs</div>
-                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:14px">
-                    <div style="background:rgba(42,143,77,0.08);border-radius:10px;padding:12px;text-align:center"><div style="font-size:1.6rem;font-weight:800;color:#2A8F4D">12</div><div style="font-size:0.68rem;color:var(--text-muted)">🟢 Essentiels</div></div>
-                    <div style="background:rgba(245,166,35,0.08);border-radius:10px;padding:12px;text-align:center"><div style="font-size:1.6rem;font-weight:800;color:#F5A623">7</div><div style="font-size:0.68rem;color:var(--text-muted)">🟡 Utiles</div></div>
-                    <div style="background:rgba(255,153,0,0.08);border-radius:10px;padding:12px;text-align:center"><div style="font-size:1.6rem;font-weight:800;color:#FF9900">3</div><div style="font-size:0.68rem;color:var(--text-muted)">🟠 À vérifier usage</div></div>
-                    <div style="background:rgba(232,93,74,0.08);border-radius:10px;padding:12px;text-align:center"><div style="font-size:1.6rem;font-weight:800;color:#E85D4A">1</div><div style="font-size:0.68rem;color:var(--text-muted)">🔴 Remplaçable</div></div>
-                    <div style="background:rgba(150,150,150,0.08);border-radius:10px;padding:12px;text-align:center"><div style="font-size:1.6rem;font-weight:800;color:#999">1</div><div style="font-size:0.68rem;color:var(--text-muted)">🔵 Dispensable</div></div>
-                </div>
-                <div style="background:var(--surface-soft);border-radius:12px;padding:14px 18px;margin-bottom:10px">
-                    <div style="font-size:0.72rem;font-weight:700;color:#2A8F4D;margin-bottom:6px">🟢 12 essentiels — Ne pas toucher</div>
-                    <div style="font-size:0.72rem;color:var(--text-body);line-height:1.7">ACF Pro · Code Snippets · Complianz · Gravity Forms · Max Mega Menu · PixelYourSite · Site Kit Google · UpdraftPlus · WebP Express · Trustindex · WP Rocket · Yoast SEO</div>
-                </div>
-                <div style="background:var(--surface-soft);border-radius:12px;padding:14px 18px;margin-bottom:10px">
-                    <div style="font-size:0.72rem;font-weight:700;color:#F5A623;margin-bottom:6px">🟡 7 utiles — Garder mais surveiller</div>
-                    <div style="font-size:0.72rem;color:var(--text-body);line-height:1.7">WP Consent API · IP2Location Country Blocker · Redirection · Safe SVG · Simple Custom Post Order · Stream · <strong>Hotjar</strong> <em>(suggestion : remplacer par Microsoft Clarity, 100% gratuit illimité)</em></div>
-                </div>
-                <div style="background:var(--surface-soft);border-radius:12px;padding:14px 18px;margin-bottom:10px">
-                    <div style="font-size:0.72rem;font-weight:700;color:#FF9900;margin-bottom:6px">🟠 3 à vérifier — usage à confirmer</div>
-                    <div style="font-size:0.72rem;color:var(--text-body);line-height:1.7"><strong>Blocks CSS</strong> (panneau CSS perso par bloc — utilisé ?) · <strong>Otter</strong> (44 blocs extra — quels blocs réellement utilisés ?) · <strong>Duplicate Page</strong> (fonction "Dupliquer page" utilisée ?)</div>
-                </div>
-                <div style="background:var(--surface-soft);border-radius:12px;padding:14px 18px;margin-bottom:10px">
-                    <div style="font-size:0.72rem;font-weight:700;color:#E85D4A;margin-bottom:6px">🔴 1 remplaçable</div>
-                    <div style="font-size:0.72rem;color:var(--text-body);line-height:1.7"><strong>Easy HTTPS Redirection</strong> → règle <code>.htaccess</code> Apache (gain -1 plugin, perf légèrement meilleure). <em>Skip pour l'instant (validé Mouad).</em></div>
-                </div>
-                <div style="background:var(--surface-soft);border-radius:12px;padding:14px 18px">
-                    <div style="font-size:0.72rem;font-weight:700;color:#999;margin-bottom:6px">🔵 1 dispensable</div>
-                    <div style="font-size:0.72rem;color:var(--text-body);line-height:1.7"><strong>UserFeedback Lite</strong> — désactivable sauf si Charline a un sondage actif</div>
-                </div>
-                <div style="background:rgba(42,143,77,0.08);border-left:3px solid #2A8F4D;border-radius:8px;padding:12px 16px;margin-top:12px">
-                    <div style="font-size:0.72rem;color:var(--text-body);line-height:1.6"><strong>✅ MAJ appliquées 19 mai 2026</strong> : Blocks CSS 3.1.9 → 3.1.10 · IP2Location Country Blocker 2.41.2 → 2.42.0 · Otter 3.1.9 → 3.1.10. Tous fonctionnels.</div>
-                </div>
-            </div>
-
-            <!-- ===== 5. AUDIT YOAST FAQ + HOWTO ===== -->
-            <div class="ev-section" style="margin-top:32px">
-                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">📋 5. Audit blocs Yoast FAQ + HowTo (schemas obsolètes)</div>
-                <div style="background:var(--surface-soft);border-radius:12px;padding:18px 20px">
-                    <div style="font-size:0.78rem;color:var(--text-body);line-height:1.7;margin-bottom:12px">Scan via REST API WordPress sur <strong>157 contenus</strong> (125 articles + 32 pages) :</div>
-                    <table style="width:100%;font-size:0.74rem;border-collapse:collapse">
-                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0;width:50%">Bloc <code>wp:yoast/faq-block</code></td><td style="padding:8px 0;font-weight:700;color:#2A8F4D">0 utilisation ✅</td></tr>
-                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0">Bloc <code>wp:yoast/how-to-block</code></td><td style="padding:8px 0;font-weight:700;color:#2A8F4D">0 utilisation ✅</td></tr>
-                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 0">FAQ visibles (PV, toutes solutions)</td><td style="padding:8px 0">Utilisent <code>core/details</code> natif (14 questions sur PV)</td></tr>
-                        <tr><td style="padding:8px 0">Schema JSON-LD FAQPage généré</td><td style="padding:8px 0;color:#FF9900">❌ Aucun (mais Google ne l'afficherait plus de toute façon — restreint gov/santé depuis août 2023)</td></tr>
-                    </table>
-                </div>
-                <div style="background:rgba(245,166,35,0.08);border-left:3px solid #F5A623;border-radius:8px;padding:14px 16px;margin-top:12px">
-                    <div style="font-size:0.78rem;font-weight:700;color:#F5A623;margin-bottom:6px">⏳ Action en attente validation</div>
-                    <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6">Désactiver les 2 blocs Yoast obsolètes dans Réglages → Yoast SEO → Intégrations. <strong>0 risque</strong> (aucune utilisation détectée). 2 min d'admin work, à faire après accord.</div>
-                </div>
             </div>
 
             <!-- ===== 6. STRATÉGIE SPRINT REDESIGN ===== -->
@@ -4812,18 +4539,14 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         </div>
                     </div>
                 </div>
-                <div style="background:rgba(124,177,196,0.08);border-left:3px solid #5A98AE;border-radius:8px;padding:14px 16px;margin-bottom:12px">
-                    <div style="font-size:0.78rem;font-weight:700;color:#5A98AE;margin-bottom:6px">🏗️ Staging — Stratégie validée</div>
-                    <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6"><strong>WP Staging Free</strong> (plugin gratuit officiel) → crée copie du site dans sous-dossier <code>/staging-XXX/</code> avec auth + noindex. Pas besoin d'accès Infomaniak panel. Réinitialisable 1 clic. <strong>10 min d'install.</strong></div>
-                </div>
                 <div style="background:rgba(111,62,170,0.08);border-left:3px solid #6F3EAA;border-radius:8px;padding:14px 16px">
-                    <div style="font-size:0.78rem;font-weight:700;color:#6F3EAA;margin-bottom:6px">🎯 Plan d'amélioration UX de l'éditeur (sans changer Gutenberg)</div>
+                    <div style="font-size:0.78rem;font-weight:700;color:#6F3EAA;margin-bottom:6px">🎯 Approche actuelle — Section par section, page par page (dans le child theme)</div>
                     <ul style="margin:0;padding-left:18px;font-size:0.72rem;color:var(--text-body);line-height:1.7">
-                        <li><strong>Créer 8-10 Patterns custom NaoEnergy</strong> (Hero, CTA, Solutions grid, Testimonial, À propos, FAQ, Article featured...) — gros gain UX, création d'une page en 30 sec</li>
-                        <li><strong>Désactiver 80+ blocs inutiles</strong> via plugin Block Visibility (clarté éditeur, passer de 173 à ~70 blocs pertinents)</li>
-                        <li><strong>Block Style Variations</strong> pour les 5 blocs naoenergy/* principaux (Solutions, News, Slider...) — 2-3 variantes pré-stylées par bloc</li>
-                        <li><strong>Mini-guide Loom 5 min</strong> ("comment créer une page avec les patterns")</li>
-                        <li><strong>Désactiver blocs Yoast FAQ + HowTo</strong> (schemas obsolètes Google) — 0 utilisation, 0 risque</li>
+                        <li><strong>Modifications appliquées une à la fois</strong> dans le child theme <code>naoenergy-child</code> : on attaque <strong>section par section, page par page</strong>, sans changement global brutal. Permet d'itérer rapidement et d'isoler tout problème.</li>
+                        <li><strong>Workflow systématique</strong> : (1) modif CSS dans Customizer du child · (2) preview live · (3) <strong>Save Draft</strong> · (4) <strong>Share Preview Link</strong> envoyé pour validation visuelle · (5) corrections si besoin · (6) <strong>Publish</strong> uniquement après accord.</li>
+                        <li><strong>Visiteurs voient toujours l'ancien design</strong> pendant la phase preview. Le parent theme reste actif jusqu'à publication finale.</li>
+                        <li><strong>Rollback 1 clic possible à tout moment</strong> : si une modif publiée pose problème, retour au parent theme en 1 clic via <em>Apparence → Thèmes → Naoenergy</em> (le CSS du parent reste figé, jamais touché).</li>
+                        <li><strong>Réversibilité totale</strong> : <code>custom_css[naoenergy]</code> (parent) et <code>custom_css[naoenergy-child]</code> (child) cohabitent en BDD — seul le CSS du thème actif est lu par les visiteurs. Aucune perte possible.</li>
                     </ul>
                 </div>
             </div>
