@@ -3031,8 +3031,10 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 </div>
                 <style>
                 .app-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(35,48,54,0.08); border-color: rgba(124,177,196,0.30); }
-                @media (max-width: 1024px) { .app-grid { grid-template-columns: repeat(2, 1fr) !important; } }
-                @media (max-width: 600px) { .app-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; } .app-card { padding: 18px 12px !important; min-height: 110px !important; } }
+                /* Tablet + small desktop : 4 cards/row mais padding compact + min-height réduite */
+                @media (max-width: 1100px) { .app-grid { gap: 10px !important; } .app-card { padding: 18px 8px !important; min-height: 120px !important; } .app-card svg { width: 36px !important; height: 36px !important; } .app-card div { font-size: 0.78rem !important; } }
+                /* Mobile only (≤ 600px) : 2 cards/row */
+                @media (max-width: 600px) { .app-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; } .app-card { padding: 18px 12px !important; min-height: 110px !important; } .app-card svg { width: 40px !important; height: 40px !important; } .app-card div { font-size: 0.85rem !important; } }
                 </style>
 
                 <!-- ═══════════ JOURNAL ACTIONS PAR DATE (CENTRALISÉ) ═══════════ -->
@@ -3054,7 +3056,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:#6F3EAA;border:3px solid var(--bg)"></div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
                                 <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mar. 19 mai 2026</span>
-                                <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:2px 8px;border-radius:100px;font-size:0.62rem;font-weight:700">Hier · Audit thème complet + 4 Quick Wins LIVE + foundations Sprint Redesign</span>
                             </div>
                             <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
                                 <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#5A98AE;font-weight:700;margin-bottom:6px">🔍 ANALYSE STACK THÈME (buxumlunic.ch)</div>
@@ -3069,7 +3070,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
                                     <li><strong>Plugin Child Theme Configurator</strong> installé + activé (1ère position WP repo, 279 reviews, gratuit)</li>
                                     <li><strong>Child theme <code>naoenergy-child</code> créé</strong> via wizard CTC · option "Copier menus, widgets et autres réglages de l'outil de personnalisation" cochée · <strong>12 852 chars de CSS additionnel copiés du parent</strong> (incluant fix anti-ghost text déployé le 18 mai). État : thème <strong>dormant</strong>, parent reste actif pour visiteurs</li>
-                                    <li><strong>Workflow Sprint Redesign établi</strong> · Customizer Live Preview du child + Save Draft + Share Preview Link pour validation Charline avant Publish · zéro impact sur le parent live · réversible 1 clic en cas de problème</li>
+                                    <li><strong>Workflow Sprint Redesign établi</strong> · Customizer Live Preview du child + Save Draft + Share Preview Link pour validation client avant Publish · zéro impact sur le parent live · réversible 1 clic en cas de problème</li>
                                 </ul>
                                 <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">💡 INSIGHT STRATÉGIQUE — 4 améliorations LIVE publiées</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
@@ -3103,16 +3104,16 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                                 </ul>
                                 <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#E85D4A;font-weight:700;margin-bottom:6px">🎨 DESIGN / Bug texte fantôme bloc CTA (LIVE)</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Signalement Charline</strong> · texte "Prenez rendez-vous avec un expert naoenergy en Suisse romande" visible en filigrane gris au-dessus des blocs CTA teal · screenshot Mac Retina envoyé</li>
+                                    <li><strong>Bug signalé</strong> · texte "Prenez rendez-vous avec un expert naoenergy en Suisse romande" visible en filigrane gris au-dessus des blocs CTA teal · screenshot Mac Retina envoyé</li>
                                     <li><strong>Diagnostic Chrome DevTools</strong> · image <code>RDV.jpg</code> retourne <strong>404</strong> (3 tentatives) · navigateur affiche l'attribut <code>alt</code> en fallback HTML visuel · WebP Express incapable de générer le <code>.webp</code> faute d'original · scan automatisé 12 pages → bug isolé à <strong>2 pages</strong> (homepage + /nos-realisations/) · 88 images homepage, 1 seule cassée</li>
                                     <li><strong>Fix CSS validé live</strong> · injection DevTools sur Desktop 1440 + Mobile 390 iPhone 12 · <code>.wp-block-cover img.wp-block-cover__image-background { color: transparent; font-size: 0; line-height: 0; !important }</code> · SEO + a11y préservés (attribut HTML <code>alt</code> intact, lecteurs d'écran lisent toujours)</li>
                                     <li><strong>Déploiement autonome via WP Admin</strong> · session admin active détectée · API <code>wp.customize('custom_css[naoenergy]')</code> · ajout +1265 chars de bloc commenté (date/auteur/justifs/tests) à la suite des 11587 chars existants · bouton "Publier" cliqué par script · cache WP Rocket purgé (18.05 23h57)</li>
                                     <li><strong>Vérification LIVE post-publish</strong> · navigation hors Customizer · <code>color: rgba(0,0,0,0)</code> + CSS injecté via <code>global-styles-inline-css</code> · texte fantôme totalement disparu · screenshot final de confirmation</li>
-                                    <li><strong>Reste</strong> · restaurer <code>RDV.jpg</code> (UpdraftPlus ou original Charline) pour rétablir l'image de fond d'origine · le CSS reste filet de sécurité permanent contre futures images cassées</li>
+                                    <li><strong>Reste</strong> · restaurer <code>RDV.jpg</code> (UpdraftPlus ou votre original) pour rétablir l'image de fond d'origine · le CSS reste filet de sécurité permanent contre futures images cassées</li>
                                 </ul>
                                 <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">🏆 Sprint 1 NaoEnergy — 8/8 actions livrées (100%)</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li>✅ <strong>S1.1</strong> E-E-A-T Charline · ✅ <strong>S1.2</strong> Article schema retiré · ✅ <strong>S1.3</strong> Alt 40/40 · ✅ <strong>S1.4</strong> WebP Express · ✅ <strong>S1.5</strong> og + twitter 173 chars · ✅ <strong>S1.6</strong> alternateName 4 variantes · ✅ <strong>S1.7</strong> llms.txt · ✅ <strong>S1.8</strong> robots.txt AI crawlers</li>
+                                    <li>✅ <strong>S1.1</strong> E-E-A-T auteur · ✅ <strong>S1.2</strong> Article schema retiré · ✅ <strong>S1.3</strong> Alt 40/40 · ✅ <strong>S1.4</strong> WebP Express · ✅ <strong>S1.5</strong> og + twitter 173 chars · ✅ <strong>S1.6</strong> alternateName 4 variantes · ✅ <strong>S1.7</strong> llms.txt · ✅ <strong>S1.8</strong> robots.txt AI crawlers</li>
                                     <li><strong>Next</strong> · re-tests GEO ChatGPT/Perplexity/Gemini dans 4-6 semaines · objectif min 3/5 sur requêtes génériques · idéal dépasser Tera Solar en #1 Perplexity</li>
                                 </ul>
                             </div>
@@ -3192,13 +3193,13 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                                 <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🎯 SEO / Audit externe + Sprint 1 amorcé</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
                                     <li><strong>SEO audit externe</strong> · baseline Google PageSpeed Insights 14 mai · scores mobile/desktop sauvegardés · voir panel <strong>Audits externes</strong> pour détails + URLs partageables</li>
-                                    <li><strong>✅ S1.1 — E-E-A-T fix critique appliqué</strong> · Schema homepage : auteur changé de <code>"developer"</code> (placeholder) vers <strong>"Charline Fabbro"</strong> · vérifié via Chrome DevTools sur le JSON-LD live · <code>Article.author.name</code> + <code>Person.name</code> = "Charline Fabbro" ✓ · plus de <code>localhost:10427</code> dans sameAs · 4 pages publiées additionnelles (Mentions légales, Espace client, Events, Legal notices) mises à jour vers Charline · impact estimé +10-30% rankings YMYL sur 3-6 mois</li>
+                                    <li><strong>✅ S1.1 — E-E-A-T fix critique appliqué</strong> · Schema homepage : auteur changé de <code>"developer"</code> (placeholder) vers <strong>votre nom</strong> · vérifié via Chrome DevTools sur le JSON-LD live · <code>Article.author.name</code> + <code>Person.name</code> = votre nom ✓ · plus de <code>localhost:10427</code> dans sameAs · 4 pages publiées additionnelles (Mentions légales, Espace client, Events, Legal notices) mises à jour à votre nom · impact estimé +10-30% rankings YMYL sur 3-6 mois</li>
                                 </ul>
                                 <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#E85D4A;font-weight:700;margin-bottom:6px">⚠️ WordPress / Investigation Gravity Forms désactivé</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
                                     <li><strong>Constat</strong> · Gravity Forms désactivé automatiquement sans action utilisateur · <strong>réactivé immédiatement</strong> (impact business : formulaires de contact/devis cassés en attendant)</li>
                                     <li><strong>Investigation Stream</strong> · connecteur "Plugins" probablement décoché par défaut → action non tracée dans le log</li>
-                                    <li><strong>Pistes à creuser</strong> · licence Gravity Forms expirée · erreur PHP fatale · accès non autorisé · MAJ auto échouée · email envoyé à l'hébergeur pour récupérer les logs PHP des 48h · message envoyé à Charline pour validation/contexte</li>
+                                    <li><strong>Pistes à creuser</strong> · licence Gravity Forms expirée · erreur PHP fatale · accès non autorisé · MAJ auto échouée · email envoyé à l'hébergeur pour récupérer les logs PHP des 48h · message envoyé pour validation/contexte</li>
                                     <li><strong>Actions préventives</strong> · checklist sécurité : changer mot de passe admin · activer 2FA · scanner Wordfence à lancer · activer connecteur Plugins dans Stream pour tracer futures actions</li>
                                 </ul>
                             </div>
@@ -3300,7 +3301,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
                                     <li><strong>Audit complet WordPress</strong> · 4 alertes critiques identifiées (backups, Pixel consent, PHP EOL, Polylang auto-MAJ)</li>
                                     <li><strong>Découverte critique</strong> · "Reach more people likely to respond" = source des leads hors zone</li>
-                                    <li><strong>Reco budget mai</strong> · split 1 000 / 1 000 Vaud + Genève, validé par Charline</li>
+                                    <li><strong>Reco budget mai</strong> · split 1 000 / 1 000 Vaud + Genève, validé</li>
                                 </ul>
                             </div>
                         </div>
@@ -3330,7 +3331,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                             <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
                                 <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads · Business</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Reçu doc business Charline</strong> · profil entreprise, cibles, budget Ads, concurrence (16 acteurs)</li>
+                                    <li><strong>Reçu doc business client</strong> · profil entreprise, cibles, budget Ads, concurrence (16 acteurs)</li>
                                 </ul>
                             </div>
                         </div>
@@ -3349,7 +3350,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <h1 class="page-title">Profil entreprise — naoenergy SA</h1>
                         <span class="badge new">Mis à jour 6 mai</span>
                     </div>
-                    <p class="page-subtitle">Fiche d'identité, produits, marques, zones d'activité, cycle de vente — source : doc Charline.</p>
+                    <p class="page-subtitle">Fiche d'identité, produits, marques, zones d'activité, cycle de vente — source : doc client.</p>
                 </div>
             </div>
 
@@ -3655,7 +3656,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
 
                 <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:8px">🔄 Traitement des leads</div>
                 <div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap;font-size:0.72rem;margin-bottom:18px">
-                    <span style="background:#5A98AE;color:#fff;padding:6px 10px;border-radius:6px;font-weight:700">Charline (Marketing)</span>
+                    <span style="background:#5A98AE;color:#fff;padding:6px 10px;border-radius:6px;font-weight:700">Marketing</span>
                     <span style="color:var(--text-muted)">→ distribution quotidienne →</span>
                     <span style="background:rgba(90,152,174,0.14);color:#3D7A8F;padding:6px 10px;border-radius:6px;font-weight:700">Directeurs agences GE / LS</span>
                     <span style="color:var(--text-muted)">→</span>
@@ -3727,7 +3728,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 </div>
 
                 <div style="padding:12px 14px;background:rgba(232,168,46,0.10);border-radius:8px;border-left:3px solid #E8A82E;font-size:0.74rem;color:var(--text-body);line-height:1.6">
-                    💸 <strong style="color:var(--text)">Budget validé Charline :</strong> 2 000 CHF/mois depuis avril 2026 · projection 88 CHF/j × 18j restants + 377 dépensés = ~1 961 CHF (dans l'enveloppe 🟢).
+                    💸 <strong style="color:var(--text)">Budget validé :</strong> 2 000 CHF/mois depuis avril 2026 · projection 88 CHF/j × 18j restants + 377 dépensés = ~1 961 CHF (dans l'enveloppe 🟢).
                 </div>
             </div>
 
@@ -4787,7 +4788,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <tr><td class="bold">Article</td><td><span class="badge warning">Attention</span></td><td><strong>Appliqué aussi à la homepage</strong> · inhabituel (homepage = WebPage seul) · force une <code>datePublished</code> qui peut s'afficher dans la SERP comme "vieille news" · Fix : Yoast → Page d'accueil → type Schema = WebPage</td></tr>
                         <tr><td class="bold">BreadcrumbList</td><td><span class="badge pass">Présent</span></td><td>Fil d'Ariane de navigation</td></tr>
                         <tr><td class="bold">ImageObject</td><td><span class="badge pass">Présent</span></td><td>Image principale avec URL</td></tr>
-                        <tr><td class="bold">Person</td><td><span class="badge critical">Critique</span></td><td><strong style="color:#C44A1F">Auteur "developer"</strong> (placeholder non remplacé) · sameAs pointe vers <code>http://localhost:10427</code> (résidu dev) · <strong>casse l'E-E-A-T</strong> sur 125 articles · Charline (124 publications) devrait être l'auteur réel</td></tr>
+                        <tr><td class="bold">Person</td><td><span class="badge critical">Critique</span></td><td><strong style="color:#C44A1F">Auteur "developer"</strong> (placeholder non remplacé) · sameAs pointe vers <code>http://localhost:10427</code> (résidu dev) · <strong>casse l'E-E-A-T</strong> sur 125 articles · vous (124 publications) devriez être renseignée comme l'auteur réel</td></tr>
                         <tr><td class="bold">LocalBusiness</td><td><span class="badge critical">Manquant</span></td><td>Nécessaire pour la visibilité en recherche locale sur le marché suisse</td></tr>
                         <tr><td class="bold">Service</td><td><span class="badge critical">Manquant</span></td><td>Panneaux solaires, pompes à chaleur, bornes de recharge non décrits</td></tr>
                     </tbody>
@@ -5249,7 +5250,7 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                 </div>
             </div>
 
-            <div class="issue-item critical"><span class="issue-badge">🚨 Critique</span><div><strong>Schema Author = "developer"</strong> (placeholder non remplacé) — visible dans le JSON-LD de chaque page : <code>"author":{"name":"developer","url":"https://naoenergy.ch/author/developer/"}</code>. Sur un site YMYL (panier ~35 000 CHF, secteur énergie), Google attend un <strong>auteur identifiable avec expertise vérifiable</strong>. Le compte WP "developer" (email <code>alertes@buxumlunic.dev</code>, 0 publications) bloque le E-E-A-T sur les 125 articles publiés en réalité par <strong>Charline Fabbro (124 publications)</strong>. <strong>Action : renommer user_id=1 → "Charline Fabbro" avec bio, photo, URL LinkedIn dans le profil WP.</strong></div></div>
+            <div class="issue-item critical"><span class="issue-badge">🚨 Critique</span><div><strong>Schema Author = "developer"</strong> (placeholder non remplacé) — visible dans le JSON-LD de chaque page : <code>"author":{"name":"developer","url":"https://naoenergy.ch/author/developer/"}</code>. Sur un site YMYL (panier ~35 000 CHF, secteur énergie), Google attend un <strong>auteur identifiable avec expertise vérifiable</strong>. Le compte WP "developer" (email <code>alertes@buxumlunic.dev</code>, 0 publications) bloque le E-E-A-T sur les 125 articles publiés en réalité par <strong>vous (124 publications)</strong>. <strong>Action : renommer user_id=1 → votre nom officiel avec bio, photo, URL LinkedIn dans le profil WP.</strong></div></div>
             <div class="issue-item critical"><span class="issue-badge">🚨 Critique</span><div><strong>Person sameAs = <code>http://localhost:10427</code></strong> — résidu d'environnement de développement laissé en production. À supprimer ou remplacer par l'URL LinkedIn de l'auteur réel.</div></div>
             <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>3 comptes admin BuxumLunic actifs</strong> (developer, e.dutertre, g.maimbourg avec emails <code>@buxumlunic.dev</code> / <code>@buxumlunic.ch</code>) — ancienne agence dev, toujours accès admin complet sans publications. <strong>Risque sécurité majeur</strong> + pollue le pool d'auteurs Yoast.</div></div>
             <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>Aucune entrée Wikidata trouvée pour "naoenergy".</strong> Impact direct sur la présence dans le Knowledge Graph Google.</div></div>
@@ -5395,7 +5396,7 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                 <div style="font-size:0.85rem;font-weight:800;color:var(--text);margin-bottom:10px">💡 Pourquoi des audits externes ?</div>
                 <ul style="margin:0 0 0 18px;padding:0;font-size:0.74rem;color:var(--text-body);line-height:1.7">
                     <li><strong style="color:var(--text)">Objectivité :</strong> les scores PageSpeed sont calculés par Google directement, pas par nous → pas de biais.</li>
-                    <li><strong style="color:var(--text)">Traçabilité :</strong> URL permalink à partager avec Charline et l'équipe pour vérification.</li>
+                    <li><strong style="color:var(--text)">Traçabilité :</strong> URL permalink à partager avec l'équipe pour vérification.</li>
                     <li><strong style="color:var(--text)">Comparaison avant/après :</strong> baseline + re-audits permettent de quantifier précisément l'impact de chaque sprint.</li>
                     <li><strong style="color:var(--text)">Crédibilité :</strong> en cas de revue par un autre consultant ou agence, les preuves Google sont incontestables.</li>
                 </ul>
@@ -5632,7 +5633,7 @@ User-agent: ExaBot</code></pre>
                         <tbody>
                             <tr>
                                 <td style="padding:10px 12px;border-bottom:1px solid var(--border);font-weight:700">S1.1</td>
-                                <td style="padding:10px 12px;border-bottom:1px solid var(--border)">Schema E-E-A-T (Charline = auteur officielle 125 articles)</td>
+                                <td style="padding:10px 12px;border-bottom:1px solid var(--border)">Schema E-E-A-T (vous = auteur officielle 125 articles)</td>
                                 <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:#2A8F4D;font-weight:700">✅ 14 mai</td>
                                 <td style="padding:10px 12px;border-bottom:1px solid var(--border);color:var(--text-body)">Rich Results Google + JSON-LD live</td>
                             </tr>
@@ -5712,7 +5713,7 @@ User-agent: ExaBot</code></pre>
                     </div>
                     <div style="padding:14px 16px;background:var(--surface-soft);border-radius:8px">
                         <div style="font-size:0.78rem;font-weight:800;color:var(--text);margin-bottom:6px">🎯 Knowledge Panel Google</div>
-                        <div style="font-size:0.72rem;color:var(--text-body);line-height:1.6">Schema Organization + Person Charline déjà au propre (E-E-A-T fait). Faut renforcer : Wikipedia, Wikidata, mentions presse Romandie.</div>
+                        <div style="font-size:0.72rem;color:var(--text-body);line-height:1.6">Schema Organization + Person auteur déjà au propre (E-E-A-T fait). Faut renforcer : Wikipedia, Wikidata, mentions presse Romandie.</div>
                     </div>
                 </div>
             </div>
@@ -6285,7 +6286,7 @@ User-agent: ExaBot</code></pre>
                     <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px">
                         <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Budget total mois</div>
                         <div style="font-size:1.6rem;font-weight:800;color:var(--text)">2 000 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">CHF</span></div>
-                        <div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px">enveloppe validée Charline</div>
+                        <div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px">enveloppe validée</div>
                     </div>
                     <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px">
                         <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Dépensé à ce jour</div>
@@ -6387,7 +6388,7 @@ User-agent: ExaBot</code></pre>
                         <span style="background:#3FB76C;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">02</span>
                         🎯 Objectifs
                     </div>
-                    <span style="background:rgba(63,183,108,0.14);color:#2A8F4D;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Benchmarks Charline</span>
+                    <span style="background:rgba(63,183,108,0.14);color:#2A8F4D;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Benchmarks client</span>
                 </div>
 
                 <!-- Benchmarks CPL -->
