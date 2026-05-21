@@ -3039,13 +3039,13 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
 
                 <!-- ═══════════ JOURNAL ACTIONS PAR DATE (CENTRALISÉ) ═══════════ -->
                 <div style="display:flex;align-items:center;gap:10px;margin:28px 0 12px;flex-wrap:wrap">
-                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#6F3EAA;font-weight:800">📅 Actions par date · Journal quotidien</div>
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1.5px;color:#6F3EAA;font-weight:800">Actions par date · Journal quotidien</div>
                     <div style="flex:1;height:1px;background:var(--border)"></div>
                     <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:4px 10px;border-radius:100px;font-size:0.6rem;font-weight:700">Toutes sections confondues</span>
                 </div>
 
                 <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #6F3EAA">
-                    <div style="font-size:0.65rem;color:var(--text-muted);margin-bottom:14px;font-style:italic">📝 Suivi chronologique unifié de toutes les actions (WordPress · Meta Ads · SEO · Google Ads) — alimenté chaque jour</div>
+                    <div style="font-size:0.65rem;color:var(--text-muted);margin-bottom:14px;font-style:italic">Suivi des actions du quotidien — toutes plateformes confondues (WordPress, Meta Ads, SEO, Google Ads).</div>
 
                     <!-- Timeline (le plus récent en haut) -->
                     <div style="position:relative;padding-left:24px">
@@ -3055,29 +3055,27 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <div style="position:relative;margin-bottom:18px">
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:#6F3EAA;border:3px solid var(--bg)"></div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mar. 19 mai 2026</span>
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">Mar. 19 mai 2026</span>
                             </div>
                             <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#5A98AE;font-weight:700;margin-bottom:6px">🔍 ANALYSE STACK THÈME (buxumlunic.ch)</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#5A98AE;font-weight:700;margin-bottom:6px">Analyse du thème WordPress</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Thème custom <code>naoenergy</code> v1.1.8</strong> par <a href="https://buxumlunic.ch" target="_blank" rel="noopener" style="color:#5A98AE">buxumlunic.ch</a> · Block Theme moderne avec theme.json v3 + FSE (Full Site Editing)</li>
-                                    <li><strong>Stack technique</strong> · Webpack via <code>@wordpress/scripts v30.3.0</code> · SCSS source compilé · Node v20 · Font Axiforma custom (4 poids WOFF2 récupérés) · GSAP + Swiper.js déjà chargés (vendor)</li>
-                                    <li><strong>15 blocs custom Gutenberg</strong> dev par l'agence : <code>naoenergy/solutions</code> · <code>news</code> · <code>counter</code> · <code>steps</code> · <code>certifications</code> · <code>testimonials</code> · <code>partnerlink</code> · <code>realizationlink</code> · <code>slider</code> · <code>events</code> · <code>agences</code> · <code>team-position</code> · <code>event-date</code> · <code>event-related</code> · <code>tax-name</code></li>
-                                    <li><strong>8 Custom Post Types</strong> · agency · solution · person · testimonial · certificate · event · realization · partner · architecture pro ACF Pro</li>
-                                    <li><strong>Design Tokens documentés</strong> dans <code>DESIGN-TOKENS-NAOENERGY.md</code> : palette 7 couleurs (Primary <code>#7CB1C4</code> turquoise), typographie Axiforma + 11 tailles fluid clamp, <strong>border-radius asymétrique signature</strong> <code>0 X 0 X</code> (top-right + bottom-left) — pattern propre à NaoEnergy, étendu boutons (20px) + cartes (70px) + sections</li>
+                                    <li>Le thème actuel est un thème sur-mesure créé par l'agence <a href="https://buxumlunic.ch" target="_blank" rel="noopener" style="color:#5A98AE">buxumlunic.ch</a>, basé sur les technologies WordPress les plus récentes (Block Theme + édition complète du site)</li>
+                                    <li>Architecture professionnelle : 15 blocs personnalisés et 8 types de contenus (agences, solutions, équipe, témoignages, certifications, événements, réalisations, partenaires)</li>
+                                    <li>Documentation complète des codes couleurs, polices et formes (palette de 7 couleurs, police Axiforma, bordures arrondies asymétriques signature) pour garantir la cohérence visuelle sur toutes les futures modifications</li>
                                 </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#6F3EAA;font-weight:700;margin-bottom:6px">🌳 SPRINT REDESIGN — Foundations setup</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#6F3EAA;font-weight:700;margin-bottom:6px">Préparation de la refonte progressive</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Plugin Child Theme Configurator</strong> installé + activé (1ère position WP repo, 279 reviews, gratuit)</li>
-                                    <li><strong>Child theme <code>naoenergy-child</code> créé</strong> via wizard CTC · option "Copier menus, widgets et autres réglages de l'outil de personnalisation" cochée · <strong>12 852 chars de CSS additionnel copiés du parent</strong> (incluant fix anti-ghost text déployé le 18 mai). État : thème <strong>dormant</strong>, parent reste actif pour visiteurs</li>
-                                    <li><strong>Workflow Sprint Redesign établi</strong> · Customizer Live Preview du child + Save Draft + Share Preview Link pour validation client avant Publish · zéro impact sur le parent live · réversible 1 clic en cas de problème</li>
+                                    <li>Mise en place d'un environnement de test séparé qui permet de prévisualiser les changements sans aucun impact sur le site visible des visiteurs</li>
+                                    <li>Le site live reste 100% identique pendant qu'on prépare les améliorations en coulisses</li>
+                                    <li>Toute modification est testable via un lien d'aperçu privé et réversible en un clic en cas de problème</li>
                                 </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">💡 INSIGHT STRATÉGIQUE — 4 améliorations LIVE publiées</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">🔧 WordPress — 4 améliorations publiées en LIVE</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Données entreprise enrichies pour Google</strong> · ajouté <strong>4 noms alternatifs</strong> (Nao Energy, NAOENERGY, Nao, naoenergy SA) + <strong>description complète</strong> + <strong>email</strong> contact@naoenergy.ch + <strong>téléphone</strong> +41 58 255 01 50 dans les données structurées que Google utilise pour comprendre l'entreprise → meilleure visibilité dans le Knowledge Graph. Fait gratuitement via PHP (Yoast voulait facturer ~99€/an pour ces champs).</li>
-                                    <li><strong>Site plus rapide sur mobile</strong> · le navigateur prépare à l'avance la connexion à 6 services externes (avis Google Trustindex, Google Tag Manager, Google Analytics, Google Ads, Meta Pixel, Hotjar) AVANT d'en avoir besoin → <strong>gain de 100 à 200ms</strong> à l'affichage de la page sur mobile, surtout sur 3G/4G lente.</li>
-                                    <li><strong>Anciens outils Yoast bloqués</strong> · 2 blocs Yoast (FAQ et Tutoriel) ne sont plus reconnus par Google depuis 2023. Vérification sur les <strong>157 pages</strong> du site = personne ne les utilisait, donc bloqués proprement pour éviter qu'un éditeur les utilise par erreur dans le futur.</li>
-                                    <li><strong>Optimisations vitesse déjà actives</strong> · vérification des réglages WP Rocket → compression du code (CSS/JS), chargement différé des scripts, dimensions auto des images, préchargement de la police Axiforma sont <strong>DÉJÀ activés</strong>. Plusieurs actions du Plan d'actions étaient en fait déjà faites — gain de temps, plus rien à configurer côté performance de base.</li>
+                                    <li><strong>Données entreprise enrichies pour Google</strong> · ajout de 4 noms alternatifs (Nao Energy, NAOENERGY, Nao, naoenergy SA), description complète, email contact@naoenergy.ch et téléphone +41 58 255 01 50 dans les données structurées que Google utilise pour identifier l'entreprise → meilleure visibilité dans les résultats de recherche</li>
+                                    <li><strong>Site plus rapide sur mobile</strong> · le navigateur prépare à l'avance la connexion à 6 services externes (avis Google, Analytics, Pixel Meta, Hotjar...) avant d'en avoir besoin → gain de 100 à 200 ms à l'affichage de la page, surtout sur 3G/4G lente</li>
+                                    <li><strong>Anciens outils Yoast bloqués</strong> · 2 fonctionnalités Yoast (FAQ et Tutoriel) ne sont plus reconnues par Google depuis 2023. Vérification sur les 157 pages du site = personne ne les utilisait, donc bloquées proprement pour éviter une utilisation par erreur dans le futur</li>
+                                    <li><strong>Optimisations vitesse déjà actives</strong> · tous les réglages WP Rocket (compression du code, chargement différé des scripts, dimensions auto des images, préchargement de la police) sont DÉJÀ activés. Plusieurs actions du Plan d'actions étaient en fait déjà faites — gain de temps</li>
                                 </ul>
                             </div>
                         </div>
@@ -3086,35 +3084,34 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <div style="position:relative;margin-bottom:18px">
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Lun. 18 mai 2026</span>
-                                <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:2px 8px;border-radius:100px;font-size:0.62rem;font-weight:700">Sprint 1 100% + design fix CTA</span>
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">Lun. 18 mai 2026</span>
+                                <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:2px 8px;border-radius:100px;font-size:0.62rem;font-weight:700">Sprint 1 terminé à 100%</span>
                             </div>
                             <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#6F3EAA;font-weight:700;margin-bottom:6px">🤖 GEO / S1.8 — robots.txt AI crawlers (LIVE)</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#6F3EAA;font-weight:700;margin-bottom:6px">Référencement IA (ChatGPT, Perplexity, Gemini)</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Baseline IA (16 mai)</strong> · 6 requêtes ChatGPT/Perplexity/Gemini → NaoEnergy <strong>absent</strong> sur ChatGPT + Gemini · #2 sur Perplexity derrière Tera Solar · Gemini connaît la fiche sur recherche directe mais ne recommande pas spontanément. Verdict : problème ranking IA, pas de connaissance.</li>
-                                    <li><strong>Fix</strong> · Code Snippet PHP (ID 10) · filter <code>robots_txt</code> + écriture filesystem via <code>file_put_contents()</code> (blocker <code>/robots.txt</code> physique 139 bytes contournée) · backup <code>robots.txt.bak.20260518-050129</code> conservé · cache WP Rocket purgé</li>
-                                    <li><strong>Live</strong> · <code>/robots.txt</code> = 1055 bytes (<strong>+662%</strong>) · 11 bots IA autorisés (GPTBot, ChatGPT-User, OAI-SearchBot, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, Applebot-Extended, FirecrawlAgent...) · bloqués Bytespider/CCBot · llms.txt référencé pour découverte LLM</li>
+                                    <li>Test initial (16 mai) sur 6 requêtes : NaoEnergy absent de ChatGPT et Gemini, classé 2e sur Perplexity derrière Tera Solar</li>
+                                    <li>Action : autorisation explicite de 11 robots d'intelligence artificielle (GPTBot, ClaudeBot, PerplexityBot, Applebot, Google-Extended...) pour qu'ils puissent indexer le site</li>
+                                    <li>Résultat : fichier d'autorisations enrichi de 139 à 1055 caractères, blocage des robots non éthiques (Bytespider, CCBot)</li>
                                 </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#6F3EAA;font-weight:700;margin-bottom:6px">🖼️ SEO / S1.3 — Alt textes 40/40 LIVE</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#6F3EAA;font-weight:700;margin-bottom:6px">Textes alternatifs des images (40/40)</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Baseline</strong> · 41 images · 21 alt OK · 20 sans alt (1 FB pixel ignoré → 19 réelles à fixer)</li>
-                                    <li><strong>Fix hybride 2 couches</strong> · Snippet PHP (ID 11) · Couche 1 = <code>wp_update_post</code> post=36 (6 images Gutenberg) · Couche 2 = <code>ob_start</code> sur <code>template_redirect</code> intercepte HTML frontend pour 13 images thème/footer (logos partenaires SSES/CCIG/GSP, social icons)</li>
-                                    <li><strong>Live</strong> · 40/40 alt SEO local Suisse romande (ex: "Certification GSP - naoenergy installateur agree pompes a chaleur") · 0 manquant · réversible 1 clic · backup post_content conservé</li>
+                                    <li>Avant : 41 images sur la page d'accueil, dont 20 sans texte alternatif (mauvais pour le référencement et l'accessibilité)</li>
+                                    <li>Après : 40/40 images avec un texte descriptif optimisé SEO local Suisse romande (ex. « Certification GSP — naoenergy installateur agréé pompes à chaleur »)</li>
+                                    <li>Solution réversible en un clic, sauvegarde conservée</li>
                                 </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#E85D4A;font-weight:700;margin-bottom:6px">🎨 DESIGN / Bug texte fantôme bloc CTA (LIVE)</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#E85D4A;font-weight:700;margin-bottom:6px">Correction du bug « texte fantôme » sur les blocs CTA</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Bug signalé</strong> · texte "Prenez rendez-vous avec un expert naoenergy en Suisse romande" visible en filigrane gris au-dessus des blocs CTA teal · screenshot Mac Retina envoyé</li>
-                                    <li><strong>Diagnostic Chrome DevTools</strong> · image <code>RDV.jpg</code> retourne <strong>404</strong> (3 tentatives) · navigateur affiche l'attribut <code>alt</code> en fallback HTML visuel · WebP Express incapable de générer le <code>.webp</code> faute d'original · scan automatisé 12 pages → bug isolé à <strong>2 pages</strong> (homepage + /nos-realisations/) · 88 images homepage, 1 seule cassée</li>
-                                    <li><strong>Fix CSS validé live</strong> · injection DevTools sur Desktop 1440 + Mobile 390 iPhone 12 · <code>.wp-block-cover img.wp-block-cover__image-background { color: transparent; font-size: 0; line-height: 0; !important }</code> · SEO + a11y préservés (attribut HTML <code>alt</code> intact, lecteurs d'écran lisent toujours)</li>
-                                    <li><strong>Déploiement autonome via WP Admin</strong> · session admin active détectée · API <code>wp.customize('custom_css[naoenergy]')</code> · ajout +1265 chars de bloc commenté (date/auteur/justifs/tests) à la suite des 11587 chars existants · bouton "Publier" cliqué par script · cache WP Rocket purgé (18.05 23h57)</li>
-                                    <li><strong>Vérification LIVE post-publish</strong> · navigation hors Customizer · <code>color: rgba(0,0,0,0)</code> + CSS injecté via <code>global-styles-inline-css</code> · texte fantôme totalement disparu · screenshot final de confirmation</li>
-                                    <li><strong>Reste</strong> · restaurer <code>RDV.jpg</code> (UpdraftPlus ou votre original) pour rétablir l'image de fond d'origine · le CSS reste filet de sécurité permanent contre futures images cassées</li>
+                                    <li>Bug signalé : un texte gris « Prenez rendez-vous avec un expert naoenergy » apparaissait en filigrane au-dessus des blocs d'appel à l'action turquoise</li>
+                                    <li>Cause : l'image RDV.jpg était introuvable sur le serveur — le navigateur affichait alors le texte alternatif en remplacement visuel</li>
+                                    <li>Bug isolé à 2 pages seulement (accueil + /nos-realisations/), sur 88 images d'accueil 1 seule était cassée</li>
+                                    <li>Solution : règle de mise en forme qui masque le rendu visuel du texte alternatif sans toucher au texte HTML (référencement et accessibilité préservés)</li>
+                                    <li>À faire : remettre l'image originale RDV.jpg pour rétablir le visuel de fond (le correctif reste comme filet de sécurité permanent)</li>
                                 </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">🏆 Sprint 1 NaoEnergy — 8/8 actions livrées (100%)</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">Sprint 1 NaoEnergy — 8/8 actions livrées</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li>✅ <strong>S1.1</strong> E-E-A-T auteur · ✅ <strong>S1.2</strong> Article schema retiré · ✅ <strong>S1.3</strong> Alt 40/40 · ✅ <strong>S1.4</strong> WebP Express · ✅ <strong>S1.5</strong> og + twitter 173 chars · ✅ <strong>S1.6</strong> alternateName 4 variantes · ✅ <strong>S1.7</strong> llms.txt · ✅ <strong>S1.8</strong> robots.txt AI crawlers</li>
-                                    <li><strong>Next</strong> · re-tests GEO ChatGPT/Perplexity/Gemini dans 4-6 semaines · objectif min 3/5 sur requêtes génériques · idéal dépasser Tera Solar en #1 Perplexity</li>
+                                    <li>Toutes les actions sont terminées : auteur officiel des articles, suppression du schéma Article, textes alternatifs, conversion WebP, balises Open Graph + Twitter, noms alternatifs, fichier llms.txt, robots.txt pour IA</li>
+                                    <li>Prochaine étape : re-tester la visibilité sur ChatGPT/Perplexity/Gemini dans 4 à 6 semaines (objectif minimum 3 mentions sur 5 requêtes génériques, idéalement passer devant Tera Solar)</li>
                                 </ul>
                             </div>
                         </div>
@@ -3123,48 +3120,36 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <div style="position:relative;margin-bottom:18px">
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Ven. 15 mai 2026</span>
-                                <span style="background:rgba(24,119,242,0.12);color:#1877F2;padding:2px 8px;border-radius:100px;font-size:0.62rem;font-weight:700">Zen Énergie Services · Sister brand</span>
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">Ven. 15 mai 2026</span>
+                                <span style="background:rgba(24,119,242,0.12);color:#1877F2;padding:2px 8px;border-radius:100px;font-size:0.62rem;font-weight:700">Zen Énergie Services · Marque sœur</span>
                             </div>
                             <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">🎯 Meta Ads · Stratégie cross-brand (NaoEnergy + Zen)</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads — Stratégie cross-brand (NaoEnergy + Zen)</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Contexte</strong> · lancement campagne Meta Ads sur <code>zen-energieservices.com</code> (sister brand groupe naoenergy) · même activité, même produit, même client, même zone géo (Suisse romande), juste 2 marques distinctes</li>
-                                    <li><strong>Décision stratégique : 1 Pixel partagé pour les 2 marques</strong> (Pixel NaoEnergy <code>619294335957168</code> réutilisé sur Zen) · justification : budget combiné ~3 300 CHF/mois NaoEnergy + Zen → ~28-38 leads/sem combinés vs ~14/sem si splittés → <strong>1 Pixel sort de Learning Phase Meta plus vite = CPL réduit plus rapidement</strong> · attribution par marque via Custom Events séparés (<code>Lead_Naoenergy</code> vs <code>Lead_Zen</code>) à venir</li>
+                                    <li>Contexte : lancement d'une campagne Meta Ads pour Zen Énergie Services, marque sœur du groupe (même activité, même produit, même client, même zone Suisse romande)</li>
+                                    <li><strong>Décision : 1 seul Pixel partagé pour les 2 marques</strong> — le Pixel NaoEnergy est réutilisé sur Zen</li>
+                                    <li>Justification business : budget combiné ~3 300 CHF/mois NaoEnergy + Zen = environ 28-38 leads/semaine cumulés (vs ~14/semaine si pixels séparés) → l'algorithme Meta sort plus vite de sa phase d'apprentissage = coût par lead réduit plus rapidement</li>
+                                    <li>L'attribution par marque sera gérée via des événements distincts (Lead_NaoEnergy vs Lead_Zen) — à venir</li>
                                 </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">🐛 Bug identifié sur vérification de domaine Meta</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads — Vérification de domaine Zen (résolu)</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Symptôme</strong> · balise <code>&lt;meta name="facebook-domain-verification"&gt;</code> ajoutée via Sanity Studio (champ "Scripts personnalisés" / <code>marketingSettings.headScripts</code>) · visible dans le HTML via <code>Ctrl+U</code> · mais Meta refuse de vérifier ("Unable to verify the domain")</li>
-                                    <li><strong>Cause technique</strong> · le champ <code>headScripts</code> utilise <code>&lt;Script&gt;</code> de <code>next/script</code> → la balise <code>&lt;meta&gt;</code> se retrouve sérialisée dans le <strong>payload RSC</strong> (JSON inside <code>&lt;script&gt;</code>), <strong>pas dans le vrai <code>&lt;head&gt;</code> SSR</strong> · le scraper Meta parse les vraies meta tags du <code>&lt;head&gt;</code>, pas le JSON RSC → tag invisible</li>
-                                    <li><strong>Diagnostic confirmé via Chrome DevTools</strong> · script <code>fetch(window.location.href)</code> + analyse HTML brut : <code>facebookVerifyIsInsideHead: false</code> · le texte est bien présent, mais dans le RSC, pas dans le <code>&lt;head&gt;</code></li>
+                                    <li>Symptôme : Meta refusait de vérifier zen-energieservices.com malgré l'ajout du code dans Sanity (notre éditeur de contenu)</li>
+                                    <li>Cause technique : le code se retrouvait dans une zone du HTML que les robots Meta n'analysent pas</li>
+                                    <li>Solution : le développeur Zen a créé un champ dédié dans Sanity avec validation automatique pour éviter toute erreur de manipulation à l'avenir</li>
+                                    <li>Résultat : domaine Zen <strong>Verified</strong> ✅ sur Meta, Pixel détecté et actif via l'extension Meta Pixel Helper</li>
                                 </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">🛠️ Fix appliqué par le dev Zen (4 fichiers modifiés)</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads — Architecture Zen découverte (gestion centralisée Sanity)</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><code>sanity/schemas/marketingSettings.ts</code> · nouveau champ dédié <code>facebookDomainVerification</code> (string, group "analytics") · <strong>validation custom</strong> qui rejette tout caractère <code>&lt; &gt; " '</code> → empêche un futur opérateur de coller la balise complète à la place du token brut</li>
-                                    <li><code>lib/queries.ts</code> · ajout de <code>facebookDomainVerification</code> dans la projection GROQ <code>getMarketingSettings()</code></li>
-                                    <li><code>components/seo/TrackingScripts.tsx</code> · rendu d'une <strong>vraie balise <code>&lt;meta&gt;</code></strong> dans <code>&lt;head&gt;</code> (juste après le tag Google Search Console)</li>
-                                    <li><code>app/layout.tsx</code> · passe <code>marketing?.facebookDomainVerification</code> à <code>&lt;TrackingHead&gt;</code> · ISR <code>export const revalidate = 60</code> → mise à jour sous 60s sans full rebuild Vercel</li>
+                                    <li>Sanity (éditeur de contenu) centralise désormais 4 zones : Analytics (GA4, GTM, Search Console), Pixels &amp; Ads (Facebook, TikTok, LinkedIn, Google Ads), Scripts personnalisés, Consentement cookies RGPD/nLPD</li>
+                                    <li>Avantage opérationnel : ajouter une nouvelle plateforme (Bing Pixel, X Pixel...) = juste un champ Sanity + 20 min de dev, pas de redéploiement complet</li>
                                 </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#10B981;font-weight:700;margin-bottom:6px">✅ Vérifications finales</div>
-                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><code>curl https://zen-energieservices.com/</code> · balise <code>&lt;meta name="facebook-domain-verification" content="dze0w7jsiz66aocjj0s5ucbmnglgoa"/&gt;</code> confirmée dans <code>&lt;head&gt;</code> SSR ✓</li>
-                                    <li><strong>Meta Business → Domains</strong> · <code>www.zen-energieservices.com</code> → statut <strong>Verified</strong> ✅ (note : domaine apex <code>zen-energieservices.com</code> avait été rejeté initialement à cause du 308 redirect vers www → Meta ne suit pas les redirects)</li>
-                                    <li><strong>Meta Pixel Helper</strong> (extension Chrome) · Pixel <code>619294335957168</code> détecté · <strong>Active</strong> ✅</li>
-                                    <li><strong>Pixel autorisé</strong> sur <code>www.zen-energieservices.com</code> dans Pixel Settings · plus d'erreur console "Meta pixel unavailable" ✅</li>
-                                </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">🏗️ Architecture découverte (Sanity-driven complet, sans redéploiement)</div>
-                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Studio <code>/studio</code> → Marketing &amp; Analytics</strong> avec 4 onglets : Analytics (GA4, GTM, GSC, FB Domain Verification ← nouveau) · Pixels &amp; Ads (Facebook, TikTok, LinkedIn, Google Ads) · Scripts (head/body raw catch-all) · Consentement cookies (RGPD/nLPD)</li>
-                                    <li><strong>Correction sur diagnostic précédent</strong> · l'ID GTM <code>GTM-57WQ6HMX</code> n'est <strong>PAS hardcodé</strong> dans le code (comme initialement supposé) · il vient aussi de Sanity (champ <code>googleTagManagerId</code>) → on peut changer/retirer GTM sans toucher au code</li>
-                                    <li><strong>Avantage opérationnel</strong> · ajouter une nouvelle plateforme (Bing Pixel, X Pixel, etc.) = ajouter un champ Sanity + le brancher dans <code>TrackingHead.tsx</code> (~20 min dev) · pas de redéploiement complet, juste "Publish" dans Sanity</li>
-                                </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#E85D4A;font-weight:700;margin-bottom:6px">🚀 Reste à faire pour lancer la campagne Meta Ads Zen</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#E85D4A;font-weight:700;margin-bottom:6px">Reste à faire pour lancer la campagne Meta Ads Zen</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li>🔴 <strong>Indispensable</strong> · brancher l'event <code>Lead</code> sur la soumission du formulaire <code>/contact</code> (<code>fbq('track', 'Lead')</code> au submit Typeform) · <strong>~30 min dev</strong></li>
-                                    <li>🟡 <strong>Recommandé</strong> · Meta Conversions API server-side (route API Next.js) → bypasser ad-blockers + iOS 14.5+ → <strong>-10/-15% CPL</strong> · 3-4h dev</li>
-                                    <li>🟡 <strong>Recommandé</strong> · gating consentement avant chargement du Pixel (compliance RGPD/nLPD Suisse) · 1-2h dev</li>
-                                    <li>🟢 Bonus · Custom Events <code>Lead_Zen</code> distincts pour attribution cross-brand vs NaoEnergy · 30 min</li>
-                                    <li>🟢 Sprint 3 · Odoo Offline Conversions API cross-brand (NaoEnergy + Zen via Make.com) · 1-2 jours</li>
+                                    <li><strong>Indispensable</strong> · brancher l'événement « Lead » sur le formulaire /contact (~30 min de dev)</li>
+                                    <li><strong>Recommandé</strong> · Meta Conversions API côté serveur pour contourner les bloqueurs publicitaires et iOS 14.5+ (gain estimé -10 à -15% sur le coût par lead, 3-4h de dev)</li>
+                                    <li><strong>Recommandé</strong> · demande de consentement RGPD/nLPD avant le chargement du Pixel (compliance Suisse, 1-2h de dev)</li>
+                                    <li>Bonus · événements distincts Lead_Zen vs Lead_NaoEnergy pour attribution cross-brand (30 min)</li>
+                                    <li>Sprint 3 · connexion Odoo Offline Conversions cross-brand via Make.com (1-2 jours)</li>
                                 </ul>
                             </div>
                         </div>
@@ -3173,34 +3158,32 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <div style="position:relative;margin-bottom:18px">
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Jeu. 14 mai 2026</span>
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">Jeu. 14 mai 2026</span>
                             </div>
                             <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🧹 WordPress / Nettoyage plugins</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress — Nettoyage extensions</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Duplicator v1.5.16 supprimé</strong> · 0 sauvegarde présente · doublon avec UpdraftPlus (qui fait le backup vers Google Drive) · risque CVE historique éliminé · ~10 MB libérés</li>
-                                    <li><strong>Query Loop Filters v0.2.0 supprimé définitivement</strong> · déjà désactivé le 12 mai (cause du bug bandeau cookie fullscreen) · remplacé par dropdown custom AJAX sur /actualites/</li>
-                                    <li><strong>État post-nettoyage</strong> : <strong>26 extensions actives</strong> (vs 28) · surface d'attaque réduite · ~50-60 hooks WP en moins</li>
+                                    <li>Suppression de <strong>Duplicator</strong> : doublon avec UpdraftPlus (qui fait déjà la sauvegarde vers Google Drive), aucune sauvegarde utilisée — risque sécurité éliminé</li>
+                                    <li>Suppression définitive de <strong>Query Loop Filters</strong> : cause du bug bandeau cookies plein écran corrigé le 12 mai — remplacé par un filtre custom AJAX sur /actualites/</li>
+                                    <li>État après nettoyage : 26 extensions actives (vs 28) — surface d'attaque réduite</li>
                                 </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress / Fix filtre catégories /nos-realisations/</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress — Correction filtres catégories /nos-realisations/</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Diagnostic</strong> · sur /nos-realisations/, le clic sur les filtres catégories (Pompes à chaleur, Panneaux PV, etc.) ne déclenchait pas la navigation · <code>clickDefaultPrevented:true</code> confirmé via Chrome DevTools</li>
-                                    <li><strong>Cause identifiée</strong> · event listeners JS résiduels (probablement du plugin Query Loop Filters désinstallé) attachés aux liens <code>.wp-block-categories-list a</code> en mode "bubble phase" → <code>preventDefault</code> sans navigation ni filtrage</li>
-                                    <li><strong>Tentative 1 ÉCHEC</strong> · clone des liens pour stripper les listeners → race condition timing, les listeners se réattachent après le clone</li>
-                                    <li><strong>Solution validée</strong> · snippet JS sitewide via Code Snippets · <strong>delegated listener en capture phase</strong> qui intercepte le clic AVANT le rogue listener · force <code>window.location.href = link.href</code> + <code>stopImmediatePropagation</code></li>
-                                    <li><strong>Test live validé via Chrome DevTools</strong> · navigation OK vers <code>/realisations/pompes-a-chaleur/</code> avec <strong>15 réalisations PAC</strong> affichées correctement · solution fonctionne pour toutes catégories (Panneaux PV, Batteries, Boiler, Borne de recharge)</li>
+                                    <li>Bug : sur la page des réalisations, cliquer sur un filtre catégorie (Pompes à chaleur, Panneaux PV...) ne déclenchait aucune navigation</li>
+                                    <li>Cause identifiée : restes du plugin Query Loop Filters désinstallé qui bloquaient les liens en arrière-plan</li>
+                                    <li>Solution validée : injection d'un script qui force la navigation au clic, testée sur toutes les catégories (Pompes à chaleur, Panneaux PV, Batteries, Boilers, Bornes de recharge)</li>
                                 </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🎯 SEO / Audit externe + Sprint 1 amorcé</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🎯 SEO — Audit externe + Sprint 1 amorcé</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>SEO audit externe</strong> · baseline Google PageSpeed Insights 14 mai · scores mobile/desktop sauvegardés · voir panel <strong>Audits externes</strong> pour détails + URLs partageables</li>
-                                    <li><strong>✅ S1.1 — E-E-A-T fix critique appliqué</strong> · Schema homepage : auteur changé de <code>"developer"</code> (placeholder) vers <strong>votre nom</strong> · vérifié via Chrome DevTools sur le JSON-LD live · <code>Article.author.name</code> + <code>Person.name</code> = votre nom ✓ · plus de <code>localhost:10427</code> dans sameAs · 4 pages publiées additionnelles (Mentions légales, Espace client, Events, Legal notices) mises à jour à votre nom · impact estimé +10-30% rankings YMYL sur 3-6 mois</li>
+                                    <li>Audit Google PageSpeed Insights réalisé : scores mobile/desktop archivés (voir panneau « Audits externes »)</li>
+                                    <li><strong>Sprint 1.1 — Correction critique E-E-A-T</strong> : auteur des articles changé de « developer » (compte technique inactif) vers votre nom officiel sur la page d'accueil + 4 pages publiées additionnelles (Mentions légales, Espace client, Events, Legal notices)</li>
+                                    <li>Impact estimé : +10 à +30% de classement Google sur 3 à 6 mois (sujets sensibles à la confiance comme l'énergie)</li>
                                 </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#E85D4A;font-weight:700;margin-bottom:6px">⚠️ WordPress / Investigation Gravity Forms désactivé</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#E85D4A;font-weight:700;margin-bottom:6px">Investigation Gravity Forms désactivé tout seul</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Constat</strong> · Gravity Forms désactivé automatiquement sans action utilisateur · <strong>réactivé immédiatement</strong> (impact business : formulaires de contact/devis cassés en attendant)</li>
-                                    <li><strong>Investigation Stream</strong> · connecteur "Plugins" probablement décoché par défaut → action non tracée dans le log</li>
-                                    <li><strong>Pistes à creuser</strong> · licence Gravity Forms expirée · erreur PHP fatale · accès non autorisé · MAJ auto échouée · email envoyé à l'hébergeur pour récupérer les logs PHP des 48h · message envoyé pour validation/contexte</li>
-                                    <li><strong>Actions préventives</strong> · checklist sécurité : changer mot de passe admin · activer 2FA · scanner Wordfence à lancer · activer connecteur Plugins dans Stream pour tracer futures actions</li>
+                                    <li>Constat : Gravity Forms (qui gère les formulaires de contact et devis) s'est désactivé sans action utilisateur — réactivé immédiatement</li>
+                                    <li>Pistes investiguées : licence expirée, erreur technique fatale, accès non autorisé, mise à jour automatique échouée</li>
+                                    <li>Actions préventives : changement du mot de passe admin, activation de la double authentification, scan sécurité Wordfence à programmer</li>
                                 </ul>
                             </div>
                         </div>
@@ -3209,30 +3192,31 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <div style="position:relative;margin-bottom:18px">
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mer. 13 mai 2026</span>
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">Mer. 13 mai 2026</span>
                             </div>
                             <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress / Frontend</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress — Refonte menu mobile/tablette</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Refonte complète menu mobile/tablette</strong> · Bloc 1 CSS v13 (≤1200px) · burger <code>#switch-menu</code> noir épais centré verticalement (stroke #000, width 3px) · <code>position: fixed</code> + <code>transform: translateZ(0)</code> compat iOS Safari · plein écran au clic (100vw × 100vh) · zone tap 44×44 sur flèches · 2e burger Max Mega Menu masqué</li>
-                                    <li><strong>Cache du contenu menu fermé</strong> · règle <code>.header__menu:not(.open) > *:not(#switch-menu) { display: none }</code> · résout le bleeding des items sur le hero quand drawer fermé</li>
-                                    <li><strong>Sous-menus accordion</strong> · cachés par défaut · ouverts au clic sur la flèche · une seule flèche <code>›</code> propre (CSS pseudo-element, plus de doublons) · flèche tourne 135° quand ouvert</li>
-                                    <li><strong>Bug images articles invisibles résolu</strong> · cause : WP Rocket Lazy Load injectait un <code>data:image/svg+xml</code> placeholder dans <code>src</code> + vraie URL dans <code>data-lazy-src</code> · notre AJAX swap (innerHTML) ne re-déclenchait pas le lazy loader → placeholders restaient · fix : fonction JS <code>forceLoadLazyImages()</code> qui swap manuellement <code>data-lazy-src</code> → <code>src</code> + <code>data-lazy-srcset</code> → <code>srcset</code> après chaque injection</li>
-                                    <li><strong>Snippet JS sitewide ajouté</strong> · Code Snippets plugin · location footer site-wide · intercepte 1er clic sur "Nos solutions" / "À propos" (items avec sous-menu) sur mobile → ouvre le sous-menu au lieu de rediriger · 2e clic navigue normalement vers la page parent</li>
-                                    <li><strong>Vérification WP Rocket complète</strong> · réglages OK : Minify CSS/JS ON · exclusions megamenu/maxmegamenu/complianz/theme présentes · "Optimiser CSS" OFF (avait cassé le hamburger) · "Reporter JS" OFF · "Charger JS différé" ON avec exclusions · multiple purges cache + "Éléments prioritaires" pendant les tests</li>
+                                    <li>Refonte complète du menu hamburger sur mobile et tablette : bouton noir épais centré verticalement, ouverture plein écran fluide, sous-menus en accordéon</li>
+                                    <li>Compatible iOS Safari et toutes tailles d'écran — zones de tap optimisées 44×44 px (recommandation Apple)</li>
+                                    <li>Correction du bug d'affichage des images d'articles invisibles (cause : conflit avec WP Rocket Lazy Load après chargement AJAX)</li>
+                                    <li>Sur mobile, le premier clic sur « Nos solutions » ou « À propos » ouvre désormais le sous-menu (au lieu de rediriger directement vers la page parent)</li>
+                                    <li>Vérification complète des réglages WP Rocket — exclusions configurées pour préserver le bon fonctionnement du menu</li>
                                 </ul>
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads — Audit historique 48 publicités</div>
+                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li>Analyse complète de 48 publicités batteries et pompes à chaleur (2023-2026)</li>
+                                    <li><strong>Tier 1 winners batterie</strong> : Pub 1 Geneva (23 leads à €16.57 CPL), Pub 6 (6 leads à €14.44 CPL ⭐ meilleur CPL), Pub 3 Geneva (33 leads à €26.74 CPL ⭐ meilleur volume), Pub 8 Vaud (7 leads à €19.79), Pub 7 Geneva (9 leads à €22.76), MESSAGE 3 (14 leads à €22.92)</li>
+                                    <li><strong>Tier 3 à éviter (CPL > €50)</strong> : Pub 4 (€135), ATOUTS 1 (€90), New pub 1 (€72), STOCKAGE INTE (€68)</li>
+                                </ul>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads — Nouvelle stratégie + lancement 2 campagnes</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>📊 Audit Lead Gen Batterie &amp; PAC historique</strong> · périmètre : 48 ads analysées (2023-2026) · <strong>Tier 1 winners batterie identifiés</strong> : Pub 1 Geneva (23 leads @ €16.57 CPL) · Pub 6 (6 leads @ €14.44 CPL ⭐ best CPL) · Pub 3 Geneva (33 leads @ €26.74 CPL ⭐ best volume) · Pub 8 Vaud (7 leads @ €19.79 CPL) · Pub 7 Geneva (9 leads @ €22.76 CPL) · MESSAGE 3 (14 leads @ €22.92 CPL) · <strong>Tier 3 à éviter</strong> (CPL >€50) : Pub 4 (€135), ATOUTS 1 (€90), New pub 1 (€72), STOCKAGE INTE (€68)</li>
-                                    <li><strong>🎯 Stratégie nouvelles campagnes définie</strong> · structure 2 ad sets par campagne (Genève / Vaud+Neuchâtel) · cross-tests des winners Geneva sur Vaud · budget cible €65-85/jour total (€1,950-2,550/mois) · CPL cible €22-28 · objectif 70-100 leads/mois</li>
-                                    <li><strong>🚀 2 campagnes Lead Gen lancées + 1 active (3 actives au total)</strong>
-                                        <ul style="margin:6px 0 0 0;padding-left:18px;font-size:0.72rem;color:var(--text-body);line-height:1.7">
-                                            <li><strong>Batterie-Mai-GL-MouaDev</strong> (Lead Gen Batterie · lancée 13 mai) · 2 ad sets · <strong>€42/jour</strong> · Ad Set Genève €21/j (Learning, 0 results yet) · Ad Set Vaud+Neuchâtel €21/j (Learning, <strong>1 lead à €0.34 spent, CTR 2.50% ⚡</strong>)</li>
-                                            <li><strong>PAC-GL-Mai-2026-MouaDev</strong> (Lead Gen PAC/PV solaire · lancée 13 mai) · 2 ad sets · <strong>€41/jour</strong> · Ad Set Geneva €21/j (<strong>1 lead à €10.67 CPL</strong>) · Ad Set Vaud+Neuchâtel €20/j (Learning, 526 impr, 6 clics)</li>
-                                            <li><strong>Notoriété avril 2026</strong> (Awareness · active depuis 27 avr) · €5/jour · 2,311 reach, CPM €1.33 🟢 efficient</li>
-                                            <li><strong>BUDGET TOTAL META ADS</strong> : <strong>€88/jour</strong> · ~<strong>€2,640/mois</strong> sur 3 campagnes actives</li>
-                                        </ul>
-                                    </li>
+                                    <li>Structure : 2 ensembles publicitaires par campagne (Genève / Vaud + Neuchâtel) — cross-tests des winners Geneva sur Vaud</li>
+                                    <li>Budget cible : €65-85/jour total (€1 950 - 2 550/mois) — CPL cible €22-28 — objectif 70-100 leads/mois</li>
+                                    <li><strong>Campagne Batterie Mai (€42/jour)</strong> : Ad Set Genève (Learning, 0 résultat encore) + Ad Set Vaud+Neuchâtel (1 lead à €0.34, CTR 2.50% ⚡)</li>
+                                    <li><strong>Campagne PAC/PV solaire Mai (€41/jour)</strong> : Ad Set Geneva (1 lead à €10.67 CPL) + Ad Set Vaud+Neuchâtel (Learning, 526 impressions, 6 clics)</li>
+                                    <li><strong>Campagne Notoriété avril 2026 (€5/jour, active depuis 27 avril)</strong> : 2 311 reach, CPM €1.33 🟢 efficient</li>
+                                    <li><strong>Budget total Meta Ads : €88/jour (~€2 640/mois) sur 3 campagnes actives</strong></li>
                                 </ul>
                             </div>
                         </div>
@@ -3241,16 +3225,16 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <div style="position:relative;margin-bottom:18px">
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mar. 12 mai 2026</span>
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">Mar. 12 mai 2026</span>
                             </div>
                             <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress / Sécurité</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress — Sécurité</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Audit complet plugins WordPress</strong> · inventaire actifs/inactifs · identification des doublons et risques sécurité · audit Duplicator (potentiel doublon avec UpdraftPlus) → à investiguer</li>
-                                    <li><strong>UpdraftPlus reconfiguré + backup auto Google Drive activé</strong> · règle backup 3-2-1 respectée (local + cloud) · email alertes vers <code>contact@naoenergy.ch</code></li>
-                                    <li><strong>Complianz RGPD wizard relancé + réajusté</strong> · CSS du bandeau régénéré (v=45 → v=56) · cookies de consentement remis à zéro pour test propre</li>
-                                    <li><strong>🔧 BUG CRITIQUE RÉSOLU — Bandeau cookie fullscreen sur /actualites/</strong> · diagnostic : conflit entre plugin <code>Query Loop Filters</code> (Human Made v0.2.0) et Complianz · cause technique : Query Loop Filters utilisait l'API Interactivity WordPress qui cassait le CSS de Complianz lors d'un filtrage AJAX · <strong>solution</strong> : désactivation Query Loop Filters → bug immédiatement résolu</li>
-                                    <li><strong>✨ Nouveau filtre catégorie custom (zéro plugin)</strong> · dropdown HTML natif avec les 13 catégories du blog · design aligné CTA "Contact" header (classe <code>is-style-default</code>) · filtrage AJAX in-place sans reload ni scroll · URL synchronisée <code>/actualites/?cat=produits</code> (SEO + partage) · compatible bouton retour navigateur (popstate) · responsive mobile/tablette</li>
+                                    <li>Audit complet des extensions WordPress : inventaire actifs/inactifs, identification des doublons et risques sécurité</li>
+                                    <li>UpdraftPlus reconfiguré + sauvegarde automatique vers Google Drive activée (règle 3-2-1 respectée : local + cloud) + alertes email vers contact@naoenergy.ch</li>
+                                    <li>Bandeau cookies Complianz régénéré et réajusté pour test propre</li>
+                                    <li><strong>Bug critique résolu</strong> · bandeau cookies plein écran sur /actualites/ : conflit entre Query Loop Filters et Complianz lors d'un filtrage — solution : désactivation immédiate de Query Loop Filters</li>
+                                    <li><strong>Nouveau filtre catégorie custom</strong> (sans plugin) sur /actualites/ : dropdown HTML natif avec les 13 catégories du blog, design aligné sur le CTA Contact du header, filtrage instantané sans rechargement, URL synchronisée (SEO + partage)</li>
                                 </ul>
                             </div>
                         </div>
@@ -3259,15 +3243,15 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <div style="position:relative;margin-bottom:18px">
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Lun. 11 mai 2026</span>
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">Lun. 11 mai 2026</span>
                             </div>
                             <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress / Backup</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress — Sauvegarde</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>UpdraftPlus offsite configuré</strong> · stockage distant <strong>Google Drive</strong> sélectionné · auth OK sur <code>bakhchanemouad@gmail.com</code> · dossier "UpdraftPlus" créé sur Drive</li>
-                                    <li><strong>Email alertes activées</strong> → rapports envoyés à <code>contact@naoenergy.ch</code></li>
-                                    <li><strong>Backup test manuel lancé</strong> · en cours d'exécution · validation offsite Google Drive à confirmer post-completion</li>
-                                    <li><strong>3 plugins inactifs supprimés</strong> · <code>MonsterInsights</code> · <code>WPCode Lite</code> · <code>WP Headers And Footers</code> · réduction surface d'attaque · état post-nettoyage : 28 extensions actives, 0 inactives</li>
+                                    <li>UpdraftPlus configuré pour stockage distant Google Drive (compte bakhchanemouad@gmail.com, dossier « UpdraftPlus » créé)</li>
+                                    <li>Alertes email activées → rapports envoyés à contact@naoenergy.ch</li>
+                                    <li>Sauvegarde test manuelle lancée — validation cloud à confirmer</li>
+                                    <li>3 plugins inactifs supprimés (MonsterInsights, WPCode Lite, WP Headers And Footers) — surface d'attaque réduite</li>
                                 </ul>
                             </div>
                         </div>
@@ -3276,12 +3260,12 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <div style="position:relative;margin-bottom:18px">
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Sam. 9 mai 2026</span>
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">Sam. 9 mai 2026</span>
                             </div>
                             <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress / Sécurité</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress — Sécurité</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>WP File Manager désactivé</strong> · plugin <code>wp-file-manager/file_folder_manager.php</code> v8.0.4 · réduction surface d'attaque · CVE historique (CVE-2020-25213 RCE) · version FREE sans garde-fous (filesystem complet accessible tout admin) · décision validée Mouâd</li>
+                                    <li>Désactivation du plugin WP File Manager : version gratuite sans garde-fous (accès complet au système de fichiers pour tout admin), faille de sécurité historique répertoriée — surface d'attaque réduite</li>
                                 </ul>
                             </div>
                         </div>
@@ -3290,18 +3274,19 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <div style="position:relative;margin-bottom:18px">
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Jeu. 8 mai 2026</span>
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">Jeu. 8 mai 2026</span>
                             </div>
                             <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
                                 <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress</div>
                                 <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Inventaire complet extensions WP</strong> · 32 plugins relevés via wp-admin/plugins.php · tri essentiels (15) / à investiguer (17) · 2 MAJ en attente : Polylang Pro 3.6.6 → 3.8.3 (auto indisponible) + Duplicate Page 4.5.8 → 4.5.9</li>
+                                    <li>Inventaire complet des extensions WordPress : 32 plugins relevés, tri en essentiels (15) / à investiguer (17)</li>
+                                    <li>2 mises à jour en attente : Polylang Pro 3.6.6 → 3.8.3 et Duplicate Page 4.5.8 → 4.5.9</li>
                                 </ul>
                                 <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Audit complet WordPress</strong> · 4 alertes critiques identifiées (backups, Pixel consent, PHP EOL, Polylang auto-MAJ)</li>
-                                    <li><strong>Découverte critique</strong> · "Reach more people likely to respond" = source des leads hors zone</li>
-                                    <li><strong>Reco budget mai</strong> · split 1 000 / 1 000 Vaud + Genève, validé</li>
+                                    <li>Audit complet WordPress : 4 alertes critiques identifiées (sauvegardes, consentement Pixel, fin de vie PHP, mise à jour Polylang)</li>
+                                    <li><strong>Découverte critique</strong> · l'option Meta « Reach more people likely to respond » est la source des leads hors zone géographique cible</li>
+                                    <li>Reco budget mai : répartition 1 000 CHF Vaud + 1 000 CHF Genève, validée</li>
                                 </ul>
                             </div>
                         </div>
@@ -3310,14 +3295,14 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <div style="position:relative;margin-bottom:18px">
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mer. 7 mai 2026</span>
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">Mer. 7 mai 2026</span>
                             </div>
                             <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
                                 <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Genève PV mis en pause</strong> · €191 dépensés / 0 lead · décision validée</li>
-                                    <li><strong>Analyse Vaud PV</strong> · 3 leads à €41 CPL · Pub 3 winner</li>
-                                    <li><strong>Diagnostic 7 ads sub-scale</strong> · €25/jour ÷ 7 ads = €3.50/ad → impossible d'atteindre Learning Phase</li>
+                                    <li>Genève PV mis en pause : €191 dépensés / 0 lead — décision validée</li>
+                                    <li>Analyse Vaud PV : 3 leads à €41 CPL — Pub 3 winner</li>
+                                    <li>Diagnostic 7 publicités sous-budgetées : €25/jour ÷ 7 ads = €3.50/ad → impossible d'atteindre la phase d'apprentissage Meta</li>
                                 </ul>
                             </div>
                         </div>
@@ -3326,12 +3311,12 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <div style="position:relative;margin-bottom:18px">
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
                             <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mar. 6 mai 2026</span>
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">Mar. 6 mai 2026</span>
                             </div>
                             <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads · Business</div>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#1877F2;font-weight:700;margin-bottom:6px">📢 Meta Ads — Business</div>
                                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Reçu doc business client</strong> · profil entreprise, cibles, budget Ads, concurrence (16 acteurs)</li>
+                                    <li>Réception du document business client : profil entreprise, cibles, budget Ads, concurrence (16 acteurs identifiés)</li>
                                 </ul>
                             </div>
                         </div>
