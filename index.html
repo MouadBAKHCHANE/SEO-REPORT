@@ -2880,6 +2880,9 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             <div class="nav-children">
                 <div class="nav-children-inner">
                     <div class="nav-sub-label" style="padding-left:0">On-page SEO</div>
+                    <button class="nav-child" data-target="gsc" type="button">
+                        <span class="nav-label">Google Search Console</span>
+                    </button>
                     <button class="nav-child" data-target="onpage" type="button">
                         <span class="nav-label">On-Page</span>
                     </button>
@@ -5071,6 +5074,100 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
         </div>
 
         <!-- ============ PANEL : ON-PAGE ============ -->
+        <!-- ============ PANEL : GOOGLE SEARCH CONSOLE ============ -->
+        <div class="panel" id="panel-gsc">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">Google Search Console — Comprendre les données</h1>
+                        <span class="badge new">Guide</span>
+                    </div>
+                    <p class="page-subtitle">Définitions des colonnes du rapport « Performance sur la recherche Google » + règle d'or pour interpréter correctement les chiffres.</p>
+                </div>
+            </div>
+
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #5A98AE">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:14px">📊 EXPLICATION DES 4 COLONNES</div>
+
+                <table class="data-table" style="font-size:0.82rem">
+                    <thead>
+                        <tr>
+                            <th style="width:18%">Colonne</th>
+                            <th style="width:42%">Définition simple</th>
+                            <th style="width:40%">Exemple concret</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Top queries</strong><br><span style="font-size:0.7rem;color:var(--text-muted)">(Requêtes)</span></td>
+                            <td>Le mot-clé tapé par l'internaute dans Google.</td>
+                            <td><em>« panneaux solaires Genève »</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Clicks</strong><br><span style="font-size:0.7rem;color:var(--text-muted)">(Clics)</span></td>
+                            <td>Nombre de fois où quelqu'un a <strong>cliqué</strong> sur le lien NaoEnergy dans les résultats Google.</td>
+                            <td>50 personnes ont cliqué sur le lien.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Impressions</strong></td>
+                            <td>Nombre de fois où le lien NaoEnergy <strong>est APPARU</strong> dans les résultats Google (peu importe la page, peu importe si la personne a cliqué ou non).</td>
+                            <td>1 000 affichages dans Google.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CTR</strong><br><span style="font-size:0.7rem;color:var(--text-muted)">(Click-Through Rate)</span></td>
+                            <td><strong>Clics ÷ Impressions × 100</strong> = pourcentage de personnes qui cliquent quand elles voient le lien.</td>
+                            <td>50 ÷ 1 000 = <strong style="color:#2A8F4D">5 %</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Position</strong><br><span style="font-size:0.7rem;color:var(--text-muted)">(Position moyenne)</span></td>
+                            <td>Position moyenne d'apparition du lien dans les résultats Google.<br><strong>1</strong> = 1er résultat · <strong>10</strong> = bas de la 1<sup>re</sup> page · <strong>20</strong> = 2<sup>e</sup> page · <strong>50+</strong> = quasi invisible.</td>
+                            <td>Position moyenne <strong>8,5</strong> = visible en 1<sup>re</sup> page Google.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #2A8F4D;background:#F0FAF4">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#2A8F4D;font-weight:800;margin-bottom:12px">💡 RÈGLE D'OR</div>
+
+                <p style="font-size:0.95rem;color:var(--text);line-height:1.7;margin-bottom:14px">
+                    <strong>Pour qu'une requête soit stratégique, il faut les 4 colonnes ensemble :</strong>
+                </p>
+
+                <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px">
+                    <div style="background:#fff;padding:14px 16px;border-radius:8px;border-left:3px solid #5A98AE">
+                        <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;color:#5A98AE;font-weight:700;margin-bottom:4px">📊 Volume</div>
+                        <div style="font-size:0.82rem;color:var(--text-body);line-height:1.5"><strong>Impressions élevées</strong> = beaucoup de personnes cherchent ce mot-clé sur Google.</div>
+                    </div>
+                    <div style="background:#fff;padding:14px 16px;border-radius:8px;border-left:3px solid #6F3EAA">
+                        <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;color:#6F3EAA;font-weight:700;margin-bottom:4px">👁️ Visibilité</div>
+                        <div style="font-size:0.82rem;color:var(--text-body);line-height:1.5"><strong>Position basse</strong> (chiffre petit, ≤10) = on apparaît bien dans les résultats.</div>
+                    </div>
+                    <div style="background:#fff;padding:14px 16px;border-radius:8px;border-left:3px solid #E85D4A">
+                        <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;color:#E85D4A;font-weight:700;margin-bottom:4px">🎯 Performance</div>
+                        <div style="font-size:0.82rem;color:var(--text-body);line-height:1.5"><strong>CTR élevé</strong> = notre titre et notre description donnent envie de cliquer.</div>
+                    </div>
+                    <div style="background:#fff;padding:14px 16px;border-radius:8px;border-left:3px solid #2A8F4D">
+                        <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.5px;color:#2A8F4D;font-weight:700;margin-bottom:4px">🚀 Résultat</div>
+                        <div style="font-size:0.82rem;color:var(--text-body);line-height:1.5"><strong>Clics élevés</strong> = on attire vraiment du trafic qualifié.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #E85D4A;background:#FFF5F2">
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#E85D4A;font-weight:800;margin-bottom:10px">⚠️ PIÈGE À ÉVITER</div>
+                <p style="font-size:0.88rem;color:var(--text);line-height:1.7;margin-bottom:8px">
+                    <strong>« CTR 100 % » ne veut PAS dire « position #1 sur Google ».</strong>
+                </p>
+                <p style="font-size:0.82rem;color:var(--text-body);line-height:1.7;margin-bottom:8px">
+                    Si une requête a CTR 100 % avec seulement <strong>1 impression et 1 clic</strong>, c'est statistiquement non significatif. Le lien est peut-être apparu une seule fois, en bas de page 3, et la rare personne qui a scrollé jusque-là a cliqué.
+                </p>
+                <p style="font-size:0.82rem;color:var(--text-body);line-height:1.7;margin:0">
+                    👉 <strong>Toujours regarder le couple Position + Impressions</strong> avant de juger le CTR. Une requête qui rapporte = position ≤ 10 ET impressions ≥ 100 ET CTR ≥ 3 %.
+                </p>
+            </div>
+        </div>
+
         <div class="panel" id="panel-onpage">
             <div class="page-header">
                 <div>
