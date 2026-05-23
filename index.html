@@ -3054,6 +3054,99 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div style="position:relative;padding-left:24px">
                         <div style="position:absolute;left:7px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom, #6F3EAA, var(--border))"></div>
 
+                        <!-- 22 mai 2026 -->
+                        <div style="position:relative;margin-bottom:18px">
+                            <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:#E85D4A;border:3px solid var(--bg)"></div>
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">Ven. 22 mai 2026</span>
+                                <span style="background:rgba(232,93,74,0.12);color:#E85D4A;padding:2px 8px;border-radius:100px;font-size:0.62rem;font-weight:700">Urgence + Migration majeure</span>
+                            </div>
+                            <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#E85D4A;font-weight:700;margin-bottom:6px">🚨 5 pages devenues blanches en LIVE — résolu</div>
+                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li>Signalement : 5 pages importantes du site ne s'affichaient plus du tout (écran blanc) : Pompes à chaleur, Batteries de stockage, Qui sommes-nous, Regroupement de propriétaires, Charte commerciale responsable</li>
+                                    <li>Diagnostic : seules les pages contenant une vidéo YouTube étaient touchées. Cause = bug du plugin de gestion des cookies (Complianz) qui plantait silencieusement à chaque tentative d'afficher une vidéo</li>
+                                    <li>Solution immédiate : désactivation du service YouTube dans Complianz → les 5 pages rechargent à nouveau normalement (300-400 KB chacune, contenu intact)</li>
+                                </ul>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#5A98AE;font-weight:700;margin-bottom:6px">🔄 Migration du plugin de gestion des cookies — Complianz → CookieYes</div>
+                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li>Décision : remplacer Complianz (2 bugs en 24h, instable) par CookieYes (1 million d'installations actives, plus stable)</li>
+                                    <li>Audit préalable : vérification que le tracking publicitaire Google et Meta serait préservé pendant la migration (Consent Mode v2 actif des 2 côtés)</li>
+                                    <li>Inventaire complet de la configuration Complianz pour reproduire à l'identique (catégories, textes français, services activés, couleurs marque)</li>
+                                    <li>Migration effectuée à 2h07 du matin (trafic minimal) : désactivation Complianz + activation CookieYes en moins de 30 secondes</li>
+                                    <li>Résultat : tracking préservé à 99% (Google Consent Mode v2 automatique, 7 signaux + détection région Suisse/EU), banner en français, couleur marque #7cb1c4 appliquée via CSS</li>
+                                </ul>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#6F3EAA;font-weight:700;margin-bottom:6px">🐛 Bug pagination Ajax du thème — résolu</div>
+                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li>Signalement : sur les pages /10-ans-naoenergy/ et /actualites/, cliquer sur « page 2 » faisait disparaître la bannière de consentement (était attribué à tort au plugin Complianz)</li>
+                                    <li>Diagnostic en profondeur : le bug venait du thème WordPress (et non du plugin cookies). Lors du changement de page sans rechargement, le thème forçait la bannière à devenir invisible</li>
+                                    <li>Solution : règle CSS qui force la bannière à rester visible et bien positionnée en bas à droite, peu importe ce que fait le thème</li>
+                                    <li>Vérifié sur les 2 pages : la bannière reste désormais visible après pagination</li>
+                                </ul>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">✅ État final du site</div>
+                                <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li>Toutes les pages du site fonctionnent (HTTP 200 partout)</li>
+                                    <li>Tracking Google Ads + GA4 + Meta préservé (Consent Mode v2 actif)</li>
+                                    <li>Bannière cookies en français, conforme RGPD et LPD Suisse</li>
+                                    <li>Reste à faire (cosmétique, non bloquant) : peaufiner les couleurs des boutons supplémentaires si besoin, désinstaller définitivement Complianz après 48h de monitoring</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 21 mai 2026 -->
+                        <div style="position:relative;margin-bottom:18px">
+                            <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">Jeu. 21 mai 2026</span>
+                                <span style="background:rgba(42,143,77,0.12);color:#2A8F4D;padding:2px 8px;border-radius:100px;font-size:0.62rem;font-weight:700">Sprint Redesign V2 livré</span>
+                            </div>
+                            <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">🔧 WordPress — Sprint Redesign V2 mégamenu</div>
+                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li>6 corrections sur le mégamenu desktop : item « Pour les pros » déplacé dans le sous-menu Solutions, alignement des chevrons, harmonisation des espacements, suppression de doublons</li>
+                                    <li>« Pour les pros » renommé en « Pour les professionnels » et repositionné comme dernier item du sous-menu Nos solutions</li>
+                                    <li>Tous les correctifs publiés en LIVE avec validation visuelle directe</li>
+                                </ul>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#5A98AE;font-weight:700;margin-bottom:6px">🛠️ Workflow CSS centralisé</div>
+                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li>Décision stratégique : toutes les modifications CSS personnalisées passent désormais par le Personnaliseur WordPress du thème parent (et plus par le thème enfant)</li>
+                                    <li>Pourquoi : assure que les changements ne sont jamais perdus lors d'une mise à jour automatique du thème par l'agence buxumlunic.ch</li>
+                                    <li>Tous les blocs CSS (menu mobile, bannière cookies mobile, filtres catégorie, correctifs) regroupés dans un seul fichier de référence</li>
+                                </ul>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#6F3EAA;font-weight:700;margin-bottom:6px">📊 Audit Site Kit (Google Analytics + Search Console)</div>
+                                <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li>Connexion Site Kit vérifiée : GA4 + Search Console opérationnels dans le tableau de bord WordPress</li>
+                                    <li>Extraction des chiffres clés du mois : 815 visiteurs (+279% vs période précédente), 83 prospects (+246%), 285 visiteurs Search (+313%), 49 000 impressions (+11%)</li>
+                                    <li>Top requêtes identifiées + recadrage stratégique : NaoEnergy domine sur les requêtes marque (position 1-2) mais reste invisible sur les requêtes produit génériques (position 20-70 → focus Sprint 2)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 20 mai 2026 -->
+                        <div style="position:relative;margin-bottom:18px">
+                            <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
+                            <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
+                                <span style="font-size:0.78rem;font-weight:800;color:var(--text)">Mer. 20 mai 2026</span>
+                            </div>
+                            <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#6F3EAA;font-weight:700;margin-bottom:6px">📋 Tableau de bord — adaptation pour Charline</div>
+                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li>Refonte du langage du tableau de bord : suppression des jargons techniques, reformulation en mots simples et concrets (ex. « consent state » → « avez-vous accepté les cookies »)</li>
+                                    <li>Ajout d'une nouvelle sous-page « Google Search Console » qui explique en clair les 4 colonnes (Top requêtes, Clics, Impressions, CTR, Position) et la règle d'or pour interpréter les données</li>
+                                    <li>Mise en page mobile/tablette optimisée : la grille des 4 cartes principales s'adapte automatiquement (4 colonnes sur ordinateur, 2 sur tablette, ajustement vertical sur petit écran)</li>
+                                </ul>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#21759B;font-weight:700;margin-bottom:6px">📄 Documents pour la présentation au call</div>
+                                <ul style="margin:0 0 12px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li>Création d'un document de présentation structuré en 3 actes (Axe 1 « Génération de leads » + Axe 2 « SEO technique ») avec storytelling clair pour la réunion Charline</li>
+                                    <li>Création d'un document « Preuves par outil » qui démontre les résultats grâce aux données réelles de Site Kit, GA4, Google Ads, Meta Ads, PageSpeed</li>
+                                </ul>
+                                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">🔧 WordPress — Correctif rapide</div>
+                                <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                                    <li>Page « Toutes nos solutions » : bouton « En savoir plus » de la carte Pompes à chaleur sans libellé visible → correction du champ texte en base de données</li>
+                                </ul>
+                            </div>
+                        </div>
+
                         <!-- 19 mai 2026 -->
                         <div style="position:relative;margin-bottom:18px">
                             <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:#6F3EAA;border:3px solid var(--bg)"></div>
