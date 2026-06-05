@@ -245,16 +245,18 @@ a { color: var(--primary); text-decoration: none; }
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
-    scrollbar-gutter: stable;
+    scrollbar-width: none;          /* Firefox — hide sidebar scrollbar */
+    -ms-overflow-style: none;       /* IE/Edge */
     overscroll-behavior: contain;
 }
+.sidebar::-webkit-scrollbar { width: 0; height: 0; display: none; }  /* Chrome/Safari — hide → single page scrollbar on the right */
 [data-theme="dark"] .sidebar {
     background: linear-gradient(180deg, #131A1E 0%, #0F1417 100%);
     border-right-color: rgba(124,177,196,0.10);
 }
 .sidebar > * { flex-shrink: 0; }
 
-.sidebar::-webkit-scrollbar { width: 6px; }
+.sidebar::-webkit-scrollbar { width: 0; height: 0; display: none; }
 .sidebar::-webkit-scrollbar-track { background: transparent; }
 .sidebar::-webkit-scrollbar-thumb {
     background: rgba(60,40,20,0.12);
@@ -262,7 +264,7 @@ a { color: var(--primary); text-decoration: none; }
     transition: background 0.2s;
 }
 .sidebar::-webkit-scrollbar-thumb:hover { background: rgba(60,40,20,0.22); }
-.sidebar { scrollbar-width: thin; scrollbar-color: rgba(60,40,20,0.12) transparent; }
+.sidebar { scrollbar-width: none; }
 
 .brand {
     display: flex;
@@ -2831,9 +2833,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             </button>
             <div class="nav-children">
                 <div class="nav-children-inner">
-                    <button class="nav-child" data-target="wp_admin" type="button">
-                        <span class="nav-label">WP Admin</span>
-                    </button>
                     <button class="nav-child" data-target="theme" type="button">
                         <span class="nav-label">🎨 Thème &amp; Stack</span>
                         <span class="nav-badge" style="background:rgba(124,177,196,0.20);color:#5A98AE;font-weight:700">NEW</span>
@@ -2933,6 +2932,10 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
         <!-- Actions -->
         <div class="nav-section">
             <div class="nav-section-title">Actions</div>
+            <button class="nav-item" data-target="situation-avant">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.29 3.86 1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <span class="nav-label">Situation avant projet</span>
+            </button>
             <button class="nav-item" data-target="recs">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                 <span class="nav-label">Plan d'actions</span>
@@ -3024,13 +3027,13 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 <!-- ═══════════ APP GRID — 8 EQUAL CARDS (4 per row) ═══════════ -->
                 <div class="app-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px">
                     <button onclick="showPanel('objectives')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #7CB1C4;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7CB1C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="#7CB1C4"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Objectifs &amp; missions</div></button>
-                    <button onclick="openDrawer('critical')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #E85D4A;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E85D4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Situation avant projet</div></button>
+                    <button onclick="showPanel('situation-avant')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #E85D4A;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E85D4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Situation avant projet</div></button>
                     <button onclick="showPanel('recs')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #5A98AE;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5A98AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 13 2 2 4-4"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Plan d'actions</div></button>
                     <button onclick="showPanel('external_audits')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #6F3EAA;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#6F3EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Audits externes</div></button>
                     <button onclick="showPanel('google_ads')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #FBBC04;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"><path fill="#FBBC04" d="M70.4 22.4 22.4 105.6c-2.7 4.6-4.4 10-4.4 15.6 0 16.6 13.4 30 30 30 11.2 0 21.4-6.2 26.4-15.6L122.4 52.4c2.7-4.6 4.4-10 4.4-15.6 0-16.6-13.4-30-30-30-11.2 0-21.4 6.2-26.4 15.6Z"/><circle cx="48" cy="151.2" r="30" fill="#34A853"/><path fill="#4285F4" d="M174 105.6 126 22.4c-5.1-9.4-15.2-15.6-26.4-15.6-5.6 0-11 1.7-15.6 4.4-9.4 5.1-15.6 15.2-15.6 26.4 0 5.6 1.7 11 4.4 15.6L121 136.4c5.1 9.4 15.2 15.6 26.4 15.6 5.6 0 11-1.7 15.6-4.4 14.3-8.3 19.2-26.7 10.9-41.1Z"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Google Ads</div></button>
                     <button onclick="showPanel('meta_ads')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #1877F2;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 287.56 191" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="metaA2" x1="62.34" y1="101.45" x2="260.34" y2="91.45" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0064E1"/><stop offset=".4" stop-color="#0064E1"/><stop offset=".83" stop-color="#0073EE"/><stop offset="1" stop-color="#0082FB"/></linearGradient><linearGradient id="metaB2" x1="41.42" y1="53" x2="41.42" y2="126" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0082FB"/><stop offset="1" stop-color="#0064E0"/></linearGradient></defs><path fill="#0081FB" d="M31.06 126c0 11 2.41 19.41 5.56 24.51A19 19 0 0053.19 160c8.1 0 15.51-2 29.79-21.76 11.44-15.83 24.92-38 34-52l15.36-23.6c10.67-16.39 23-34.61 37.18-47C181.07 5.6 193.54 0 206.09 0c21.07 0 41.14 12.21 56.5 35.11 16.81 25.08 25 56.67 25 89.27 0 19.38-3.82 33.62-10.32 44.87C271 180.13 258.72 191 238.13 191v-31c17.63 0 22-16.2 22-34.74 0-26.42-6.16-55.74-19.73-76.69-9.63-14.86-22.11-23.94-35.84-23.94-14.85 0-26.8 11.2-40.23 31.17-7.14 10.61-14.47 23.54-22.7 38.13l-9.06 16C115.14 145.81 110.5 154.6 101.6 166.4 86 187 72.76 191 53.19 191c-21.27 0-34.72-9.21-43-23.09C3.34 156.46 0 141.46 0 124.36Z"/><path fill="url(#metaA2)" d="M24.49 37.3C38.73 15.35 59.28 0 82.85 0c13.65 0 27.22 4 41.39 15.61 15.5 12.65 32 33.48 52.63 67.81l7.39 12.32c17.84 29.72 28 45 33.93 52.22 7.64 9.26 13 12 19.94 12 17.63 0 22-16.2 22-34.74l27.4-.86c0 19.38-3.82 33.62-10.32 44.87C271 180.13 258.72 191 238.13 191c-12.8 0-24.14-2.78-36.68-14.61-9.64-9.08-20.91-25.21-29.58-39.71L146.08 93.6c-12.94-21.62-24.81-37.74-31.68-45-7.4-7.88-16.92-17.38-32.13-17.38-12.31 0-22.77 8.64-31.52 21.87Z"/><path fill="url(#metaB2)" d="M82.35 31.23c-12.31 0-22.77 8.64-31.52 21.87C38.44 71.62 30.94 99.5 30.94 126.4c0 11 2.41 19.41 5.56 24.51L10.14 167.91C3.34 156.46 0 141.46 0 124.36 0 93.28 8.54 60.89 24.49 37.3 38.73 15.35 59.28 0 82.85 0Z"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Meta Ads</div></button>
                     <button onclick="showPanel('onpage')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #4285F4;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571.001-.001.002-.001.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083 43.595 20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">SEO</div></button>
-                    <button onclick="showPanel('wp_admin')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #21759B;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 122.5 122.5" xmlns="http://www.w3.org/2000/svg"><path fill="#21759B" d="M8.7 61.3c0 20.8 12.1 38.7 29.6 47.3L13.2 39.9c-2.9 6.5-4.5 13.8-4.5 21.4zm88 -2.7c0 -6.5 -2.3 -11 -4.3 -14.5 -2.7 -4.3 -5.2 -8 -5.2 -12.3 0 -4.8 3.7 -9.3 8.9 -9.3 0.2 0 0.5 0 0.7 0 -9.4 -8.6 -22 -13.9 -35.8 -13.9C42 8.5 24.7 18 14.7 32.3c1.3 0 2.6 0.1 3.6 0.1 5.5 0 14.1 -0.7 14.1 -0.7 2.9 -0.2 3.2 4 0.4 4.4 0 0 -2.9 0.3 -6.1 0.5l19.4 57.6 11.6 -34.9 -8.3 -22.7c-2.9 -0.2 -5.6 -0.5 -5.6 -0.5 -2.9 -0.2 -2.5 -4.6 0.4 -4.4 0 0 8.8 0.7 14 0.7 5.5 0 14.1 -0.7 14.1 -0.7 2.9 -0.2 3.2 4 0.4 4.4 0 0 -2.9 0.3 -6.1 0.5l19.2 57.2 5.4 -17.7c2.4 -7.5 4.1 -12.9 4.1 -17.6zm-35.4 7.4 -16 46.4c4.8 1.4 9.8 2.2 15 2.2 6.2 0 12.1 -1.1 17.6 -3 -0.1 -0.2 -0.3 -0.5 -0.4 -0.7l-16.2 -44.9zm46.2 -30.5c0.2 1.7 0.4 3.5 0.4 5.5 0 5.4 -1 11.5 -4.1 19.1l-16.3 47.1c15.9 -9.3 26.6 -26.5 26.6 -46.2 0 -9.3 -2.4 -18 -6.5 -25.6zm-52.5 -23.4C24.7 12.1 0 36.8 0 67.1c0 30.3 24.7 55 55 55 30.3 0 55 -24.7 55 -55 0 -30.3 -24.7 -55 -55 -55zm0 107.4c-29 0 -52.4 -23.5 -52.4 -52.4 0 -29 23.5 -52.4 52.4 -52.4 28.9 0 52.4 23.5 52.4 52.4 0 28.9 -23.5 52.4 -52.4 52.4z" transform="translate(6.25 -6.5)"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">WordPress</div></button>
+                    <button onclick="showPanel('situation-avant')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #21759B;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 122.5 122.5" xmlns="http://www.w3.org/2000/svg"><path fill="#21759B" d="M8.7 61.3c0 20.8 12.1 38.7 29.6 47.3L13.2 39.9c-2.9 6.5-4.5 13.8-4.5 21.4zm88 -2.7c0 -6.5 -2.3 -11 -4.3 -14.5 -2.7 -4.3 -5.2 -8 -5.2 -12.3 0 -4.8 3.7 -9.3 8.9 -9.3 0.2 0 0.5 0 0.7 0 -9.4 -8.6 -22 -13.9 -35.8 -13.9C42 8.5 24.7 18 14.7 32.3c1.3 0 2.6 0.1 3.6 0.1 5.5 0 14.1 -0.7 14.1 -0.7 2.9 -0.2 3.2 4 0.4 4.4 0 0 -2.9 0.3 -6.1 0.5l19.4 57.6 11.6 -34.9 -8.3 -22.7c-2.9 -0.2 -5.6 -0.5 -5.6 -0.5 -2.9 -0.2 -2.5 -4.6 0.4 -4.4 0 0 8.8 0.7 14 0.7 5.5 0 14.1 -0.7 14.1 -0.7 2.9 -0.2 3.2 4 0.4 4.4 0 0 -2.9 0.3 -6.1 0.5l19.2 57.2 5.4 -17.7c2.4 -7.5 4.1 -12.9 4.1 -17.6zm-35.4 7.4 -16 46.4c4.8 1.4 9.8 2.2 15 2.2 6.2 0 12.1 -1.1 17.6 -3 -0.1 -0.2 -0.3 -0.5 -0.4 -0.7l-16.2 -44.9zm46.2 -30.5c0.2 1.7 0.4 3.5 0.4 5.5 0 5.4 -1 11.5 -4.1 19.1l-16.3 47.1c15.9 -9.3 26.6 -26.5 26.6 -46.2 0 -9.3 -2.4 -18 -6.5 -25.6zm-52.5 -23.4C24.7 12.1 0 36.8 0 67.1c0 30.3 24.7 55 55 55 30.3 0 55 -24.7 55 -55 0 -30.3 -24.7 -55 -55 -55zm0 107.4c-29 0 -52.4 -23.5 -52.4 -52.4 0 -29 23.5 -52.4 52.4 -52.4 28.9 0 52.4 23.5 52.4 52.4 0 28.9 -23.5 52.4 -52.4 52.4z" transform="translate(6.25 -6.5)"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">WordPress</div></button>
                 </div>
                 <style>
                 .app-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(35,48,54,0.08); border-color: rgba(124,177,196,0.30); }
@@ -3865,6 +3868,52 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 <div style="padding:12px 14px;background:rgba(232,168,46,0.10);border-radius:8px;border-left:3px solid #E8A82E;font-size:0.74rem;color:var(--text-body);line-height:1.6">
                     💸 <strong style="color:var(--text)">Budget validé :</strong> 2 000 CHF/mois depuis avril 2026 · projection 88 CHF/j × 18j restants + 377 dépensés = ~1 961 CHF (dans l'enveloppe 🟢).
                 </div>
+
+                <!-- ===== RÉSULTATS META ADS — MAI 2026 ===== -->
+                <div style="margin-top:14px;padding:18px 20px;background:var(--surface-soft);border-radius:12px;border-top:4px solid #2A8F4D">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+                        <span style="display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:#2A8F4D;color:#fff;font-weight:800;font-size:0.95rem">📊</span>
+                        <div>
+                            <div style="font-size:0.92rem;font-weight:800;color:var(--text);line-height:1.2">Résultats Meta Ads — Mai 2026</div>
+                            <div style="font-size:0.68rem;color:var(--text-muted);margin-top:2px">Période 1–31 mai 2026 · 7 campagnes · montants en €</div>
+                        </div>
+                        <span style="margin-left:auto;background:rgba(42,143,77,0.12);color:#2A8F4D;font-size:0.58rem;padding:3px 8px;border-radius:100px;font-weight:800;letter-spacing:0.5px">DONNÉES RÉELLES</span>
+                    </div>
+
+                    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px">
+                        <div style="padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:8px;text-align:center"><div style="font-size:1.15rem;font-weight:800;color:#2A8F4D">41</div><div style="font-size:0.58rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px">Leads</div></div>
+                        <div style="padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:8px;text-align:center"><div style="font-size:1.15rem;font-weight:800;color:var(--text)">1 914 €</div><div style="font-size:0.58rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px">Dépensé</div></div>
+                        <div style="padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:8px;text-align:center"><div style="font-size:1.15rem;font-weight:800;color:var(--text)">~44 €</div><div style="font-size:0.58rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px">CPL moyen</div></div>
+                        <div style="padding:10px 12px;background:var(--surface);border:1px solid var(--border);border-radius:8px;text-align:center"><div style="font-size:1.15rem;font-weight:800;color:var(--text)">122 k</div><div style="font-size:0.58rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.5px">Personnes touchées</div></div>
+                    </div>
+
+                    <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:#3D7A8F;font-weight:800;margin-bottom:6px">Détail par campagne</div>
+                    <div style="overflow-x:auto;margin-bottom:12px">
+                        <table style="width:100%;border-collapse:collapse;font-size:0.72rem">
+                            <thead><tr style="text-align:left;color:var(--text-muted);border-bottom:1px solid var(--border)">
+                                <th style="padding:6px 8px;font-weight:700">Campagne</th>
+                                <th style="padding:6px 8px;font-weight:700;text-align:center">État</th>
+                                <th style="padding:6px 8px;font-weight:700;text-align:right">Leads</th>
+                                <th style="padding:6px 8px;font-weight:700;text-align:right">CPL</th>
+                                <th style="padding:6px 8px;font-weight:700;text-align:right">Dépensé</th>
+                            </tr></thead>
+                            <tbody style="color:var(--text-body)">
+                                <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px">Zen-Leads juin 2026</td><td style="padding:6px 8px;text-align:center">🟢</td><td style="padding:6px 8px;text-align:right;font-weight:700">4</td><td style="padding:6px 8px;text-align:right;color:#2A8F4D">25,45 €</td><td style="padding:6px 8px;text-align:right">101,81 €</td></tr>
+                                <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px">Batterie mai 2026</td><td style="padding:6px 8px;text-align:center">🟢</td><td style="padding:6px 8px;text-align:right;font-weight:700">14</td><td style="padding:6px 8px;text-align:right;color:#2A8F4D">38,06 €</td><td style="padding:6px 8px;text-align:right">532,78 €</td></tr>
+                                <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px">PAC mai 2026</td><td style="padding:6px 8px;text-align:center">🟢</td><td style="padding:6px 8px;text-align:right;font-weight:700">8</td><td style="padding:6px 8px;text-align:right;color:#C44A1F">69,55 €</td><td style="padding:6px 8px;text-align:right">556,39 €</td></tr>
+                                <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px">Batterie avril 2026</td><td style="padding:6px 8px;text-align:center">⚪</td><td style="padding:6px 8px;text-align:right;font-weight:700">9</td><td style="padding:6px 8px;text-align:right;color:#2A8F4D">13,17 €</td><td style="padding:6px 8px;text-align:right">118,57 €</td></tr>
+                                <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px">Notoriété avril 2026 <span style="color:var(--text-muted);font-size:0.66rem">(visibilité)</span></td><td style="padding:6px 8px;text-align:center">🟢</td><td style="padding:6px 8px;text-align:right">—</td><td style="padding:6px 8px;text-align:right;color:var(--text-muted)">CPM 1,14 €</td><td style="padding:6px 8px;text-align:right">117,00 €</td></tr>
+                                <tr style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px">PV avril 2026</td><td style="padding:6px 8px;text-align:center">⚪</td><td style="padding:6px 8px;text-align:right;font-weight:700">5</td><td style="padding:6px 8px;text-align:right;color:#C44A1F">78,83 €</td><td style="padding:6px 8px;text-align:right">394,14 €</td></tr>
+                                <tr><td style="padding:6px 8px">Batterie mars 2026</td><td style="padding:6px 8px;text-align:center">⚪</td><td style="padding:6px 8px;text-align:right;font-weight:700">1</td><td style="padding:6px 8px;text-align:right;color:#C44A1F">93,57 €</td><td style="padding:6px 8px;text-align:right">93,57 €</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="padding:10px 12px;background:rgba(42,143,77,0.08);border-radius:8px;border-left:3px solid #2A8F4D;font-size:0.72rem;color:var(--text-body);line-height:1.6">
+                        🟢 <strong style="color:var(--text)">Meilleur coût/lead</strong> : Batterie avril (13,17 €), Zen-Leads juin (25,45 €), Batterie mai (38,06 €). 🔴 <strong style="color:var(--text)">À optimiser</strong> : PAC mai (69,55 €) et PV avril (78,83 €), au-dessus de la cible 22–28 €. Notoriété : 67 436 personnes touchées pour 117 € (CPM 1,14 € 🟢).
+                    </div>
+                    <!-- META-ADS-SCREENSHOT-MAI -->
+                </div>
             </div>
 
             <!-- ===== AXE 2 — SEO & SEO TECHNIQUE ===== -->
@@ -4282,344 +4331,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
         </div>
 
         <!-- ============ PANEL : WP ADMIN ============ -->
-        <div class="panel" id="panel-wp_admin">
-            <div class="page-header">
-                <div>
-                    <h1 class="page-title">Preuves WordPress Admin</h1>
-                    <p class="page-subtitle">16 observations vérifiées depuis le dashboard wp-admin de naoenergy.ch — audit initial 3 avril 2026, mis à jour 13 mai 2026. <em>Le journal des actions par date est centralisé dans la <a href="#" onclick="showPanel('overview');return false;" style="color:#6F3EAA;font-weight:700">Vue d'ensemble</a>.</em></p>
-                </div>
-            </div>
-
-            <!-- Sub-section 0 : Journal quotidien REMOVED — moved to Vue d'ensemble (panel-overview) -->
-
-            <!-- HIDDEN — journal moved to overview panel -->
-            <div style="display:none">
-                <!-- ===== ENTRÉE TEMPLATE — copier-coller pour chaque nouvelle journée ===== -->
-
-                <!-- 13 mai 2026 -->
-                <div style="position:relative;margin-bottom:18px">
-                    <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:#6F3EAA;border:3px solid var(--bg)"></div>
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                        <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mer. 13 mai 2026</span>
-                        <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:2px 8px;border-radius:100px;font-size:0.62rem;font-weight:700">Aujourd'hui</span>
-                    </div>
-                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                        <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                            <li><strong>Refonte complète menu mobile/tablette</strong> · Bloc 1 CSS v13 (≤1200px) · burger <code>#switch-menu</code> noir épais centré verticalement (stroke #000, width 3px) · <code>position: fixed</code> + <code>transform: translateZ(0)</code> compat iOS Safari · plein écran au clic (100vw × 100vh) · zone tap 44×44 sur flèches · 2e burger Max Mega Menu masqué</li>
-                            <li><strong>Cache du contenu menu fermé</strong> · règle <code>.header__menu:not(.open) > *:not(#switch-menu) { display: none }</code> · résout le bleeding des items sur le hero quand drawer fermé</li>
-                            <li><strong>Sous-menus accordion</strong> · cachés par défaut · ouverts au clic sur la flèche · une seule flèche <code>›</code> propre (CSS pseudo-element, plus de doublons) · flèche tourne 135° quand ouvert</li>
-                            <li><strong>Bug images articles invisibles résolu</strong> · cause : WP Rocket Lazy Load injectait un <code>data:image/svg+xml</code> placeholder dans <code>src</code> + vraie URL dans <code>data-lazy-src</code> · notre AJAX swap (innerHTML) ne re-déclenchait pas le lazy loader → placeholders restaient · fix : fonction JS <code>forceLoadLazyImages()</code> qui swap manuellement <code>data-lazy-src</code> → <code>src</code> + <code>data-lazy-srcset</code> → <code>srcset</code> après chaque injection</li>
-                            <li><strong>Snippet JS sitewide ajouté</strong> · Code Snippets plugin · location footer site-wide · intercepte 1er clic sur "Nos solutions" / "À propos" (items avec sous-menu) sur mobile → ouvre le sous-menu au lieu de rediriger · 2e clic navigue normalement vers la page parent</li>
-                            <li><strong>Vérification WP Rocket complète</strong> · réglages OK : Minify CSS/JS ON · exclusions megamenu/maxmegamenu/complianz/theme présentes · "Optimiser CSS" OFF (avait cassé le hamburger) · "Reporter JS" OFF · "Charger JS différé" ON avec exclusions · multiple purges cache + "Éléments prioritaires" pendant les tests</li>
-                            <li><strong>📊 Meta Ads — Audit Lead Gen Batterie &amp; PAC historique</strong> · périmètre : 48 ads analysées (2023-2026) · <strong>Tier 1 winners batterie identifiés</strong> : Pub 1 Geneva (23 leads @ €16.57 CPL) · Pub 6 (6 leads @ €14.44 CPL ⭐ best CPL) · Pub 3 Geneva (33 leads @ €26.74 CPL ⭐ best volume) · Pub 8 Vaud (7 leads @ €19.79 CPL) · Pub 7 Geneva (9 leads @ €22.76 CPL) · MESSAGE 3 (14 leads @ €22.92 CPL) · <strong>Tier 3 à éviter</strong> (CPL >€50) : Pub 4 (€135), ATOUTS 1 (€90), New pub 1 (€72), STOCKAGE INTE (€68)</li>
-                            <li><strong>🎯 Meta Ads — Stratégie nouvelles campagnes définie</strong> · structure 2 ad sets par campagne (Genève / Vaud+Neuchâtel) · cross-tests des winners Geneva sur Vaud · budget cible €65-85/jour total (€1,950-2,550/mois) · CPL cible €22-28 · objectif 70-100 leads/mois</li>
-                            <li><strong>🚀 Meta Ads — 2 campagnes Lead Gen lancées + 1 active (3 actives au total)</strong>
-                                <ul style="margin:6px 0 0 0;padding-left:18px;font-size:0.72rem;color:var(--text-body);line-height:1.7">
-                                    <li><strong>Batterie-Mai-GL-MouaDev</strong> (Lead Gen Batterie · lancée 13 mai) · 2 ad sets · <strong>€42/jour</strong> · Ad Set Genève €21/j (Learning, 0 results yet) · Ad Set Vaud+Neuchâtel €21/j (Learning, <strong>1 lead à €0.34 spent, CTR 2.50% ⚡</strong>)</li>
-                                    <li><strong>PAC-GL-Mai-2026-MouaDev</strong> (Lead Gen PAC/PV solaire · lancée 13 mai) · 2 ad sets · <strong>€41/jour</strong> · Ad Set Geneva €21/j (<strong>1 lead à €10.67 CPL</strong>) · Ad Set Vaud+Neuchâtel €20/j (Learning, 526 impr, 6 clics)</li>
-                                    <li><strong>Notoriété avril 2026</strong> (Awareness · active depuis 27 avr) · €5/jour · 2,311 reach, CPM €1.33 🟢 efficient</li>
-                                    <li><strong>BUDGET TOTAL META ADS</strong> : <strong>€88/jour</strong> · ~<strong>€2,640/mois</strong> sur 3 campagnes actives</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 12 mai 2026 -->
-                <div style="position:relative;margin-bottom:18px">
-                    <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                        <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Mar. 12 mai 2026</span>
-                    </div>
-                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                        <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                            <li><strong>Audit complet plugins WordPress</strong> · inventaire actifs/inactifs · identification des doublons et risques sécurité · audit Duplicator (potentiel doublon avec UpdraftPlus) → à investiguer</li>
-                            <li><strong>UpdraftPlus reconfiguré + backup auto Google Drive activé</strong> · règle backup 3-2-1 respectée (local + cloud) · email alertes vers <code>contact@naoenergy.ch</code></li>
-                            <li><strong>Complianz RGPD wizard relancé + réajusté</strong> · CSS du bandeau régénéré (v=45 → v=56) · cookies de consentement remis à zéro pour test propre</li>
-                            <li><strong>🔧 BUG CRITIQUE RÉSOLU — Bandeau cookie fullscreen sur /actualites/</strong> · diagnostic : conflit entre plugin <code>Query Loop Filters</code> (Human Made v0.2.0) et Complianz · cause technique : Query Loop Filters utilisait l'API Interactivity WordPress qui cassait le CSS de Complianz lors d'un filtrage AJAX · <strong>solution</strong> : désactivation Query Loop Filters → bug immédiatement résolu</li>
-                            <li><strong>✨ Nouveau filtre catégorie custom (zéro plugin)</strong> · dropdown HTML natif avec les 13 catégories du blog · design aligné CTA "Contact" header (classe <code>is-style-default</code>) · filtrage AJAX in-place sans reload ni scroll · URL synchronisée <code>/actualites/?cat=produits</code> (SEO + partage) · compatible bouton retour navigateur (popstate) · responsive mobile/tablette</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 11 mai 2026 -->
-                <div style="position:relative;margin-bottom:18px">
-                    <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                        <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Lun. 11 mai 2026</span>
-                    </div>
-                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                        <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                            <li><strong>UpdraftPlus offsite configuré</strong> · stockage distant <strong>Google Drive</strong> sélectionné · auth OK sur <code>bakhchanemouad@gmail.com</code> · dossier "UpdraftPlus" créé sur Drive</li>
-                            <li><strong>Email alertes activées</strong> → rapports envoyés à <code>contact@naoenergy.ch</code></li>
-                            <li><strong>Backup test manuel lancé</strong> · en cours d'exécution · validation offsite Google Drive à confirmer post-completion</li>
-                            <li><strong>3 plugins inactifs supprimés</strong> · <code>MonsterInsights</code> · <code>WPCode Lite</code> · <code>WP Headers And Footers</code> · réduction surface d'attaque · état post-nettoyage : 28 extensions actives, 0 inactives</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 9 mai 2026 -->
-                <div style="position:relative;margin-bottom:18px">
-                    <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                        <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Sam. 9 mai 2026</span>
-                    </div>
-                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                        <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                            <li><strong>WP File Manager désactivé</strong> · plugin <code>wp-file-manager/file_folder_manager.php</code> v8.0.4 · réduction surface d'attaque · CVE historique (CVE-2020-25213 RCE) · version FREE sans garde-fous (filesystem complet accessible tout admin) · décision validée Mouâd</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 8 mai 2026 -->
-                <div style="position:relative;margin-bottom:18px">
-                    <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                        <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 Jeu. 8 mai 2026</span>
-                    </div>
-                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                        <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                            <li><strong>Inventaire complet extensions WP</strong> · 32 plugins relevés via wp-admin/plugins.php · tri essentiels (15) / à investiguer (17) · 2 MAJ en attente : Polylang Pro 3.6.6 → 3.8.3 (auto indisponible) + Duplicate Page 4.5.8 → 4.5.9</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- ===== TEMPLATE entrée vide (à dupliquer chaque nouveau jour) =====
-                <div style="position:relative;margin-bottom:18px">
-                    <div style="position:absolute;left:-22px;top:4px;width:14px;height:14px;border-radius:50%;background:var(--text-muted);border:3px solid var(--bg)"></div>
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;flex-wrap:wrap">
-                        <span style="font-size:0.78rem;font-weight:800;color:var(--text)">📍 [Jour] [Date]</span>
-                    </div>
-                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
-                        <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                            <li><strong>Action 1</strong> · description · résultat</li>
-                            <li><strong>Action 2</strong> · description · résultat</li>
-                        </ul>
-                    </div>
-                </div>
-                ============================================================== -->
-
-            </div>
-
-            <!-- Sub-section 1 : Santé du site & Serveur -->
-            <div class="subsection-header">
-                <div class="subsection-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
-                <div>
-                    <div class="subsection-title">Santé du site &amp; Serveur</div>
-                    <div class="subsection-meta">4 observations · 1 critique · 1 attention · 2 validés</div>
-                </div>
-            </div>
-            <div class="evidence-grid">
-                <div class="evidence-card ev-critical">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div>
-                    <div class="ev-title">1 problème critique + 5 recommandations</div>
-                    <div class="ev-detail">
-                        <strong>Critique :</strong> Mise à jour du thème en attente (risque de sécurité)<br>
-                        <strong>Recommandations :</strong><br>
-                        &bull; Supprimer les extensions inactives<br>
-                        &bull; PHP 8.1.34 obsolète — mise à niveau nécessaire<br>
-                        &bull; Serveur SQL obsolète<br>
-                        &bull; Événement planifié en retard<br>
-                        &bull; Pas de cache objet persistant
-                    </div>
-                    <div class="ev-source">Source : WP Admin → Outils → Santé du site</div>
-                </div>
-                <div class="evidence-card ev-warning">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
-                    <div class="ev-title">32 extensions installées (29 actives) · WP 6.9.4</div>
-                    <div class="ev-detail">
-                        <strong>3 désactivées mais non supprimées :</strong> MonsterInsights, WP Headers And Footers, WPCode Lite<br>
-                        <strong>Extensions SEO/perf clés actives :</strong> Yoast SEO 27.5, WP Rocket 3.21.3, Imagify 2.2.7, Redirection 5.7.5, Polylang Pro 3.6.6, Site Kit 1.178.0, PixelYourSite 11.2.0.4, Complianz 7.4.6, WP Consent API 2.0.1, Safe SVG 2.4.0<br>
-                        <strong class="text-red">2 mises à jour en attente :</strong> Polylang Pro (3.6.6 → 3.8.3, MAJ auto indisponible — licence à vérifier), Duplicate Page (4.5.8 → 4.5.9)
-                    </div>
-                    <div class="ev-source">Source : WP Admin → Extensions (relevé 8 mai 2026)</div>
-                </div>
-                <div class="evidence-card ev-pass">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></div>
-                    <div class="ev-title">Permaliens : compatibles SEO</div>
-                    <div class="ev-detail">
-                        Utilisation de la structure <code>/%postname%/</code> (Nom de l'article). Les URL sont propres et optimisées pour les mots-clés.
-                    </div>
-                    <div class="ev-source">Source : WP Admin → Réglages → Permaliens</div>
-                </div>
-                <div class="evidence-card ev-pass">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
-                    <div class="ev-title">Réglages de lecture : corrects</div>
-                    <div class="ev-detail">
-                        Page d'accueil statique définie. Page de blog configurée comme "Nos actualites". Visibilité moteurs de recherche : <strong class="text-green">indexable</strong> (non bloqué).
-                    </div>
-                    <div class="ev-source">Source : WP Admin → Réglages → Lecture</div>
-                </div>
-            </div>
-
-            <!-- Sub-section 2 : Yoast SEO -->
-            <div class="subsection-header">
-                <div class="subsection-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
-                <div>
-                    <div class="subsection-title">Extension Yoast SEO</div>
-                    <div class="subsection-meta">4 observations · 1 critique · 2 attention · 1 validé</div>
-                </div>
-            </div>
-            <div class="evidence-grid">
-                <div class="evidence-card ev-pass">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
-                    <div class="ev-title">Scores Yoast SEO : 112 articles "Bon"</div>
-                    <div class="ev-detail">
-                        Les 112 articles ont un score "Bon". 0 articles à améliorer. 0 non analysés. Utilisation de <strong>Yoast SEO gratuit</strong> (pas Premium).
-                    </div>
-                    <div class="ev-source">Source : WP Admin → Yoast SEO → Tableau de bord</div>
-                </div>
-                <div class="evidence-card ev-warning">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div>
-                    <div class="ev-title">Schema Organisation : incomplet</div>
-                    <div class="ev-detail">
-                        Type d'entité : Organisation ✅<br>
-                        Nom : "naoenergy - durablement different" ✅<br>
-                        <strong class="text-red">Description de l'organisation : VIDE</strong><br>
-                        <strong class="text-red">E-mail de l'organisation : VIDE</strong><br>
-                        Instagram &amp; LinkedIn : configurés ✅<br>
-                        <strong class="text-red">Twitter/X : VIDE</strong>
-                    </div>
-                    <div class="ev-source">Source : WP Admin → Yoast SEO → Représentation du site</div>
-                </div>
-                <div class="evidence-card ev-critical">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"/></svg></div>
-                    <div class="ev-title">Vérifications Webmaster : TOUTES vides</div>
-                    <div class="ev-detail">
-                        <strong class="text-red">Aucune vérification via Yoast :</strong><br>
-                        &bull; Google Search Console : vide<br>
-                        &bull; Bing Webmaster : vide<br>
-                        &bull; Ahrefs : vide<br>
-                        &bull; Pinterest : vide<br>
-                        Note : peut être vérifié via Site Kit ou la méthode fichier HTML.
-                    </div>
-                    <div class="ev-source">Source : WP Admin → Yoast SEO → Connexions</div>
-                </div>
-                <div class="evidence-card ev-pass">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
-                    <div class="ev-title">Google Site Kit : connecté</div>
-                    <div class="ev-detail">
-                        Site Kit est désormais correctement connecté et fournit les données Search Console et Google Analytics directement dans le tableau de bord WordPress.
-                    </div>
-                    <div class="ev-source">Source : WP Admin → Site Kit (mis à jour le 8 avril)</div>
-                </div>
-            </div>
-
-            <!-- Sub-section 3 : WP Rocket -->
-            <div class="subsection-header">
-                <div class="subsection-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
-                <div>
-                    <div class="subsection-title">WP Rocket &amp; Performance</div>
-                    <div class="subsection-meta">4 observations · 2 critiques · 1 attention · 1 validé</div>
-                </div>
-            </div>
-            <div class="evidence-grid">
-                <div class="evidence-card ev-critical">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></div>
-                    <div class="ev-title">Optimisation JavaScript : TOUT DÉSACTIVÉ</div>
-                    <div class="ev-value red">0/4</div>
-                    <div class="ev-detail">
-                        &bull; Minifier JS : <strong class="text-red">DÉSACTIVÉ</strong><br>
-                        &bull; Combiner JS : <strong class="text-red">DÉSACTIVÉ</strong><br>
-                        &bull; Différer le chargement JS : <strong class="text-red">DÉSACTIVÉ</strong><br>
-                        &bull; Retarder l'exécution JS : <strong class="text-red">DÉSACTIVÉ</strong><br>
-                        <em>C'est la cause principale des mauvais Core Web Vitals.</em>
-                    </div>
-                    <div class="ev-source">Source : WP Admin → WP Rocket → Optimisation des fichiers</div>
-                </div>
-                <div class="evidence-card ev-warning">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg></div>
-                    <div class="ev-title">Optimisation CSS : partielle</div>
-                    <div class="ev-detail">
-                        &bull; Minifier CSS : <strong class="text-red">DÉSACTIVÉ</strong><br>
-                        &bull; Optimiser le chargement CSS (async) : <strong class="text-green">ACTIVÉ</strong><br>
-                        &bull; Supprimer le CSS inutilisé : <strong class="text-red">DÉSACTIVÉ</strong> (recommandé par WP Rocket)
-                    </div>
-                    <div class="ev-source">Source : WP Admin → WP Rocket → Optimisation des fichiers</div>
-                </div>
-                <div class="evidence-card ev-critical">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
-                    <div class="ev-title">Dimensions d'images &amp; polices : désactivées</div>
-                    <div class="ev-detail">
-                        &bull; Ajouter les dimensions d'images manquantes : <strong class="text-red">DÉSACTIVÉ</strong> (cause des problèmes de CLS)<br>
-                        &bull; Précharger les polices : <strong class="text-red">DÉSACTIVÉ</strong> (impact sur le LCP)<br>
-                        &bull; Héberger les Google Fonts localement : <strong class="text-red">DÉSACTIVÉ</strong> (blocage du rendu)
-                    </div>
-                    <div class="ev-source">Source : WP Admin → WP Rocket → Médias</div>
-                </div>
-                <div class="evidence-card ev-pass">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div>
-                    <div class="ev-title">Chargement différé (Lazy Loading) : activé</div>
-                    <div class="ev-detail">
-                        LazyLoad actif pour les images, les arrière-plans CSS et les iframes. Remplacement iframe YouTube désactivé. WP Rocket utilise le lazy loading basé sur JS (pas le natif <code>loading="lazy"</code>).
-                    </div>
-                    <div class="ev-source">Source : WP Admin → WP Rocket → Médias</div>
-                </div>
-            </div>
-
-            <!-- Sub-section 4 : Imagify -->
-            <div class="subsection-header">
-                <div class="subsection-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
-                <div>
-                    <div class="subsection-title">Imagify &amp; Optimisation d'images</div>
-                    <div class="subsection-meta">2 observations · 2 critiques</div>
-                </div>
-            </div>
-            <div class="evidence-grid">
-                <div class="evidence-card ev-critical">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-                    <div class="ev-title">Crédit Imagify : ÉPUISÉ</div>
-                    <div class="ev-value red">0%</div>
-                    <div class="ev-detail">
-                        Quota du plan gratuit complètement épuisé. Aucune nouvelle image ne peut être optimisée. L'optimisation automatique est activée mais échouera silencieusement.
-                    </div>
-                    <div class="ev-source">Source : WP Admin → Imagify → Réglages</div>
-                </div>
-                <div class="evidence-card ev-critical">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
-                    <div class="ev-title">81 images sans WebP</div>
-                    <div class="ev-value red">81</div>
-                    <div class="ev-detail">
-                        81 images optimisées n'ont pas de versions Next-Gen (WebP/AVIF). Le thème "Naoenergy" est détecté mais non ajouté à l'optimisation d'images.
-                    </div>
-                    <div class="ev-source">Source : WP Admin → Imagify → Optimisation</div>
-                </div>
-            </div>
-
-            <!-- Sub-section 5 : Front-End -->
-            <div class="subsection-header">
-                <div class="subsection-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2 2 2 0 002-2c0-1.1.9-2 2-2h1.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-                <div>
-                    <div class="subsection-title">Analyse Front-End (extraction JavaScript)</div>
-                    <div class="subsection-meta">2 observations · 1 attention · 1 validé</div>
-                </div>
-            </div>
-            <div class="evidence-grid">
-                <div class="evidence-card ev-warning">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343"/></svg></div>
-                    <div class="ev-title">Poids de la page : lourd</div>
-                    <div class="ev-detail">
-                        &bull; Scripts externes : <strong class="text-red">42</strong><br>
-                        &bull; Feuilles de style : <strong class="text-red">17</strong><br>
-                        &bull; Indices preconnect : <strong class="text-red">0</strong><br>
-                        &bull; Indices DNS prefetch : 3
-                    </div>
-                    <div class="ev-source">Source : Analyse DOM de la page d'accueil via JavaScript</div>
-                </div>
-                <div class="evidence-card ev-pass">
-                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
-                    <div class="ev-title">Balisage Schema : Présent</div>
-                    <div class="ev-detail">
-                        2 blocs JSON-LD générés par Yoast SEO contenant :<br>
-                        ✅ Organization, WebSite, WebPage, Article, BreadcrumbList, ImageObject, Person<br>
-                        <strong class="text-yellow">Manquant :</strong> LocalBusiness, Service
-                    </div>
-                    <div class="ev-source">Source : Extraction &lt;script type="application/ld+json"&gt; de la page d'accueil</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============ PANEL : THEME & STACK (NEW) ============ -->
         <div class="panel" id="panel-theme">
             <div class="page-header">
                 <div>
@@ -5949,6 +5660,313 @@ User-agent: ExaBot</code></pre>
         </div>
 
         <!-- ============ PANEL : PLAN D'ACTIONS ============ -->
+        <!-- ═══════════ SITUATION AVANT PROJET — full page ═══════════ -->
+        <div class="panel" id="panel-situation-avant">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">⚠️ Situation avant projet</h1>
+                        <span class="badge">État initial</span>
+                    </div>
+                    <p class="page-subtitle">État de départ de chaque pôle à la <strong>réception du mandat — 3 avril 2026</strong>, avant toute intervention. Sert de référence pour mesurer les progrès.</p>
+                </div>
+            </div>
+
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:16px">
+
+                <!-- WordPress / Site -->
+                <div class="card" style="padding:22px 24px;border-left:4px solid #21759B">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+                        <span style="font-size:1.2rem">🌐</span>
+                        <div style="font-size:1rem;font-weight:800;color:var(--text)">WordPress / Site</div>
+                    </div>
+                    <ul style="margin:0;padding-left:18px;font-size:0.78rem;color:var(--text-body);line-height:1.75">
+                        <li>PHP 8.1.34 obsolète · serveur MySQL 5.7 obsolète</li>
+                        <li>Pas de cache objet persistant (Redis / Memcached)</li>
+                        <li>Optimisation JavaScript (WP Rocket) désactivée → Core Web Vitals dégradés</li>
+                        <li>81 images sans format WebP</li>
+                        <li>5 en-têtes de sécurité HTTP manquants</li>
+                        <li>GA4 bloqué par le Consent Mode + double tracking (GT-WBK8XSPW + G-7G5KELWH87)</li>
+                        <li>Mise à jour thème en attente · Polylang Pro 3.6.6 obsolète · 3 extensions inactives</li>
+                    </ul>
+                </div>
+
+                <!-- SEO -->
+                <div class="card" style="padding:22px 24px;border-left:4px solid #4285F4">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+                        <span style="font-size:1.2rem">🔍</span>
+                        <div style="font-size:1rem;font-weight:800;color:var(--text)">SEO</div>
+                    </div>
+                    <ul style="margin:0;padding-left:18px;font-size:0.78rem;color:var(--text-body);line-height:1.75">
+                        <li><strong>Score SEO 44/100</strong> (note D)</li>
+                        <li>Aucune balise hreflang (site mono-langue)</li>
+                        <li>Profil Organisation incomplet — E-E-A-T (description, e-mail)</li>
+                        <li>Schémas LocalBusiness + Service manquants</li>
+                        <li>18 pages orphelines · 36 liens sans texte d'ancrage</li>
+                        <li>Lisibilité Flesch très difficile (35,5)</li>
+                        <li>~900 vrais 404 utilisateurs · robots IA non explicités</li>
+                    </ul>
+                </div>
+
+                <!-- Google Ads -->
+                <div class="card" style="padding:22px 24px;border-left:4px solid #FBBC04">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+                        <span style="font-size:1.2rem">🟡</span>
+                        <div style="font-size:1rem;font-weight:800;color:var(--text)">Google Ads</div>
+                    </div>
+                    <ul style="margin:0;padding-left:18px;font-size:0.78rem;color:var(--text-body);line-height:1.75">
+                        <li><strong>0 tag de conversion actif</strong> — mesure cassée</li>
+                        <li>Risque de suspension (facturation)</li>
+                        <li><strong>7 leads qualifiés pour 118 000 interactions</strong> (0,006 %)</li>
+                        <li>Campagne Search-Générique : CTR 1,29 % — <strong>CHF 12 505</strong> dépensés</li>
+                        <li>Mots-clés en doublon (cannibalisation exact / broad)</li>
+                    </ul>
+                </div>
+
+                <!-- Meta Ads -->
+                <div class="card" style="padding:22px 24px;border-left:4px solid #1877F2">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+                        <span style="font-size:1.2rem">📱</span>
+                        <div style="font-size:1rem;font-weight:800;color:var(--text)">Meta Ads</div>
+                    </div>
+                    <ul style="margin:0;padding-left:18px;font-size:0.78rem;color:var(--text-body);line-height:1.75">
+                        <li><strong>48 publicités historiques</strong> auditées, sans structure claire</li>
+                        <li>Pas de séparation par canton ni par objectif</li>
+                        <li>Aucune campagne Lead Gen structurée au démarrage</li>
+                        <li>Provenance des leads / suivi des conversions non consolidé</li>
+                    </ul>
+                    <div style="margin-top:12px;padding:8px 10px;background:var(--surface-soft);border-radius:8px;font-size:0.68rem;color:var(--text-muted);font-style:italic">À valider/compléter : CPL initial, budget et campagnes actives à la réception du mandat.</div>
+                </div>
+
+            </div>
+        
+
+                <!-- ===== WordPress / Site — détail (preuves wp-admin, audit initial) ===== -->
+                <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border)">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+                        <span style="font-size:1.25rem">🌐</span>
+                        <h2 style="margin:0;font-size:1.2rem;font-weight:800;color:var(--text)">WordPress / Site — détail</h2>
+                    </div>
+                    <p style="margin:0 0 20px;font-size:0.8rem;color:var(--text-muted)">16 observations vérifiées depuis le dashboard wp-admin de naoenergy.ch — audit initial 3 avril 2026.</p>
+<!-- Sub-section 1 : Santé du site & Serveur -->
+            <div class="subsection-header">
+                <div class="subsection-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+                <div>
+                    <div class="subsection-title">Santé du site &amp; Serveur</div>
+                    <div class="subsection-meta">4 observations · 1 critique · 1 attention · 2 validés</div>
+                </div>
+            </div>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg></div>
+                    <div class="ev-title">1 problème critique + 5 recommandations</div>
+                    <div class="ev-detail">
+                        <strong>Critique :</strong> Mise à jour du thème en attente (risque de sécurité)<br>
+                        <strong>Recommandations :</strong><br>
+                        &bull; Supprimer les extensions inactives<br>
+                        &bull; PHP 8.1.34 obsolète — mise à niveau nécessaire<br>
+                        &bull; Serveur SQL obsolète<br>
+                        &bull; Événement planifié en retard<br>
+                        &bull; Pas de cache objet persistant
+                    </div>
+                    <div class="ev-source">Source : WP Admin → Outils → Santé du site</div>
+                </div>
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg></div>
+                    <div class="ev-title">32 extensions installées (29 actives) · WP 6.9.4</div>
+                    <div class="ev-detail">
+                        <strong>3 désactivées mais non supprimées :</strong> MonsterInsights, WP Headers And Footers, WPCode Lite<br>
+                        <strong>Extensions SEO/perf clés actives :</strong> Yoast SEO 27.5, WP Rocket 3.21.3, Imagify 2.2.7, Redirection 5.7.5, Polylang Pro 3.6.6, Site Kit 1.178.0, PixelYourSite 11.2.0.4, Complianz 7.4.6, WP Consent API 2.0.1, Safe SVG 2.4.0<br>
+                        <strong class="text-red">2 mises à jour en attente :</strong> Polylang Pro (3.6.6 → 3.8.3, MAJ auto indisponible — licence à vérifier), Duplicate Page (4.5.8 → 4.5.9)
+                    </div>
+                    <div class="ev-source">Source : WP Admin → Extensions (relevé 8 mai 2026)</div>
+                </div>
+                <div class="evidence-card ev-pass">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg></div>
+                    <div class="ev-title">Permaliens : compatibles SEO</div>
+                    <div class="ev-detail">
+                        Utilisation de la structure <code>/%postname%/</code> (Nom de l'article). Les URL sont propres et optimisées pour les mots-clés.
+                    </div>
+                    <div class="ev-source">Source : WP Admin → Réglages → Permaliens</div>
+                </div>
+                <div class="evidence-card ev-pass">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+                    <div class="ev-title">Réglages de lecture : corrects</div>
+                    <div class="ev-detail">
+                        Page d'accueil statique définie. Page de blog configurée comme "Nos actualites". Visibilité moteurs de recherche : <strong class="text-green">indexable</strong> (non bloqué).
+                    </div>
+                    <div class="ev-source">Source : WP Admin → Réglages → Lecture</div>
+                </div>
+            </div>
+
+            <!-- Sub-section 2 : Yoast SEO -->
+            <div class="subsection-header">
+                <div class="subsection-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+                <div>
+                    <div class="subsection-title">Extension Yoast SEO</div>
+                    <div class="subsection-meta">4 observations · 1 critique · 2 attention · 1 validé</div>
+                </div>
+            </div>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-pass">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+                    <div class="ev-title">Scores Yoast SEO : 112 articles "Bon"</div>
+                    <div class="ev-detail">
+                        Les 112 articles ont un score "Bon". 0 articles à améliorer. 0 non analysés. Utilisation de <strong>Yoast SEO gratuit</strong> (pas Premium).
+                    </div>
+                    <div class="ev-source">Source : WP Admin → Yoast SEO → Tableau de bord</div>
+                </div>
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg></div>
+                    <div class="ev-title">Schema Organisation : incomplet</div>
+                    <div class="ev-detail">
+                        Type d'entité : Organisation ✅<br>
+                        Nom : "naoenergy - durablement different" ✅<br>
+                        <strong class="text-red">Description de l'organisation : VIDE</strong><br>
+                        <strong class="text-red">E-mail de l'organisation : VIDE</strong><br>
+                        Instagram &amp; LinkedIn : configurés ✅<br>
+                        <strong class="text-red">Twitter/X : VIDE</strong>
+                    </div>
+                    <div class="ev-source">Source : WP Admin → Yoast SEO → Représentation du site</div>
+                </div>
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"/></svg></div>
+                    <div class="ev-title">Vérifications Webmaster : TOUTES vides</div>
+                    <div class="ev-detail">
+                        <strong class="text-red">Aucune vérification via Yoast :</strong><br>
+                        &bull; Google Search Console : vide<br>
+                        &bull; Bing Webmaster : vide<br>
+                        &bull; Ahrefs : vide<br>
+                        &bull; Pinterest : vide<br>
+                        Note : peut être vérifié via Site Kit ou la méthode fichier HTML.
+                    </div>
+                    <div class="ev-source">Source : WP Admin → Yoast SEO → Connexions</div>
+                </div>
+                <div class="evidence-card ev-pass">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg></div>
+                    <div class="ev-title">Google Site Kit : connecté</div>
+                    <div class="ev-detail">
+                        Site Kit est désormais correctement connecté et fournit les données Search Console et Google Analytics directement dans le tableau de bord WordPress.
+                    </div>
+                    <div class="ev-source">Source : WP Admin → Site Kit (mis à jour le 8 avril)</div>
+                </div>
+            </div>
+
+            <!-- Sub-section 3 : WP Rocket -->
+            <div class="subsection-header">
+                <div class="subsection-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+                <div>
+                    <div class="subsection-title">WP Rocket &amp; Performance</div>
+                    <div class="subsection-meta">4 observations · 2 critiques · 1 attention · 1 validé</div>
+                </div>
+            </div>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg></div>
+                    <div class="ev-title">Optimisation JavaScript : TOUT DÉSACTIVÉ</div>
+                    <div class="ev-value red">0/4</div>
+                    <div class="ev-detail">
+                        &bull; Minifier JS : <strong class="text-red">DÉSACTIVÉ</strong><br>
+                        &bull; Combiner JS : <strong class="text-red">DÉSACTIVÉ</strong><br>
+                        &bull; Différer le chargement JS : <strong class="text-red">DÉSACTIVÉ</strong><br>
+                        &bull; Retarder l'exécution JS : <strong class="text-red">DÉSACTIVÉ</strong><br>
+                        <em>C'est la cause principale des mauvais Core Web Vitals.</em>
+                    </div>
+                    <div class="ev-source">Source : WP Admin → WP Rocket → Optimisation des fichiers</div>
+                </div>
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg></div>
+                    <div class="ev-title">Optimisation CSS : partielle</div>
+                    <div class="ev-detail">
+                        &bull; Minifier CSS : <strong class="text-red">DÉSACTIVÉ</strong><br>
+                        &bull; Optimiser le chargement CSS (async) : <strong class="text-green">ACTIVÉ</strong><br>
+                        &bull; Supprimer le CSS inutilisé : <strong class="text-red">DÉSACTIVÉ</strong> (recommandé par WP Rocket)
+                    </div>
+                    <div class="ev-source">Source : WP Admin → WP Rocket → Optimisation des fichiers</div>
+                </div>
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+                    <div class="ev-title">Dimensions d'images &amp; polices : désactivées</div>
+                    <div class="ev-detail">
+                        &bull; Ajouter les dimensions d'images manquantes : <strong class="text-red">DÉSACTIVÉ</strong> (cause des problèmes de CLS)<br>
+                        &bull; Précharger les polices : <strong class="text-red">DÉSACTIVÉ</strong> (impact sur le LCP)<br>
+                        &bull; Héberger les Google Fonts localement : <strong class="text-red">DÉSACTIVÉ</strong> (blocage du rendu)
+                    </div>
+                    <div class="ev-source">Source : WP Admin → WP Rocket → Médias</div>
+                </div>
+                <div class="evidence-card ev-pass">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg></div>
+                    <div class="ev-title">Chargement différé (Lazy Loading) : activé</div>
+                    <div class="ev-detail">
+                        LazyLoad actif pour les images, les arrière-plans CSS et les iframes. Remplacement iframe YouTube désactivé. WP Rocket utilise le lazy loading basé sur JS (pas le natif <code>loading="lazy"</code>).
+                    </div>
+                    <div class="ev-source">Source : WP Admin → WP Rocket → Médias</div>
+                </div>
+            </div>
+
+            <!-- Sub-section 4 : Imagify -->
+            <div class="subsection-header">
+                <div class="subsection-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                <div>
+                    <div class="subsection-title">Imagify &amp; Optimisation d'images</div>
+                    <div class="subsection-meta">2 observations · 2 critiques</div>
+                </div>
+            </div>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                    <div class="ev-title">Crédit Imagify : ÉPUISÉ</div>
+                    <div class="ev-value red">0%</div>
+                    <div class="ev-detail">
+                        Quota du plan gratuit complètement épuisé. Aucune nouvelle image ne peut être optimisée. L'optimisation automatique est activée mais échouera silencieusement.
+                    </div>
+                    <div class="ev-source">Source : WP Admin → Imagify → Réglages</div>
+                </div>
+                <div class="evidence-card ev-critical">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+                    <div class="ev-title">81 images sans WebP</div>
+                    <div class="ev-value red">81</div>
+                    <div class="ev-detail">
+                        81 images optimisées n'ont pas de versions Next-Gen (WebP/AVIF). Le thème "Naoenergy" est détecté mais non ajouté à l'optimisation d'images.
+                    </div>
+                    <div class="ev-source">Source : WP Admin → Imagify → Optimisation</div>
+                </div>
+            </div>
+
+            <!-- Sub-section 5 : Front-End -->
+            <div class="subsection-header">
+                <div class="subsection-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2 2 2 0 002-2c0-1.1.9-2 2-2h1.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                <div>
+                    <div class="subsection-title">Analyse Front-End (extraction JavaScript)</div>
+                    <div class="subsection-meta">2 observations · 1 attention · 1 validé</div>
+                </div>
+            </div>
+            <div class="evidence-grid">
+                <div class="evidence-card ev-warning">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343"/></svg></div>
+                    <div class="ev-title">Poids de la page : lourd</div>
+                    <div class="ev-detail">
+                        &bull; Scripts externes : <strong class="text-red">42</strong><br>
+                        &bull; Feuilles de style : <strong class="text-red">17</strong><br>
+                        &bull; Indices preconnect : <strong class="text-red">0</strong><br>
+                        &bull; Indices DNS prefetch : 3
+                    </div>
+                    <div class="ev-source">Source : Analyse DOM de la page d'accueil via JavaScript</div>
+                </div>
+                <div class="evidence-card ev-pass">
+                    <div class="ev-icon"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
+                    <div class="ev-title">Balisage Schema : Présent</div>
+                    <div class="ev-detail">
+                        2 blocs JSON-LD générés par Yoast SEO contenant :<br>
+                        ✅ Organization, WebSite, WebPage, Article, BreadcrumbList, ImageObject, Person<br>
+                        <strong class="text-yellow">Manquant :</strong> LocalBusiness, Service
+                    </div>
+                    <div class="ev-source">Source : Extraction &lt;script type="application/ld+json"&gt; de la page d'accueil</div>
+                </div>
+            </div>
+                </div>
+</div>
+
         <div class="panel" id="panel-recs">
             <div class="page-header">
                 <div>
@@ -7097,17 +7115,17 @@ const drawerData = {
             { icon: "💾", title: "Bug 'about:blank' sur les URLs d'articles", section: "Erreurs 404", target: "errors404" },
             { icon: "📱", title: "Apple touch icons manquants", section: "Erreurs 404", target: "errors404" },
             { icon: "🔬", title: "Schema LocalBusiness + Service manquants", section: "Schema", target: "schema" },
-            { icon: "🏠", title: "Pas de cache objet persistant", section: "WP Admin", target: "wp_admin" },
-            { icon: "🔌", title: "PHP 8.1.34 obsolète", section: "WP Admin", target: "wp_admin" },
-            { icon: "🔍", title: "Serveur SQL obsolète", section: "WP Admin", target: "wp_admin" },
-            { icon: "📋", title: "Mise à jour thème en attente", section: "WP Admin", target: "wp_admin" },
+            { icon: "🏠", title: "Pas de cache objet persistant", section: "WordPress / Site", target: "situation-avant" },
+            { icon: "🔌", title: "PHP 8.1.34 obsolète", section: "WordPress / Site", target: "situation-avant" },
+            { icon: "🔍", title: "Serveur SQL obsolète", section: "WordPress / Site", target: "situation-avant" },
+            { icon: "📋", title: "Mise à jour thème en attente", section: "WordPress / Site", target: "situation-avant" },
             { icon: "🔗", title: "18 pages orphelines (maillage interne)", section: "Plan d'actions", target: "recs" },
             { icon: "🔗", title: "36 liens sans texte d'ancrage", section: "Plan d'actions", target: "recs" },
             { icon: "📖", title: "Score de lisibilité Flesch très difficile (35,5)", section: "Plan d'actions", target: "recs" },
             { icon: "📘", title: "Disallow /item/ dans robots.txt à vérifier", section: "Sitemap & Robots", target: "sitemap" },
             { icon: "🤖", title: "11 robots IA non explicités dans robots.txt", section: "Sitemap & Robots", target: "sitemap" },
-            { icon: "💬", title: "Polylang Pro 3.6.6 obsolète", section: "WP Admin", target: "wp_admin" },
-            { icon: "🗑️", title: "3 extensions inactives à supprimer", section: "WP Admin", target: "wp_admin" }
+            { icon: "💬", title: "Polylang Pro 3.6.6 obsolète", section: "WordPress / Site", target: "situation-avant" },
+            { icon: "🗑️", title: "3 extensions inactives à supprimer", section: "WordPress / Site", target: "situation-avant" }
         ]
     },
     pass: {
