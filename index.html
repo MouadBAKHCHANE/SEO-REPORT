@@ -2820,6 +2820,10 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <span class="nav-label">Objectifs &amp; missions</span>
                         <span class="nav-badge new">NEW</span>
                     </button>
+                    <button class="nav-child" data-target="theme" type="button">
+                        <span class="nav-label">🎨 Thème &amp; Stack</span>
+                        <span class="nav-badge" style="background:rgba(124,177,196,0.20);color:#5A98AE;font-weight:700">NEW</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -2833,10 +2837,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             </button>
             <div class="nav-children">
                 <div class="nav-children-inner">
-                    <button class="nav-child" data-target="theme" type="button">
-                        <span class="nav-label">🎨 Thème &amp; Stack</span>
-                        <span class="nav-badge" style="background:rgba(124,177,196,0.20);color:#5A98AE;font-weight:700">NEW</span>
-                    </button>
                     <button class="nav-child" data-target="sitekit" type="button">
                         <span class="nav-label">Audit Site Kit</span>
                     </button>
@@ -4365,38 +4365,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div style="background:var(--surface-soft);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:800;color:#5A98AE">105</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px">blocs WP Core</div></div>
                     <div style="background:var(--surface-soft);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:800;color:#5A98AE">44</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px">blocs Otter Free</div></div>
                     <div style="background:var(--surface-soft);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:800;color:#5A98AE">15</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px">blocs custom NaoEnergy</div></div>
-                </div>
-            </div>
-
-            <!-- ===== 6. STRATÉGIE SPRINT REDESIGN ===== -->
-            <div class="ev-section" style="margin-top:32px">
-                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">🚀 6. Sprint Redesign — Stratégie d'amélioration</div>
-                <div style="background:var(--surface-soft);border-radius:12px;padding:18px 20px;margin-bottom:12px">
-                    <div style="font-size:0.78rem;font-weight:700;color:var(--text);margin-bottom:10px">Approche en 3 couches (du moins au plus risqué)</div>
-                    <div style="display:grid;grid-template-columns:1fr;gap:10px">
-                        <div style="background:var(--bg);border-radius:8px;padding:12px 14px;border-left:3px solid #2A8F4D">
-                            <div style="font-size:0.76rem;font-weight:700;color:#2A8F4D;margin-bottom:4px">Couche 1 — CSS additionnel (90% des cas)</div>
-                            <div style="font-size:0.72rem;color:var(--text-body);line-height:1.6">Personnaliser → CSS additionnel. <strong>Save Draft + Share Preview Link</strong> = validation via lien privé avant publication. <em>Déjà utilisé pour le fix CTA texte fantôme du 18 mai (1265 chars ajoutés, validé live).</em></div>
-                        </div>
-                        <div style="background:var(--bg);border-radius:8px;padding:12px 14px;border-left:3px solid #F5A623">
-                            <div style="font-size:0.76rem;font-weight:700;color:#F5A623;margin-bottom:4px">Couche 2 — Code Snippets PHP (pour hooks &amp; filters)</div>
-                            <div style="font-size:0.72rem;color:var(--text-body);line-height:1.6">Plugin Code Snippets déjà installé. 3 snippets déjà actifs (ID 9 alternateName · ID 10 robots.txt · ID 11 alt textes).</div>
-                        </div>
-                        <div style="background:var(--bg);border-radius:8px;padding:12px 14px;border-left:3px solid #E85D4A">
-                            <div style="font-size:0.76rem;font-weight:700;color:#E85D4A;margin-bottom:4px">Couche 3 — Child Theme (pour overrides PHP templates)</div>
-                            <div style="font-size:0.72rem;color:var(--text-body);line-height:1.6"><code>naoenergy-child</code> à créer via plugin Child Theme Configurator. Override header.php, footer.php, single.php sans toucher au parent <code>naoenergy</code> v1.1.8 de buxumlunic.ch. Réversible 1 clic.</div>
-                        </div>
-                    </div>
-                </div>
-                <div style="background:rgba(111,62,170,0.08);border-left:3px solid #6F3EAA;border-radius:8px;padding:14px 16px">
-                    <div style="font-size:0.78rem;font-weight:700;color:#6F3EAA;margin-bottom:6px">🎯 Approche actuelle — Section par section, page par page (dans le child theme)</div>
-                    <ul style="margin:0;padding-left:18px;font-size:0.72rem;color:var(--text-body);line-height:1.7">
-                        <li><strong>Modifications appliquées une à la fois</strong> dans le child theme <code>naoenergy-child</code> : on attaque <strong>section par section, page par page</strong>, sans changement global brutal. Permet d'itérer rapidement et d'isoler tout problème.</li>
-                        <li><strong>Workflow systématique</strong> : (1) modif CSS dans Customizer du child · (2) preview live · (3) <strong>Save Draft</strong> · (4) <strong>Share Preview Link</strong> envoyé pour validation visuelle · (5) corrections si besoin · (6) <strong>Publish</strong> uniquement après accord.</li>
-                        <li><strong>Visiteurs voient toujours l'ancien design</strong> pendant la phase preview. Le parent theme reste actif jusqu'à publication finale.</li>
-                        <li><strong>Rollback 1 clic possible à tout moment</strong> : si une modif publiée pose problème, retour au parent theme en 1 clic via <em>Apparence → Thèmes → Naoenergy</em> (le CSS du parent reste figé, jamais touché).</li>
-                        <li><strong>Réversibilité totale</strong> : <code>custom_css[naoenergy]</code> (parent) et <code>custom_css[naoenergy-child]</code> (child) cohabitent en BDD — seul le CSS du thème actif est lu par les visiteurs. Aucune perte possible.</li>
-                    </ul>
                 </div>
             </div>
 
