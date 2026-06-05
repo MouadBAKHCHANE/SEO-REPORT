@@ -2796,6 +2796,23 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             </button>
         </div>
 
+        <!-- Actions -->
+        <div class="nav-section">
+            <div class="nav-section-title">Actions</div>
+            <button class="nav-item" data-target="situation-avant">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.29 3.86 1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                <span class="nav-label">Situation avant projet</span>
+            </button>
+            <button class="nav-item" data-target="recs">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+                <span class="nav-label">Plan d'actions</span>
+            </button>
+            <button class="nav-item" data-target="suivi">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                <span class="nav-label">Suivi des actions</span>
+            </button>
+        </div>
+
         <!-- Entreprise (collapsible group) -->
         <div class="nav-section">
             <button class="nav-group open" type="button" onclick="this.classList.toggle('open')">
@@ -2882,15 +2899,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <button class="nav-child" data-target="gsc" type="button">
                         <span class="nav-label">Google Search Console</span>
                     </button>
-                    <button class="nav-child" data-target="onpage" type="button">
-                        <span class="nav-label">On-Page</span>
-                    </button>
-                    <button class="nav-child" data-target="social" type="button">
-                        <span class="nav-label">M&eacute;ta social</span>
-                    </button>
-                    <button class="nav-child" data-target="images" type="button">
-                        <span class="nav-label">Images</span>
-                    </button>
 
                     <div class="nav-sub-label" style="padding-left:0">Technical SEO</div>
                     <button class="nav-child" data-target="performance" type="button">
@@ -2927,19 +2935,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div style="padding:8px 16px;font-size:0.62rem;color:var(--text-muted);font-style:italic;opacity:0.7">À venir — recherche de mots-clés en cours d'élaboration</div>
                 </div>
             </div>
-        </div>
-
-        <!-- Actions -->
-        <div class="nav-section">
-            <div class="nav-section-title">Actions</div>
-            <button class="nav-item" data-target="situation-avant">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.29 3.86 1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-                <span class="nav-label">Situation avant projet</span>
-            </button>
-            <button class="nav-item" data-target="recs">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-                <span class="nav-label">Plan d'actions</span>
-            </button>
         </div>
 
     </aside>
@@ -3026,21 +3021,21 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
 
                 <!-- ═══════════ APP GRID — 8 EQUAL CARDS (4 per row) ═══════════ -->
                 <div class="app-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px">
-                    <button onclick="showPanel('objectives')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #7CB1C4;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7CB1C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="#7CB1C4"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Objectifs &amp; missions</div></button>
-                    <button onclick="showPanel('situation-avant')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #E85D4A;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#E85D4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Situation avant projet</div></button>
-                    <button onclick="showPanel('recs')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #5A98AE;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#5A98AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 13 2 2 4-4"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Plan d'actions</div></button>
-                    <button onclick="showPanel('external_audits')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #6F3EAA;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#6F3EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Audits externes</div></button>
-                    <button onclick="showPanel('google_ads')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #FBBC04;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"><path fill="#FBBC04" d="M70.4 22.4 22.4 105.6c-2.7 4.6-4.4 10-4.4 15.6 0 16.6 13.4 30 30 30 11.2 0 21.4-6.2 26.4-15.6L122.4 52.4c2.7-4.6 4.4-10 4.4-15.6 0-16.6-13.4-30-30-30-11.2 0-21.4 6.2-26.4 15.6Z"/><circle cx="48" cy="151.2" r="30" fill="#34A853"/><path fill="#4285F4" d="M174 105.6 126 22.4c-5.1-9.4-15.2-15.6-26.4-15.6-5.6 0-11 1.7-15.6 4.4-9.4 5.1-15.6 15.2-15.6 26.4 0 5.6 1.7 11 4.4 15.6L121 136.4c5.1 9.4 15.2 15.6 26.4 15.6 5.6 0 11-1.7 15.6-4.4 14.3-8.3 19.2-26.7 10.9-41.1Z"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Google Ads</div></button>
-                    <button onclick="showPanel('meta_ads')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #1877F2;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 287.56 191" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="metaA2" x1="62.34" y1="101.45" x2="260.34" y2="91.45" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0064E1"/><stop offset=".4" stop-color="#0064E1"/><stop offset=".83" stop-color="#0073EE"/><stop offset="1" stop-color="#0082FB"/></linearGradient><linearGradient id="metaB2" x1="41.42" y1="53" x2="41.42" y2="126" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0082FB"/><stop offset="1" stop-color="#0064E0"/></linearGradient></defs><path fill="#0081FB" d="M31.06 126c0 11 2.41 19.41 5.56 24.51A19 19 0 0053.19 160c8.1 0 15.51-2 29.79-21.76 11.44-15.83 24.92-38 34-52l15.36-23.6c10.67-16.39 23-34.61 37.18-47C181.07 5.6 193.54 0 206.09 0c21.07 0 41.14 12.21 56.5 35.11 16.81 25.08 25 56.67 25 89.27 0 19.38-3.82 33.62-10.32 44.87C271 180.13 258.72 191 238.13 191v-31c17.63 0 22-16.2 22-34.74 0-26.42-6.16-55.74-19.73-76.69-9.63-14.86-22.11-23.94-35.84-23.94-14.85 0-26.8 11.2-40.23 31.17-7.14 10.61-14.47 23.54-22.7 38.13l-9.06 16C115.14 145.81 110.5 154.6 101.6 166.4 86 187 72.76 191 53.19 191c-21.27 0-34.72-9.21-43-23.09C3.34 156.46 0 141.46 0 124.36Z"/><path fill="url(#metaA2)" d="M24.49 37.3C38.73 15.35 59.28 0 82.85 0c13.65 0 27.22 4 41.39 15.61 15.5 12.65 32 33.48 52.63 67.81l7.39 12.32c17.84 29.72 28 45 33.93 52.22 7.64 9.26 13 12 19.94 12 17.63 0 22-16.2 22-34.74l27.4-.86c0 19.38-3.82 33.62-10.32 44.87C271 180.13 258.72 191 238.13 191c-12.8 0-24.14-2.78-36.68-14.61-9.64-9.08-20.91-25.21-29.58-39.71L146.08 93.6c-12.94-21.62-24.81-37.74-31.68-45-7.4-7.88-16.92-17.38-32.13-17.38-12.31 0-22.77 8.64-31.52 21.87Z"/><path fill="url(#metaB2)" d="M82.35 31.23c-12.31 0-22.77 8.64-31.52 21.87C38.44 71.62 30.94 99.5 30.94 126.4c0 11 2.41 19.41 5.56 24.51L10.14 167.91C3.34 156.46 0 141.46 0 124.36 0 93.28 8.54 60.89 24.49 37.3 38.73 15.35 59.28 0 82.85 0Z"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">Meta Ads</div></button>
-                    <button onclick="showPanel('onpage')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #4285F4;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571.001-.001.002-.001.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083 43.595 20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">SEO</div></button>
-                    <button onclick="showPanel('situation-avant')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #21759B;border-radius:0 16px 0 16px;padding:22px 14px;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;min-height:130px"><svg width="40" height="40" viewBox="0 0 122.5 122.5" xmlns="http://www.w3.org/2000/svg"><path fill="#21759B" d="M8.7 61.3c0 20.8 12.1 38.7 29.6 47.3L13.2 39.9c-2.9 6.5-4.5 13.8-4.5 21.4zm88 -2.7c0 -6.5 -2.3 -11 -4.3 -14.5 -2.7 -4.3 -5.2 -8 -5.2 -12.3 0 -4.8 3.7 -9.3 8.9 -9.3 0.2 0 0.5 0 0.7 0 -9.4 -8.6 -22 -13.9 -35.8 -13.9C42 8.5 24.7 18 14.7 32.3c1.3 0 2.6 0.1 3.6 0.1 5.5 0 14.1 -0.7 14.1 -0.7 2.9 -0.2 3.2 4 0.4 4.4 0 0 -2.9 0.3 -6.1 0.5l19.4 57.6 11.6 -34.9 -8.3 -22.7c-2.9 -0.2 -5.6 -0.5 -5.6 -0.5 -2.9 -0.2 -2.5 -4.6 0.4 -4.4 0 0 8.8 0.7 14 0.7 5.5 0 14.1 -0.7 14.1 -0.7 2.9 -0.2 3.2 4 0.4 4.4 0 0 -2.9 0.3 -6.1 0.5l19.2 57.2 5.4 -17.7c2.4 -7.5 4.1 -12.9 4.1 -17.6zm-35.4 7.4 -16 46.4c4.8 1.4 9.8 2.2 15 2.2 6.2 0 12.1 -1.1 17.6 -3 -0.1 -0.2 -0.3 -0.5 -0.4 -0.7l-16.2 -44.9zm46.2 -30.5c0.2 1.7 0.4 3.5 0.4 5.5 0 5.4 -1 11.5 -4.1 19.1l-16.3 47.1c15.9 -9.3 26.6 -26.5 26.6 -46.2 0 -9.3 -2.4 -18 -6.5 -25.6zm-52.5 -23.4C24.7 12.1 0 36.8 0 67.1c0 30.3 24.7 55 55 55 30.3 0 55 -24.7 55 -55 0 -30.3 -24.7 -55 -55 -55zm0 107.4c-29 0 -52.4 -23.5 -52.4 -52.4 0 -29 23.5 -52.4 52.4 -52.4 28.9 0 52.4 23.5 52.4 52.4 0 28.9 -23.5 52.4 -52.4 52.4z" transform="translate(6.25 -6.5)"/></svg><div style="font-size:0.85rem;font-weight:700;color:var(--text);line-height:1.3">WordPress</div></button>
+                    <button onclick="showPanel('objectives')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #7CB1C4;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7CB1C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="#7CB1C4"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Objectifs &amp; missions</div></button>
+                    <button onclick="showPanel('situation-avant')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #E85D4A;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E85D4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Situation avant projet</div></button>
+                    <button onclick="showPanel('recs')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #5A98AE;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5A98AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 13 2 2 4-4"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Plan d'actions</div></button>
+                    <button onclick="showPanel('external_audits')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #6F3EAA;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6F3EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Audits externes</div></button>
+                    <button onclick="showPanel('google_ads')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #FBBC04;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"><path fill="#FBBC04" d="M70.4 22.4 22.4 105.6c-2.7 4.6-4.4 10-4.4 15.6 0 16.6 13.4 30 30 30 11.2 0 21.4-6.2 26.4-15.6L122.4 52.4c2.7-4.6 4.4-10 4.4-15.6 0-16.6-13.4-30-30-30-11.2 0-21.4 6.2-26.4 15.6Z"/><circle cx="48" cy="151.2" r="30" fill="#34A853"/><path fill="#4285F4" d="M174 105.6 126 22.4c-5.1-9.4-15.2-15.6-26.4-15.6-5.6 0-11 1.7-15.6 4.4-9.4 5.1-15.6 15.2-15.6 26.4 0 5.6 1.7 11 4.4 15.6L121 136.4c5.1 9.4 15.2 15.6 26.4 15.6 5.6 0 11-1.7 15.6-4.4 14.3-8.3 19.2-26.7 10.9-41.1Z"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Google Ads</div></button>
+                    <button onclick="showPanel('meta_ads')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #1877F2;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 287.56 191" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="metaA2" x1="62.34" y1="101.45" x2="260.34" y2="91.45" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0064E1"/><stop offset=".4" stop-color="#0064E1"/><stop offset=".83" stop-color="#0073EE"/><stop offset="1" stop-color="#0082FB"/></linearGradient><linearGradient id="metaB2" x1="41.42" y1="53" x2="41.42" y2="126" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0082FB"/><stop offset="1" stop-color="#0064E0"/></linearGradient></defs><path fill="#0081FB" d="M31.06 126c0 11 2.41 19.41 5.56 24.51A19 19 0 0053.19 160c8.1 0 15.51-2 29.79-21.76 11.44-15.83 24.92-38 34-52l15.36-23.6c10.67-16.39 23-34.61 37.18-47C181.07 5.6 193.54 0 206.09 0c21.07 0 41.14 12.21 56.5 35.11 16.81 25.08 25 56.67 25 89.27 0 19.38-3.82 33.62-10.32 44.87C271 180.13 258.72 191 238.13 191v-31c17.63 0 22-16.2 22-34.74 0-26.42-6.16-55.74-19.73-76.69-9.63-14.86-22.11-23.94-35.84-23.94-14.85 0-26.8 11.2-40.23 31.17-7.14 10.61-14.47 23.54-22.7 38.13l-9.06 16C115.14 145.81 110.5 154.6 101.6 166.4 86 187 72.76 191 53.19 191c-21.27 0-34.72-9.21-43-23.09C3.34 156.46 0 141.46 0 124.36Z"/><path fill="url(#metaA2)" d="M24.49 37.3C38.73 15.35 59.28 0 82.85 0c13.65 0 27.22 4 41.39 15.61 15.5 12.65 32 33.48 52.63 67.81l7.39 12.32c17.84 29.72 28 45 33.93 52.22 7.64 9.26 13 12 19.94 12 17.63 0 22-16.2 22-34.74l27.4-.86c0 19.38-3.82 33.62-10.32 44.87C271 180.13 258.72 191 238.13 191c-12.8 0-24.14-2.78-36.68-14.61-9.64-9.08-20.91-25.21-29.58-39.71L146.08 93.6c-12.94-21.62-24.81-37.74-31.68-45-7.4-7.88-16.92-17.38-32.13-17.38-12.31 0-22.77 8.64-31.52 21.87Z"/><path fill="url(#metaB2)" d="M82.35 31.23c-12.31 0-22.77 8.64-31.52 21.87C38.44 71.62 30.94 99.5 30.94 126.4c0 11 2.41 19.41 5.56 24.51L10.14 167.91C3.34 156.46 0 141.46 0 124.36 0 93.28 8.54 60.89 24.49 37.3 38.73 15.35 59.28 0 82.85 0Z"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Meta Ads</div></button>
+                    <button onclick="showPanel('situation-avant')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #4285F4;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571.001-.001.002-.001.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083 43.595 20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">SEO</div></button>
+                    <button onclick="showPanel('situation-avant')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #21759B;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 122.5 122.5" xmlns="http://www.w3.org/2000/svg"><path fill="#21759B" d="M8.7 61.3c0 20.8 12.1 38.7 29.6 47.3L13.2 39.9c-2.9 6.5-4.5 13.8-4.5 21.4zm88 -2.7c0 -6.5 -2.3 -11 -4.3 -14.5 -2.7 -4.3 -5.2 -8 -5.2 -12.3 0 -4.8 3.7 -9.3 8.9 -9.3 0.2 0 0.5 0 0.7 0 -9.4 -8.6 -22 -13.9 -35.8 -13.9C42 8.5 24.7 18 14.7 32.3c1.3 0 2.6 0.1 3.6 0.1 5.5 0 14.1 -0.7 14.1 -0.7 2.9 -0.2 3.2 4 0.4 4.4 0 0 -2.9 0.3 -6.1 0.5l19.4 57.6 11.6 -34.9 -8.3 -22.7c-2.9 -0.2 -5.6 -0.5 -5.6 -0.5 -2.9 -0.2 -2.5 -4.6 0.4 -4.4 0 0 8.8 0.7 14 0.7 5.5 0 14.1 -0.7 14.1 -0.7 2.9 -0.2 3.2 4 0.4 4.4 0 0 -2.9 0.3 -6.1 0.5l19.2 57.2 5.4 -17.7c2.4 -7.5 4.1 -12.9 4.1 -17.6zm-35.4 7.4 -16 46.4c4.8 1.4 9.8 2.2 15 2.2 6.2 0 12.1 -1.1 17.6 -3 -0.1 -0.2 -0.3 -0.5 -0.4 -0.7l-16.2 -44.9zm46.2 -30.5c0.2 1.7 0.4 3.5 0.4 5.5 0 5.4 -1 11.5 -4.1 19.1l-16.3 47.1c15.9 -9.3 26.6 -26.5 26.6 -46.2 0 -9.3 -2.4 -18 -6.5 -25.6zm-52.5 -23.4C24.7 12.1 0 36.8 0 67.1c0 30.3 24.7 55 55 55 30.3 0 55 -24.7 55 -55 0 -30.3 -24.7 -55 -55 -55zm0 107.4c-29 0 -52.4 -23.5 -52.4 -52.4 0 -29 23.5 -52.4 52.4 -52.4 28.9 0 52.4 23.5 52.4 52.4 0 28.9 -23.5 52.4 -52.4 52.4z" transform="translate(6.25 -6.5)"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">WordPress</div></button>
                 </div>
                 <style>
-                .app-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(35,48,54,0.08); border-color: rgba(124,177,196,0.30); }
+                .app-card:hover { background: var(--surface-soft); border-color: rgba(124,177,196,0.55); }
                 /* Tablet + small desktop : 4 cards/row mais padding compact + min-height réduite */
-                @media (max-width: 1100px) { .app-grid { gap: 10px !important; } .app-card { padding: 18px 8px !important; min-height: 120px !important; } .app-card svg { width: 36px !important; height: 36px !important; } .app-card div { font-size: 0.78rem !important; } }
+                @media (max-width: 1100px) { .app-grid { gap: 10px !important; } .app-card { padding: 9px 6px !important; min-height: 60px !important; } .app-card svg { width: 24px !important; height: 24px !important; } .app-card div { font-size: 0.66rem !important; } }
                 /* Mobile only (≤ 600px) : 2 cards/row */
-                @media (max-width: 600px) { .app-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; } .app-card { padding: 18px 12px !important; min-height: 110px !important; } .app-card svg { width: 40px !important; height: 40px !important; } .app-card div { font-size: 0.85rem !important; } }
+                @media (max-width: 600px) { .app-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; } .app-card { padding: 9px 8px !important; min-height: 60px !important; } .app-card svg { width: 26px !important; height: 26px !important; } .app-card div { font-size: 0.68rem !important; } }
                 </style>
 
                 <!-- ═══════════ JOURNAL ACTIONS PAR DATE (CENTRALISÉ) ═══════════ -->
@@ -4990,143 +4985,6 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             </div>
         </div>
 
-        <div class="panel" id="panel-onpage">
-            <div class="page-header">
-                <div>
-                    <div class="page-title-row">
-                        <h1 class="page-title">SEO On-Page</h1>
-                        <span class="badge pass">100/100</span>
-                    </div>
-                    <p class="page-subtitle">Tous les éléments on-page de base sont correctement configurés sur la page d'accueil.</p>
-                </div>
-            </div>
-
-            <div class="kpi-mini-row">
-                <div class="kpi-mini k-pass">
-                    <div class="kpi-mini-label">Titre</div>
-                    <div class="kpi-mini-value">✅</div>
-                </div>
-                <div class="kpi-mini k-pass">
-                    <div class="kpi-mini-label">Méta desc.</div>
-                    <div class="kpi-mini-value">✅</div>
-                </div>
-                <div class="kpi-mini k-pass">
-                    <div class="kpi-mini-label">H1</div>
-                    <div class="kpi-mini-value">✅</div>
-                </div>
-                <div class="kpi-mini k-pass">
-                    <div class="kpi-mini-label">Canonical</div>
-                    <div class="kpi-mini-value">✅</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Éléments SEO on-page de la home</div>
-                        <div class="card-subtitle">Extraction directe du HTML rendu de naoenergy.ch</div>
-                    </div>
-                </div>
-                <table class="data-table">
-                    <thead><tr><th>Élément</th><th>Valeur</th><th>Longueur</th></tr></thead>
-                    <tbody>
-                        <tr><td class="bold">Titre</td><td>Panneaux solaires et pompe a chaleur en Suisse romande | naoenergy</td><td class="num">66</td></tr>
-                        <tr><td class="bold">Méta description</td><td>Installation de panneaux solaires, pompe a chaleur et batterie de stockage en Suisse romande depuis 2016…</td><td class="num">156</td></tr>
-                        <tr><td class="bold">H1</td><td>(re)imaginez la transition energetique avec naoenergy</td><td class="num">52</td></tr>
-                        <tr><td class="bold">Canonical</td><td><code>https://naoenergy.ch/</code></td><td class="num">—</td></tr>
-                        <tr><td class="bold">HTML lang</td><td><code>fr-FR</code></td><td class="num">—</td></tr>
-                        <tr><td class="bold">robots meta</td><td><code>index, follow, max-image-preview:large</code></td><td class="num">—</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- ============ PANEL : MÉTA SOCIAL ============ -->
-        <div class="panel" id="panel-social">
-            <div class="page-header">
-                <div>
-                    <div class="page-title-row">
-                        <h1 class="page-title">Balises méta sociales</h1>
-                        <span class="badge pass">85/100</span>
-                    </div>
-                    <p class="page-subtitle">Open Graph et Twitter Cards correctement configurés — seul le profil twitter:site est manquant.</p>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">État des balises Open Graph et Twitter</div>
-                        <div class="card-subtitle">7 balises analysées — 6 OK · 1 manquante</div>
-                    </div>
-                </div>
-                <table class="data-table">
-                    <thead><tr><th>Balise</th><th>Statut</th><th>Valeur</th></tr></thead>
-                    <tbody>
-                        <tr><td class="bold">og:title</td><td><span class="badge pass">✅</span></td><td>naoenergy - durablement different</td></tr>
-                        <tr><td class="bold">og:description</td><td><span class="badge pass">✅</span></td><td>Decouvrez des solutions innovantes pour une energie plus durable…</td></tr>
-                        <tr><td class="bold">og:image</td><td><span class="badge pass">✅</span></td><td>Défini (image de marque naoenergy)</td></tr>
-                        <tr><td class="bold">og:url</td><td><span class="badge pass">✅</span></td><td>https://naoenergy.ch/</td></tr>
-                        <tr><td class="bold">og:type</td><td><span class="badge pass">✅</span></td><td>website</td></tr>
-                        <tr><td class="bold">twitter:card</td><td><span class="badge pass">✅</span></td><td>summary_large_image</td></tr>
-                        <tr><td class="bold">twitter:site</td><td><span class="badge warning">Manquant</span></td><td>Profil Twitter/X non configuré dans Yoast</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- ============ PANEL : IMAGES ============ -->
-        <div class="panel" id="panel-images">
-            <div class="page-header">
-                <div>
-                    <div class="page-title-row">
-                        <h1 class="page-title">SEO Images &amp; Optimisation</h1>
-                        <span class="badge critical">30/100</span>
-                        <span class="badge new">Nouveau</span>
-                    </div>
-                    <p class="page-subtitle">Texte alt, formats next-gen (WebP/AVIF), dimensions, optimisation Imagify.</p>
-                </div>
-            </div>
-
-            <div class="kpi-mini-row">
-                <div class="kpi-mini">
-                    <div class="kpi-mini-label">Images sur la home</div>
-                    <div class="kpi-mini-value">39</div>
-                </div>
-                <div class="kpi-mini k-critical">
-                    <div class="kpi-mini-label">Texte alt manquant</div>
-                    <div class="kpi-mini-value">18</div>
-                </div>
-                <div class="kpi-mini k-critical">
-                    <div class="kpi-mini-label">WebP manquants</div>
-                    <div class="kpi-mini-value">81</div>
-                </div>
-                <div class="kpi-mini k-critical">
-                    <div class="kpi-mini-label">Crédit Imagify</div>
-                    <div class="kpi-mini-value">0 %</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Problèmes détectés sur les images</div>
-                        <div class="card-subtitle">5 problèmes — 3 critiques · 2 attention</div>
-                    </div>
-                </div>
-                <table class="data-table">
-                    <thead><tr><th>Problème</th><th>Volume</th><th>Impact</th></tr></thead>
-                    <tbody>
-                        <tr><td class="bold">Images sans texte alt</td><td><span class="badge critical">18 / 39 (46 %)</span></td><td>Accessibilité &amp; classement en recherche d'images</td></tr>
-                        <tr><td class="bold">Versions WebP/AVIF manquantes</td><td><span class="badge critical">81 images</span></td><td>Fichiers plus volumineux, LCP plus lent</td></tr>
-                        <tr><td class="bold">Quota Imagify épuisé</td><td><span class="badge critical">0 % restant</span></td><td>Pas d'optimisation automatique</td></tr>
-                        <tr><td class="bold">Dimensions d'images non définies</td><td><span class="badge warning">Désactivé</span></td><td>CLS (décalage de mise en page)</td></tr>
-                        <tr><td class="bold">Thème non optimisé</td><td><span class="badge warning">Non couvert</span></td><td>Images du thème non compressées</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
         <!-- ============ PANEL : SEO ENTITÉ ============ -->
         <div class="panel" id="panel-entity">
             <div class="page-header">
@@ -5640,14 +5498,34 @@ User-agent: ExaBot</code></pre>
                 </div>
             </div>
 
-            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:16px">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px">
+                    <button type="button" onclick="document.getElementById('det-wordpress').scrollIntoView({behavior:'smooth',block:'start'})" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #21759B;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px">
+                        <svg width="28" height="28" viewBox="0 0 122.5 122.5" xmlns="http://www.w3.org/2000/svg"><path fill="#21759B" d="M8.7 61.3c0 20.8 12.1 38.7 29.6 47.3L13.2 39.9c-2.9 6.5-4.5 13.8-4.5 21.4zm88 -2.7c0 -6.5 -2.3 -11 -4.3 -14.5 -2.7 -4.3 -5.2 -8 -5.2 -12.3 0 -4.8 3.7 -9.3 8.9 -9.3 0.2 0 0.5 0 0.7 0 -9.4 -8.6 -22 -13.9 -35.8 -13.9C42 8.5 24.7 18 14.7 32.3c1.3 0 2.6 0.1 3.6 0.1 5.5 0 14.1 -0.7 14.1 -0.7 2.9 -0.2 3.2 4 0.4 4.4 0 0 -2.9 0.3 -6.1 0.5l19.4 57.6 11.6 -34.9 -8.3 -22.7c-2.9 -0.2 -5.6 -0.5 -5.6 -0.5 -2.9 -0.2 -2.5 -4.6 0.4 -4.4 0 0 8.8 0.7 14 0.7 5.5 0 14.1 -0.7 14.1 -0.7 2.9 -0.2 3.2 4 0.4 4.4 0 0 -2.9 0.3 -6.1 0.5l19.2 57.2 5.4 -17.7c2.4 -7.5 4.1 -12.9 4.1 -17.6zm-35.4 7.4 -16 46.4c4.8 1.4 9.8 2.2 15 2.2 6.2 0 12.1 -1.1 17.6 -3 -0.1 -0.2 -0.3 -0.5 -0.4 -0.7l-16.2 -44.9zm46.2 -30.5c0.2 1.7 0.4 3.5 0.4 5.5 0 5.4 -1 11.5 -4.1 19.1l-16.3 47.1c15.9 -9.3 26.6 -26.5 26.6 -46.2 0 -9.3 -2.4 -18 -6.5 -25.6zm-52.5 -23.4C24.7 12.1 0 36.8 0 67.1c0 30.3 24.7 55 55 55 30.3 0 55 -24.7 55 -55 0 -30.3 -24.7 -55 -55 -55zm0 107.4c-29 0 -52.4 -23.5 -52.4 -52.4 0 -29 23.5 -52.4 52.4 -52.4 28.9 0 52.4 23.5 52.4 52.4 0 28.9 -23.5 52.4 -52.4 52.4z" transform="translate(6.25 -6.5)"/></svg>
+                        <div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">WordPress / Site</div>
+                    </button>
+                    <button type="button" onclick="document.getElementById('det-seo').scrollIntoView({behavior:'smooth',block:'start'})" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #4285F4;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px">
+                        <svg width="28" height="28" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571.001-.001.002-.001.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083 43.595 20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+                        <div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">SEO</div>
+                    </button>
+                    <button type="button" onclick="document.getElementById('det-googleads').scrollIntoView({behavior:'smooth',block:'start'})" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #FBBC04;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px">
+                        <svg width="28" height="28" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"><path fill="#FBBC04" d="M70.4 22.4 22.4 105.6c-2.7 4.6-4.4 10-4.4 15.6 0 16.6 13.4 30 30 30 11.2 0 21.4-6.2 26.4-15.6L122.4 52.4c2.7-4.6 4.4-10 4.4-15.6 0-16.6-13.4-30-30-30-11.2 0-21.4 6.2-26.4 15.6Z"/><circle cx="48" cy="151.2" r="30" fill="#34A853"/><path fill="#4285F4" d="M174 105.6 126 22.4c-5.1-9.4-15.2-15.6-26.4-15.6-5.6 0-11 1.7-15.6 4.4-9.4 5.1-15.6 15.2-15.6 26.4 0 5.6 1.7 11 4.4 15.6L121 136.4c5.1 9.4 15.2 15.6 26.4 15.6 5.6 0 11-1.7 15.6-4.4 14.3-8.3 19.2-26.7 10.9-41.1Z"/></svg>
+                        <div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Google Ads</div>
+                    </button>
+                    <button type="button" onclick="document.getElementById('det-meta').scrollIntoView({behavior:'smooth',block:'start'})" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #1877F2;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px">
+                        <svg width="28" height="28" viewBox="0 0 287.56 191" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="metaA2" x1="62.34" y1="101.45" x2="260.34" y2="91.45" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0064E1"/><stop offset=".4" stop-color="#0064E1"/><stop offset=".83" stop-color="#0073EE"/><stop offset="1" stop-color="#0082FB"/></linearGradient><linearGradient id="metaB2" x1="41.42" y1="53" x2="41.42" y2="126" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0082FB"/><stop offset="1" stop-color="#0064E0"/></linearGradient></defs><path fill="#0081FB" d="M31.06 126c0 11 2.41 19.41 5.56 24.51A19 19 0 0053.19 160c8.1 0 15.51-2 29.79-21.76 11.44-15.83 24.92-38 34-52l15.36-23.6c10.67-16.39 23-34.61 37.18-47C181.07 5.6 193.54 0 206.09 0c21.07 0 41.14 12.21 56.5 35.11 16.81 25.08 25 56.67 25 89.27 0 19.38-3.82 33.62-10.32 44.87C271 180.13 258.72 191 238.13 191v-31c17.63 0 22-16.2 22-34.74 0-26.42-6.16-55.74-19.73-76.69-9.63-14.86-22.11-23.94-35.84-23.94-14.85 0-26.8 11.2-40.23 31.17-7.14 10.61-14.47 23.54-22.7 38.13l-9.06 16C115.14 145.81 110.5 154.6 101.6 166.4 86 187 72.76 191 53.19 191c-21.27 0-34.72-9.21-43-23.09C3.34 156.46 0 141.46 0 124.36Z"/><path fill="url(#metaA2)" d="M24.49 37.3C38.73 15.35 59.28 0 82.85 0c13.65 0 27.22 4 41.39 15.61 15.5 12.65 32 33.48 52.63 67.81l7.39 12.32c17.84 29.72 28 45 33.93 52.22 7.64 9.26 13 12 19.94 12 17.63 0 22-16.2 22-34.74l27.4-.86c0 19.38-3.82 33.62-10.32 44.87C271 180.13 258.72 191 238.13 191c-12.8 0-24.14-2.78-36.68-14.61-9.64-9.08-20.91-25.21-29.58-39.71L146.08 93.6c-12.94-21.62-24.81-37.74-31.68-45-7.4-7.88-16.92-17.38-32.13-17.38-12.31 0-22.77 8.64-31.52 21.87Z"/><path fill="url(#metaB2)" d="M82.35 31.23c-12.31 0-22.77 8.64-31.52 21.87C38.44 71.62 30.94 99.5 30.94 126.4c0 11 2.41 19.41 5.56 24.51L10.14 167.91C3.34 156.46 0 141.46 0 124.36 0 93.28 8.54 60.89 24.49 37.3 38.73 15.35 59.28 0 82.85 0Z"/></svg>
+                        <div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Meta Ads</div>
+                    </button>
+                </div>
+        
 
-                <!-- WordPress / Site -->
-                <div class="card" style="padding:22px 24px;border-left:4px solid #21759B">
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-                        <span style="font-size:1.2rem">🌐</span>
-                        <div style="font-size:1rem;font-weight:800;color:var(--text)">WordPress / Site</div>
+                <!-- ===== WordPress / Site — détail (preuves wp-admin, audit initial) ===== -->
+                <div id="det-wordpress" style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border)">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
+                        <span style="font-size:1.25rem">🌐</span>
+                        <h2 style="margin:0;font-size:1.2rem;font-weight:800;color:var(--text)">WordPress / Site — détail</h2>
                     </div>
+                    <p style="margin:0 0 20px;font-size:0.8rem;color:var(--text-muted)">16 observations vérifiées depuis le dashboard wp-admin de naoenergy.ch — audit initial 3 avril 2026.</p>
+                    <div style="font-size:0.66rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin:4px 0 6px">Synthèse</div>
                     <ul style="margin:0;padding-left:18px;font-size:0.78rem;color:var(--text-body);line-height:1.75">
                         <li>PHP 8.1.34 obsolète · serveur MySQL 5.7 obsolète</li>
                         <li>Pas de cache objet persistant (Redis / Memcached)</li>
@@ -5657,65 +5535,6 @@ User-agent: ExaBot</code></pre>
                         <li>GA4 bloqué par le Consent Mode + double tracking (GT-WBK8XSPW + G-7G5KELWH87)</li>
                         <li>Mise à jour thème en attente · Polylang Pro 3.6.6 obsolète · 3 extensions inactives</li>
                     </ul>
-                </div>
-
-                <!-- SEO -->
-                <div class="card" style="padding:22px 24px;border-left:4px solid #4285F4">
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-                        <span style="font-size:1.2rem">🔍</span>
-                        <div style="font-size:1rem;font-weight:800;color:var(--text)">SEO</div>
-                    </div>
-                    <ul style="margin:0;padding-left:18px;font-size:0.78rem;color:var(--text-body);line-height:1.75">
-                        <li><strong>Score SEO 44/100</strong> (note D)</li>
-                        <li>Aucune balise hreflang (site mono-langue)</li>
-                        <li>Profil Organisation incomplet — E-E-A-T (description, e-mail)</li>
-                        <li>Schémas LocalBusiness + Service manquants</li>
-                        <li>18 pages orphelines · 36 liens sans texte d'ancrage</li>
-                        <li>Lisibilité Flesch très difficile (35,5)</li>
-                        <li>~900 vrais 404 utilisateurs · robots IA non explicités</li>
-                    </ul>
-                </div>
-
-                <!-- Google Ads -->
-                <div class="card" style="padding:22px 24px;border-left:4px solid #FBBC04">
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-                        <span style="font-size:1.2rem">🟡</span>
-                        <div style="font-size:1rem;font-weight:800;color:var(--text)">Google Ads</div>
-                    </div>
-                    <ul style="margin:0;padding-left:18px;font-size:0.78rem;color:var(--text-body);line-height:1.75">
-                        <li><strong>0 tag de conversion actif</strong> — mesure cassée</li>
-                        <li>Risque de suspension (facturation)</li>
-                        <li><strong>7 leads qualifiés pour 118 000 interactions</strong> (0,006 %)</li>
-                        <li>Campagne Search-Générique : CTR 1,29 % — <strong>CHF 12 505</strong> dépensés</li>
-                        <li>Mots-clés en doublon (cannibalisation exact / broad)</li>
-                    </ul>
-                </div>
-
-                <!-- Meta Ads -->
-                <div class="card" style="padding:22px 24px;border-left:4px solid #1877F2">
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-                        <span style="font-size:1.2rem">📱</span>
-                        <div style="font-size:1rem;font-weight:800;color:var(--text)">Meta Ads</div>
-                    </div>
-                    <ul style="margin:0;padding-left:18px;font-size:0.78rem;color:var(--text-body);line-height:1.75">
-                        <li><strong>48 publicités historiques</strong> auditées, sans structure claire</li>
-                        <li>Pas de séparation par canton ni par objectif</li>
-                        <li>Aucune campagne Lead Gen structurée au démarrage</li>
-                        <li>Provenance des leads / suivi des conversions non consolidé</li>
-                    </ul>
-                    <div style="margin-top:12px;padding:8px 10px;background:var(--surface-soft);border-radius:8px;font-size:0.68rem;color:var(--text-muted);font-style:italic">À valider/compléter : CPL initial, budget et campagnes actives à la réception du mandat.</div>
-                </div>
-
-            </div>
-        
-
-                <!-- ===== WordPress / Site — détail (preuves wp-admin, audit initial) ===== -->
-                <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border)">
-                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
-                        <span style="font-size:1.25rem">🌐</span>
-                        <h2 style="margin:0;font-size:1.2rem;font-weight:800;color:var(--text)">WordPress / Site — détail</h2>
-                    </div>
-                    <p style="margin:0 0 20px;font-size:0.8rem;color:var(--text-muted)">16 observations vérifiées depuis le dashboard wp-admin de naoenergy.ch — audit initial 3 avril 2026.</p>
 <!-- Sub-section 1 : Santé du site & Serveur -->
             <div class="subsection-header">
                 <div class="subsection-icon"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
@@ -5933,6 +5752,136 @@ User-agent: ExaBot</code></pre>
                 </div>
             </div>
                 </div>
+
+
+                <!-- ===== SEO — détail (méta social + images, audit initial) ===== -->
+                <div id="det-seo" style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border)">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:18px">
+                        <span style="font-size:1.25rem">🔍</span>
+                        <h2 style="margin:0;font-size:1.2rem;font-weight:800;color:var(--text)">SEO — détail</h2>
+                    </div>
+                    <div style="font-size:0.66rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin:4px 0 6px">Synthèse</div>
+                    <ul style="margin:0;padding-left:18px;font-size:0.78rem;color:var(--text-body);line-height:1.75">
+                        <li><strong>Score SEO 44/100</strong> (note D)</li>
+                        <li>Aucune balise hreflang (site mono-langue)</li>
+                        <li>Profil Organisation incomplet — E-E-A-T (description, e-mail)</li>
+                        <li>Schémas LocalBusiness + Service manquants</li>
+                        <li>18 pages orphelines · 36 liens sans texte d'ancrage</li>
+                        <li>Lisibilité Flesch très difficile (35,5)</li>
+                        <li>~900 vrais 404 utilisateurs · robots IA non explicités</li>
+                    </ul>
+<div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">Balises méta sociales</h1>
+                        <span class="badge pass">85/100</span>
+                    </div>
+                    <p class="page-subtitle">Open Graph et Twitter Cards correctement configurés — seul le profil twitter:site est manquant.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">État des balises Open Graph et Twitter</div>
+                        <div class="card-subtitle">7 balises analysées — 6 OK · 1 manquante</div>
+                    </div>
+                </div>
+                <table class="data-table">
+                    <thead><tr><th>Balise</th><th>Statut</th><th>Valeur</th></tr></thead>
+                    <tbody>
+                        <tr><td class="bold">og:title</td><td><span class="badge pass">✅</span></td><td>naoenergy - durablement different</td></tr>
+                        <tr><td class="bold">og:description</td><td><span class="badge pass">✅</span></td><td>Decouvrez des solutions innovantes pour une energie plus durable…</td></tr>
+                        <tr><td class="bold">og:image</td><td><span class="badge pass">✅</span></td><td>Défini (image de marque naoenergy)</td></tr>
+                        <tr><td class="bold">og:url</td><td><span class="badge pass">✅</span></td><td>https://naoenergy.ch/</td></tr>
+                        <tr><td class="bold">og:type</td><td><span class="badge pass">✅</span></td><td>website</td></tr>
+                        <tr><td class="bold">twitter:card</td><td><span class="badge pass">✅</span></td><td>summary_large_image</td></tr>
+                        <tr><td class="bold">twitter:site</td><td><span class="badge warning">Manquant</span></td><td>Profil Twitter/X non configuré dans Yoast</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+<div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">SEO Images &amp; Optimisation</h1>
+                        <span class="badge critical">30/100</span>
+                        <span class="badge new">Nouveau</span>
+                    </div>
+                    <p class="page-subtitle">Texte alt, formats next-gen (WebP/AVIF), dimensions, optimisation Imagify.</p>
+                </div>
+            </div>
+
+            <div class="kpi-mini-row">
+                <div class="kpi-mini">
+                    <div class="kpi-mini-label">Images sur la home</div>
+                    <div class="kpi-mini-value">39</div>
+                </div>
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">Texte alt manquant</div>
+                    <div class="kpi-mini-value">18</div>
+                </div>
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">WebP manquants</div>
+                    <div class="kpi-mini-value">81</div>
+                </div>
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">Crédit Imagify</div>
+                    <div class="kpi-mini-value">0 %</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Problèmes détectés sur les images</div>
+                        <div class="card-subtitle">5 problèmes — 3 critiques · 2 attention</div>
+                    </div>
+                </div>
+                <table class="data-table">
+                    <thead><tr><th>Problème</th><th>Volume</th><th>Impact</th></tr></thead>
+                    <tbody>
+                        <tr><td class="bold">Images sans texte alt</td><td><span class="badge critical">18 / 39 (46 %)</span></td><td>Accessibilité &amp; classement en recherche d'images</td></tr>
+                        <tr><td class="bold">Versions WebP/AVIF manquantes</td><td><span class="badge critical">81 images</span></td><td>Fichiers plus volumineux, LCP plus lent</td></tr>
+                        <tr><td class="bold">Quota Imagify épuisé</td><td><span class="badge critical">0 % restant</span></td><td>Pas d'optimisation automatique</td></tr>
+                        <tr><td class="bold">Dimensions d'images non définies</td><td><span class="badge warning">Désactivé</span></td><td>CLS (décalage de mise en page)</td></tr>
+                        <tr><td class="bold">Thème non optimisé</td><td><span class="badge warning">Non couvert</span></td><td>Images du thème non compressées</td></tr>
+                    </tbody>
+                </table>
+            </div>
+                </div>
+
+
+                <!-- ===== Google Ads — détail ===== -->
+                <div id="det-googleads" style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border)">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+                        <span style="font-size:1.25rem">🟡</span>
+                        <h2 style="margin:0;font-size:1.2rem;font-weight:800;color:var(--text)">Google Ads — détail</h2>
+                    </div>
+                    <ul style="margin:0;padding-left:18px;font-size:0.78rem;color:var(--text-body);line-height:1.75">
+                        <li><strong>0 tag de conversion actif</strong> — mesure cassée</li>
+                        <li>Risque de suspension (facturation)</li>
+                        <li><strong>7 leads qualifiés pour 118 000 interactions</strong> (0,006 %)</li>
+                        <li>Campagne Search-Générique : CTR 1,29 % — <strong>CHF 12 505</strong> dépensés</li>
+                        <li>Mots-clés en doublon (cannibalisation exact / broad)</li>
+                    </ul>
+                </div>
+
+
+                <!-- ===== Meta Ads — détail ===== -->
+                <div id="det-meta" style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border)">
+                    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+                        <span style="font-size:1.25rem">📱</span>
+                        <h2 style="margin:0;font-size:1.2rem;font-weight:800;color:var(--text)">Meta Ads — détail</h2>
+                    </div>
+                    <ul style="margin:0;padding-left:18px;font-size:0.78rem;color:var(--text-body);line-height:1.75">
+                        <li><strong>48 publicités historiques</strong> auditées, sans structure claire</li>
+                        <li>Pas de séparation par canton ni par objectif</li>
+                        <li>Aucune campagne Lead Gen structurée au démarrage</li>
+                        <li>Provenance des leads / suivi des conversions non consolidé</li>
+                    </ul>
+                    <div style="margin-top:12px;padding:8px 10px;background:var(--surface-soft);border-radius:8px;font-size:0.68rem;color:var(--text-muted);font-style:italic">À valider/compléter : CPL initial, budget et campagnes actives à la réception du mandat.</div>
+                </div>
 </div>
 
         <div class="panel" id="panel-recs">
@@ -6102,6 +6051,94 @@ User-agent: ExaBot</code></pre>
         </div>
 
         <!-- ============ GOOGLE ADS ============ -->
+        <!-- ============ PANEL : SUIVI DES ACTIONS ============ -->
+        <div class="panel" id="panel-suivi">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">📊 Suivi des actions</h1>
+                        <span class="badge new">Live</span>
+                    </div>
+                    <p class="page-subtitle">Tableau de suivi des 27 actions, regroupées par chantier (ordre = logique de dépendance : Tracking → Ads → Tech → SEO). Mis à jour au fil de l'eau.</p>
+                </div>
+            </div>
+
+            <div class="card" style="padding:13px 18px;margin-bottom:20px;border-left:4px solid #5A98AE">
+                <div style="font-size:0.74rem;color:var(--text-body);line-height:1.7"><strong style="color:var(--text)">Statuts :</strong> ✅ Fait/Décidé &middot; ⚠️ Partiel/En cours &middot; ❌ À faire &middot; 🔒 Compte Ads (non vérifiable de l'extérieur) &middot; 🔍 Accès interne (crawl/PSI)</div>
+            </div>
+
+            <!-- TRACKING -->
+            <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><span style="font-size:1.2rem">🎯</span><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">Tracking &amp; Mesure</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; 2/4 faits &mdash; la fondation</span></div>
+            <div class="card" style="padding:0;margin-bottom:24px;overflow:hidden">
+                <table class="data-table" style="margin:0">
+                    <thead><tr><th style="width:46px">#</th><th>Action</th><th style="width:78px;text-align:center">Statut</th><th>Note</th></tr></thead>
+                    <tbody>
+                        <tr><td class="num">3</td><td class="bold">Réparer GA4 (Consent Mode + double comptage)</td><td style="text-align:center">✅</td><td>1 seul système, CookieYes actif, Complianz mort retiré.</td></tr>
+                        <tr><td class="num">6</td><td class="bold">Réparer le suivi des conversions Google Ads</td><td style="text-align:center">⚠️</td><td>Tag <code>AW-11093980890</code> présent ; actions de conversion à vérifier dans le compte.</td></tr>
+                        <tr><td class="num">20</td><td class="bold">Rapport mensuel de trafic</td><td style="text-align:center">❌</td><td>Données prêtes (GA4 + Search Console) ; livrable à instaurer.</td></tr>
+                        <tr><td class="num">26</td><td class="bold">Provenance des leads Typeform</td><td style="text-align:center">❌</td><td>À construire : UTM + gclid → GA4 → Odoo.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- GOOGLE ADS -->
+            <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><span style="font-size:1.2rem">💰</span><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">Google Ads</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; tout se règle dans le compte</span></div>
+            <div class="card" style="padding:0;margin-bottom:24px;overflow:hidden">
+                <table class="data-table" style="margin:0">
+                    <thead><tr><th style="width:46px">#</th><th>Action</th><th style="width:78px;text-align:center">Statut</th><th>Note</th></tr></thead>
+                    <tbody>
+                        <tr><td class="num">7</td><td class="bold">Corriger la facturation (risque de suspension)</td><td style="text-align:center">🔒</td><td>Ajouter un moyen de paiement de secours. Décision Charline.</td></tr>
+                        <tr><td class="num">24</td><td class="bold">Pourquoi peu/pas de leads PV-batterie</td><td style="text-align:center">⚠️🔒</td><td>Vérifier ciblage géo + diffusion + budget (saison).</td></tr>
+                        <tr><td class="num">8</td><td class="bold">Supprimer/refaire « Search-Générique »</td><td style="text-align:center">🔒</td><td>~12 505 CHF gaspillés.</td></tr>
+                        <tr><td class="num">9</td><td class="bold">Fusionner les mots-clés en double</td><td style="text-align:center">🔒</td><td>Cannibalisation exact / broad.</td></tr>
+                        <tr><td class="num">10</td><td class="bold">Améliorer l'entonnoir (landing pages Ads)</td><td style="text-align:center">⚠️🔒</td><td>Lié à la landing PAC.</td></tr>
+                        <tr><td class="num">25</td><td class="bold">Valider tracking / stratégie / ciblage</td><td style="text-align:center">⚠️</td><td>Tracking ✅ ; le reste 🔒.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TECH -->
+            <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><span style="font-size:1.2rem">⚙️</span><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">Tech &mdash; performance &amp; sécurité</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; quasi bouclé</span></div>
+            <div class="card" style="padding:0;margin-bottom:24px;overflow:hidden">
+                <table class="data-table" style="margin:0">
+                    <thead><tr><th style="width:46px">#</th><th>Action</th><th style="width:78px;text-align:center">Statut</th><th>Note</th></tr></thead>
+                    <tbody>
+                        <tr><td class="num">4</td><td class="bold">En-têtes de sécurité</td><td style="text-align:center">✅*</td><td>4/5 posés au niveau serveur (.htaccess) ; CSP gardée pour plus tard.</td></tr>
+                        <tr><td class="num">2</td><td class="bold">Optimisation des images (LCP/CLS/SEO)</td><td style="text-align:center">✅</td><td>Majorité WebP + alt quasi complets.</td></tr>
+                        <tr><td class="num">5</td><td class="bold">Mettre à jour thème &amp; extensions</td><td style="text-align:center">✅</td><td>WP 7.0 ; 1 MAJ mineure.</td></tr>
+                        <tr><td class="num">1</td><td class="bold">Activer l'optimisation JavaScript (TBT/INP)</td><td style="text-align:center">⚠️</td><td>defer/min OK ; « delay JS » + CWV à confirmer.</td></tr>
+                        <tr><td class="num">11</td><td class="bold">Optimiser le CSS (minif + nettoyage)</td><td style="text-align:center">⚠️</td><td>Minif OK ; CSS critique à pousser (buxumlunic).</td></tr>
+                        <tr><td class="num">12</td><td class="bold">Précharger les polices</td><td style="text-align:center">❌</td><td>Quick win ~10 min (preload Axiforma).</td></tr>
+                        <tr><td class="num">19</td><td class="bold">Ajouter les « preconnect »</td><td style="text-align:center">✅</td><td>7 en place.</td></tr>
+                        <tr><td class="num">27</td><td class="bold">Alléger les vidéos</td><td style="text-align:center">✅/⚠️</td><td>Hero 170 → 4,5 Mo ✅ ; autres 1080p &lt; 5 Mo.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- SEO -->
+            <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><span style="font-size:1.2rem">🔍</span><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">SEO &mdash; visibilité &amp; autorité</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; le gros chantier actif</span></div>
+            <div class="card" style="padding:0;margin-bottom:20px;overflow:hidden">
+                <table class="data-table" style="margin:0">
+                    <thead><tr><th style="width:46px">#</th><th>Action</th><th style="width:78px;text-align:center">Statut</th><th>Note</th></tr></thead>
+                    <tbody>
+                        <tr><td class="num">13</td><td class="bold">Schémas LocalBusiness + Service</td><td style="text-align:center">✅</td><td>Posés (Genève + Lausanne ; Crans exclue).</td></tr>
+                        <tr><td class="num">14</td><td class="bold">Compléter le profil Organisation</td><td style="text-align:center">✅</td><td>address + contactPoint ajoutés (nom/tél/email/sameAs/logo OK).</td></tr>
+                        <tr><td class="num">15</td><td class="bold">Maillage interne / pages orphelines</td><td style="text-align:center">⚠️</td><td>Crawl fait ; page-d-exemple supprimée ; note buxumlunic prête.</td></tr>
+                        <tr><td class="num">22</td><td class="bold">Audit / recherche mots-clés (Semrush)</td><td style="text-align:center">⚠️</td><td>En cours.</td></tr>
+                        <tr><td class="num">21</td><td class="bold">Landing pages produits (PAC)</td><td style="text-align:center">⚠️</td><td>Plan SEO + go-live + reco mots-clés faits ; en attente Semrush.</td></tr>
+                        <tr><td class="num">16</td><td class="bold">Créer un fichier <code>llms.txt</code></td><td style="text-align:center">✅</td><td>En ligne (4 486 car.).</td></tr>
+                        <tr><td class="num">18</td><td class="bold">Améliorer la lisibilité</td><td style="text-align:center">🔍</td><td>Analyse Flesch des pages principales.</td></tr>
+                        <tr><td class="num">17</td><td class="bold">Expansion multilingue (DE / IT)</td><td style="text-align:center">❌</td><td>Décision business (Polylang).</td></tr>
+                        <tr><td class="num">23</td><td class="bold">Passer Yoast premium ?</td><td style="text-align:center">✅</td><td>Décidé : rester gratuit.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card" style="padding:13px 18px;border-left:4px solid #2A8F4D">
+                <div style="font-size:0.76rem;color:var(--text-body);line-height:1.7"><strong style="color:var(--text)">Progression :</strong> ~11 ✅ &middot; 9 ⚠️ en cours &middot; 5 ❌ à faire &middot; le reste 🔒 (compte Ads) ou 🔍 (crawl).</div>
+            </div>
+        </div>
+
         <div class="panel" id="panel-google_ads">
             <div class="page-header">
                 <div>
@@ -7063,7 +7100,7 @@ const drawerData = {
             { icon: "💳", title: "Google Ads : risque suspension facturation", section: "Google Ads", target: "google_ads" },
             { icon: "🤖", title: "82,7 % du trafic GA4 = bots non-cibles", section: "Audit Site Kit", target: "sitekit" },
             { icon: "⚡", title: "JS WP Rocket désactivé (Core Web Vitals)", section: "Performance", target: "performance" },
-            { icon: "🖼️", title: "81 images WebP manquantes", section: "Images", target: "images" },
+            { icon: "🖼️", title: "81 images WebP manquantes", section: "Images", target: "situation-avant" },
             { icon: "🌐", title: "Aucune balise hreflang (mono-langue)", section: "Hreflang", target: "hreflang" },
             { icon: "🔐", title: "5 en-têtes de sécurité manquants", section: "Sécurité", target: "security" },
             { icon: "🏛️", title: "Profil Organisation incomplet (E-E-A-T)", section: "SEO Entité", target: "entity" }
@@ -7105,8 +7142,8 @@ const drawerData = {
             { icon: "📊", title: "Search Console : +16,5 % clics, +16,4 % impressions", section: "Audit Site Kit", target: "sitekit" },
             { icon: "🔥", title: "/nos-realisations/ : 75,93 % engagement, 3 min 45 s", section: "Audit Site Kit", target: "sitekit" },
             { icon: "📝", title: "Yoast SEO génère bien le JSON-LD", section: "Schema", target: "schema" },
-            { icon: "📱", title: "Open Graph et Twitter Cards configurés", section: "Méta social", target: "social" },
-            { icon: "📝", title: "Balises titre / meta description complètes (100/100)", section: "On-Page", target: "onpage" },
+            { icon: "📱", title: "Open Graph et Twitter Cards configurés", section: "Méta social", target: "situation-avant" },
+            { icon: "📝", title: "Balises titre / meta description complètes (100/100)", section: "On-Page", target: "situation-avant" },
             { icon: "🗺️", title: "9 sitemaps XML accessibles et à jour", section: "Sitemap & Robots", target: "sitemap" },
             { icon: "🔗", title: "71 redirections 301 propres (aucune 404 forcée)", section: "Erreurs 404", target: "errors404" },
             { icon: "🌐", title: "robots.txt valide et structuré", section: "Sitemap & Robots", target: "sitemap" },
