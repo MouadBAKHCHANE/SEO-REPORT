@@ -6081,24 +6081,6 @@ User-agent: ExaBot</code></pre>
                 </table>
             </div>
 
-            <!-- TECH -->
-            <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><span style="font-size:1.2rem">⚙️</span><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">Tech &mdash; performance &amp; sécurité</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; bouclé</span></div>
-            <div class="card" style="padding:0;margin-bottom:24px;overflow:hidden">
-                <table class="data-table" style="margin:0">
-                    <thead><tr><th style="width:42px">#</th><th style="width:20%">Action</th><th>En clair</th><th style="width:72px;text-align:center">Statut</th><th style="width:26%">Note</th></tr></thead>
-                    <tbody>
-                        <tr><td class="num">4</td><td class="bold">En-têtes de sécurité</td><td>Protections invisibles côté serveur contre piratage et détournement du site.</td><td style="text-align:center">✅*</td><td>4/5 posés au niveau serveur (.htaccess) ; CSP gardée pour plus tard.</td></tr>
-                        <tr><td class="num">2</td><td class="bold">Optimisation des images (LCP/CLS/SEO)</td><td>Images légères et bien décrites : site plus rapide et mieux compris par Google.</td><td style="text-align:center">✅</td><td>Majorité WebP + alt quasi complets.</td></tr>
-                        <tr><td class="num">5</td><td class="bold">Mettre à jour thème &amp; extensions</td><td>Tout à jour = moins de failles et de bugs.</td><td style="text-align:center">✅</td><td>WP 7.0 &middot; 0 MAJ en attente (plugins + core à jour).</td></tr>
-                        <tr><td class="num">1</td><td class="bold">Activer l'optimisation JavaScript (TBT/INP)</td><td>Scripts chargés plus intelligemment : site plus réactif, sans casser le suivi.</td><td style="text-align:center">✅</td><td>defer + minif + <strong>« delay JS » activé</strong>. Exclusions sûres : tous les tags (Google Ads, GA4, Meta Pixel), consentement, menu, formulaires, avis → <strong>0 impact tracking</strong>. Retardés : animations Otter + Google Maps.</td></tr>
-                        <tr><td class="num">11</td><td class="bold">Optimiser le CSS (minif + nettoyage)</td><td>On ne charge plus que le CSS réellement utilisé : pages plus rapides, sans casser le menu.</td><td style="text-align:center">✅</td><td>Minif + <strong>« Supprimer le CSS inutilisé » activé</strong> (WP Rocket) avec safelist (Mega Menu, Swiper, CookieYes, bouton tél). CSS render-blocking éliminé ; menu mobile ouvert/fermé vérifié OK en navigation anonyme.</td></tr>
-                        <tr><td class="num">12</td><td class="bold">Précharger les polices</td><td>Les polices s'affichent tout de suite, sans clignotement du texte.</td><td style="text-align:center">✅</td><td>Axiforma Regular + Bold préchargés (preload &lt;head&gt;, snippet #28).</td></tr>
-                        <tr><td class="num">19</td><td class="bold">Ajouter les « preconnect »</td><td>Préparer à l'avance les connexions aux services externes pour gagner du temps.</td><td style="text-align:center">✅</td><td>7 en place.</td></tr>
-                        <tr><td class="num">27</td><td class="bold">Alléger les vidéos</td><td>Vidéo d'accueil 2× plus légère : la page s'ouvre plus vite, surtout sur mobile.</td><td style="text-align:center">✅</td><td>Hero accueil NESSI → <strong>WebM 4,3 Mo en ligne</strong> (VP9 1080p ; était 11,1 Mo MP4 → &minus;61 %).</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
             <!-- GOOGLE ADS -->
             <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><span style="font-size:1.2rem">💰</span><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">Google Ads</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; tout se règle dans le compte</span></div>
             <div class="card" style="padding:0;margin-bottom:24px;overflow:hidden">
@@ -6111,6 +6093,24 @@ User-agent: ExaBot</code></pre>
                         <tr><td class="num">9</td><td class="bold">Fusionner les mots-clés en double</td><td>Ne plus payer deux fois pour le même mot-clé.</td><td style="text-align:center">🔒</td><td>Cannibalisation exact / broad.</td></tr>
                         <tr><td class="num">10</td><td class="bold">Améliorer l'entonnoir (landing pages Ads)</td><td>Envoyer les clics vers une page faite pour convertir, pas une simple vitrine.</td><td style="text-align:center">⚠️🔒</td><td>Lié à la landing PAC.</td></tr>
                         <tr><td class="num">25</td><td class="bold">Valider tracking / stratégie / ciblage</td><td>Vérifier que mesure, stratégie et ciblage des pubs sont sains.</td><td style="text-align:center">⚠️</td><td>Tracking ✅ ; le reste 🔒.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TECH -->
+            <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><span style="font-size:1.2rem">⚙️</span><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">Tech &mdash; performance &amp; sécurité</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; quasi bouclé</span></div>
+            <div class="card" style="padding:0;margin-bottom:24px;overflow:hidden">
+                <table class="data-table" style="margin:0">
+                    <thead><tr><th style="width:42px">#</th><th style="width:20%">Action</th><th>En clair</th><th style="width:72px;text-align:center">Statut</th><th style="width:26%">Note</th></tr></thead>
+                    <tbody>
+                        <tr><td class="num">4</td><td class="bold">En-têtes de sécurité</td><td>Protections invisibles côté serveur contre piratage et détournement du site.</td><td style="text-align:center">✅*</td><td>4/5 posés au niveau serveur (.htaccess) ; CSP gardée pour plus tard.</td></tr>
+                        <tr><td class="num">2</td><td class="bold">Optimisation des images (LCP/CLS/SEO)</td><td>Images légères et bien décrites : site plus rapide et mieux compris par Google.</td><td style="text-align:center">✅</td><td>Majorité WebP + alt quasi complets.</td></tr>
+                        <tr><td class="num">5</td><td class="bold">Mettre à jour thème &amp; extensions</td><td>Tout à jour = moins de failles et de bugs.</td><td style="text-align:center">✅</td><td>WP 7.0 &middot; 0 MAJ en attente (plugins + core à jour).</td></tr>
+                        <tr><td class="num">1</td><td class="bold">Activer l'optimisation JavaScript (TBT/INP)</td><td>Scripts chargés plus intelligemment : site plus réactif, sans casser le suivi.</td><td style="text-align:center">✅</td><td>defer + minif + <strong>« delay JS » activé</strong>. Exclusions sûres : tous les tags (Google Ads, GA4, Meta Pixel), consentement, menu, formulaires, avis → <strong>0 impact tracking</strong>. Retardés : animations Otter + Google Maps.</td></tr>
+                        <tr><td class="num">11</td><td class="bold">Optimiser le CSS (minif + nettoyage)</td><td>On ne charge plus que le CSS réellement utilisé : pages plus rapides, sans casser le menu.</td><td style="text-align:center">✅</td><td>Minif + <strong>« Supprimer le CSS inutilisé » activé</strong> (WP Rocket) avec safelist (Mega Menu, Swiper, CookieYes, bouton tél). CSS render-blocking éliminé ; menu mobile ouvert/fermé vérifié OK en navigation anonyme.</td></tr>
+                        <tr><td class="num">12</td><td class="bold">Précharger les polices</td><td>Les polices s'affichent tout de suite, sans clignotement du texte.</td><td style="text-align:center">✅</td><td>Axiforma Regular + Bold préchargés (preload &lt;head&gt;, snippet #28).</td></tr>
+                        <tr><td class="num">19</td><td class="bold">Ajouter les « preconnect »</td><td>Préparer à l'avance les connexions aux services externes pour gagner du temps.</td><td style="text-align:center">✅</td><td>7 en place.</td></tr>
+                        <tr><td class="num">27</td><td class="bold">Alléger les vidéos</td><td>Vidéo d'accueil 2× plus légère : la page s'ouvre plus vite, surtout sur mobile.</td><td style="text-align:center">✅</td><td>Hero accueil NESSI → <strong>WebM 4,3 Mo en ligne</strong> (VP9 1080p ; était 11,1 Mo MP4 → &minus;61 %).</td></tr>
                     </tbody>
                 </table>
             </div>
