@@ -6071,12 +6071,12 @@ User-agent: ExaBot</code></pre>
             <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><span style="font-size:1.2rem">🎯</span><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">Tracking &amp; Mesure</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; 2/4 faits &mdash; la fondation</span></div>
             <div class="card" style="padding:0;margin-bottom:24px;overflow:hidden">
                 <table class="data-table" style="margin:0">
-                    <thead><tr><th style="width:42px">#</th><th style="width:20%">Action</th><th>En clair</th><th style="width:72px;text-align:center">Statut</th><th style="width:26%">Note</th></tr></thead>
+                    <thead><tr><th style="width:46px">#</th><th>Action</th><th style="width:78px;text-align:center">Statut</th><th>Note</th></tr></thead>
                     <tbody>
-                        <tr><td class="num">3</td><td class="bold">Réparer GA4 (Consent Mode + double comptage)</td><td>On compte les visites une seule fois et proprement &mdash; fini les chiffres faussés.</td><td style="text-align:center">✅</td><td>1 seul système, CookieYes actif, Complianz mort retiré.</td></tr>
-                        <tr><td class="num">6</td><td class="bold">Réparer le suivi des conversions Google Ads</td><td>Savoir quelles pubs Google amènent vraiment des demandes de devis.</td><td style="text-align:center">⚠️</td><td>Tag <code>AW-11093980890</code> + conversion linker actifs (via Site Kit) ; aucune action de conversion (label) sur page ni GTM → conversions « par URL » à confirmer dans le compte Ads.</td></tr>
-                        <tr><td class="num">20</td><td class="bold">Rapport mensuel de trafic</td><td>Un point clair chaque mois : combien de visiteurs, d'où ils viennent, ce qui marche.</td><td style="text-align:center">❌</td><td>Données prêtes (GA4 + Search Console) ; livrable à instaurer.</td></tr>
-                        <tr><td class="num">26</td><td class="bold">Provenance des leads Typeform</td><td>Relier chaque demande reçue au canal qui l'a amenée (pub, recherche…).</td><td style="text-align:center">❌</td><td>À construire : UTM + gclid → GA4 → Odoo.</td></tr>
+                        <tr><td class="num">3</td><td class="bold">Réparer GA4 (Consent Mode + double comptage)</td><td style="text-align:center">✅</td><td>1 seul système, CookieYes actif, Complianz mort retiré.</td></tr>
+                        <tr><td class="num">6</td><td class="bold">Réparer le suivi des conversions Google Ads</td><td style="text-align:center">⚠️</td><td>Tag <code>AW-11093980890</code> + conversion linker actifs (via Site Kit) ; aucune action de conversion (label) sur page ni GTM → conversions « par URL » à confirmer dans le compte Ads.</td></tr>
+                        <tr><td class="num">20</td><td class="bold">Rapport mensuel de trafic</td><td style="text-align:center">❌</td><td>Données prêtes (GA4 + Search Console) ; livrable à instaurer.</td></tr>
+                        <tr><td class="num">26</td><td class="bold">Provenance des leads Typeform</td><td style="text-align:center">❌</td><td>À construire : UTM + gclid → GA4 → Odoo.</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -6085,14 +6085,14 @@ User-agent: ExaBot</code></pre>
             <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><span style="font-size:1.2rem">💰</span><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">Google Ads</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; tout se règle dans le compte</span></div>
             <div class="card" style="padding:0;margin-bottom:24px;overflow:hidden">
                 <table class="data-table" style="margin:0">
-                    <thead><tr><th style="width:42px">#</th><th style="width:20%">Action</th><th>En clair</th><th style="width:72px;text-align:center">Statut</th><th style="width:26%">Note</th></tr></thead>
+                    <thead><tr><th style="width:46px">#</th><th>Action</th><th style="width:78px;text-align:center">Statut</th><th>Note</th></tr></thead>
                     <tbody>
-                        <tr><td class="num">7</td><td class="bold">Corriger la facturation (risque de suspension)</td><td>Éviter une coupure des pubs faute de moyen de paiement de secours.</td><td style="text-align:center">🔒</td><td>Ajouter un moyen de paiement de secours. Décision Charline.</td></tr>
-                        <tr><td class="num">24</td><td class="bold">Pourquoi peu/pas de leads PV-batterie</td><td>Comprendre pourquoi ces produits rapportent peu de demandes (zone, budget, saison).</td><td style="text-align:center">⚠️🔒</td><td>Vérifier ciblage géo + diffusion + budget (saison).</td></tr>
-                        <tr><td class="num">8</td><td class="bold">Supprimer/refaire « Search-Générique »</td><td>Stopper une campagne qui dépensait sans rapporter (~12 505 CHF perdus).</td><td style="text-align:center">🔒</td><td>~12 505 CHF gaspillés.</td></tr>
-                        <tr><td class="num">9</td><td class="bold">Fusionner les mots-clés en double</td><td>Ne plus payer deux fois pour le même mot-clé.</td><td style="text-align:center">🔒</td><td>Cannibalisation exact / broad.</td></tr>
-                        <tr><td class="num">10</td><td class="bold">Améliorer l'entonnoir (landing pages Ads)</td><td>Envoyer les clics vers une page faite pour convertir, pas une simple vitrine.</td><td style="text-align:center">⚠️🔒</td><td>Lié à la landing PAC.</td></tr>
-                        <tr><td class="num">25</td><td class="bold">Valider tracking / stratégie / ciblage</td><td>Vérifier que mesure, stratégie et ciblage des pubs sont sains.</td><td style="text-align:center">⚠️</td><td>Tracking ✅ ; le reste 🔒.</td></tr>
+                        <tr><td class="num">7</td><td class="bold">Corriger la facturation (risque de suspension)</td><td style="text-align:center">🔒</td><td>Ajouter un moyen de paiement de secours. Décision Charline.</td></tr>
+                        <tr><td class="num">24</td><td class="bold">Pourquoi peu/pas de leads PV-batterie</td><td style="text-align:center">⚠️🔒</td><td>Vérifier ciblage géo + diffusion + budget (saison).</td></tr>
+                        <tr><td class="num">8</td><td class="bold">Supprimer/refaire « Search-Générique »</td><td style="text-align:center">🔒</td><td>~12 505 CHF gaspillés.</td></tr>
+                        <tr><td class="num">9</td><td class="bold">Fusionner les mots-clés en double</td><td style="text-align:center">🔒</td><td>Cannibalisation exact / broad.</td></tr>
+                        <tr><td class="num">10</td><td class="bold">Améliorer l'entonnoir (landing pages Ads)</td><td style="text-align:center">⚠️🔒</td><td>Lié à la landing PAC.</td></tr>
+                        <tr><td class="num">25</td><td class="bold">Valider tracking / stratégie / ciblage</td><td style="text-align:center">⚠️</td><td>Tracking ✅ ; le reste 🔒.</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -6101,16 +6101,16 @@ User-agent: ExaBot</code></pre>
             <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><span style="font-size:1.2rem">⚙️</span><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">Tech &mdash; performance &amp; sécurité</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; quasi bouclé</span></div>
             <div class="card" style="padding:0;margin-bottom:24px;overflow:hidden">
                 <table class="data-table" style="margin:0">
-                    <thead><tr><th style="width:42px">#</th><th style="width:20%">Action</th><th>En clair</th><th style="width:72px;text-align:center">Statut</th><th style="width:26%">Note</th></tr></thead>
+                    <thead><tr><th style="width:46px">#</th><th>Action</th><th style="width:78px;text-align:center">Statut</th><th>Note</th></tr></thead>
                     <tbody>
-                        <tr><td class="num">4</td><td class="bold">En-têtes de sécurité</td><td>Protections invisibles côté serveur contre piratage et détournement du site.</td><td style="text-align:center">✅*</td><td>4/5 posés au niveau serveur (.htaccess) ; CSP gardée pour plus tard.</td></tr>
-                        <tr><td class="num">2</td><td class="bold">Optimisation des images (LCP/CLS/SEO)</td><td>Images légères et bien décrites : site plus rapide et mieux compris par Google.</td><td style="text-align:center">✅</td><td>Majorité WebP + alt quasi complets.</td></tr>
-                        <tr><td class="num">5</td><td class="bold">Mettre à jour thème &amp; extensions</td><td>Tout à jour = moins de failles et de bugs.</td><td style="text-align:center">✅</td><td>WP 7.0 &middot; 0 MAJ en attente (plugins + core à jour).</td></tr>
-                        <tr><td class="num">1</td><td class="bold">Activer l'optimisation JavaScript (TBT/INP)</td><td>Scripts chargés plus intelligemment : site plus réactif, sans casser le suivi.</td><td style="text-align:center">✅</td><td>defer + minif + <strong>« delay JS » activé</strong>. Exclusions sûres : tous les tags (Google Ads, GA4, Meta Pixel), consentement, menu, formulaires, avis → <strong>0 impact tracking</strong>. Retardés : animations Otter + Google Maps.</td></tr>
-                        <tr><td class="num">11</td><td class="bold">Optimiser le CSS (minif + nettoyage)</td><td>Alléger le style des pages pour gagner en vitesse (étape délicate, en attente).</td><td style="text-align:center">⚠️</td><td>Minif OK ; CSS critique à pousser (buxumlunic).</td></tr>
-                        <tr><td class="num">12</td><td class="bold">Précharger les polices</td><td>Les polices s'affichent tout de suite, sans clignotement du texte.</td><td style="text-align:center">✅</td><td>Axiforma Regular + Bold préchargés (preload &lt;head&gt;, snippet #28).</td></tr>
-                        <tr><td class="num">19</td><td class="bold">Ajouter les « preconnect »</td><td>Préparer à l'avance les connexions aux services externes pour gagner du temps.</td><td style="text-align:center">✅</td><td>7 en place.</td></tr>
-                        <tr><td class="num">27</td><td class="bold">Alléger les vidéos</td><td>Vidéo d'accueil 2× plus légère : la page s'ouvre plus vite, surtout sur mobile.</td><td style="text-align:center">✅</td><td>Hero accueil NESSI → <strong>WebM 4,3 Mo en ligne</strong> (VP9 1080p ; était 11,1 Mo MP4 → &minus;61 %).</td></tr>
+                        <tr><td class="num">4</td><td class="bold">En-têtes de sécurité</td><td style="text-align:center">✅*</td><td>4/5 posés au niveau serveur (.htaccess) ; CSP gardée pour plus tard.</td></tr>
+                        <tr><td class="num">2</td><td class="bold">Optimisation des images (LCP/CLS/SEO)</td><td style="text-align:center">✅</td><td>Majorité WebP + alt quasi complets.</td></tr>
+                        <tr><td class="num">5</td><td class="bold">Mettre à jour thème &amp; extensions</td><td style="text-align:center">✅</td><td>WP 7.0 &middot; 0 MAJ en attente (plugins + core à jour).</td></tr>
+                        <tr><td class="num">1</td><td class="bold">Activer l'optimisation JavaScript (TBT/INP)</td><td style="text-align:center">✅</td><td>defer + minif + <strong>« delay JS » activé</strong>. Exclusions sûres : tous les tags (Google Ads, GA4, Meta Pixel), consentement, menu, formulaires, avis → <strong>0 impact tracking</strong>. Retardés : animations Otter + Google Maps.</td></tr>
+                        <tr><td class="num">11</td><td class="bold">Optimiser le CSS (minif + nettoyage)</td><td style="text-align:center">⚠️</td><td>Minif OK ; CSS critique à pousser (buxumlunic).</td></tr>
+                        <tr><td class="num">12</td><td class="bold">Précharger les polices</td><td style="text-align:center">✅</td><td>Axiforma Regular + Bold préchargés (preload &lt;head&gt;, snippet #28).</td></tr>
+                        <tr><td class="num">19</td><td class="bold">Ajouter les « preconnect »</td><td style="text-align:center">✅</td><td>7 en place.</td></tr>
+                        <tr><td class="num">27</td><td class="bold">Alléger les vidéos</td><td style="text-align:center">✅</td><td>Hero accueil NESSI → <strong>WebM 4,3 Mo en ligne</strong> (VP9 1080p ; était 11,1 Mo MP4 → &minus;61 %).</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -6119,20 +6119,39 @@ User-agent: ExaBot</code></pre>
             <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><span style="font-size:1.2rem">🔍</span><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">SEO &mdash; visibilité &amp; autorité</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; le gros chantier actif</span></div>
             <div class="card" style="padding:0;margin-bottom:20px;overflow:hidden">
                 <table class="data-table" style="margin:0">
-                    <thead><tr><th style="width:42px">#</th><th style="width:20%">Action</th><th>En clair</th><th style="width:72px;text-align:center">Statut</th><th style="width:26%">Note</th></tr></thead>
+                    <thead><tr><th style="width:46px">#</th><th>Action</th><th style="width:78px;text-align:center">Statut</th><th>Note</th></tr></thead>
                     <tbody>
-                        <tr><td class="num">13</td><td class="bold">Schémas LocalBusiness + Service</td><td>Dire à Google qui vous êtes et où vous intervenez (Genève, Lausanne).</td><td style="text-align:center">✅</td><td>Posés (Genève + Lausanne ; Crans exclue).</td></tr>
-                        <tr><td class="num">14</td><td class="bold">Compléter le profil Organisation</td><td>Fiche d'identité complète de l'entreprise pour Google (adresse, contact, logo).</td><td style="text-align:center">✅</td><td>address + contactPoint ajoutés (nom/tél/email/sameAs/logo OK).</td></tr>
-                        <tr><td class="num">15</td><td class="bold">Maillage interne / pages orphelines</td><td>Relier les pages entre elles pour que Google les trouve toutes.</td><td style="text-align:center">⚠️</td><td>Crawl fait ; page-d-exemple supprimée ; note buxumlunic prête.</td></tr>
-                        <tr><td class="num">22</td><td class="bold">Audit / recherche mots-clés (Semrush)</td><td>Trouver les mots que tapent vos clients pour viser les bonnes pages.</td><td style="text-align:center">⚠️</td><td>En cours.</td></tr>
-                        <tr><td class="num">21</td><td class="bold">Landing pages produits (PAC)</td><td>Une vraie page produit pompe à chaleur, faite pour être trouvée et convertir.</td><td style="text-align:center">⚠️</td><td>Plan SEO + go-live + reco mots-clés faits ; en attente Semrush.</td></tr>
-                        <tr><td class="num">16</td><td class="bold">Créer un fichier <code>llms.txt</code></td><td>Un fichier qui aide les IA (ChatGPT…) à comprendre et citer le site.</td><td style="text-align:center">✅</td><td>En ligne (4 486 car.).</td></tr>
-                        <tr><td class="num">18</td><td class="bold">Améliorer la lisibilité</td><td>Des textes plus simples à lire, pour les visiteurs comme pour Google.</td><td style="text-align:center">🔍</td><td>Analyse Flesch des pages principales.</td></tr>
-                        <tr><td class="num">23</td><td class="bold">Passer Yoast premium ?</td><td>Décision : l'outil SEO gratuit suffit, pas besoin de la version payante.</td><td style="text-align:center">✅</td><td>Décidé : rester gratuit.</td></tr>
+                        <tr><td class="num">13</td><td class="bold">Schémas LocalBusiness + Service</td><td style="text-align:center">✅</td><td>Posés (Genève + Lausanne ; Crans exclue).</td></tr>
+                        <tr><td class="num">14</td><td class="bold">Compléter le profil Organisation</td><td style="text-align:center">✅</td><td>address + contactPoint ajoutés (nom/tél/email/sameAs/logo OK).</td></tr>
+                        <tr><td class="num">15</td><td class="bold">Maillage interne / pages orphelines</td><td style="text-align:center">⚠️</td><td>Crawl fait ; page-d-exemple supprimée ; note buxumlunic prête.</td></tr>
+                        <tr><td class="num">22</td><td class="bold">Audit / recherche mots-clés (Semrush)</td><td style="text-align:center">⚠️</td><td>En cours.</td></tr>
+                        <tr><td class="num">21</td><td class="bold">Landing pages produits (PAC)</td><td style="text-align:center">⚠️</td><td>Plan SEO + go-live + reco mots-clés faits ; en attente Semrush.</td></tr>
+                        <tr><td class="num">16</td><td class="bold">Créer un fichier <code>llms.txt</code></td><td style="text-align:center">✅</td><td>En ligne (4 486 car.).</td></tr>
+                        <tr><td class="num">18</td><td class="bold">Améliorer la lisibilité</td><td style="text-align:center">🔍</td><td>Analyse Flesch des pages principales.</td></tr>
+                        <tr><td class="num">23</td><td class="bold">Passer Yoast premium ?</td><td style="text-align:center">✅</td><td>Décidé : rester gratuit.</td></tr>
                     </tbody>
                 </table>
             </div>
 
+            <!-- SEO STRATEGIC PLAN (8 modules) -->
+            <div style="display:flex;align-items:center;gap:10px;margin:30px 0 6px;padding-top:22px;border-top:1px solid var(--border)"><span style="font-size:1.2rem">📋</span><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">Plan SEO stratégique &mdash; 8 modules</h2></div>
+            <p style="margin:0 0 12px;font-size:0.74rem;color:var(--text-muted)">Roadmap maître (cours SEO en 8 parties) adaptée au modèle <strong>local lead-gen</strong> de naoenergy : priorité au SEO local, aux mots-clés commerciaux et à la conversion. Objectif : trafic organique + leads (devis) sur Genève, Vaud, Valais, Fribourg, Neuchâtel.</p>
+            <div class="card" style="padding:0;margin-bottom:14px;overflow:hidden">
+                <table class="data-table" style="margin:0">
+                    <thead><tr><th style="width:54px">Module</th><th>Workstream</th><th style="width:78px;text-align:center">Statut</th><th>Focus / livrable</th></tr></thead>
+                    <tbody>
+                        <tr><td class="num">P0</td><td class="bold">Fondations &amp; Audit</td><td style="text-align:center">⚠️</td><td>GA4/GSC propres + tracking devis &amp; clics tél &middot; baseline (trafic, rankings/canton, backlinks) &middot; set concurrents (5-8).</td></tr>
+                        <tr><td class="num">P1</td><td class="bold">Keywords &mdash; univers &amp; intention</td><td style="text-align:center">⚠️</td><td>Matrice <strong>service × canton × intention</strong> (transactionnel / commercial / info) + termes CH (subventions, autoconsommation, RCP).</td></tr>
+                        <tr><td class="num">P2</td><td class="bold">Keyword Research &mdash; liste réelle</td><td style="text-align:center">⚠️</td><td>Volumes fr-CH, <strong>gap concurrents</strong>, autocomplete/PAA, priorisation, mapping 1 terme → 1 URL <em>(Semrush en cours)</em>.</td></tr>
+                        <tr><td class="num">P3</td><td class="bold">Content 101 &mdash; money pages</td><td style="text-align:center">⚠️</td><td>Réécrire pages service (intention transac.) + créer <strong>landing canton × service</strong> ; on-page + E-E-A-T <em>(landing PAC en cours)</em>.</td></tr>
+                        <tr><td class="num">P4</td><td class="bold">Content Strategy &mdash; moteur de trafic</td><td style="text-align:center">❌</td><td>Topic clusters (pillar → money pages) + calendrier éditorial + maillage blog → service/canton.</td></tr>
+                        <tr><td class="num">P5</td><td class="bold">On-Site SEO &mdash; technique + on-page</td><td style="text-align:center">⚠️</td><td>CWV/vitesse, crawl, sitemap, canonicals, architecture, templates title/meta, maillage <em>(headers, schema, preconnect, crawl faits)</em>.</td></tr>
+                        <tr><td class="num">P6</td><td class="bold">⭐ Structured Data &amp; Local SEO</td><td style="text-align:center">⚠️</td><td><strong>Le plus impactant.</strong> GBP optimisé + citations (local.ch / search.ch) + avis Google + schema (LocalBusiness/Service ✅, FAQ, Review).</td></tr>
+                        <tr><td class="num">P7</td><td class="bold">Backlinks &mdash; autorité régionale</td><td style="text-align:center">❌</td><td>Annuaires CH énergie/construction &middot; PR locale (10 ans, PlanetSolar / Domjan) &middot; contenus citables (guides subventions).</td></tr>
+                        <tr><td class="num">P8</td><td class="bold">International / Multilingue</td><td style="text-align:center">⏳</td><td><em>Futur &mdash; faible priorité.</em> de-CH / it-CH si expansion : hreflang + sous-dossiers + localisation (jamais de trad. auto).</td></tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
 
         <div class="panel" id="panel-google_ads">
