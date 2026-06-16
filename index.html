@@ -2837,15 +2837,15 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
         <!-- Actions -->
         <div class="nav-section">
             <div class="nav-section-title">Actions</div>
-            <button class="nav-item" data-target="situation-avant">
+            <button class="nav-item" data-target="situation-avant" style="color:#E0492F">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10.29 3.86 1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                 <span class="nav-label">Situation avant projet</span>
             </button>
-            <button class="nav-item" data-target="recs">
+            <button class="nav-item" data-target="recs" style="color:#2563EB">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                 <span class="nav-label">Plan d'actions</span>
             </button>
-            <button class="nav-item" data-target="suivi">
+            <button class="nav-item" data-target="suivi" style="color:#2A8F4D">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                 <span class="nav-label">Suivi des actions</span>
             </button>
@@ -2942,31 +2942,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     <div class="nav-sub-label" style="padding-left:0">On-page SEO</div>
                     <button class="nav-child" data-target="gsc" type="button">
                         <span class="nav-label">Google Search Console</span>
-                    </button>
-
-                    <div class="nav-sub-label" style="padding-left:0">Technical SEO</div>
-                    <button class="nav-child" data-target="performance" type="button">
-                        <span class="nav-label">Performance</span>
-                    </button>
-                    <button class="nav-child" data-target="security" type="button">
-                        <span class="nav-label">S&eacute;curit&eacute;</span>
-                    </button>
-                    <button class="nav-child" data-target="schema" type="button">
-                        <span class="nav-label">Schema</span>
-                    </button>
-                    <button class="nav-child" data-target="hreflang" type="button">
-                        <span class="nav-label">Hreflang</span>
-                    </button>
-                    <button class="nav-child" data-target="errors404" type="button">
-                        <span class="nav-label">Erreurs 404</span>
-                    </button>
-                    <button class="nav-child" data-target="sitemap" type="button">
-                        <span class="nav-label">Sitemap &amp; Robots</span>
-                    </button>
-
-                    <div class="nav-sub-label" style="padding-left:0">Off-page SEO</div>
-                    <button class="nav-child" data-target="entity" type="button">
-                        <span class="nav-label">SEO Entit&eacute;</span>
                     </button>
 
                     <div class="nav-sub-label" style="padding-left:0">AI Search</div>
@@ -4526,532 +4501,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
         </div>
 
         <!-- ============ PANEL : PERFORMANCE ============ -->
-        <div class="panel" id="panel-performance">
-            <div class="page-header">
-                <div>
-                    <div class="page-title-row">
-                        <h1 class="page-title">Performance &amp; Core Web Vitals</h1>
-                        <span class="badge critical">20/100</span>
-                        <span class="badge new">Mis à jour</span>
-                    </div>
-                    <p class="page-subtitle">Score de performance basé sur les preuves de configuration WP Admin (WP Rocket, Imagify, analyse front-end).</p>
-                </div>
-            </div>
-
-            <div class="info-banner cyan">
-                <strong>🔄 Correction :</strong> Le rapport original indiquait 0/100 en raison d'une erreur de l'API PageSpeed. Après investigation dans l'admin WordPress, nous avons identifié les causes profondes de la mauvaise performance. Score mis à jour à 20/100 sur la base des preuves de configuration.
-            </div>
-
-            <div class="kpi-mini-row">
-                <div class="kpi-mini k-critical">
-                    <div class="kpi-mini-label">Score performance</div>
-                    <div class="kpi-mini-value">20</div>
-                </div>
-                <div class="kpi-mini k-critical">
-                    <div class="kpi-mini-label">Fichiers JS</div>
-                    <div class="kpi-mini-value">42</div>
-                </div>
-                <div class="kpi-mini k-critical">
-                    <div class="kpi-mini-label">Fichiers CSS</div>
-                    <div class="kpi-mini-value">17</div>
-                </div>
-                <div class="kpi-mini k-critical">
-                    <div class="kpi-mini-label">Preconnect</div>
-                    <div class="kpi-mini-value">0</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Causes profondes identifiées dans WP Admin</div>
-                        <div class="card-subtitle">13 problèmes détectés — 9 critiques, 2 attention, 2 validés</div>
-                    </div>
-                </div>
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Problème</th>
-                            <th>Statut</th>
-                            <th>Impact</th>
-                            <th>Source</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="bold">Minification JS</td>
-                            <td><span class="badge critical">Désactivé</span></td>
-                            <td>Fichiers plus volumineux, analyse plus lente</td>
-                            <td>WP Rocket</td>
-                        </tr>
-                        <tr>
-                            <td class="bold">Différer/Retarder JS</td>
-                            <td><span class="badge critical">Désactivé</span></td>
-                            <td>JS bloquant le rendu, mauvais TBT/INP</td>
-                            <td>WP Rocket</td>
-                        </tr>
-                        <tr>
-                            <td class="bold">Minification CSS</td>
-                            <td><span class="badge critical">Désactivé</span></td>
-                            <td>Fichiers CSS plus volumineux</td>
-                            <td>WP Rocket</td>
-                        </tr>
-                        <tr>
-                            <td class="bold">Supprimer CSS inutilisé</td>
-                            <td><span class="badge critical">Désactivé</span></td>
-                            <td>Octets inutiles envoyés au navigateur</td>
-                            <td>WP Rocket</td>
-                        </tr>
-                        <tr>
-                            <td class="bold">Dimensions d'images</td>
-                            <td><span class="badge critical">Désactivé</span></td>
-                            <td>CLS (décalage de mise en page)</td>
-                            <td>WP Rocket</td>
-                        </tr>
-                        <tr>
-                            <td class="bold">Préchargement des polices</td>
-                            <td><span class="badge critical">Désactivé</span></td>
-                            <td>Retard LCP (flash de changement de police)</td>
-                            <td>WP Rocket</td>
-                        </tr>
-                        <tr>
-                            <td class="bold">Héberger Google Fonts localement</td>
-                            <td><span class="badge warning">Désactivé</span></td>
-                            <td>DNS + connexion supplémentaire vers Google</td>
-                            <td>WP Rocket</td>
-                        </tr>
-                        <tr>
-                            <td class="bold">Images WebP</td>
-                            <td><span class="badge critical">81 manquantes</span></td>
-                            <td>Images plus lourdes servies (pas de next-gen)</td>
-                            <td>Imagify</td>
-                        </tr>
-                        <tr>
-                            <td class="bold">Quota Imagify</td>
-                            <td><span class="badge critical">0 % restant</span></td>
-                            <td>Aucune nouvelle image ne peut être optimisée</td>
-                            <td>Imagify</td>
-                        </tr>
-                        <tr>
-                            <td class="bold">CDN</td>
-                            <td><span class="badge warning">Non configuré</span></td>
-                            <td>Pas de cache en bordure, TTFB plus élevé</td>
-                            <td>WP Rocket</td>
-                        </tr>
-                        <tr>
-                            <td class="bold">Indices Preconnect</td>
-                            <td><span class="badge warning">0 configuré</span></td>
-                            <td>Chargement plus lent des ressources tierces</td>
-                            <td>Source de la page</td>
-                        </tr>
-                        <tr>
-                            <td class="bold">Préchargement/Cache</td>
-                            <td><span class="badge pass">Actif</span></td>
-                            <td>Les pages sont pré-cachées</td>
-                            <td>WP Rocket</td>
-                        </tr>
-                        <tr>
-                            <td class="bold">LazyLoad</td>
-                            <td><span class="badge pass">Actif</span></td>
-                            <td>Images hors écran différées</td>
-                            <td>WP Rocket</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- ============ PANEL : SÉCURITÉ ============ -->
-        <div class="panel" id="panel-security">
-            <div class="page-header">
-                <div>
-                    <div class="page-title-row">
-                        <h1 class="page-title">En-têtes de sécurité</h1>
-                        <span class="badge critical">45/100</span>
-                    </div>
-                    <p class="page-subtitle">HTTPS actif mais 5 en-têtes de sécurité critiques manquent à l'appel.</p>
-                </div>
-            </div>
-
-            <div class="kpi-mini-row">
-                <div class="kpi-mini k-pass">
-                    <div class="kpi-mini-label">HTTPS</div>
-                    <div class="kpi-mini-value">✅</div>
-                </div>
-                <div class="kpi-mini k-pass">
-                    <div class="kpi-mini-label">Présent</div>
-                    <div class="kpi-mini-value">1</div>
-                </div>
-                <div class="kpi-mini k-critical">
-                    <div class="kpi-mini-label">Manquant</div>
-                    <div class="kpi-mini-value">5</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">État des en-têtes de sécurité HTTP</div>
-                        <div class="card-subtitle">Audit via inspection des headers HTTP de naoenergy.ch</div>
-                    </div>
-                </div>
-                <table class="data-table">
-                    <thead><tr><th>En-tête</th><th>Statut</th><th>Détails</th></tr></thead>
-                    <tbody>
-                        <tr><td class="bold">HSTS</td><td><span class="badge pass">Présent</span></td><td><code>max-age=16000000</code> (includeSubDomains manquant)</td></tr>
-                        <tr><td class="bold">Content-Security-Policy</td><td><span class="badge critical">Manquant</span></td><td>Prévient les attaques XSS et l'injection de code</td></tr>
-                        <tr><td class="bold">X-Frame-Options</td><td><span class="badge critical">Manquant</span></td><td>Prévient le clickjacking</td></tr>
-                        <tr><td class="bold">X-Content-Type-Options</td><td><span class="badge critical">Manquant</span></td><td>Prévient le sniffing de type MIME</td></tr>
-                        <tr><td class="bold">Referrer-Policy</td><td><span class="badge critical">Manquant</span></td><td>Contrôle le partage des informations de référent</td></tr>
-                        <tr><td class="bold">Permissions-Policy</td><td><span class="badge critical">Manquant</span></td><td>Contrôle l'accès aux fonctionnalités du navigateur</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- ============ PANEL : SCHEMA ============ -->
-        <div class="panel" id="panel-schema">
-            <div class="page-header">
-                <div>
-                    <div class="page-title-row">
-                        <h1 class="page-title">Données structurées / Schema</h1>
-                        <span class="badge warning">60/100</span>
-                        <span class="badge new">Corrigé</span>
-                    </div>
-                    <p class="page-subtitle">Balisage JSON-LD généré par Yoast SEO — 7 types présents, 2 critiques manquants (LocalBusiness, Service).</p>
-                </div>
-            </div>
-
-            <div class="info-banner cyan">
-                <strong>🔄 Correction :</strong> Le rapport original indiquait "Aucun balisage schema détecté." C'était incorrect. Yoast SEO génère automatiquement le schema JSON-LD. Le script de détection a peut-être échoué à analyser correctement la page. Le schema EST présent mais incomplet.
-            </div>
-
-            <div class="kpi-mini-row">
-                <div class="kpi-mini k-pass">
-                    <div class="kpi-mini-label">Blocs JSON-LD</div>
-                    <div class="kpi-mini-value">2</div>
-                </div>
-                <div class="kpi-mini k-pass">
-                    <div class="kpi-mini-label">Types de schema</div>
-                    <div class="kpi-mini-value">7</div>
-                </div>
-                <div class="kpi-mini k-warning">
-                    <div class="kpi-mini-label">Types manquants</div>
-                    <div class="kpi-mini-value">2</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">Types de schema présents</div>
-                        <div class="card-subtitle">Détection via extraction JSON-LD du HTML rendu</div>
-                    </div>
-                </div>
-                <table class="data-table">
-                    <thead><tr><th>Type</th><th>Statut</th><th>Détails</th></tr></thead>
-                    <tbody>
-                        <tr><td class="bold">Organization</td><td><span class="badge pass">Présent</span></td><td>name : "naoenergy - durablement different", url : naoenergy.ch</td></tr>
-                        <tr><td class="bold">WebSite</td><td><span class="badge pass">Présent</span></td><td>name : "naoenergy - durablement different"</td></tr>
-                        <tr><td class="bold">WebPage</td><td><span class="badge pass">Présent</span></td><td>Titre et URL complets de la page</td></tr>
-                        <tr><td class="bold">Article</td><td><span class="badge warning">Attention</span></td><td><strong>Appliqué aussi à la homepage</strong> · inhabituel (homepage = WebPage seul) · force une <code>datePublished</code> qui peut s'afficher dans la SERP comme "vieille news" · Fix : Yoast → Page d'accueil → type Schema = WebPage</td></tr>
-                        <tr><td class="bold">BreadcrumbList</td><td><span class="badge pass">Présent</span></td><td>Fil d'Ariane de navigation</td></tr>
-                        <tr><td class="bold">ImageObject</td><td><span class="badge pass">Présent</span></td><td>Image principale avec URL</td></tr>
-                        <tr><td class="bold">Person</td><td><span class="badge critical">Critique</span></td><td><strong style="color:#C44A1F">Auteur "developer"</strong> (placeholder non remplacé) · sameAs pointe vers <code>http://localhost:10427</code> (résidu dev) · <strong>casse l'E-E-A-T</strong> sur 125 articles · vous (124 publications) devriez être renseignée comme l'auteur réel</td></tr>
-                        <tr><td class="bold">LocalBusiness</td><td><span class="badge critical">Manquant</span></td><td>Nécessaire pour la visibilité en recherche locale sur le marché suisse</td></tr>
-                        <tr><td class="bold">Service</td><td><span class="badge critical">Manquant</span></td><td>Panneaux solaires, pompes à chaleur, bornes de recharge non décrits</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="issue-item warning"><span class="issue-badge">Recommandation</span><div><strong>Ajouter les schemas LocalBusiness et Service.</strong> Indispensables pour la visibilité en recherche locale (Google Maps / pack local) et pour générer des résultats enrichis sur les requêtes de services solaires.</div></div>
-            <div class="issue-item warning"><span class="issue-badge">Recommandation</span><div><strong>Compléter le profil Organisation</strong> (description, e-mail). Ces champs alimentent directement le Knowledge Graph de Google.</div></div>
-        </div>
-
-        <!-- ============ PANEL : HREFLANG ============ -->
-        <div class="panel" id="panel-hreflang">
-            <div class="page-header">
-                <div>
-                    <div class="page-title-row">
-                        <h1 class="page-title">Hreflang &amp; SEO international</h1>
-                        <span class="badge critical">0/100</span>
-                        <span class="badge new">Mis à jour</span>
-                    </div>
-                    <p class="page-subtitle">Polylang Pro installé mais une seule langue (français) configurée — opportunité Suisse alémanique &amp; italienne.</p>
-                </div>
-            </div>
-
-            <div class="info-banner cyan">
-                <strong>🔄 Mise à jour :</strong> Le rapport original notait 0 balises hreflang et indiquait "attendu pour les sites monolingues." Après investigation dans l'admin, nous avons constaté qu'il s'agit d'une opportunité manquée — le site utilise Polylang Pro (une extension multilingue) mais seul le français est configuré. Pour un site ciblant le marché suisse, des versions en allemand et en italien élargiraient considérablement la portée.
-            </div>
-
-            <div class="kpi-mini-row">
-                <div class="kpi-mini k-critical">
-                    <div class="kpi-mini-label">Balises Hreflang</div>
-                    <div class="kpi-mini-value">0</div>
-                </div>
-                <div class="kpi-mini">
-                    <div class="kpi-mini-label">Langue (fr_FR)</div>
-                    <div class="kpi-mini-value">1</div>
-                </div>
-                <div class="kpi-mini k-warning">
-                    <div class="kpi-mini-label">Articles en français</div>
-                    <div class="kpi-mini-value">360</div>
-                </div>
-            </div>
-
-            <div class="issue-item warning">
-                <span class="issue-badge">Opportunité</span>
-                <div><strong>Polylang Pro est installé mais seul le français est configuré.</strong> Une expansion vers l'allemand (Suisse alémanique) et l'italien (Suisse italienne) débloquerait deux marchés supplémentaires.</div>
-            </div>
-
-            <div class="section-source">Source : WP Admin → Langues (Polylang)</div>
-        </div>
-
-        <!-- ============ PANEL : ERREURS 404 ============ -->
-        <div class="panel" id="panel-errors404">
-            <div class="page-header">
-                <div>
-                    <div class="page-title-row">
-                        <h1 class="page-title">Erreurs 404</h1>
-                        <span class="badge warning">Déclassé — bruit externe</span>
-                        <span class="badge new">Révisé 9 avril</span>
-                    </div>
-                    <p class="page-subtitle">Reality check : 84,7 % des "9 864 erreurs" sont du bruit Facebook bot, ~9 % seulement sont de vrais 404 utilisateurs.</p>
-                </div>
-            </div>
-
-            <div class="info-banner cyan">
-                <strong>⚠️ Correction majeure du 9 avril :</strong> L'audit V2 initial classait les <strong>9 864 erreurs 404</strong> en "Critique — budget de crawl + charge serveur". <strong>C'était trompeur.</strong> Une investigation directe via l'API REST du plugin Redirection a montré que <strong>84,7 % de ces 404 (8 414 sur 9 937) sont du bruit externe Facebook</strong> qui n'a aucun impact ni sur GA4, ni sur Search Console, ni sur le SEO. Le chiffre brut a été gonflé, la criticité réelle est faible. Cette section a été révisée en conséquence.
-            </div>
-
-            <div class="kpi-mini-row">
-                <div class="kpi-mini k-critical">
-                    <div class="kpi-mini-label">Total 404 logs</div>
-                    <div class="kpi-mini-value">9 937</div>
-                </div>
-                <div class="kpi-mini k-critical">
-                    <div class="kpi-mini-label">/meta.json (FB bot)</div>
-                    <div class="kpi-mini-value">8 414</div>
-                </div>
-                <div class="kpi-mini k-warning">
-                    <div class="kpi-mini-label">Autres (mix)</div>
-                    <div class="kpi-mini-value">~1 500</div>
-                </div>
-                <div class="kpi-mini k-pass">
-                    <div class="kpi-mini-label">Redirections 301</div>
-                    <div class="kpi-mini-value">71</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-header">
-                    <div>
-                        <div class="card-title">🔍 Répartition réelle des 9 937 erreurs 404</div>
-                        <div class="card-subtitle">Le bruit Facebook représente 84,7 % du volume mais 0 % de l'impact business</div>
-                    </div>
-                </div>
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Source</th>
-                            <th>Volume</th>
-                            <th>%</th>
-                            <th>Impact GA4</th>
-                            <th>Impact GSC</th>
-                            <th>Impact SEO</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Facebook bot → /meta.json</strong><br><code style="font-size:0.72rem;">facebookexternalhit/1.1</code></td>
-                            <td class="num">8 414</td>
-                            <td class="num">84,7 %</td>
-                            <td><span class="badge pass">Aucun</span></td>
-                            <td><span class="badge pass">Aucun</span></td>
-                            <td><span class="badge pass">Aucun</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Scanners / probes</strong><br><code style="font-size:0.72rem;">/wp-admin/zfcfdqzzr.php, /_ignition/*</code></td>
-                            <td class="num">~500</td>
-                            <td class="num">~5 %</td>
-                            <td><span class="badge pass">Aucun</span></td>
-                            <td><span class="badge pass">Aucun</span></td>
-                            <td><span class="badge pass">Aucun</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Bug "about:blank"</strong><br><code style="font-size:0.72rem;">/article-X/about:blank</code></td>
-                            <td class="num">~50</td>
-                            <td class="num">~0,5 %</td>
-                            <td><span class="badge warning">Faible</span></td>
-                            <td><span class="badge warning">Faible</span></td>
-                            <td><span class="badge warning">À corriger</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Apple touch icons manquants</strong><br><code style="font-size:0.72rem;">/apple-touch-icon*.png</code></td>
-                            <td class="num">~30</td>
-                            <td class="num">~0,3 %</td>
-                            <td><span class="badge pass">Aucun</span></td>
-                            <td><span class="badge pass">Aucun</span></td>
-                            <td><span class="badge warning">Cosmétique</span></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Vrais liens cassés utilisateurs</strong><br><span style="color:var(--text-muted); font-size:0.78rem;">(à identifier en filtrant le bruit)</span></td>
-                            <td class="num">~900</td>
-                            <td class="num">~9 %</td>
-                            <td><span class="badge critical">Oui</span></td>
-                            <td><span class="badge critical">Oui</span></td>
-                            <td><span class="badge critical">VRAI problème</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3 class="panel-h3" style="margin-top:32px;">🔗 Pourquoi le bot Facebook n'affecte ni GA4 ni Search Console</h3>
-            <div class="card">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Source 404</th>
-                            <th>Logged Redirection</th>
-                            <th>Tracké GA4 ?</th>
-                            <th>Visible GSC ?</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Facebook bot → /meta.json</strong> (8 414)</td>
-                            <td>✅</td>
-                            <td>❌ <span style="color:var(--text-muted);">Bots n'exécutent pas le JS gtag</span></td>
-                            <td>❌ <span style="color:var(--text-muted);">N'est pas Googlebot</span></td>
-                        </tr>
-                        <tr>
-                            <td>Vrais users → liens cassés (~900)</td>
-                            <td>✅</td>
-                            <td>✅ <span style="color:var(--text-muted);">Tag GA4 du template 404.php fire</span></td>
-                            <td>⚠️ Si Googlebot crawl la même URL</td>
-                        </tr>
-                        <tr>
-                            <td>Scanners (~500)</td>
-                            <td>✅</td>
-                            <td>❌</td>
-                            <td>❌</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="issue-item info">
-                <span class="issue-badge">Preuve</span>
-                <div><strong>Investigation directe (REST API <code>/wp-json/redirection/v1/404</code>) :</strong> sur 200 entrées récentes du log Redirection, <strong>184/200 (92 %)</strong> ciblent <code>/meta.json</code>, et <strong>100 % de ces hits</strong> proviennent de l'agent <code>facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)</code>. Méthode GET, sans referrer, sans IP loggée (filtrée par Complianz).</div>
-            </div>
-
-            <h3 class="panel-h3" style="margin-top:32px;">✅ Vérification : aucun code dev ne force des pages en 404</h3>
-            <p style="color:var(--text-muted); margin-bottom:12px; font-size:0.85rem;">Investigation complète de toutes les sources potentielles d'un "drop to 404" custom :</p>
-            <div class="card">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Source vérifiée</th>
-                            <th>Résultat</th>
-                            <th>Détail</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="bold">Plugin Code Snippets (5 snippets)</td>
-                            <td><span class="badge pass">RAS</span></td>
-                            <td>4 snippets sample WP par défaut + 1 snippet custom "calculateur solaire" qui charge uniquement <code>iframe-resizer-client.js</code> pour le simulateur eturnity. <strong>Aucune logique 404.</strong></td>
-                        </tr>
-                        <tr>
-                            <td class="bold">Plugin Redirection (71 règles)</td>
-                            <td><span class="badge pass">RAS</span></td>
-                            <td>100 % des règles sont des <code>url_301</code> propres. <strong>0 règle <code>action_type=error</code></strong> (aucune règle ne sert volontairement un 404). 0 regex. 0 règle pass-through.</td>
-                        </tr>
-                        <tr>
-                            <td class="bold">Plugin WPCode Lite</td>
-                            <td><span class="badge pass">Inactif</span></td>
-                            <td>Installé mais désactivé.</td>
-                        </tr>
-                        <tr>
-                            <td class="bold">Plugin WP Headers and Footers</td>
-                            <td><span class="badge pass">Inactif</span></td>
-                            <td>Installé mais désactivé.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="issue-item info">
-                <span class="issue-badge">Conclusion</span>
-                <div>Le développeur de naoenergy.ch <strong>n'a ajouté aucun code (ni snippet, ni redirection)</strong> qui force des pages en 404. Les 9 864 erreurs sont intégralement causées par du bruit externe (Facebook scraper + scanners + ~9 % de vrais liens cassés à identifier).</div>
-            </div>
-
-            <h3 class="panel-h3" style="margin-top:32px;">💡 Plan d'actions révisé pour les 404</h3>
-            <ol>
-                <li><strong>Ne pas s'inquiéter des 8 414 hits Facebook /meta.json</strong> — aucun impact business ni SEO.</li>
-                <li><strong>Repartir d'une base saine</strong> — purger le journal pour identifier les vrais 404 utilisateurs sur les 30 prochains jours.</li>
-                <li><strong>Identifier les vrais liens cassés</strong> en filtrant le bruit externe (Facebook bot, scanners, apple icons).</li>
-                <li><strong>Corriger le bug "about:blank"</strong> sur les URLs d'articles.</li>
-                <li><strong>Ajouter les Apple touch icons manquants</strong> (cosmétique mais propre).</li>
-                <li><strong>Accès Google Search Console requis</strong> pour voir les vrais 404 vus par Googlebot — ce sont ceux-là qui comptent pour le SEO.</li>
-            </ol>
-
-            <div class="section-source">Source : Investigation REST API <code>/wp-json/redirection/v1/404</code> + inspection des plugins Code Snippets, Redirection, WPCode, WP Headers/Footers via wp-admin (9 avril 2026)</div>
-        </div>
-
-        <!-- ============ PANEL : SITEMAP & ROBOTS ============ -->
-        <div class="panel" id="panel-sitemap">
-            <div class="page-header">
-                <div>
-                    <div class="page-title-row">
-                        <h1 class="page-title">Sitemap &amp; Robots.txt</h1>
-                        <span class="badge pass">85/100</span>
-                    </div>
-                    <p class="page-subtitle">9 sitemaps XML accessibles via Yoast SEO, robots.txt valide — quelques optimisations possibles.</p>
-                </div>
-            </div>
-
-            <h3 class="panel-h3">Sitemap XML (Yoast SEO)</h3>
-            <div class="kpi-mini-row">
-                <div class="kpi-mini k-pass">
-                    <div class="kpi-mini-label">Sitemaps</div>
-                    <div class="kpi-mini-value">9</div>
-                </div>
-                <div class="kpi-mini k-pass">
-                    <div class="kpi-mini-label">Accessible</div>
-                    <div class="kpi-mini-value">✅</div>
-                </div>
-            </div>
-
-            <div class="card">
-                <table class="data-table">
-                    <thead><tr><th>Sitemap</th><th>Dernière modification</th></tr></thead>
-                    <tbody>
-                        <tr><td><code>post-sitemap.xml</code></td><td>2026-03-26</td></tr>
-                        <tr><td><code>page-sitemap.xml</code></td><td>2026-03-31</td></tr>
-                        <tr><td><code>event-sitemap.xml</code></td><td>2025-02-26</td></tr>
-                        <tr><td><code>partner-sitemap.xml</code></td><td>2025-06-23</td></tr>
-                        <tr><td><code>solution-sitemap.xml</code></td><td>2026-04-01</td></tr>
-                        <tr><td><code>category-sitemap.xml</code></td><td>2026-03-26</td></tr>
-                        <tr><td><code>realisation_type-sitemap.xml</code></td><td>2025-12-09</td></tr>
-                        <tr><td><code>p_type-sitemap.xml</code></td><td>2025-06-23</td></tr>
-                        <tr><td><code>author-sitemap.xml</code></td><td>2025-07-08</td></tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h3 class="panel-h3">robots.txt</h3>
-            <pre class="code-block">User-agent: *
-Disallow: /wp-admin/
-Allow: /wp-admin/admin-ajax.php
-Disallow: /item/
-Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
-
-            <div class="issue-item warning"><span class="issue-badge">Note</span><div><code>Disallow: /item/</code> pourrait bloquer du contenu indexable — vérifiez si les URL /item/ contiennent des pages de valeur.</div></div>
-            <div class="issue-item warning"><span class="issue-badge">Note</span><div>11 robots IA (GPTBot, ClaudeBot, PerplexityBot, etc.) ne sont pas explicitement gérés dans le robots.txt.</div></div>
-        </div>
-
-        <!-- ============ PANEL : ON-PAGE ============ -->
-        <!-- ============ PANEL : GOOGLE SEARCH CONSOLE ============ -->
         <div class="panel" id="panel-gsc">
             <div class="page-header">
                 <div>
@@ -5146,190 +4595,6 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
         </div>
 
         <!-- ============ PANEL : SEO ENTITÉ ============ -->
-        <div class="panel" id="panel-entity">
-            <div class="page-header">
-                <div>
-                    <div class="page-title-row">
-                        <h1 class="page-title">SEO Entité &amp; E-E-A-T</h1>
-                        <span class="badge critical">5/100</span>
-                    </div>
-                    <p class="page-subtitle">Knowledge Graph, profil Organisation, signaux d'autorité — aucune entrée Wikidata ni Wikipedia · <strong>auteur Schema cassé sur 125 articles</strong>.</p>
-                </div>
-            </div>
-
-            <div class="kpi-mini-row">
-                <div class="kpi-mini k-critical">
-                    <div class="kpi-mini-label">Schema Author</div>
-                    <div class="kpi-mini-value">❌</div>
-                </div>
-                <div class="kpi-mini k-critical">
-                    <div class="kpi-mini-label">Wikidata</div>
-                    <div class="kpi-mini-value">❌</div>
-                </div>
-                <div class="kpi-mini k-critical">
-                    <div class="kpi-mini-label">Wikipedia</div>
-                    <div class="kpi-mini-value">❌</div>
-                </div>
-                <div class="kpi-mini k-warning">
-                    <div class="kpi-mini-label">Liens sameAs</div>
-                    <div class="kpi-mini-value">4</div>
-                </div>
-            </div>
-
-            <div class="issue-item critical"><span class="issue-badge">🚨 Critique</span><div><strong>Schema Author = "developer"</strong> (placeholder non remplacé) — visible dans le JSON-LD de chaque page : <code>"author":{"name":"developer","url":"https://naoenergy.ch/author/developer/"}</code>. Sur un site YMYL (panier ~35 000 CHF, secteur énergie), Google attend un <strong>auteur identifiable avec expertise vérifiable</strong>. Le compte WP "developer" (email <code>alertes@buxumlunic.dev</code>, 0 publications) bloque le E-E-A-T sur les 125 articles publiés en réalité par <strong>vous (124 publications)</strong>. <strong>Action : renommer user_id=1 → votre nom officiel avec bio, photo, URL LinkedIn dans le profil WP.</strong></div></div>
-            <div class="issue-item critical"><span class="issue-badge">🚨 Critique</span><div><strong>Person sameAs = <code>http://localhost:10427</code></strong> — résidu d'environnement de développement laissé en production. À supprimer ou remplacer par l'URL LinkedIn de l'auteur réel.</div></div>
-            <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>3 comptes admin BuxumLunic actifs</strong> (developer, e.dutertre, g.maimbourg avec emails <code>@buxumlunic.dev</code> / <code>@buxumlunic.ch</code>) — ancienne agence dev, toujours accès admin complet sans publications. <strong>Risque sécurité majeur</strong> + pollue le pool d'auteurs Yoast.</div></div>
-            <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>Aucune entrée Wikidata trouvée pour "naoenergy".</strong> Impact direct sur la présence dans le Knowledge Graph Google.</div></div>
-            <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>Lien sameAs vers Twitter/X manquant</strong> (champ Twitter vide dans Yoast SEO).</div></div>
-            <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>Liens sameAs vers Wikipedia et Wikidata manquants.</strong></div></div>
-            <div class="issue-item info"><span class="issue-badge">Info</span><div><strong>La description de l'organisation est vide.</strong> Ce champ alimente directement le schema Organization vu par Google.</div></div>
-        </div>
-
-        <!-- ============ PANEL : AUDITS EXTERNES (PREUVES D'AMÉLIORATION) ============ -->
-        <div class="panel" id="panel-external_audits">
-            <div class="page-header">
-                <div>
-                    <div class="page-title-row">
-                        <h1 class="page-title">🔍 Audits externes &amp; preuves d'amélioration</h1>
-                        <span class="badge new">Baseline 14 mai 2026</span>
-                    </div>
-                    <p class="page-subtitle">Rapports indépendants d'outils tiers reconnus (PageSpeed Insights officiel Google, Lighthouse, etc.) pour prouver les améliorations apportées au site. URLs partageables + screenshots horodatés.</p>
-                </div>
-            </div>
-
-            <!-- ===== BASELINE 14 MAI 2026 ===== -->
-            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #6F3EAA">
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
-                    <div style="font-size:0.95rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px">
-                        <span style="background:#6F3EAA;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">📊 BASELINE</span>
-                        Audit Google PageSpeed Insights — 14 mai 2026
-                    </div>
-                    <span style="background:rgba(111,62,170,0.14);color:#6F3EAA;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Avant fixes Sprint 1</span>
-                </div>
-
-                <div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:14px;font-style:italic">📌 Référence avant l'application des correctifs Sprint 1 (E-E-A-T, Yoast, Imagify WebP, alt textes, llms.txt, robots.txt AI crawlers). Utilisée pour mesurer les gains après chaque sprint.</div>
-
-                <!-- Mobile + Desktop scores grid -->
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
-                    <!-- MOBILE -->
-                    <div style="padding:18px 20px;background:var(--surface-soft);border-radius:10px;border-top:4px solid #4285F4">
-                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
-                            <span style="font-size:1.4rem">📱</span>
-                            <div style="font-size:0.9rem;font-weight:800;color:var(--text)">Mobile</div>
-                        </div>
-                        <table style="width:100%;border-collapse:collapse;font-size:0.74rem">
-                            <tbody>
-                                <tr><td style="padding:6px 0;color:var(--text-body)">Performance</td><td style="text-align:right;font-weight:800;color:#E8A82E">61/100 🟡</td></tr>
-                                <tr><td style="padding:6px 0;color:var(--text-body)">Accessibility</td><td style="text-align:right;font-weight:800;color:#2A8F4D">86/100 🟢</td></tr>
-                                <tr><td style="padding:6px 0;color:var(--text-body)">Best Practices</td><td style="text-align:right;font-weight:800;color:#2A8F4D">96/100 🟢</td></tr>
-                                <tr><td style="padding:6px 0;color:var(--text-body)">SEO</td><td style="text-align:right;font-weight:800;color:#2A8F4D">100/100 🟢</td></tr>
-                            </tbody>
-                        </table>
-                        <a href="https://pagespeed.web.dev/analysis/https-naoenergy-ch/dh1ck0659m?form_factor=mobile" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:0.7rem;color:#4285F4;text-decoration:none;font-weight:700">🔗 Voir le rapport public Google →</a>
-                    </div>
-                    <!-- DESKTOP -->
-                    <div style="padding:18px 20px;background:var(--surface-soft);border-radius:10px;border-top:4px solid #2A8F4D">
-                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
-                            <span style="font-size:1.4rem">🖥️</span>
-                            <div style="font-size:0.9rem;font-weight:800;color:var(--text)">Desktop</div>
-                            <span style="margin-left:auto;background:#2A8F4D;color:#fff;font-size:0.58rem;padding:3px 8px;border-radius:100px;font-weight:800;letter-spacing:0.5px">EXCELLENT</span>
-                        </div>
-                        <table style="width:100%;border-collapse:collapse;font-size:0.74rem">
-                            <tbody>
-                                <tr><td style="padding:6px 0;color:var(--text-body)">Performance</td><td style="text-align:right;font-weight:800;color:#2A8F4D">94/100 🟢</td></tr>
-                                <tr><td style="padding:6px 0;color:var(--text-body)">Accessibility</td><td style="text-align:right;font-weight:800;color:#2A8F4D">94/100 🟢</td></tr>
-                                <tr><td style="padding:6px 0;color:var(--text-body)">Best Practices</td><td style="text-align:right;font-weight:800;color:#2A8F4D">96/100 🟢</td></tr>
-                                <tr><td style="padding:6px 0;color:var(--text-body)">SEO</td><td style="text-align:right;font-weight:800;color:#2A8F4D">100/100 🟢</td></tr>
-                            </tbody>
-                        </table>
-                        <a href="https://pagespeed.web.dev/analysis/https-naoenergy-ch/g7b0uh7atc?form_factor=desktop" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:0.7rem;color:#5A98AE;text-decoration:none;font-weight:700">🔗 Voir le rapport public Google →</a>
-                    </div>
-                </div>
-
-                <!-- Core Web Vitals (Field Data réelle) -->
-                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#6F3EAA;font-weight:800;margin-bottom:10px;padding-top:8px;border-top:1px dashed var(--border)">⚡ Core Web Vitals — Field Data (utilisateurs réels, CrUX 28 jours)</div>
-                <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-bottom:14px">
-                    <div style="padding:14px 16px;background:rgba(63,183,108,0.10);border-radius:8px;border:1px solid rgba(63,183,108,0.25);text-align:center">
-                        <div style="font-size:0.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:4px">LCP</div>
-                        <div style="font-size:1.4rem;font-weight:800;color:#2A8F4D">2.3 s</div>
-                        <div style="font-size:0.66rem;color:#2A8F4D;font-weight:700;margin-top:2px">🟢 GOOD (&lt; 2.5 s)</div>
-                    </div>
-                    <div style="padding:14px 16px;background:rgba(63,183,108,0.10);border-radius:8px;border:1px solid rgba(63,183,108,0.25);text-align:center">
-                        <div style="font-size:0.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:4px">INP</div>
-                        <div style="font-size:1.4rem;font-weight:800;color:#2A8F4D">121 ms</div>
-                        <div style="font-size:0.66rem;color:#2A8F4D;font-weight:700;margin-top:2px">🟢 GOOD (&lt; 200 ms)</div>
-                    </div>
-                    <div style="padding:14px 16px;background:rgba(63,183,108,0.10);border-radius:8px;border:1px solid rgba(63,183,108,0.25);text-align:center">
-                        <div style="font-size:0.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:4px">CLS</div>
-                        <div style="font-size:1.4rem;font-weight:800;color:#2A8F4D">0</div>
-                        <div style="font-size:0.66rem;color:#2A8F4D;font-weight:700;margin-top:2px">🟢 EXCELLENT</div>
-                    </div>
-                </div>
-
-                <div style="padding:12px 14px;background:rgba(63,183,108,0.10);border-radius:8px;border-left:3px solid #2A8F4D;font-size:0.74rem;color:var(--text-body);line-height:1.6">
-                    🎯 <strong style="color:var(--text)">Bon point découvert :</strong> les 3 Core Web Vitals sont déjà dans le <strong style="color:#2A8F4D">vert</strong> côté Field Data (utilisateurs réels Google). Les scores Lighthouse Performance (61/66) sont en Lab Data simulée — ce qui se voit moins côté utilisateur. Sprint 1 + 2 viseront à monter ces scores Lab via Imagify WebP, alt textes, security headers.
-                </div>
-            </div>
-
-            <!-- ===== OUTILS EXTERNES UTILISÉS ===== -->
-            <div class="card" style="padding:22px 26px;margin-bottom:16px">
-                <div style="font-size:0.95rem;font-weight:800;color:var(--text);margin-bottom:12px">🛠️ Outils tiers utilisés (rapports indépendants)</div>
-                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:12px">
-                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #4285F4">
-                        <div style="font-size:0.84rem;font-weight:800;color:var(--text);margin-bottom:4px">📊 PageSpeed Insights</div>
-                        <div style="font-size:0.66rem;color:var(--text-muted);margin-bottom:8px">Google officiel · gratuit</div>
-                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Performance + Core Web Vitals (data utilisateurs réels). Score 0-100 Lighthouse + URL permalink partageable.</div>
-                        <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:0.68rem;color:#4285F4;text-decoration:none;font-weight:700">→ pagespeed.web.dev</a>
-                    </div>
-                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #2A8F4D">
-                        <div style="font-size:0.84rem;font-weight:800;color:var(--text);margin-bottom:4px">🔍 Rich Results Test</div>
-                        <div style="font-size:0.66rem;color:var(--text-muted);margin-bottom:8px">Google officiel · gratuit</div>
-                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Validation Schema JSON-LD. Vérifie les rich snippets que Google va afficher.</div>
-                        <a href="https://search.google.com/test/rich-results?url=https%3A%2F%2Fnaoenergy.ch%2F" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:0.68rem;color:#2A8F4D;text-decoration:none;font-weight:700">→ Tester naoenergy.ch</a>
-                    </div>
-                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #E8A82E">
-                        <div style="font-size:0.84rem;font-weight:800;color:var(--text);margin-bottom:4px">⚡ GTmetrix</div>
-                        <div style="font-size:0.66rem;color:var(--text-muted);margin-bottom:8px">Tiers · gratuit · historique</div>
-                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Combine Lighthouse + WebPageTest. Historique 3 mois, waterfall détaillé, export PDF.</div>
-                        <a href="https://gtmetrix.com/?url=https%3A%2F%2Fnaoenergy.ch%2F" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:0.68rem;color:#E8A82E;text-decoration:none;font-weight:700">→ Tester naoenergy.ch</a>
-                    </div>
-                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #6F3EAA">
-                        <div style="font-size:0.84rem;font-weight:800;color:var(--text);margin-bottom:4px">🛡️ Security Headers</div>
-                        <div style="font-size:0.66rem;color:var(--text-muted);margin-bottom:8px">Tiers · gratuit</div>
-                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Note A-F sur les en-têtes HTTP (CSP, HSTS, X-Frame-Options, etc.). Score actuel : 45/100 🔴.</div>
-                        <a href="https://securityheaders.com/?q=https%3A%2F%2Fnaoenergy.ch%2F" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:0.68rem;color:#6F3EAA;text-decoration:none;font-weight:700">→ Tester naoenergy.ch</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ===== SCREENSHOTS ARCHIVÉS ===== -->
-            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #E8A82E">
-                <div style="font-size:0.95rem;font-weight:800;color:var(--text);margin-bottom:12px">📸 Screenshots archivés (preuves horodatées)</div>
-                <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6">
-                    <p style="margin:0 0 10px 0">Les rapports PageSpeed sont conservés ~30 jours côté Google. Les screenshots sont archivés localement en preuve permanente :</p>
-                    <ul style="margin:0 0 0 18px;padding:0;line-height:1.7">
-                        <li><code>BASELINE-2026-05-14.md</code> · Document baseline complet avec scores + cibles</li>
-                        <li><code>baseline-pagespeed-mobile-2026-05-14.png</code> · Screenshot officiel mobile</li>
-                        <li><code>baseline-pagespeed-desktop-2026-05-14.png</code> · Screenshot officiel desktop</li>
-                        <li><code>FULL-AUDIT-REPORT.md</code> · Audit interne complet (9 scripts + Lighthouse)</li>
-                        <li><code>ACTION-PLAN.md</code> · Plan d'actions Sprint 1/2/3 priorisé</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- ===== POURQUOI CES AUDITS ===== -->
-            <div class="card" style="padding:22px 26px;margin-bottom:16px;background:rgba(90,152,174,0.05)">
-                <div style="font-size:0.85rem;font-weight:800;color:var(--text);margin-bottom:10px">💡 Pourquoi des audits externes ?</div>
-                <ul style="margin:0 0 0 18px;padding:0;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                    <li><strong style="color:var(--text)">Objectivité :</strong> les scores PageSpeed sont calculés par Google directement, pas par nous → pas de biais.</li>
-                    <li><strong style="color:var(--text)">Traçabilité :</strong> URL permalink à partager avec l'équipe pour vérification.</li>
-                    <li><strong style="color:var(--text)">Comparaison avant/après :</strong> baseline + re-audits permettent de quantifier précisément l'impact de chaque sprint.</li>
-                    <li><strong style="color:var(--text)">Crédibilité :</strong> en cas de revue par un autre consultant ou agence, les preuves Google sont incontestables.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- ============ PANEL : GEO + AEO (NOUVELLES DISCIPLINES SEO 2026) ============ -->
         <div class="panel" id="panel-geo-aeo">
             <div class="page-header">
                 <div>
@@ -6042,6 +5307,724 @@ User-agent: ExaBot</code></pre>
                     </ul>
                     <div style="margin-top:12px;padding:8px 10px;background:var(--surface-soft);border-radius:8px;font-size:0.68rem;color:var(--text-muted);font-style:italic">À valider/compléter : CPL initial, budget et campagnes actives à la réception du mandat.</div>
                 </div>
+
+
+        <!-- ===== Contenu deplace : SEO technique & off-page (etat avant projet) ===== -->
+        <div style="margin:36px 0 4px;padding-top:26px;border-top:2px solid var(--border)">
+            <h2 style="font-size:1.35rem;font-weight:800;color:var(--text);margin:0 0 4px">🔧 Audit technique &amp; off-page — etat avant projet</h2>
+            <p style="font-size:0.8rem;color:var(--text-muted);margin:0">Performance, securite, schema, hreflang, erreurs 404, sitemap/robots et SEO d'entite — la base technique constatee au demarrage du projet.</p>
+        </div>
+<div class="panel" id="panel-performance" style="display:block">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">Performance &amp; Core Web Vitals</h1>
+                        <span class="badge critical">20/100</span>
+                        <span class="badge new">Mis à jour</span>
+                    </div>
+                    <p class="page-subtitle">Score de performance basé sur les preuves de configuration WP Admin (WP Rocket, Imagify, analyse front-end).</p>
+                </div>
+            </div>
+
+            <div class="info-banner cyan">
+                <strong>🔄 Correction :</strong> Le rapport original indiquait 0/100 en raison d'une erreur de l'API PageSpeed. Après investigation dans l'admin WordPress, nous avons identifié les causes profondes de la mauvaise performance. Score mis à jour à 20/100 sur la base des preuves de configuration.
+            </div>
+
+            <div class="kpi-mini-row">
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">Score performance</div>
+                    <div class="kpi-mini-value">20</div>
+                </div>
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">Fichiers JS</div>
+                    <div class="kpi-mini-value">42</div>
+                </div>
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">Fichiers CSS</div>
+                    <div class="kpi-mini-value">17</div>
+                </div>
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">Preconnect</div>
+                    <div class="kpi-mini-value">0</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Causes profondes identifiées dans WP Admin</div>
+                        <div class="card-subtitle">13 problèmes détectés — 9 critiques, 2 attention, 2 validés</div>
+                    </div>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Problème</th>
+                            <th>Statut</th>
+                            <th>Impact</th>
+                            <th>Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="bold">Minification JS</td>
+                            <td><span class="badge critical">Désactivé</span></td>
+                            <td>Fichiers plus volumineux, analyse plus lente</td>
+                            <td>WP Rocket</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Différer/Retarder JS</td>
+                            <td><span class="badge critical">Désactivé</span></td>
+                            <td>JS bloquant le rendu, mauvais TBT/INP</td>
+                            <td>WP Rocket</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Minification CSS</td>
+                            <td><span class="badge critical">Désactivé</span></td>
+                            <td>Fichiers CSS plus volumineux</td>
+                            <td>WP Rocket</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Supprimer CSS inutilisé</td>
+                            <td><span class="badge critical">Désactivé</span></td>
+                            <td>Octets inutiles envoyés au navigateur</td>
+                            <td>WP Rocket</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Dimensions d'images</td>
+                            <td><span class="badge critical">Désactivé</span></td>
+                            <td>CLS (décalage de mise en page)</td>
+                            <td>WP Rocket</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Préchargement des polices</td>
+                            <td><span class="badge critical">Désactivé</span></td>
+                            <td>Retard LCP (flash de changement de police)</td>
+                            <td>WP Rocket</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Héberger Google Fonts localement</td>
+                            <td><span class="badge warning">Désactivé</span></td>
+                            <td>DNS + connexion supplémentaire vers Google</td>
+                            <td>WP Rocket</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Images WebP</td>
+                            <td><span class="badge critical">81 manquantes</span></td>
+                            <td>Images plus lourdes servies (pas de next-gen)</td>
+                            <td>Imagify</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Quota Imagify</td>
+                            <td><span class="badge critical">0 % restant</span></td>
+                            <td>Aucune nouvelle image ne peut être optimisée</td>
+                            <td>Imagify</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">CDN</td>
+                            <td><span class="badge warning">Non configuré</span></td>
+                            <td>Pas de cache en bordure, TTFB plus élevé</td>
+                            <td>WP Rocket</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Indices Preconnect</td>
+                            <td><span class="badge warning">0 configuré</span></td>
+                            <td>Chargement plus lent des ressources tierces</td>
+                            <td>Source de la page</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Préchargement/Cache</td>
+                            <td><span class="badge pass">Actif</span></td>
+                            <td>Les pages sont pré-cachées</td>
+                            <td>WP Rocket</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">LazyLoad</td>
+                            <td><span class="badge pass">Actif</span></td>
+                            <td>Images hors écran différées</td>
+                            <td>WP Rocket</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ============ PANEL : SÉCURITÉ ============ -->
+        <div class="panel" id="panel-security" style="display:block">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">En-têtes de sécurité</h1>
+                        <span class="badge critical">45/100</span>
+                    </div>
+                    <p class="page-subtitle">HTTPS actif mais 5 en-têtes de sécurité critiques manquent à l'appel.</p>
+                </div>
+            </div>
+
+            <div class="kpi-mini-row">
+                <div class="kpi-mini k-pass">
+                    <div class="kpi-mini-label">HTTPS</div>
+                    <div class="kpi-mini-value">✅</div>
+                </div>
+                <div class="kpi-mini k-pass">
+                    <div class="kpi-mini-label">Présent</div>
+                    <div class="kpi-mini-value">1</div>
+                </div>
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">Manquant</div>
+                    <div class="kpi-mini-value">5</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">État des en-têtes de sécurité HTTP</div>
+                        <div class="card-subtitle">Audit via inspection des headers HTTP de naoenergy.ch</div>
+                    </div>
+                </div>
+                <table class="data-table">
+                    <thead><tr><th>En-tête</th><th>Statut</th><th>Détails</th></tr></thead>
+                    <tbody>
+                        <tr><td class="bold">HSTS</td><td><span class="badge pass">Présent</span></td><td><code>max-age=16000000</code> (includeSubDomains manquant)</td></tr>
+                        <tr><td class="bold">Content-Security-Policy</td><td><span class="badge critical">Manquant</span></td><td>Prévient les attaques XSS et l'injection de code</td></tr>
+                        <tr><td class="bold">X-Frame-Options</td><td><span class="badge critical">Manquant</span></td><td>Prévient le clickjacking</td></tr>
+                        <tr><td class="bold">X-Content-Type-Options</td><td><span class="badge critical">Manquant</span></td><td>Prévient le sniffing de type MIME</td></tr>
+                        <tr><td class="bold">Referrer-Policy</td><td><span class="badge critical">Manquant</span></td><td>Contrôle le partage des informations de référent</td></tr>
+                        <tr><td class="bold">Permissions-Policy</td><td><span class="badge critical">Manquant</span></td><td>Contrôle l'accès aux fonctionnalités du navigateur</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ============ PANEL : SCHEMA ============ -->
+        <div class="panel" id="panel-schema" style="display:block">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">Données structurées / Schema</h1>
+                        <span class="badge warning">60/100</span>
+                        <span class="badge new">Corrigé</span>
+                    </div>
+                    <p class="page-subtitle">Balisage JSON-LD généré par Yoast SEO — 7 types présents, 2 critiques manquants (LocalBusiness, Service).</p>
+                </div>
+            </div>
+
+            <div class="info-banner cyan">
+                <strong>🔄 Correction :</strong> Le rapport original indiquait "Aucun balisage schema détecté." C'était incorrect. Yoast SEO génère automatiquement le schema JSON-LD. Le script de détection a peut-être échoué à analyser correctement la page. Le schema EST présent mais incomplet.
+            </div>
+
+            <div class="kpi-mini-row">
+                <div class="kpi-mini k-pass">
+                    <div class="kpi-mini-label">Blocs JSON-LD</div>
+                    <div class="kpi-mini-value">2</div>
+                </div>
+                <div class="kpi-mini k-pass">
+                    <div class="kpi-mini-label">Types de schema</div>
+                    <div class="kpi-mini-value">7</div>
+                </div>
+                <div class="kpi-mini k-warning">
+                    <div class="kpi-mini-label">Types manquants</div>
+                    <div class="kpi-mini-value">2</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Types de schema présents</div>
+                        <div class="card-subtitle">Détection via extraction JSON-LD du HTML rendu</div>
+                    </div>
+                </div>
+                <table class="data-table">
+                    <thead><tr><th>Type</th><th>Statut</th><th>Détails</th></tr></thead>
+                    <tbody>
+                        <tr><td class="bold">Organization</td><td><span class="badge pass">Présent</span></td><td>name : "naoenergy - durablement different", url : naoenergy.ch</td></tr>
+                        <tr><td class="bold">WebSite</td><td><span class="badge pass">Présent</span></td><td>name : "naoenergy - durablement different"</td></tr>
+                        <tr><td class="bold">WebPage</td><td><span class="badge pass">Présent</span></td><td>Titre et URL complets de la page</td></tr>
+                        <tr><td class="bold">Article</td><td><span class="badge warning">Attention</span></td><td><strong>Appliqué aussi à la homepage</strong> · inhabituel (homepage = WebPage seul) · force une <code>datePublished</code> qui peut s'afficher dans la SERP comme "vieille news" · Fix : Yoast → Page d'accueil → type Schema = WebPage</td></tr>
+                        <tr><td class="bold">BreadcrumbList</td><td><span class="badge pass">Présent</span></td><td>Fil d'Ariane de navigation</td></tr>
+                        <tr><td class="bold">ImageObject</td><td><span class="badge pass">Présent</span></td><td>Image principale avec URL</td></tr>
+                        <tr><td class="bold">Person</td><td><span class="badge critical">Critique</span></td><td><strong style="color:#C44A1F">Auteur "developer"</strong> (placeholder non remplacé) · sameAs pointe vers <code>http://localhost:10427</code> (résidu dev) · <strong>casse l'E-E-A-T</strong> sur 125 articles · vous (124 publications) devriez être renseignée comme l'auteur réel</td></tr>
+                        <tr><td class="bold">LocalBusiness</td><td><span class="badge critical">Manquant</span></td><td>Nécessaire pour la visibilité en recherche locale sur le marché suisse</td></tr>
+                        <tr><td class="bold">Service</td><td><span class="badge critical">Manquant</span></td><td>Panneaux solaires, pompes à chaleur, bornes de recharge non décrits</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="issue-item warning"><span class="issue-badge">Recommandation</span><div><strong>Ajouter les schemas LocalBusiness et Service.</strong> Indispensables pour la visibilité en recherche locale (Google Maps / pack local) et pour générer des résultats enrichis sur les requêtes de services solaires.</div></div>
+            <div class="issue-item warning"><span class="issue-badge">Recommandation</span><div><strong>Compléter le profil Organisation</strong> (description, e-mail). Ces champs alimentent directement le Knowledge Graph de Google.</div></div>
+        </div>
+
+        <!-- ============ PANEL : HREFLANG ============ -->
+        <div class="panel" id="panel-hreflang" style="display:block">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">Hreflang &amp; SEO international</h1>
+                        <span class="badge critical">0/100</span>
+                        <span class="badge new">Mis à jour</span>
+                    </div>
+                    <p class="page-subtitle">Polylang Pro installé mais une seule langue (français) configurée — opportunité Suisse alémanique &amp; italienne.</p>
+                </div>
+            </div>
+
+            <div class="info-banner cyan">
+                <strong>🔄 Mise à jour :</strong> Le rapport original notait 0 balises hreflang et indiquait "attendu pour les sites monolingues." Après investigation dans l'admin, nous avons constaté qu'il s'agit d'une opportunité manquée — le site utilise Polylang Pro (une extension multilingue) mais seul le français est configuré. Pour un site ciblant le marché suisse, des versions en allemand et en italien élargiraient considérablement la portée.
+            </div>
+
+            <div class="kpi-mini-row">
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">Balises Hreflang</div>
+                    <div class="kpi-mini-value">0</div>
+                </div>
+                <div class="kpi-mini">
+                    <div class="kpi-mini-label">Langue (fr_FR)</div>
+                    <div class="kpi-mini-value">1</div>
+                </div>
+                <div class="kpi-mini k-warning">
+                    <div class="kpi-mini-label">Articles en français</div>
+                    <div class="kpi-mini-value">360</div>
+                </div>
+            </div>
+
+            <div class="issue-item warning">
+                <span class="issue-badge">Opportunité</span>
+                <div><strong>Polylang Pro est installé mais seul le français est configuré.</strong> Une expansion vers l'allemand (Suisse alémanique) et l'italien (Suisse italienne) débloquerait deux marchés supplémentaires.</div>
+            </div>
+
+            <div class="section-source">Source : WP Admin → Langues (Polylang)</div>
+        </div>
+
+        <!-- ============ PANEL : ERREURS 404 ============ -->
+        <div class="panel" id="panel-errors404" style="display:block">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">Erreurs 404</h1>
+                        <span class="badge warning">Déclassé — bruit externe</span>
+                        <span class="badge new">Révisé 9 avril</span>
+                    </div>
+                    <p class="page-subtitle">Reality check : 84,7 % des "9 864 erreurs" sont du bruit Facebook bot, ~9 % seulement sont de vrais 404 utilisateurs.</p>
+                </div>
+            </div>
+
+            <div class="info-banner cyan">
+                <strong>⚠️ Correction majeure du 9 avril :</strong> L'audit V2 initial classait les <strong>9 864 erreurs 404</strong> en "Critique — budget de crawl + charge serveur". <strong>C'était trompeur.</strong> Une investigation directe via l'API REST du plugin Redirection a montré que <strong>84,7 % de ces 404 (8 414 sur 9 937) sont du bruit externe Facebook</strong> qui n'a aucun impact ni sur GA4, ni sur Search Console, ni sur le SEO. Le chiffre brut a été gonflé, la criticité réelle est faible. Cette section a été révisée en conséquence.
+            </div>
+
+            <div class="kpi-mini-row">
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">Total 404 logs</div>
+                    <div class="kpi-mini-value">9 937</div>
+                </div>
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">/meta.json (FB bot)</div>
+                    <div class="kpi-mini-value">8 414</div>
+                </div>
+                <div class="kpi-mini k-warning">
+                    <div class="kpi-mini-label">Autres (mix)</div>
+                    <div class="kpi-mini-value">~1 500</div>
+                </div>
+                <div class="kpi-mini k-pass">
+                    <div class="kpi-mini-label">Redirections 301</div>
+                    <div class="kpi-mini-value">71</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">🔍 Répartition réelle des 9 937 erreurs 404</div>
+                        <div class="card-subtitle">Le bruit Facebook représente 84,7 % du volume mais 0 % de l'impact business</div>
+                    </div>
+                </div>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Source</th>
+                            <th>Volume</th>
+                            <th>%</th>
+                            <th>Impact GA4</th>
+                            <th>Impact GSC</th>
+                            <th>Impact SEO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Facebook bot → /meta.json</strong><br><code style="font-size:0.72rem;">facebookexternalhit/1.1</code></td>
+                            <td class="num">8 414</td>
+                            <td class="num">84,7 %</td>
+                            <td><span class="badge pass">Aucun</span></td>
+                            <td><span class="badge pass">Aucun</span></td>
+                            <td><span class="badge pass">Aucun</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Scanners / probes</strong><br><code style="font-size:0.72rem;">/wp-admin/zfcfdqzzr.php, /_ignition/*</code></td>
+                            <td class="num">~500</td>
+                            <td class="num">~5 %</td>
+                            <td><span class="badge pass">Aucun</span></td>
+                            <td><span class="badge pass">Aucun</span></td>
+                            <td><span class="badge pass">Aucun</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Bug "about:blank"</strong><br><code style="font-size:0.72rem;">/article-X/about:blank</code></td>
+                            <td class="num">~50</td>
+                            <td class="num">~0,5 %</td>
+                            <td><span class="badge warning">Faible</span></td>
+                            <td><span class="badge warning">Faible</span></td>
+                            <td><span class="badge warning">À corriger</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Apple touch icons manquants</strong><br><code style="font-size:0.72rem;">/apple-touch-icon*.png</code></td>
+                            <td class="num">~30</td>
+                            <td class="num">~0,3 %</td>
+                            <td><span class="badge pass">Aucun</span></td>
+                            <td><span class="badge pass">Aucun</span></td>
+                            <td><span class="badge warning">Cosmétique</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vrais liens cassés utilisateurs</strong><br><span style="color:var(--text-muted); font-size:0.78rem;">(à identifier en filtrant le bruit)</span></td>
+                            <td class="num">~900</td>
+                            <td class="num">~9 %</td>
+                            <td><span class="badge critical">Oui</span></td>
+                            <td><span class="badge critical">Oui</span></td>
+                            <td><span class="badge critical">VRAI problème</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="panel-h3" style="margin-top:32px;">🔗 Pourquoi le bot Facebook n'affecte ni GA4 ni Search Console</h3>
+            <div class="card">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Source 404</th>
+                            <th>Logged Redirection</th>
+                            <th>Tracké GA4 ?</th>
+                            <th>Visible GSC ?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Facebook bot → /meta.json</strong> (8 414)</td>
+                            <td>✅</td>
+                            <td>❌ <span style="color:var(--text-muted);">Bots n'exécutent pas le JS gtag</span></td>
+                            <td>❌ <span style="color:var(--text-muted);">N'est pas Googlebot</span></td>
+                        </tr>
+                        <tr>
+                            <td>Vrais users → liens cassés (~900)</td>
+                            <td>✅</td>
+                            <td>✅ <span style="color:var(--text-muted);">Tag GA4 du template 404.php fire</span></td>
+                            <td>⚠️ Si Googlebot crawl la même URL</td>
+                        </tr>
+                        <tr>
+                            <td>Scanners (~500)</td>
+                            <td>✅</td>
+                            <td>❌</td>
+                            <td>❌</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="issue-item info">
+                <span class="issue-badge">Preuve</span>
+                <div><strong>Investigation directe (REST API <code>/wp-json/redirection/v1/404</code>) :</strong> sur 200 entrées récentes du log Redirection, <strong>184/200 (92 %)</strong> ciblent <code>/meta.json</code>, et <strong>100 % de ces hits</strong> proviennent de l'agent <code>facebookexternalhit/1.1 (+http://www.facebook.com/externalhit_uatext.php)</code>. Méthode GET, sans referrer, sans IP loggée (filtrée par Complianz).</div>
+            </div>
+
+            <h3 class="panel-h3" style="margin-top:32px;">✅ Vérification : aucun code dev ne force des pages en 404</h3>
+            <p style="color:var(--text-muted); margin-bottom:12px; font-size:0.85rem;">Investigation complète de toutes les sources potentielles d'un "drop to 404" custom :</p>
+            <div class="card">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Source vérifiée</th>
+                            <th>Résultat</th>
+                            <th>Détail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="bold">Plugin Code Snippets (5 snippets)</td>
+                            <td><span class="badge pass">RAS</span></td>
+                            <td>4 snippets sample WP par défaut + 1 snippet custom "calculateur solaire" qui charge uniquement <code>iframe-resizer-client.js</code> pour le simulateur eturnity. <strong>Aucune logique 404.</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Plugin Redirection (71 règles)</td>
+                            <td><span class="badge pass">RAS</span></td>
+                            <td>100 % des règles sont des <code>url_301</code> propres. <strong>0 règle <code>action_type=error</code></strong> (aucune règle ne sert volontairement un 404). 0 regex. 0 règle pass-through.</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Plugin WPCode Lite</td>
+                            <td><span class="badge pass">Inactif</span></td>
+                            <td>Installé mais désactivé.</td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Plugin WP Headers and Footers</td>
+                            <td><span class="badge pass">Inactif</span></td>
+                            <td>Installé mais désactivé.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="issue-item info">
+                <span class="issue-badge">Conclusion</span>
+                <div>Le développeur de naoenergy.ch <strong>n'a ajouté aucun code (ni snippet, ni redirection)</strong> qui force des pages en 404. Les 9 864 erreurs sont intégralement causées par du bruit externe (Facebook scraper + scanners + ~9 % de vrais liens cassés à identifier).</div>
+            </div>
+
+            <h3 class="panel-h3" style="margin-top:32px;">💡 Plan d'actions révisé pour les 404</h3>
+            <ol>
+                <li><strong>Ne pas s'inquiéter des 8 414 hits Facebook /meta.json</strong> — aucun impact business ni SEO.</li>
+                <li><strong>Repartir d'une base saine</strong> — purger le journal pour identifier les vrais 404 utilisateurs sur les 30 prochains jours.</li>
+                <li><strong>Identifier les vrais liens cassés</strong> en filtrant le bruit externe (Facebook bot, scanners, apple icons).</li>
+                <li><strong>Corriger le bug "about:blank"</strong> sur les URLs d'articles.</li>
+                <li><strong>Ajouter les Apple touch icons manquants</strong> (cosmétique mais propre).</li>
+                <li><strong>Accès Google Search Console requis</strong> pour voir les vrais 404 vus par Googlebot — ce sont ceux-là qui comptent pour le SEO.</li>
+            </ol>
+
+            <div class="section-source">Source : Investigation REST API <code>/wp-json/redirection/v1/404</code> + inspection des plugins Code Snippets, Redirection, WPCode, WP Headers/Footers via wp-admin (9 avril 2026)</div>
+        </div>
+
+        <!-- ============ PANEL : SITEMAP & ROBOTS ============ -->
+        <div class="panel" id="panel-sitemap" style="display:block">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">Sitemap &amp; Robots.txt</h1>
+                        <span class="badge pass">85/100</span>
+                    </div>
+                    <p class="page-subtitle">9 sitemaps XML accessibles via Yoast SEO, robots.txt valide — quelques optimisations possibles.</p>
+                </div>
+            </div>
+
+            <h3 class="panel-h3">Sitemap XML (Yoast SEO)</h3>
+            <div class="kpi-mini-row">
+                <div class="kpi-mini k-pass">
+                    <div class="kpi-mini-label">Sitemaps</div>
+                    <div class="kpi-mini-value">9</div>
+                </div>
+                <div class="kpi-mini k-pass">
+                    <div class="kpi-mini-label">Accessible</div>
+                    <div class="kpi-mini-value">✅</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <table class="data-table">
+                    <thead><tr><th>Sitemap</th><th>Dernière modification</th></tr></thead>
+                    <tbody>
+                        <tr><td><code>post-sitemap.xml</code></td><td>2026-03-26</td></tr>
+                        <tr><td><code>page-sitemap.xml</code></td><td>2026-03-31</td></tr>
+                        <tr><td><code>event-sitemap.xml</code></td><td>2025-02-26</td></tr>
+                        <tr><td><code>partner-sitemap.xml</code></td><td>2025-06-23</td></tr>
+                        <tr><td><code>solution-sitemap.xml</code></td><td>2026-04-01</td></tr>
+                        <tr><td><code>category-sitemap.xml</code></td><td>2026-03-26</td></tr>
+                        <tr><td><code>realisation_type-sitemap.xml</code></td><td>2025-12-09</td></tr>
+                        <tr><td><code>p_type-sitemap.xml</code></td><td>2025-06-23</td></tr>
+                        <tr><td><code>author-sitemap.xml</code></td><td>2025-07-08</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="panel-h3">robots.txt</h3>
+            <pre class="code-block">User-agent: *
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+Disallow: /item/
+Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
+
+            <div class="issue-item warning"><span class="issue-badge">Note</span><div><code>Disallow: /item/</code> pourrait bloquer du contenu indexable — vérifiez si les URL /item/ contiennent des pages de valeur.</div></div>
+            <div class="issue-item warning"><span class="issue-badge">Note</span><div>11 robots IA (GPTBot, ClaudeBot, PerplexityBot, etc.) ne sont pas explicitement gérés dans le robots.txt.</div></div>
+        </div>
+
+        <!-- ============ PANEL : ON-PAGE ============ -->
+        <!-- ============ PANEL : GOOGLE SEARCH CONSOLE ============ -->
+        <div class="panel" id="panel-entity" style="display:block">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">SEO Entité &amp; E-E-A-T</h1>
+                        <span class="badge critical">5/100</span>
+                    </div>
+                    <p class="page-subtitle">Knowledge Graph, profil Organisation, signaux d'autorité — aucune entrée Wikidata ni Wikipedia · <strong>auteur Schema cassé sur 125 articles</strong>.</p>
+                </div>
+            </div>
+
+            <div class="kpi-mini-row">
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">Schema Author</div>
+                    <div class="kpi-mini-value">❌</div>
+                </div>
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">Wikidata</div>
+                    <div class="kpi-mini-value">❌</div>
+                </div>
+                <div class="kpi-mini k-critical">
+                    <div class="kpi-mini-label">Wikipedia</div>
+                    <div class="kpi-mini-value">❌</div>
+                </div>
+                <div class="kpi-mini k-warning">
+                    <div class="kpi-mini-label">Liens sameAs</div>
+                    <div class="kpi-mini-value">4</div>
+                </div>
+            </div>
+
+            <div class="issue-item critical"><span class="issue-badge">🚨 Critique</span><div><strong>Schema Author = "developer"</strong> (placeholder non remplacé) — visible dans le JSON-LD de chaque page : <code>"author":{"name":"developer","url":"https://naoenergy.ch/author/developer/"}</code>. Sur un site YMYL (panier ~35 000 CHF, secteur énergie), Google attend un <strong>auteur identifiable avec expertise vérifiable</strong>. Le compte WP "developer" (email <code>alertes@buxumlunic.dev</code>, 0 publications) bloque le E-E-A-T sur les 125 articles publiés en réalité par <strong>vous (124 publications)</strong>. <strong>Action : renommer user_id=1 → votre nom officiel avec bio, photo, URL LinkedIn dans le profil WP.</strong></div></div>
+            <div class="issue-item critical"><span class="issue-badge">🚨 Critique</span><div><strong>Person sameAs = <code>http://localhost:10427</code></strong> — résidu d'environnement de développement laissé en production. À supprimer ou remplacer par l'URL LinkedIn de l'auteur réel.</div></div>
+            <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>3 comptes admin BuxumLunic actifs</strong> (developer, e.dutertre, g.maimbourg avec emails <code>@buxumlunic.dev</code> / <code>@buxumlunic.ch</code>) — ancienne agence dev, toujours accès admin complet sans publications. <strong>Risque sécurité majeur</strong> + pollue le pool d'auteurs Yoast.</div></div>
+            <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>Aucune entrée Wikidata trouvée pour "naoenergy".</strong> Impact direct sur la présence dans le Knowledge Graph Google.</div></div>
+            <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>Lien sameAs vers Twitter/X manquant</strong> (champ Twitter vide dans Yoast SEO).</div></div>
+            <div class="issue-item warning"><span class="issue-badge">Constat</span><div><strong>Liens sameAs vers Wikipedia et Wikidata manquants.</strong></div></div>
+            <div class="issue-item info"><span class="issue-badge">Info</span><div><strong>La description de l'organisation est vide.</strong> Ce champ alimente directement le schema Organization vu par Google.</div></div>
+        </div>
+
+        <!-- ============ PANEL : AUDITS EXTERNES (PREUVES D'AMÉLIORATION) ============ -->
+        <div class="panel" id="panel-external_audits">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">🔍 Audits externes &amp; preuves d'amélioration</h1>
+                        <span class="badge new">Baseline 14 mai 2026</span>
+                    </div>
+                    <p class="page-subtitle">Rapports indépendants d'outils tiers reconnus (PageSpeed Insights officiel Google, Lighthouse, etc.) pour prouver les améliorations apportées au site. URLs partageables + screenshots horodatés.</p>
+                </div>
+            </div>
+
+            <!-- ===== BASELINE 14 MAI 2026 ===== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #6F3EAA">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+                    <div style="font-size:0.95rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px">
+                        <span style="background:#6F3EAA;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">📊 BASELINE</span>
+                        Audit Google PageSpeed Insights — 14 mai 2026
+                    </div>
+                    <span style="background:rgba(111,62,170,0.14);color:#6F3EAA;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Avant fixes Sprint 1</span>
+                </div>
+
+                <div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:14px;font-style:italic">📌 Référence avant l'application des correctifs Sprint 1 (E-E-A-T, Yoast, Imagify WebP, alt textes, llms.txt, robots.txt AI crawlers). Utilisée pour mesurer les gains après chaque sprint.</div>
+
+                <!-- Mobile + Desktop scores grid -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+                    <!-- MOBILE -->
+                    <div style="padding:18px 20px;background:var(--surface-soft);border-radius:10px;border-top:4px solid #4285F4">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                            <span style="font-size:1.4rem">📱</span>
+                            <div style="font-size:0.9rem;font-weight:800;color:var(--text)">Mobile</div>
+                        </div>
+                        <table style="width:100%;border-collapse:collapse;font-size:0.74rem">
+                            <tbody>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">Performance</td><td style="text-align:right;font-weight:800;color:#E8A82E">61/100 🟡</td></tr>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">Accessibility</td><td style="text-align:right;font-weight:800;color:#2A8F4D">86/100 🟢</td></tr>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">Best Practices</td><td style="text-align:right;font-weight:800;color:#2A8F4D">96/100 🟢</td></tr>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">SEO</td><td style="text-align:right;font-weight:800;color:#2A8F4D">100/100 🟢</td></tr>
+                            </tbody>
+                        </table>
+                        <a href="https://pagespeed.web.dev/analysis/https-naoenergy-ch/dh1ck0659m?form_factor=mobile" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:0.7rem;color:#4285F4;text-decoration:none;font-weight:700">🔗 Voir le rapport public Google →</a>
+                    </div>
+                    <!-- DESKTOP -->
+                    <div style="padding:18px 20px;background:var(--surface-soft);border-radius:10px;border-top:4px solid #2A8F4D">
+                        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+                            <span style="font-size:1.4rem">🖥️</span>
+                            <div style="font-size:0.9rem;font-weight:800;color:var(--text)">Desktop</div>
+                            <span style="margin-left:auto;background:#2A8F4D;color:#fff;font-size:0.58rem;padding:3px 8px;border-radius:100px;font-weight:800;letter-spacing:0.5px">EXCELLENT</span>
+                        </div>
+                        <table style="width:100%;border-collapse:collapse;font-size:0.74rem">
+                            <tbody>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">Performance</td><td style="text-align:right;font-weight:800;color:#2A8F4D">94/100 🟢</td></tr>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">Accessibility</td><td style="text-align:right;font-weight:800;color:#2A8F4D">94/100 🟢</td></tr>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">Best Practices</td><td style="text-align:right;font-weight:800;color:#2A8F4D">96/100 🟢</td></tr>
+                                <tr><td style="padding:6px 0;color:var(--text-body)">SEO</td><td style="text-align:right;font-weight:800;color:#2A8F4D">100/100 🟢</td></tr>
+                            </tbody>
+                        </table>
+                        <a href="https://pagespeed.web.dev/analysis/https-naoenergy-ch/g7b0uh7atc?form_factor=desktop" target="_blank" rel="noopener" style="display:inline-block;margin-top:10px;font-size:0.7rem;color:#5A98AE;text-decoration:none;font-weight:700">🔗 Voir le rapport public Google →</a>
+                    </div>
+                </div>
+
+                <!-- Core Web Vitals (Field Data réelle) -->
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#6F3EAA;font-weight:800;margin-bottom:10px;padding-top:8px;border-top:1px dashed var(--border)">⚡ Core Web Vitals — Field Data (utilisateurs réels, CrUX 28 jours)</div>
+                <div style="display:grid;grid-template-columns:repeat(3, 1fr);gap:12px;margin-bottom:14px">
+                    <div style="padding:14px 16px;background:rgba(63,183,108,0.10);border-radius:8px;border:1px solid rgba(63,183,108,0.25);text-align:center">
+                        <div style="font-size:0.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:4px">LCP</div>
+                        <div style="font-size:1.4rem;font-weight:800;color:#2A8F4D">2.3 s</div>
+                        <div style="font-size:0.66rem;color:#2A8F4D;font-weight:700;margin-top:2px">🟢 GOOD (&lt; 2.5 s)</div>
+                    </div>
+                    <div style="padding:14px 16px;background:rgba(63,183,108,0.10);border-radius:8px;border:1px solid rgba(63,183,108,0.25);text-align:center">
+                        <div style="font-size:0.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:4px">INP</div>
+                        <div style="font-size:1.4rem;font-weight:800;color:#2A8F4D">121 ms</div>
+                        <div style="font-size:0.66rem;color:#2A8F4D;font-weight:700;margin-top:2px">🟢 GOOD (&lt; 200 ms)</div>
+                    </div>
+                    <div style="padding:14px 16px;background:rgba(63,183,108,0.10);border-radius:8px;border:1px solid rgba(63,183,108,0.25);text-align:center">
+                        <div style="font-size:0.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.8px;font-weight:700;margin-bottom:4px">CLS</div>
+                        <div style="font-size:1.4rem;font-weight:800;color:#2A8F4D">0</div>
+                        <div style="font-size:0.66rem;color:#2A8F4D;font-weight:700;margin-top:2px">🟢 EXCELLENT</div>
+                    </div>
+                </div>
+
+                <div style="padding:12px 14px;background:rgba(63,183,108,0.10);border-radius:8px;border-left:3px solid #2A8F4D;font-size:0.74rem;color:var(--text-body);line-height:1.6">
+                    🎯 <strong style="color:var(--text)">Bon point découvert :</strong> les 3 Core Web Vitals sont déjà dans le <strong style="color:#2A8F4D">vert</strong> côté Field Data (utilisateurs réels Google). Les scores Lighthouse Performance (61/66) sont en Lab Data simulée — ce qui se voit moins côté utilisateur. Sprint 1 + 2 viseront à monter ces scores Lab via Imagify WebP, alt textes, security headers.
+                </div>
+            </div>
+
+            <!-- ===== OUTILS EXTERNES UTILISÉS ===== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px">
+                <div style="font-size:0.95rem;font-weight:800;color:var(--text);margin-bottom:12px">🛠️ Outils tiers utilisés (rapports indépendants)</div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:12px">
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #4285F4">
+                        <div style="font-size:0.84rem;font-weight:800;color:var(--text);margin-bottom:4px">📊 PageSpeed Insights</div>
+                        <div style="font-size:0.66rem;color:var(--text-muted);margin-bottom:8px">Google officiel · gratuit</div>
+                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Performance + Core Web Vitals (data utilisateurs réels). Score 0-100 Lighthouse + URL permalink partageable.</div>
+                        <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:0.68rem;color:#4285F4;text-decoration:none;font-weight:700">→ pagespeed.web.dev</a>
+                    </div>
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #2A8F4D">
+                        <div style="font-size:0.84rem;font-weight:800;color:var(--text);margin-bottom:4px">🔍 Rich Results Test</div>
+                        <div style="font-size:0.66rem;color:var(--text-muted);margin-bottom:8px">Google officiel · gratuit</div>
+                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Validation Schema JSON-LD. Vérifie les rich snippets que Google va afficher.</div>
+                        <a href="https://search.google.com/test/rich-results?url=https%3A%2F%2Fnaoenergy.ch%2F" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:0.68rem;color:#2A8F4D;text-decoration:none;font-weight:700">→ Tester naoenergy.ch</a>
+                    </div>
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #E8A82E">
+                        <div style="font-size:0.84rem;font-weight:800;color:var(--text);margin-bottom:4px">⚡ GTmetrix</div>
+                        <div style="font-size:0.66rem;color:var(--text-muted);margin-bottom:8px">Tiers · gratuit · historique</div>
+                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Combine Lighthouse + WebPageTest. Historique 3 mois, waterfall détaillé, export PDF.</div>
+                        <a href="https://gtmetrix.com/?url=https%3A%2F%2Fnaoenergy.ch%2F" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:0.68rem;color:#E8A82E;text-decoration:none;font-weight:700">→ Tester naoenergy.ch</a>
+                    </div>
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #6F3EAA">
+                        <div style="font-size:0.84rem;font-weight:800;color:var(--text);margin-bottom:4px">🛡️ Security Headers</div>
+                        <div style="font-size:0.66rem;color:var(--text-muted);margin-bottom:8px">Tiers · gratuit</div>
+                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Note A-F sur les en-têtes HTTP (CSP, HSTS, X-Frame-Options, etc.). Score actuel : 45/100 🔴.</div>
+                        <a href="https://securityheaders.com/?q=https%3A%2F%2Fnaoenergy.ch%2F" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;font-size:0.68rem;color:#6F3EAA;text-decoration:none;font-weight:700">→ Tester naoenergy.ch</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== SCREENSHOTS ARCHIVÉS ===== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #E8A82E">
+                <div style="font-size:0.95rem;font-weight:800;color:var(--text);margin-bottom:12px">📸 Screenshots archivés (preuves horodatées)</div>
+                <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6">
+                    <p style="margin:0 0 10px 0">Les rapports PageSpeed sont conservés ~30 jours côté Google. Les screenshots sont archivés localement en preuve permanente :</p>
+                    <ul style="margin:0 0 0 18px;padding:0;line-height:1.7">
+                        <li><code>BASELINE-2026-05-14.md</code> · Document baseline complet avec scores + cibles</li>
+                        <li><code>baseline-pagespeed-mobile-2026-05-14.png</code> · Screenshot officiel mobile</li>
+                        <li><code>baseline-pagespeed-desktop-2026-05-14.png</code> · Screenshot officiel desktop</li>
+                        <li><code>FULL-AUDIT-REPORT.md</code> · Audit interne complet (9 scripts + Lighthouse)</li>
+                        <li><code>ACTION-PLAN.md</code> · Plan d'actions Sprint 1/2/3 priorisé</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ===== POURQUOI CES AUDITS ===== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;background:rgba(90,152,174,0.05)">
+                <div style="font-size:0.85rem;font-weight:800;color:var(--text);margin-bottom:10px">💡 Pourquoi des audits externes ?</div>
+                <ul style="margin:0 0 0 18px;padding:0;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                    <li><strong style="color:var(--text)">Objectivité :</strong> les scores PageSpeed sont calculés par Google directement, pas par nous → pas de biais.</li>
+                    <li><strong style="color:var(--text)">Traçabilité :</strong> URL permalink à partager avec l'équipe pour vérification.</li>
+                    <li><strong style="color:var(--text)">Comparaison avant/après :</strong> baseline + re-audits permettent de quantifier précisément l'impact de chaque sprint.</li>
+                    <li><strong style="color:var(--text)">Crédibilité :</strong> en cas de revue par un autre consultant ou agence, les preuves Google sont incontestables.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ============ PANEL : GEO + AEO (NOUVELLES DISCIPLINES SEO 2026) ============ -->
+        
 </div>
 
         <div class="panel" id="panel-recs">
@@ -7051,6 +7034,13 @@ User-agent: ExaBot</code></pre>
 <script>
 // ============ PANEL SWITCHING ============
 function showPanel(target) {
+    var MERGED_INTO_AVANT = ['performance','security','schema','hreflang','errors404','sitemap','entity'];
+    if (MERGED_INTO_AVANT.indexOf(target) !== -1) {
+        showPanel('situation-avant');
+        var __el = document.getElementById('panel-' + target);
+        if (__el) setTimeout(function(){ __el.scrollIntoView({behavior:'smooth', block:'start'}); }, 60);
+        return;
+    }
     document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
     const panel = document.getElementById('panel-' + target);
     if (panel) panel.classList.add('active');
