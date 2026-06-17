@@ -4477,6 +4477,95 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 </div>
             </div>
 
+            <!-- ===== 3. ARCHITECTURE & CYCLE DE VIE D'UNE REQUÊTE ===== -->
+            <div class="ev-section" style="margin-top:32px">
+                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">🏗️ 3. Architecture &amp; cycle de vie d'une requête</div>
+                <div style="background:var(--surface-soft);border-radius:12px;padding:16px 20px;font-size:0.74rem;color:var(--text-body);line-height:1.65;margin-bottom:14px">
+                    <strong style="color:var(--text)">Particularité d'installation :</strong> WordPress tourne dans un sous-dossier <code>/wp/</code> (l'admin est sur <code>naoenergy.ch/wp/wp-admin/</code>) mais sert toutes les URLs publiques à la <strong>racine du domaine</strong>. Un fichier <code>.htaccess</code> à la racine orchestre le routage : redirections 301 héritées, forçage HTTPS, réécriture vers <code>/wp/</code> et en-têtes de sécurité. Hébergement <strong>Infomaniak (Suisse)</strong>.
+                </div>
+                <div style="background:var(--surface-soft);border-radius:12px;padding:18px 20px">
+                    <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:12px">Trajet d'une requête, de la demande visiteur au rendu (haut → bas) :</div>
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #5A98AE;display:flex;align-items:center;gap:14px"><div style="font-size:1rem;font-weight:800;color:#5A98AE;min-width:20px;text-align:center">1</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">Visiteur · Navigateur</div><div style="font-size:0.7rem;color:var(--text-muted);margin-top:1px">Requête HTTPS vers <code>naoenergy.ch</code> (desktop / mobile)</div></div></div>
+                    <div style="text-align:center;color:var(--text-muted);font-size:0.8rem;line-height:1.5">↓</div>
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #5A98AE;display:flex;align-items:center;gap:14px"><div style="font-size:1rem;font-weight:800;color:#5A98AE;min-width:20px;text-align:center">2</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">DNS + TLS · Hébergement Infomaniak</div><div style="font-size:0.7rem;color:var(--text-muted);margin-top:1px">Résolution du domaine + certificat HTTPS (serveurs suisses)</div></div></div>
+                    <div style="text-align:center;color:var(--text-muted);font-size:0.8rem;line-height:1.5">↓</div>
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #F5A623;display:flex;align-items:center;gap:14px"><div style="font-size:1rem;font-weight:800;color:#F5A623;min-width:20px;text-align:center">3</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">Apache + <code>.htaccess</code> racine</div><div style="font-size:0.7rem;color:var(--text-muted);margin-top:1px">Redirections 301, force HTTPS, en-têtes de sécurité, réécriture → <code>/wp/</code></div></div></div>
+                    <div style="text-align:center;color:var(--text-muted);font-size:0.8rem;line-height:1.5">↓</div>
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #2A8F4D;display:flex;align-items:center;gap:14px"><div style="font-size:1rem;font-weight:800;color:#2A8F4D;min-width:20px;text-align:center">4</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">WP Rocket · Cache de page <span style="font-weight:600;color:#2A8F4D">(chemin rapide)</span></div><div style="font-size:0.7rem;color:var(--text-muted);margin-top:1px">Si la page est en cache → HTML pré-généré servi directement (+ preload, lazy-load, optimisation JS/CSS). Sinon ↓</div></div></div>
+                    <div style="text-align:center;color:var(--text-muted);font-size:0.8rem;line-height:1.5">↓</div>
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #5A98AE;display:flex;align-items:center;gap:14px"><div style="font-size:1rem;font-weight:800;color:#5A98AE;min-width:20px;text-align:center">5</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">WordPress 6.9.4 · cœur applicatif</div><div style="font-size:0.7rem;color:var(--text-muted);margin-top:1px">Boot du CMS dans <code>/wp/</code>, résolution de la route, chargement du thème + extensions</div></div></div>
+                    <div style="text-align:center;color:var(--text-muted);font-size:0.8rem;line-height:1.5">↓</div>
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #7CB1C4;display:flex;align-items:center;gap:14px"><div style="font-size:1rem;font-weight:800;color:#7CB1C4;min-width:20px;text-align:center">6</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">Thème FSE <code>naoenergy v1.1.8</code> + ACF Pro</div><div style="font-size:0.7rem;color:var(--text-muted);margin-top:1px">Rend les templates (block theme), les 15 blocs custom et le contenu Gutenberg · ~32 extensions</div></div></div>
+                    <div style="text-align:center;color:var(--text-muted);font-size:0.8rem;line-height:1.5">↓</div>
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #6F3EAA;display:flex;align-items:center;gap:14px"><div style="font-size:1rem;font-weight:800;color:#6F3EAA;min-width:20px;text-align:center">7</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">Base de données MySQL</div><div style="font-size:0.7rem;color:var(--text-muted);margin-top:1px">Contenus (pages, CPT), options, CSS du Customizer, métadonnées Yoast</div></div></div>
+                </div>
+            </div>
+
+            <!-- ===== 4. MODÈLE DE CONTENU ===== -->
+            <div class="ev-section" style="margin-top:32px">
+                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">🗂️ 4. Modèle de contenu (types &amp; taxonomies)</div>
+                <div style="background:var(--surface-soft);border-radius:12px;padding:16px 20px;font-size:0.74rem;color:var(--text-body);line-height:1.65;margin-bottom:14px">
+                    Le contenu n'est pas géré uniquement en « pages » : l'offre commerciale repose sur un <strong>type de contenu personnalisé (Custom Post Type)</strong> <code>solution</code>, ce qui structure l'URL, mutualise le template et renforce le maillage SEO.
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;border-left:3px solid #5A98AE"><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Pages</div><div style="font-size:0.7rem;color:var(--text-muted);margin:3px 0 6px">Contenu unique / hiérarchique</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5">Accueil, Contact, Qui sommes-nous, Mentions légales…</div></div>
+                    <div style="background:rgba(124,177,196,0.1);border-radius:10px;padding:14px 16px;border-left:3px solid #7CB1C4"><div style="font-size:0.78rem;font-weight:700;color:var(--text)">CPT <code>solution</code> <span style="font-weight:500;color:var(--text-muted)">→ /solutions/*</span></div><div style="font-size:0.7rem;color:var(--text-muted);margin:3px 0 6px">Offres produits / services (cœur business)</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5">Photovoltaïque · Pompes à chaleur · Batteries de stockage · Borne de recharge · Carport solaire · Boiler thermodynamique · Professionnels</div></div>
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;border-left:3px solid #5A98AE"><div style="font-size:0.78rem;font-weight:700;color:var(--text)">CPT <code>realization</code> <span style="font-weight:500;color:var(--text-muted)">→ /nos-realisations/</span></div><div style="font-size:0.7rem;color:var(--text-muted);margin:3px 0 6px">Études de cas / chantiers</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5">Portfolio d'installations réalisées</div></div>
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;border-left:3px solid #5A98AE"><div style="font-size:0.78rem;font-weight:700;color:var(--text)">CPT <code>partner</code> <span style="font-weight:500;color:var(--text-muted)">→ /partner/</span></div><div style="font-size:0.7rem;color:var(--text-muted);margin:3px 0 6px">Partenaires &amp; marques</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5">Fiches partenaires (Atmoce, Enphase, SolarEdge…)</div></div>
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;border-left:3px solid #5A98AE"><div style="font-size:0.78rem;font-weight:700;color:var(--text)">Articles <span style="font-weight:500;color:var(--text-muted)">→ /actualites/</span></div><div style="font-size:0.7rem;color:var(--text-muted);margin:3px 0 6px">Blog / actualités</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5">Contenu éditorial + maillage interne</div></div>
+                </div>
+                <div style="background:rgba(90,152,174,0.08);border-left:3px solid #5A98AE;border-radius:8px;padding:14px 16px;margin-top:14px">
+                    <div style="font-size:0.76rem;font-weight:700;color:#5A98AE;margin-bottom:6px">🎯 Choix d'architecture validé</div>
+                    <div style="font-size:0.72rem;color:var(--text-body);line-height:1.65">Regrouper les offres sous <code>/solutions/</code> via un CPT dédié — plutôt que des pages isolées — apporte une <strong>taxonomie cohérente</strong>, un <strong>template mutualisé</strong> (<code>single-solution</code>), un <strong>schema Product/Service systématisable</strong> et un <strong>silo SEO thématique</strong>. Les pages d'atterrissage Pompes à chaleur et Batteries sont d'ailleurs servies par ce CPT (<code>/solutions/pompes-a-chaleur/</code> · <code>/solutions/batteries-de-stockage/</code>).</div>
+                </div>
+            </div>
+
+            <!-- ===== 5. INTÉGRATIONS & FLUX DE DONNÉES ===== -->
+            <div class="ev-section" style="margin-top:32px">
+                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">🔄 5. Intégrations &amp; flux de données</div>
+                <div style="background:var(--surface-soft);border-radius:12px;padding:18px 20px;margin-bottom:14px">
+                    <div style="font-size:0.78rem;font-weight:700;color:var(--text);margin-bottom:12px">A · Capture de lead <span style="font-weight:500;color:var(--text-muted)">(parcours de conversion)</span></div>
+                    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+                        <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 13px;font-size:0.73rem;font-weight:700;color:var(--text);text-align:center;line-height:1.35">Formulaire Typeform<br><span style="font-weight:500;color:var(--text-muted);font-size:0.66rem">devis · contact · projet</span></div>
+                        <div style="color:#5A98AE;font-weight:800;font-size:0.95rem">→</div>
+                        <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 13px;font-size:0.73rem;font-weight:700;color:var(--text);text-align:center;line-height:1.35">Make<br><span style="font-weight:500;color:var(--text-muted);font-size:0.66rem">automatisation</span></div>
+                        <div style="color:#5A98AE;font-weight:800;font-size:0.95rem">→</div>
+                        <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 13px;font-size:0.73rem;font-weight:700;color:var(--text);text-align:center;line-height:1.35">Odoo CRM<br><span style="font-weight:500;color:var(--text-muted);font-size:0.66rem">leads &amp; deals</span></div>
+                        <div style="color:#5A98AE;font-weight:800;font-size:0.95rem">→</div>
+                        <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 13px;font-size:0.73rem;font-weight:700;color:var(--text);text-align:center;line-height:1.35">Meta CAPI<br><span style="font-weight:500;color:var(--text-muted);font-size:0.66rem">conversions server-side</span></div>
+                    </div>
+                </div>
+                <div style="background:var(--surface-soft);border-radius:12px;padding:18px 20px;margin-bottom:14px">
+                    <div style="font-size:0.78rem;font-weight:700;color:var(--text);margin-bottom:12px">B · Mesure d'audience <span style="font-weight:500;color:var(--text-muted)">&amp; consentement</span></div>
+                    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+                        <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 13px;font-size:0.73rem;font-weight:700;color:var(--text);text-align:center;line-height:1.35">Visiteur</div>
+                        <div style="color:#5A98AE;font-weight:800;font-size:0.95rem">→</div>
+                        <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 13px;font-size:0.73rem;font-weight:700;color:var(--text);text-align:center;line-height:1.35">CookieYes<br><span style="font-weight:500;color:var(--text-muted);font-size:0.66rem">consentement RGPD / nLPD</span></div>
+                        <div style="color:#5A98AE;font-weight:800;font-size:0.95rem">→</div>
+                        <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 13px;font-size:0.73rem;font-weight:700;color:var(--text);text-align:center;line-height:1.35">Google Tag Manager<br><span style="font-weight:500;color:var(--text-muted);font-size:0.66rem">orchestration des balises</span></div>
+                        <div style="color:#5A98AE;font-weight:800;font-size:0.95rem">→</div>
+                        <div style="background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:9px 13px;font-size:0.73rem;font-weight:700;color:var(--text);text-align:center;line-height:1.35">GA4 · Meta Pixel · Hotjar · Trustindex</div>
+                    </div>
+                </div>
+                <div style="background:var(--surface-soft);border-radius:12px;padding:18px 20px">
+                    <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:10px">Briques d'intégration &amp; rôle</div>
+                    <table style="width:100%;font-size:0.74rem;border-collapse:collapse">
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:7px 0;width:32%"><strong style="color:var(--text)">Typeform</strong></td><td style="padding:7px 0;color:var(--text-body)">Formulaires de capture (devis, contact, projet)</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:7px 0"><strong style="color:var(--text)">Make</strong></td><td style="padding:7px 0;color:var(--text-body)">Automatisation / connecteur entre les outils</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:7px 0"><strong style="color:var(--text)">Odoo</strong></td><td style="padding:7px 0;color:var(--text-body)">CRM — leads, deals, clients</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:7px 0"><strong style="color:var(--text)">Meta CAPI</strong></td><td style="padding:7px 0;color:var(--text-body)">Conversions API server-side (déduplique le Pixel, résiste aux adblockers / ITP)</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:7px 0"><strong style="color:var(--text)">Google Tag Manager</strong></td><td style="padding:7px 0;color:var(--text-body)">Orchestration centralisée des balises</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:7px 0"><strong style="color:var(--text)">Google Analytics 4</strong></td><td style="padding:7px 0;color:var(--text-body)">Mesure d'audience &amp; comportement</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:7px 0"><strong style="color:var(--text)">Meta Pixel</strong></td><td style="padding:7px 0;color:var(--text-body)">Remarketing &amp; suivi des conversions</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:7px 0"><strong style="color:var(--text)">Hotjar</strong></td><td style="padding:7px 0;color:var(--text-body)">Heatmaps &amp; enregistrements de sessions</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:7px 0"><strong style="color:var(--text)">Trustindex</strong></td><td style="padding:7px 0;color:var(--text-body)">Widget d'avis Google (preuve sociale)</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:7px 0"><strong style="color:var(--text)">CookieYes</strong></td><td style="padding:7px 0;color:var(--text-body)">Gestion du consentement (RGPD / nLPD)</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:7px 0"><strong style="color:var(--text)">Polylang Pro</strong></td><td style="padding:7px 0;color:var(--text-body)">Internationalisation FR / EN</td></tr>
+                        <tr><td style="padding:7px 0"><strong style="color:var(--text)">Yoast SEO</strong></td><td style="padding:7px 0;color:var(--text-body)">Métadonnées + génération du schema JSON-LD</td></tr>
+                    </table>
+                </div>
+            </div>
+
         </div>
 
         <!-- ============ PANEL : PERFORMANCE ============ -->
