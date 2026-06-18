@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Guide UTM — NaoEnergy · Tagger ses liens & pubs</title>
+<style>
+  :root{
+    --turq:#7CB1C4; --turq-d:#5A98AE; --fg:#233036; --bg:#f9fafc;
+    --gold:#f5a623; --border:#e2e8ee; --muted:#6b7a83; --green:#2A8F4D; --soft:#eef4f7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:0 22px 80px}
+  header.doc{background:linear-gradient(135deg,#233036 0%,#2f4450 100%);color:#fff;
+    border-radius:0 0 0 40px;padding:46px 40px 38px;margin-bottom:34px}
+  header.doc .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.7rem;font-weight:800;color:var(--turq);margin-bottom:10px}
+  header.doc h1{margin:0 0 8px;font-size:2rem;font-weight:800;letter-spacing:-.01em}
+  header.doc p{margin:0;opacity:.85;font-size:.95rem;max-width:620px}
+  header.doc .meta{margin-top:18px;font-size:.72rem;opacity:.65}
+  h2{font-size:1.3rem;font-weight:800;margin:42px 0 14px;display:flex;align-items:center;gap:10px}
+  h2 .n{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;
+    background:var(--turq);color:#fff;border-radius:0 12px 0 12px;font-size:.85rem;font-weight:800;flex-shrink:0}
+  h3{font-size:1rem;font-weight:800;margin:24px 0 8px;color:var(--turq-d)}
+  p{margin:0 0 12px}
+  .card{background:#fff;border:1px solid var(--border);border-radius:0 20px 0 20px;padding:22px 26px;margin-bottom:16px}
+  .rules{counter-reset:r;list-style:none;margin:0;padding:0}
+  .rules li{counter-increment:r;position:relative;padding:8px 0 8px 42px;border-bottom:1px solid var(--border)}
+  .rules li:last-child{border-bottom:none}
+  .rules li::before{content:counter(r);position:absolute;left:0;top:7px;width:26px;height:26px;
+    background:var(--soft);color:var(--turq-d);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.8rem}
+  table{width:100%;border-collapse:collapse;margin:6px 0 4px;font-size:.88rem}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+  th{background:var(--soft);color:var(--fg);font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}
+  code{background:var(--soft);color:#0d4b5e;padding:2px 6px;border-radius:5px;font-size:.86em;
+    font-family:"SF Mono",Consolas,Monaco,monospace}
+  .pill{display:inline-block;background:var(--soft);border:1px solid var(--border);border-radius:100px;
+    padding:3px 11px;font-size:.78rem;margin:3px 4px 3px 0;font-family:"SF Mono",Consolas,monospace}
+  .codeblock{background:#1d2b32;color:#d6e6ec;border-radius:0 14px 0 14px;padding:16px 18px;margin:10px 0 18px;
+    font-family:"SF Mono",Consolas,Monaco,monospace;font-size:.82rem;line-height:1.6;overflow-x:auto;white-space:pre-wrap;word-break:break-word}
+  .codeblock .k{color:var(--turq)}
+  .label{font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:14px 0 4px}
+  .note{background:#fff8ee;border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:14px 18px;margin:18px 0;font-size:.9rem}
+  .ok{color:var(--green);font-weight:700}
+  .ex{background:var(--soft);border-radius:0 16px 0 16px;padding:16px 20px;font-size:.9rem}
+  footer.doc{margin-top:48px;padding-top:18px;border-top:1px solid var(--border);font-size:.78rem;color:var(--muted);text-align:center}
+  @media print{body{background:#fff}header.doc{border-radius:0}.card,.codeblock{break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="doc">
+  <div class="eyebrow">NaoEnergy · Tracking des leads</div>
+  <h1>Guide UTM — tagger ses liens &amp; ses pubs</h1>
+  <p>La convention de nommage pour savoir d'où vient chaque lead (Google Ads, Meta, newsletter, organique…) avec des données propres et cohérentes.</p>
+  <div class="meta">Document interne · juin 2026 · MouaDev pour NaoEnergy</div>
+</header>
+
+<div class="wrap">
+
+  <div class="card">
+    <p style="margin:0"><strong>À quoi ça sert ?</strong> Chaque lien de pub ou d'email doit porter des « étiquettes » (UTM) pour qu'à l'arrivée d'un visiteur, on sache <strong>d'où il vient</strong>. Le script du site capte ces étiquettes (+ le <code>gclid</code> / <code>fbclid</code>) et les enregistre sur chaque lead. Pour que les rapports soient lisibles, il faut <strong>nommer ces étiquettes toujours de la même façon</strong>. C'est l'objet de ce guide.</p>
+  </div>
+
+  <h2><span class="n">1</span> Les 5 règles d'or</h2>
+  <div class="card">
+    <ol class="rules">
+      <li><strong>Tout en minuscules</strong> — <code>google</code>, jamais <code>Google</code>.</li>
+      <li><strong>Pas d'espaces</strong> — on utilise des tirets : <code>paid-social</code>, <code>pac-vaud-2026</code>.</li>
+      <li><strong>Toujours les mêmes valeurs</strong> — ne pas écrire <code>fb</code> un jour et <code>facebook</code> l'autre.</li>
+      <li><strong>Pas d'accents</strong> ni de caractères spéciaux.</li>
+      <li><strong>Cohérence &gt; créativité</strong> — une convention simple, suivie partout.</li>
+    </ol>
+  </div>
+
+  <h2><span class="n">2</span> Valeurs standards à utiliser</h2>
+
+  <h3>utm_source — <span style="font-weight:500;color:var(--muted)">qui envoie le visiteur</span></h3>
+  <div>
+    <span class="pill">google</span><span class="pill">bing</span><span class="pill">facebook</span>
+    <span class="pill">instagram</span><span class="pill">linkedin</span><span class="pill">newsletter</span>
+    <span class="pill">youtube</span><span class="pill">[nom-partenaire]</span>
+  </div>
+
+  <h3 style="margin-top:22px">utm_medium — <span style="font-weight:500;color:var(--muted)">comment (type de canal)</span></h3>
+  <table>
+    <thead><tr><th style="width:160px">Valeur</th><th>Quand l'utiliser</th></tr></thead>
+    <tbody>
+      <tr><td><code>cpc</code></td><td>Pub Search payante (Google&nbsp;Ads, Bing&nbsp;Ads)</td></tr>
+      <tr><td><code>paid-social</code></td><td>Pub payante Meta (Facebook/Instagram) ou LinkedIn</td></tr>
+      <tr><td><code>display</code></td><td>Bannières / réseau Display</td></tr>
+      <tr><td><code>organic</code></td><td>Recherche gratuite (référencement naturel)</td></tr>
+      <tr><td><code>social</code></td><td>Posts gratuits sur les réseaux</td></tr>
+      <tr><td><code>email</code></td><td>Newsletter / emailing</td></tr>
+      <tr><td><code>referral</code></td><td>Lien depuis un site partenaire</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top:22px">Les 3 autres</h3>
+  <table>
+    <tbody>
+      <tr><td style="width:160px"><code>utm_campaign</code></td><td>Le <strong>nom de la campagne</strong> (voir §3)</td></tr>
+      <tr><td><code>utm_content</code></td><td>L'<strong>annonce / variante</strong> (utile pour l'A/B) — ex. <code>annonce-a</code>, <code>video-1</code></td></tr>
+      <tr><td><code>utm_term</code></td><td>Le <strong>mot-clé</strong> (Search) — ex. <code>installation-pompe-a-chaleur</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2><span class="n">3</span> Nommage des campagnes</h2>
+  <div class="card">
+    <p>Modèle : <strong><code>produit-zone-objectif-période</code></strong> (en tirets).</p>
+    <div>
+      <span class="pill">pac-vaud-leadgen-2026</span>
+      <span class="pill">batterie-subvention-q3</span>
+      <span class="pill">pv-geneve-soldes-juin</span>
+    </div>
+  </div>
+
+  <h2><span class="n">4</span> Modèles prêts à copier, par canal</h2>
+
+  <div class="label">Google Ads</div>
+  <p style="font-size:.9rem">Le <code>gclid</code> est ajouté automatiquement si l'<strong>auto-tagging</strong> est activé (à garder). Pour les UTM, dans <strong>« Suffixe d'URL finale »</strong> :</p>
+  <div class="codeblock"><span class="k">utm_source</span>=google&amp;<span class="k">utm_medium</span>=cpc&amp;<span class="k">utm_campaign</span>={campaignid}&amp;<span class="k">utm_content</span>={creative}&amp;<span class="k">utm_term</span>={keyword}</div>
+  <p style="font-size:.85rem;color:var(--muted);margin-top:-8px">Les <code>{campaignid}</code>, <code>{keyword}</code>… sont des variables Google qui se remplissent toutes seules. Version manuelle&nbsp;: <code>utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=pac-vaud-2026</code></p>
+
+  <div class="label">Meta — Facebook / Instagram</div>
+  <p style="font-size:.9rem">Le <code>fbclid</code> s'ajoute seul. Dans le champ <strong>« Paramètres d'URL »</strong> de l'annonce :</p>
+  <div class="codeblock"><span class="k">utm_source</span>=facebook&amp;<span class="k">utm_medium</span>=paid-social&amp;<span class="k">utm_campaign</span>=batterie-leadgen-2026&amp;<span class="k">utm_content</span>=video-1</div>
+
+  <div class="label">Newsletter / Email</div>
+  <p style="font-size:.9rem">À ajouter à la fin des liens :</p>
+  <div class="codeblock">?<span class="k">utm_source</span>=newsletter&amp;<span class="k">utm_medium</span>=email&amp;<span class="k">utm_campaign</span>=octobre-2026</div>
+
+  <div class="label">LinkedIn payant</div>
+  <div class="codeblock">?<span class="k">utm_source</span>=linkedin&amp;<span class="k">utm_medium</span>=paid-social&amp;<span class="k">utm_campaign</span>=pro-contracting-2026</div>
+
+  <h2><span class="n">5</span> Exemple complet</h2>
+  <div class="ex">
+    <p style="margin:0 0 8px">Pub Google pour la pompe à chaleur dans le canton de Vaud :</p>
+    <div class="codeblock" style="margin:0">https://naoenergy.ch/solutions/pompes-a-chaleur/?<span class="k">utm_source</span>=google&amp;<span class="k">utm_medium</span>=cpc&amp;<span class="k">utm_campaign</span>=pac-vaud-2026</div>
+    <p style="margin:12px 0 0">→ Le visiteur arrive, le script capte tout + le <code>gclid</code>, et à l'envoi du formulaire le lead affichera : <span class="ok">google / cpc / pac-vaud-2026</span> ✅</p>
+  </div>
+
+  <div class="note">
+    <strong>💡 Bon à savoir.</strong> Pour Google Ads et Meta, l'<strong>auto-tagging</strong> (gclid/fbclid) suffit pour la <strong>mesure de base</strong> des conversions. Les UTM en plus servent à avoir des <strong>rapports lisibles</strong> (« combien de leads de la campagne PAC Vaud »). La grande distinction à retenir : <strong>payant</strong> (medium = <code>cpc</code>/<code>paid-social</code> + gclid/fbclid) <strong>vs gratuit</strong> (medium = <code>organic</code>, ou juste un referrer).
+  </div>
+
+  <h2><span class="n">6</span> Aide-mémoire — à quoi ressemblent les vraies sources</h2>
+  <table>
+    <thead><tr><th>Provenance réelle</th><th>Ce qu'on capte</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Pub Google Ads</strong></td><td>source=google · medium=<code>cpc</code> · <code>gclid</code>=…</td></tr>
+      <tr><td><strong>Google gratuit (organique)</strong></td><td>source=google · medium=<code>organic</code> (ou referrer=google)</td></tr>
+      <tr><td><strong>Pub Facebook / Instagram</strong></td><td>source=facebook · medium=<code>paid-social</code> · <code>fbclid</code>=…</td></tr>
+      <tr><td><strong>Newsletter</strong></td><td>source=newsletter · medium=<code>email</code></td></tr>
+      <tr><td><strong>Accès direct</strong> (URL tapée)</td><td>tout vide, referrer vide</td></tr>
+      <tr><td><strong>Lien d'un autre site</strong></td><td>referrer = le site en question</td></tr>
+    </tbody>
+  </table>
+
+  <footer class="doc">
+    NaoEnergy — Guide UTM · données de provenance des leads · MouaDev<br>
+    Champs cachés actifs sur tous les formulaires Typeform · script de capture en ligne (juin 2026)
+  </footer>
+
+</div>
+</body>
+</html>
