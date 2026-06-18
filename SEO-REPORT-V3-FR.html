@@ -2838,6 +2838,10 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                         <span class="nav-label">🎨 Thème &amp; Stack</span>
                         <span class="nav-badge" style="background:rgba(124,177,196,0.20);color:#5A98AE;font-weight:700">NEW</span>
                     </button>
+                    <button class="nav-child" data-target="redesign" type="button">
+                        <span class="nav-label">🛠️ Refonte des pages</span>
+                        <span class="nav-badge new">NEW</span>
+                    </button>
                     <button class="nav-child" data-target="sitekit" type="button">
                         <span class="nav-label">Audit Site Kit</span>
                     </button>
@@ -4994,6 +4998,70 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 </div>
             </div>
 
+        </div>
+
+        <!-- ============ PANEL : REFONTE DES PAGES ============ -->
+        <div class="panel" id="panel-redesign">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">🛠️ Refonte des pages — Méthodologie</h1>
+                        <span class="badge new">Nouveau</span>
+                    </div>
+                    <p class="page-subtitle">Le processus appliqué pour refondre les pages clés — Contact, Landings Pompes à chaleur &amp; Batteries, Votre projet, Merci — sur un site en production (Ads payantes), sans jamais casser le live.</p>
+                </div>
+            </div>
+
+            <div class="ev-section" style="margin-top:24px">
+                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">🔄 1. Le workflow (méthode reproductible)</div>
+                <div style="background:var(--surface-soft);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:9px">
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #5A98AE;display:flex;align-items:flex-start;gap:13px"><div style="font-size:0.95rem;font-weight:800;color:#5A98AE;min-width:18px;text-align:center">1</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">Toujours sur un brouillon, jamais en direct</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5;margin-top:2px">Chaque refonte démarre sur un brouillon séparé — les visiteurs gardent l'ancienne version jusqu'à validation.</div></div></div>
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #5A98AE;display:flex;align-items:flex-start;gap:13px"><div style="font-size:0.95rem;font-weight:800;color:#5A98AE;min-width:18px;text-align:center">2</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">Design à partir de patterns validés + vrais visuels</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5;margin-top:2px">Réutilisation des patterns du thème FSE parent + la charte (CTA diagonal, turquoise <code>#7CB1C4</code>) + photos/vidéos NaoEnergy réelles — pas de stock.</div></div></div>
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #5A98AE;display:flex;align-items:flex-start;gap:13px"><div style="font-size:0.95rem;font-weight:800;color:#5A98AE;min-width:18px;text-align:center">3</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">Édition du contenu en « chaîne » (content.raw) via l'API REST</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5;margin-top:2px">Jamais via le round-trip DOM de l'éditeur (qui corrompt ces pages). Chaque écriture est protégée par des garde-fous (vérification d'unicité) avant sauvegarde.</div></div></div>
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #5A98AE;display:flex;align-items:flex-start;gap:13px"><div style="font-size:0.95rem;font-weight:800;color:#5A98AE;min-width:18px;text-align:center">4</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">Discipline CSS</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5;margin-top:2px">Global via le Customizer du parent ; spécifique à la page scopé dans le bloc <code>wp:html</code>. On édite les couches existantes, on n'empile pas les <code>!important</code>.</div></div></div>
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #2A8F4D;display:flex;align-items:flex-start;gap:13px"><div style="font-size:0.95rem;font-weight:800;color:#2A8F4D;min-width:18px;text-align:center">5</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">Preview → validation</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5;margin-top:2px">Save Draft + Share Preview Link → <strong>GO de Charline</strong> avant toute mise en ligne (site en prod avec budget Ads).</div></div></div>
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #6F3EAA;display:flex;align-items:flex-start;gap:13px"><div style="font-size:0.95rem;font-weight:800;color:#6F3EAA;min-width:18px;text-align:center">6</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">Mise en ligne = swap du contenu dans la page live</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5;margin-top:2px">On bascule le contenu validé <em>dans</em> la page/CPT existant — pas une nouvelle publication — pour préserver l'URL, le canonical et les liens entrants/Ads.</div></div></div>
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #5A98AE;display:flex;align-items:flex-start;gap:13px"><div style="font-size:0.95rem;font-weight:800;color:#5A98AE;min-width:18px;text-align:center">7</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">Purge WP Rocket + vérification</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5;margin-top:2px">Mesure DOM sur l'URL live après chaque changement (les captures d'écran sont peu fiables sur ce site).</div></div></div>
+                    <div style="background:var(--bg);border-radius:8px;padding:11px 15px;border-left:3px solid #F5A623;display:flex;align-items:flex-start;gap:13px"><div style="font-size:0.95rem;font-weight:800;color:#F5A623;min-width:18px;text-align:center">8</div><div style="flex:1"><div style="font-size:0.76rem;font-weight:700;color:var(--text)">Renforcement post-lancement</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5;margin-top:2px">Correction des vrais soucis qui n'apparaissent qu'en ligne (Typeform, affichage mobile, cache).</div></div></div>
+                </div>
+            </div>
+
+            <div class="ev-section" style="margin-top:32px">
+                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">📄 2. Pages refondues</div>
+                <div style="background:var(--surface-soft);border-radius:12px;padding:14px 16px;overflow:auto">
+                    <table style="width:100%;font-size:0.73rem;border-collapse:collapse;min-width:560px">
+                        <tr style="border-bottom:2px solid var(--border)"><td style="padding:8px 10px 8px 0;color:var(--text-muted);font-weight:700;width:20%">Page</td><td style="padding:8px 10px;color:var(--text-muted);font-weight:700;width:30%">Brouillon → Live</td><td style="padding:8px 0 8px 10px;color:var(--text-muted);font-weight:700">Points clés</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px 9px 0;font-weight:700;color:var(--text)">Contact</td><td style="padding:9px 10px"><code>13652</code> → <code>545</code> <span style="color:var(--text-muted)">/contact/</span></td><td style="padding:9px 0 9px 10px;color:var(--text-body)">Hero + 2 colonnes + FAQ ; le <strong>Typeform remplace Gravity Form</strong> ; 4 retouches de copy</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px 9px 0;font-weight:700;color:var(--text)">Votre projet</td><td style="padding:9px 10px"><code>13723</code> <span style="color:var(--text-muted)">/votre-projet/</span></td><td style="padding:9px 0 9px 10px;color:var(--text-body)">Grille duo, « Pourquoi naoenergy », timeline d'étapes, « Nos agences » pleine largeur, marquee ; fix d'une redirection 301 <code>.htaccess</code> qui masquait la page</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px 9px 0;font-weight:700;color:var(--text)">Merci Contact</td><td style="padding:9px 10px"><code>14006</code> → <span style="color:var(--text-muted)">/merci-contact/</span></td><td style="padding:9px 0 9px 10px;color:var(--text-body)">Hero de succès animé + carrousel cross-sell + carte contact (ancienne <code>14001</code> en corbeille)</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:9px 10px 9px 0;font-weight:700;color:var(--text)">Pompes à chaleur</td><td style="padding:9px 10px"><code>13358</code> → <strong>solution 121</strong> <span style="color:var(--text-muted)">/solutions/pompes-a-chaleur/</span></td><td style="padding:9px 0 9px 10px;color:var(--text-body)">Landing complète (hero vidéo, sections, Typeform devis) intégrée au CPT <code>solution</code></td></tr>
+                        <tr><td style="padding:9px 10px 9px 0;font-weight:700;color:var(--text)">Batteries</td><td style="padding:9px 10px"><code>13741</code> → <strong>solution 129</strong> <span style="color:var(--text-muted)">/solutions/batteries-de-stockage/</span></td><td style="padding:9px 0 9px 10px;color:var(--text-body)">Même gabarit converti PAC→batterie (zoom Enphase, cartes capacités, marquee)</td></tr>
+                    </table>
+                </div>
+                <div style="background:rgba(124,177,196,0.1);border-left:3px solid #7CB1C4;border-radius:8px;padding:12px 16px;margin-top:12px;font-size:0.72rem;color:var(--text-body);line-height:1.6"><strong style="color:var(--text)">À noter :</strong> les landings PAC &amp; Batteries sont mises en ligne en tant que <strong>« solution » (Custom Post Type)</strong>, pas en pages — un choix cohérent (taxonomie produit unifiée, silo SEO <code>/solutions/</code>).</div>
+            </div>
+
+            <div class="ev-section" style="margin-top:32px">
+                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">🔧 3. Renforcement post-lancement</div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px">
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;border-left:3px solid #2A8F4D"><div style="font-size:0.76rem;font-weight:700;color:var(--text);margin-bottom:4px">Typeform « invisible » au 1er chargement</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5">Réservation de hauteur (<code>min-height</code>) sur les 4 formulaires + <strong>preconnect</strong> aux domaines Typeform.</div></div>
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;border-left:3px solid #2A8F4D"><div style="font-size:0.76rem;font-weight:700;color:var(--text);margin-bottom:4px">Espace header ↔ hero sur mobile</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5">Règle de padding re-scopée vers la page live (<code>postid-121/129</code>) → hero collé sous le header.</div></div>
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;border-left:3px solid #2A8F4D"><div style="font-size:0.76rem;font-weight:700;color:var(--text);margin-bottom:4px">Typeform coupé sur iOS réel</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5">Champs masqués + bouton « Envoyer » chevauchant → plancher de hauteur sur le conteneur + l'iframe.</div></div>
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;border-left:3px solid #2A8F4D"><div style="font-size:0.76rem;font-weight:700;color:var(--text);margin-bottom:4px">Bug filtre /realisations/</div><div style="font-size:0.72rem;color:var(--text-body);line-height:1.5">WP Rocket RUCSS supprimait le CSS du filtre + des points du slider → <strong>safelisté</strong> (snippet #31).</div></div>
+                </div>
+            </div>
+
+            <div class="ev-section" style="margin-top:32px">
+                <div class="ev-section-title" style="font-size:1rem;font-weight:800;margin-bottom:14px;color:var(--text)">🧠 4. Pièges techniques retenus</div>
+                <div style="background:rgba(232,93,74,0.07);border-left:3px solid #E85D4A;border-radius:8px;padding:14px 18px">
+                    <ul style="margin:0;padding-left:18px;font-size:0.73rem;color:var(--text-body);line-height:1.8">
+                        <li>Les comptes <strong>connectés contournent WP Rocket</strong> → certains bugs (RUCSS, cache) sont invisibles en admin mais bien réels pour les visiteurs.</li>
+                        <li>Le <strong>swap brouillon→live change la classe <code>body</code></strong> → le CSS scopé à l'ancien ID de brouillon (<code>page-id-13358</code>) devient mort sur la page live (<code>postid-121</code>).</li>
+                        <li>L'<strong>auto-resize de Typeform n'est pas fiable sur iOS réel</strong> (OK en émulateur) → imposer des hauteurs explicites.</li>
+                        <li><strong><code>content.raw</code> en chaîne = sûr</strong> ; sauvegarde via l'éditeur = corruption du contenu.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <!-- ============ PANEL : PERFORMANCE ============ -->
