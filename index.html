@@ -2933,6 +2933,33 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             </div>
         </div>
 
+        <!-- Paid Media (collapsible group) -->
+        <div class="nav-section">
+            <button class="nav-group open" type="button" onclick="this.classList.toggle('open')">
+                <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 010 7.07"/></svg>
+                <span class="nav-label">Publicité (Ads)</span>
+                <svg class="nav-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <div class="nav-children">
+                <div class="nav-children-inner">
+                    <button class="nav-child" data-target="google_ads" type="button">
+                        <span class="nav-label">Google Ads</span>
+                    </button>
+                    <button class="nav-child" data-target="meta_ads" type="button">
+                        <span class="nav-label">Meta Ads</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Audits externes -->
+        <div class="nav-section">
+            <button class="nav-item" data-target="external_audits" type="button" style="color:#6F3EAA">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <span class="nav-label">Audits externes</span>
+            </button>
+        </div>
+
     </aside>
 
     <!-- ============ MAIN ============ -->
@@ -5364,7 +5391,7 @@ User-agent: ExaBot</code></pre>
 
                 <!-- ===== Google Ads — lien vers le détail ===== -->
                 <div id="det-googleads" style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border)">
-                    <button type="button" onclick="document.getElementById('panel-google_ads').scrollIntoView({behavior:'smooth',block:'start'})" title="Aller au détail Google Ads" style="display:flex;align-items:center;gap:10px;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left;transition:opacity .2s" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">
+                    <button type="button" onclick="showPanel('google_ads')" title="Aller au détail Google Ads" style="display:flex;align-items:center;gap:10px;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left;transition:opacity .2s" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">
                         <span style="font-size:1.25rem">🟡</span>
                         <h2 style="margin:0;font-size:1.2rem;font-weight:800;color:var(--text)">Google Ads — détail</h2>
                         <span style="margin-left:auto;font-size:0.75rem;font-weight:700;color:#5A98AE;white-space:nowrap">voir le détail ↓</span>
@@ -5374,7 +5401,7 @@ User-agent: ExaBot</code></pre>
 
                 <!-- ===== Meta Ads — lien vers le détail ===== -->
                 <div id="det-meta" style="margin-top:28px;padding-top:24px;border-top:1px solid var(--border)">
-                    <button type="button" onclick="document.getElementById('panel-meta_ads').scrollIntoView({behavior:'smooth',block:'start'})" title="Aller au détail Meta Ads" style="display:flex;align-items:center;gap:10px;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left;transition:opacity .2s" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">
+                    <button type="button" onclick="showPanel('meta_ads')" title="Aller au détail Meta Ads" style="display:flex;align-items:center;gap:10px;width:100%;background:none;border:none;padding:0;cursor:pointer;text-align:left;transition:opacity .2s" onmouseover="this.style.opacity=0.7" onmouseout="this.style.opacity=1">
                         <span style="font-size:1.25rem">📱</span>
                         <h2 style="margin:0;font-size:1.2rem;font-weight:800;color:var(--text)">Meta Ads — détail</h2>
                         <span style="margin-left:auto;font-size:0.75rem;font-weight:700;color:#5A98AE;white-space:nowrap">voir le détail ↓</span>
@@ -5948,6 +5975,14 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             <div class="issue-item info"><span class="issue-badge">Info</span><div><strong>La description de l'organisation est vide.</strong> Ce champ alimente directement le schema Organization vu par Google.</div></div>
         </div>
 
+        <!-- ============ PANEL : GEO + AEO (NOUVELLES DISCIPLINES SEO 2026) ============ -->
+        
+
+        
+</div>
+
+        
+
         <!-- ============ PANEL : AUDITS EXTERNES (PREUVES D'AMÉLIORATION) ============ -->
         <div class="panel" id="panel-external_audits">
             <div class="page-header">
@@ -6092,15 +6127,9 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             </div>
         </div>
 
-        <!-- ============ PANEL : GEO + AEO (NOUVELLES DISCIPLINES SEO 2026) ============ -->
         
 
-        <!-- ===== Deplace : Publicite payante (etat avant projet) ===== -->
-        <div style="margin:40px 0 4px;padding-top:26px;border-top:2px solid var(--border)">
-            <h2 style="font-size:1.35rem;font-weight:800;color:var(--text);margin:0 0 4px">💰 Publicite payante — detail (etat avant projet)</h2>
-            <p style="font-size:0.8rem;color:var(--text-muted);margin:0">Detail des campagnes Google Ads et Meta Ads constatees au demarrage du projet.</p>
-        </div>
-<div class="panel" id="panel-google_ads" style="display:block;scroll-margin-top:80px">
+        <div class="panel" id="panel-google_ads">
             <div class="page-header">
                 <div>
                     <div class="page-title-row">
@@ -6471,7 +6500,7 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
         </div>
 
         <!-- ============ PANEL : META ADS ============ -->
-        <div class="panel" id="panel-meta_ads" style="display:block;scroll-margin-top:80px">
+        <div class="panel" id="panel-meta_ads">
             <div class="page-header">
                 <div>
                     <div class="page-title-row">
@@ -6767,9 +6796,8 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
         </div>
 
         
-</div>
 
-        <div class="panel" id="panel-recs">
+<div class="panel" id="panel-recs">
             <div class="page-header">
                 <div>
                     <h1 class="page-title">Plan d'actions prioritaires</h1>
@@ -6959,9 +6987,9 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                     <thead><tr><th style="width:42px">#</th><th style="width:20%">Action</th><th>En clair</th><th style="width:72px;text-align:center">Statut</th><th style="width:26%">Note</th></tr></thead>
                     <tbody>
                         <tr><td class="num">3</td><td class="bold">Réparer GA4 (Consent Mode + double comptage)</td><td>On compte les visites une seule fois et proprement &mdash; fini les chiffres faussés.</td><td style="text-align:center">✅</td><td>1 seul système, CookieYes actif, Complianz mort retiré.</td></tr>
-                        <tr><td class="num">6</td><td class="bold">Réparer le suivi des conversions Google Ads</td><td>Savoir quelles pubs Google amènent vraiment des demandes de devis.</td><td style="text-align:center">⚠️</td><td>Tag <code>AW-11093980890</code> + conversion linker actifs (via Site Kit) ; aucune action de conversion (label) sur page ni GTM → conversions « par URL » à confirmer dans le compte Ads.</td></tr>
+                        <tr><td class="num">6</td><td class="bold">Réparer le suivi des conversions Google Ads</td><td>Savoir quelles pubs Google amènent vraiment des demandes de devis.</td><td style="text-align:center">⚠️</td><td><strong>Évènement <code>generate_lead</code> déclenché à chaque lead (page merci) avec le <code>gclid</code></strong> → reçu par <code>AW-11093980890</code> (vérifié réseau 18/06). Reste : le déclarer comme <strong>action de conversion dans le compte Ads</strong> (ou import depuis GA4) + valeur par produit.</td></tr>
                         <tr><td class="num">20</td><td class="bold">Rapport mensuel de trafic</td><td>Un point clair chaque mois : combien de visiteurs, d'où ils viennent, ce qui marche.</td><td style="text-align:center">❌</td><td>Données prêtes (GA4 + Search Console) ; livrable à instaurer.</td></tr>
-                        <tr><td class="num">26</td><td class="bold">Provenance des leads Typeform</td><td>Relier chaque demande reçue au canal qui l'a amenée (pub, recherche…).</td><td style="text-align:center">⚠️</td><td><strong>Champs cachés (10 formulaires) + script site de capture FAITS et testés (18/06)</strong> : utm + <strong>gclid</strong> captés → cookie 90 j → injectés dans Typeform (persistance navigation OK). Reste : mapping Odoo + déclenchement conversions sur pages merci.</td></tr>
+                        <tr><td class="num">26</td><td class="bold">Provenance des leads Typeform</td><td>Relier chaque demande reçue au canal qui l'a amenée (pub, recherche…).</td><td style="text-align:center">⚠️</td><td><strong>Champs cachés (10 formulaires) + capture site + conversions pages merci FAITS et testés (18/06)</strong> : utm + <strong>gclid</strong> captés → cookie 90 j → injectés dans Typeform <strong>et</strong> renvoyés en conversion <code>generate_lead</code> (GA4/Ads) + <code>Lead</code> (Meta) sur la page merci. Reste : mapping Odoo + déclarer la conversion côté GA4/Ads.</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -7112,7 +7140,7 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
 <script>
 // ============ PANEL SWITCHING ============
 function showPanel(target) {
-    var MERGED_INTO_AVANT = ['performance','security','schema','hreflang','errors404','sitemap','entity','google_ads','meta_ads'];
+    var MERGED_INTO_AVANT = ['performance','security','schema','hreflang','errors404','sitemap','entity'];
     if (MERGED_INTO_AVANT.indexOf(target) !== -1) {
         showPanel('situation-avant');
         var __el = document.getElementById('panel-' + target);
