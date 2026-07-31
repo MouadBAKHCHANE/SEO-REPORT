@@ -3224,30 +3224,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
     .sidebar .nav-item, .sidebar .nav-child, .sidebar .nav-group { min-height: 42px; }
     .sidebar-close { width: 38px; height: 38px; }
 }
-
-/* ═══ LOGO CENTRE EN MOBILE (entre accueil et burger) ═══ */
-@media (max-width: 1024px) {
-    .topbar { position: sticky; }
-    /* on reautorise le logo malgre la regle d'epuration */
-    .topbar > .topbar-logo {
-        display: inline-flex !important;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        padding: 0;
-        height: 34px;
-        pointer-events: auto;
-        z-index: 1;
-    }
-    .topbar > .topbar-logo img { height: 24px; width: auto; }
-    /* accueil et burger restent au-dessus du logo centre */
-    .topbar-home-btn, .menu-toggle { position: relative; z-index: 2; }
-}
-@media (max-width: 600px) {
-    .topbar > .topbar-logo { display: inline-flex !important; }
-    .topbar > .topbar-logo img { height: 21px; }
-}
 </style>
 
                 <!-- ═══════════ JOURNAL ACTIONS PAR DATE (CENTRALISÉ) ═══════════ -->
