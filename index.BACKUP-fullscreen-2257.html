@@ -3195,35 +3195,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
     }
     .sb-sc-drive svg { width: 16px; height: 16px; }
 }
-
-/* ═══ MENU MOBILE PLEIN ECRAN ═══ */
-@media (max-width: 1024px) {
-    .sidebar {
-        width: 100vw !important;
-        max-width: 100vw !important;
-        box-shadow: none !important;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 28px;
-    }
-    /* fond opaque (plus de transparence de drawer) */
-    .sidebar.open { background: var(--surface, #F4F6F9); }
-    [data-theme="dark"] .sidebar.open { background: #131A1E; }
-    /* le voile n'a plus lieu d'etre en plein ecran */
-    .sidebar-backdrop { display: none !important; }
-    /* header du menu colle en haut pendant le defilement */
-    .sidebar-mobile-header {
-        position: sticky;
-        top: 0;
-        z-index: 5;
-        background: inherit;
-        padding-top: 4px;
-        padding-bottom: 8px;
-    }
-    /* respiration + confort tactile */
-    .sidebar .nav-item, .sidebar .nav-child, .sidebar .nav-group { min-height: 42px; }
-    .sidebar-close { width: 38px; height: 38px; }
-}
 </style>
 
                 <!-- ═══════════ JOURNAL ACTIONS PAR DATE (CENTRALISÉ) ═══════════ -->
