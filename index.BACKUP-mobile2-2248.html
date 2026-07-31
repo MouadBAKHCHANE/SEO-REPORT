@@ -2825,10 +2825,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             </button>
         </div>
         <div class="brand-sub">Digital Marketing Dashboard</div>
-        <div class="sb-search">
-            <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-            <input type="text" placeholder="Rechercher dans le rapport..." aria-label="Rechercher">
-        </div>
         <div class="sidebar-shortcuts">
             <a href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" class="sb-sc sb-sc-road">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
@@ -2845,10 +2841,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             <a href="https://docs.google.com/spreadsheets/d/18O2fp46omnixZg5CCAjvMUjX1VQQ0dd3pAr-PmgKkUQ/edit?usp=sharing" target="_blank" rel="noopener" class="sb-sc sb-sc-leads">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
                 <span>Suivi leads</span>
-            </a>
-            <a href="https://drive.google.com/drive/folders/1HLC9sZsveuzHFQfOzLF-3K2z5tK3SjRa?usp=sharing" target="_blank" rel="noopener noreferrer" class="sb-sc sb-sc-drive">
-                <svg viewBox="0 0 87.3 78" xmlns="http://www.w3.org/2000/svg"><path d="m6.6 66.85 3.85 6.65c.8 1.4 1.95 2.5 3.3 3.3l13.75-23.8h-27.5c0 1.55.4 3.1 1.2 4.5z" fill="#0066da"/><path d="m43.65 25-13.75-23.8c-1.35.8-2.5 1.9-3.3 3.3l-25.4 44a9.06 9.06 0 0 0 -1.2 4.5h27.5z" fill="#00ac47"/><path d="m73.55 76.8c1.35-.8 2.5-1.9 3.3-3.3l1.6-2.75 7.65-13.25c.8-1.4 1.2-2.95 1.2-4.5h-27.502l5.852 11.5z" fill="#ea4335"/><path d="m43.65 25 13.75-23.8c-1.35-.8-2.9-1.2-4.5-1.2h-18.5c-1.6 0-3.15.45-4.5 1.2z" fill="#00832d"/><path d="m59.8 53h-32.3l-13.75 23.8c1.35.8 2.9 1.2 4.5 1.2h50.8c1.6 0 3.15-.45 4.5-1.2z" fill="#2684fc"/><path d="m73.4 26.5-12.7-22c-.8-1.4-1.95-2.5-3.3-3.3l-13.75 23.8 16.15 28h27.45c0-1.55-.4-3.1-1.2-4.5z" fill="#ffba00"/></svg>
-                <span>Documents Drive</span>
             </a>
         </div>
 
@@ -3153,48 +3145,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
     .sb-sc-leads { background: linear-gradient(135deg,#FDF3F2,#FAE4E1); border-color: rgba(232,93,74,0.40);  color: #C94A38; }
 }
 [data-theme="dark"] .sb-sc { filter: brightness(0.92); }
-
-/* ═══ MOBILE : topbar epuree (accueil + burger) / tout le reste dans le menu ═══ */
-.sb-search { display: none; }
-
-@media (max-width: 1024px) {
-    /* On masque TOUT dans la topbar sauf accueil et burger */
-    .topbar > *:not(.topbar-home-btn):not(.menu-toggle) { display: none !important; }
-
-    /* Recherche en haut du menu */
-    .sb-search {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin: 14px 0 2px;
-        padding: 9px 12px;
-        background: var(--bg);
-        border: 1px solid var(--border);
-        border-radius: 10px;
-    }
-    .sb-search svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--text-muted); }
-    .sb-search input {
-        flex: 1;
-        min-width: 0;
-        border: 0;
-        outline: none;
-        background: transparent;
-        font-size: 0.82rem;
-        color: var(--text);
-        font-family: inherit;
-    }
-    .sb-search input::placeholder { color: var(--text-muted); }
-
-    /* Drive = raccourci pleine largeur sous la grille 2x2 */
-    .sb-sc-drive {
-        grid-column: 1 / -1;
-        background: linear-gradient(135deg,#F5F8FF,#E8EFFD);
-        border-color: rgba(66,133,244,0.35);
-        color: #3C6FD4;
-        justify-content: center;
-    }
-    .sb-sc-drive svg { width: 16px; height: 16px; }
-}
 </style>
 
                 <!-- ═══════════ JOURNAL ACTIONS PAR DATE (CENTRALISÉ) ═══════════ -->
@@ -8732,80 +8682,6 @@ document.addEventListener('keydown', (e) => {
 });
 
 renderChart();
-
-// ═══ RECHERCHE FONCTIONNELLE (menu mobile + topbar desktop) ═══
-function naoSearchInit() {
-    function norm(s) {
-        return (s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    }
-    function applyFilter(q) {
-        var query = norm(q.trim());
-        var searching = query.length > 0;
-        var firstHit = null;
-
-        // 1) filtrer les entrees de navigation
-        document.querySelectorAll('.sidebar .nav-item[data-target], .sidebar .nav-child[data-target]').forEach(function (btn) {
-            var lbl = btn.querySelector('.nav-label');
-            var txt = norm(lbl ? lbl.textContent : btn.textContent);
-            var hit = !searching || txt.indexOf(query) !== -1;
-            btn.style.display = hit ? '' : 'none';
-            if (hit && searching && !firstHit) firstHit = btn;
-        });
-
-        // 2) pendant la recherche : ouvrir tous les groupes, masquer ceux sans resultat
-        document.querySelectorAll('.sidebar .nav-section').forEach(function (sec) {
-            var grp = sec.querySelector('.nav-group');
-            if (searching && grp) grp.classList.add('open');
-            var visible = Array.prototype.filter.call(
-                sec.querySelectorAll('.nav-item[data-target], .nav-child[data-target]'),
-                function (b) { return b.style.display !== 'none'; }
-            ).length;
-            sec.style.display = (searching && visible === 0) ? 'none' : '';
-        });
-
-        // 3) masquer les intitules de sous-groupe quand on cherche
-        document.querySelectorAll('.sidebar .nav-sub-label').forEach(function (l) {
-            l.style.display = searching ? 'none' : '';
-        });
-
-        return firstHit;
-    }
-
-    var inputs = document.querySelectorAll('.sb-search input, .topbar-search input');
-    inputs.forEach(function (inp) {
-        inp.addEventListener('input', function () {
-            // garder les deux champs synchronises
-            inputs.forEach(function (o) { if (o !== inp) o.value = inp.value; });
-            applyFilter(inp.value);
-        });
-        inp.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') { inp.value = ''; applyFilter(''); inp.blur(); return; }
-            if (e.key !== 'Enter') return;
-            var hit = applyFilter(inp.value);
-            if (hit && hit.dataset.target) {
-                showPanel(hit.dataset.target);
-                inputs.forEach(function (o) { o.value = ''; });
-                applyFilter('');
-                inp.blur();
-            }
-        });
-    });
-
-    // un clic sur un resultat reinitialise le filtre
-    document.querySelectorAll('.sidebar .nav-item[data-target], .sidebar .nav-child[data-target]').forEach(function (btn) {
-        btn.addEventListener('click', function () {
-            var vals = document.querySelectorAll('.sb-search input, .topbar-search input');
-            var had = false;
-            vals.forEach(function (o) { if (o.value) had = true; o.value = ''; });
-            if (had) applyFilter('');
-        });
-    });
-}
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', naoSearchInit);
-} else {
-    naoSearchInit();
-}
 </script>
 </body>
 </html>
