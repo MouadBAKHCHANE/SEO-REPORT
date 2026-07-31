@@ -2825,24 +2825,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             </button>
         </div>
         <div class="brand-sub">Digital Marketing Dashboard</div>
-        <div class="sidebar-shortcuts">
-            <a href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" class="sb-sc sb-sc-road">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-                <span>Roadmap 90j</span>
-            </a>
-            <a href="GUIDE-UTM-NAOENERGY.html" target="_blank" rel="noopener" class="sb-sc sb-sc-utm">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 7h.01M7 3h5a2 2 0 011.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A2 2 0 013 12V7a4 4 0 014-4z"/></svg>
-                <span>Guide UTM</span>
-            </a>
-            <a href="https://docs.google.com/spreadsheets/d/1ihLo1hIf5G2D4xoLTEcVd-bhh1G4hVfzYJecOF3xd_8/edit?usp=sharing" target="_blank" rel="noopener" class="sb-sc sb-sc-kw">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
-                <span>Mots-cles</span>
-            </a>
-            <a href="https://docs.google.com/spreadsheets/d/18O2fp46omnixZg5CCAjvMUjX1VQQ0dd3pAr-PmgKkUQ/edit?usp=sharing" target="_blank" rel="noopener" class="sb-sc sb-sc-leads">
-                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-                <span>Suivi leads</span>
-            </a>
-        </div>
 
         <!-- Vue d'ensemble -->
         <div class="nav-section">
@@ -2994,9 +2976,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
 
         <!-- TOPBAR -->
         <div class="topbar">
-            <button class="icon-btn topbar-home-btn" onclick="showPanel('overview')" aria-label="Accueil" title="Vue d'ensemble" type="button">
-                <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V10"/></svg>
-            </button>
             <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Basculer le menu" title="Afficher / masquer le menu" type="button">
                 <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
@@ -3104,48 +3083,7 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 @media (max-width: 1100px) { .app-grid { gap: 10px !important; } .app-card { padding: 9px 6px !important; min-height: 60px !important; } .app-card svg { width: 24px !important; height: 24px !important; } .app-card div { font-size: 0.66rem !important; } }
                 /* Mobile only (≤ 600px) : 2 cards/row */
                 @media (max-width: 600px) { .app-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; } .app-card { padding: 9px 8px !important; min-height: 60px !important; } .app-card svg { width: 26px !important; height: 26px !important; } .app-card div { font-size: 0.68rem !important; } }
-                
-/* ═══ MOBILE : accueil a gauche, menu a droite, raccourcis dans le drawer ═══ */
-.topbar-home-btn { display: none; }
-.sidebar-shortcuts { display: none; }
-
-@media (max-width: 1024px) {
-    .topbar { justify-content: flex-start; }
-    .topbar-home-btn { display: inline-flex; order: -10; margin-right: 4px; }
-    .menu-toggle { order: 100; margin-left: auto; }
-    .topbar .roadmap-btn { display: none; }
-
-    .sidebar-shortcuts {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        padding: 14px 0 4px;
-        margin-bottom: 6px;
-        border-bottom: 1px solid var(--border);
-    }
-    .sb-sc {
-        display: flex;
-        align-items: center;
-        gap: 7px;
-        padding: 9px 10px;
-        border-radius: 9px;
-        text-decoration: none;
-        font-size: 0.72rem;
-        font-weight: 700;
-        line-height: 1.15;
-        border: 1px solid transparent;
-        transition: transform .15s ease, filter .15s ease;
-    }
-    .sb-sc:active { transform: scale(0.97); }
-    .sb-sc svg { width: 15px; height: 15px; flex-shrink: 0; }
-    .sb-sc span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .sb-sc-road  { background: linear-gradient(135deg,#FFF6F0,#FFEDDF); border-color: rgba(232,93,44,0.35); color: #E85D2C; }
-    .sb-sc-utm   { background: linear-gradient(135deg,#EEF6F9,#DBEBF2); border-color: rgba(90,152,174,0.40); color: #3D7A8F; }
-    .sb-sc-kw    { background: linear-gradient(135deg,#EEF7F0,#DCEFE2); border-color: rgba(42,143,77,0.40);  color: #2A8F4D; }
-    .sb-sc-leads { background: linear-gradient(135deg,#FDF3F2,#FAE4E1); border-color: rgba(232,93,74,0.40);  color: #C94A38; }
-}
-[data-theme="dark"] .sb-sc { filter: brightness(0.92); }
-</style>
+                </style>
 
                 <!-- ═══════════ JOURNAL ACTIONS PAR DATE (CENTRALISÉ) ═══════════ -->
                 <div style="display:flex;align-items:center;gap:10px;margin:28px 0 12px;flex-wrap:wrap">
