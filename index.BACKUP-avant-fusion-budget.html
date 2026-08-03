@@ -3320,27 +3320,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
     .suivi-shortcuts { width: 100%; margin: 10px 0 0; }
     .suivi-sc { flex: 1; justify-content: center; padding: 8px 10px; }
 }
-
-/* ===== Meta Ads : section Budget & objectifs en deux colonnes ===== */
-.meta-2col {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 26px;
-    align-items: start;
-}
-.meta-2col > div + div {
-    padding-left: 26px;
-    border-left: 1px solid var(--border);
-}
-@media (max-width: 900px) {
-    .meta-2col { grid-template-columns: 1fr; gap: 22px; }
-    .meta-2col > div + div {
-        padding-left: 0;
-        border-left: 0;
-        padding-top: 20px;
-        border-top: 1px solid var(--border);
-    }
-}
 </style>
 
                 <!-- ═══════════ JOURNAL ACTIONS PAR DATE (CENTRALISÉ) ═══════════ -->
@@ -7492,99 +7471,101 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             </div>
 
                         <!-- ============================================== -->
-            <!-- ===== SECTION 2 — BUDGET & OBJECTIFS ========= -->
+            <!-- ===== SECTION 1 — BUDGET (v2 — 13 mai 2026) == -->
             <!-- ============================================== -->
             <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #5A98AE">
-                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:8px">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
                     <div style="font-size:0.95rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px">
                         <span style="background:#5A98AE;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">02</span>
-                        💰 Budget &amp; objectifs
+                        💰 Budget
                     </div>
                     <span style="background:rgba(90,152,174,0.14);color:#3D7A8F;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Mai 2026 · MAJ 13 mai</span>
                 </div>
 
-                <div class="meta-2col">
-
-                    <!-- ─────────── COLONNE GAUCHE : BUDGET ─────────── -->
-                    <div>
-                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:10px">💰 Budget</div>
-
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px">
-                            <div style="padding:13px 15px;background:var(--surface-soft);border-radius:10px">
-                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Budget total mois</div>
-                                <div style="font-size:1.45rem;font-weight:800;color:var(--text)">2 000 <span style="font-size:0.8rem;color:var(--text-muted);font-weight:600">CHF</span></div>
-                                <div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">enveloppe validée</div>
-                            </div>
-                            <div style="padding:13px 15px;background:var(--surface-soft);border-radius:10px">
-                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Dépensé à ce jour</div>
-                                <div style="font-size:1.45rem;font-weight:800;color:var(--text)">377.05 <span style="font-size:0.8rem;color:var(--text-muted);font-weight:600">CHF</span></div>
-                                <div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">19% du budget</div>
-                            </div>
-                            <div style="padding:13px 15px;background:rgba(63,183,108,0.08);border-radius:10px;border:1px solid rgba(63,183,108,0.25)">
-                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">🟢 Restant</div>
-                                <div style="font-size:1.45rem;font-weight:800;color:#2A8F4D">1 622.95 <span style="font-size:0.8rem;font-weight:600">CHF</span></div>
-                                <div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">~90 CHF/jour dispo</div>
-                            </div>
-                            <div style="padding:13px 15px;background:var(--surface-soft);border-radius:10px">
-                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Jours restants</div>
-                                <div style="font-size:1.45rem;font-weight:800;color:var(--text)">18 <span style="font-size:0.8rem;color:var(--text-muted);font-weight:600">jours</span></div>
-                                <div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">Jusqu'au 31 mai</div>
-                            </div>
-                        </div>
-
-                        <div style="padding:14px 16px;background:linear-gradient(135deg, rgba(111,62,170,0.06), rgba(90,152,174,0.06));border-radius:10px;border-left:3px solid #6F3EAA">
-                            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
-                                <span style="background:#6F3EAA;color:#fff;font-size:0.62rem;padding:3px 8px;border-radius:100px;font-weight:800;letter-spacing:0.5px">🚀 LANCÉ 13 MAI</span>
-                                <div style="font-size:0.85rem;font-weight:800;color:var(--text)">Nouvelle stratégie active</div>
-                            </div>
-                            <div style="font-size:0.72rem;color:var(--text-body);line-height:1.6">
-                                Refonte complète : <strong>2 campagnes Lead Gen</strong> (Batterie + PAC) avec <strong>structure 2 ad sets/campagne</strong> (Genève / Vaud+Neuchâtel) basée sur l'audit des 48 ads historiques · concentration sur les <strong>winners CPL bas</strong> (Pub 1 Geneva €16.57, Pub 6 €14.44, Pub 8 Vaud €19.79) · objectif <strong>CPL global €22-28</strong> · cibles <strong>70-100 leads/mois</strong>.
-                            </div>
-                        </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:12px;margin-bottom:14px">
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px">
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Budget total mois</div>
+                        <div style="font-size:1.6rem;font-weight:800;color:var(--text)">2 000 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">CHF</span></div>
+                        <div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px">enveloppe validée</div>
                     </div>
-
-                    <!-- ─────────── COLONNE DROITE : OBJECTIFS ─────────── -->
-                    <div>
-                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#3FB76C;font-weight:800;margin-bottom:10px">🎯 Objectifs</div>
-
-                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:8px">Benchmarks CPL cibles</div>
-                        <table style="width:100%;border-collapse:collapse;font-size:0.78rem;margin-bottom:16px">
-                            <thead>
-                                <tr style="background:var(--surface-soft)">
-                                    <th style="text-align:left;padding:9px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">Produit</th>
-                                    <th style="text-align:right;padding:9px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">Coût par lead</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr style="border-bottom:1px solid var(--border)">
-                                    <td style="padding:9px 12px;font-weight:600">🔋 Batterie</td>
-                                    <td style="padding:9px 12px;text-align:right"><strong style="color:var(--text)">25 — 35 CHF</strong></td>
-                                </tr>
-                                <tr style="border-bottom:1px solid var(--border)">
-                                    <td style="padding:9px 12px;font-weight:600">🔥 PAC</td>
-                                    <td style="padding:9px 12px;text-align:right"><strong style="color:var(--text)">35 — 45 CHF</strong></td>
-                                </tr>
-                                <tr>
-                                    <td style="padding:9px 12px;font-weight:600">☀️ PV</td>
-                                    <td style="padding:9px 12px;text-align:right"><strong style="color:var(--text)">à calibrer</strong></td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:8px;padding-top:10px;border-top:1px dashed var(--border)">KPIs funnel</div>
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-                            <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px">
-                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Lead → RDV</div>
-                                <div style="font-size:1.3rem;font-weight:800;color:var(--text)">45%</div>
-                                <div style="font-size:0.68rem;color:#2A8F4D;margin-top:4px">🟢 Excellent (industrie 20-30%)</div>
-                            </div>
-                            <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px">
-                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Panier moyen</div>
-                                <div style="font-size:1.3rem;font-weight:800;color:var(--text)">35 000 <span style="font-size:0.7rem;color:var(--text-muted);font-weight:600">CHF</span></div>
-                            </div>
-                        </div>
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px">
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Dépensé à ce jour</div>
+                        <div style="font-size:1.6rem;font-weight:800;color:var(--text)">377.05 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">CHF</span></div>
+                        <div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px">19% du budget</div>
                     </div>
+                    <div style="padding:14px 16px;background:rgba(63,183,108,0.08);border-radius:10px;border:1px solid rgba(63,183,108,0.25)">
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">🟢 Restant</div>
+                        <div style="font-size:1.6rem;font-weight:800;color:#2A8F4D">1 622.95 <span style="font-size:0.85rem;font-weight:600">CHF</span></div>
+                        <div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px">~90 CHF/jour dispo</div>
+                    </div>
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px">
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Jours restants</div>
+                        <div style="font-size:1.6rem;font-weight:800;color:var(--text)">18 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">jours</span></div>
+                        <div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px">Jusqu'au 31 mai</div>
+                    </div>
+                </div>
 
+                <!-- ⭐ NOUVELLE STRATÉGIE LANCÉE LE 13 MAI -->
+                <div style="margin-top:18px;padding:14px 16px;background:linear-gradient(135deg, rgba(111,62,170,0.06), rgba(90,152,174,0.06));border-radius:10px;border-left:3px solid #6F3EAA">
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+                        <span style="background:#6F3EAA;color:#fff;font-size:0.62rem;padding:3px 8px;border-radius:100px;font-weight:800;letter-spacing:0.5px">🚀 LANCÉ 13 MAI</span>
+                        <div style="font-size:0.85rem;font-weight:800;color:var(--text)">Nouvelle stratégie active</div>
+                    </div>
+                    <div style="font-size:0.72rem;color:var(--text-body);line-height:1.6">
+                        Refonte complète : <strong>2 campagnes Lead Gen</strong> (Batterie + PAC) avec <strong>structure 2 ad sets/campagne</strong> (Genève / Vaud+Neuchâtel) basée sur l'audit des 48 ads historiques · concentration sur les <strong>winners CPL bas</strong> (Pub 1 Geneva €16.57, Pub 6 €14.44, Pub 8 Vaud €19.79) · objectif <strong>CPL global €22-28</strong> · cibles <strong>70-100 leads/mois</strong>.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- ===== SECTION 2 — OBJECTIFS ================== -->
+            <!-- ============================================== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #3FB76C">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+                    <div style="font-size:0.95rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px">
+                        <span style="background:#3FB76C;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">03</span>
+                        🎯 Objectifs
+                    </div>
+                    <span style="background:rgba(63,183,108,0.14);color:#2A8F4D;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Benchmarks client</span>
+                </div>
+
+                <!-- Benchmarks CPL -->
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#3FB76C;font-weight:800;margin-bottom:8px">Benchmarks CPL cibles</div>
+                <table style="width:100%;border-collapse:collapse;font-size:0.78rem;margin-bottom:14px">
+                    <thead>
+                        <tr style="background:var(--surface-soft)">
+                            <th style="text-align:left;padding:10px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">Produit</th>
+                            <th style="text-align:left;padding:10px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">Coût par lead</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid var(--border)">
+                            <td style="padding:10px 12px;font-weight:600">🔋 Batterie</td>
+                            <td style="padding:10px 12px"><strong style="color:var(--text)">25 — 35 CHF</strong></td>
+                        </tr>
+                        <tr style="border-bottom:1px solid var(--border)">
+                            <td style="padding:10px 12px;font-weight:600">🔥 PAC</td>
+                            <td style="padding:10px 12px"><strong style="color:var(--text)">35 — 45 CHF</strong></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:10px 12px;font-weight:600">☀️ PV</td>
+                            <td style="padding:10px 12px"><strong style="color:var(--text)">à calibrer</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- KPIs cibles -->
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#3FB76C;font-weight:800;margin-bottom:8px;padding-top:8px;border-top:1px dashed var(--border)">KPIs funnel</div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));gap:12px">
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px">
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Lead → RDV</div>
+                        <div style="font-size:1.3rem;font-weight:800;color:var(--text)">45%</div>
+                        <div style="font-size:0.68rem;color:#2A8F4D;margin-top:4px">🟢 Excellent (industrie 20-30%)</div>
+                    </div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px">
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Panier moyen</div>
+                        <div style="font-size:1.3rem;font-weight:800;color:var(--text)">35 000 <span style="font-size:0.7rem;color:var(--text-muted);font-weight:600">CHF</span></div>
+                    </div>
                 </div>
             </div>
 
@@ -7594,7 +7575,7 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #E8A82E">
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
                     <div style="font-size:0.95rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px">
-                        <span style="background:#E8A82E;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">03</span>
+                        <span style="background:#E8A82E;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">04</span>
                         🎨 Créatives & Angles marketing
                     </div>
                     <span style="background:rgba(232,168,46,0.14);color:#B8821F;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Veille concurrence Suisse romande</span>
