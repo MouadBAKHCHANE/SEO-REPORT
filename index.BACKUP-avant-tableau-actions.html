@@ -3096,11 +3096,16 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                 </div>
 
                 <!-- ═══════════ APP GRID — 8 EQUAL CARDS (4 per row) ═══════════ -->
-                <div class="app-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:28px">
+                <div class="app-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px">
+                    <button onclick="showPanel('objectives')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #7CB1C4;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#7CB1C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2" fill="#7CB1C4"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Objectifs &amp; missions</div></button>
+                    <button onclick="showPanel('situation-avant')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #E85D4A;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E85D4A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Situation avant projet</div></button>
+                    <button onclick="showPanel('recs')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #5A98AE;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5A98AE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="m9 13 2 2 4-4"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Plan d'actions</div></button>
+                    <button onclick="showPanel('external_audits')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #6F3EAA;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6F3EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Audits externes</div></button>
                     <button onclick="showPanel('gads_strategie')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #FBBC04;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"><path fill="#FBBC04" d="M70.4 22.4 22.4 105.6c-2.7 4.6-4.4 10-4.4 15.6 0 16.6 13.4 30 30 30 11.2 0 21.4-6.2 26.4-15.6L122.4 52.4c2.7-4.6 4.4-10 4.4-15.6 0-16.6-13.4-30-30-30-11.2 0-21.4 6.2-26.4 15.6Z"/><circle cx="48" cy="151.2" r="30" fill="#34A853"/><path fill="#4285F4" d="M174 105.6 126 22.4c-5.1-9.4-15.2-15.6-26.4-15.6-5.6 0-11 1.7-15.6 4.4-9.4 5.1-15.6 15.2-15.6 26.4 0 5.6 1.7 11 4.4 15.6L121 136.4c5.1 9.4 15.2 15.6 26.4 15.6 5.6 0 11-1.7 15.6-4.4 14.3-8.3 19.2-26.7 10.9-41.1Z"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Google Ads</div></button>
                     <button onclick="showPanel('meta_ads')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #1877F2;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 287.56 191" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="metaA2" x1="62.34" y1="101.45" x2="260.34" y2="91.45" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0064E1"/><stop offset=".4" stop-color="#0064E1"/><stop offset=".83" stop-color="#0073EE"/><stop offset="1" stop-color="#0082FB"/></linearGradient><linearGradient id="metaB2" x1="41.42" y1="53" x2="41.42" y2="126" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0082FB"/><stop offset="1" stop-color="#0064E0"/></linearGradient></defs><path fill="#0081FB" d="M31.06 126c0 11 2.41 19.41 5.56 24.51A19 19 0 0053.19 160c8.1 0 15.51-2 29.79-21.76 11.44-15.83 24.92-38 34-52l15.36-23.6c10.67-16.39 23-34.61 37.18-47C181.07 5.6 193.54 0 206.09 0c21.07 0 41.14 12.21 56.5 35.11 16.81 25.08 25 56.67 25 89.27 0 19.38-3.82 33.62-10.32 44.87C271 180.13 258.72 191 238.13 191v-31c17.63 0 22-16.2 22-34.74 0-26.42-6.16-55.74-19.73-76.69-9.63-14.86-22.11-23.94-35.84-23.94-14.85 0-26.8 11.2-40.23 31.17-7.14 10.61-14.47 23.54-22.7 38.13l-9.06 16C115.14 145.81 110.5 154.6 101.6 166.4 86 187 72.76 191 53.19 191c-21.27 0-34.72-9.21-43-23.09C3.34 156.46 0 141.46 0 124.36Z"/><path fill="url(#metaA2)" d="M24.49 37.3C38.73 15.35 59.28 0 82.85 0c13.65 0 27.22 4 41.39 15.61 15.5 12.65 32 33.48 52.63 67.81l7.39 12.32c17.84 29.72 28 45 33.93 52.22 7.64 9.26 13 12 19.94 12 17.63 0 22-16.2 22-34.74l27.4-.86c0 19.38-3.82 33.62-10.32 44.87C271 180.13 258.72 191 238.13 191c-12.8 0-24.14-2.78-36.68-14.61-9.64-9.08-20.91-25.21-29.58-39.71L146.08 93.6c-12.94-21.62-24.81-37.74-31.68-45-7.4-7.88-16.92-17.38-32.13-17.38-12.31 0-22.77 8.64-31.52 21.87Z"/><path fill="url(#metaB2)" d="M82.35 31.23c-12.31 0-22.77 8.64-31.52 21.87C38.44 71.62 30.94 99.5 30.94 126.4c0 11 2.41 19.41 5.56 24.51L10.14 167.91C3.34 156.46 0 141.46 0 124.36 0 93.28 8.54 60.89 24.49 37.3 38.73 15.35 59.28 0 82.85 0Z"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Meta Ads</div></button>
                     <button onclick="showPanel('seo-hub')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #4285F4;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571.001-.001.002-.001.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083 43.595 20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">SEO</div></button>
-                    <button onclick="showPanel('suivi')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #6F3EAA;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6F3EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12l2 2 4-4"/><path d="M9 17h4"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Suivi des actions</div></button></div>
+                    <button onclick="showPanel('situation-avant')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #21759B;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 122.5 122.5" xmlns="http://www.w3.org/2000/svg"><path fill="#21759B" d="M8.7 61.3c0 20.8 12.1 38.7 29.6 47.3L13.2 39.9c-2.9 6.5-4.5 13.8-4.5 21.4zm88 -2.7c0 -6.5 -2.3 -11 -4.3 -14.5 -2.7 -4.3 -5.2 -8 -5.2 -12.3 0 -4.8 3.7 -9.3 8.9 -9.3 0.2 0 0.5 0 0.7 0 -9.4 -8.6 -22 -13.9 -35.8 -13.9C42 8.5 24.7 18 14.7 32.3c1.3 0 2.6 0.1 3.6 0.1 5.5 0 14.1 -0.7 14.1 -0.7 2.9 -0.2 3.2 4 0.4 4.4 0 0 -2.9 0.3 -6.1 0.5l19.4 57.6 11.6 -34.9 -8.3 -22.7c-2.9 -0.2 -5.6 -0.5 -5.6 -0.5 -2.9 -0.2 -2.5 -4.6 0.4 -4.4 0 0 8.8 0.7 14 0.7 5.5 0 14.1 -0.7 14.1 -0.7 2.9 -0.2 3.2 4 0.4 4.4 0 0 -2.9 0.3 -6.1 0.5l19.2 57.2 5.4 -17.7c2.4 -7.5 4.1 -12.9 4.1 -17.6zm-35.4 7.4 -16 46.4c4.8 1.4 9.8 2.2 15 2.2 6.2 0 12.1 -1.1 17.6 -3 -0.1 -0.2 -0.3 -0.5 -0.4 -0.7l-16.2 -44.9zm46.2 -30.5c0.2 1.7 0.4 3.5 0.4 5.5 0 5.4 -1 11.5 -4.1 19.1l-16.3 47.1c15.9 -9.3 26.6 -26.5 26.6 -46.2 0 -9.3 -2.4 -18 -6.5 -25.6zm-52.5 -23.4C24.7 12.1 0 36.8 0 67.1c0 30.3 24.7 55 55 55 30.3 0 55 -24.7 55 -55 0 -30.3 -24.7 -55 -55 -55zm0 107.4c-29 0 -52.4 -23.5 -52.4 -52.4 0 -29 23.5 -52.4 52.4 -52.4 28.9 0 52.4 23.5 52.4 52.4 0 28.9 -23.5 52.4 -52.4 52.4z" transform="translate(6.25 -6.5)"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">WordPress</div></button>
+                </div>
                 <style>
                 .app-card:hover { background: var(--surface-soft); border-color: rgba(124,177,196,0.55); }
                 /* Tablet + small desktop : 4 cards/row mais padding compact + min-height réduite */
@@ -3242,78 +3247,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
 @media (max-width: 600px) {
     .topbar > .topbar-logo { display: inline-flex !important; }
     .topbar > .topbar-logo img { height: 21px; }
-}
-
-/* ===== Plan d'actions : tableau Action / Fait / Statut ===== */
-.act-card { padding: 0; overflow: hidden; margin-bottom: 30px; }
-.act-table { font-size: 0.82rem; }
-.act-table thead th { padding: 12px 16px; }
-.act-table tbody td { padding: 14px 16px; vertical-align: top; line-height: 1.6; }
-.act-num-cell {
-    font-variant-numeric: tabular-nums;
-    font-weight: 800;
-    color: var(--text-muted);
-    font-size: 0.86rem;
-}
-.act-action { line-height: 1.45; }
-.act-done { color: var(--text-body); font-size: 0.79rem; }
-.act-badge {
-    display: inline-block;
-    white-space: nowrap;
-    font-size: 0.68rem;
-    font-weight: 800;
-    letter-spacing: 0.2px;
-    padding: 4px 9px;
-    border-radius: 100px;
-}
-@media (max-width: 860px) {
-    .act-card { border-radius: var(--radius); }
-    .act-table, .act-table tbody, .act-table tr, .act-table td { display: block; width: 100%; }
-    .act-table thead { display: none; }
-    .act-table tbody tr {
-        padding: 14px 16px;
-        border-bottom: 1px solid var(--border);
-        position: relative;
-    }
-    .act-table tbody tr:last-child { border-bottom: 0; }
-    .act-table tbody td { padding: 0 0 7px; border: 0; }
-    .act-table tbody td:last-child { padding-bottom: 0; }
-    .act-num-cell {
-        position: absolute; top: 14px; right: 16px;
-        font-size: 0.72rem; opacity: 0.55;
-    }
-    .act-action { padding-right: 34px !important; font-size: 0.87rem; }
-    .act-done::before {
-        content: "Ce qui a \00e9t\00e9 fait";
-        display: block;
-        font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.7px;
-        color: var(--text-muted); font-weight: 800; margin: 4px 0 3px;
-    }
-}
-
-/* ===== Suivi des actions : raccourcis projets sur la ligne du titre ===== */
-.page-title-row { justify-content: space-between; }
-.suivi-shortcuts { display: flex; flex-wrap: wrap; gap: 8px; margin-left: auto; }
-.suivi-sc {
-    display: inline-flex; align-items: center; gap: 7px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-top: 3px solid var(--border);
-    border-radius: 10px;
-    padding: 7px 13px;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 0.75rem; font-weight: 700;
-    color: var(--text);
-    transition: transform .14s ease, box-shadow .14s ease;
-}
-.suivi-sc:hover { transform: translateY(-1px); box-shadow: 0 4px 14px -6px rgba(0,0,0,0.28); }
-.suivi-sc:active { transform: translateY(0); }
-.suivi-sc:focus-visible { outline: 2px solid #5A98AE; outline-offset: 2px; }
-.suivi-sc img { border-radius: 4px; flex-shrink: 0; }
-@media (max-width: 700px) {
-    .suivi-shortcuts { width: 100%; margin: 10px 0 0; }
-    .suivi-sc { flex: 1; justify-content: center; padding: 8px 10px; }
 }
 </style>
 
@@ -7631,175 +7564,158 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             <div class="page-header">
                 <div>
                     <h1 class="page-title">Plan d'actions prioritaires</h1>
-                    <p class="page-subtitle">Les 18 actions de l'audit initial, avec pour chacune ce qui a &eacute;t&eacute; r&eacute;ellement r&eacute;alis&eacute; et son statut au 3&nbsp;ao&ucirc;t&nbsp;2026. 13 sont termin&eacute;es, 3 en cours, 2 non engag&eacute;es.</p>
+                    <p class="page-subtitle">19 actions prioris&eacute;es en 3 niveaux d'urgence : critique (cette semaine), haute priorit&eacute; (2 semaines), priorit&eacute; moyenne (1 mois). Inclut 5 nouvelles actions Google Ads.</p>
                 </div>
             </div>
 
-            <div class="card" style="padding:14px 18px;margin-bottom:22px;border-left:4px solid #5A98AE">
-                <div style="font-size:0.74rem;color:var(--text-body);line-height:1.7"><strong style="color:var(--text)">Statuts :</strong> &#9989; Fait &middot; &#128309; En cours &middot; &#10060; &Agrave; faire</div>
-            </div>
-
+            <!-- Critique -->
             <div class="priority-header critical">
                 <span class="priority-dot"></span>
-                Critique &mdash; corrections imm&eacute;diates
+                Critique — À corriger cette semaine
             </div>
-            <div class="card act-card">
-                <table class="data-table act-table">
-                    <thead><tr>
-                        <th style="width:46px">N&deg;</th>
-                        <th style="width:27%">Action</th>
-                        <th>Ce qui a &eacute;t&eacute; fait</th>
-                        <th style="width:104px">Statut</th>
-                    </tr></thead>
-                    <tbody>
-                        <tr>
-                            <td class="act-num-cell">1</td>
-                            <td class="bold act-action">Activer l'optimisation JavaScript</td>
-                            <td class="act-done">WP&nbsp;Rocket : chargement diff&eacute;r&eacute; du JavaScript (Delay&nbsp;JS) et suppression du CSS inutilis&eacute; activ&eacute;s. Liste d'exclusions ajust&eacute;e (PixelYourSite, CookieYes, Trustindex) pour ne rien casser.</td>
-                            <td><span class="act-badge" style="color:#2A8F4D;background:rgba(42,143,77,0.13)">&#9989; Fait</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">2</td>
-                            <td class="bold act-action">Corriger l'optimisation des images</td>
-                            <td class="act-done">Conversion WebP g&eacute;n&eacute;ralis&eacute;e (qualit&eacute;&nbsp;80) et vid&eacute;os d'accueil r&eacute;-encod&eacute;es 4K&nbsp;&rarr;&nbsp;1080p (&minus;2,3&nbsp;Mo sur la vid&eacute;o PAC). Restent environ 150 images lourdes &agrave; all&eacute;ger.</td>
-                            <td><span class="act-badge" style="color:#3D7A8F;background:rgba(90,152,174,0.16)">&#128309; En cours</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">3</td>
-                            <td class="bold act-action">R&eacute;parer la mesure GA4 (Consent Mode + double tracking)</td>
-                            <td class="act-done">Consent&nbsp;Mode v&eacute;rifi&eacute; conforme &middot; filtre de trafic interne activ&eacute; (IP bureau) &middot; double comptage identifi&eacute; (conteneur GTM-5XC5Q6H9) &middot; verrous anti-doublon pos&eacute;s sur les formulaires.</td>
-                            <td><span class="act-badge" style="color:#2A8F4D;background:rgba(42,143,77,0.13)">&#9989; Fait</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">4</td>
-                            <td class="bold act-action">Ajouter les en-t&ecirc;tes de s&eacute;curit&eacute; manquants</td>
-                            <td class="act-done">Ajout&eacute;s via le .htaccess racine : HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy.</td>
-                            <td><span class="act-badge" style="color:#2A8F4D;background:rgba(42,143,77,0.13)">&#9989; Fait</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">5</td>
-                            <td class="bold act-action">Mettre &agrave; jour le th&egrave;me et les extensions</td>
-                            <td class="act-done">Inventaire fait : WordPress&nbsp;6.9.4 et 32&nbsp;extensions. Les mises &agrave; jour restent &agrave; cadencer avec Charline &mdash; site en production, risque de r&eacute;gression.</td>
-                            <td><span class="act-badge" style="color:#3D7A8F;background:rgba(90,152,174,0.16)">&#128309; En cours</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">6</td>
-                            <td class="bold act-action">R&eacute;parer le suivi des conversions Google&nbsp;Ads</td>
-                            <td class="act-done">Diagnostic termin&eacute; : <strong>le code de suivi est sain</strong>. Le statut &laquo;&nbsp;Misconfigured&nbsp;&raquo; venait de l'absence de conversion sur 7&nbsp;jours (probl&egrave;me de facturation) et d'environ 6 conversions parasites cr&eacute;&eacute;es automatiquement, &agrave; supprimer.</td>
-                            <td><span class="act-badge" style="color:#2A8F4D;background:rgba(42,143,77,0.13)">&#9989; Fait</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="action-grid">
+                <div class="action-card k-critical">
+                    <div class="action-card-header">
+                        <div class="action-num">1</div>
+                        <div class="action-title">Activer l'optimisation JavaScript</div>
+                    </div>
+                    <span class="action-impact">Impact : Core Web Vitals TBT/INP</span>
+                </div>
+                <div class="action-card k-critical">
+                    <div class="action-card-header">
+                        <div class="action-num">2</div>
+                        <div class="action-title">Corriger l'optimisation des images</div>
+                    </div>
+                    <span class="action-impact">Impact : LCP + CLS + SEO Images</span>
+                </div>
+                <div class="action-card k-critical">
+                    <div class="action-card-header">
+                        <div class="action-num">3</div>
+                        <div class="action-title">Réparer la mesure GA4 (Consent Mode + double tracking)</div>
+                    </div>
+                    <span class="action-impact">Impact : Mesure complète du SEO + ROI Ads</span>
+                </div>
+                <div class="action-card k-critical">
+                    <div class="action-card-header">
+                        <div class="action-num">4</div>
+                        <div class="action-title">Ajouter les en-têtes de sécurité manquants</div>
+                    </div>
+                    <span class="action-impact">Impact : Sécurité + Signaux de confiance</span>
+                </div>
+                <div class="action-card k-critical">
+                    <div class="action-card-header">
+                        <div class="action-num">5</div>
+                        <div class="action-title">Mettre à jour le thème &amp; les extensions</div>
+                    </div>
+                    <span class="action-impact">Impact : Sécurité + Performance</span>
+                </div>
+                <div class="action-card k-critical">
+                    <div class="action-card-header">
+                        <div class="action-num">6</div>
+                        <div class="action-title">R&eacute;parer le suivi des conversions Google Ads</div>
+                    </div>
+                    <span class="action-impact">Impact : 0 tag actif — tout le budget Ads sans mesure de ROI</span>
+                </div>
             </div>
 
+            <!-- Haute priorité -->
             <div class="priority-header warning">
                 <span class="priority-dot"></span>
-                Haute priorit&eacute;
+                Haute priorité — À corriger sous 2 semaines
             </div>
-            <div class="card act-card">
-                <table class="data-table act-table">
-                    <thead><tr>
-                        <th style="width:46px">N&deg;</th>
-                        <th style="width:27%">Action</th>
-                        <th>Ce qui a &eacute;t&eacute; fait</th>
-                        <th style="width:104px">Statut</th>
-                    </tr></thead>
-                    <tbody>
-                        <tr>
-                            <td class="act-num-cell">8</td>
-                            <td class="bold act-action">Supprimer ou refondre la campagne Search-G&eacute;n&eacute;rique</td>
-                            <td class="act-done">Campagne arr&ecirc;t&eacute;e. Au 16.07 il ne reste que 2 campagnes actives : Panneaux et Batterie. 10 mots-cl&eacute;s n&eacute;gatifs concurrents ajout&eacute;s aux deux.</td>
-                            <td><span class="act-badge" style="color:#2A8F4D;background:rgba(42,143,77,0.13)">&#9989; Fait</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">9</td>
-                            <td class="bold act-action">Consolider les mots-cl&eacute;s Google&nbsp;Ads en doublon</td>
-                            <td class="act-done">Doublon &laquo;&nbsp;entreprise panneau solaire&nbsp;&raquo; retir&eacute; lors de l'optimisation du 24.06, avec recentrage g&eacute;ographique sur Gen&egrave;ve et Vaud.</td>
-                            <td><span class="act-badge" style="color:#2A8F4D;background:rgba(42,143,77,0.13)">&#9989; Fait</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">10</td>
-                            <td class="bold act-action">Am&eacute;liorer l'entonnoir de conversion Ads</td>
-                            <td class="act-done">Les 6 pages produits ont &eacute;t&eacute; refondues (Panneaux, PAC, Batterie, Borne, Carport, Boiler) et les pages Contact et Votre&nbsp;projet reconstruites avec des formulaires courts.</td>
-                            <td><span class="act-badge" style="color:#2A8F4D;background:rgba(42,143,77,0.13)">&#9989; Fait</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">11</td>
-                            <td class="bold act-action">Optimiser le CSS (minification + nettoyage)</td>
-                            <td class="act-done">Suppression du CSS inutilis&eacute; active, liste blanche corrig&eacute;e pour ne plus casser les styles de blocs.</td>
-                            <td><span class="act-badge" style="color:#2A8F4D;background:rgba(42,143,77,0.13)">&#9989; Fait</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">12</td>
-                            <td class="bold act-action">Pr&eacute;charger les polices et h&eacute;berger Google&nbsp;Fonts localement</td>
-                            <td class="act-done">Indices de pr&eacute;connexion pos&eacute;s. L'h&eacute;bergement local des polices reste &agrave; faire.</td>
-                            <td><span class="act-badge" style="color:#3D7A8F;background:rgba(90,152,174,0.16)">&#128309; En cours</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">13</td>
-                            <td class="bold act-action">Ajouter les sch&eacute;mas LocalBusiness et Service</td>
-                            <td class="act-done">Sch&eacute;mas Organisation, LocalBusiness et Service en ligne. Sch&eacute;ma Service dynamique ajout&eacute; sur les 95 fiches r&eacute;alisations (commune, canton, type de prestation).</td>
-                            <td><span class="act-badge" style="color:#2A8F4D;background:rgba(42,143,77,0.13)">&#9989; Fait</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">14</td>
-                            <td class="bold act-action">Compl&eacute;ter le profil Organisation</td>
-                            <td class="act-done">Profil compl&eacute;t&eacute; : logo, r&eacute;seaux sociaux, coordonn&eacute;es et num&eacute;ro unique 022&nbsp;860&nbsp;83&nbsp;47.</td>
-                            <td><span class="act-badge" style="color:#2A8F4D;background:rgba(42,143,77,0.13)">&#9989; Fait</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">15</td>
-                            <td class="bold act-action">Corriger le maillage interne</td>
-                            <td class="act-done">95 fiches r&eacute;alisations reli&eacute;es &agrave; leur solution, 6 pages &laquo;&nbsp;nos r&eacute;alisations&nbsp;&raquo; par produit cr&eacute;&eacute;es et reli&eacute;es, liens solutions&nbsp;&hArr;&nbsp;r&eacute;alisations pos&eacute;s dans les deux sens.</td>
-                            <td><span class="act-badge" style="color:#2A8F4D;background:rgba(42,143,77,0.13)">&#9989; Fait</span></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="action-grid">
+                <div class="action-card k-warning">
+                    <div class="action-card-header">
+                        <div class="action-num">8</div>
+                        <div class="action-title">Supprimer ou refondre la campagne Search-G&eacute;n&eacute;rique</div>
+                    </div>
+                    <span class="action-impact">Impact : CTR 1,29 % — CHF 12 505 gaspill&eacute;s en trafic non qualifi&eacute;</span>
+                </div>
+                <div class="action-card k-warning">
+                    <div class="action-card-header">
+                        <div class="action-num">9</div>
+                        <div class="action-title">Consolider les mots-cl&eacute;s Google Ads en doublon</div>
+                    </div>
+                    <span class="action-impact">Impact : &laquo; entreprise panneau solaire &raquo; exact + broad se cannibalisent</span>
+                </div>
+                <div class="action-card k-warning">
+                    <div class="action-card-header">
+                        <div class="action-num">10</div>
+                        <div class="action-title">Am&eacute;liorer l'entonnoir de conversion Ads</div>
+                    </div>
+                    <span class="action-impact">Impact : 118K interactions pour 7 leads qualifi&eacute;s — landing pages &agrave; revoir</span>
+                </div>
+                <div class="action-card k-warning">
+                    <div class="action-card-header">
+                        <div class="action-num">11</div>
+                        <div class="action-title">Optimiser le CSS (minification + nettoyage)</div>
+                    </div>
+                    <span class="action-impact">Impact : Vitesse de chargement</span>
+                </div>
+                <div class="action-card k-warning">
+                    <div class="action-card-header">
+                        <div class="action-num">12</div>
+                        <div class="action-title">Pr&eacute;charger les polices &amp; h&eacute;berger Google Fonts localement</div>
+                    </div>
+                    <span class="action-impact">Impact : LCP + RGPD</span>
+                </div>
+                <div class="action-card k-warning">
+                    <div class="action-card-header">
+                        <div class="action-num">13</div>
+                        <div class="action-title">Ajouter les schemas LocalBusiness + Service</div>
+                    </div>
+                    <span class="action-impact">Impact : Recherche locale + Rich Snippets</span>
+                </div>
+                <div class="action-card k-warning">
+                    <div class="action-card-header">
+                        <div class="action-num">14</div>
+                        <div class="action-title">Compl&eacute;ter le profil Organisation</div>
+                    </div>
+                    <span class="action-impact">Impact : Knowledge Graph Google</span>
+                </div>
+                <div class="action-card k-warning">
+                    <div class="action-card-header">
+                        <div class="action-num">15</div>
+                        <div class="action-title">Corriger le maillage interne (18 pages orphelines)</div>
+                    </div>
+                    <span class="action-impact">Impact : Indexation + Autorit&eacute;</span>
+                </div>
             </div>
 
+            <!-- Priorité moyenne -->
             <div class="priority-header info">
                 <span class="priority-dot"></span>
-                Priorit&eacute; moyenne
+                Priorité moyenne — À corriger sous 1 mois
             </div>
-            <div class="card act-card">
-                <table class="data-table act-table">
-                    <thead><tr>
-                        <th style="width:46px">N&deg;</th>
-                        <th style="width:27%">Action</th>
-                        <th>Ce qui a &eacute;t&eacute; fait</th>
-                        <th style="width:104px">Statut</th>
-                    </tr></thead>
-                    <tbody>
-                        <tr>
-                            <td class="act-num-cell">16</td>
-                            <td class="bold act-action">Cr&eacute;er un fichier llms.txt pour la recherche IA</td>
-                            <td class="act-done">Non engag&eacute;.</td>
-                            <td><span class="act-badge" style="color:#C94A38;background:rgba(232,93,74,0.13)">&#10060; &Agrave; faire</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">17</td>
-                            <td class="bold act-action">Envisager l'expansion multilingue (DE / IT)</td>
-                            <td class="act-done">Non engag&eacute; &mdash; d&eacute;cision Charline. &Agrave; noter : les balises hreflang sont absentes du site, &agrave; traiter avant toute version allemande ou italienne.</td>
-                            <td><span class="act-badge" style="color:#C94A38;background:rgba(232,93,74,0.13)">&#10060; &Agrave; faire</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">18</td>
-                            <td class="bold act-action">Am&eacute;liorer la lisibilit&eacute; du contenu</td>
-                            <td class="act-done">Introductions et sections r&eacute;&eacute;crites sur les pages produits refondues, 25 titres d'articles r&eacute;&eacute;crits pour tenir dans Google. Le fond des articles reste &agrave; reprendre.</td>
-                            <td><span class="act-badge" style="color:#3D7A8F;background:rgba(90,152,174,0.16)">&#128309; En cours</span></td>
-                        </tr>
-                        <tr>
-                            <td class="act-num-cell">19</td>
-                            <td class="bold act-action">Ajouter les indices Preconnect</td>
-                            <td class="act-done">Pos&eacute;s sur les ressources tierces (Typeform, Google&nbsp;Fonts, CDN).</td>
-                            <td><span class="act-badge" style="color:#2A8F4D;background:rgba(42,143,77,0.13)">&#9989; Fait</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="card" style="padding:16px 20px;margin-top:6px;border-left:4px solid #C28A2B">
-                <div style="font-size:0.72rem;color:var(--text-body);line-height:1.7"><strong style="color:var(--text)">&Agrave; noter :</strong> la num&eacute;rotation de l'audit initial saute le n&deg;&nbsp;7 (action fusionn&eacute;e avec le n&deg;&nbsp;6 lors de la r&eacute;daction). Les 19 actions annonc&eacute;es correspondent donc aux num&eacute;ros 1&nbsp;&agrave;&nbsp;6, 8&nbsp;&agrave;&nbsp;19.</div>
+            <div class="action-grid">
+                <div class="action-card k-info">
+                    <div class="action-card-header">
+                        <div class="action-num">16</div>
+                        <div class="action-title">Cr&eacute;er un fichier llms.txt pour la recherche IA</div>
+                    </div>
+                    <span class="action-impact">Impact : Visibilit&eacute; dans ChatGPT, Perplexity, etc.</span>
+                </div>
+                <div class="action-card k-info">
+                    <div class="action-card-header">
+                        <div class="action-num">17</div>
+                        <div class="action-title">Envisager l'expansion multilingue (DE / IT)</div>
+                    </div>
+                    <span class="action-impact">Impact : Suisse al&eacute;manique &amp; italienne</span>
+                </div>
+                <div class="action-card k-info">
+                    <div class="action-card-header">
+                        <div class="action-num">18</div>
+                        <div class="action-title">Am&eacute;liorer la lisibilit&eacute; du contenu</div>
+                    </div>
+                    <span class="action-impact">Impact : Engagement &amp; conversion</span>
+                </div>
+                <div class="action-card k-info">
+                    <div class="action-card-header">
+                        <div class="action-num">19</div>
+                        <div class="action-title">Ajouter les indices Preconnect</div>
+                    </div>
+                    <span class="action-impact">Impact : Vitesse des ressources tierces</span>
+                </div>
             </div>
         </div>
 
@@ -7810,18 +7726,20 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                 <div>
                     <div class="page-title-row">
                         <h1 class="page-title">Suivi des actions</h1>
-                        <div class="suivi-shortcuts">
-                            <button type="button" class="suivi-sc" onclick="document.getElementById('suivi-nao').scrollIntoView({behavior:'smooth',block:'start'})" style="border-top-color:#5A98AE"><img src="https://www.google.com/s2/favicons?domain=naoenergy.ch&amp;sz=64" width="17" height="17" alt="" loading="lazy"><span>NAOenergy</span></button>
-                            <button type="button" class="suivi-sc" onclick="document.getElementById('suivi-zen').scrollIntoView({behavior:'smooth',block:'start'})" style="border-top-color:#2A8F4D"><img src="https://www.google.com/s2/favicons?domain=zen-energieservices.com&amp;sz=64" width="17" height="17" alt="" loading="lazy"><span>ZEN</span></button>
-                            <button type="button" class="suivi-sc" onclick="document.getElementById('suivi-iso').scrollIntoView({behavior:'smooth',block:'start'})" style="border-top-color:#C28A2B"><img src="https://www.google.com/s2/favicons?domain=isotradition.ch&amp;sz=64" width="17" height="17" alt="" loading="lazy"><span>ISO</span></button>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
 
+            <!-- Navigation par site -->
+            <div style="display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px">
+                <button onclick="document.getElementById('suivi-nao').scrollIntoView({behavior:'smooth',block:'start'})" style="display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-top:3px solid #5A98AE;border-radius:10px;padding:9px 16px;cursor:pointer;font-size:0.8rem;font-weight:700;color:var(--text)"><img src="https://www.google.com/s2/favicons?domain=naoenergy.ch&amp;sz=64" width="18" height="18" alt="" style="border-radius:4px">NAOenergy</button>
+                <button onclick="document.getElementById('suivi-zen').scrollIntoView({behavior:'smooth',block:'start'})" style="display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-top:3px solid #2A8F4D;border-radius:10px;padding:9px 16px;cursor:pointer;font-size:0.8rem;font-weight:700;color:var(--text)"><img src="https://www.google.com/s2/favicons?domain=zen-energieservices.com&amp;sz=64" width="18" height="18" alt="" style="border-radius:4px">ZEN</button>
+                <button onclick="document.getElementById('suivi-iso').scrollIntoView({behavior:'smooth',block:'start'})" style="display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-top:3px solid #C28A2B;border-radius:10px;padding:9px 16px;cursor:pointer;font-size:0.8rem;font-weight:700;color:var(--text)"><img src="https://www.google.com/s2/favicons?domain=isotradition.ch&amp;sz=64" width="18" height="18" alt="" style="border-radius:4px">ISO</button>
+            </div>
 
             <div class="card" style="padding:13px 18px;margin-bottom:20px;border-left:4px solid #5A98AE">
-                <div style="font-size:0.74rem;color:var(--text-body);line-height:1.7"><strong style="color:var(--text)">Statuts :</strong> ✅ Fait/Décidé &middot; 🔵 En cours &middot; ❌ À faire</div>
+                <div style="font-size:0.74rem;color:var(--text-body);line-height:1.7"><strong style="color:var(--text)">Statuts :</strong> ✅ Fait/Décidé &middot; 🔵 En cours &middot; ❌ À faire &middot; 🔍 Accès interne (crawl/PSI)</div>
             </div>
 
             <!-- ===== SITE : NAOENERGY ===== -->
@@ -7832,49 +7750,44 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             </div>
 
             <!-- ARCHITECTURE & MAILLAGE (ajouté 08.07) -->
-            <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">Architecture du site &amp; maillage interne</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; mise à jour au 03.08 &mdash; chantier de juillet terminé, priorités d'août identifiées</span></div>
+            <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">Architecture du site &amp; maillage interne</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; carte complète établie le 08.07 &mdash; ménage technique fait, créations à valider</span></div>
             <div class="card" style="padding:22px 26px;margin-bottom:24px;border-left:4px solid #2A8F4D">
                 <div style="font-size:0.65rem;color:var(--text-muted);margin-bottom:16px;font-style:italic">Cartographie de toutes les pages actives (sitemap + WordPress + crawl Ahrefs 718 URLs) : comment elles sont reliées, ce qui manque, ce qui est en trop. Le site est bien structuré autour du hub Solutions — les problèmes sont des restes d'anciennes versions et des pages précieuses non reliées.</div>
 
                 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:18px">
                     <div style="background:var(--surface-soft);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:800;color:#2A8F4D">7</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px">solutions (cœur business)</div></div>
-                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:800;color:#5A98AE">134</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px">articles de blog</div></div>
-                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:800;color:#2A8F4D">95</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px">fiches réalisations en ligne, enrichies et maillées</div></div>
-                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:800;color:#2A8F4D">92<span style="font-size:0.55em">/100</span></div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px">santé technique Ahrefs (était 48 en juin)</div></div>
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:800;color:#5A98AE">133</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px">articles de blog</div></div>
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:800;color:#F5A623">~30</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px">fiches chantier par ville — invisibles pour Google (hors sitemap)</div></div>
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px;text-align:center"><div style="font-size:1.8rem;font-weight:800;color:#E85D4A">3</div><div style="font-size:0.72rem;color:var(--text-muted);margin-top:4px">pages à leads non reliées (calculateur, étude, livre blanc)</div></div>
                 </div>
 
-                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">✅ Fait — juillet 2026 (le gros chantier)</div>
+                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">✅ Fait cette semaine (07&ndash;08.07) — ménage technique, invisible pour les visiteurs</div>
                 <ul style="margin:0 0 14px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                    <li><strong>95 fiches réalisations enrichies et mises en ligne</strong> · titre et description alignés sur ce que les gens tapent réellement dans Google, texte de présentation, liens vers la solution correspondante et données structurées « prestation » (commune + canton). Les doublons de communes ont été consolidés (16 fiches en double supprimées et redirigées).</li>
-                    <li><strong>6 pages « nos réalisations » par produit</strong> + <strong>6 pages solutions</strong> retravaillées : titres commerciaux distincts pour qu'elles cessent de se concurrencer entre elles, et liens croisés solutions ⇄ réalisations posés dans les deux sens.</li>
-                    <li><strong>Grand ménage technique</strong> · 1 046 pages parasites retirées du plan du site (fichiers joints, pages système) · 61 liens cassés ou obsolètes corrigés · un ancien PDF de conditions générales redirigé vers la version à jour.</li>
-                    <li><strong>25 titres d'articles réécrits</strong> pour tenir dans l'affichage Google, avec le mot-clé en tête.</li>
-                    <li><strong>Vitesse du site corrigée</strong> · la durée de vie du cache était réglée trop court, ce qui obligeait le serveur à tout recalculer. Temps de réponse mesuré après correction : <strong>0,20 seconde</strong>.</li>
-                    <li><strong>Plan du site resoumis à Google le 27.07</strong> (277 pages, statut « Réussite »).</li>
-                    <li>Résultat mesuré : <strong>santé technique Ahrefs 48 → 71 → 89 → 92/100</strong>. La chute passagère à 65 mi-juillet n'était pas une régression mais un artefact : le crawl avait gonflé de 293 à 2 074 adresses à cause des pages de fichiers joints, depuis désactivées.</li>
+                    <li><strong>Toutes les vieilles adresses cassées réparées</strong> (redirections 301) + 3 liens mal écrits corrigés dans les articles &rarr; plus aucune « page introuvable » interne.</li>
+                    <li><strong>Descriptions Google automatiques</strong> posées sur ~100 fiches (chantiers, équipe, labels) + <strong>aperçus réseaux sociaux</strong> complétés sur ~200 pages (partage Facebook/LinkedIn propre).</li>
+                    <li><strong>Titres H1 ajoutés</strong> aux 3 pages à leads (étude gratuite, calculateur, livre blanc) ; pages utilitaires sorties de Google (espace client, ventes privées&hellip;).</li>
+                    <li>Résultat mesuré : <strong>santé technique Ahrefs 48 &rarr; 71 &rarr; 89/100 (« Good »)</strong> au crawl du <strong>14.07</strong> &mdash; <strong>plus quasiment aucune vraie erreur</strong> (1 seul 404 + 1 lien 4XX sur ~1 780 pages auditées, 1 579 sans aucune erreur). Restent surtout des <strong>images à alléger</strong> (160) et une poignée d'<strong>images cassées</strong> à remplacer (~13) &mdash; retouches légères, sans enjeu de fond.</li>
                 </ul>
 
-                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">✅ Fait — pages mises en ligne</div>
+                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#E85D4A;font-weight:700;margin-bottom:6px">🔴 Ménage restant (rapide, sans création de contenu)</div>
                 <ul style="margin:0 0 14px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                    <li><strong>Borne de recharge, Carport et Boiler</strong> mis en ligne le 06.07 — les 6 pages produits sont désormais toutes refondues.</li>
-                    <li><strong>Page d'accueil des solutions</strong> et <strong>page « Pour les professionnels »</strong> mises en ligne le 16.07.</li>
-                    <li><strong>« Qui sommes-nous »</strong> mise en ligne le 27.07 (vidéo, textes Charline, chiffres clés 22 MWc / +70 collaborateurs / 8 250 t de CO₂ évitées).</li>
-                    <li><strong>Numéro de téléphone unifié</strong> sur tout le site : 022 860 83 47 (07.07).</li>
+                    <li><strong>5 pages en anglais abandonnées</strong> (who-are-we, owner-grouping&hellip;) : personne n'y accède, mais Google les voit en doublon &rarr; rediriger vers les versions françaises.</li>
+                    <li><strong>Ancienne page « Installation pompe à chaleur »</strong> encore en ligne à côté de la nouvelle solution PAC &rarr; les deux se font concurrence sur Google, à fusionner.</li>
+                    <li><strong>2 liens du menu/footer</strong> passent par des redirections + le footer pointe encore « Ventes privées terminées » &rarr; à corriger (petite retouche, GO demandé car menu global).</li>
                 </ul>
 
-                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#E85D4A;font-weight:700;margin-bottom:6px">🔴 Priorités identifiées — à traiter</div>
+                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#F5A623;font-weight:700;margin-bottom:6px">🟠 Maillage à poser (l'existant qui ne travaille pas)</div>
                 <ul style="margin:0 0 14px 0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                    <li><strong>Page « Entretien / Nettoyage de panneaux solaires »</strong> · environ 1 500 affichages par mois, déjà en position 9 à 17 dans Google, mais aucune page dédiée pour convertir cette demande. C'est le meilleur rapport effort/résultat du moment.</li>
-                    <li><strong>Navigation du blog cassée</strong> · les pages 2, 3, 4 de la liste des actualités affichent les mêmes articles → une partie du blog reste invisible pour Google (25 articles concernés).</li>
-                    <li><strong>Balises de langue (hreflang) absentes</strong> · à poser avant toute réflexion sur une version allemande ou italienne.</li>
-                    <li><strong>Section « dernières actualités »</strong> des pages produits chargée en JavaScript → Google ne la voit pas, donc les liens ne transmettent rien.</li>
+                    <li>Relier chaque <strong>solution</strong> à <strong>ses réalisations</strong> (preuve sociale) et inversement.</li>
+                    <li>Le <strong>calculateur solaire</strong> n'est relié depuis <strong>aucune</strong> page du site ; l'étude gratuite et le livre blanc à peine &rarr; les rendre accessibles depuis les 7 solutions et les articles les plus lus.</li>
+                    <li>Terminer chaque article de blog par un lien vers <strong>sa</strong> solution (133 articles = le plus gros réservoir de « jus » interne).</li>
                 </ul>
 
-                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#5A98AE;font-weight:700;margin-bottom:6px">🔵 Contenu à produire — décisions Charline</div>
+                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#5A98AE;font-weight:700;margin-bottom:6px">🔵 À créer — décisions Charline</div>
                 <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                    <li><strong>Page de référence « Autoconsommation collective / RCP »</strong> · deux articles se font actuellement concurrence sur ce sujet (près de 3 900 affichages) au lieu d'une page forte. <em>Question ouverte : NaoEnergy monte-t-il réellement des regroupements RCP/CEL ?</em></li>
-                    <li><strong>Articles par canton</strong> (Genève, Vaud, Neuchâtel, Fribourg, Valais) · prix, subventions et démarches propres à chaque canton. C'est la bonne façon de capter les recherches locales — une page produit par commune serait vue par Google comme une page passerelle et pénalisée.</li>
-                    <li><strong>Enrichir les pages Équipe et Partenaires</strong> · elles inspirent confiance, critère de plus en plus important pour Google, mais manquent de contenu (la page Équipe est en position 2,4 avec 3 616 affichages pour seulement 366 mots).</li>
+                    <li><strong>Activer les ~30 fiches chantier par ville</strong> (les ajouter au sitemap + les relier) : contenu déjà écrit avec vraies photos = le levier SEO local le moins cher.</li>
+                    <li><strong>2 pages locales</strong> « Installateur solaire Genève » / « Vaud » (requêtes à volume identifiées dans le classeur mots-clés).</li>
+                    <li><strong>Guide « Subventions solaires par canton »</strong> mis à jour chaque année &mdash; capte le trafic d'information et le redistribue vers les solutions.</li>
                 </ul>
             </div>
 
