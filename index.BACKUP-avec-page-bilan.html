@@ -2869,6 +2869,9 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             </button>
             <div class="nav-children">
                 <div class="nav-children-inner">
+                    <button class="nav-child" data-target="bilan" type="button">
+                        <span class="nav-label">Bilan de la mission</span>
+                    </button>
                     <button class="nav-child" data-target="situation-avant" type="button">
                         <span class="nav-label">Situation avant projet</span>
                     </button>
@@ -3102,7 +3105,8 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
 
                 <!-- ═══════════ APP GRID — 8 EQUAL CARDS (4 per row) ═══════════ -->
                 <div class="app-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:28px">
-                <button onclick="showPanel('suivi')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #6F3EAA;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6F3EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12l2 2 4-4"/><path d="M9 17h4"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Suivi des actions</div></button>
+                <button onclick="showPanel('bilan')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--primary);border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7M9 11h5"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Bilan de la mission</div></button>
+                    <button onclick="showPanel('suivi')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #6F3EAA;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#6F3EAA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12l2 2 4-4"/><path d="M9 17h4"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Suivi des actions</div></button>
                     <button onclick="showPanel('gads_strategie')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #FBBC04;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg"><path fill="#FBBC04" d="M70.4 22.4 22.4 105.6c-2.7 4.6-4.4 10-4.4 15.6 0 16.6 13.4 30 30 30 11.2 0 21.4-6.2 26.4-15.6L122.4 52.4c2.7-4.6 4.4-10 4.4-15.6 0-16.6-13.4-30-30-30-11.2 0-21.4 6.2-26.4 15.6Z"/><circle cx="48" cy="151.2" r="30" fill="#34A853"/><path fill="#4285F4" d="M174 105.6 126 22.4c-5.1-9.4-15.2-15.6-26.4-15.6-5.6 0-11 1.7-15.6 4.4-9.4 5.1-15.6 15.2-15.6 26.4 0 5.6 1.7 11 4.4 15.6L121 136.4c5.1 9.4 15.2 15.6 26.4 15.6 5.6 0 11-1.7 15.6-4.4 14.3-8.3 19.2-26.7 10.9-41.1Z"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Google Ads</div></button>
                     <button onclick="showPanel('meta_ads')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #1877F2;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 287.56 191" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="metaA2" x1="62.34" y1="101.45" x2="260.34" y2="91.45" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0064E1"/><stop offset=".4" stop-color="#0064E1"/><stop offset=".83" stop-color="#0073EE"/><stop offset="1" stop-color="#0082FB"/></linearGradient><linearGradient id="metaB2" x1="41.42" y1="53" x2="41.42" y2="126" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0082FB"/><stop offset="1" stop-color="#0064E0"/></linearGradient></defs><path fill="#0081FB" d="M31.06 126c0 11 2.41 19.41 5.56 24.51A19 19 0 0053.19 160c8.1 0 15.51-2 29.79-21.76 11.44-15.83 24.92-38 34-52l15.36-23.6c10.67-16.39 23-34.61 37.18-47C181.07 5.6 193.54 0 206.09 0c21.07 0 41.14 12.21 56.5 35.11 16.81 25.08 25 56.67 25 89.27 0 19.38-3.82 33.62-10.32 44.87C271 180.13 258.72 191 238.13 191v-31c17.63 0 22-16.2 22-34.74 0-26.42-6.16-55.74-19.73-76.69-9.63-14.86-22.11-23.94-35.84-23.94-14.85 0-26.8 11.2-40.23 31.17-7.14 10.61-14.47 23.54-22.7 38.13l-9.06 16C115.14 145.81 110.5 154.6 101.6 166.4 86 187 72.76 191 53.19 191c-21.27 0-34.72-9.21-43-23.09C3.34 156.46 0 141.46 0 124.36Z"/><path fill="url(#metaA2)" d="M24.49 37.3C38.73 15.35 59.28 0 82.85 0c13.65 0 27.22 4 41.39 15.61 15.5 12.65 32 33.48 52.63 67.81l7.39 12.32c17.84 29.72 28 45 33.93 52.22 7.64 9.26 13 12 19.94 12 17.63 0 22-16.2 22-34.74l27.4-.86c0 19.38-3.82 33.62-10.32 44.87C271 180.13 258.72 191 238.13 191c-12.8 0-24.14-2.78-36.68-14.61-9.64-9.08-20.91-25.21-29.58-39.71L146.08 93.6c-12.94-21.62-24.81-37.74-31.68-45-7.4-7.88-16.92-17.38-32.13-17.38-12.31 0-22.77 8.64-31.52 21.87Z"/><path fill="url(#metaB2)" d="M82.35 31.23c-12.31 0-22.77 8.64-31.52 21.87C38.44 71.62 30.94 99.5 30.94 126.4c0 11 2.41 19.41 5.56 24.51L10.14 167.91C3.34 156.46 0 141.46 0 124.36 0 93.28 8.54 60.89 24.49 37.3 38.73 15.35 59.28 0 82.85 0Z"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">Meta Ads</div></button>
                     <button onclick="showPanel('seo-hub')" class="app-card" style="text-align:center;background:var(--surface);border:1px solid var(--border);border-top:3px solid #4285F4;border-radius:10px;padding:10px 8px;cursor:pointer;transition:background 0.15s,border-color 0.15s;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:68px"><svg width="28" height="28" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-.792 2.237-2.231 4.166-4.087 5.571.001-.001.002-.001.003-.002l6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="m6.306 14.691 6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083 43.595 20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg><div style="font-size:0.72rem;font-weight:700;color:var(--text);line-height:1.2">SEO</div></button></div>
@@ -5807,6 +5811,330 @@ User-agent: ExaBot</code></pre>
         </div>
 
         <!-- ═══════════ SITUATION AVANT PROJET — full page ═══════════ -->
+        <div class="panel" id="panel-bilan">
+            <div class="page-header">
+                <div>
+                    <div class="page-title-row">
+                        <h1 class="page-title">📖 Le bilan de la mission</h1>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== RESUME EN UNE PHRASE ===== -->
+            <div class="card" style="margin-bottom:22px;border-left:4px solid var(--primary)">
+                <div class="card-body" style="padding:24px 26px">
+                    <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);font-weight:700;margin-bottom:10px">En une phrase</div>
+                    <p style="font-size:1.05rem;line-height:1.7;color:var(--text-body);margin:0">
+                        En avril, le site était en ligne mais <strong>mal vu par Google</strong>, la publicité tournait <strong>sans mesure fiable</strong>, et personne ne savait <strong>d'où venaient les demandes</strong>.<br>
+                        Quatre mois plus tard : le site est réparé et modernisé, Google voit <strong>281 pages au lieu de 185</strong>, la publicité est recentrée sur les deux produits qui marchent, et <strong>toutes les demandes arrivent dans un seul tableau</strong>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ===== 4 CHIFFRES ===== -->
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:26px">
+                <div class="kpi-card" style="border-top:3px solid var(--kpi-1)">
+                    <div class="kpi-label">Santé technique du site</div>
+                    <div class="kpi-value" style="font-variant-numeric:tabular-nums">48 <span style="color:var(--text-faint);font-weight:400">→</span> 92</div>
+                    <div class="kpi-trend" style="color:var(--green)">sur 100 — mesuré par Ahrefs</div>
+                </div>
+                <div class="kpi-card" style="border-top:3px solid var(--kpi-5)">
+                    <div class="kpi-label">Pages proposées à Google</div>
+                    <div class="kpi-value" style="font-variant-numeric:tabular-nums">185 <span style="color:var(--text-faint);font-weight:400">→</span> 281</div>
+                    <div class="kpi-trend" style="color:var(--green)">+96 pages redevenues visibles</div>
+                </div>
+                <div class="kpi-card" style="border-top:3px solid var(--kpi-3)">
+                    <div class="kpi-label">Pages du site refaites</div>
+                    <div class="kpi-value" style="font-variant-numeric:tabular-nums">10</div>
+                    <div class="kpi-trend">6 solutions + hub, pro, équipe, contact</div>
+                </div>
+                <div class="kpi-card" style="border-top:3px solid var(--kpi-4)">
+                    <div class="kpi-label">Où arrivent les demandes</div>
+                    <div class="kpi-value" style="font-variant-numeric:tabular-nums">8 <span style="color:var(--text-faint);font-weight:400">→</span> 1</div>
+                    <div class="kpi-trend" style="color:var(--green)">un seul tableau, alimenté tout seul</div>
+                </div>
+            </div>
+
+            <!-- ===== LES CHANTIERS ===== -->
+            <h2 class="panel-h3" style="margin:0 0 14px">🧱 Les 5 chantiers menés depuis</h2>
+
+            <!-- CHANTIER 1 — SITE -->
+            <div class="card" style="margin-bottom:18px;border-top:3px solid #21759B">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">1 · 🌐 Le site internet</div>
+                        <div class="card-subtitle">Réparer ce qui était cassé, puis refaire les pages qui vendent.</div>
+                    </div>
+                    <span class="tag" style="background:var(--green-soft);color:var(--green)">Fait</span>
+                </div>
+                <div class="card-body">
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px">
+                        <div>
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--red);margin-bottom:9px">Au départ</div>
+                            <ul style="margin:0;padding-left:17px;font-size:0.84rem;line-height:1.65;color:var(--text-body)">
+                                <li>Sur iPhone : bas de page invisible, menu qui ne s'ouvre pas, vidéo d'accueil qui ne se lance pas</li>
+                                <li>Formulaires de devis bridés à 560 px, avec leur propre ascenseur — beaucoup abandonnaient</li>
+                                <li>Mentions légales, confidentialité et CGV : des PDF, pas des pages</li>
+                                <li>Pages produits datées, images lourdes, protections de sécurité manquantes</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--text-muted);margin-bottom:9px">Ce qu'on a fait</div>
+                            <ul style="margin:0;padding-left:17px;font-size:0.84rem;line-height:1.65;color:var(--text-body)">
+                                <li>Corrigé les 3 bugs iPhone signalés par Charline</li>
+                                <li><strong>Refait 10 pages</strong> : panneaux, pompe à chaleur, batterie, borne, carport, boiler, la page qui les regroupe, l'espace professionnels, « Qui sommes-nous » et « Contact »</li>
+                                <li>Transformé les 3 documents légaux en vraies pages</li>
+                                <li>Débridé les formulaires de devis sur les 6 pages produits</li>
+                                <li>Un seul numéro partout : <strong>022 860 83 47</strong></li>
+                                <li>Accéléré : images allégées, vidéos ré-encodées, scripts différés, en-têtes de sécurité posés</li>
+                            </ul>
+                        </div>
+                        <div style="background:var(--green-soft);border-radius:12px;padding:15px 17px">
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--green);margin-bottom:9px">Ce que ça change</div>
+                            <div style="font-size:0.86rem;line-height:1.65;color:var(--text-body)">Un visiteur sur iPhone voit enfin le site en entier et peut remplir un formulaire jusqu'au bout. Les pages s'affichent en moins d'une seconde. Et chaque page produit raconte la bonne histoire, avec de vraies photos de chantiers.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHANTIER 2 — SEO -->
+            <div class="card" style="margin-bottom:18px;border-top:3px solid var(--primary)">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">2 · 🔍 Le référencement naturel (SEO)</div>
+                        <div class="card-subtitle">Être trouvé sur Google sans payer le clic.</div>
+                    </div>
+                    <span class="tag" style="background:var(--green-soft);color:var(--green)">Fait</span>
+                </div>
+                <div class="card-body">
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px">
+                        <div>
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--red);margin-bottom:9px">Au départ</div>
+                            <ul style="margin:0;padding-left:17px;font-size:0.84rem;line-height:1.65;color:var(--text-body)">
+                                <li>Note technique <strong>48/100</strong></li>
+                                <li>~900 adresses cassées : des visiteurs et Google tombaient sur des pages mortes</li>
+                                <li>18 pages qu'aucun lien ne reliait au reste du site</li>
+                                <li>Aucune « fiche d'identité » indiquant à Google que NaoEnergy est un installateur actif à Genève et dans le canton de Vaud</li>
+                                <li>Le site ne présentait que <strong>185 pages</strong> à Google</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--text-muted);margin-bottom:9px">Ce qu'on a fait</div>
+                            <ul style="margin:0;padding-left:17px;font-size:0.84rem;line-height:1.65;color:var(--text-body)">
+                                <li>Réparé les liens cassés et nettoyé le plan du site des pages parasites</li>
+                                <li>Relié les <strong>95 fiches de chantiers</strong> à leur solution, et créé 6 pages « nos réalisations » par produit</li>
+                                <li>Posé les fiches d'identité <em>Organisation</em>, <em>Entreprise locale</em> et <em>Service</em></li>
+                                <li>Réécrit 25 titres d'articles et les introductions des pages produits</li>
+                                <li>Corrigé <strong>11 fautes d'orthographe</strong> (dont « naonergy » et « soplaire ») — il n'en reste aucune sur les 281 pages</li>
+                                <li>Corrigé 3 titres de pages qui s'affichaient mal dans les résultats Google</li>
+                            </ul>
+                        </div>
+                        <div style="background:var(--green-soft);border-radius:12px;padding:15px 17px">
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--green);margin-bottom:9px">Ce que ça change</div>
+                            <div style="font-size:0.86rem;line-height:1.65;color:var(--text-body)">Note technique <strong>92/100</strong>. Google voit <strong>281 pages au lieu de 185</strong>.<br><br>Concrètement : les fiches de chantiers commune par commune peuvent enfin remonter sur des recherches du type « installation panneaux solaires Nyon » — exactement le genre de recherche qui amène un client situé à 20 minutes.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHANTIER 3 — GOOGLE ADS -->
+            <div class="card" style="margin-bottom:18px;border-top:3px solid #4285F4">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">3 · 🎯 Google Ads</div>
+                        <div class="card-subtitle">Arrêter de payer pour du trafic qui ne convertit pas.</div>
+                    </div>
+                    <span class="tag" style="background:var(--green-soft);color:var(--green)">Fait</span>
+                </div>
+                <div class="card-body">
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px">
+                        <div>
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--red);margin-bottom:9px">Au départ</div>
+                            <ul style="margin:0;padding-left:17px;font-size:0.84rem;line-height:1.65;color:var(--text-body)">
+                                <li>15 campagnes, toutes en pause</li>
+                                <li>Le suivi des conversions affichait « mal configuré » : impossible de savoir quelle annonce rapportait quoi</li>
+                                <li>La campagne « Search-Générique » avait consommé <strong>12 505 CHF</strong> pour 6 027 clics et un taux de clic de 1,29 % — quatre fois moins bon que la campagne panneaux</li>
+                                <li>Une alerte de facturation menaçait de suspendre le compte</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--text-muted);margin-bottom:9px">Ce qu'on a fait</div>
+                            <ul style="margin:0;padding-left:17px;font-size:0.84rem;line-height:1.65;color:var(--text-body)">
+                                <li>Diagnostiqué le suivi : <strong>le code du site était sain</strong>. L'alerte venait de la facturation et de 6 conversions parasites créées automatiquement par Google</li>
+                                <li>Arrêté définitivement Search-Générique et retiré un mot-clé en doublon</li>
+                                <li>Recentré la diffusion sur <strong>Genève et Vaud</strong></li>
+                                <li>Ajouté <strong>10 mots-clés « négatifs »</strong> pour ne plus payer sur les noms de concurrents</li>
+                                <li>Envoyé le trafic publicitaire vers les pages produits refaites</li>
+                            </ul>
+                        </div>
+                        <div style="background:var(--green-soft);border-radius:12px;padding:15px 17px">
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--green);margin-bottom:9px">Ce que ça change</div>
+                            <div style="font-size:0.86rem;line-height:1.65;color:var(--text-body)">Il ne reste que <strong>2 campagnes</strong> — les deux qui fonctionnent : Panneaux et Batterie.<br><br>Elles produisent environ <strong>16 demandes par mois</strong> à ~148 CHF la demande. Chaque franc dépensé est désormais traçable jusqu'à la demande qu'il a générée.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHANTIER 4 — META -->
+            <div class="card" style="margin-bottom:18px;border-top:3px solid #0866FF">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">4 · 📣 Meta (Facebook &amp; Instagram)</div>
+                        <div class="card-subtitle">Savoir quel produit rapporte, et y mettre l'argent.</div>
+                    </div>
+                    <span class="tag" style="background:var(--cyan-soft);color:var(--primary-dark)">En pilotage continu</span>
+                </div>
+                <div class="card-body">
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px">
+                        <div>
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--red);margin-bottom:9px">Au départ</div>
+                            <ul style="margin:0;padding-left:17px;font-size:0.84rem;line-height:1.65;color:var(--text-body)">
+                                <li>Les campagnes tournaient, mais sans lecture claire de ce qu'elles rapportaient : quel produit, quel mois, quel coût réel par demande</li>
+                                <li>Aucun historique consolidé pour comparer un mois à l'autre</li>
+                                <li>Meta reconnaissait mal les personnes qui demandaient un devis, donc ciblait moins bien</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--text-muted);margin-bottom:9px">Ce qu'on a fait</div>
+                            <ul style="margin:0;padding-left:17px;font-size:0.84rem;line-height:1.65;color:var(--text-body)">
+                                <li>Reconstruit <strong>l'historique complet 2026</strong>, mois par mois et produit par produit</li>
+                                <li>Identifié le produit gagnant : <strong>la batterie</strong> — 53 % du volume à 30,45 € la demande</li>
+                                <li>Identifié le produit qui décroche : les panneaux, à ~76 € la demande</li>
+                                <li>Diagnostiqué la chute de la campagne climatisation : 22,23 € la demande en juin, 77,47 € en juillet. <strong>La cause n'était pas la publicité</strong> mais un filtre ajouté au questionnaire en juillet</li>
+                                <li>Activé la mesure côté serveur pour améliorer le ciblage</li>
+                                <li>Préparé la campagne d'août : 40 €/jour, 5 visuels, périmètre hors Genève et Lausanne</li>
+                            </ul>
+                        </div>
+                        <div style="background:var(--green-soft);border-radius:12px;padding:15px 17px">
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--green);margin-bottom:9px">Ce que ça change</div>
+                            <div style="font-size:0.86rem;line-height:1.65;color:var(--text-body)"><strong>589 demandes</strong> générées depuis janvier pour <strong>24 538 €</strong>, soit <strong>37,53 €</strong> en moyenne la demande.<br><br>On sait maintenant où mettre l'argent : 50 €/jour sur le produit principal, 30 €/jour sur le produit secondaire selon la saison.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHANTIER 5 — MESURE -->
+            <div class="card" style="margin-bottom:26px;border-top:3px solid var(--green)">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">5 · 📊 Savoir d'où viennent les demandes</div>
+                        <div class="card-subtitle">Le chantier invisible, mais celui qui permet de décider.</div>
+                    </div>
+                    <span class="tag" style="background:var(--green-soft);color:var(--green)">Fait</span>
+                </div>
+                <div class="card-body">
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px">
+                        <div>
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--red);margin-bottom:9px">Au départ</div>
+                            <ul style="margin:0;padding-left:17px;font-size:0.84rem;line-height:1.65;color:var(--text-body)">
+                                <li>Les demandes arrivaient de <strong>8 endroits différents</strong> : 2 formulaires Google, 5 formulaires du site, Meta, et les appels téléphoniques</li>
+                                <li>Impossible de dire « cette demande vient de telle publicité » ou « de telle page »</li>
+                                <li>Google Analytics comptait mal : deux systèmes se chevauchaient et le trafic du bureau était compté comme des visites clients</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--text-muted);margin-bottom:9px">Ce qu'on a fait</div>
+                            <ul style="margin:0;padding-left:17px;font-size:0.84rem;line-height:1.65;color:var(--text-body)">
+                                <li><strong>Un seul tableau</strong> où tout arrive automatiquement : les 2 formulaires Google Ads, les 5 formulaires du site, Meta et les appels</li>
+                                <li>Chaque ligne indique la source, la campagne, la page d'arrivée et le mot-clé quand il existe</li>
+                                <li>Réparé Analytics : trafic du bureau exclu, double comptage identifié, consentement cookies vérifié</li>
+                                <li>Tableau partagé avec Charline + un tableau de bord Looker qui se met à jour tout seul</li>
+                            </ul>
+                        </div>
+                        <div style="background:var(--green-soft);border-radius:12px;padding:15px 17px">
+                            <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:0.8px;font-weight:700;color:var(--green);margin-bottom:9px">Ce que ça change</div>
+                            <div style="font-size:0.86rem;line-height:1.65;color:var(--text-body)">Une seule question à se poser en fin de mois — <em>« combien de demandes, et d'où ? »</em> — et la réponse tient sur un seul écran.<br><br>C'est ce qui a permis de trancher le débat sur la campagne climatisation en 20 minutes au lieu de deux semaines.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== EPISODE 4 AOUT ===== -->
+            <div class="card" style="margin-bottom:26px;border-left:4px solid var(--yellow)">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">💡 L'épisode marquant — 4 août</div>
+                        <div class="card-subtitle">95 fiches écrites, illustrées, en ligne… et pourtant invisibles.</div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <p style="font-size:0.9rem;line-height:1.75;color:var(--text-body);margin:0 0 14px">
+                        Fin juillet, un contrôle de routine fait apparaître un chiffre anormal : <strong>95 fiches de chantiers ne remontaient pas dans Google</strong>. Elles étaient bien écrites, bien illustrées, bien en ligne — mais un réglage du site disait à Google « ne les regarde pas ».
+                    </p>
+                    <p style="font-size:0.9rem;line-height:1.75;color:var(--text-body);margin:0 0 14px">
+                        La cause : dans la configuration, le mot <em>« false »</em> avait été enregistré comme du texte au lieu d'une valeur. Pour l'ordinateur, un texte — même le texte « false » — vaut « oui ». Une subtilité d'une seule ligne suffisait à rendre invisible tout le travail de contenu local.
+                    </p>
+                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;margin-top:18px">
+                        <div style="background:var(--surface-soft);border-radius:12px;padding:14px 16px">
+                            <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:5px">Plan du site</div>
+                            <div style="font-size:1.1rem;font-weight:700;font-variant-numeric:tabular-nums">185 → 281 <span style="font-size:0.78rem;font-weight:500;color:var(--text-muted)">adresses</span></div>
+                        </div>
+                        <div style="background:var(--surface-soft);border-radius:12px;padding:14px 16px">
+                            <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:5px">Réaction de Google</div>
+                            <div style="font-size:1.1rem;font-weight:700">Le jour même</div>
+                        </div>
+                        <div style="background:var(--surface-soft);border-radius:12px;padding:14px 16px">
+                            <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:5px">Ce qui redevient visible</div>
+                            <div style="font-size:1.1rem;font-weight:700">Tout le SEO local</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== CE QUI RESTE ===== -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">🗓️ Ce qui vient ensuite</div>
+                        <div class="card-subtitle">Par ordre d'impact sur les demandes entrantes.</div>
+                    </div>
+                </div>
+                <div class="card-body" style="overflow-x:auto">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width:34%">Prochaine étape</th>
+                                <th style="width:44%">Pourquoi</th>
+                                <th style="width:22%">Qui décide</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Créer la page « Entretien / nettoyage de panneaux solaires »</strong></td>
+                                <td>~1 500 recherches par mois où le site apparaît déjà, sans page dédiée. Le gain le plus rapide du moment.</td>
+                                <td><span class="tag" style="background:var(--green-soft);color:var(--green)">Nous</span></td>
+                            </tr>
+                            <tr>
+                                <td>Nettoyer 52 adresses cassées et 101 pages en double signalées par Google</td>
+                                <td>Google gaspille son temps sur des pages mortes au lieu de lire les bonnes.</td>
+                                <td><span class="tag" style="background:var(--green-soft);color:var(--green)">Nous</span></td>
+                            </tr>
+                            <tr>
+                                <td>Alléger 301 images trop lourdes (258 Mo)</td>
+                                <td>Pages plus rapides, surtout sur mobile et en 4G.</td>
+                                <td><span class="tag" style="background:var(--green-soft);color:var(--green)">Nous</span></td>
+                            </tr>
+                            <tr>
+                                <td>Enrichir les articles et fusionner les doublons (Nyon en priorité)</td>
+                                <td>Trois articles se font concurrence entre eux sur les mêmes recherches.</td>
+                                <td><span class="tag" style="background:var(--green-soft);color:var(--green)">Nous</span></td>
+                            </tr>
+                            <tr>
+                                <td>Pages biographies de l'équipe</td>
+                                <td>Techniquement bloqué : les fiches existent mais n'ont pas de page publique. Demande une intervention développeur.</td>
+                                <td><span class="tag" style="background:var(--yellow-soft);color:var(--yellow)">Développeur</span></td>
+                            </tr>
+                            <tr>
+                                <td>Traduction allemand / italien</td>
+                                <td>Ouvrirait le site au reste de la Suisse. Chantier lourd — à arbitrer selon la stratégie commerciale.</td>
+                                <td><span class="tag" style="background:var(--cyan-soft);color:var(--primary-dark)">Charline</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
         <div class="panel" id="panel-situation-avant">
             <div class="page-header">
                 <div>
