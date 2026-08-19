@@ -591,8 +591,8 @@ a { color: var(--primary); text-decoration: none; }
 }
 
 .topbar-search {
-    flex: 0 0 200px;
-    width: 200px;
+    flex: 0 0 360px;
+    width: 360px;
     margin: 0;
     position: relative;
 }
@@ -1587,7 +1587,7 @@ button.kpi-card { display: block; width: 100%; }
 }
 @media (max-width: 1180px) {
     .topbar-score-combined { min-width: 320px; }
-    .topbar-search { max-width: 280px; flex-basis: 280px; }
+    .topbar-search { max-width: 300px; flex-basis: 300px; width: 300px; }
 }
 @media (max-width: 1024px) {
     /* Sidebar becomes a slide-out drawer */
@@ -3013,6 +3013,10 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Basculer le menu" title="Afficher / masquer le menu" type="button">
                 <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
             </button>
+            <div class="topbar-search">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                <input type="text" placeholder="Rechercher dans le rapport...">
+            </div>
             <a class="icon-btn roadmap-btn" href="ROADMAP-90J-NAOENERGY.html" target="_blank" rel="noopener" title="Roadmap stratégique 90 jours — MouaDev" aria-label="Roadmap 90 jours" style="text-decoration:none;display:inline-flex;align-items:center;gap:7px;padding:0 14px;background:linear-gradient(135deg, #FFF6F0 0%, #FFEDDF 100%);border:1px solid rgba(232,93,44,0.35);color:#E85D2C;font-weight:700;font-size:0.74rem;letter-spacing:0.2px;white-space:nowrap">
                 <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="width:16px;height:16px;flex-shrink:0"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                 <span class="roadmap-btn-label">Roadmap 90j</span>
@@ -3059,10 +3063,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             </button>
             <!-- RIGHT group: search + drive + home -->
             <div class="topbar-actions">
-                <div class="topbar-search">
-                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                    <input type="text" placeholder="Rechercher dans le rapport...">
-                </div>
                 <button class="icon-btn search-mobile-btn" onclick="toggleMobileSearch()" aria-label="Rechercher" type="button">
                     <svg fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 </button>
@@ -3077,9 +3077,6 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
                     </svg>
                     <span style="position:absolute;top:6px;right:6px;width:8px;height:8px;border-radius:50%;background:#5A98AE;border:2px solid var(--surface);box-shadow:0 0 0 1px rgba(90,152,174,0.30);pointer-events:none"></span>
                 </a>
-                <button class="icon-btn home-btn" onclick="showPanel('overview')" aria-label="Accueil" title="Vue d'ensemble" type="button">
-                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3v-7h6v7h3a1 1 0 001-1V10"/></svg>
-                </button>
             </div>
         </div>
 
@@ -3116,6 +3113,15 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
 /* ═══ MOBILE : accueil a gauche, menu a droite, raccourcis dans le drawer ═══ */
 .topbar-home-btn { display: none; }
 .sidebar-shortcuts { display: none; }
+
+/* ═══ BUREAU : accueil + recherche a gauche · raccourcis + Drive a droite ═══ */
+@media (min-width: 1025px) {
+    .topbar { justify-content: flex-start; }
+    .topbar-home-btn { display: inline-flex; order: -10; margin-right: 2px; }
+    .topbar > .topbar-search { margin: 0; }
+    .topbar > a.roadmap-btn:first-of-type { margin-left: auto; }
+    .topbar-actions { margin-left: 8px; }
+}
 
 @media (max-width: 1024px) {
     .topbar { justify-content: flex-start; }
@@ -5720,28 +5726,148 @@ User-agent: ExaBot</code></pre>
             <div class="page-header">
                 <div>
                     <div class="page-title-row">
-                        <h1 class="page-title">SEO — Notre stratégie de référencement</h1>
+                        <h1 class="page-title">SEO | Notre stratégie de référencement</h1>
                     </div>
                     <p class="page-subtitle">Comment nous faisons remonter naoenergy.ch dans Google : la méthode, les chantiers réalisés et les outils de pilotage.</p>
                 </div>
             </div>
 
             <div class="kpi-mini-row" style="margin-bottom:18px">
-                <div class="kpi-mini k-pass">
-                    <div class="kpi-mini-value">92<span style="font-size:0.6em">/100</span></div>
-                    <div class="kpi-mini-label">Santé technique Ahrefs + Semrush<br><span style="opacity:.7">score Ahrefs · était 65 mi-juillet</span></div>
+                <div class="kpi-mini k-pass" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+                    <div style="display:flex;align-items:center;gap:10px;min-width:0">
+                        <span style="font-size:1.35rem;line-height:1">🛡️</span>
+                        <div class="kpi-mini-label" style="margin:0">Santé technique Ahrefs + Semrush<br><span style="opacity:.7;text-transform:none;letter-spacing:0">score Ahrefs · était 65 mi-juillet</span></div>
+                    </div>
+                    <div class="kpi-mini-value" style="white-space:nowrap">92<span style="font-size:0.6em">/100</span></div>
                 </div>
-                <div class="kpi-mini k-pass">
-                    <div class="kpi-mini-value">95</div>
-                    <div class="kpi-mini-label">Fiches réalisations<br><span style="opacity:.7">enrichies + maillées</span></div>
+                <div class="kpi-mini k-pass" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+                    <div style="display:flex;align-items:center;gap:10px;min-width:0">
+                        <span style="font-size:1.35rem;line-height:1">📍</span>
+                        <div class="kpi-mini-label" style="margin:0">Fiches réalisations<br><span style="opacity:.7;text-transform:none;letter-spacing:0">enrichies + maillées</span></div>
+                    </div>
+                    <div class="kpi-mini-value" style="white-space:nowrap">95</div>
                 </div>
-                <div class="kpi-mini k-pass">
-                    <div class="kpi-mini-value">277</div>
-                    <div class="kpi-mini-label">Pages au sitemap<br><span style="opacity:.7">resoumis à Google</span></div>
+                <div class="kpi-mini k-pass" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+                    <div style="display:flex;align-items:center;gap:10px;min-width:0">
+                        <span style="font-size:1.35rem;line-height:1">🗺️</span>
+                        <div class="kpi-mini-label" style="margin:0">Pages au sitemap<br><span style="opacity:.7;text-transform:none;letter-spacing:0">resoumis à Google</span></div>
+                    </div>
+                    <div class="kpi-mini-value" style="white-space:nowrap">277</div>
                 </div>
-                <div class="kpi-mini">
-                    <div class="kpi-mini-value">134</div>
-                    <div class="kpi-mini-label">Articles de blog<br><span style="opacity:.7">chantier en cours</span></div>
+                <div class="kpi-mini" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
+                    <div style="display:flex;align-items:center;gap:10px;min-width:0">
+                        <span style="font-size:1.35rem;line-height:1">📝</span>
+                        <div class="kpi-mini-label" style="margin:0">Articles de blog<br><span style="opacity:.7;text-transform:none;letter-spacing:0">chantier en cours</span></div>
+                    </div>
+                    <div class="kpi-mini-value" style="white-space:nowrap">134</div>
+                </div>
+            </div>
+
+            <!-- ═══ SITEMAP DU SITE (structure réelle — sitemap Yoast, 18 août 2026) ═══ -->
+            <div class="card" style="padding:22px 26px;margin-top:16px;border-left:4px solid #5A98AE">
+                <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800">🗺️ SITEMAP — LA STRUCTURE DU SITE</div>
+                    <span style="background:rgba(90,152,174,0.14);color:#3D7A8F;padding:3px 10px;border-radius:100px;font-size:0.6rem;font-weight:700">267 URLs indexables · relevé du 18 août 2026</span>
+                </div>
+                <p style="margin:0 0 16px;font-size:0.82rem;line-height:1.6;color:var(--text)">
+                    Ce que Google connaît du site aujourd'hui, branche par branche. Les <strong style="color:#2A8F4D">pages en vert</strong> sont les pages business (celles qui rapportent) — tout le maillage doit converger vers elles.
+                </p>
+
+                <!-- Racine -->
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+                    <span style="background:#233036;color:#fff;padding:5px 14px;border-radius:8px;font-size:0.76rem;font-weight:800">🏠 naoenergy.ch</span>
+                    <span style="flex:1;height:1px;background:var(--border)"></span>
+                </div>
+
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px">
+
+                    <!-- Branche Solutions -->
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;border-top:3px solid #2A8F4D">
+                        <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:.6px;color:#2A8F4D;font-weight:800;margin-bottom:2px">💰 Solutions</div>
+                        <div style="font-size:0.64rem;color:var(--text-muted);margin-bottom:8px">hub /toutes-nos-solutions-solaires-suisse/ → 8 pages produits</div>
+                        <ul style="margin:0;padding-left:14px;font-size:0.72rem;line-height:1.75;color:#2A8F4D;font-weight:600">
+                            <li>Panneaux photovoltaïques</li>
+                            <li>Pompes à chaleur</li>
+                            <li>Batteries de stockage</li>
+                            <li>Boiler thermodynamique</li>
+                            <li>Borne de recharge</li>
+                            <li>Carport solaire</li>
+                            <li>Climatisation <span style="background:rgba(42,143,77,0.15);padding:1px 6px;border-radius:100px;font-size:0.58rem">NEW</span></li>
+                            <li>Pour les professionnels</li>
+                        </ul>
+                    </div>
+
+                    <!-- Branche Réalisations -->
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;border-top:3px solid #5A98AE">
+                        <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:.6px;color:#5A98AE;font-weight:800;margin-bottom:2px">📍 Réalisations</div>
+                        <div style="font-size:0.64rem;color:var(--text-muted);margin-bottom:8px">la preuve locale — renvoie vers les solutions</div>
+                        <ul style="margin:0;padding-left:14px;font-size:0.72rem;line-height:1.75;color:var(--text-body)">
+                            <li><strong>6 hubs par produit</strong> (/realisations/…)</li>
+                            <li><strong>96 fiches chantier</strong> (communes VD, GE, FR, NE, VS)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Branche Blog -->
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;border-top:3px solid #E8A33D">
+                        <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:.6px;color:#E8A33D;font-weight:800;margin-bottom:2px">📰 Blog / Actualités</div>
+                        <div style="font-size:0.64rem;color:var(--text-muted);margin-bottom:8px">l'information — doit mailler vers les solutions</div>
+                        <ul style="margin:0;padding-left:14px;font-size:0.72rem;line-height:1.75;color:var(--text-body)">
+                            <li><strong>9 catégories</strong> (fraîchement restructurées)</li>
+                            <li><strong>137 articles</strong></li>
+                        </ul>
+                    </div>
+
+                    <!-- Branche Entreprise -->
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;border-top:3px solid #6F3EAA">
+                        <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:.6px;color:#6F3EAA;font-weight:800;margin-bottom:2px">🏢 Entreprise &amp; confiance</div>
+                        <div style="font-size:0.64rem;color:var(--text-muted);margin-bottom:8px">le critère E-E-A-T de Google</div>
+                        <ul style="margin:0;padding-left:14px;font-size:0.72rem;line-height:1.75;color:var(--text-body)">
+                            <li>Qui sommes-nous</li>
+                            <li>Notre équipe</li>
+                            <li>Nos partenaires</li>
+                            <li>Fondation PlanetSolar</li>
+                            <li>10 ans de naoenergy</li>
+                            <li>Charte commerciale responsable</li>
+                            <li>Regroupement de propriétaires</li>
+                            <li>Évènements (+ 4 fiches event)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Branche Conversion -->
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;border-top:3px solid #E85D4A">
+                        <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:.6px;color:#E85D4A;font-weight:800;margin-bottom:2px">🎯 Conversion</div>
+                        <div style="font-size:0.64rem;color:var(--text-muted);margin-bottom:8px">là où le visiteur devient un contact</div>
+                        <ul style="margin:0;padding-left:14px;font-size:0.72rem;line-height:1.75;color:var(--text-body)">
+                            <li><strong>Votre projet</strong> (formulaire principal)</li>
+                            <li><strong>Contact</strong> (formulaire + agenda)</li>
+                            <li>Étude énergétique gratuite</li>
+                            <li>Calculateur solaire</li>
+                            <li>Livre blanc photovoltaïque</li>
+                        </ul>
+                    </div>
+
+                    <!-- Branche Légal -->
+                    <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;border-top:3px solid #9AA7AE">
+                        <div style="font-size:0.68rem;text-transform:uppercase;letter-spacing:.6px;color:#7A8A92;font-weight:800;margin-bottom:2px">⚖️ Légal</div>
+                        <div style="font-size:0.64rem;color:var(--text-muted);margin-bottom:8px">obligatoire, sans enjeu SEO</div>
+                        <ul style="margin:0;padding-left:14px;font-size:0.72rem;line-height:1.75;color:var(--text-body)">
+                            <li>Conditions générales de vente</li>
+                            <li>Politique de confidentialité</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;font-size:0.66rem;color:var(--text-muted)">
+                    <span><strong style="color:var(--text)">Répartition :</strong></span>
+                    <span>137 articles</span><span>·</span>
+                    <span>96 fiches réalisations</span><span>·</span>
+                    <span>16 pages</span><span>·</span>
+                    <span>8 solutions</span><span>·</span>
+                    <span>6 hubs réalisations</span><span>·</span>
+                    <span>9 catégories</span><span>·</span>
+                    <span>4 events</span><span>·</span>
+                    <span>1 hub partenaires</span>
                 </div>
             </div>
 
@@ -5821,40 +5947,99 @@ User-agent: ExaBot</code></pre>
                 </div>
             </div>
 
-            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #2A8F4D">
-                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#2A8F4D;font-weight:800;margin-bottom:14px">✅ RÉALISÉ EN JUILLET 2026</div>
-                <table class="data-table" style="font-size:0.82rem">
-                    <thead>
-                        <tr><th style="width:34%">Chantier</th><th style="width:16%">Volume</th><th style="width:50%">Résultat</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><strong>Fiches réalisations</strong></td><td>95 fiches</td><td>Contenu, titres optimisés, liens vers les solutions et données structurées</td></tr>
-                        <tr><td><strong>Pages « nos réalisations » par produit</strong></td><td>6 pages</td><td>Titres, textes et liens propres à chaque produit</td></tr>
-                        <tr><td><strong>Pages solutions</strong></td><td>6 pages</td><td>Titres commerciaux distincts + liens vers les réalisations</td></tr>
-                        <tr><td><strong>Nettoyage technique</strong></td><td>—</td><td>1 046 pages parasites retirées du sitemap · 61 liens cassés ou obsolètes corrigés</td></tr>
-                        <tr><td><strong>Titres d'articles</strong></td><td>25 articles</td><td>Réécrits pour tenir dans Google (mot-clé en tête)</td></tr>
-                        <tr><td><strong>Vitesse du site</strong></td><td>site entier</td><td>Cache optimisé — <strong>0,20 s</strong> de temps de réponse</td></tr>
-                        <tr><td><strong>Sitemap</strong></td><td>277 pages</td><td>Resoumis à Google le 27 juillet</td></tr>
-                    </tbody>
-                </table>
+            <!-- ═══ PLAN MAILLAGE INTERNE & SEO SÉMANTIQUE (18 août 2026) ═══ -->
+            <div class="card" style="padding:22px 26px;margin-top:16px;border-left:4px solid #6F3EAA">
+                <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px">
+                    <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#6F3EAA;font-weight:800">🕸 PLAN — MAILLAGE INTERNE &amp; SEO SÉMANTIQUE</div>
+                    <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:3px 10px;border-radius:100px;font-size:0.6rem;font-weight:700">établi le 18 août 2026</span>
+                </div>
+                <p style="margin:0 0 18px;font-size:0.84rem;line-height:1.6;color:var(--text)">
+                    Feuille de route en 6 phases, exécutée dans l'ordre : on nettoie l'index, on cartographie les liens, puis on dirige la puissance vers les pages qui rapportent — avant de créer du nouveau contenu.
+                </p>
+
+                <!-- Phase 0 -->
+                <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;margin-bottom:12px">
+                    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+                        <span style="background:#E85D4A;color:#fff;padding:2px 10px;border-radius:100px;font-size:0.62rem;font-weight:800">Phase 0</span>
+                        <strong style="font-size:0.8rem;color:var(--text)">Nettoyage index &amp; dette de crawl</strong>
+                        <span style="font-size:0.66rem;color:var(--text-muted)">priorité immédiate · ~2-3 jours</span>
+                    </div>
+                    <p style="margin:0 0 8px;font-size:0.72rem;font-style:italic;color:var(--text-muted)">Rien ne sert de pousser du jus dans un index sale.</p>
+                    <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                        <li>Export GSC des <strong>1 118 pages exclues</strong> → classement par cause : doublons canoniques (101), vraies 404, paginations <code>/category/*/page/2/</code> (bug connu), attachments, paramètres.</li>
+                        <li>Doublons canoniques : cause principale identifiée = <strong>hreflang absent</strong> (Polylang) + doublons de fiches réalisations (✅ 16 déjà en corbeille + redirections ; restent Trélex et autres communes).</li>
+                        <li>✅ Déjà réglé : noindex <code>/partner/</code> (robots.txt + Removals), sitemap réalisations 185→281, redirections des catégories supprimées.</li>
+                        <li>Crawl <strong>Screaming Frog</strong> complet (~281 URLs au sitemap) pour valider l'état après corrections.</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 1 -->
+                <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;margin-bottom:12px">
+                    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+                        <span style="background:#6F3EAA;color:#fff;padding:2px 10px;border-radius:100px;font-size:0.62rem;font-weight:800">Phase 1</span>
+                        <strong style="font-size:0.8rem;color:var(--text)">Audit de maillage interne</strong>
+                    </div>
+                    <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                        <li>Export des liens internes (Screaming Frog) → graphe <strong>Gephi</strong> : pages orphelines, profondeur &gt;3, distribution du PageRank interne.</li>
+                        <li>Comparaison avec le comptage « liens internes » de la Search Console, page par page.</li>
+                        <li><strong>Livrable :</strong> matrice pages × liens entrants + liste de corrections priorisée (format HTML partageable).</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 2 -->
+                <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;margin-bottom:12px">
+                    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+                        <span style="background:#5A98AE;color:#fff;padding:2px 10px;border-radius:100px;font-size:0.62rem;font-weight:800">Phase 2</span>
+                        <strong style="font-size:0.8rem;color:var(--text)">Architecture en silos</strong>
+                        <span style="font-size:0.66rem;color:var(--text-muted)">validation, pas reconstruction</span>
+                    </div>
+                    <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                        <li>La structure existe déjà : <strong>/solutions/ (hub) → 7 pages produits → fiches réalisations</strong> (preuve locale).</li>
+                        <li>Reste à rattacher les <strong>136 articles</strong> à leur silo — les catégories fraîchement restructurées donnent une base propre.</li>
+                        <li>Règle actée : maillage = solutions⇄réalisations + articles→solutions uniquement.</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 3 -->
+                <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;margin-bottom:12px">
+                    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+                        <span style="background:#2A8F4D;color:#fff;padding:2px 10px;border-radius:100px;font-size:0.62rem;font-weight:800">Phase 3</span>
+                        <strong style="font-size:0.8rem;color:var(--text)">Routage du « jus » vers les pages business</strong>
+                    </div>
+                    <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                        <li><strong>Cible n°1 : /solutions/pompes-a-chaleur/</strong> — position 31,9 avec 10 000+ affichages = le plus gros gain latent du site. Objectif top 10 ≈ <strong>×20 de clics</strong>.</li>
+                        <li>Liens contextuels depuis les articles PAC/chauffage, avec des ancres issues du fichier de mots-clés de référence.</li>
+                        <li>Vérifier que l'accueil et le pied de page distribuent bien vers les 7 pages produits (✅ climatisation déjà intégrée partout).</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 4 -->
+                <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;margin-bottom:12px">
+                    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+                        <span style="background:#E8A33D;color:#fff;padding:2px 10px;border-radius:100px;font-size:0.62rem;font-weight:800">Phase 4</span>
+                        <strong style="font-size:0.8rem;color:var(--text)">SEO local &amp; référencement dans les IA</strong>
+                    </div>
+                    <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                        <li><strong>14 456 affichages locaux / 22 clics / 0 page cantonale</strong> = le 2ᵉ gros gain. Créer les pages cantonales (GE, VD, VS + subventions) — <strong>après</strong> les phases 0-3, pour qu'elles naissent bien maillées.</li>
+                        <li>Étendre la zone d'intervention déclarée à Google (données structurées LocalBusiness, + Jura).</li>
+                        <li>Les fiches réalisations + FAQ structurées servent déjà de matière citable par ChatGPT, Perplexity et les réponses IA de Google.</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 5 -->
+                <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px">
+                    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+                        <span style="background:#4285F4;color:#fff;padding:2px 10px;border-radius:100px;font-size:0.62rem;font-weight:800">Phase 5</span>
+                        <strong style="font-size:0.8rem;color:var(--text)">Contenu hors-marque</strong>
+                        <span style="font-size:0.66rem;color:var(--text-muted)">moyen terme</span>
+                    </div>
+                    <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                        <li><strong>81 % des clics viennent du nom « naoenergy »</strong>. Restructurer/créer des articles sur les recherches d'équipement à forte intention, chacun maillé vers sa page produit dès publication.</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="card" style="padding:22px 26px;border-left:4px solid #E8A33D">
-                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#E8A33D;font-weight:800;margin-bottom:14px">🚀 LES PROCHAINS CHANTIERS</div>
-                <table class="data-table" style="font-size:0.82rem">
-                    <thead>
-                        <tr><th style="width:8%">Prio</th><th style="width:38%">Chantier</th><th style="width:54%">Pourquoi</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td><strong style="color:#E85D4A">1</strong></td><td><strong>Page « Entretien / Nettoyage de panneaux solaires »</strong></td><td>Environ <strong>1 500 affichages par mois</strong> déjà en position 9 à 17, mais aucune page dédiée pour les convertir</td></tr>
-                        <tr><td><strong style="color:#E85D4A">2</strong></td><td><strong>Réparer la navigation du blog</strong></td><td>Les pages 2, 3, 4… affichent les mêmes articles — une partie du blog reste invisible pour Google</td></tr>
-                        <tr><td><strong style="color:#E8A33D">3</strong></td><td><strong>Page « Autoconsommation collective / RCP »</strong></td><td>Deux articles se font concurrence sur ce sujet (près de 3 900 affichages) au lieu d'une page forte</td></tr>
-                        <tr><td><strong style="color:#E8A33D">4</strong></td><td><strong>Articles par canton</strong></td><td>Genève, Vaud, Neuchâtel, Fribourg, Valais — prix, subventions et démarches propres à chaque canton</td></tr>
-                        <tr><td><strong style="color:#E8A33D">5</strong></td><td><strong>Enrichir les pages Équipe et Partenaires</strong></td><td>Elles inspirent confiance (critère important pour Google) mais manquent de contenu</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+                    </div>
 
         <!-- ═══════════ SITUATION AVANT PROJET — full page ═══════════ -->
         <div class="panel" id="panel-situation-avant">
@@ -8539,7 +8724,7 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             </div>
 
             <!-- REFONTE THÈME & PAGES -->
-            <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">Refonte du thème &amp; des pages</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; mise &agrave; jour au 06.08 &mdash; les 6 pages produits, les pages de conversion, le hub, « Pour les professionnels » et « Qui sommes-nous » sont en ligne. Restent les pages marque secondaires (&eacute;quipe, 10&nbsp;ans).</span></div>
+            <div style="display:flex;align-items:center;gap:10px;margin:8px 0 12px"><h2 style="margin:0;font-size:1.1rem;font-weight:800;color:var(--text)">Refonte du thème &amp; des pages</h2><span style="font-size:0.72rem;color:var(--text-muted)">&middot; mise &agrave; jour au 19.08 &mdash; les 7 pages produits (dont climatisation, cr&eacute;&eacute;e), conversion, hub, « Pour les professionnels », « Qui sommes-nous » et « Fondation PlanetSolar » sont en ligne. Restent les pages marque secondaires (&eacute;quipe, partenaires, 10&nbsp;ans).</span></div>
 
             <!-- MAJ-SUIVI-0608 : recapitulatif des pages refaites -->
             <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #6F3EAA">
@@ -8556,6 +8741,8 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                         <tr><td class="bold" style="white-space:nowrap">Toutes nos solutions (hub)</td><td style="white-space:nowrap;color:var(--text-muted)">16.07</td><td>Page pivot du site : image en bandeau, s&eacute;lecteur interactif des 6 solutions.</td></tr>
                         <tr><td class="bold" style="white-space:nowrap">Pour les professionnels</td><td style="white-space:nowrap;color:var(--text-muted)">16.07</td><td>Page B2B refondue.</td></tr>
                         <tr><td class="bold" style="white-space:nowrap">Qui sommes-nous</td><td style="white-space:nowrap;color:var(--text-muted)">27.07</td><td>Vid&eacute;o d'entreprise, parcours m&eacute;tier en 6 &eacute;tapes, agences cliquables vers Google Maps.</td></tr>
+                        <tr><td class="bold" style="white-space:nowrap">Climatisation (cr&eacute;ation)</td><td style="white-space:nowrap;color:var(--text-muted)">10.08</td><td>Nouvelle landing produit cr&eacute;&eacute;e pour la campagne Google Ads, int&eacute;gr&eacute;e partout (menu, pied de page, hub, accueil, maison interactive).</td></tr>
+                        <tr><td class="bold" style="white-space:nowrap">Fondation PlanetSolar</td><td style="white-space:nowrap;color:var(--text-muted)">16.08</td><td>Page de marque enti&egrave;rement refaite en 8 sections, liens officiels planetsolar.org et raphaeldomjan.com, animations.</td></tr>
                         <tr><td class="bold" style="white-space:nowrap">Actualit&eacute;s (gabarit)</td><td style="white-space:nowrap;color:var(--text-muted)">juillet</td><td>Gabarit refait sur le mod&egrave;le des r&eacute;alisations, pagination r&eacute;par&eacute;e, filtre &laquo;&nbsp;Tous&nbsp;&raquo;.</td></tr>
                         <tr><td class="bold" style="white-space:nowrap">Nos r&eacute;alisations</td><td style="white-space:nowrap;color:var(--text-muted)">juillet</td><td>Page liste + 6 archives par produit, cartes harmonis&eacute;es.</td></tr>
                         <tr><td class="bold" style="white-space:nowrap">Pages l&eacute;gales (&times;3)</td><td style="white-space:nowrap;color:var(--text-muted)">03.08</td><td>Cr&eacute;&eacute;es : elles n'existaient qu'en PDF.</td></tr>
