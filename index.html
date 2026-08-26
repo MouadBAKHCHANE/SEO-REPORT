@@ -5951,38 +5951,75 @@ User-agent: ExaBot</code></pre>
             <div class="card" style="padding:22px 26px;margin-top:16px;border-left:4px solid #6F3EAA">
                 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px">
                     <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#6F3EAA;font-weight:800">🕸 PLAN — MAILLAGE INTERNE &amp; SEO SÉMANTIQUE</div>
-                    <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:3px 10px;border-radius:100px;font-size:0.6rem;font-weight:700">établi le 18 août 2026</span>
+                    <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:3px 10px;border-radius:100px;font-size:0.6rem;font-weight:700">établi le 18 août · audit réalisé le 26 août</span>
                 </div>
-                <p style="margin:0 0 18px;font-size:0.84rem;line-height:1.6;color:var(--text)">
+                <p style="margin:0 0 14px;font-size:0.84rem;line-height:1.6;color:var(--text)">
                     Feuille de route en 6 phases, exécutée dans l'ordre : on nettoie l'index, on cartographie les liens, puis on dirige la puissance vers les pages qui rapportent — avant de créer du nouveau contenu.
                 </p>
+
+                <a href="https://docs.google.com/spreadsheets/d/15ZR0Ag-_bmRkmBYsx28xaAfkNUdLeS8dJh9OiISR5nA/edit" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;text-decoration:none;background:rgba(42,143,77,0.07);border:1px solid rgba(42,143,77,0.25);border-radius:10px;padding:13px 16px;margin-bottom:18px">
+                    <span style="font-size:1.4rem;line-height:1">📗</span>
+                    <span style="flex:1">
+                        <span style="display:block;font-size:0.84rem;font-weight:700;color:#2A8F4D">Les 1 809 URLs analysées, une par une &rsaquo;</span>
+                        <span style="display:block;font-size:0.73rem;color:var(--text-muted);line-height:1.5;margin-top:2px">Tableau Google Sheets : chaque URL connue de Google, son état d'indexation, un commentaire expliquant pourquoi, et l'action à faire.</span>
+                    </span>
+                </a>
+
+                <div style="background:rgba(42,143,77,0.08);border-left:3px solid #2A8F4D;border-radius:8px;padding:13px 16px;margin-bottom:18px">
+                    <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">✅ Phases 0 et 1 terminées — ce que l'audit a révélé</div>
+                    <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                        <li><strong>Le site publie 277 pages, Google en connaît 1 809</strong> — 6,5 fois plus. L'écart vient de deux mécanismes, pas de pages créées par erreur.</li>
+                        <li><strong>Cause n°1 : la pagination existe en double.</strong> Le bloc d'affichage des listes génère <code>/nos-realisations/?query-0-page=2</code> en plus de la version propre <code>/page/2/</code>, et cette version paramétrée se déclare page à part entière. Plus de 300 URLs fantômes en découlent, dont <strong>la totalité des 98 doublons canoniques</strong>.</li>
+                        <li><strong>Environ 1 280 exclusions sont saines</strong> : ce sont surtout les pages de pièces jointes (une par image), qui redirigent déjà correctement vers le fichier.</li>
+                        <li><strong>Deux hypothèses de départ sont tombées</strong> : le hreflang n'y est pour rien (le site est monolingue) et le bug de pagination du blog est déjà réparé.</li>
+                    </ul>
+                </div>
 
                 <!-- Phase 0 -->
                 <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;margin-bottom:12px">
                     <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
-                        <span style="background:#E85D4A;color:#fff;padding:2px 10px;border-radius:100px;font-size:0.62rem;font-weight:800">Phase 0</span>
+                        <span style="background:#2A8F4D;color:#fff;padding:2px 10px;border-radius:100px;font-size:0.62rem;font-weight:800">Phase 0 ✓</span>
                         <strong style="font-size:0.8rem;color:var(--text)">Nettoyage index &amp; dette de crawl</strong>
-                        <span style="font-size:0.66rem;color:var(--text-muted)">priorité immédiate · ~2-3 jours</span>
+                        <span style="font-size:0.66rem;color:var(--text-muted)">diagnostic terminé · corrections à appliquer</span>
                     </div>
                     <p style="margin:0 0 8px;font-size:0.72rem;font-style:italic;color:var(--text-muted)">Rien ne sert de pousser du jus dans un index sale.</p>
                     <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                        <li>Export GSC des <strong>1 118 pages exclues</strong> → classement par cause : doublons canoniques (101), vraies 404, paginations <code>/category/*/page/2/</code> (bug connu), attachments, paramètres.</li>
-                        <li>Doublons canoniques : cause principale identifiée = <strong>hreflang absent</strong> (Polylang) + doublons de fiches réalisations (✅ 16 déjà en corbeille + redirections ; restent Trélex et autres communes).</li>
-                        <li>✅ Déjà réglé : noindex <code>/partner/</code> (robots.txt + Removals), sitemap réalisations 185→281, redirections des catégories supprimées.</li>
-                        <li>Crawl <strong>Screaming Frog</strong> complet (~281 URLs au sitemap) pour valider l'état après corrections.</li>
+                        <li>✅ <strong>1 809 URLs exportées et classées par cause</strong>, une par une (voir le tableau ci-dessus).</li>
+                        <li>✅ Vérifié sain : toutes les variantes d'URL redirigent correctement (http→https, www, sans slash), aucune page du sitemap en erreur, fiches partenaires bien bloquées.</li>
+                        <li>❌ <strong>À corriger — la pagination paramétrée</strong> : faire pointer le canonique de <code>?query-N-page=X</code> vers <code>/page/X/</code>. Un seul correctif qui règle plus de 300 URLs.</li>
+                        <li>❌ <strong>47 pages en 404</strong> à rediriger ou à laisser mourir, et <strong>10 soft 404</strong> à vérifier.</li>
+                        <li>❌ Deux liens fautifs repérés dans des articles (une adresse mal écrite que Googlebot a suivie).</li>
                     </ul>
                 </div>
 
                 <!-- Phase 1 -->
                 <div style="background:var(--surface-soft);border-radius:10px;padding:14px 16px;margin-bottom:12px">
                     <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
-                        <span style="background:#6F3EAA;color:#fff;padding:2px 10px;border-radius:100px;font-size:0.62rem;font-weight:800">Phase 1</span>
+                        <span style="background:#2A8F4D;color:#fff;padding:2px 10px;border-radius:100px;font-size:0.62rem;font-weight:800">Phase 1 ✓</span>
                         <strong style="font-size:0.8rem;color:var(--text)">Audit de maillage interne</strong>
+                        <span style="font-size:0.66rem;color:var(--text-muted)">terminé le 26 août</span>
                     </div>
+                    <p style="margin:0 0 8px;font-size:0.72rem;color:var(--text-muted)">Les 277 pages du site ont été parcourues et leurs liens comptés — en ne retenant que les liens <em>du contenu</em>, sans le menu ni le pied de page, qui pointent vers les mêmes pages partout et fausseraient la mesure.</p>
+                    <table style="width:100%;border-collapse:collapse;font-size:0.72rem;margin:6px 0 10px">
+                        <thead><tr style="text-align:left;color:var(--text-muted)">
+                            <th style="padding:4px 6px;font-weight:700">Page qui rapporte</th><th style="padding:4px 6px;font-weight:700">Liens reçus</th><th style="padding:4px 6px;font-weight:700">dont fiches chantier</th>
+                        </tr></thead>
+                        <tbody>
+                            <tr><td style="padding:3px 6px">Panneaux photovoltaïques</td><td style="padding:3px 6px"><strong>133</strong></td><td style="padding:3px 6px">36</td></tr>
+                            <tr><td style="padding:3px 6px">Pompes à chaleur</td><td style="padding:3px 6px"><strong>100</strong></td><td style="padding:3px 6px">28</td></tr>
+                            <tr><td style="padding:3px 6px">Batteries de stockage</td><td style="padding:3px 6px"><strong>81</strong></td><td style="padding:3px 6px">14</td></tr>
+                            <tr><td style="padding:3px 6px">Borne de recharge</td><td style="padding:3px 6px">28</td><td style="padding:3px 6px;color:#E85D4A"><strong>1</strong></td></tr>
+                            <tr><td style="padding:3px 6px">Boiler thermodynamique</td><td style="padding:3px 6px">27</td><td style="padding:3px 6px">11</td></tr>
+                            <tr><td style="padding:3px 6px">Carport solaire</td><td style="padding:3px 6px">17</td><td style="padding:3px 6px;color:#E85D4A"><strong>1</strong></td></tr>
+                            <tr><td style="padding:3px 6px">Pour les professionnels</td><td style="padding:3px 6px">16</td><td style="padding:3px 6px">0</td></tr>
+                            <tr style="background:rgba(232,93,74,0.07)"><td style="padding:3px 6px"><strong>Votre projet</strong></td><td style="padding:3px 6px;color:#E85D4A"><strong>8</strong></td><td style="padding:3px 6px">4</td></tr>
+                            <tr style="background:rgba(232,93,74,0.07)"><td style="padding:3px 6px"><strong>Climatisation</strong></td><td style="padding:3px 6px;color:#E85D4A"><strong>4</strong></td><td style="padding:3px 6px">0</td></tr>
+                        </tbody>
+                    </table>
                     <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                        <li>Export des liens internes (Screaming Frog) → graphe <strong>Gephi</strong> : pages orphelines, profondeur &gt;3, distribution du PageRank interne.</li>
-                        <li>Comparaison avec le comptage « liens internes » de la Search Console, page par page.</li>
-                        <li><strong>Livrable :</strong> matrice pages × liens entrants + liste de corrections priorisée (format HTML partageable).</li>
+                        <li><strong>Seules 2 pages sont réellement orphelines</strong> : le calculateur et le livre blanc — et c'est voulu, puisqu'il a été décidé en juillet de ne plus les promouvoir.</li>
+                        <li><strong>60 pages ne sont atteignables que par la pagination</strong> (31 articles, 31 fiches) : indexables, mais trop profondes pour recevoir de la valeur.</li>
+                        <li>Ce constat recoupe exactement les <strong>51 fiches que Google connaît mais refuse d'explorer</strong> : il les juge trop peu soutenues pour valoir le déplacement.</li>
                     </ul>
                 </div>
 
@@ -6007,9 +6044,11 @@ User-agent: ExaBot</code></pre>
                         <strong style="font-size:0.8rem;color:var(--text)">Routage du « jus » vers les pages business</strong>
                     </div>
                     <ul style="margin:0;padding-left:18px;font-size:0.74rem;color:var(--text-body);line-height:1.7">
-                        <li><strong>Cible n°1 : /solutions/pompes-a-chaleur/</strong> — position 31,9 avec 10 000+ affichages = le plus gros gain latent du site. Objectif top 10 ≈ <strong>×20 de clics</strong>.</li>
-                        <li>Liens contextuels depuis les articles PAC/chauffage, avec des ancres issues du fichier de mots-clés de référence.</li>
-                        <li>Vérifier que l'accueil et le pied de page distribuent bien vers les 7 pages produits (✅ climatisation déjà intégrée partout).</li>
+                        <li><strong>⚠️ Cible revue après l'audit.</strong> La pompe à chaleur était désignée priorité n°1 — à tort : elle reçoit déjà <strong>100 liens internes</strong>, le 2ᵉ meilleur score du site. Sa position 31,9 ne vient donc pas du maillage, et lui ajouter des liens ne donnerait rien. Le levier est ailleurs : intention de recherche, profondeur du contenu, concurrence.</li>
+                        <li><strong>Vraie cible n°1 : la climatisation (4 liens entrants).</strong> Ses seules sources sont des blocs de navigation — aucune fiche chantier, aucun article de fond — alors qu'elle porte une campagne Google Ads.</li>
+                        <li><strong>Cible n°2 : « Votre projet » (8 liens).</strong> C'est la principale page de conversion du site, et le contenu ne l'appelle presque jamais.</li>
+                        <li><strong>Cible n°3 : borne et carport.</strong> Sur 95 fiches chantier, une seule pointe vers chacune — la preuve locale ne soutient pas ces deux produits.</li>
+                        <li>Liens contextuels à poser depuis les articles concernés, avec des ancres issues du fichier de mots-clés de référence.</li>
                     </ul>
                 </div>
 
@@ -6863,7 +6902,7 @@ User-agent: ExaBot</code></pre>
             </div>
 
             <div class="info-banner cyan">
-                <strong>🔄 Mise à jour :</strong> Le rapport original notait 0 balises hreflang et indiquait "attendu pour les sites monolingues." Après investigation dans l'admin, nous avons constaté qu'il s'agit d'une opportunité manquée — le site utilise Polylang Pro (une extension multilingue) mais seul le français est configuré. Pour un site ciblant le marché suisse, des versions en allemand et en italien élargiraient considérablement la portée.
+                <strong>🔄 Mise à jour du 26 août 2026 :</strong> ce point est clos. L'extension multilingue Polylang a depuis été retirée du site — il ne reste aucune extension de traduction active. Le site est donc <strong>officiellement monolingue, et les balises hreflang n'ont plus lieu d'être</strong> : elles ne servent qu'à relier entre elles plusieurs versions linguistiques d'une même page. L'audit d'indexation le confirme, aucune des 1 809 URLs connues de Google n'est exclue pour un motif de langue. Ouvrir le site à l'allemand ou à l'italien reste une opportunité commerciale, mais c'est alors un projet de traduction complet — pas un correctif technique.
             </div>
 
             <div class="kpi-mini-row">
