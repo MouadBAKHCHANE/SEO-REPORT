@@ -298,6 +298,11 @@ a { color: var(--primary); text-decoration: none; }
     display: none;
 }
 
+.nav-couche{display:flex;align-items:center;gap:7px;font-size:0.6rem;text-transform:uppercase;letter-spacing:.7px;font-weight:700;color:var(--text-muted);margin:12px 0 5px}
+.nav-couche .nao-c{display:inline-flex;align-items:center;justify-content:center;min-width:30px;height:17px;border-radius:100px;font-size:0.56rem;font-weight:800;letter-spacing:.4px;color:#fff}
+.nav-couche .nao-c1{background:#233036}
+.nav-couche .nao-c2{background:#E8B23D;color:#233036}
+.nav-couche .nao-c3{background:#E14A3B}
 .nav-section { display: flex; flex-direction: column; gap: 4px; }
 .nav-section-title {
     font-size: 0.65rem;
@@ -2892,23 +2897,29 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             <div class="nav-children">
                 <div class="nav-children-inner">
                     <button class="nav-child" data-target="seo-hub" type="button">
-                        <span class="nav-label">🎯 Stratégie SEO</span>
+                        <span class="nav-label">Stratégie SEO</span>
                     </button>
 
-                    <div class="nav-sub-label" style="padding-left:0">Finding Keywords</div>
+                    <div class="nav-couche"><span class="nao-c nao-c1">SEO</span>Être trouvé</div>
                     <button class="nav-child" data-target="keywords" type="button">
-                        <span class="nav-label">🔑 Mots-clés &amp; Topical map</span>
+                        <span class="nav-label">Mots-clés &amp; Topical map</span>
                         <span class="nav-badge" style="background:rgba(42,143,77,0.15);color:#2A8F4D">GSC</span>
                     </button>
-
-                    <div class="nav-sub-label" style="padding-left:0">On-page SEO</div>
                     <button class="nav-child" data-target="gsc" type="button">
                         <span class="nav-label">Google Search Console</span>
                     </button>
+                    <button class="nav-child" data-target="seo-hub" data-ancre="nao-map-card" type="button">
+                        <span class="nav-label">Maillage interne</span>
+                    </button>
 
-                    <div class="nav-sub-label" style="padding-left:0">AI Search</div>
-                    <button class="nav-child" data-target="geo-aeo" type="button">
-                        <span class="nav-label">🤖 GEO + AEO</span>
+                    <div class="nav-couche"><span class="nao-c nao-c2">AEO</span>Être la réponse</div>
+                    <button class="nav-child" data-target="geo-aeo" data-ancre="anc-aeo" type="button">
+                        <span class="nav-label">Extraits &amp; données structurées</span>
+                    </button>
+
+                    <div class="nav-couche"><span class="nao-c nao-c3">GEO</span>Être recommandé</div>
+                    <button class="nav-child" data-target="geo-aeo" data-ancre="anc-geo" type="button">
+                        <span class="nav-label">Visibilité dans les IA</span>
                         <span class="nav-badge" style="background:rgba(232,93,74,0.15);color:#E85D4A">1/5</span>
                     </button>
                 </div>
@@ -2973,18 +2984,18 @@ pre.code-block .c-highlight { color: #FCA5A5; font-weight: 700; }
             <div class="nav-children">
                 <div class="nav-children-inner">
                     <button class="nav-child" data-target="theme" type="button">
-                        <span class="nav-label">🎨 Thème &amp; Stack</span>
+                        <span class="nav-label">Thème &amp; Stack</span>
                         <span class="nav-badge new">NEW</span>
                     </button>
                     <button class="nav-child" data-target="redesign" type="button">
-                        <span class="nav-label">🛠️ Refonte des pages</span>
+                        <span class="nav-label">Refonte des pages</span>
                         <span class="nav-badge new">NEW</span>
                     </button>
                     <button class="nav-child" data-target="sitekit" type="button">
                         <span class="nav-label">Audit Site Kit</span>
                     </button>
                     <button class="nav-child" data-target="tracking" type="button">
-                        <span class="nav-label">🛰️ Architecture du tracking</span>
+                        <span class="nav-label">Architecture du tracking</span>
                         <span class="nav-badge dot"></span>
                     </button>
                 </div>
@@ -5414,6 +5425,7 @@ generate_lead  generate_lead     Lead        lead_submitted
             </div>
 
             <!-- Vocabulaire / nomenclature -->
+            <div id="anc-geo" style="scroll-margin-top:76px"></div>
             <div class="card" style="padding:22px 26px;margin-bottom:18px;border-left:4px solid #6F3EAA">
                 <div style="font-size:0.85rem;font-weight:800;color:var(--text);margin-bottom:14px">📚 Les 4 disciplines SEO modernes</div>
                 <div style="overflow-x:auto">
@@ -5695,6 +5707,7 @@ User-agent: ExaBot</code></pre>
                 <span style="background:rgba(33,117,155,0.14);color:#21759B;padding:4px 10px;border-radius:100px;font-size:0.6rem;font-weight:700">À planifier</span>
             </div>
 
+            <div id="anc-aeo" style="scroll-margin-top:76px"></div>
             <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #21759B">
                 <div style="font-size:0.85rem;font-weight:800;color:var(--text);margin-bottom:8px">🎯 Objectif AEO : capturer les Featured Snippets Google sur les requêtes énergie Romandie</div>
                 <div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:14px;font-style:italic">L'AEO génère du trafic Google direct (boîte de réponse en position 0). C'est complémentaire au GEO (qui génère des citations IA).</div>
@@ -5732,42 +5745,11 @@ User-agent: ExaBot</code></pre>
                 </div>
             </div>
 
-            <div class="kpi-mini-row" style="margin-bottom:18px">
-                <div class="kpi-mini k-pass" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-                    <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                        <span style="font-size:1.35rem;line-height:1">🛡️</span>
-                        <div class="kpi-mini-label" style="margin:0">Santé technique Ahrefs + Semrush<br><span style="opacity:.7;text-transform:none;letter-spacing:0">score Ahrefs · était 65 mi-juillet</span></div>
-                    </div>
-                    <div class="kpi-mini-value" style="white-space:nowrap">92<span style="font-size:0.6em">/100</span></div>
-                </div>
-                <div class="kpi-mini k-pass" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-                    <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                        <span style="font-size:1.35rem;line-height:1">📍</span>
-                        <div class="kpi-mini-label" style="margin:0">Fiches réalisations<br><span style="opacity:.7;text-transform:none;letter-spacing:0">enrichies + maillées</span></div>
-                    </div>
-                    <div class="kpi-mini-value" style="white-space:nowrap">95</div>
-                </div>
-                <div class="kpi-mini k-pass" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-                    <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                        <span style="font-size:1.35rem;line-height:1">🗺️</span>
-                        <div class="kpi-mini-label" style="margin:0">Pages au sitemap<br><span style="opacity:.7;text-transform:none;letter-spacing:0">resoumis à Google</span></div>
-                    </div>
-                    <div class="kpi-mini-value" style="white-space:nowrap">277</div>
-                </div>
-                <div class="kpi-mini" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-                    <div style="display:flex;align-items:center;gap:10px;min-width:0">
-                        <span style="font-size:1.35rem;line-height:1">📝</span>
-                        <div class="kpi-mini-label" style="margin:0">Articles de blog<br><span style="opacity:.7;text-transform:none;letter-spacing:0">chantier en cours</span></div>
-                    </div>
-                    <div class="kpi-mini-value" style="white-space:nowrap">134</div>
-                </div>
-            </div>
-
             <!-- ═══ SITEMAP DU SITE (structure réelle — sitemap Yoast, 18 août 2026) ═══ -->
             <div class="card" style="padding:22px 26px;margin-top:16px;border-left:4px solid #5A98AE">
                 <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px">
                     <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800">🗺️ SITEMAP — LA STRUCTURE DU SITE</div>
-                    <span style="background:rgba(90,152,174,0.14);color:#3D7A8F;padding:3px 10px;border-radius:100px;font-size:0.6rem;font-weight:700">267 URLs indexables · relevé du 18 août 2026</span>
+                    
                 </div>
                 <p style="margin:0 0 16px;font-size:0.82rem;line-height:1.6;color:var(--text)">
                     Ce que Google connaît du site aujourd'hui, branche par branche. Les <strong style="color:#2A8F4D">pages en vert</strong> sont les pages business (celles qui rapportent) — tout le maillage doit converger vers elles.
@@ -5777,6 +5759,17 @@ User-agent: ExaBot</code></pre>
                 <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
                     <span style="background:#233036;color:#fff;padding:5px 14px;border-radius:8px;font-size:0.76rem;font-weight:800">🏠 naoenergy.ch</span>
                     <span style="flex:1;height:1px;background:var(--border)"></span>
+                </div>
+
+                <div style="display:flex;gap:9px;flex-wrap:wrap;font-size:0.66rem;color:var(--text-muted);margin:-4px 0 16px 4px">
+                    <span>137 articles</span><span>·</span>
+                    <span>96 fiches réalisations</span><span>·</span>
+                    <span>16 pages</span><span>·</span>
+                    <span>8 solutions</span><span>·</span>
+                    <span>6 hubs réalisations</span><span>·</span>
+                    <span>9 catégories</span><span>·</span>
+                    <span>4 events</span><span>·</span>
+                    <span>1 hub partenaires</span>
                 </div>
 
                 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px">
@@ -5858,78 +5851,96 @@ User-agent: ExaBot</code></pre>
 
                 </div>
 
-                <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap;font-size:0.66rem;color:var(--text-muted)">
-                    <span><strong style="color:var(--text)">Répartition :</strong></span>
-                    <span>137 articles</span><span>·</span>
-                    <span>96 fiches réalisations</span><span>·</span>
-                    <span>16 pages</span><span>·</span>
-                    <span>8 solutions</span><span>·</span>
-                    <span>6 hubs réalisations</span><span>·</span>
-                    <span>9 catégories</span><span>·</span>
-                    <span>4 events</span><span>·</span>
-                    <span>1 hub partenaires</span>
-                </div>
+                
             </div>
 
                         
 
 
+                        
+
+
+                        
+
+
+                        
+
+
+                        
+
+
+                        
+
+
+                        
+
+
+                        
+
+
+                        
+
+
+                        
+
+
                         <!-- ═══ CARTE ANIMÉE DU MAILLAGE INTERNE (27 août 2026) ═══ -->
-            <div class="card" id="nao-map-card" style="padding:0;margin-top:16px;border-left:4px solid #6F3EAA;overflow:hidden">
+            <div class="card" id="nao-map-card" style="padding:0;margin-bottom:16px;border-left:4px solid #6F3EAA;overflow:hidden">
                 <div style="padding:22px 26px 16px">
                     <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:6px">
                         <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#6F3EAA;font-weight:800">🗺️ CARTE VIVANTE DU MAILLAGE INTERNE</div>
-                        <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:3px 10px;border-radius:100px;font-size:0.6rem;font-weight:700">277 pages · 949 liens réels · crawl du 26 août</span>
+                        <span style="background:rgba(111,62,170,0.12);color:#6F3EAA;padding:3px 10px;border-radius:100px;font-size:0.6rem;font-weight:700">277 pages · 1 213 liens réels · crawl du 27 août</span>
                     </div>
                     <p style="margin:0;font-size:0.84rem;line-height:1.6;color:var(--text)">
-                        Chaque bulle est une page du site, chaque trait un lien réel écrit dans le contenu. Plus une bulle est <strong>grosse</strong>, plus elle reçoit de liens. Les points lumineux qui circulent montrent le sens de la puissance : elle doit remonter des articles et des chantiers vers les pages qui rapportent.
+                        Au centre <strong>l'accueil</strong> et les <strong>pages de conversion</strong>, puis les <strong>pages qui rapportent</strong> en couronne. Autour, chaque famille occupe sa zone : les <strong>chantiers et les hubs à droite</strong>, les <strong>articles à gauche</strong>, les <strong>pages d'entreprise en bas</strong>. Dans chaque zone, les pages qui alimentent le même produit restent voisines. Les points lumineux montrent le sens de la puissance : elle doit remonter de l'extérieur vers le cœur.
                     </p>
                 </div>
 
-                <div id="nao-map-wrap" style="position:relative;background:radial-gradient(120% 100% at 50% 0%,#16232b 0%,#0d1519 60%,#080d10 100%);border-top:1px solid rgba(124,177,196,.18);border-bottom:1px solid rgba(124,177,196,.18)">
-                    <canvas id="nao-map" style="display:block;width:100%;height:680px"></canvas>
+                <div id="nao-map-wrap" style="position:relative;background:radial-gradient(120% 100% at 50% 45%,#1a2a33 0%,#0e171c 55%,#070c0f 100%);border-top:1px solid rgba(124,177,196,.18);border-bottom:1px solid rgba(124,177,196,.18)">
+                    <canvas id="nao-map" style="display:block;width:100%;height:700px"></canvas>
 
-                    <!-- légende -->
-                    <div style="position:absolute;left:18px;top:16px;display:flex;flex-direction:column;gap:7px;pointer-events:none">
+                    <div style="position:absolute;left:18px;top:16px;display:flex;flex-direction:column;gap:6px;max-width:250px">
                         <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:1.2px;color:rgba(255,255,255,.45);font-weight:700;margin-bottom:2px">Familles de pages</div>
-                        <div class="nao-map-lg" data-g="0"><i style="background:#39d98a"></i>Pages qui rapportent<b>8</b></div>
-                        <div class="nao-map-lg" data-g="1"><i style="background:#ff6b57"></i>Conversion<b>2</b></div>
-                        <div class="nao-map-lg" data-g="2"><i style="background:#7CB1C4"></i>Hubs &amp; archives<b>19</b></div>
-                        <div class="nao-map-lg" data-g="3"><i style="background:#b98cff"></i>Entreprise<b>12</b></div>
-                        <div class="nao-map-lg" data-g="4"><i style="background:#4aa3ff"></i>Fiches chantier<b>95</b></div>
-                        <div class="nao-map-lg" data-g="5"><i style="background:#f5b544"></i>Articles<b>141</b></div>
+                        <button class="nao-map-lg" data-fam="6" type="button"><i style="background:#ffd24a"></i>Accueil<b>centre</b></button>
+                        <button class="nao-map-lg" data-fam="1" type="button"><i style="background:#ff6b57"></i>Conversion<b>2</b></button>
+                        <button class="nao-map-lg" data-fam="0" type="button"><i style="background:#39d98a"></i>Pages qui rapportent<b>8</b></button>
+                        <button class="nao-map-lg" data-fam="2" type="button"><i style="background:#7CB1C4"></i>Hubs &amp; archives<b>19</b></button>
+                        <button class="nao-map-lg" data-fam="4" type="button"><i style="background:#4aa3ff"></i>Fiches chantier<b>95 &rarr; droite</b></button>
+                        <button class="nao-map-lg" data-fam="5" type="button"><i style="background:#f5b544"></i>Articles<b>141 &rarr; gauche</b></button>
+                        <button class="nao-map-lg" data-fam="3" type="button"><i style="background:#b98cff"></i>Entreprise<b>12 &rarr; bas</b></button>
+                        <div id="nao-map-aide" style="margin-top:7px;padding-top:8px;border-top:1px solid rgba(255,255,255,.1);font-size:0.63rem;color:rgba(255,255,255,.42);line-height:1.5;transition:opacity .2s">Cliquez une famille pour l'isoler.<br>Survolez une bulle pour voir ses liens, cliquez-la pour ses connexions.</div>
                     </div>
 
-                    <!-- infobulle -->
-                    <div id="nao-map-tip" style="position:absolute;pointer-events:none;opacity:0;transition:opacity .15s;background:rgba(10,18,22,.94);border:1px solid rgba(124,177,196,.35);border-radius:10px;padding:10px 13px;max-width:270px;box-shadow:0 10px 30px rgba(0,0,0,.5)">
+                    <div id="nao-map-tip" style="position:absolute;pointer-events:none;opacity:0;transition:opacity .15s;background:rgba(8,15,19,.95);border:1px solid rgba(124,177,196,.35);border-radius:10px;padding:10px 13px;max-width:280px;box-shadow:0 10px 30px rgba(0,0,0,.55)">
                         <div id="nao-map-tip-t" style="font-size:0.8rem;font-weight:700;color:#fff;line-height:1.3;margin-bottom:4px"></div>
                         <div id="nao-map-tip-s" style="font-size:0.7rem;color:#9fb6c0;line-height:1.45"></div>
                     </div>
 
-                    <div style="position:absolute;right:18px;bottom:14px;font-size:0.64rem;color:rgba(255,255,255,.38)">Survolez une bulle pour isoler ses liens · cliquez pour ouvrir la page</div>
+                    <div id="nao-map-detail" style="position:absolute;right:0;top:0;bottom:0;width:340px;max-width:64%;background:rgba(6,12,15,.96);border-left:1px solid rgba(124,177,196,.28);transform:translateX(101%);transition:transform .28s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column">
+                        <div style="padding:16px 18px 12px;border-bottom:1px solid rgba(124,177,196,.16)">
+                            <div style="display:flex;align-items:flex-start;gap:10px">
+                                <div style="flex:1;min-width:0">
+                                    <div id="nao-d-fam" style="font-size:0.58rem;text-transform:uppercase;letter-spacing:1.1px;font-weight:700;margin-bottom:5px"></div>
+                                    <div id="nao-d-titre" style="font-size:0.92rem;font-weight:700;color:#fff;line-height:1.25"></div>
+                                    <a id="nao-d-url" href="#" target="_blank" rel="noopener" style="display:inline-block;margin-top:6px;font-size:0.68rem;color:#7CB1C4;text-decoration:none;word-break:break-all"></a>
+                                </div>
+                                <button id="nao-d-close" style="flex:0 0 auto;background:rgba(255,255,255,.08);border:0;color:#cfe0e7;width:26px;height:26px;border-radius:7px;cursor:pointer;font-size:15px;line-height:1">&times;</button>
+                            </div>
+                            <div id="nao-d-chiffres" style="display:flex;gap:16px;margin-top:12px"></div>
+                        </div>
+                        <div id="nao-d-listes" style="flex:1;overflow-y:auto;padding:14px 18px 18px"></div>
+                    </div>
+
                     <div id="nao-map-hint" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:0.8rem;color:rgba(255,255,255,.55);letter-spacing:.04em">Construction de la carte…</div>
                 </div>
 
-                <div style="padding:16px 26px 20px">
-                    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:12px">
-                        <div style="background:rgba(232,93,74,.07);border-left:3px solid #E85D4A;border-radius:8px;padding:11px 14px">
-                            <div style="font-size:0.72rem;font-weight:700;color:#E85D4A;margin-bottom:3px">Ce que la carte montre</div>
-                            <div style="font-size:0.73rem;color:var(--text-body);line-height:1.55">Trois grosses bulles vertes concentrent presque tout : panneaux, pompes à chaleur, batteries. <strong>Climatisation et Votre projet flottent en périphérie</strong>, presque sans attache.</div>
-                        </div>
-                        <div style="background:rgba(90,152,174,.08);border-left:3px solid #5A98AE;border-radius:8px;padding:11px 14px">
-                            <div style="font-size:0.72rem;font-weight:700;color:#3D7A8F;margin-bottom:3px">Pourquoi c'est un problème</div>
-                            <div style="font-size:0.73rem;color:var(--text-body);line-height:1.55">Une page peu reliée est jugée peu importante par Google. C'est exactement le cas des <strong>51 fiches qu'il connaît mais refuse d'explorer</strong>.</div>
-                        </div>
-                        <div style="background:rgba(42,143,77,.08);border-left:3px solid #2A8F4D;border-radius:8px;padding:11px 14px">
-                            <div style="font-size:0.72rem;font-weight:700;color:#2A8F4D;margin-bottom:3px">Lecture honnête</div>
-                            <div style="font-size:0.73rem;color:var(--text-body);line-height:1.55">Les liens du menu et du pied de page sont <strong>exclus</strong> : ils pointent partout pareil et masqueraient la structure. Seuls les liens écrits dans le contenu comptent ici.</div>
-                        </div>
-                    </div>
                 </div>
-            </div>
 
             <style>
-            .nao-map-lg{display:flex;align-items:center;gap:8px;font-size:0.68rem;color:rgba(255,255,255,.72);line-height:1}
+            .nao-map-lg{display:flex;align-items:center;gap:8px;font-size:0.68rem;color:rgba(255,255,255,.72);line-height:1;background:transparent;border:0;padding:4px 7px;margin-left:-7px;border-radius:7px;cursor:pointer;text-align:left;font-family:inherit;transition:background .15s,color .15s}
+            .nao-map-lg:hover{background:rgba(255,255,255,.08);color:#fff}
+            .nao-map-lg.on{background:rgba(255,255,255,.14);color:#fff}
+            .nao-map-lg.on b{color:rgba(255,255,255,.75)}
             .nao-map-lg i{width:9px;height:9px;border-radius:50%;display:block;flex:0 0 auto;box-shadow:0 0 8px currentColor}
             .nao-map-lg b{margin-left:4px;font-size:0.62rem;color:rgba(255,255,255,.4);font-weight:600}
             @media(max-width:760px){#nao-map{height:520px !important}}
@@ -5937,7 +5948,7 @@ User-agent: ExaBot</code></pre>
 
             <script id="nao-map-js">
             (function(){
-              var DATA = {"n":[{"u":"/","l":"Accueil","g":2,"v":6},{"u":"/10-ans-10-projets-retour-sur-lun-de-nos-projets-photovoltaiques-phares-a-gressy-vd/","l":"10 ans 10 projets","g":5,"v":0},{"u":"/10-ans-naoenergy-installateur-solaire-suisse-romande/","l":"10 ans naoenergy installateur","g":5,"v":1},{"u":"/10-ans-naoenergy/","l":"10 ans","g":3,"v":3},{"u":"/2020-renovation-energetique-suisse-romande/","l":"2020 renovation energetique suisse","g":5,"v":1},{"u":"/2021-1000e-client-installateur-panneaux-solaires-vaud/","l":"2021 1000e client installateur","g":5,"v":1},{"u":"/2026-transition-energetique-suisse-romande/","l":"2026 transition energetique suisse","g":5,"v":0},{"u":"/a-geneve-la-prime-solaire-des-sig-reconduite-en-2025/","l":"A geneve la prime","g":5,"v":0},{"u":"/abolition-de-la-valeur-locative-planifiez-des-maintenant-votre-renovation-energetique/","l":"Abolition de la valeur","g":5,"v":0},{"u":"/abolition-valeur-locative-renover-avant-2029/","l":"Abolition valeur locative renover","g":5,"v":1},{"u":"/actualites-actuentreprise-naoenergy-nouveau-site-web-identite-visuelle/","l":"Actualites actuentreprise naoenerg","g":5,"v":0},{"u":"/actualites-social-retour-sur-le-grand-evenement-naoenergy-du-04-mars-2025/","l":"Actualites social retour sur","g":5,"v":1},{"u":"/actualites/","l":"Actualités","g":2,"v":0},{"u":"/augmenter-autoconsommation-solaire/","l":"Augmenter autoconsommation solaire","g":5,"v":3},{"u":"/autoconsommation-collective-suisse-romande/","l":"Autoconsommation collective suisse","g":5,"v":0},{"u":"/avantages-batterie-stockage-solaire/","l":"Avantages batterie stockage solair","g":5,"v":4},{"u":"/baptiste-mimey-bureau-detudes-naoenergy/","l":"Baptiste mimey bureau detudes","g":5,"v":1},{"u":"/batterie-de-stockage-enphase-chez-naoenergy/","l":"Batterie de stockage enphase","g":5,"v":3},{"u":"/batterie-solaire-backup-suisse/","l":"Batterie solaire backup suisse","g":5,"v":0},{"u":"/batterie-stockage-solaire-backup-suisse-romande/","l":"Batterie stockage solaire backup","g":5,"v":1},{"u":"/batterie-stockage-solaire-suisse-romande-rentable/","l":"Batterie stockage solaire suisse","g":5,"v":0},{"u":"/booster-lefficacite-des-pompes-a-chaleur-le-role-cle-du-thermostat/","l":"Booster lefficacite des pompes","g":5,"v":0},{"u":"/calculateur-solaire-2-suisse/","l":"Calculateur solaire 2 suisse","g":5,"v":0},{"u":"/category/actualites-naoenergy/","l":"Cat. actualites naoenergy","g":2,"v":0},{"u":"/category/dans-la-presse/","l":"Cat. dans la presse","g":2,"v":0},{"u":"/category/energie-immobilier/","l":"Cat. energie immobilier","g":2,"v":0},{"u":"/category/evenements/","l":"Cat. evenements","g":2,"v":0},{"u":"/category/labels/","l":"Cat. labels","g":2,"v":0},{"u":"/category/loi-et-reglementations/","l":"Cat. loi et reglementations","g":2,"v":0},{"u":"/category/partenariats/","l":"Cat. partenariats","g":2,"v":0},{"u":"/category/produits/","l":"Cat. produits","g":2,"v":0},{"u":"/category/projets/","l":"Cat. projets","g":2,"v":0},{"u":"/chargeur-ve-solaire-enphase-suisse/","l":"Chargeur ve solaire enphase","g":5,"v":0},{"u":"/clean-advantage-2025-naoenergy-suisse-romande/","l":"Clean advantage 2025 naoenergy","g":5,"v":0},{"u":"/climatiseur-reversible-mitsubishi-msz-ln-vg3-suisse-romande/","l":"Climatiseur reversible mitsubishi ","g":5,"v":1},{"u":"/comment-combiner-panneaux-solaires-et-pompe-a-chaleur-pour-maximiser-vos-economies-en-suisse-romande/","l":"Comment combiner panneaux solaires","g":5,"v":1},{"u":"/comment-valoriser-un-bien-avec-une-installation-photovoltaique/","l":"Comment valoriser un bien","g":5,"v":0},{"u":"/conditions-generales-de-vente/","l":"Conditions generales de vente","g":5,"v":0},{"u":"/contact/","l":"Contact","g":1,"v":53},{"u":"/de-nouveaux-materiaux-davenir-pour-le-photovoltaique-decouverts-par-lepfl/","l":"De nouveaux materiaux davenir","g":5,"v":0},{"u":"/dimensionnement-installation-solaire/","l":"Dimensionnement installation solai","g":5,"v":1},{"u":"/electricite-solaire-et-consommation-suisse/","l":"Electricite solaire et consommatio","g":5,"v":0},{"u":"/energie-solaire-la-suisse-a-un-potentiel-important-encore-sous-exploite/","l":"Energie solaire la suisse","g":5,"v":0},{"u":"/energies-fossiles-suisse-dependance-transition-energetique/","l":"Energies fossiles suisse dependanc","g":5,"v":0},{"u":"/entreprises-comment-reduire-votre-facture-delectricite/","l":"Entreprises comment reduire votre","g":5,"v":0},{"u":"/entretien-avec-wieland-hintz-responsable-energie-solaire-a-lofen/","l":"Entretien avec wieland hintz","g":5,"v":0},{"u":"/entretien-pompe-a-chaleur-suisse/","l":"Entretien pompe a chaleur","g":5,"v":0},{"u":"/etude-energetique-gratuite-suisse/","l":"Etude energetique gratuite suisse","g":5,"v":2},{"u":"/evenements-naoenergy-suisse/","l":"Évènements","g":3,"v":0},{"u":"/event/journees-fribourgeoises-du-photovoltaique-2024-4/","l":"Event/journees fribourgeoises du p","g":3,"v":4},{"u":"/event/le-grand-evenement-naoenergy/","l":"Event/le grand evenement naoenergy","g":3,"v":4},{"u":"/event/les-automnales-geneve-palexpo-4/","l":"Event/les automnales geneve palexp","g":3,"v":4},{"u":"/event/soiree-naoenergy-x-genesis/","l":"Event/soiree naoenergy x genesis","g":3,"v":4},{"u":"/fondation-planetsolar/","l":"Fondation PlanetSolar","g":3,"v":14},{"u":"/geneve-accelere-la-pose-de-panneaux-solaires/","l":"Geneve accelere la pose","g":5,"v":0},{"u":"/geneve-adopte-un-cadre-renforce-pour-le-solaire-et-la-construction-durable/","l":"Geneve adopte un cadre","g":5,"v":0},{"u":"/hausse-mazout-gaz-suisse-solutions-energie/","l":"Hausse mazout gaz suisse","g":5,"v":0},{"u":"/independance-energetique-maison-suisse/","l":"Independance energetique maison su","g":5,"v":0},{"u":"/installation-boiler-thermodynamique-buderus/","l":"Installation boiler thermodynamiqu","g":5,"v":0},{"u":"/installation-pompe-a-chaleur-vaud-autoconsommation/","l":"Installation pompe a chaleur","g":5,"v":0},{"u":"/journee-mondiale-de-lenvironnement/","l":"Journee mondiale de lenvironnement","g":5,"v":0},{"u":"/kilian-jordan-devient-n1-suisse-de-padel/","l":"Kilian jordan devient n1","g":5,"v":1},{"u":"/kilian-jordan-remporte-le-titre-de-champion-suisse-de-padel-2025/","l":"Kilian jordan remporte le","g":5,"v":0},{"u":"/la-charte-commerciale-responsable-par-naoenergy/","l":"La charte commerciale responsable","g":5,"v":0},{"u":"/la-charte-commerciale-responsable/","l":"Charte","g":3,"v":10},{"u":"/la-loi-electricite-approuvee/","l":"La loi electricite approuvee","g":5,"v":0},{"u":"/la-premiere-centrale-solaire-sur-rails-inauguree-en-suisse/","l":"La premiere centrale solaire","g":5,"v":0},{"u":"/la-technologie-heterojonction-hjt-pour-les-panneaux-photovoltaiques/","l":"La technologie heterojonction hjt","g":5,"v":0},{"u":"/lavenir-du-stockage-avec-la-batterie-atmoce-chez-naoenergy/","l":"Lavenir du stockage avec","g":5,"v":1},{"u":"/le-canton-de-vaud-leve-les-restrictions-pour-les-pompes-a-chaleur-en-altitude/","l":"Le canton de vaud","g":5,"v":1},{"u":"/le-carport-solaire-by-nao-une-solution-energetique-alternative/","l":"Le carport solaire by","g":5,"v":0},{"u":"/le-contracting-solaire-avec-naoenergy/","l":"Le contracting solaire avec","g":5,"v":0},{"u":"/le-guide-du-solaire-photovoltaique-pour-les-entreprises-par-naoenergy/","l":"Le guide du solaire","g":5,"v":0},{"u":"/le-guide-pratique-pour-les-pompes-a-chaleur-par-naoenergy/","l":"Le guide pratique pour","g":5,"v":0},{"u":"/le-nettoyage-des-panneaux-photovoltaiques-un-entretien-essentiel-pour-garantir-performance-et-longevite/","l":"Le nettoyage des panneaux","g":5,"v":0},{"u":"/le-photovoltaique-quels-avantages-concrets-pour-les-investisseurs-immobiliers-suisses/","l":"Le photovoltaique quels avantages","g":5,"v":0},{"u":"/le-projet-du-mois-180-panneaux-solaires-sur-un-hangar-agricole-a-gressy/","l":"Le projet du mois","g":5,"v":0},{"u":"/leconomie-circulaire-saccelere-dans-lindustrie-solaire/","l":"Leconomie circulaire saccelere dan","g":5,"v":0},{"u":"/lenergie-solaire-devient-la-premiere-source-delectricite-en-europe/","l":"Lenergie solaire devient la","g":5,"v":0},{"u":"/lenergie-solaire-pour-lagriculture-suisse-episode-1-les-vignerons/","l":"Lenergie solaire pour lagriculture","g":5,"v":0},{"u":"/les-atouts-de-la-pompe-a-chaleur-air-eau-dans-le-contexte-reglementaire-2025/","l":"Les atouts de la","g":5,"v":0},{"u":"/les-communautes-dautoconsommation-suisse-romande/","l":"Les communautes dautoconsommation ","g":5,"v":5},{"u":"/les-erreurs-a-eviter-avant-dinstaller-une-pompe-a-chaleur-guide-pour-un-projet-reussi-en-suisse-romande/","l":"Les erreurs a eviter","g":5,"v":0},{"u":"/les-infrastructures-routieres-au-coeur-de-la-strategie-solaire-de-la-suisse/","l":"Les infrastructures routieres au","g":5,"v":0},{"u":"/limite-injection-solaire-suisse-2026/","l":"Limite injection solaire suisse","g":5,"v":1},{"u":"/linstant-zen-lentretien-de-votre-pompe-a-chaleur-pour-un-hiver-serein/","l":"Linstant zen lentretien de","g":5,"v":0},{"u":"/livre-blanc-panneaux-photovoltaiques-suisse-2/","l":"Livre blanc panneaux photovoltaiqu","g":5,"v":0},{"u":"/marche-energie-solaire-suisse-2025/","l":"Marche energie solaire suisse","g":5,"v":0},{"u":"/micro-onduleur-ou-onduleur-suisse/","l":"Micro onduleur ou onduleur","g":5,"v":0},{"u":"/naoenergy-accompagnement-entreprises-transition-energetique-suisse/","l":"Naoenergy accompagnement entrepris","g":5,"v":0},{"u":"/naoenergy-certifiee-entreprise-formatrice/","l":"Naoenergy certifiee entreprise for","g":5,"v":0},{"u":"/naoenergy-devient-installateur-officiel-atmoce/","l":"Naoenergy devient installateur off","g":5,"v":0},{"u":"/naoenergy-devient-membre-de-la-societe-suisse-pour-lenergie-solaire/","l":"Naoenergy devient membre de","g":5,"v":0},{"u":"/naoenergy-et-genesis-reunissent-clients-et-partenaires-a-geneve-pour-une-soiree-exclusive/","l":"Naoenergy et genesis reunissent","g":5,"v":1},{"u":"/naoenergy-fetes-ses-10-ans/","l":"Naoenergy fetes ses 10","g":5,"v":0},{"u":"/naoenergy-le-partenaire-de-de-la-transition-energetique-des-professionnels-en-suisse-romande/","l":"Naoenergy le partenaire de","g":5,"v":0},{"u":"/naoenergy-partenaire-du-sport-local/","l":"Naoenergy partenaire du sport","g":5,"v":0},{"u":"/naoenergy-poursuit-son-engagement-ecologique-avec-clean-advantage/","l":"Naoenergy poursuit son engagement","g":5,"v":1},{"u":"/naoenergy-se-renouvelle-avec-sa-chaine-youtube/","l":"Naoenergy se renouvelle avec","g":5,"v":0},{"u":"/naoenergy-sengage-aux-cotes-de-raphael-domjan-et-de-planetsolar/","l":"Naoenergy sengage aux cotes","g":5,"v":0},{"u":"/naoenergy-sponsor-officiel-tennis-club-collonge-bellerive/","l":"Naoenergy sponsor officiel tennis","g":5,"v":0},{"u":"/naoenergy-transition-energetique-suisse-romande/","l":"Naoenergy transition energetique s","g":5,"v":0},{"u":"/naonergy-membre-de-la-ccig/","l":"Naonergy membre de la","g":5,"v":0},{"u":"/nos-partenaires/","l":"Nos partenaires","g":3,"v":1},{"u":"/nos-realisations/","l":"Nos réalisations","g":2,"v":32},{"u":"/notre-equipe/","l":"Notre équipe","g":3,"v":10},{"u":"/nouveau-centre-de-competences-pour-la-construction-durable/","l":"Nouveau centre de competences","g":5,"v":0},{"u":"/nouvelle-subvention-solaire-de-letat-de-vaud-pour-les-batiments-proteges/","l":"Nouvelle subvention solaire de","g":5,"v":0},{"u":"/nouvelles-reglementations-energie-2026-suisse-romande/","l":"Nouvelles reglementations energie ","g":5,"v":8},{"u":"/nyon-relance-nyon-renove-pour-accelerer-la-transition-energetique-de-son-parc-immobilier/","l":"Nyon relance nyon renove","g":5,"v":0},{"u":"/obligation-assainissement-chauffages-chauffe-eaux-electriques-canton-de-vaud/","l":"Obligation assainissement chauffag","g":5,"v":0},{"u":"/panneaux-photovoltaiques-installation-founex-suisse/","l":"Panneaux photovoltaiques installat","g":5,"v":0},{"u":"/panneaux-solaires-en-suisse-rentabilite-cout-et-aides-2025/","l":"Panneaux solaires en suisse","g":5,"v":0},{"u":"/panneaux-solaires-en-suisse-romande-est-ce-rentable-en-2025/","l":"Panneaux solaires en suisse","g":5,"v":0},{"u":"/panneaux-solaires-vaud-projet-photovoltaique-gingins/","l":"Panneaux solaires vaud projet","g":5,"v":0},{"u":"/photovoltaique-et-stockage-intelligent-a-la-croix-de-rozon-geneve/","l":"Photovoltaique et stockage intelli","g":5,"v":0},{"u":"/politique-de-confidentialite/","l":"Politique de confidentialite","g":5,"v":1},{"u":"/pompe-a-chaleur-air-eau-avantages-et-installation-en-suisse-romande/","l":"Pompe a chaleur air","g":5,"v":1},{"u":"/pompe-a-chaleur-suisse-2026/","l":"Pompe a chaleur suisse","g":5,"v":0},{"u":"/prime-solaire-sig-2026-geneve/","l":"Prime solaire sig 2026","g":5,"v":3},{"u":"/prix-de-lelectricite-en-2026-en-suisse-baisse-relative-mais-fin-de-lenergie-bon-marche/","l":"Prix de lelectricite en","g":5,"v":0},{"u":"/programme-clean-advantage/","l":"Programme clean advantage","g":5,"v":0},{"u":"/prospection-energetique-oui-a-linformation-non-a-la-pression/","l":"Prospection energetique oui a","g":5,"v":0},{"u":"/quelles-sont-les-etapes-dune-installation-photovoltaique/","l":"Quelles sont les etapes","g":5,"v":0},{"u":"/qui-sommes-nous/","l":"Qui sommes-nous","g":3,"v":9},{"u":"/raphael-domjan-entame-la-premiere-circumnavigation-du-lac-tititca-a-lenergie-solaire/","l":"Raphael domjan entame la","g":5,"v":0},{"u":"/raphael-domjan-et-planetsolar-ii-bouclent-la-premiere-traversee-du-lac-titicaca-a-lenergie-solaire/","l":"Raphael domjan et planetsolar","g":5,"v":0},{"u":"/realisations/batteries-de-stockage/","l":"Réalisations batteries de stockage","g":2,"v":15},{"u":"/realisations/boiler-thermodynamique/","l":"Réalisations boiler thermodynamiqu","g":2,"v":12},{"u":"/realisations/borne-de-recharge/","l":"Réalisations borne de recharge","g":2,"v":1},{"u":"/realisations/carport-solaire/","l":"Réalisations carport solaire","g":2,"v":1},{"u":"/realisations/panneaux-photovoltaiques/","l":"Réalisations panneaux photovoltaiq","g":2,"v":30},{"u":"/realisations/pompes-a-chaleur/","l":"Réalisations pompes a chaleur","g":2,"v":27},{"u":"/realization/anet-berne/","l":"Anet Berne","g":4,"v":2},{"u":"/realization/aubonne-vaud/","l":"Aubonne Vaud","g":4,"v":0},{"u":"/realization/bassins-vaud/","l":"Bassins Vaud","g":4,"v":0},{"u":"/realization/bellerive-vaud/","l":"Bellerive Vaud","g":4,"v":0},{"u":"/realization/bernex-geneve/","l":"Bernex Geneve","g":4,"v":2},{"u":"/realization/bex-vaud/","l":"Bex Vaud","g":4,"v":0},{"u":"/realization/blonay-vaud/","l":"Blonay Vaud","g":4,"v":0},{"u":"/realization/borex-vaud-2/","l":"Borex Vaud","g":4,"v":7},{"u":"/realization/borex-vaud/","l":"Borex Vaud","g":4,"v":0},{"u":"/realization/boussens-vaud/","l":"Boussens Vaud","g":4,"v":16},{"u":"/realization/bussigny-vaud/","l":"Bussigny Vaud","g":4,"v":0},{"u":"/realization/chatelaine-geneve/","l":"Chatelaine Geneve","g":4,"v":3},{"u":"/realization/chene-bougeries-geneve-2/","l":"Chene Bougeries Geneve","g":4,"v":0},{"u":"/realization/chene-bougeries-geneve-3/","l":"Chene Bougeries Geneve","g":4,"v":2},{"u":"/realization/chene-bougeries-geneve/","l":"Chene Bougeries Geneve","g":4,"v":1},{"u":"/realization/collonge-bellerive-geneve/","l":"Collonge Bellerive Geneve","g":4,"v":5},{"u":"/realization/commugny-vaud/","l":"Commugny Vaud","g":4,"v":0},{"u":"/realization/corminboeuf-fribourg/","l":"Corminboeuf Fribourg","g":4,"v":1},{"u":"/realization/cormoret-berne/","l":"Cormoret Berne","g":4,"v":2},{"u":"/realization/crans-vaud/","l":"Crans Vaud","g":4,"v":0},{"u":"/realization/crassier-vaud-2/","l":"Crassier Vaud","g":4,"v":0},{"u":"/realization/crassier-vaud/","l":"Crassier Vaud","g":4,"v":8},{"u":"/realization/croix-de-rozon-geneve/","l":"Croix De Rozon Geneve","g":4,"v":4},{"u":"/realization/denens-vaud/","l":"Denens Vaud","g":4,"v":1},{"u":"/realization/dully-vaud/","l":"Dully Vaud","g":4,"v":1},{"u":"/realization/echallens-vaud-2/","l":"Echallens Vaud","g":4,"v":0},{"u":"/realization/echallens-vaud/","l":"Echallens Vaud","g":4,"v":10},{"u":"/realization/echandens-vaud/","l":"Echandens Vaud","g":4,"v":0},{"u":"/realization/enney-fribourg/","l":"Enney Fribourg","g":4,"v":2},{"u":"/realization/forel-vaud/","l":"Forel Vaud","g":4,"v":0},{"u":"/realization/founex-vaud/","l":"Founex Vaud","g":4,"v":0},{"u":"/realization/genolier-vaud/","l":"Genolier Vaud","g":4,"v":0},{"u":"/realization/genthod-vaud/","l":"Genthod Vaud","g":4,"v":0},{"u":"/realization/gilly-vaud/","l":"Gilly Vaud","g":4,"v":2},{"u":"/realization/gingins-vaud/","l":"Gingins Vaud","g":4,"v":10},{"u":"/realization/givrins-vaud/","l":"Givrins Vaud","g":4,"v":0},{"u":"/realization/gland-vaud/","l":"Gland Vaud","g":4,"v":15},{"u":"/realization/gletterens-fribourg/","l":"Gletterens Fribourg","g":4,"v":0},{"u":"/realization/grandvaux-vaud/","l":"Grandvaux Vaud","g":4,"v":0},{"u":"/realization/gressy-vaud/","l":"Gressy Vaud","g":4,"v":1},{"u":"/realization/la-chaux-de-fonds-neuchatel/","l":"La Chaux De Fonds Neuchatel","g":4,"v":0},{"u":"/realization/la-tour-de-treme-fribourg/","l":"La Tour De Treme Fribourg","g":4,"v":1},{"u":"/realization/lausanne-vaud/","l":"Lausanne Vaud","g":4,"v":2},{"u":"/realization/le-bouveret-valais/","l":"Le Bouveret Valais","g":4,"v":1},{"u":"/realization/le-grand-saconnex-geneve/","l":"Le Grand Saconnex Geneve","g":4,"v":4},{"u":"/realization/le-landeron-neuhatel/","l":"Le Landeron Neuhatel","g":4,"v":0},{"u":"/realization/le-lieu-vaud/","l":"Le Lieu Vaud","g":4,"v":0},{"u":"/realization/le-locle-neuchatel/","l":"Le Locle Neuchatel","g":4,"v":0},{"u":"/realization/le-vaud-vaud/","l":"Le Vaud Vaud","g":4,"v":0},{"u":"/realization/leytron-valais/","l":"Leytron Valais","g":4,"v":1},{"u":"/realization/lucens-vaud/","l":"Lucens Vaud","g":4,"v":0},{"u":"/realization/meyrin-geneve/","l":"Meyrin Geneve","g":4,"v":1},{"u":"/realization/mies-vaud/","l":"Mies Vaud","g":4,"v":0},{"u":"/realization/misery-courtion-fribourg/","l":"Misery Courtion Fribourg","g":4,"v":0},{"u":"/realization/mont-sur-rolle-vaud-2/","l":"Mont Sur Rolle Vaud","g":4,"v":3},{"u":"/realization/mont-sur-rolle-vaud-3/","l":"Mont Sur Rolle Vaud","g":4,"v":0},{"u":"/realization/mont-sur-rolle-vaud/","l":"Mont Sur Rolle Vaud","g":4,"v":1},{"u":"/realization/montalchez-neuchatel/","l":"Montalchez Neuchatel","g":4,"v":0},{"u":"/realization/montbrelloz-fribourg/","l":"Montbrelloz Fribourg","g":4,"v":2},{"u":"/realization/morens-fribourg/","l":"Morens Fribourg","g":4,"v":2},{"u":"/realization/morges-vaud/","l":"Morges Vaud","g":4,"v":0},{"u":"/realization/morgins-valais/","l":"Morgins Valais","g":4,"v":0},{"u":"/realization/morrens-vaud/","l":"Morrens Vaud","g":4,"v":0},{"u":"/realization/moudon-vaud/","l":"Moudon Vaud","g":4,"v":0},{"u":"/realization/moutier-berne/","l":"Moutier Berne","g":4,"v":2},{"u":"/realization/nyon-vaud/","l":"Nyon Vaud","g":4,"v":0},{"u":"/realization/orbe-vaud/","l":"Orbe Vaud","g":4,"v":13},{"u":"/realization/perroy-vaud/","l":"Perroy Vaud","g":4,"v":0},{"u":"/realization/plan-les-ouates-geneve/","l":"Plan Les Ouates Geneve","g":4,"v":4},{"u":"/realization/pont-en-ogoz-fribourg/","l":"Pont En Ogoz Fribourg","g":4,"v":0},{"u":"/realization/projet-1-2/","l":"Projet 1","g":4,"v":0},{"u":"/realization/projet-4-2/","l":"Projet 4","g":4,"v":1},{"u":"/realization/projet-6-2/","l":"Projet 6","g":4,"v":0},{"u":"/realization/puplinge-geneve/","l":"Puplinge Geneve","g":4,"v":4},{"u":"/realization/saint-prex-vaud/","l":"Saint Prex Vaud","g":4,"v":0},{"u":"/realization/savigny-vaud/","l":"Savigny Vaud","g":4,"v":19},{"u":"/realization/saxon-valais/","l":"Saxon Valais","g":4,"v":0},{"u":"/realization/tannay-vaud/","l":"Tannay Vaud","g":4,"v":0},{"u":"/realization/test-project-2-2/","l":"Test Project 2","g":4,"v":0},{"u":"/realization/thonex/","l":"Thonex","g":4,"v":4},{"u":"/realization/trelex-vaud-2/","l":"Trelex Vaud","g":4,"v":0},{"u":"/realization/trelex-vaud-3/","l":"Trelex Vaud","g":4,"v":17},{"u":"/realization/trelex-vaud/","l":"Trelex Vaud","g":4,"v":15},{"u":"/realization/vandoeuvres-geneve-2/","l":"Vandoeuvres Geneve","g":4,"v":2},{"u":"/realization/vandoeuvres-geneve/","l":"Vandoeuvres Geneve","g":4,"v":1},{"u":"/realization/vernier-geneve-2/","l":"Vernier Geneve","g":4,"v":0},{"u":"/realization/vernier-geneve/","l":"Vernier Geneve","g":4,"v":4},{"u":"/realization/veyrier-geneve-2/","l":"Veyrier Geneve","g":4,"v":0},{"u":"/realization/veyrier-geneve/","l":"Veyrier Geneve","g":4,"v":1},{"u":"/realization/viege-valais/","l":"Viege Valais","g":4,"v":3},{"u":"/realization/villeneuve-vaud/","l":"Villeneuve Vaud","g":4,"v":0},{"u":"/realization/vuadens-fribourg/","l":"Vuadens Fribourg","g":4,"v":3},{"u":"/realization/vufflens-la-ville-vaud/","l":"Vufflens La Ville Vaud","g":4,"v":6},{"u":"/realization/yens-vaud/","l":"Yens Vaud","g":4,"v":0},{"u":"/realization/yverdon-les-bains-vaud/","l":"Yverdon Les Bains Vaud","g":4,"v":3},{"u":"/rebranding-naoenergy-nouvelle-identite/","l":"Rebranding naoenergy nouvelle iden","g":5,"v":0},{"u":"/regroupement-de-proprietaire-suisse/","l":"Regroupement","g":3,"v":11},{"u":"/regroupement-de-proprietaires-par-naoenergy-a-gland/","l":"Regroupement de proprietaires par","g":5,"v":0},{"u":"/reimaginer-la-transition-energetique/","l":"Reimaginer la transition energetiq","g":5,"v":0},{"u":"/renovation-energetique-suisse-romande-naoenergy/","l":"Renovation energetique suisse roma","g":5,"v":0},{"u":"/rentabilite-panneaux-solaires-suisse-romande-2026/","l":"Rentabilite panneaux solaires suis","g":5,"v":0},{"u":"/solarstratos-et-raphael-domjan-signent-le-plus-haut-vol-solaire-de-lhistoire/","l":"Solarstratos et raphael domjan","g":5,"v":0},{"u":"/solutions-conseils-transition-energitique-naoenergy-les-automnales-2024/","l":"Solutions conseils transition ener","g":5,"v":0},{"u":"/solutions/batteries-de-stockage/","l":"Batteries de stockage","g":0,"v":80},{"u":"/solutions/boiler-thermodynamique/","l":"Boiler thermodynamique","g":0,"v":27},{"u":"/solutions/borne-de-recharge/","l":"Borne de recharge","g":0,"v":28},{"u":"/solutions/carport-solaire/","l":"Carport solaire","g":0,"v":17},{"u":"/solutions/climatisation/","l":"Climatisation","g":0,"v":4},{"u":"/solutions/panneaux-photovoltaiques/","l":"Panneaux photovoltaïques","g":0,"v":133},{"u":"/solutions/pompes-a-chaleur/","l":"Pompes à chaleur","g":0,"v":99},{"u":"/solutions/pour-les-professionnels/","l":"Pour les professionnels","g":0,"v":16},{"u":"/statistiques-des-batiments-1-menage-sur-5-etait-equipe-dune-pompe-a-chaleur-en-2024/","l":"Statistiques des batiments 1","g":5,"v":0},{"u":"/subvention-batterie-de-stockage-neuchatel/","l":"Subvention batterie de stockage","g":5,"v":0},{"u":"/subventions-panneaux-solaires-vaud/","l":"Subventions panneaux solaires vaud","g":5,"v":0},{"u":"/subventions-solaires-en-suisse-ce-qui-change-au-1er-avril-2025/","l":"Subventions solaires en suisse","g":5,"v":0},{"u":"/suppression-de-la-valeur-locative-ce-que-change-la-votation-du-28-septembre-2025/","l":"Suppression de la valeur","g":5,"v":2},{"u":"/swiss-premiere-compagnie-aerienne-au-monde-a-utiliser-du-carburant-solaire/","l":"Swiss premiere compagnie aerienne","g":5,"v":0},{"u":"/tarif-rachat-solaire-2027-suisse/","l":"Tarif rachat solaire 2027","g":5,"v":0},{"u":"/thermostat-connecte-danfoss-naoenergy/","l":"Thermostat connecte danfoss naoene","g":5,"v":0},{"u":"/tout-savoir-sur-le-regroupement-de-proprietaires-par-naoenergy/","l":"Tout savoir sur le","g":5,"v":0},{"u":"/toutes-nos-solutions-solaires-suisse/","l":"Hub Solutions","g":2,"v":19},{"u":"/transition-energetique-geneve-soiree-information/","l":"Transition energetique geneve soir","g":5,"v":0},{"u":"/transition-energetique-suisse-10-dates/","l":"Transition energetique suisse 10","g":5,"v":1},{"u":"/transition-energetique-suisse-raphael-domjan/","l":"Transition energetique suisse raph","g":5,"v":0},{"u":"/un-projet-dautoconsommation-complet-a-gilly-vaud/","l":"Un projet dautoconsommation comple","g":5,"v":0},{"u":"/un-projet-naoenergy-a-mont-sur-rolle-au-coeur-des-vignes-photovoltaique-pompe-a-chaleur/","l":"Un projet naoenergy a","g":5,"v":0},{"u":"/une-chance-le-nouveau-film-institutionnel-de-naoenergy/","l":"Une chance le nouveau","g":5,"v":0},{"u":"/une-installation-photovoltaique-sur-un-toit-plat-pour-une-entreprise-du-canton-de-vaud/","l":"Une installation photovoltaique su","g":5,"v":0},{"u":"/une-mise-a-leau-reussie-pour-planetsolar-ii-au-lac-titicaca/","l":"Une mise a leau","g":5,"v":0},{"u":"/une-nouvelle-etape-pour-le-secteur-des-energies-renouvelables-dans-le-monde/","l":"Une nouvelle etape pour","g":5,"v":0},{"u":"/vaud-1375-millions-pour-la-renovation-energetique-des-batiments-communaux/","l":"Vaud 1375 millions pour","g":5,"v":0},{"u":"/votation-du-28-septembre-suppression-de-la-valeur-locative-et-impact-sur-la-renovation-energetique-en-suisse/","l":"Votation du 28 septembre","g":5,"v":0},{"u":"/votre-projet/","l":"Votre projet","g":1,"v":8},{"u":"/zen-energie-services-le-partenaire-pour-des-installations-energetiques-durables-en-suisse-romande/","l":"Zen energie services le","g":5,"v":0},{"u":"/zoom-collaborateur-alexandre-bonet-responsable-dequipe/","l":"Zoom collaborateur alexandre bonet","g":5,"v":1},{"u":"/zoom-collaborateur-alexis-pellerin-eco-conseiller-ge/","l":"Zoom collaborateur alexis pellerin","g":5,"v":1},{"u":"/zoom-projet-26-panneaux-photovoltaiques-et-batterie-de-stockage-a-dully-vaud/","l":"Zoom projet 26 panneaux","g":5,"v":0},{"u":"/zoom-projet-42-panneaux-photovoltaiques-a-thonex-geneve/","l":"Zoom projet 42 panneaux","g":5,"v":1},{"u":"/zoom-projet-autoconsommation-energetique-maximisee-a-leytron-valais/","l":"Zoom projet autoconsommation energ","g":5,"v":0},{"u":"/zoom-projet-carport-solaire-et-borne-de-recharge-a-misery-courtion/","l":"Zoom projet carport solaire","g":5,"v":0},{"u":"/zoom-projet-innovation-et-confort-thermique-avec-la-pompe-a-chaleur-air-eau-de-buderus/","l":"Zoom projet innovation et","g":5,"v":0},{"u":"/zoom-projet-innovation-technologique-et-autoconsommation-a-denens-vd/","l":"Zoom projet innovation technologiq","g":5,"v":0},{"u":"/zoom-projet-la-derniere-generation-de-pompe-a-chaleur-a-vernier-geneve/","l":"Zoom projet la derniere","g":5,"v":0},{"u":"/zoom-projet-une-sellerie-fribourgeoise-equipee-de-32-panneaux-photovoltaiques/","l":"Zoom projet une sellerie","g":5,"v":0}],"e":[[0,104],[0,53],[0,238],[0,241],[0,240],[0,3],[0,239],[0,242],[0,237],[0,236],[0,124],[1,104],[1,241],[2,253],[2,53],[2,238],[2,241],[2,255],[2,239],[2,237],[2,236],[2,242],[3,53],[3,38],[3,2],[3,5],[4,104],[4,241],[4,242],[4,236],[5,104],[5,4],[5,241],[5,242],[5,236],[7,239],[8,253],[8,248],[8,241],[8,239],[8,242],[9,241],[9,242],[10,241],[11,53],[11,124],[13,104],[13,241],[13,17],[13,119],[13,236],[13,242],[13,35],[14,241],[14,242],[14,236],[15,238],[15,241],[15,68],[15,119],[15,236],[15,242],[16,105],[16,253],[16,238],[16,241],[16,239],[16,242],[16,236],[17,241],[17,38],[17,108],[17,236],[18,253],[18,238],[18,241],[18,108],[18,84],[18,17],[18,236],[18,242],[19,104],[19,241],[19,15],[19,236],[20,104],[20,19],[20,241],[20,108],[20,17],[20,236],[21,241],[21,242],[21,236],[32,238],[32,241],[32,38],[32,108],[32,242],[32,236],[33,104],[33,253],[33,238],[33,241],[33,239],[33,0],[33,236],[33,242],[34,241],[34,38],[34,242],[35,241],[35,242],[35,236],[36,241],[36,38],[36,242],[36,236],[37,116],[38,241],[38,238],[38,242],[38,236],[39,38],[40,241],[40,38],[40,242],[40,236],[42,253],[42,238],[42,241],[42,243],[42,236],[43,238],[43,241],[43,237],[43,236],[43,242],[43,124],[44,241],[44,38],[44,236],[47,38],[48,53],[48,50],[48,38],[48,49],[48,11],[48,51],[48,52],[49,50],[49,38],[49,51],[49,52],[50,49],[50,124],[50,51],[50,52],[51,50],[51,242],[51,49],[51,52],[52,50],[52,49],[52,93],[52,51],[53,265],[53,38],[54,241],[54,38],[55,241],[55,38],[56,104],[56,241],[56,242],[56,236],[57,253],[57,238],[57,241],[57,237],[57,15],[57,236],[57,242],[58,104],[58,238],[58,241],[58,38],[58,237],[58,236],[58,242],[59,104],[59,241],[59,38],[59,237],[59,236],[59,242],[60,53],[60,97],[60,229],[61,0],[62,38],[63,241],[63,242],[63,236],[63,64],[63,229],[64,229],[64,38],[65,38],[66,241],[66,243],[67,241],[67,270],[68,236],[69,242],[70,253],[70,265],[70,239],[71,81],[71,243],[72,241],[72,243],[73,243],[73,242],[74,131],[75,241],[75,81],[75,243],[76,104],[76,241],[76,243],[76,124],[77,253],[77,241],[77,38],[78,241],[78,236],[79,241],[79,243],[80,242],[81,241],[81,38],[82,104],[82,242],[83,241],[83,38],[84,253],[84,238],[84,241],[84,38],[84,242],[84,236],[85,242],[87,241],[87,108],[87,236],[88,104],[88,241],[88,38],[89,243],[90,38],[91,241],[91,38],[91,236],[92,38],[93,253],[93,53],[93,238],[93,241],[93,242],[93,236],[94,53],[94,241],[94,242],[94,236],[94,124],[95,243],[96,38],[96,61],[96,124],[97,53],[97,0],[98,53],[98,124],[99,0],[101,253],[101,241],[101,38],[101,242],[101,236],[102,241],[102,243],[102,242],[105,267],[105,16],[105,38],[105,268],[105,124],[106,241],[107,38],[108,241],[108,69],[108,81],[108,119],[108,15],[108,236],[108,242],[109,81],[109,243],[110,237],[110,242],[111,0],[112,104],[112,241],[113,241],[113,236],[114,104],[114,241],[114,3],[114,236],[114,204],[115,104],[115,241],[115,236],[117,104],[117,241],[117,38],[117,242],[118,117],[118,242],[119,241],[119,236],[120,241],[120,242],[120,236],[121,0],[122,38],[122,229],[123,265],[123,38],[124,105],[124,265],[124,238],[124,241],[124,240],[124,38],[124,239],[124,242],[124,237],[124,236],[125,53],[126,53],[133,208],[133,197],[133,242],[133,132],[133,151],[134,169],[134,166],[134,156],[134,242],[135,199],[135,154],[135,159],[135,236],[135,127],[136,169],[136,215],[136,208],[136,242],[136,132],[137,201],[137,199],[137,236],[137,146],[137,127],[138,241],[138,142],[138,214],[138,131],[139,169],[139,215],[139,208],[139,242],[139,132],[140,128],[140,227],[140,225],[140,237],[140,167],[141,169],[141,215],[141,208],[141,242],[141,132],[142,241],[142,175],[142,214],[142,131],[143,241],[143,142],[143,214],[143,131],[144,128],[144,140],[144,222],[144,237],[144,167],[145,177],[145,242],[145,132],[145,216],[145,148],[146,137],[146,201],[146,199],[146,236],[146,127],[147,242],[147,219],[147,132],[147,148],[148,177],[148,219],[148,132],[148,242],[149,241],[150,174],[150,215],[150,208],[150,242],[150,132],[151,208],[151,197],[151,242],[151,132],[151,133],[152,169],[152,215],[152,208],[152,242],[152,132],[153,241],[153,142],[153,214],[153,131],[154,187],[154,199],[154,159],[154,236],[154,127],[155,241],[156,253],[156,265],[157,241],[157,142],[157,214],[157,131],[158,169],[158,215],[158,208],[158,242],[158,132],[159,187],[159,199],[159,154],[159,236],[159,127],[160,199],[160,154],[160,159],[160,236],[160,127],[161,192],[161,241],[161,224],[161,191],[161,131],[162,241],[162,142],[162,214],[162,131],[163,241],[164,253],[164,265],[165,199],[165,154],[165,159],[165,236],[165,127],[166,253],[166,265],[167,128],[167,227],[167,140],[167,225],[167,237],[168,241],[169,242],[170,201],[170,199],[170,159],[170,236],[170,127],[171,169],[171,215],[171,208],[171,242],[171,132],[172,241],[173,128],[173,222],[173,144],[173,237],[173,167],[174,215],[174,208],[174,242],[174,132],[174,150],[175,241],[175,142],[175,214],[175,131],[176,128],[176,222],[176,144],[176,237],[176,167],[177,242],[177,219],[177,132],[177,148],[178,169],[178,215],[178,208],[178,242],[178,132],[179,241],[179,142],[179,214],[179,131],[180,169],[180,215],[180,208],[180,242],[180,132],[181,241],[181,142],[181,214],[181,131],[182,241],[183,241],[183,142],[183,214],[183,131],[184,212],[184,241],[184,206],[184,155],[184,131],[185,169],[185,215],[185,208],[185,242],[185,132],[186,239],[187,199],[187,154],[187,159],[187,236],[187,127],[188,169],[188,215],[188,208],[188,242],[188,132],[189,241],[189,142],[189,214],[189,131],[190,241],[190,142],[190,214],[190,131],[191,192],[191,241],[191,161],[191,224],[191,131],[192,241],[192,161],[192,224],[192,191],[192,131],[193,128],[193,140],[193,225],[193,237],[193,167],[194,241],[194,182],[194,214],[194,131],[195,169],[195,215],[195,208],[195,242],[195,132],[196,169],[196,215],[196,208],[196,242],[196,132],[197,208],[197,242],[197,132],[197,151],[197,133],[198,128],[198,140],[198,225],[198,237],[198,167],[199,187],[199,154],[199,159],[199,236],[199,127],[200,169],[200,215],[200,208],[200,242],[200,132],[201,137],[201,199],[201,236],[201,146],[201,127],[202,238],[203,241],[203,142],[203,214],[203,131],[204,241],[204,142],[204,214],[204,131],[205,199],[205,154],[205,159],[205,236],[205,127],[206,212],[206,241],[206,221],[206,155],[206,131],[207,241],[208,253],[208,265],[209,201],[209,199],[209,159],[209,236],[209,127],[210,241],[210,142],[210,214],[210,131],[211,241],[211,142],[211,214],[211,131],[212,241],[213,241],[213,189],[213,172],[213,157],[213,131],[214,241],[214,175],[214,142],[214,131],[215,169],[215,208],[215,166],[215,242],[215,132],[216,242],[216,219],[216,132],[216,148],[217,212],[217,241],[217,206],[217,155],[217,131],[218,147],[218,177],[218,242],[218,132],[218,216],[219,177],[219,242],[219,132],[219,148],[220,241],[220,206],[220,217],[220,184],[220,131],[221,212],[221,241],[221,206],[221,155],[221,131],[222,176],[222,128],[222,144],[222,237],[222,167],[223,128],[223,140],[223,225],[223,237],[223,167],[224,241],[225,128],[225,227],[225,140],[225,237],[225,167],[226,199],[226,154],[226,159],[226,236],[226,127],[227,128],[227,140],[227,225],[227,237],[227,167],[228,104],[229,104],[229,38],[230,241],[230,237],[230,236],[230,242],[230,229],[231,38],[232,241],[232,242],[232,236],[233,9],[233,241],[233,38],[233,108],[233,236],[234,53],[235,253],[235,239],[236,104],[236,105],[236,238],[236,241],[236,38],[236,243],[236,239],[236,242],[236,237],[236,64],[236,127],[237,104],[237,105],[237,128],[237,241],[237,38],[237,242],[237,64],[237,229],[238,104],[238,105],[238,241],[238,38],[238,239],[238,129],[238,236],[238,64],[238,229],[239,104],[239,105],[239,238],[239,241],[239,38],[239,130],[239,236],[239,64],[239,229],[240,104],[240,105],[240,241],[240,38],[240,34],[240,236],[240,64],[240,229],[241,104],[241,105],[241,238],[241,38],[241,242],[241,236],[241,64],[241,229],[241,131],[242,104],[242,105],[242,238],[242,241],[242,103],[242,240],[242,38],[242,243],[242,239],[242,132],[242,236],[242,237],[242,64],[243,104],[243,238],[243,241],[243,239],[243,242],[243,236],[244,242],[245,241],[245,108],[245,15],[245,236],[246,104],[246,40],[246,238],[246,241],[246,38],[246,237],[246,236],[246,242],[246,13],[247,81],[247,38],[248,241],[248,242],[250,104],[250,238],[250,241],[250,242],[250,236],[250,13],[250,131],[251,242],[252,241],[252,38],[252,242],[252,229],[253,104],[253,238],[253,241],[253,240],[253,239],[253,242],[253,237],[253,236],[254,241],[254,38],[254,242],[254,236],[255,253],[255,238],[255,241],[255,3],[255,108],[255,242],[255,236],[256,104],[256,241],[256,242],[256,236],[256,13],[257,238],[257,241],[257,38],[257,237],[257,236],[257,242],[258,241],[258,237],[258,242],[259,241],[259,242],[260,241],[260,243],[260,236],[261,53],[261,38],[262,248],[262,241],[262,242],[263,241],[263,243],[263,239],[263,242],[264,241],[264,242],[264,236],[266,241],[266,237],[266,242],[267,105],[267,253],[267,241],[267,242],[267,64],[268,241],[268,38],[268,242],[268,236],[268,64],[269,241],[269,47],[269,236],[270,241],[271,241],[271,47],[271,236],[272,238],[272,241],[272,38],[272,239],[273,242],[274,241],[274,242],[274,236],[275,242],[276,238],[276,241],[276,242],[276,236]]};
+              var DATA = {"n":[{"u":"/","l":"Accueil","g":2,"v":6},{"u":"/10-ans-10-projets-retour-sur-lun-de-nos-projets-photovoltaiques-phares-a-gressy-vd/","l":"10 ans 10 projets","g":5,"v":2},{"u":"/10-ans-naoenergy-installateur-solaire-suisse-romande/","l":"10 ans naoenergy installateur","g":5,"v":3},{"u":"/10-ans-naoenergy/","l":"10 ans","g":3,"v":3},{"u":"/2020-renovation-energetique-suisse-romande/","l":"2020 renovation energetique suisse","g":5,"v":3},{"u":"/2021-1000e-client-installateur-panneaux-solaires-vaud/","l":"2021 1000e client installateur","g":5,"v":3},{"u":"/2026-transition-energetique-suisse-romande/","l":"2026 transition energetique suisse","g":5,"v":1},{"u":"/a-geneve-la-prime-solaire-des-sig-reconduite-en-2025/","l":"A geneve la prime","g":5,"v":1},{"u":"/abolition-de-la-valeur-locative-planifiez-des-maintenant-votre-renovation-energetique/","l":"Abolition de la valeur","g":5,"v":1},{"u":"/abolition-valeur-locative-renover-avant-2029/","l":"Abolition valeur locative renover","g":5,"v":2},{"u":"/actualites-actuentreprise-naoenergy-nouveau-site-web-identite-visuelle/","l":"Actualites actuentreprise naoenerg","g":5,"v":0},{"u":"/actualites-social-retour-sur-le-grand-evenement-naoenergy-du-04-mars-2025/","l":"Actualites social retour sur","g":5,"v":2},{"u":"/actualites/","l":"Actualités","g":2,"v":9},{"u":"/augmenter-autoconsommation-solaire/","l":"Augmenter autoconsommation solaire","g":5,"v":4},{"u":"/autoconsommation-collective-suisse-romande/","l":"Autoconsommation collective suisse","g":5,"v":1},{"u":"/avantages-batterie-stockage-solaire/","l":"Avantages batterie stockage solair","g":5,"v":5},{"u":"/baptiste-mimey-bureau-detudes-naoenergy/","l":"Baptiste mimey bureau detudes","g":5,"v":1},{"u":"/batterie-de-stockage-enphase-chez-naoenergy/","l":"Batterie de stockage enphase","g":5,"v":4},{"u":"/batterie-solaire-backup-suisse/","l":"Batterie solaire backup suisse","g":5,"v":1},{"u":"/batterie-stockage-solaire-backup-suisse-romande/","l":"Batterie stockage solaire backup","g":5,"v":2},{"u":"/batterie-stockage-solaire-suisse-romande-rentable/","l":"Batterie stockage solaire suisse","g":5,"v":1},{"u":"/booster-lefficacite-des-pompes-a-chaleur-le-role-cle-du-thermostat/","l":"Booster lefficacite des pompes","g":5,"v":0},{"u":"/calculateur-solaire-2-suisse/","l":"Calculateur solaire 2 suisse","g":5,"v":0},{"u":"/category/actualites-naoenergy/","l":"Cat. actualites naoenergy","g":2,"v":0},{"u":"/category/dans-la-presse/","l":"Cat. dans la presse","g":2,"v":0},{"u":"/category/energie-immobilier/","l":"Cat. energie immobilier","g":2,"v":0},{"u":"/category/evenements/","l":"Cat. evenements","g":2,"v":0},{"u":"/category/labels/","l":"Cat. labels","g":2,"v":0},{"u":"/category/loi-et-reglementations/","l":"Cat. loi et reglementations","g":2,"v":0},{"u":"/category/partenariats/","l":"Cat. partenariats","g":2,"v":0},{"u":"/category/produits/","l":"Cat. produits","g":2,"v":0},{"u":"/category/projets/","l":"Cat. projets","g":2,"v":0},{"u":"/chargeur-ve-solaire-enphase-suisse/","l":"Chargeur ve solaire enphase","g":5,"v":1},{"u":"/clean-advantage-2025-naoenergy-suisse-romande/","l":"Clean advantage 2025 naoenergy","g":5,"v":1},{"u":"/climatiseur-reversible-mitsubishi-msz-ln-vg3-suisse-romande/","l":"Climatiseur reversible mitsubishi ","g":5,"v":3},{"u":"/comment-combiner-panneaux-solaires-et-pompe-a-chaleur-pour-maximiser-vos-economies-en-suisse-romande/","l":"Comment combiner panneaux solaires","g":5,"v":1},{"u":"/comment-valoriser-un-bien-avec-une-installation-photovoltaique/","l":"Comment valoriser un bien","g":5,"v":1},{"u":"/conditions-generales-de-vente/","l":"Conditions generales de vente","g":5,"v":0},{"u":"/contact/","l":"Contact","g":1,"v":53},{"u":"/de-nouveaux-materiaux-davenir-pour-le-photovoltaique-decouverts-par-lepfl/","l":"De nouveaux materiaux davenir","g":5,"v":0},{"u":"/dimensionnement-installation-solaire/","l":"Dimensionnement installation solai","g":5,"v":2},{"u":"/electricite-solaire-et-consommation-suisse/","l":"Electricite solaire et consommatio","g":5,"v":0},{"u":"/energie-solaire-la-suisse-a-un-potentiel-important-encore-sous-exploite/","l":"Energie solaire la suisse","g":5,"v":1},{"u":"/energies-fossiles-suisse-dependance-transition-energetique/","l":"Energies fossiles suisse dependanc","g":5,"v":2},{"u":"/entreprises-comment-reduire-votre-facture-delectricite/","l":"Entreprises comment reduire votre","g":5,"v":1},{"u":"/entretien-avec-wieland-hintz-responsable-energie-solaire-a-lofen/","l":"Entretien avec wieland hintz","g":5,"v":0},{"u":"/entretien-pompe-a-chaleur-suisse/","l":"Entretien pompe a chaleur","g":5,"v":1},{"u":"/etude-energetique-gratuite-suisse/","l":"Etude energetique gratuite suisse","g":5,"v":2},{"u":"/evenements-naoenergy-suisse/","l":"Évènements","g":3,"v":0},{"u":"/event/journees-fribourgeoises-du-photovoltaique-2024-4/","l":"Event/journees fribourgeoises du p","g":3,"v":4},{"u":"/event/le-grand-evenement-naoenergy/","l":"Event/le grand evenement naoenergy","g":3,"v":4},{"u":"/event/les-automnales-geneve-palexpo-4/","l":"Event/les automnales geneve palexp","g":3,"v":4},{"u":"/event/soiree-naoenergy-x-genesis/","l":"Event/soiree naoenergy x genesis","g":3,"v":4},{"u":"/fondation-planetsolar/","l":"Fondation PlanetSolar","g":3,"v":14},{"u":"/geneve-accelere-la-pose-de-panneaux-solaires/","l":"Geneve accelere la pose","g":5,"v":1},{"u":"/geneve-adopte-un-cadre-renforce-pour-le-solaire-et-la-construction-durable/","l":"Geneve adopte un cadre","g":5,"v":1},{"u":"/hausse-mazout-gaz-suisse-solutions-energie/","l":"Hausse mazout gaz suisse","g":5,"v":1},{"u":"/independance-energetique-maison-suisse/","l":"Independance energetique maison su","g":5,"v":1},{"u":"/installation-boiler-thermodynamique-buderus/","l":"Installation boiler thermodynamiqu","g":5,"v":2},{"u":"/installation-pompe-a-chaleur-vaud-autoconsommation/","l":"Installation pompe a chaleur","g":5,"v":2},{"u":"/journee-mondiale-de-lenvironnement/","l":"Journee mondiale de lenvironnement","g":5,"v":1},{"u":"/kilian-jordan-devient-n1-suisse-de-padel/","l":"Kilian jordan devient n1","g":5,"v":2},{"u":"/kilian-jordan-remporte-le-titre-de-champion-suisse-de-padel-2025/","l":"Kilian jordan remporte le","g":5,"v":1},{"u":"/la-charte-commerciale-responsable-par-naoenergy/","l":"La charte commerciale responsable","g":5,"v":0},{"u":"/la-charte-commerciale-responsable/","l":"Charte","g":3,"v":10},{"u":"/la-loi-electricite-approuvee/","l":"La loi electricite approuvee","g":5,"v":0},{"u":"/la-premiere-centrale-solaire-sur-rails-inauguree-en-suisse/","l":"La premiere centrale solaire","g":5,"v":1},{"u":"/la-technologie-heterojonction-hjt-pour-les-panneaux-photovoltaiques/","l":"La technologie heterojonction hjt","g":5,"v":0},{"u":"/lavenir-du-stockage-avec-la-batterie-atmoce-chez-naoenergy/","l":"Lavenir du stockage avec","g":5,"v":1},{"u":"/le-canton-de-vaud-leve-les-restrictions-pour-les-pompes-a-chaleur-en-altitude/","l":"Le canton de vaud","g":5,"v":2},{"u":"/le-carport-solaire-by-nao-une-solution-energetique-alternative/","l":"Le carport solaire by","g":5,"v":0},{"u":"/le-contracting-solaire-avec-naoenergy/","l":"Le contracting solaire avec","g":5,"v":0},{"u":"/le-guide-du-solaire-photovoltaique-pour-les-entreprises-par-naoenergy/","l":"Le guide du solaire","g":5,"v":1},{"u":"/le-guide-pratique-pour-les-pompes-a-chaleur-par-naoenergy/","l":"Le guide pratique pour","g":5,"v":1},{"u":"/le-nettoyage-des-panneaux-photovoltaiques-un-entretien-essentiel-pour-garantir-performance-et-longevite/","l":"Le nettoyage des panneaux","g":5,"v":0},{"u":"/le-photovoltaique-quels-avantages-concrets-pour-les-investisseurs-immobiliers-suisses/","l":"Le photovoltaique quels avantages","g":5,"v":1},{"u":"/le-projet-du-mois-180-panneaux-solaires-sur-un-hangar-agricole-a-gressy/","l":"Le projet du mois","g":5,"v":0},{"u":"/leconomie-circulaire-saccelere-dans-lindustrie-solaire/","l":"Leconomie circulaire saccelere dan","g":5,"v":1},{"u":"/lenergie-solaire-devient-la-premiere-source-delectricite-en-europe/","l":"Lenergie solaire devient la","g":5,"v":1},{"u":"/lenergie-solaire-pour-lagriculture-suisse-episode-1-les-vignerons/","l":"Lenergie solaire pour lagriculture","g":5,"v":1},{"u":"/les-atouts-de-la-pompe-a-chaleur-air-eau-dans-le-contexte-reglementaire-2025/","l":"Les atouts de la","g":5,"v":0},{"u":"/les-communautes-dautoconsommation-suisse-romande/","l":"Les communautes dautoconsommation ","g":5,"v":5},{"u":"/les-erreurs-a-eviter-avant-dinstaller-une-pompe-a-chaleur-guide-pour-un-projet-reussi-en-suisse-romande/","l":"Les erreurs a eviter","g":5,"v":0},{"u":"/les-infrastructures-routieres-au-coeur-de-la-strategie-solaire-de-la-suisse/","l":"Les infrastructures routieres au","g":5,"v":2},{"u":"/limite-injection-solaire-suisse-2026/","l":"Limite injection solaire suisse","g":5,"v":2},{"u":"/linstant-zen-lentretien-de-votre-pompe-a-chaleur-pour-un-hiver-serein/","l":"Linstant zen lentretien de","g":5,"v":0},{"u":"/livre-blanc-panneaux-photovoltaiques-suisse-2/","l":"Livre blanc panneaux photovoltaiqu","g":5,"v":0},{"u":"/marche-energie-solaire-suisse-2025/","l":"Marche energie solaire suisse","g":5,"v":0},{"u":"/micro-onduleur-ou-onduleur-suisse/","l":"Micro onduleur ou onduleur","g":5,"v":1},{"u":"/naoenergy-accompagnement-entreprises-transition-energetique-suisse/","l":"Naoenergy accompagnement entrepris","g":5,"v":0},{"u":"/naoenergy-certifiee-entreprise-formatrice/","l":"Naoenergy certifiee entreprise for","g":5,"v":1},{"u":"/naoenergy-devient-installateur-officiel-atmoce/","l":"Naoenergy devient installateur off","g":5,"v":1},{"u":"/naoenergy-devient-membre-de-la-societe-suisse-pour-lenergie-solaire/","l":"Naoenergy devient membre de","g":5,"v":1},{"u":"/naoenergy-et-genesis-reunissent-clients-et-partenaires-a-geneve-pour-une-soiree-exclusive/","l":"Naoenergy et genesis reunissent","g":5,"v":3},{"u":"/naoenergy-fetes-ses-10-ans/","l":"Naoenergy fetes ses 10","g":5,"v":1},{"u":"/naoenergy-le-partenaire-de-de-la-transition-energetique-des-professionnels-en-suisse-romande/","l":"Naoenergy le partenaire de","g":5,"v":0},{"u":"/naoenergy-partenaire-du-sport-local/","l":"Naoenergy partenaire du sport","g":5,"v":1},{"u":"/naoenergy-poursuit-son-engagement-ecologique-avec-clean-advantage/","l":"Naoenergy poursuit son engagement","g":5,"v":2},{"u":"/naoenergy-se-renouvelle-avec-sa-chaine-youtube/","l":"Naoenergy se renouvelle avec","g":5,"v":0},{"u":"/naoenergy-sengage-aux-cotes-de-raphael-domjan-et-de-planetsolar/","l":"Naoenergy sengage aux cotes","g":5,"v":1},{"u":"/naoenergy-sponsor-officiel-tennis-club-collonge-bellerive/","l":"Naoenergy sponsor officiel tennis","g":5,"v":1},{"u":"/naoenergy-transition-energetique-suisse-romande/","l":"Naoenergy transition energetique s","g":5,"v":2},{"u":"/naonergy-membre-de-la-ccig/","l":"Naonergy membre de la","g":5,"v":1},{"u":"/nos-partenaires/","l":"Nos partenaires","g":3,"v":1},{"u":"/nos-realisations/","l":"Nos réalisations","g":2,"v":38},{"u":"/notre-equipe/","l":"Notre équipe","g":3,"v":10},{"u":"/nouveau-centre-de-competences-pour-la-construction-durable/","l":"Nouveau centre de competences","g":5,"v":1},{"u":"/nouvelle-subvention-solaire-de-letat-de-vaud-pour-les-batiments-proteges/","l":"Nouvelle subvention solaire de","g":5,"v":0},{"u":"/nouvelles-reglementations-energie-2026-suisse-romande/","l":"Nouvelles reglementations energie ","g":5,"v":9},{"u":"/nyon-relance-nyon-renove-pour-accelerer-la-transition-energetique-de-son-parc-immobilier/","l":"Nyon relance nyon renove","g":5,"v":1},{"u":"/obligation-assainissement-chauffages-chauffe-eaux-electriques-canton-de-vaud/","l":"Obligation assainissement chauffag","g":5,"v":0},{"u":"/panneaux-photovoltaiques-installation-founex-suisse/","l":"Panneaux photovoltaiques installat","g":5,"v":0},{"u":"/panneaux-solaires-en-suisse-rentabilite-cout-et-aides-2025/","l":"Panneaux solaires en suisse","g":5,"v":0},{"u":"/panneaux-solaires-en-suisse-romande-est-ce-rentable-en-2025/","l":"Panneaux solaires en suisse","g":5,"v":1},{"u":"/panneaux-solaires-vaud-projet-photovoltaique-gingins/","l":"Panneaux solaires vaud projet","g":5,"v":0},{"u":"/photovoltaique-et-stockage-intelligent-a-la-croix-de-rozon-geneve/","l":"Photovoltaique et stockage intelli","g":5,"v":1},{"u":"/politique-de-confidentialite/","l":"Politique de confidentialite","g":5,"v":1},{"u":"/pompe-a-chaleur-air-eau-avantages-et-installation-en-suisse-romande/","l":"Pompe a chaleur air","g":5,"v":1},{"u":"/pompe-a-chaleur-suisse-2026/","l":"Pompe a chaleur suisse","g":5,"v":1},{"u":"/prime-solaire-sig-2026-geneve/","l":"Prime solaire sig 2026","g":5,"v":4},{"u":"/prix-de-lelectricite-en-2026-en-suisse-baisse-relative-mais-fin-de-lenergie-bon-marche/","l":"Prix de lelectricite en","g":5,"v":1},{"u":"/programme-clean-advantage/","l":"Programme clean advantage","g":5,"v":1},{"u":"/prospection-energetique-oui-a-linformation-non-a-la-pression/","l":"Prospection energetique oui a","g":5,"v":1},{"u":"/quelles-sont-les-etapes-dune-installation-photovoltaique/","l":"Quelles sont les etapes","g":5,"v":0},{"u":"/qui-sommes-nous/","l":"Qui sommes-nous","g":3,"v":9},{"u":"/raphael-domjan-entame-la-premiere-circumnavigation-du-lac-tititca-a-lenergie-solaire/","l":"Raphael domjan entame la","g":5,"v":1},{"u":"/raphael-domjan-et-planetsolar-ii-bouclent-la-premiere-traversee-du-lac-titicaca-a-lenergie-solaire/","l":"Raphael domjan et planetsolar","g":5,"v":1},{"u":"/realisations/batteries-de-stockage/","l":"Réalisations batteries de stockage","g":2,"v":21},{"u":"/realisations/boiler-thermodynamique/","l":"Réalisations boiler thermodynamiqu","g":2,"v":18},{"u":"/realisations/borne-de-recharge/","l":"Réalisations borne de recharge","g":2,"v":7},{"u":"/realisations/carport-solaire/","l":"Réalisations carport solaire","g":2,"v":7},{"u":"/realisations/panneaux-photovoltaiques/","l":"Réalisations panneaux photovoltaiq","g":2,"v":36},{"u":"/realisations/pompes-a-chaleur/","l":"Réalisations pompes a chaleur","g":2,"v":33},{"u":"/realization/anet-berne/","l":"Anet Berne","g":4,"v":2},{"u":"/realization/aubonne-vaud/","l":"Aubonne Vaud","g":4,"v":0},{"u":"/realization/bassins-vaud/","l":"Bassins Vaud","g":4,"v":0},{"u":"/realization/bellerive-vaud/","l":"Bellerive Vaud","g":4,"v":0},{"u":"/realization/bernex-geneve/","l":"Bernex Geneve","g":4,"v":3},{"u":"/realization/bex-vaud/","l":"Bex Vaud","g":4,"v":0},{"u":"/realization/blonay-vaud/","l":"Blonay Vaud","g":4,"v":0},{"u":"/realization/borex-vaud-2/","l":"Borex Vaud","g":4,"v":8},{"u":"/realization/borex-vaud/","l":"Borex Vaud","g":4,"v":1},{"u":"/realization/boussens-vaud/","l":"Boussens Vaud","g":4,"v":18},{"u":"/realization/bussigny-vaud/","l":"Bussigny Vaud","g":4,"v":0},{"u":"/realization/chatelaine-geneve/","l":"Chatelaine Geneve","g":4,"v":4},{"u":"/realization/chene-bougeries-geneve-2/","l":"Chene Bougeries Geneve","g":4,"v":0},{"u":"/realization/chene-bougeries-geneve-3/","l":"Chene Bougeries Geneve","g":4,"v":2},{"u":"/realization/chene-bougeries-geneve/","l":"Chene Bougeries Geneve","g":4,"v":1},{"u":"/realization/collonge-bellerive-geneve/","l":"Collonge Bellerive Geneve","g":4,"v":5},{"u":"/realization/commugny-vaud/","l":"Commugny Vaud","g":4,"v":2},{"u":"/realization/corminboeuf-fribourg/","l":"Corminboeuf Fribourg","g":4,"v":2},{"u":"/realization/cormoret-berne/","l":"Cormoret Berne","g":4,"v":2},{"u":"/realization/crans-vaud/","l":"Crans Vaud","g":4,"v":0},{"u":"/realization/crassier-vaud-2/","l":"Crassier Vaud","g":4,"v":0},{"u":"/realization/crassier-vaud/","l":"Crassier Vaud","g":4,"v":9},{"u":"/realization/croix-de-rozon-geneve/","l":"Croix De Rozon Geneve","g":4,"v":6},{"u":"/realization/denens-vaud/","l":"Denens Vaud","g":4,"v":4},{"u":"/realization/dully-vaud/","l":"Dully Vaud","g":4,"v":2},{"u":"/realization/echallens-vaud-2/","l":"Echallens Vaud","g":4,"v":0},{"u":"/realization/echallens-vaud/","l":"Echallens Vaud","g":4,"v":12},{"u":"/realization/echandens-vaud/","l":"Echandens Vaud","g":4,"v":0},{"u":"/realization/enney-fribourg/","l":"Enney Fribourg","g":4,"v":2},{"u":"/realization/forel-vaud/","l":"Forel Vaud","g":4,"v":0},{"u":"/realization/founex-vaud/","l":"Founex Vaud","g":4,"v":1},{"u":"/realization/genolier-vaud/","l":"Genolier Vaud","g":4,"v":3},{"u":"/realization/genthod-vaud/","l":"Genthod Vaud","g":4,"v":0},{"u":"/realization/gilly-vaud/","l":"Gilly Vaud","g":4,"v":7},{"u":"/realization/gingins-vaud/","l":"Gingins Vaud","g":4,"v":11},{"u":"/realization/givrins-vaud/","l":"Givrins Vaud","g":4,"v":2},{"u":"/realization/gland-vaud/","l":"Gland Vaud","g":4,"v":16},{"u":"/realization/gletterens-fribourg/","l":"Gletterens Fribourg","g":4,"v":0},{"u":"/realization/grandvaux-vaud/","l":"Grandvaux Vaud","g":4,"v":1},{"u":"/realization/gressy-vaud/","l":"Gressy Vaud","g":4,"v":2},{"u":"/realization/la-chaux-de-fonds-neuchatel/","l":"La Chaux De Fonds Neuchatel","g":4,"v":1},{"u":"/realization/la-tour-de-treme-fribourg/","l":"La Tour De Treme Fribourg","g":4,"v":2},{"u":"/realization/lausanne-vaud/","l":"Lausanne Vaud","g":4,"v":4},{"u":"/realization/le-bouveret-valais/","l":"Le Bouveret Valais","g":4,"v":2},{"u":"/realization/le-grand-saconnex-geneve/","l":"Le Grand Saconnex Geneve","g":4,"v":4},{"u":"/realization/le-landeron-neuhatel/","l":"Le Landeron Neuhatel","g":4,"v":1},{"u":"/realization/le-lieu-vaud/","l":"Le Lieu Vaud","g":4,"v":0},{"u":"/realization/le-locle-neuchatel/","l":"Le Locle Neuchatel","g":4,"v":1},{"u":"/realization/le-vaud-vaud/","l":"Le Vaud Vaud","g":4,"v":0},{"u":"/realization/leytron-valais/","l":"Leytron Valais","g":4,"v":1},{"u":"/realization/lucens-vaud/","l":"Lucens Vaud","g":4,"v":0},{"u":"/realization/meyrin-geneve/","l":"Meyrin Geneve","g":4,"v":1},{"u":"/realization/mies-vaud/","l":"Mies Vaud","g":4,"v":1},{"u":"/realization/misery-courtion-fribourg/","l":"Misery Courtion Fribourg","g":4,"v":2},{"u":"/realization/mont-sur-rolle-vaud-2/","l":"Mont Sur Rolle Vaud","g":4,"v":4},{"u":"/realization/mont-sur-rolle-vaud-3/","l":"Mont Sur Rolle Vaud","g":4,"v":1},{"u":"/realization/mont-sur-rolle-vaud/","l":"Mont Sur Rolle Vaud","g":4,"v":2},{"u":"/realization/montalchez-neuchatel/","l":"Montalchez Neuchatel","g":4,"v":0},{"u":"/realization/montbrelloz-fribourg/","l":"Montbrelloz Fribourg","g":4,"v":2},{"u":"/realization/morens-fribourg/","l":"Morens Fribourg","g":4,"v":2},{"u":"/realization/morges-vaud/","l":"Morges Vaud","g":4,"v":1},{"u":"/realization/morgins-valais/","l":"Morgins Valais","g":4,"v":0},{"u":"/realization/morrens-vaud/","l":"Morrens Vaud","g":4,"v":0},{"u":"/realization/moudon-vaud/","l":"Moudon Vaud","g":4,"v":0},{"u":"/realization/moutier-berne/","l":"Moutier Berne","g":4,"v":2},{"u":"/realization/nyon-vaud/","l":"Nyon Vaud","g":4,"v":1},{"u":"/realization/orbe-vaud/","l":"Orbe Vaud","g":4,"v":15},{"u":"/realization/perroy-vaud/","l":"Perroy Vaud","g":4,"v":0},{"u":"/realization/plan-les-ouates-geneve/","l":"Plan Les Ouates Geneve","g":4,"v":6},{"u":"/realization/pont-en-ogoz-fribourg/","l":"Pont En Ogoz Fribourg","g":4,"v":1},{"u":"/realization/projet-1-2/","l":"Projet 1","g":4,"v":0},{"u":"/realization/projet-4-2/","l":"Projet 4","g":4,"v":1},{"u":"/realization/projet-6-2/","l":"Projet 6","g":4,"v":0},{"u":"/realization/puplinge-geneve/","l":"Puplinge Geneve","g":4,"v":4},{"u":"/realization/saint-prex-vaud/","l":"Saint Prex Vaud","g":4,"v":0},{"u":"/realization/savigny-vaud/","l":"Savigny Vaud","g":4,"v":24},{"u":"/realization/saxon-valais/","l":"Saxon Valais","g":4,"v":0},{"u":"/realization/tannay-vaud/","l":"Tannay Vaud","g":4,"v":0},{"u":"/realization/test-project-2-2/","l":"Test Project 2","g":4,"v":0},{"u":"/realization/thonex/","l":"Thonex","g":4,"v":6},{"u":"/realization/trelex-vaud-2/","l":"Trelex Vaud","g":4,"v":2},{"u":"/realization/trelex-vaud-3/","l":"Trelex Vaud","g":4,"v":19},{"u":"/realization/trelex-vaud/","l":"Trelex Vaud","g":4,"v":17},{"u":"/realization/vandoeuvres-geneve-2/","l":"Vandoeuvres Geneve","g":4,"v":2},{"u":"/realization/vandoeuvres-geneve/","l":"Vandoeuvres Geneve","g":4,"v":1},{"u":"/realization/vernier-geneve-2/","l":"Vernier Geneve","g":4,"v":0},{"u":"/realization/vernier-geneve/","l":"Vernier Geneve","g":4,"v":5},{"u":"/realization/veyrier-geneve-2/","l":"Veyrier Geneve","g":4,"v":0},{"u":"/realization/veyrier-geneve/","l":"Veyrier Geneve","g":4,"v":1},{"u":"/realization/viege-valais/","l":"Viege Valais","g":4,"v":4},{"u":"/realization/villeneuve-vaud/","l":"Villeneuve Vaud","g":4,"v":1},{"u":"/realization/vuadens-fribourg/","l":"Vuadens Fribourg","g":4,"v":4},{"u":"/realization/vufflens-la-ville-vaud/","l":"Vufflens La Ville Vaud","g":4,"v":7},{"u":"/realization/yens-vaud/","l":"Yens Vaud","g":4,"v":0},{"u":"/realization/yverdon-les-bains-vaud/","l":"Yverdon Les Bains Vaud","g":4,"v":4},{"u":"/rebranding-naoenergy-nouvelle-identite/","l":"Rebranding naoenergy nouvelle iden","g":5,"v":0},{"u":"/regroupement-de-proprietaire-suisse/","l":"Regroupement","g":3,"v":11},{"u":"/regroupement-de-proprietaires-par-naoenergy-a-gland/","l":"Regroupement de proprietaires par","g":5,"v":1},{"u":"/reimaginer-la-transition-energetique/","l":"Reimaginer la transition energetiq","g":5,"v":0},{"u":"/renovation-energetique-suisse-romande-naoenergy/","l":"Renovation energetique suisse roma","g":5,"v":2},{"u":"/rentabilite-panneaux-solaires-suisse-romande-2026/","l":"Rentabilite panneaux solaires suis","g":5,"v":1},{"u":"/solarstratos-et-raphael-domjan-signent-le-plus-haut-vol-solaire-de-lhistoire/","l":"Solarstratos et raphael domjan","g":5,"v":1},{"u":"/solutions-conseils-transition-energitique-naoenergy-les-automnales-2024/","l":"Solutions conseils transition ener","g":5,"v":1},{"u":"/solutions/batteries-de-stockage/","l":"Batteries de stockage","g":0,"v":81},{"u":"/solutions/boiler-thermodynamique/","l":"Boiler thermodynamique","g":0,"v":28},{"u":"/solutions/borne-de-recharge/","l":"Borne de recharge","g":0,"v":29},{"u":"/solutions/carport-solaire/","l":"Carport solaire","g":0,"v":18},{"u":"/solutions/climatisation/","l":"Climatisation","g":0,"v":4},{"u":"/solutions/panneaux-photovoltaiques/","l":"Panneaux photovoltaïques","g":0,"v":134},{"u":"/solutions/pompes-a-chaleur/","l":"Pompes à chaleur","g":0,"v":100},{"u":"/solutions/pour-les-professionnels/","l":"Pour les professionnels","g":0,"v":16},{"u":"/statistiques-des-batiments-1-menage-sur-5-etait-equipe-dune-pompe-a-chaleur-en-2024/","l":"Statistiques des batiments 1","g":5,"v":1},{"u":"/subvention-batterie-de-stockage-neuchatel/","l":"Subvention batterie de stockage","g":5,"v":1},{"u":"/subventions-panneaux-solaires-vaud/","l":"Subventions panneaux solaires vaud","g":5,"v":1},{"u":"/subventions-solaires-en-suisse-ce-qui-change-au-1er-avril-2025/","l":"Subventions solaires en suisse","g":5,"v":1},{"u":"/suppression-de-la-valeur-locative-ce-que-change-la-votation-du-28-septembre-2025/","l":"Suppression de la valeur","g":5,"v":3},{"u":"/swiss-premiere-compagnie-aerienne-au-monde-a-utiliser-du-carburant-solaire/","l":"Swiss premiere compagnie aerienne","g":5,"v":1},{"u":"/tarif-rachat-solaire-2027-suisse/","l":"Tarif rachat solaire 2027","g":5,"v":0},{"u":"/thermostat-connecte-danfoss-naoenergy/","l":"Thermostat connecte danfoss naoene","g":5,"v":1},{"u":"/tout-savoir-sur-le-regroupement-de-proprietaires-par-naoenergy/","l":"Tout savoir sur le","g":5,"v":0},{"u":"/toutes-nos-solutions-solaires-suisse/","l":"Hub Solutions","g":2,"v":26},{"u":"/transition-energetique-geneve-soiree-information/","l":"Transition energetique geneve soir","g":5,"v":2},{"u":"/transition-energetique-suisse-10-dates/","l":"Transition energetique suisse 10","g":5,"v":3},{"u":"/transition-energetique-suisse-raphael-domjan/","l":"Transition energetique suisse raph","g":5,"v":0},{"u":"/un-projet-dautoconsommation-complet-a-gilly-vaud/","l":"Un projet dautoconsommation comple","g":5,"v":1},{"u":"/un-projet-naoenergy-a-mont-sur-rolle-au-coeur-des-vignes-photovoltaique-pompe-a-chaleur/","l":"Un projet naoenergy a","g":5,"v":1},{"u":"/une-chance-le-nouveau-film-institutionnel-de-naoenergy/","l":"Une chance le nouveau","g":5,"v":0},{"u":"/une-installation-photovoltaique-sur-un-toit-plat-pour-une-entreprise-du-canton-de-vaud/","l":"Une installation photovoltaique su","g":5,"v":1},{"u":"/une-mise-a-leau-reussie-pour-planetsolar-ii-au-lac-titicaca/","l":"Une mise a leau","g":5,"v":2},{"u":"/une-nouvelle-etape-pour-le-secteur-des-energies-renouvelables-dans-le-monde/","l":"Une nouvelle etape pour","g":5,"v":1},{"u":"/vaud-1375-millions-pour-la-renovation-energetique-des-batiments-communaux/","l":"Vaud 1375 millions pour","g":5,"v":1},{"u":"/votation-du-28-septembre-suppression-de-la-valeur-locative-et-impact-sur-la-renovation-energetique-en-suisse/","l":"Votation du 28 septembre","g":5,"v":1},{"u":"/votre-projet/","l":"Votre projet","g":1,"v":25},{"u":"/zen-energie-services-le-partenaire-pour-des-installations-energetiques-durables-en-suisse-romande/","l":"Zen energie services le","g":5,"v":0},{"u":"/zoom-collaborateur-alexandre-bonet-responsable-dequipe/","l":"Zoom collaborateur alexandre bonet","g":5,"v":1},{"u":"/zoom-collaborateur-alexis-pellerin-eco-conseiller-ge/","l":"Zoom collaborateur alexis pellerin","g":5,"v":1},{"u":"/zoom-projet-26-panneaux-photovoltaiques-et-batterie-de-stockage-a-dully-vaud/","l":"Zoom projet 26 panneaux","g":5,"v":1},{"u":"/zoom-projet-42-panneaux-photovoltaiques-a-thonex-geneve/","l":"Zoom projet 42 panneaux","g":5,"v":2},{"u":"/zoom-projet-autoconsommation-energetique-maximisee-a-leytron-valais/","l":"Zoom projet autoconsommation energ","g":5,"v":1},{"u":"/zoom-projet-carport-solaire-et-borne-de-recharge-a-misery-courtion/","l":"Zoom projet carport solaire","g":5,"v":1},{"u":"/zoom-projet-innovation-et-confort-thermique-avec-la-pompe-a-chaleur-air-eau-de-buderus/","l":"Zoom projet innovation et","g":5,"v":1},{"u":"/zoom-projet-innovation-technologique-et-autoconsommation-a-denens-vd/","l":"Zoom projet innovation technologiq","g":5,"v":0},{"u":"/zoom-projet-la-derniere-generation-de-pompe-a-chaleur-a-vernier-geneve/","l":"Zoom projet la derniere","g":5,"v":1},{"u":"/zoom-projet-une-sellerie-fribourgeoise-equipee-de-32-panneaux-photovoltaiques/","l":"Zoom projet une sellerie","g":5,"v":1}],"e":[[0,104],[0,237],[0,240],[0,124],[0,53],[0,236],[0,239],[0,238],[0,242],[0,241],[0,3],[1,104],[1,241],[2,237],[2,255],[2,253],[2,53],[2,236],[2,239],[2,238],[2,242],[2,241],[3,5],[3,53],[3,38],[3,2],[4,104],[4,236],[4,242],[4,241],[5,104],[5,4],[5,236],[5,242],[5,241],[7,239],[8,253],[8,239],[8,242],[8,248],[8,241],[9,242],[9,241],[10,241],[11,124],[11,53],[12,255],[12,4],[12,265],[12,58],[12,34],[12,254],[12,101],[12,2],[12,5],[12,43],[12,232],[12,59],[13,104],[13,17],[13,242],[13,236],[13,35],[13,241],[13,119],[14,236],[14,242],[14,241],[15,68],[15,236],[15,238],[15,242],[15,241],[15,119],[16,105],[16,253],[16,236],[16,239],[16,238],[16,242],[16,241],[17,108],[17,236],[17,38],[17,241],[18,108],[18,17],[18,253],[18,236],[18,238],[18,242],[18,241],[18,84],[19,104],[19,15],[19,236],[19,241],[20,104],[20,19],[20,108],[20,17],[20,236],[20,241],[21,236],[21,242],[21,241],[23,12],[23,102],[23,1],[23,94],[23,4],[23,93],[23,265],[23,6],[23,254],[23,72],[23,101],[23,2],[23,73],[23,5],[23,232],[24,12],[24,262],[24,249],[24,120],[24,78],[24,77],[24,265],[24,109],[24,234],[24,66],[24,106],[24,261],[24,263],[24,43],[24,83],[24,42],[25,12],[25,75],[25,57],[25,60],[25,255],[25,56],[25,36],[25,265],[25,44],[25,122],[25,113],[25,83],[25,14],[25,79],[25,244],[26,12],[26,11],[26,265],[26,235],[27,12],[27,33],[27,90],[27,92],[27,121],[27,265],[27,97],[28,12],[28,7],[28,84],[28,119],[28,108],[28,265],[28,55],[28,245],[28,248],[28,246],[28,69],[28,9],[28,54],[28,264],[28,8],[28,247],[29,12],[29,96],[29,62],[29,93],[29,265],[29,61],[29,100],[29,91],[29,99],[29,125],[29,261],[29,126],[30,20],[30,12],[30,40],[30,233],[30,88],[30,46],[30,18],[30,13],[30,265],[30,58],[30,34],[30,118],[30,19],[30,17],[30,15],[30,32],[30,251],[31,12],[31,258],[31,1],[31,271],[31,115],[31,265],[31,260],[31,276],[31,273],[31,257],[31,270],[31,275],[31,269],[31,230],[31,59],[31,272],[32,108],[32,236],[32,238],[32,242],[32,38],[32,241],[33,104],[33,253],[33,242],[33,236],[33,0],[33,238],[33,239],[33,241],[34,242],[34,38],[34,241],[35,236],[35,242],[35,241],[36,236],[36,242],[36,38],[36,241],[37,116],[38,236],[38,238],[38,241],[38,242],[39,38],[40,236],[40,242],[40,38],[40,241],[42,243],[42,253],[42,236],[42,238],[42,241],[43,237],[43,124],[43,236],[43,238],[43,242],[43,241],[44,236],[44,38],[44,241],[47,38],[48,52],[48,11],[48,49],[48,51],[48,53],[48,50],[48,38],[49,52],[49,51],[49,50],[49,38],[50,124],[50,52],[50,51],[50,49],[51,52],[51,49],[51,50],[51,242],[52,93],[52,51],[52,49],[52,50],[53,265],[53,38],[54,38],[54,241],[55,38],[55,241],[56,104],[56,236],[56,242],[56,241],[57,237],[57,15],[57,253],[57,236],[57,238],[57,242],[57,241],[58,104],[58,237],[58,236],[58,238],[58,242],[58,38],[58,241],[59,104],[59,237],[59,236],[59,242],[59,38],[59,241],[60,97],[60,53],[60,229],[61,0],[62,38],[63,236],[63,229],[63,242],[63,241],[63,64],[64,38],[64,229],[65,38],[66,243],[66,241],[67,270],[67,241],[68,236],[69,242],[70,253],[70,239],[70,265],[71,243],[71,81],[72,243],[72,241],[73,243],[73,242],[74,131],[75,243],[75,81],[75,241],[76,104],[76,243],[76,124],[76,241],[77,253],[77,38],[77,241],[78,236],[78,241],[79,243],[79,241],[80,242],[81,38],[81,241],[82,104],[82,242],[83,38],[83,241],[84,253],[84,236],[84,238],[84,242],[84,38],[84,241],[85,242],[87,108],[87,236],[87,241],[88,104],[88,38],[88,241],[89,243],[90,38],[91,236],[91,38],[91,241],[92,38],[93,253],[93,53],[93,236],[93,238],[93,242],[93,241],[94,124],[94,53],[94,236],[94,242],[94,241],[95,243],[96,61],[96,124],[96,38],[97,53],[97,0],[98,124],[98,53],[99,0],[101,253],[101,236],[101,242],[101,38],[101,241],[102,243],[102,242],[102,241],[104,159],[104,131],[104,128],[104,132],[104,201],[104,208],[104,127],[104,130],[104,215],[104,253],[104,199],[104,265],[104,129],[104,214],[104,175],[104,142],[104,213],[105,268],[105,124],[105,267],[105,16],[105,38],[106,241],[107,38],[108,15],[108,242],[108,236],[108,81],[108,241],[108,69],[108,119],[109,243],[109,81],[110,237],[110,242],[111,0],[112,104],[112,241],[113,236],[113,241],[114,104],[114,204],[114,236],[114,241],[114,3],[115,104],[115,236],[115,241],[117,104],[117,242],[117,38],[117,241],[118,242],[118,117],[119,236],[119,241],[120,236],[120,242],[120,241],[121,0],[122,229],[122,38],[123,265],[123,38],[124,240],[124,237],[124,105],[124,236],[124,239],[124,238],[124,265],[124,242],[124,38],[124,241],[125,53],[126,53],[127,104],[127,201],[127,130],[127,224],[127,155],[127,129],[127,168],[127,236],[127,265],[127,187],[127,154],[127,137],[127,132],[127,212],[127,253],[127,199],[127,156],[127,131],[127,159],[127,128],[127,208],[127,149],[127,166],[127,164],[128,104],[128,173],[128,227],[128,198],[128,127],[128,130],[128,129],[128,140],[128,225],[128,176],[128,265],[128,132],[128,193],[128,223],[128,253],[128,237],[128,131],[128,144],[128,208],[128,222],[128,166],[128,164],[128,167],[129,104],[129,131],[129,128],[129,132],[129,127],[129,130],[129,253],[129,186],[129,238],[129,265],[129,202],[129,166],[130,104],[130,131],[130,128],[130,132],[130,127],[130,253],[130,186],[130,239],[130,265],[130,129],[131,104],[131,127],[131,130],[131,155],[131,129],[131,214],[131,168],[131,213],[131,172],[131,265],[131,132],[131,163],[131,189],[131,212],[131,253],[131,175],[131,241],[131,142],[131,157],[131,156],[131,128],[131,208],[131,149],[131,166],[132,104],[132,150],[132,180],[132,127],[132,130],[132,129],[132,188],[132,174],[132,141],[132,265],[132,219],[132,215],[132,253],[132,169],[132,242],[132,171],[132,185],[132,156],[132,131],[132,128],[132,208],[132,178],[132,166],[132,164],[133,132],[133,208],[133,242],[133,197],[133,151],[134,242],[134,169],[134,156],[134,166],[135,159],[135,154],[135,127],[135,199],[135,236],[136,132],[136,208],[136,215],[136,169],[136,242],[137,201],[137,127],[137,199],[137,236],[137,146],[138,214],[138,241],[138,131],[138,142],[139,132],[139,208],[139,215],[139,169],[139,242],[140,237],[140,227],[140,128],[140,225],[140,167],[141,132],[141,208],[141,215],[141,169],[141,242],[142,214],[142,175],[142,131],[142,241],[143,214],[143,241],[143,131],[143,142],[144,237],[144,128],[144,140],[144,222],[144,167],[145,132],[145,216],[145,177],[145,242],[145,148],[146,137],[146,201],[146,127],[146,199],[146,236],[147,148],[147,242],[147,219],[147,132],[148,242],[148,177],[148,219],[148,132],[149,241],[150,132],[150,208],[150,215],[150,242],[150,174],[151,132],[151,208],[151,133],[151,242],[151,197],[152,132],[152,208],[152,215],[152,169],[152,242],[153,214],[153,241],[153,131],[153,142],[154,159],[154,127],[154,199],[154,236],[154,187],[155,241],[156,265],[156,253],[157,214],[157,241],[157,131],[157,142],[158,132],[158,208],[158,215],[158,169],[158,242],[159,154],[159,127],[159,199],[159,236],[159,187],[160,159],[160,154],[160,127],[160,199],[160,236],[161,192],[161,131],[161,224],[161,191],[161,241],[162,214],[162,241],[162,131],[162,142],[163,241],[164,265],[164,253],[165,159],[165,154],[165,127],[165,199],[165,236],[166,265],[166,253],[167,237],[167,227],[167,128],[167,140],[167,225],[168,241],[169,242],[170,159],[170,201],[170,127],[170,199],[170,236],[171,132],[171,208],[171,215],[171,169],[171,242],[172,241],[173,237],[173,128],[173,144],[173,222],[173,167],[174,150],[174,132],[174,208],[174,215],[174,242],[175,214],[175,241],[175,131],[175,142],[176,237],[176,128],[176,144],[176,222],[176,167],[177,148],[177,242],[177,219],[177,132],[178,132],[178,208],[178,215],[178,169],[178,242],[179,214],[179,241],[179,131],[179,142],[180,132],[180,208],[180,215],[180,169],[180,242],[181,214],[181,241],[181,131],[181,142],[182,241],[183,214],[183,241],[183,131],[183,142],[184,131],[184,212],[184,155],[184,206],[184,241],[185,132],[185,208],[185,215],[185,169],[185,242],[186,239],[187,159],[187,154],[187,127],[187,199],[187,236],[188,132],[188,208],[188,215],[188,169],[188,242],[189,214],[189,241],[189,131],[189,142],[190,214],[190,241],[190,131],[190,142],[191,192],[191,131],[191,224],[191,241],[191,161],[192,131],[192,224],[192,191],[192,241],[192,161],[193,237],[193,128],[193,140],[193,225],[193,167],[194,214],[194,241],[194,131],[194,182],[195,132],[195,208],[195,215],[195,169],[195,242],[196,132],[196,208],[196,215],[196,169],[196,242],[197,132],[197,208],[197,133],[197,242],[197,151],[198,237],[198,128],[198,140],[198,225],[198,167],[199,159],[199,154],[199,127],[199,236],[199,187],[200,132],[200,208],[200,215],[200,169],[200,242],[201,137],[201,127],[201,199],[201,236],[201,146],[202,238],[203,214],[203,241],[203,131],[203,142],[204,214],[204,241],[204,131],[204,142],[205,159],[205,154],[205,127],[205,199],[205,236],[206,131],[206,221],[206,212],[206,155],[206,241],[207,241],[208,265],[208,253],[209,159],[209,201],[209,127],[209,199],[209,236],[210,214],[210,241],[210,131],[210,142],[211,214],[211,241],[211,131],[211,142],[212,241],[213,157],[213,131],[213,189],[213,172],[213,241],[214,175],[214,131],[214,142],[214,241],[215,132],[215,208],[215,242],[215,169],[215,166],[216,148],[216,242],[216,219],[216,132],[217,131],[217,212],[217,155],[217,206],[217,241],[218,132],[218,216],[218,147],[218,177],[218,242],[219,148],[219,242],[219,177],[219,132],[220,131],[220,217],[220,184],[220,206],[220,241],[221,131],[221,212],[221,155],[221,206],[221,241],[222,237],[222,128],[222,144],[222,176],[222,167],[223,237],[223,128],[223,140],[223,225],[223,167],[224,241],[225,237],[225,227],[225,128],[225,140],[225,167],[226,159],[226,154],[226,127],[226,199],[226,236],[227,237],[227,128],[227,140],[227,225],[227,167],[228,104],[229,38],[229,104],[230,237],[230,236],[230,229],[230,242],[230,241],[231,38],[232,236],[232,242],[232,241],[233,108],[233,236],[233,241],[233,38],[233,9],[234,53],[235,253],[235,239],[236,104],[236,237],[236,105],[236,127],[236,239],[236,238],[236,242],[236,38],[236,241],[236,64],[236,243],[237,104],[237,105],[237,128],[237,229],[237,242],[237,38],[237,241],[237,64],[238,104],[238,105],[238,236],[238,239],[238,229],[238,129],[238,38],[238,241],[238,64],[239,104],[239,105],[239,130],[239,236],[239,229],[239,238],[239,38],[239,241],[239,64],[240,104],[240,105],[240,236],[240,229],[240,34],[240,38],[240,241],[240,64],[241,104],[241,105],[241,131],[241,236],[241,229],[241,238],[241,242],[241,38],[241,64],[242,104],[242,237],[242,105],[242,240],[242,243],[242,132],[242,236],[242,239],[242,238],[242,38],[242,241],[242,64],[242,103],[243,104],[243,236],[243,239],[243,238],[243,242],[243,241],[244,242],[245,15],[245,108],[245,236],[245,241],[246,104],[246,237],[246,40],[246,13],[246,236],[246,238],[246,242],[246,38],[246,241],[247,81],[247,38],[248,242],[248,241],[250,104],[250,131],[250,13],[250,236],[250,238],[250,242],[250,241],[251,242],[252,229],[252,242],[252,38],[252,241],[253,104],[253,237],[253,240],[253,236],[253,239],[253,238],[253,242],[253,241],[254,236],[254,242],[254,38],[254,241],[255,108],[255,253],[255,236],[255,238],[255,242],[255,241],[255,3],[256,104],[256,13],[256,236],[256,242],[256,241],[257,237],[257,236],[257,238],[257,242],[257,38],[257,241],[258,237],[258,242],[258,241],[259,242],[259,241],[260,243],[260,236],[260,241],[261,53],[261,38],[262,242],[262,248],[262,241],[263,243],[263,239],[263,242],[263,241],[264,236],[264,242],[264,241],[266,237],[266,242],[266,241],[267,105],[267,253],[267,242],[267,241],[267,64],[268,236],[268,242],[268,38],[268,241],[268,64],[269,47],[269,236],[269,241],[270,241],[271,47],[271,236],[271,241],[272,239],[272,238],[272,38],[272,241],[273,242],[274,236],[274,242],[274,241],[275,242],[276,236],[276,238],[276,242],[276,241]]};
               var cv = document.getElementById('nao-map');
               if (!cv || !DATA) { return; }
               var ctx = cv.getContext('2d');
@@ -5949,46 +5960,114 @@ User-agent: ExaBot</code></pre>
 
               var COUL = ['#39d98a','#ff6b57','#7CB1C4','#b98cff','#4aa3ff','#f5b544'];
               var FAM  = ['Page qui rapporte','Conversion','Hub / archive','Entreprise','Fiche chantier','Article'];
+              var OR   = '#ffd24a';
 
               var N = DATA.n, E = DATA.e, n = N.length;
               var W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-              // --- etat physique
               var x = new Float32Array(n), y = new Float32Array(n),
+                  ax = new Float32Array(n), ay = new Float32Array(n),
                   vx = new Float32Array(n), vy = new Float32Array(n), rad = new Float32Array(n);
-              var deg = new Int16Array(n);
-              for (var i = 0; i < E.length; i++) { deg[E[i][0]]++; deg[E[i][1]]++; }
-              // chaque page qui rapporte recoit son secteur : les lobes se separent naturellement
-              var ancre = new Float32Array(n * 2), aPoids = new Float32Array(n);
-              var moneyIdx = [];
-              for (var i = 0; i < n; i++) if (N[i].g === 0) moneyIdx.push(i);
-              var angMoney = {};
-              moneyIdx.forEach(function(i, q){ angMoney[i] = (q / moneyIdx.length) * Math.PI * 2 - Math.PI / 2; });
+
+              var accueil = -1, money = [], conv = [];
+              for (var i = 0; i < n; i++) {
+                if (N[i].u === '/') accueil = i;
+                else if (N[i].g === 0) money.push(i);
+                else if (N[i].g === 1) conv.push(i);
+              }
+              money.sort(function(a, b){ return N[b].v - N[a].v; });
+
+              var vers = [], vois = [];
+              for (var i = 0; i < n; i++) { vers.push([]); vois.push([]); }
+              for (var i = 0; i < E.length; i++) {
+                var s = E[i][0], t = E[i][1];
+                vers[s].push(t); vois[s].push(t); vois[t].push(s);
+              }
+
+              // chaque zone a sa tete de grappe, comme "Nos realisations" pour les chantiers
+              var TETES = {'/nos-realisations/': 'D', '/actualites/': 'G', '/qui-sommes-nous/': 'B', '/toutes-nos-solutions-solaires-suisse/': 'H'};
+              var tete = {D: -1, G: -1, B: -1, H: -1}, estTete = {};
+              for (var i = 0; i < n; i++) {
+                if (TETES[N[i].u]) { tete[TETES[N[i].u]] = i; estTete[i] = 1; }
+              }
+
+              var angM = {}, parent = new Int16Array(n);
+              for (var i = 0; i < n; i++) parent[i] = -1;
+              money.forEach(function(m, q){ angM[m] = (q / money.length) * Math.PI * 2 - Math.PI / 2; });
 
               for (var i = 0; i < n; i++) {
-                rad[i] = 3 + Math.sqrt(N[i].v) * 2.1;
-                var a, r0;
-                if (N[i].u === '/' || N[i].g === 2) { a = Math.random() * 6.28; r0 = 60; }
-                else if (N[i].g === 0) { a = angMoney[i]; r0 = 250; }
-                else { a = Math.random() * 6.28; r0 = 380 + Math.random() * 160; }
-                x[i] = Math.cos(a) * r0; y[i] = Math.sin(a) * r0;
-                if (N[i].g === 0) { ancre[i*2] = Math.cos(angMoney[i]) * 265; ancre[i*2+1] = Math.sin(angMoney[i]) * 265; aPoids[i] = 0.020; }
+                if (i === accueil || N[i].g === 0 || N[i].g === 1) continue;
+                var cpt = {}, best = -1, bn = 0;
+                for (var q = 0; q < vers[i].length; q++) {
+                  var t = vers[i][q];
+                  if (N[t].g === 0) { cpt[t] = (cpt[t] || 0) + 1; if (cpt[t] > bn) { bn = cpt[t]; best = t; } }
+                }
+                parent[i] = best;
               }
-              // un satellite est attire vers le secteur de la page produit qu'il alimente
-              var cible = {};
-              for (var i = 0; i < E.length; i++) {
-                var t = E[i][1];
-                if (N[t].g === 0) { var s0 = E[i][0]; if (cible[s0] === undefined) cible[s0] = t; }
+
+              var R_CONV = 175, R_MONEY = 470, R_SAT = 760;
+              function place(){
+                if (accueil >= 0) { ax[accueil] = 0; ay[accueil] = 0; }
+                conv.forEach(function(i, q){
+                  var a = -Math.PI / 2 + (q === 0 ? -0.62 : 0.62);
+                  ax[i] = Math.cos(a) * R_CONV; ay[i] = Math.sin(a) * R_CONV;
+                });
+                money.forEach(function(i){
+                  ax[i] = Math.cos(angM[i]) * R_MONEY; ay[i] = Math.sin(angM[i]) * R_MONEY;
+                });
+                // trois zones : chantiers + hubs à droite, articles à gauche, entreprise en bas
+                var zoneD = [], zoneG = [], zoneB = [];
+                for (var i = 0; i < n; i++) {
+                  if (i === accueil || N[i].g === 0 || N[i].g === 1 || estTete[i]) continue;
+                  if (N[i].g === 4 || N[i].g === 2) zoneD.push(i);
+                  else if (N[i].g === 5) zoneG.push(i);
+                  else zoneB.push(i);
+                }
+                // dans chaque zone, on garde ensemble les pages qui alimentent le même produit
+                var parOrdre = function(a, b){
+                  var pa = parent[a] >= 0 ? money.indexOf(parent[a]) : 99;
+                  var pb = parent[b] >= 0 ? money.indexOf(parent[b]) : 99;
+                  if (pa !== pb) return pa - pb;
+                  return N[b].v - N[a].v;
+                };
+                zoneD.sort(parOrdre); zoneG.sort(parOrdre); zoneB.sort(parOrdre);
+
+                function poseZone(lst, a0, a1, r0, dr, base){
+                  var pos = 0, anneau = 0;
+                  while (pos < lst.length) {
+                    var r = r0 + anneau * dr;
+                    var combien = Math.max(4, Math.round(base + anneau * 3));
+                    var lot = lst.slice(pos, pos + combien);
+                    lot.forEach(function(i, q){
+                      var t = lot.length > 1 ? q / (lot.length - 1) : 0.5;
+                      var a = a0 + (a1 - a0) * t;
+                      var rr = r + (q % 2) * (dr * 0.32);
+                      ax[i] = Math.cos(a) * rr; ay[i] = Math.sin(a) * rr;
+                    });
+                    pos += combien; anneau++;
+                  }
+                }
+                // repères d'angle : 0 = droite, PI/2 = bas, PI = gauche
+                poseZone(zoneD, -1.18, 1.18, 690, 104, 13);   // chantiers + hubs, à droite
+                poseZone(zoneG, 1.96, 4.32, 690, 104, 13);    // articles, à gauche
+                poseZone(zoneB, 1.31, 1.83, 640, 82, 5);      // entreprise, un seul bloc en bas
+
+                // les têtes de grappe se placent en avant de leur zone, entre la couronne et les satellites
+                var posTete = {D: [0, 585], G: [Math.PI, 585], B: [Math.PI / 2, 512], H: [-Math.PI / 2, 560]};
+                for (var z in posTete) {
+                  var i = tete[z];
+                  if (i < 0) { continue; }
+                  ax[i] = Math.cos(posTete[z][0]) * posTete[z][1];
+                  ay[i] = Math.sin(posTete[z][0]) * posTete[z][1];
+                }
+                for (var i = 0; i < n; i++) {
+                  rad[i] = i === accueil ? 30 : (N[i].g === 0 ? 13 + Math.sqrt(N[i].v) * 1.55
+                          : N[i].g === 1 ? 14 : estTete[i] ? 15 : 2.6 + Math.sqrt(N[i].v) * 1.25);
+                  x[i] = ax[i] * (0.15 + Math.random() * 0.2);
+                  y[i] = ay[i] * (0.15 + Math.random() * 0.2);
+                }
               }
-              for (var k in cible) {
-                var i = +k, m = cible[k];
-                if (N[i].g === 0 || aPoids[i]) continue;
-                var ang = angMoney[m];
-                ancre[i*2] = Math.cos(ang) * 470; ancre[i*2+1] = Math.sin(ang) * 470; aPoids[i] = 0.0075;
-              }
-              // voisins (pour le survol)
-              var vois = []; for (var i = 0; i < n; i++) vois.push([]);
-              E.forEach(function(e){ vois[e[0]].push(e[1]); vois[e[1]].push(e[0]); });
+              place();
 
               function dim(){
                 W = wrap.clientWidth; H = cv.clientHeight;
@@ -5998,60 +6077,39 @@ User-agent: ExaBot</code></pre>
               dim();
               window.addEventListener('resize', function(){ dim(); });
 
-              // --- simulation de forces
-              var tick = 0, TICKS = 620, fige = false;
+              var tick = 0, TICKS = 150, fige = false;
               function pas(){
-                var alpha = Math.max(0.02, 1 - tick / TICKS);
-                // repulsion (grille pour rester leger)
-                var cell = 130, grille = {};
+                var cell = 46, grille = {};
                 for (var i = 0; i < n; i++) {
                   var k = ((x[i] / cell) | 0) + ':' + ((y[i] / cell) | 0);
                   (grille[k] = grille[k] || []).push(i);
                 }
                 for (var i = 0; i < n; i++) {
                   var gx = (x[i] / cell) | 0, gy = (y[i] / cell) | 0;
-                  for (var ax = -1; ax <= 1; ax++) for (var ay = -1; ay <= 1; ay++) {
-                    var b = grille[(gx + ax) + ':' + (gy + ay)]; if (!b) continue;
+                  for (var bx = -1; bx <= 1; bx++) for (var by = -1; by <= 1; by++) {
+                    var b = grille[(gx + bx) + ':' + (gy + by)]; if (!b) continue;
                     for (var q = 0; q < b.length; q++) {
                       var j = b[q]; if (j === i) continue;
                       var dx = x[i] - x[j], dy = y[i] - y[j], d2 = dx * dx + dy * dy;
-                      if (d2 < 1) { d2 = 1; dx = Math.random() - 0.5; dy = Math.random() - 0.5; }
-                      if (d2 > 40000) continue;
-                      var f = (4200 + rad[i] * rad[j] * 34) / d2 * alpha;
-                      vx[i] += dx * f * 0.03; vy[i] += dy * f * 0.03;
+                      var mini = rad[i] + rad[j] + 13;
+                      if (d2 > mini * mini) continue;
+                      if (d2 < 1) { d2 = 1; dx = Math.random() - .5; dy = Math.random() - .5; }
+                      var f = (mini * mini - d2) / (mini * mini) * 1.5;
+                      var d = Math.sqrt(d2);
+                      vx[i] += dx / d * f; vy[i] += dy / d * f;
                     }
                   }
                 }
-                // ressorts
-                for (var i = 0; i < E.length; i++) {
-                  var s = E[i][0], t = E[i][1];
-                  var dx = x[t] - x[s], dy = y[t] - y[s];
-                  var d = Math.sqrt(dx * dx + dy * dy) || 1;
-                  var lg = 96 + rad[s] + rad[t];
-                  var f = (d - lg) / d * 0.010 * alpha;
-                  vx[s] += dx * f; vy[s] += dy * f;
-                  vx[t] -= dx * f; vy[t] -= dy * f;
-                }
-                // gravite : les pages qui rapportent tirent vers le centre
                 for (var i = 0; i < n; i++) {
-                  if (aPoids[i]) {
-                    vx[i] += (ancre[i*2] - x[i]) * aPoids[i] * alpha;
-                    vy[i] += (ancre[i*2+1] - y[i]) * aPoids[i] * alpha;
-                  }
-                  var g = N[i].u === '/' ? 0.014
-                        : N[i].g === 2 ? 0.0055
-                        : N[i].g === 1 ? 0.0030
-                        : N[i].g === 0 ? 0.0009
-                        : 0.0008;
-                  vx[i] -= x[i] * g * alpha; vy[i] -= y[i] * g * alpha;
-                  vx[i] *= 0.86; vy[i] *= 0.86;
+                  vx[i] += (ax[i] - x[i]) * 0.09;
+                  vy[i] += (ay[i] - y[i]) * 0.09;
+                  vx[i] *= 0.72; vy[i] *= 0.72;
                   x[i] += vx[i]; y[i] += vy[i];
                 }
                 tick++;
                 if (tick > TICKS) fige = true;
               }
 
-              // --- vue
               var vue = {k: 1, dx: 0, dy: 0};
               function cadre(){
                 var x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
@@ -6061,111 +6119,207 @@ User-agent: ExaBot</code></pre>
                   if (x[i] + rad[i] > x1) x1 = x[i] + rad[i];
                   if (y[i] + rad[i] > y1) y1 = y[i] + rad[i];
                 }
-                var m = 54;
+                var m = 46;
                 vue.k = Math.min((W - m * 2) / (x1 - x0 || 1), (H - m * 2) / (y1 - y0 || 1));
-                vue.k = Math.max(0.25, Math.min(vue.k, 1.5));
+                vue.k = Math.max(0.2, Math.min(vue.k, 1.1));
                 vue.dx = W / 2 - ((x0 + x1) / 2) * vue.k;
                 vue.dy = H / 2 - ((y0 + y1) / 2) * vue.k;
               }
               var px = function(i){ return x[i] * vue.k + vue.dx; };
               var py = function(i){ return y[i] * vue.k + vue.dy; };
 
-              // --- particules de flux
-              var part = [];
-              for (var i = 0; i < Math.min(E.length, 190); i++) {
-                var e = E[(Math.random() * E.length) | 0];
-                part.push({e: e, t: Math.random(), v: 0.0025 + Math.random() * 0.004});
+              function courbe(s, t){
+                var x1 = px(s), y1 = py(s), x2 = px(t), y2 = py(t);
+                var mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+                var dx = x2 - x1, dy = y2 - y1;
+                return [x1, y1, mx - dy * 0.13, my + dx * 0.13, x2, y2];
               }
 
-              var survol = -1, prochesSet = null;
+              var part = [];
+              for (var i = 0; i < Math.min(E.length, 210); i++) {
+                part.push({e: E[(Math.random() * E.length) | 0], t: Math.random(), v: 0.0028 + Math.random() * 0.0042});
+              }
+
+              var survol = -1, prochesSet = null, choisi = -1;
+              var depuis = []; for (var i = 0; i < n; i++) depuis.push([]);
+              for (var i = 0; i < E.length; i++) depuis[E[i][1]].push(E[i][0]);
+
+              var dPan = document.getElementById('nao-map-detail');
+              var dFam = document.getElementById('nao-d-fam');
+              var dTit = document.getElementById('nao-d-titre');
+              var dUrl = document.getElementById('nao-d-url');
+              var dChf = document.getElementById('nao-d-chiffres');
+              var dLst = document.getElementById('nao-d-listes');
+              var dAide = document.getElementById('nao-map-aide');
+
+              function liste(titre, arr, vide){
+                var t0 = '<div style="margin-bottom:16px"><div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.42);font-weight:700;margin-bottom:7px">';
+                if (!arr.length) {
+                  return t0 + titre + '</div><div style="font-size:0.72rem;color:#ff9c8c;line-height:1.5">' + vide + '</div></div>';
+                }
+                var h = t0 + titre + ' <span style="color:#fff">(' + arr.length + ')</span></div>';
+                var vus = {};
+                for (var q = 0; q < arr.length; q++) {
+                  var j = arr[q];
+                  if (vus[j]) { continue; }
+                  vus[j] = 1;
+                  h += '<div class="nao-d-item" data-i="' + j + '" style="display:flex;align-items:center;gap:8px;padding:5px 7px;border-radius:6px;cursor:pointer;font-size:0.73rem;color:#d7e4ea;line-height:1.35">'
+                     + '<span style="width:7px;height:7px;border-radius:50%;flex:0 0 auto;background:' + (j === accueil ? OR : COUL[N[j].g]) + '"></span>'
+                     + '<span style="flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">' + N[j].l + '</span></div>';
+                }
+                return h + '</div>';
+              }
+
+              function ouvre(i){
+                choisi = i; survol = i; prochesSet = new Set(vois[i]);
+                var fam = i === accueil ? 'Accueil du site' : FAM[N[i].g];
+                dFam.textContent = fam;
+                dFam.style.color = i === accueil ? OR : COUL[N[i].g];
+                dTit.textContent = N[i].l;
+                dUrl.textContent = N[i].u;
+                dUrl.href = 'https://naoenergy.ch' + N[i].u;
+                var ent = depuis[i].length, sor = vers[i].length;
+                dChf.innerHTML = '<div><div style="font-size:1.35rem;font-weight:800;color:#39d98a;line-height:1">' + ent + '</div><div style="font-size:0.62rem;color:rgba(255,255,255,.5)">liens recus</div></div>'
+                               + '<div><div style="font-size:1.35rem;font-weight:800;color:#7CB1C4;line-height:1">' + sor + '</div><div style="font-size:0.62rem;color:rgba(255,255,255,.5)">liens sortants</div></div>';
+                dLst.innerHTML = liste('Pages qui pointent vers elle', depuis[i], 'Aucune page du contenu ne pointe vers elle : elle ne recoit rien.')
+                               + liste('Pages vers lesquelles elle pointe', vers[i], 'Elle ne renvoie vers aucune autre page : impasse.');
+                dPan.style.transform = 'translateX(0)';
+                dAide.style.opacity = 0;
+                var items = dLst.querySelectorAll('.nao-d-item');
+                for (var q = 0; q < items.length; q++) {
+                  (function(el){
+                    el.addEventListener('mouseenter', function(){ el.style.background = 'rgba(124,177,196,.13)'; });
+                    el.addEventListener('mouseleave', function(){ el.style.background = 'transparent'; });
+                    el.addEventListener('click', function(){ ouvre(+el.getAttribute('data-i')); });
+                  })(items[q]);
+                }
+              }
+              function ferme(){
+                choisi = -1; survol = -1; prochesSet = null;
+                dPan.style.transform = 'translateX(101%)';
+                dAide.style.opacity = 1;
+              }
+              document.getElementById('nao-d-close').addEventListener('click', ferme);
+
+              // --- filtre par famille depuis la legende
+              var famille = -1;
+              function famDe(i){ return i === accueil ? 6 : N[i].g; }
+              var btnsFam = wrap.querySelectorAll('.nao-map-lg');
+              for (var q = 0; q < btnsFam.length; q++) {
+                (function(btn){
+                  btn.addEventListener('click', function(){
+                    var f = +btn.getAttribute('data-fam');
+                    famille = (famille === f) ? -1 : f;
+                    for (var z = 0; z < btnsFam.length; z++) {
+                      btnsFam[z].classList.toggle('on', +btnsFam[z].getAttribute('data-fam') === famille);
+                    }
+                    ferme();
+                  });
+                })(btnsFam[q]);
+              }
+              function visible(i){
+                if (survol >= 0) { return i === survol || (prochesSet && prochesSet.has(i)); }
+                if (famille >= 0) { return famDe(i) === famille; }
+                return true;
+              }
 
               function dessine(){
                 ctx.clearRect(0, 0, W, H);
-                // liens
                 for (var i = 0; i < E.length; i++) {
                   var s = E[i][0], t = E[i][1];
-                  var actif = survol < 0 || s === survol || t === survol;
-                  ctx.strokeStyle = actif
-                    ? (survol >= 0 ? 'rgba(124,177,196,.55)' : 'rgba(124,177,196,.13)')
-                    : 'rgba(124,177,196,.03)';
-                  ctx.lineWidth = actif && survol >= 0 ? 1.1 : 0.6;
-                  ctx.beginPath(); ctx.moveTo(px(s), py(s)); ctx.lineTo(px(t), py(t)); ctx.stroke();
+                  var actif = (survol < 0 && famille < 0) || (survol >= 0 ? (s === survol || t === survol) : (famDe(s) === famille || famDe(t) === famille));
+                  var rayon = (s === accueil || t === accueil);
+                  if (!actif) { ctx.strokeStyle = 'rgba(124,177,196,.028)'; ctx.lineWidth = .6; }
+                  else if (survol >= 0) { ctx.strokeStyle = 'rgba(150,210,230,.6)'; ctx.lineWidth = 1.2; }
+                  else if (rayon) { ctx.strokeStyle = 'rgba(255,210,74,.30)'; ctx.lineWidth = 1.5; }
+                  else { ctx.strokeStyle = 'rgba(124,177,196,.10)'; ctx.lineWidth = .65; }
+                  var c = courbe(s, t);
+                  ctx.beginPath(); ctx.moveTo(c[0], c[1]); ctx.quadraticCurveTo(c[2], c[3], c[4], c[5]); ctx.stroke();
                 }
-                // particules
-                if (survol < 0) {
+                if (survol < 0 && choisi < 0 && famille < 0) {
                   for (var i = 0; i < part.length; i++) {
                     var p = part[i]; p.t += p.v;
                     if (p.t > 1) { p.t = 0; p.e = E[(Math.random() * E.length) | 0]; }
-                    var s = p.e[0], t = p.e[1];
-                    var cx = px(s) + (px(t) - px(s)) * p.t, cy = py(s) + (py(t) - py(s)) * p.t;
-                    var c = COUL[N[t].g];
-                    ctx.beginPath(); ctx.arc(cx, cy, 1.7, 0, 6.284);
-                    ctx.fillStyle = c; ctx.globalAlpha = 0.85 * (1 - Math.abs(p.t - 0.5) * 0.9);
+                    var s = p.e[0], t = p.e[1], c = courbe(s, t), u = p.t, iu = 1 - u;
+                    var cx = iu * iu * c[0] + 2 * iu * u * c[2] + u * u * c[4];
+                    var cy = iu * iu * c[1] + 2 * iu * u * c[3] + u * u * c[5];
+                    ctx.beginPath(); ctx.arc(cx, cy, 1.8, 0, 6.284);
+                    ctx.fillStyle = t === accueil ? OR : COUL[N[t].g];
+                    ctx.globalAlpha = .9 * (1 - Math.abs(u - .5) * .85);
                     ctx.fill(); ctx.globalAlpha = 1;
                   }
                 }
-                // noeuds
-                for (var i = 0; i < n; i++) {
-                  var actif = survol < 0 || i === survol || (prochesSet && prochesSet.has(i));
-                  var r = rad[i] * Math.max(vue.k, 0.5);
-                  var c = COUL[N[i].g];
-                  ctx.globalAlpha = actif ? 1 : 0.13;
-                  if (N[i].g === 0 || i === survol) {
-                    ctx.shadowColor = c; ctx.shadowBlur = i === survol ? 26 : 14;
+                var plan = function(i){
+                  return i === accueil ? 4 : (N[i].g === 1 ? 3 : (N[i].g === 0 ? 2 : (estTete[i] || N[i].g === 2 ? 1 : 0)));
+                };
+                var niveauTete = function(i){ return estTete[i] ? 2 : plan(i); };
+                for (var niv = 0; niv <= 4; niv++) {
+                  for (var i = 0; i < n; i++) {
+                    if (niveauTete(i) !== niv) continue;
+                    var actif = visible(i);
+                    var r = Math.max(2, rad[i] * vue.k);
+                    var c = i === accueil ? OR : COUL[N[i].g];
+                    ctx.globalAlpha = actif ? 1 : .12;
+                    if (niv >= 2 || i === survol) {
+                      ctx.shadowColor = c; ctx.shadowBlur = i === accueil ? 38 : (i === survol ? 26 : 18);
+                    }
+                    if (niv >= 2) {
+                      ctx.beginPath(); ctx.arc(px(i), py(i), r + 3.5, 0, 6.284);
+                      ctx.fillStyle = 'rgba(7,13,17,.9)'; ctx.fill();
+                    }
+                    ctx.beginPath(); ctx.arc(px(i), py(i), r, 0, 6.284);
+                    ctx.fillStyle = c; ctx.fill();
+                    ctx.shadowBlur = 0; ctx.globalAlpha = 1;
                   }
-                  ctx.beginPath(); ctx.arc(px(i), py(i), r, 0, 6.284);
-                  ctx.fillStyle = c; ctx.fill();
-                  ctx.shadowBlur = 0;
-                  ctx.globalAlpha = 1;
                 }
-                // etiquettes des grosses pages
-                ctx.font = '600 11px system-ui,-apple-system,Segoe UI,sans-serif';
+                ctx.font = '600 11.5px system-ui,-apple-system,Segoe UI,sans-serif';
                 ctx.textAlign = 'center';
-                var pris = [];
-                // les plus importantes d'abord, pour qu'elles gagnent la place
-                var ordre = [];
+                var pris = [], ordre = [];
                 for (var i = 0; i < n; i++) ordre.push(i);
-                ordre.sort(function(a,b){ return (N[b].g===0?1e4:0)+N[b].v - ((N[a].g===0?1e4:0)+N[a].v); });
+                ordre.sort(function(a, b){
+                  var pa = a === accueil ? 1e6 : (estTete[a] ? 7e5 : (N[a].g === 1 ? 5e5 : (N[a].g === 0 ? 1e5 : 0))) + N[a].v;
+                  var pb = b === accueil ? 1e6 : (estTete[b] ? 7e5 : (N[b].g === 1 ? 5e5 : (N[b].g === 0 ? 1e5 : 0))) + N[b].v;
+                  return pb - pa;
+                });
                 for (var q = 0; q < ordre.length; q++) {
                   var i = ordre[q];
-                  if (N[i].g !== 0 && N[i].v < 30 && i !== survol) continue;
-                  var actif = survol < 0 || i === survol || (prochesSet && prochesSet.has(i));
+                  var majeur = (i === accueil || N[i].g === 0 || N[i].g === 1 || estTete[i]);
+                  if (!majeur && i !== survol) continue;
+                  var actif = visible(i);
                   if (!actif) continue;
-                  var r = rad[i] * Math.max(vue.k, 0.5);
+                  var r = Math.max(2, rad[i] * vue.k);
                   var w = ctx.measureText(N[i].l).width;
-                  var bx = px(i) - w / 2 - 5, by = py(i) - r - 19, bw = w + 10, bh = 15;
+                  var bx = px(i) - w / 2 - 6, by = py(i) - r - 20, bw = w + 12, bh = 16;
                   var libre = true;
                   for (var z = 0; z < pris.length; z++) {
                     var o = pris[z];
-                    if (bx < o[0] + o[2] + 10 && bx + bw + 10 > o[0] && by < o[1] + o[3] + 7 && by + bh + 7 > o[1]) { libre = false; break; }
+                    if (bx < o[0] + o[2] + 8 && bx + bw + 8 > o[0] && by < o[1] + o[3] + 6 && by + bh + 6 > o[1]) { libre = false; break; }
                   }
                   if (!libre && i !== survol) continue;
                   pris.push([bx, by, bw, bh]);
-                  ctx.fillStyle = 'rgba(4,10,13,.72)';
+                  ctx.fillStyle = 'rgba(4,10,13,.78)';
                   ctx.fillRect(bx, by, bw, bh);
-                  ctx.fillStyle = N[i].g === 0 ? '#8ff0bd' : 'rgba(255,255,255,.93)';
+                  ctx.fillStyle = i === accueil ? OR : (N[i].g === 0 ? '#8ff0bd' : (N[i].g === 1 ? '#ffb3a6' : (estTete[i] ? '#cfe6f0' : 'rgba(255,255,255,.92)')));
                   ctx.fillText(N[i].l, px(i), py(i) - r - 8);
                 }
               }
 
               function boucle(){
-                // le panneau peut etre masque au chargement : on (re)mesure des qu'il devient visible
                 if (wrap.clientWidth !== W || cv.clientHeight !== H) {
                   if (wrap.clientWidth > 0) { dim(); cadre(); }
                   else { requestAnimationFrame(boucle); return; }
                 }
-                if (!fige) { pas(); cadre(); if (tick > 12) hint.style.display = 'none'; }
+                if (!fige) { pas(); cadre(); if (tick > 8) hint.style.display = 'none'; }
                 dessine();
                 requestAnimationFrame(boucle);
               }
               requestAnimationFrame(boucle);
 
-              // --- interaction
               function trouve(mx, my){
                 var best = -1, bd = 1e9;
                 for (var i = 0; i < n; i++) {
                   var dx = mx - px(i), dy = my - py(i), d = dx * dx + dy * dy;
-                  var r = rad[i] * Math.max(vue.k, 0.5) + 6;
+                  var r = Math.max(2, rad[i] * vue.k) + 7;
                   if (d < r * r && d < bd) { bd = d; best = i; }
                 }
                 return best;
@@ -6173,6 +6327,7 @@ User-agent: ExaBot</code></pre>
               cv.addEventListener('mousemove', function(ev){
                 var b = cv.getBoundingClientRect();
                 var mx = ev.clientX - b.left, my = ev.clientY - b.top;
+                if (choisi >= 0) { return; }
                 var i = trouve(mx, my);
                 if (i !== survol) {
                   survol = i;
@@ -6180,19 +6335,22 @@ User-agent: ExaBot</code></pre>
                   cv.style.cursor = i >= 0 ? 'pointer' : 'default';
                 }
                 if (i >= 0) {
+                  var fam = i === accueil ? 'Accueil du site' : FAM[N[i].g];
                   tipT.textContent = N[i].l;
-                  tipS.innerHTML = FAM[N[i].g] + ' · <strong style="color:#fff">' + N[i].v + '</strong> lien' + (N[i].v > 1 ? 's' : '') + ' reçu' + (N[i].v > 1 ? 's' : '') + '<br><span style="color:#7CB1C4">' + N[i].u + '</span>';
+                  tipS.innerHTML = fam + ' &middot; <strong style="color:#fff">' + N[i].v + '</strong> lien' + (N[i].v > 1 ? 's' : '') + ' re&ccedil;u' + (N[i].v > 1 ? 's' : '') +
+                    (parent[i] >= 0 ? '<br>alimente : <span style="color:#8ff0bd">' + N[parent[i]].l + '</span>' : '') +
+                    '<br><span style="color:#7CB1C4">' + N[i].u + '</span>';
                   tip.style.opacity = 1;
-                  var tw = 270;
-                  tip.style.left = Math.max(8, Math.min(mx + 16, W - tw - 8)) + 'px';
+                  tip.style.left = Math.max(8, Math.min(mx + 16, W - 288)) + 'px';
                   tip.style.top = Math.max(8, my - 20) + 'px';
                 } else { tip.style.opacity = 0; }
               });
-              cv.addEventListener('mouseleave', function(){ survol = -1; prochesSet = null; tip.style.opacity = 0; });
+              cv.addEventListener('mouseleave', function(){ if (choisi >= 0) { return; } survol = -1; prochesSet = null; tip.style.opacity = 0; });
               cv.addEventListener('click', function(ev){
                 var b = cv.getBoundingClientRect();
                 var i = trouve(ev.clientX - b.left, ev.clientY - b.top);
-                if (i >= 0) window.open('https://naoenergy.ch' + N[i].u, '_blank');
+                tip.style.opacity = 0;
+                if (i >= 0) { ouvre(i); } else { ferme(); }
               });
             })();
             </script>
@@ -6338,14 +6496,14 @@ User-agent: ExaBot</code></pre>
                             <th style="padding:4px 6px;font-weight:700">Page qui rapporte</th><th style="padding:4px 6px;font-weight:700">Liens reçus</th><th style="padding:4px 6px;font-weight:700">dont fiches chantier</th>
                         </tr></thead>
                         <tbody>
-                            <tr><td style="padding:3px 6px">Panneaux photovoltaïques</td><td style="padding:3px 6px"><strong>133</strong></td><td style="padding:3px 6px">36</td></tr>
+                            <tr><td style="padding:3px 6px">Panneaux photovoltaïques</td><td style="padding:3px 6px"><strong>134</strong></td><td style="padding:3px 6px">36</td></tr>
                             <tr><td style="padding:3px 6px">Pompes à chaleur</td><td style="padding:3px 6px"><strong>100</strong></td><td style="padding:3px 6px">28</td></tr>
                             <tr><td style="padding:3px 6px">Batteries de stockage</td><td style="padding:3px 6px"><strong>81</strong></td><td style="padding:3px 6px">14</td></tr>
-                            <tr><td style="padding:3px 6px">Borne de recharge</td><td style="padding:3px 6px">28</td><td style="padding:3px 6px;color:#E85D4A"><strong>1</strong></td></tr>
-                            <tr><td style="padding:3px 6px">Boiler thermodynamique</td><td style="padding:3px 6px">27</td><td style="padding:3px 6px">11</td></tr>
-                            <tr><td style="padding:3px 6px">Carport solaire</td><td style="padding:3px 6px">17</td><td style="padding:3px 6px;color:#E85D4A"><strong>1</strong></td></tr>
+                            <tr><td style="padding:3px 6px">Borne de recharge</td><td style="padding:3px 6px">29</td><td style="padding:3px 6px;color:#E85D4A"><strong>1</strong></td></tr>
+                            <tr><td style="padding:3px 6px">Boiler thermodynamique</td><td style="padding:3px 6px">28</td><td style="padding:3px 6px">11</td></tr>
+                            <tr><td style="padding:3px 6px">Carport solaire</td><td style="padding:3px 6px">18</td><td style="padding:3px 6px;color:#E85D4A"><strong>1</strong></td></tr>
                             <tr><td style="padding:3px 6px">Pour les professionnels</td><td style="padding:3px 6px">16</td><td style="padding:3px 6px">0</td></tr>
-                            <tr style="background:rgba(232,93,74,0.07)"><td style="padding:3px 6px"><strong>Votre projet</strong></td><td style="padding:3px 6px;color:#E85D4A"><strong>8</strong></td><td style="padding:3px 6px">4</td></tr>
+                            <tr style="background:rgba(232,93,74,0.07)"><td style="padding:3px 6px"><strong>Votre projet</strong></td><td style="padding:3px 6px;color:#E85D4A"><strong>25</strong></td><td style="padding:3px 6px">4</td></tr>
                             <tr style="background:rgba(232,93,74,0.07)"><td style="padding:3px 6px"><strong>Climatisation</strong></td><td style="padding:3px 6px;color:#E85D4A"><strong>4</strong></td><td style="padding:3px 6px">0</td></tr>
                         </tbody>
                     </table>
@@ -9501,11 +9659,23 @@ function showPanel(target) {
     const navBtn = document.querySelector('.nav-item[data-target="' + target + '"], .nav-child[data-target="' + target + '"]');
     if (navBtn) navBtn.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    var __m = document.querySelector('main.main');
+    if (__m) { __m.scrollTo({ top: 0, behavior: 'smooth' }); }
     if (target === 'overview') setTimeout(renderChart, 50);
     if (window.innerWidth <= 1024) closeMenu();
 }
 document.querySelectorAll('.nav-item[data-target], .nav-child[data-target]').forEach(btn => {
-    btn.addEventListener('click', () => { if (btn.dataset.target) showPanel(btn.dataset.target); });
+    btn.addEventListener('click', () => {
+        if (!btn.dataset.target) return;
+        showPanel(btn.dataset.target);
+        var anc = btn.dataset.ancre;
+        if (anc) {
+            setTimeout(function(){
+                var el = document.getElementById(anc);
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 420);
+        }
+    });
 });
 
 // ============ SIDEBAR TOGGLE (mobile drawer + desktop collapse) ============
