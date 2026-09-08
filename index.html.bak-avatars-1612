@@ -9806,7 +9806,7 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                     <div class="page-title-row">
                         <h1 class="page-title">👥 Avatars clients &amp; parcours d'achat</h1>
                     </div>
-                    <p class="page-subtitle">Cinq profils reconstruits à partir du Sheet « Leads NaoEnergy » — <strong>427 contacts réels du 2 mai au 7 septembre 2026</strong> : 338 formulaires et 89 appels. Volumes, canaux, saisonnalité et taux de qualification sont mesurés ; la lecture du parcours d'achat est une interprétation de ces chiffres.</p>
+                    <p class="page-subtitle">Cinq profils d'acheteurs reconstruits à partir des données réelles des campagnes Meta : ce qui a converti, à quel coût, et ce qui n'a rien donné. Chaque avatar a son déclencheur, son rythme et son argument — c'est ce qui doit piloter les créas, le ciblage et les pages produit.</p>
                 </div>
             </div>
 
@@ -9834,14 +9834,14 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
 
                 <section class="avm-sec">
                     <h2>Les avatars</h2>
-                    <p class="avm-sub">Chaque fiche part du volume réel mesuré dans le Sheet, puis suit le contact : d'où il vient, quand, par quelle page, ce qu'il déclare, et ce qu'il reste à faire.</p>
+                    <p class="avm-sub">Chaque fiche s'appuie sur les chiffres du compte : coût par lead, volume, angle créatif qui a fonctionné ou échoué.</p>
                     <ul class="avm-tabs" id="avm-tabs" role="tablist"></ul>
                     <article class="avm-avatar" id="avm-detail" aria-live="polite"></article>
                 </section>
 
                 <section class="avm-sec">
                     <h2>Où mettre l'effort</h2>
-                    <p class="avm-sub">Priorisation par volume réel constaté et par effort nécessaire pour débloquer le profil.</p>
+                    <p class="avm-sub">Priorisation croisée : potentiel de volume, coût d'acquisition constaté, et effort nécessaire pour débloquer l'avatar.</p>
                     <div class="avm-tablewrap">
                         <table class="avm-matrix">
                             <thead>
@@ -9853,7 +9853,7 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                 </section>
 
                 <div class="avm-foot">
-                    <p><strong>Source unique</strong> — Google Sheet « Leads NaoEnergy », onglet Leads, extrait du 7 septembre 2026. 427 lignes datées du 02.05.2026 au 07.09.2026 : 338 formulaires (Meta Lead Ads, Typeform du site, lead forms Google) et 89 appels. Les pourcentages de logement portent sur les 252 fiches où le champ est renseigné.</p>
+                    <p><strong>Sources</strong> — Campagnes Meta naoenergy (janv.–août 2026), veille concurrentielle Suisse romande, écosystème produit naoenergy.ch, retours qualité de leads.</p>
                     <p style="margin-bottom:0">Document de travail interne · MouaDev</p>
                 </div>
 
@@ -9869,108 +9869,108 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
 
   var AVATARS = [
     {
-      id: "stockeur", name: "Le Stockeur", short: "Stockeur",
-      role: "Le socle du portefeuille. Près de six demandes sur dix portent sur la batterie de stockage, et c'est aussi le profil le mieux qualifié du compte : 92 % habitent une maison.",
+      id: "optimisateur", name: "L'Optimisateur", short: "Optimisateur",
+      role: "Propriétaire déjà équipé en photovoltaïque, qui cherche à rentabiliser une production qu'il revend désormais à perte.",
       product: "Batterie de stockage",
-      kpi: "195", kpiLabel: "demandes — 58 % du total", kpiBad: false,
-      facts: [["Part du volume", "57,7 %"], ["Maison", "92 %"], ["Canal dominant", "Meta — 158 / 195"], ["Mois le plus fort", "juillet — 65"]],
+      kpi: "16,57 €", kpiLabel: "coût par lead — le meilleur du compte", kpiBad: false,
+      facts: [["Âge estimé", "45 – 65 ans"], ["Zone", "Genève, Vaud"], ["Panier", "10 – 20 k CHF"], ["Cycle d'achat", "4 à 8 semaines"]],
       stages: [
-        { t: "D'où il vient", d: "158 demandes sur 195 arrivent par un formulaire Meta natif. Le site n'en apporte que 27, et les formulaires Google 10.", say: "Meta 81 % · site 14 % · Google 5 %", chan: "Meta Lead Ads, campagne Batterie-Juin-2026" },
-        { t: "Quand", d: "Le volume monte de 24 en mai à 65 en juillet, puis retombe à 56 en août. La batterie est le produit le plus régulier du compte.", say: "mai 24 · juin 39 · juillet 65 · août 56", chan: "Pression publicitaire continue" },
-        { t: "Par où il entre", d: "Quand il passe par le site, c'est la page batteries de stockage qui capte : 19 entrées, la page produit la plus performante du compte.", say: "/solutions/batteries-de-stockage/ — 19 entrées", chan: "Page produit, article Enphase" },
-        { t: "Ce qu'il déclare", d: "154 fiches renseignent le logement : 141 maisons pour 13 appartements. Le ciblage Meta fait son travail sur ce produit.", say: "8 % seulement hors cible", chan: "Formulaire natif, champ logement" },
-        { t: "Ce qui reste à faire", d: "Le volume est là, la qualification aussi. L'enjeu n'est plus l'acquisition mais le traitement : le Sheet ne dit rien du devenir de ces 195 demandes.", say: "Aucun statut de suivi renseigné", chan: "À rapprocher d'Odoo" }
+        { t: "Déclencheur", d: "Sa facture ne baisse plus. Il apprend que le tarif de réinjection a chuté et comprend qu'il donne son surplus au réseau.", say: "« Je produis, mais je n'en profite pas. »", chan: "Feed Meta, recherche Google" },
+        { t: "Recherche", d: "Il cherche des chiffres : capacité en kWh, puissance de pointe, durée de garantie. Le marketing l'agace, la fiche technique le rassure.", say: "« Combien de kWh, et garantie combien d'années ? »", chan: "Sites constructeurs, forums" },
+        { t: "Comparaison", d: "Il compare deux ou trois installateurs sur la marque proposée et la garantie. Les simulateurs de rentabilité des concurrents lui donnent un chiffre — naoenergy n'en propose pas.", say: "« Enphase ou l'autre marque, laquelle tient le mieux ? »", chan: "Helvetia Energy, Solstis, Helion" },
+        { t: "Décision", d: "Il choisit sur la solidité technique et la réputation de l'installateur, pas sur le prix le plus bas.", say: "« Je veux quelqu'un qui sera encore là dans dix ans. »", chan: "Devis, visite technique" },
+        { t: "Après", d: "Il suit sa production dans l'application et parle de son taux d'autoconsommation autour de lui. C'est un prescripteur naturel.", say: "« Je suis à 80 % d'autoconsommation. »", chan: "Avis Google, bouche-à-oreille" }
       ],
       levers: [
-        "C'est le produit qui fonctionne : 58 % du volume et le meilleur taux de qualification. Ne pas y toucher, l'alimenter.",
-        "La page batteries de stockage est la meilleure porte d'entrée du site — c'est le modèle à répliquer sur les autres pages produit.",
-        "Le Sheet s'arrête à la demande. Sans retour d'Odoo sur ce que deviennent ces 195 leads, impossible de dire si le volume se transforme en chiffre d'affaires."
+        "La créa gagnante est la fiche technique Enphase IQ5P : 5 kWh, garantie 15 ans, 7,68 kVA. Décliner ce format sur d'autres références.",
+        "Il lui manque un simulateur de rentabilité — tous les concurrents sérieux en ont un, naoenergy non. C'est le gap le plus coûteux du site.",
+        "Cibler en priorité les propriétaires déjà équipés en solaire : ils ont le déclencheur, pas besoin de les éduquer."
       ]
     },
     {
-      id: "rafraichisseur", name: "Le Rafraîchisseur", short: "Rafraîchisseur",
-      role: "La climatisation réversible est le deuxième produit du compte, très loin devant le photovoltaïque. Elle pèse trois fois plus que le solaire et six fois plus que le carport.",
-      product: "Climatisation réversible (PAC Air/Air)",
-      kpi: "101", kpiLabel: "demandes — 30 % du total", kpiBad: false,
-      facts: [["Part du volume", "29,9 %"], ["Maison", "81 %"], ["Canal dominant", "Meta — 88 / 101"], ["Deux vagues", "juin 43 · août 31"]],
+      id: "econome", name: "L'Économe", short: "Économe",
+      role: "Il ne veut pas comprendre la technique. Il veut une facture plus basse et une promesse simple à laquelle il peut se fier.",
+      product: "Batterie de stockage",
+      kpi: "26,74 €", kpiLabel: "coût par lead · 33 leads, le plus gros volume", kpiBad: false,
+      facts: [["Âge estimé", "40 – 60 ans"], ["Zone", "Genève, Vaud"], ["Panier", "10 – 20 k CHF"], ["Cycle d'achat", "6 à 10 semaines"]],
       stages: [
-        { t: "D'où il vient", d: "88 demandes sur 101 viennent de Meta. Le site n'en apporte que 13, alors que la page climatisation existe depuis août.", say: "Meta 87 % · site 13 %", chan: "Clima-Juin-2026 puis Clima-Août-2026" },
-        { t: "Quand", d: "Deux vagues nettes, pas un pic unique : 43 en juin, chute à 15 en juillet, remontée à 31 en août. La demande suit la pression publicitaire autant que la météo.", say: "juin 43 · juillet 15 · août 31", chan: "Campagnes saisonnières" },
-        { t: "Par où il entre", d: "La page /solutions/climatisation/, mise en ligne en août, a déjà capté 11 entrées — un démarrage correct pour une page neuve.", say: "11 entrées en un mois", chan: "Page climatisation" },
-        { t: "Ce qu'il déclare", d: "17 appartements sur 88 fiches renseignées. Le taux hors cible est plus du double de celui de la batterie.", say: "19 % hors cible — contre 8 % en batterie", chan: "Formulaire natif" },
-        { t: "Ce qui reste à faire", d: "Le volume justifie un vrai dispositif : le produit n'a pas de campagne Google Ads dédiée avant août, et sa page vient seulement d'exister.", say: "Le site ne pèse que 13 % du volume", chan: "SEO + Google Ads à construire" }
+        { t: "Déclencheur", d: "Une facture d'électricité plus élevée que prévu, ou une conversation avec un voisin qui a fait installer quelque chose.", say: "« Ça augmente encore, il faut faire quelque chose. »", chan: "Reels, Stories, notoriété" },
+        { t: "Recherche", d: "Recherche courte et peu technique. Il retient trois mots, pas trois schémas. La promesse doit tenir en une ligne.", say: "« Concrètement, je gagne combien par mois ? »", chan: "Feed Meta, Google Maps" },
+        { t: "Comparaison", d: "Il compare surtout sur le prix affiché et sur la confiance. Un prix d'entrée visible le rassure — c'est l'argument que Habit'Avenir utilise en boucle.", say: "« Et ça coûte combien, à peu près ? »", chan: "Deux ou trois devis" },
+        { t: "Décision", d: "Il décide vite si on lui retire le risque : étude gratuite, pas d'acompte, subvention prise en charge de A à Z.", say: "« Si vous vous occupez des démarches, je signe. »", chan: "Appel commercial sous 48 h" },
+        { t: "Après", d: "Content s'il voit la différence sur la facture. Peu bavard techniquement, mais laisse volontiers un avis.", say: "« Ma facture a vraiment baissé. »", chan: "Avis Google" }
       ],
       levers: [
-        "La climatisation n'est pas un produit marginal : c'est le n°2 du compte. Elle mérite le même investissement que la batterie.",
-        "19 % de demandes en appartement, contre 8 % en batterie. Le filtrage doit être renforcé sur ce produit précisément.",
-        "Le creux de juillet entre les deux vagues suggère une rupture de pression publicitaire, pas une baisse d'intérêt — à vérifier sur le calendrier des campagnes."
+        "La créa gagnante est « Stockez, consommez, économisez » — trois verbes, aucune technique. C'est le registre à conserver pour le volume.",
+        "Afficher une fourchette de prix d'entrée sur la page produit : aujourd'hui la page liste les facteurs de coût sans jamais donner d'ordre de grandeur.",
+        "Mettre en avant les réducteurs de risque : étude gratuite, prise en charge des subventions, garanties."
       ]
     },
     {
-      id: "appelant", name: "L'Appelant solaire", short: "Appelant solaire",
-      role: "Le photovoltaïque ne produit presque aucun formulaire. Mais il génère plus d'appels que de demandes écrites : le contact existe, il passe simplement par le téléphone.",
+      id: "renovateur", name: "Le Rénovateur", short: "Rénovateur",
+      role: "Sa chaudière à mazout arrive en fin de vie et la réglementation cantonale se resserre. Il n'a pas vraiment le choix, seulement le calendrier.",
+      product: "Pompe à chaleur",
+      kpi: "30–50 k", kpiLabel: "panier moyen en CHF — le plus élevé", kpiBad: false,
+      facts: [["Âge estimé", "50 – 70 ans"], ["Zone", "GE, VD — cantons qui durcissent"], ["Panier", "30 – 50 k CHF"], ["Cycle d'achat", "4 à 6 mois"]],
+      stages: [
+        { t: "Déclencheur", d: "Une panne, un devis de réparation élevé, ou une information sur l'interdiction progressive des chaudières fossiles dans son canton.", say: "« On m'a dit que je ne pourrai bientôt plus la remplacer à l'identique. »", chan: "Meta, presse locale, notaire" },
+        { t: "Recherche", d: "Il découvre le montant des subventions et le fait qu'elles diminuent chaque année. L'urgence devient réelle.", say: "« Jusqu'à quand je peux encore en bénéficier ? »", chan: "Programme Bâtiments, site cantonal" },
+        { t: "Comparaison", d: "Trois devis minimum sur un investissement de cette taille. Il compare autant l'accompagnement administratif que le matériel.", say: "« Qui s'occupe du dossier de subvention ? »", chan: "Installateurs locaux, Helvetia" },
+        { t: "Décision", d: "Il signe en fin d'été ou en automne, pour être chauffé l'hiver. Les leads captés en mai signent en septembre-novembre.", say: "« Je veux que ce soit posé avant les froids. »", chan: "Visite technique, devis détaillé" },
+        { t: "Après", d: "Sensible au SAV et à l'entretien. Un client PAC satisfait devient un client photovoltaïque deux ans plus tard.", say: "« Et si j'ajoutais du solaire dessus ? »", chan: "Contrat d'entretien, relance" }
+      ],
+      levers: [
+        "Le cycle de 4 à 6 mois impose de semer hors saison : c'est pourquoi Helvetia Energy pousse la PAC en pleine chaleur.",
+        "Deux angles d'urgence propres au marché suisse, encore peu exploités : la pression réglementaire sur le mazout et les enveloppes de subvention qui se réduisent.",
+        "Cross-sell naturel vers le photovoltaïque et la batterie après installation — l'écosystème produit existe déjà."
+      ]
+    },
+    {
+      id: "confort", name: "Le Chercheur de confort", short: "Confort",
+      role: "Il a trop chaud chez lui l'été. Achat rapide, émotionnel — mais son logement doit déjà être équipé en solaire, ce qui écarte la majorité des demandes.",
+      product: "Climatisation réversible",
+      kpi: "À qualifier", kpiLabel: "trop de demandes en appartement", kpiBad: true,
+      facts: [["Âge estimé", "35 – 65 ans"], ["Zone", "Vaud, Neuchâtel"], ["Pré-requis", "Maison + panneaux solaires"], ["Cycle d'achat", "2 à 4 semaines"]],
+      stages: [
+        { t: "Déclencheur", d: "Une canicule. Le déclencheur est météorologique et immédiat, ce qui rend la fenêtre commerciale courte et intense.", say: "« On ne dort plus à l'étage. »", chan: "Meta pendant les pics de chaleur" },
+        { t: "Recherche", d: "Il cherche du confort, pas de la transition énergétique. L'argument « chauffe aussi en demi-saison » est un bonus, pas le moteur.", say: "« Ça refroidit vraiment toute la pièce ? »", chan: "Feed, recherche rapide" },
+        { t: "Comparaison", d: "Il compare le prix et le délai de pose. C'est l'avatar le plus impatient des cinq.", say: "« Vous pouvez poser quand ? »", chan: "Deux devis maximum" },
+        { t: "Décision", d: "Décide vite si le délai est court. Sa consommation électrique est sa dernière objection — d'où l'intérêt du couplage solaire.", say: "« Et sur ma facture, ça donne quoi ? »", chan: "Devis rapide, appel" },
+        { t: "Après", d: "Juge sur le confort ressenti dès la première semaine. Très prescripteur auprès du voisinage si l'été est chaud.", say: "« On aurait dû le faire avant. »", chan: "Bouche-à-oreille de quartier" }
+      ],
+      levers: [
+        "Le formulaire filtre déjà maison / appartement, mais Meta n'empêche pas la soumission : il faut trier en aval et ajouter la question sur les panneaux solaires.",
+        "Les accroches doivent dissuader avant le clic : « propriétaires de maison », « pour votre villa », « réservé aux maisons équipées en solaire ». Un visuel de villa, jamais d'immeuble.",
+        "Une page de destination sur le site permettrait un blocage conditionnel réel des profils non qualifiés — impossible avec le formulaire natif."
+      ]
+    },
+    {
+      id: "primo", name: "Le Primo-solaire", short: "Primo-solaire",
+      role: "Il n'a encore rien installé. Il clique, s'intéresse, et disparaît. C'est l'avatar que le dispositif actuel ne convertit pas.",
       product: "Panneaux photovoltaïques",
-      kpi: "26 / 17", kpiLabel: "appels contre formulaires", kpiBad: true,
-      facts: [["Formulaires", "17 — 5 % du total"], ["Appels", "26"], ["Part téléphone", "60 % des contacts"], ["Maison", "3 sur 5 renseignés"]],
+      kpi: "0", kpiLabel: "lead pour 280 € dépensés et 78 clics — Genève", kpiBad: true,
+      facts: [["Âge estimé", "35 – 60 ans"], ["Zone", "Genève (échec), Vaud"], ["Panier", "15 – 20 k CHF"], ["Cycle d'achat", "3 à 6 mois"]],
       stages: [
-        { t: "D'où il vient", d: "Les 26 appels viennent tous des campagnes Search PV. Les 17 formulaires se répartissent entre Google Ads (8), Meta (5), neho (3) et SEO (1).", say: "Search PV — 26 appels sur 89 au total", chan: "SEARCH | PV | CONV 0326, PV Search" },
-        { t: "Quand", d: "Le volume de formulaires est trop faible pour dégager une saison : entre 1 et 6 par mois depuis mai.", say: "17 formulaires en 4 mois", chan: "Flux continu, faible" },
-        { t: "Par où il entre", d: "La page panneaux photovoltaïques capte 8 entrées — deux fois moins que la page batterie, alors que c'est le produit historique.", say: "/solutions/panneaux-photovoltaiques/ — 8 entrées", chan: "Page produit" },
-        { t: "Ce qu'il déclare", d: "Seules 5 fiches renseignent le logement, dont 2 appartements. Sur un si petit échantillon, 40 % hors cible reste un signal.", say: "Échantillon trop faible pour conclure", chan: "Données manquantes" },
-        { t: "Ce qui reste à faire", d: "Le prospect PV préfère appeler. Le dispositif actuel le pousse vers un formulaire qu'il ne remplit pas — c'est l'inverse de son comportement observé.", say: "60 % des contacts PV sont des appels", chan: "Mettre le téléphone en avant" }
+        { t: "Déclencheur", d: "Une hausse de facture, un voisin équipé, ou une réflexion sur la valeur de son bien. Le déclencheur est diffus, jamais urgent.", say: "« Il faudrait qu'on regarde le solaire un jour. »", chan: "Notoriété, Meta, recherche" },
+        { t: "Recherche", d: "Il veut savoir si c'est rentable chez lui, sur son toit, avec sa consommation. Une réponse générique ne lui suffit pas.", say: "« Est-ce que ça vaut le coup pour ma maison ? »", chan: "Simulateurs concurrents" },
+        { t: "Comparaison", d: "C'est ici que naoenergy le perd. Le clic se fait — taux de clic correct — mais la conversion casse faute d'estimation personnalisée.", say: "« Chez eux j'ai eu un chiffre en trois clics. »", chan: "Helvetia, Solstis, Helion, Swissolar" },
+        { t: "Décision", d: "Long à décider. Il a besoin d'être rassuré sur le montant, les subventions et l'amortissement avant même de parler à quelqu'un.", say: "« Amorti en combien d'années ? »", chan: "Devis, étude de toiture" },
+        { t: "Après", d: "Une fois convaincu, il devient le meilleur point d'entrée de l'écosystème : batterie, borne, pompe à chaleur suivront.", say: "« Et maintenant, la batterie ? »", chan: "Relance, cross-sell" }
       ],
       levers: [
-        "Ne pas conclure que le PV « ne convertit pas » : il convertit par téléphone. 26 appels contre 17 formulaires, c'est le seul produit dans ce cas.",
-        "Rendre le numéro proéminent sur les pages et annonces PV, plutôt que d'insister sur le formulaire.",
-        "La page photovoltaïque capte moitié moins d'entrées que la page batterie. À retravailler sur le modèle de cette dernière."
-      ]
-    },
-    {
-      id: "curieux", name: "Le Curieux du site", short: "Curieux du site",
-      role: "Il arrive par le site et non par une publicité. Il remplit le formulaire général ou il appelle, sans que rien n'indique le produit qui l'intéresse.",
-      product: "Aucun produit identifié",
-      kpi: "70", kpiLabel: "contacts sans produit — 22 formulaires + 48 appels", kpiBad: true,
-      facts: [["Formulaires", "22 — Typeform Général"], ["Appels", "48 sans produit"], ["Sources", "Direct 10 · SEO 8 · Ads 4"], ["Entrée", "accueil — 17"]],
-      stages: [
-        { t: "D'où il vient", d: "Aucun ne vient de Meta. 10 en direct, 8 par le référencement naturel, 4 par Google Ads : c'est le profil du site, pas de la publicité sociale.", say: "0 sur 22 depuis Meta", chan: "Direct, SEO, Google Ads" },
-        { t: "Quand", d: "Flux régulier et faible, sans saisonnalité marquée — il suit l'audience du site, pas les campagnes.", say: "Environ 5 par mois", chan: "Trafic organique" },
-        { t: "Par où il entre", d: "La page d'accueil est sa porte principale (17 entrées), devant les pages produit. Il découvre l'entreprise avant de choisir une solution.", say: "/ — 17 entrées · /qui-sommes-nous/ — 2", chan: "Accueil, page entreprise" },
-        { t: "Ce qu'il déclare", d: "Le Typeform Général ne demande pas le produit. Ces 22 demandes arrivent donc sans qualification, et 48 appels s'y ajoutent sans campagne identifiable.", say: "Aucun produit renseigné", chan: "Typeform « Votre Projet - Général »" },
-        { t: "Ce qui reste à faire", d: "70 contacts sur 427, soit un sur six, arrivent sans qu'on sache ce qu'ils veulent. C'est le premier gisement de qualification du dispositif.", say: "1 contact sur 6 non qualifié", chan: "Ajouter le produit au formulaire" }
-      ],
-      levers: [
-        "Ajouter une question « quel projet ? » au Typeform Général : 22 demandes par an arrivent aujourd'hui sans produit identifié.",
-        "48 appels n'ont aucune campagne attribuable — ce sont des visiteurs qui n'arrivaient pas d'un clic publicitaire direct. Normal, mais ça limite l'analyse.",
-        "Ce profil entre par l'accueil et la page « Qui sommes-nous » : c'est là que se joue la confiance, pas sur les pages produit."
-      ]
-    },
-    {
-      id: "horscible", name: "Le Hors-cible", short: "Hors-cible",
-      role: "Ce n'est pas un client, c'est un coût. Une demande sur huit vient d'un logement où l'installation est impossible — et la répartition par produit est très inégale.",
-      product: "Appartement ou location",
-      kpi: "34", kpiLabel: "demandes inexploitables — 13 %", kpiBad: true,
-      facts: [["Appartement", "32"], ["Locataire déclaré", "2"], ["Climatisation", "19 % hors cible"], ["Batterie", "8 % hors cible"]],
-      stages: [
-        { t: "D'où il vient", d: "Presque exclusivement des formulaires Meta natifs. Le formulaire pose la question du logement mais n'empêche pas l'envoi.", say: "Le champ existe, le blocage non", chan: "Meta Lead Ads" },
-        { t: "Quand", d: "Réparti sur toute la période, sans pic. C'est une fuite continue, pas un accident ponctuel.", say: "34 sur 252 fiches renseignées", chan: "Toutes campagnes" },
-        { t: "Par où il entre", d: "Il ne passe pas par le site : le formulaire natif se remplit sans jamais quitter Meta, donc sans aucun filtre côté naoenergy.", say: "Aucune page d'entrée enregistrée", chan: "Formulaire dans l'application" },
-        { t: "Ce qu'il déclare", d: "Il déclare honnêtement vivre en appartement. L'information est là, dans la fiche — elle n'est simplement pas utilisée pour bloquer.", say: "32 appartements · 2 locataires", chan: "Champ « Propriétaire ? »" },
-        { t: "Ce qui reste à faire", d: "Le taux varie du simple au quintuple selon le produit : 8 % en batterie, 19 % en climatisation, 40 % sur le petit échantillon PV.", say: "Le problème est concentré, pas général", chan: "Tri en aval + accroches" }
-      ],
-      levers: [
-        "Le problème n'est pas global : il est concentré sur la climatisation (19 %) et le photovoltaïque. La batterie, elle, filtre correctement à 8 %.",
-        "Le formulaire Meta natif ne peut pas bloquer conditionnellement. Seule une page de destination sur le site le permettrait.",
-        "En attendant, les accroches doivent dissuader avant le clic : « propriétaires de maison », visuel de villa et jamais d'immeuble, en priorité sur les campagnes climatisation."
+        "L'ad set Genève PV a été mis en pause : 280 € pour 78 clics et aucun lead. Le problème est en aval du clic, pas dans le ciblage.",
+        "Le simulateur de rentabilité est le déblocage principal. C'est le standard du secteur — Helvetia, Solstis, Helion et Swissolar en proposent tous un.",
+        "En attendant, tester l'envoi vers une page de destination avec estimation en trois questions plutôt que vers un formulaire de contact générique."
       ]
     }
   ];
 
   var MATRIX = [
-    ["Le Stockeur", "Batterie", "195 — 58 %", "Rien à réparer : alimenter, et mesurer ce que deviennent les leads", "Priorité 1", "a"],
-    ["Le Rafraîchisseur", "Climatisation", "101 — 30 %", "Traiter comme un vrai n°2 : SEO, Google Ads, et filtrage renforcé", "Priorité 1", "a"],
-    ["L'Appelant solaire", "Photovoltaïque", "17 formulaires · 26 appels", "Mettre le téléphone en avant plutôt que le formulaire", "Priorité 2", "b"],
-    ["Le Curieux du site", "Non identifié", "70 contacts", "Ajouter la question produit au Typeform Général", "Priorité 2", "b"],
-    ["Le Hors-cible", "Appartement", "34 — 13 %", "Accroches dissuasives sur climatisation, tri en aval", "Priorité 3", "c"]
+    ["L'Optimisateur", "Batterie", "16,57 €", "Décliner la créa fiche technique · cibler les foyers déjà équipés en PV", "Priorité 1", "a"],
+    ["L'Économe", "Batterie", "26,74 €", "Afficher un prix d'entrée · réducteurs de risque visibles", "Priorité 1", "a"],
+    ["Le Rénovateur", "Pompe à chaleur", "à ouvrir", "Semer hors saison · angles réglementation et subventions en baisse", "Priorité 2", "b"],
+    ["Le Chercheur de confort", "Climatisation", "à qualifier", "Filtrage maison/solaire · accroches dissuasives · page de destination", "Priorité 2", "b"],
+    ["Le Primo-solaire", "Photovoltaïque", "0 lead", "Simulateur de rentabilité — sans lui, l'avatar reste bloqué", "Priorité 3", "c"]
   ];
 
   var NS = 'http://www.w3.org/2000/svg';
