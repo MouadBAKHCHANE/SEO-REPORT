@@ -2983,54 +2983,34 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
-
-
-/* ── Panneaux Ads : filtre mois, stratégie, cartes, graphes ───────── */
-.ads-filtre { display:flex; align-items:center; gap:9px; }
-.ads-filtre label { font-size:0.7rem; text-transform:uppercase; letter-spacing:.09em; color:var(--text-muted); font-weight:700; }
-.ads-filtre select {
-    font-family:inherit; font-size:0.82rem; font-weight:600; color:var(--text);
-    background:var(--surface); border:1px solid var(--border-strong); border-radius:9px;
-    padding:8px 13px; cursor:pointer;
-}
-.ads-filtre select:focus-visible { outline:2px solid var(--primary); outline-offset:2px; }
-
-.ads-bloc { margin-bottom:30px; }
-.ads-bloc > h2 {
-    font-size:0.72rem; text-transform:uppercase; letter-spacing:.11em;
-    color:var(--text-muted); font-weight:700; margin:0 0 12px;
-}
-.ads-strat-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
-.ads-carte { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:16px 18px; }
-.ads-carte h3 { font-size:0.68rem; text-transform:uppercase; letter-spacing:.09em; color:var(--text-muted); font-weight:700; margin:0 0 7px; }
-.ads-carte p { margin:0; font-size:0.85rem; line-height:1.55; color:var(--text-body); }
-.ads-carte .gros { font-size:1.35rem; font-weight:700; color:var(--text); line-height:1.15; margin-bottom:5px; }
-
-.ads-actions { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:0; }
-.ads-actions li {
-    display:flex; align-items:flex-start; gap:11px; padding:11px 18px;
-    background:var(--surface); border:1px solid var(--border); border-bottom:none; font-size:0.85rem; color:var(--text-body);
-}
-.ads-actions li:first-child { border-radius:12px 12px 0 0; }
-.ads-actions li:last-child { border-bottom:1px solid var(--border); border-radius:0 0 12px 12px; }
-.ads-puce { font-size:0.6rem; font-weight:800; text-transform:uppercase; letter-spacing:.06em; padding:3px 8px; border-radius:100px; white-space:nowrap; flex:none; margin-top:1px; }
-.ads-puce.afaire  { background:rgba(90,152,174,.15); color:#3D7A8F; }
-.ads-puce.encours { background:rgba(232,163,61,.16); color:#8A5A0C; }
-.ads-puce.bloque  { background:rgba(232,93,74,.15); color:#C2452F; }
-
-.ads-kpi { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-bottom:14px; }
-.ads-kpi .v { font-size:1.6rem; font-weight:700; line-height:1.05; color:var(--text); font-variant-numeric:tabular-nums; }
-.ads-kpi .v small { font-size:0.78rem; color:var(--text-muted); font-weight:600; margin-left:3px; }
-.ads-kpi .v.vide { color:var(--text-faint); }
-.ads-kpi .s { font-size:0.7rem; color:var(--text-muted); margin-top:6px; line-height:1.45; }
-.ads-kpi .s.att { color:#8A5A0C; font-weight:600; }
-
-.ads-graphes { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.ads-graphe { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:15px 17px 11px; }
-.ads-graphe h3 { font-size:0.8rem; font-weight:700; margin:0 0 11px; color:var(--text); }
-.ads-graphe .zone { position:relative; height:210px; }
-
-@media (max-width:900px){ .ads-strat-grid, .ads-graphes { grid-template-columns:1fr; } .ads-kpi { grid-template-columns:1fr 1fr; } }
+/* ── Bloc KPI Ads « L'essentiel » ─────────────────────────────── */
+.adsk { margin: 0 0 26px; }
+.adsk-head { display:flex; align-items:baseline; justify-content:space-between; gap:12px; flex-wrap:wrap; margin: 0 0 12px; }
+.adsk-head h2 { font-size: 1.05rem; font-weight: 700; margin: 0; color: var(--text); }
+.adsk-head .adsk-maj { font-size: 0.68rem; color: var(--text-muted); }
+.adsk-head .adsk-maj b { color: var(--text-body); font-weight: 600; }
+.adsk-tiles { display:grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 14px; }
+.adsk-tile { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; min-width: 0; }
+.adsk-tile .l { font-size: 0.64rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); font-weight: 700; margin-bottom: 6px; }
+.adsk-tile .v { font-size: 1.55rem; font-weight: 700; line-height: 1.05; color: var(--text); font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+.adsk-tile .v small { font-size: 0.8rem; color: var(--text-muted); font-weight: 600; margin-left: 3px; }
+.adsk-tile .s { font-size: 0.68rem; color: var(--text-muted); margin-top: 6px; line-height: 1.4; }
+.adsk-tile .s b { font-weight: 700; }
+.adsk-up { color: #2A8F4D; } .adsk-down { color: #E85D4A; } .adsk-warn { color: #E8A33D; }
+.adsk-stale { color: #E8A33D; font-weight: 700; }
+.adsk-tile.is-pending .v { color: var(--text-faint); }
+.adsk-tile.is-pending .s { color: #E8A33D; font-weight: 600; }
+.adsk-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px 12px; margin-bottom: 12px; }
+.adsk-card h3 { font-size: 0.82rem; font-weight: 700; margin: 0 0 10px; color: var(--text); }
+.adsk-card .adsk-why { font-size: 0.7rem; color: var(--text-muted); margin: 0 0 10px; }
+.adsk-chart { position: relative; height: 240px; }
+.adsk-chart.sm { height: 190px; }
+.adsk-grid { display:grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.adsk-ops { margin-top: 18px; }
+.adsk-ops > h2 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: .1em; color: var(--text-muted); font-weight: 700; margin: 0 0 10px; }
+.adsk-note { font-size: 0.7rem; color: var(--text-body); background: var(--surface-soft); border-left: 3px solid #E8A33D; padding: 9px 12px; border-radius: 0 8px 8px 0; margin-top: 10px; line-height: 1.5; }
+@media (max-width: 1100px) { .adsk-tiles { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 760px)  { .adsk-tiles, .adsk-grid { grid-template-columns: 1fr; } }
 
 </style>
 </head>
@@ -8505,79 +8485,58 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             <div class="page-header">
                 <div>
                     <div class="page-title-row">
-                        <h1 class="page-title"><svg viewBox="0 0 24 24" width="26" height="26" style="vertical-align:-4px;margin-right:9px"><path fill="#4285F4" d="M12.5 4.7 5.3 17.2a3.4 3.4 0 0 0 5.9 3.4l7.2-12.5a3.4 3.4 0 0 0-5.9-3.4z"/><path fill="#34A853" d="M4.2 17.2a3.4 3.4 0 1 0 5.9 3.4 3.4 3.4 0 0 0-5.9-3.4z"/><path fill="#FBBC04" d="M12.5 4.7a3.4 3.4 0 0 1 5.9 3.4l-7.2 12.5-5.9-3.4z" opacity=".75"/></svg>Google Ads</h1>
+                        <h1 class="page-title"><svg viewBox="0 0 24 24" width="26" height="26" style="vertical-align:-4px;margin-right:8px"><path fill="#4285F4" d="M12.5 4.7 5.3 17.2a3.4 3.4 0 0 0 5.9 3.4l7.2-12.5a3.4 3.4 0 0 0-5.9-3.4z"/><path fill="#34A853" d="M4.2 17.2a3.4 3.4 0 1 0 5.9 3.4 3.4 3.4 0 0 0-5.9-3.4z"/><path fill="#FBBC04" d="M12.5 4.7a3.4 3.4 0 0 1 5.9 3.4l-7.2 12.5-5.9-3.4z" opacity=".75"/></svg>Google Ads</h1>
+                        
                     </div>
-                    <p class="page-subtitle">Ce que Google Ads rapporte, ce que ça coûte, et ce qu'il reste à faire.</p>
+                    <p class="page-subtitle">Ce que Google Ads rapporte, ce que ça coûte, et si ça s'améliore.</p>
                 </div>
-                <div class="ads-filtre">
-                    <label for="ads-mois-google">Mois</label>
-                    <select id="ads-mois-google" data-plat="google"></select>
-                </div>
+
             </div>
 
-            <section class="ads-bloc">
-                <h2>Stratégie</h2>
-                <div class="ads-strat-grid">
-                    <div class="ads-carte"><h3>Objectif</h3><p id="ads-google-obj"></p></div>
-                    <div class="ads-carte"><h3>Budget</h3><div class="gros" id="ads-google-bud"></div><p id="ads-google-budd"></p></div>
+            <section class="adsk" id="adsk-google" data-plateforme="google">
+                <div class="adsk-head">
+                    <h2>30 derniers jours</h2>
+                    <div class="adsk-maj" id="adsk-google-maj"></div>
                 </div>
-                <ul class="ads-actions" id="ads-google-act"></ul>
+                <div class="adsk-tiles adsk-4" id="adsk-google-tiles"></div>
+                <div class="adsk-card">
+                    <h3>Leads Google Ads par semaine — formulaires et appels</h3>
+                    <div class="adsk-chart"><canvas id="adsk-google-semaines"></canvas></div>
+                </div>
+                <div class="adsk-grid" id="adsk-google-ops"></div>
             </section>
 
-            <section class="ads-bloc">
-                <h2 id="ads-google-titre-res">Résultats</h2>
-                <div class="ads-kpi" id="ads-google-kpi"></div>
-                <div class="ads-graphes">
-                    <div class="ads-graphe">
-                        <h3>Demandes par mois</h3>
-                        <div class="zone"><canvas id="ads-google-g1"></canvas></div>
-                    </div>
-                    <div class="ads-graphe">
-                        <h3 id="ads-google-g2t">Répartition du mois</h3>
-                        <div class="zone"><canvas id="ads-google-g2"></canvas></div>
-                    </div>
-                </div>
-            </section>
         </div>
 
+        <!-- ============ PANEL : META ADS ============ -->
         <div class="panel" id="panel-meta_ads">
             <div class="page-header">
                 <div>
                     <div class="page-title-row">
-                        <h1 class="page-title"><svg viewBox="0 0 287.56 191" width="30" height="20" style="vertical-align:-2px;margin-right:9px"><path fill="#0081FB" d="M31.06 126c0 11 2.41 19.41 5.56 24.51 4.13 6.68 10.29 9.51 16.57 9.51 8.1 0 15.51-2 29.79-21.76 11.44-15.83 24.92-38 34-51.93l15.36-23.6c10.67-16.39 23-34.61 37.18-47C181.07 5.6 193.54 0 206.09 0c21.07 0 41.14 12.21 56.5 35.11 16.81 25.08 25 56.67 25 89.27 0 19.38-3.82 33.62-10.32 44.87-6.28 10.88-18.52 21.75-39.11 21.75v-31c17.63 0 22-16.2 22-34.74 0-26.42-6.16-55.74-19.73-76.69-9.63-14.86-22.11-23.94-35.84-23.94-14.85 0-26.8 11.2-40.23 31.17-7.14 10.61-14.47 23.54-22.7 38.13l-9.06 16c-18.2 32.27-22.81 39.62-31.91 51.75C84.74 183 71.12 191 53.19 191c-21.27 0-34.72-9.21-43.05-23.09C3.34 156.6 0 141.76 0 124.85z"/><path fill="#0064E1" d="M24.49 37.3C38.73 15.35 59.28 0 82.85 0c13.65 0 27.22 4 41.39 15.61 15.5 12.65 32 33.48 52.63 67.81l7.39 12.32c17.84 29.72 28 45 33.93 52.22 7.64 9.26 13 12 19.94 12 17.63 0 22-16.2 22-34.74l27.4-.86c0 19.38-3.82 33.62-10.32 44.87-6.28 10.88-18.52 21.75-39.11 21.75-12.8 0-24.14-2.78-36.68-14.61-9.64-9.08-20.91-25.21-29.58-39.71L146.08 78.4c-12.94-21.62-24.81-37.74-31.68-45C107 25.07 97.51 15 82.36 15c-12.26 0-22.68 8.61-31.39 21.78z"/><path fill="#0082FB" d="M82.36 15c-12.26 0-22.68 8.61-31.39 21.78C38.61 55.37 31.06 83 31.06 109.5c0 6.06.34 11.2 1.1 15.87l-27.55 5.2C3.34 156.6 0 141.76 0 124.85c0-32.2 8.85-65.76 25.63-91.19C40.38 11.23 61.63 0 82.85 0z"/></svg>Meta Ads</h1>
+                        <h1 class="page-title" style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 287.56 191" width="30" height="20" style="vertical-align:-2px;flex-shrink:0" aria-hidden="true"><path fill="#0081FB" d="M31.06,126c0,11,2.41,19.41,5.56,24.51A19,19,0,0,0,53.19,160c8.1,0,15.51-2,29.79-21.76,11.44-15.83,24.92-38,34-51.93l15.36-23.6c10.67-16.39,23-34.61,37.18-47C181.07,5.6,193.54,0,206.09,0c21.07,0,41.14,12.21,56.5,35.11,16.81,25.08,25,56.67,25,89.27,0,19.38-3.82,33.62-10.32,44.87C271,180.13,258.72,191,238.13,191V160c17.63,0,22-16.2,22-34.74,0-26.42-6.16-55.74-19.73-76.69-9.63-14.86-22.11-23.94-35.84-23.94-14.85,0-26.8,11.2-40.23,31.17-7.14,10.61-14.47,23.54-22.7,38.13l-9.06,16c-18.2,32.27-22.81,39.62-31.91,51.75C84.74,183,71.12,191,53.19,191c-21.27,0-34.72-9.21-43-23.09C3.34,156.6,0,141.76,0,124.85Z"/><path fill="#0064E0" d="M24.49,37.3C38.73,15.35,59.28,0,82.85,0c13.65,0,27.22,4,41.39,15.61,15.5,12.65,32,33.48,52.63,67.81l7.39,12.32c17.84,29.72,28,45,33.93,52.22,7.64,9.26,13,12,19.94,12,17.63,0,22-16.2,22-34.74l27.4-.86c0,19.38-3.82,33.62-10.32,44.87C271,180.13,258.72,191,238.13,191c-12.8,0-24.14-2.78-36.68-14.61-9.64-9.08-20.91-25.21-29.58-39.71L146.08,93.6c-12.94-21.62-24.81-37.74-31.68-45C107,40.71,97.51,31.23,82.34,31.23c-12.28,0-22.71,8.61-31.45,21.78Z"/><path fill="#0082FB" d="M82.34,31.23c-12.28,0-22.71,8.61-31.45,21.78C38.53,71.62,31.06,99.34,31.06,126c0,11,2.41,19.41,5.56,24.51L10.1,167.91C3.34,156.6,0,141.76,0,124.85,0,94.1,8.44,62.05,24.49,37.3,38.73,15.35,59.28,0,82.85,0Z"/></svg>Meta Ads</h1>
+                        
                     </div>
-                    <p class="page-subtitle">Ce que Meta rapporte, ce que ça coûte, et ce qu'il reste à faire.</p>
+                    <p class="page-subtitle">Ce que Meta rapporte, ce que ça coûte, et si ça s'améliore.</p>
                 </div>
-                <div class="ads-filtre">
-                    <label for="ads-mois-meta">Mois</label>
-                    <select id="ads-mois-meta" data-plat="meta"></select>
-                </div>
+
             </div>
 
-            <section class="ads-bloc">
-                <h2>Stratégie</h2>
-                <div class="ads-strat-grid">
-                    <div class="ads-carte"><h3>Objectif</h3><p id="ads-meta-obj"></p></div>
-                    <div class="ads-carte"><h3>Budget</h3><div class="gros" id="ads-meta-bud"></div><p id="ads-meta-budd"></p></div>
+            <section class="adsk" id="adsk-meta" data-plateforme="meta">
+                <div class="adsk-head">
+                    <h2>30 derniers jours</h2>
+                    <div class="adsk-maj" id="adsk-meta-maj"></div>
                 </div>
-                <ul class="ads-actions" id="ads-meta-act"></ul>
+                <div class="adsk-tiles adsk-4" id="adsk-meta-tiles"></div>
+                <div class="adsk-card">
+                    <h3>Demandes Meta par semaine</h3>
+                    <div class="adsk-chart"><canvas id="adsk-meta-semaines"></canvas></div>
+                </div>
+                <div class="adsk-grid" id="adsk-meta-ops"></div>
             </section>
 
-            <section class="ads-bloc">
-                <h2 id="ads-meta-titre-res">Résultats</h2>
-                <div class="ads-kpi" id="ads-meta-kpi"></div>
-                <div class="ads-graphes">
-                    <div class="ads-graphe">
-                        <h3>Demandes par mois</h3>
-                        <div class="zone"><canvas id="ads-meta-g1"></canvas></div>
-                    </div>
-                    <div class="ads-graphe">
-                        <h3 id="ads-meta-g2t">Répartition du mois</h3>
-                        <div class="zone"><canvas id="ads-meta-g2"></canvas></div>
-                    </div>
-                </div>
-            </section>
         </div>
+
+        
 
 <div class="panel" id="panel-recs">
             <div class="page-header">
@@ -9532,107 +9491,180 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
 
 <!-- Chart.js via CDN -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-<!-- ============ Panneaux Ads : donnees + rendu ============ -->
+
+<!-- ============ Bloc KPI Ads — donnees + rendu (Chart.js) ============ -->
 <script>
-var ADS = {"maj": "11 septembre 2026", "meta": {"objectif": "Faire venir des demandes de devis — batterie et climatisation — chez les propriétaires de maison à Genève et Vaud.", "budget": "2 600 €/mois", "budgetDetail": "Répartition proposée : 60 % pompe à chaleur · 40 % batterie", "actions": [["Lancer l'ad set batterie à 41 €/jour, ciblé 45-65 ans", "afaire"], ["Produire 3 créas en 3 formats : carré, portrait, vertical", "afaire"], ["Trancher : pompe à chaleur pour la chaudière, ou climatisation ?", "bloque"], ["Resserrer le filtrage maison sur la clim — 19 % hors cible", "encours"]], "mois": {"2026-05": {"nom": "Mai", "total": 37, "formulaires": 37, "appels": 0, "renseigne": 33, "maison": 29, "depense": 1798, "campagnes": {"Batterie": 24, "Autre": 5, "Climatisation": 8}, "produits": {"Batterie": 24, "Photovoltaïque": 5, "Climatisation": 8}}, "2026-06": {"nom": "Juin", "total": 81, "formulaires": 81, "appels": 0, "renseigne": 81, "maison": 62, "depense": 2793, "campagnes": {"Batterie": 38, "Climatisation": 43}, "produits": {"Batterie": 38, "Climatisation": 43}}, "2026-07": {"nom": "Juillet", "total": 70, "formulaires": 70, "appels": 0, "renseigne": 68, "maison": 64, "depense": 2530, "campagnes": {"Batterie": 54, "Climatisation": 14, "Autre": 2}, "produits": {"Batterie": 56, "Climatisation": 14}}, "2026-08": {"nom": "Août", "total": 57, "formulaires": 57, "appels": 0, "renseigne": 54, "maison": 51, "depense": null, "campagnes": {"Batterie": 35, "Climatisation": 19, "Autre": 3}, "produits": {"Batterie": 38, "Climatisation": 19}}, "2026-09": {"nom": "Septembre", "total": 27, "formulaires": 27, "appels": 0, "renseigne": 27, "maison": 25, "depense": null, "campagnes": {"Climatisation": 15, "Batterie": 12}, "produits": {"Climatisation": 15, "Batterie": 12}}}}, "google": {"objectif": "Être présent quand les gens cherchent activement. Le photovoltaïque compte surtout ici : il n'a aucune publicité sur Meta.", "budget": "3 000 CHF/mois", "budgetDetail": "Proposition : photovoltaïque 50 % · batterie 30 % · pompe à chaleur 15 % · marque 5 %", "actions": [["Vérifier la part d'impressions perdue sur PV avant de monter le budget", "bloque"], ["Ouvrir un budget test pompe à chaleur — 450 CHF", "afaire"], ["Mettre le téléphone en avant sur PV : 6 contacts sur 10 sont des appels", "encours"], ["Ajouter les exclusions validées sur la batterie", "afaire"]], "mois": {"2026-05": {"nom": "Mai", "total": 5, "formulaires": 0, "appels": 5, "renseigne": 0, "maison": 0, "depense": null, "campagnes": {"Photovoltaïque": 3, "Batterie": 2}, "produits": {"Photovoltaïque": 3, "Batterie": 2}}, "2026-06": {"nom": "Juin", "total": 12, "formulaires": 2, "appels": 10, "renseigne": 1, "maison": 0, "depense": null, "campagnes": {"Batterie": 5, "Photovoltaïque": 7}, "produits": {"Batterie": 5, "Photovoltaïque": 7}}, "2026-07": {"nom": "Juillet", "total": 24, "formulaires": 13, "appels": 11, "renseigne": 4, "maison": 0, "depense": null, "campagnes": {"Batterie": 11, "Autre": 2, "Photovoltaïque": 11}, "produits": {"Batterie": 11, "Autre": 1, "Photovoltaïque": 11, "Climatisation": 1}}, "2026-08": {"nom": "Août", "total": 49, "formulaires": 29, "appels": 20, "renseigne": 0, "maison": 0, "depense": null, "campagnes": {"Batterie": 17, "Autre": 12, "Photovoltaïque": 12, "Marque": 3, "Climatisation": 5}, "produits": {"Batterie": 17, "Autre": 9, "Photovoltaïque": 12, "Climatisation": 11}}, "2026-09": {"nom": "Septembre", "total": 18, "formulaires": 6, "appels": 12, "renseigne": 0, "maison": 0, "depense": null, "campagnes": {"Marque": 7, "Batterie": 4, "Photovoltaïque": 3, "Autre": 3, "Climatisation": 1}, "produits": {"Autre": 10, "Batterie": 4, "Photovoltaïque": 3, "Climatisation": 1}}}}};
+var ADS_DONNEES = {
+  maj: { sheet: "7 sept. 2026", meta: "juillet (dernier mois complet)", google: "23 juil. → 21 août" },
+
+  /* 30 derniers jours (8 août -> 7 sept) vs 30 precedents — Sheet, formulaires + appels */
+  j30: {
+    meta:   { leads: 51, avant: 68 },
+    google: { leads: 53, avant: 26 },
+    autre:  { leads: 31, avant: 30 }
+  },
+
+  /* Leads exploitables = fiches ou le logement est renseigne et n'est ni appartement ni location */
+  exploitables: {
+    meta:   { renseigne: 247, ok: 215 },
+    google: { renseigne: 5,   ok: 3 }
+  },
+
+  /* Depense. Google : fenetre mesuree de 30 jours. Meta : dernier mois complet connu. */
+  depense: {
+    google: { j30: 1349, fenetre: "23 juil. → 21 août", conversionsAds: 18 },
+    meta:   { moisRef: "juillet", montant: 2530, leadsMeta: 66 }
+  },
+
+  /* Leads par semaine (lundi), Sheet — 11 semaines completes */
+  semaines: {
+    labels: ["22.06","29.06","06.07","13.07","20.07","27.07","03.08","10.08","17.08","24.08","31.08"],
+    meta:   [25,18,10,18,20,16,12, 9,11,15,15],
+    google: [ 4, 0, 4,12, 0, 8, 6, 9,11,17,15],
+    autre:  [ 1, 3,10, 6, 9, 4, 9, 7, 7,11, 5]
+  },
+
+  /* Leads par produit et plateforme — Sheet, tous contacts (formulaires + appels) */
+  produits: {
+    labels: ["Batterie","Climatisation","Photovoltaïque","Non identifié"],
+    meta:   [163, 88,  5,  0],
+    google: [ 38, 12, 34, 15],
+    autre:  [  7,  3,  4, 58]
+  },
+
+  /* ---- META ---- (chiffres Meta Ads Manager, tableau historique du panneau) */
+  meta: {
+    mois:  ["Janv.","Févr.","Mars","Avril","Mai","Juin","Juil."],
+    leads: [107, 78, 116, 84, 41, 92, 66],
+    depense: [4286, 3720, 3683, 2972, 1798, 2793, 2530],
+    cpl:   [40.05, 47.69, 31.75, 35.38, 43.84, 30.36, 38.33],
+    horsCible: { labels: ["Batterie","Climatisation"], renseigne: [154, 88], hors: [13, 17] }
+  },
+
+  /* ---- GOOGLE ---- (Sheet : formulaires et appels par mois ; campagnes regroupees par produit) */
+  google: {
+    mois:  ["Mai","Juin","Juil.","Août","Sept. (7 j)"],
+    formulaires: [0, 2, 13, 29, 4],
+    appels:      [5, 10, 11, 20, 5],
+    campagnes: {
+      labels: ["Batterie","Photovoltaïque","Climatisation","Marque","Général"],
+      formulaires: [25, 8, 10, 0, 4],
+      appels:      [13, 26, 2, 7, 0]
+    },
+    /* a remplir avec le script « Rapport mensuel tableau de bord » */
+    depenseMois: null,
+    partImpressions: null
+  }
+};
 (function () {
   if (typeof Chart === 'undefined') return;
-  var COUL = { meta: '#6F3EAA', google: '#4285F4' };
-  var ETIQ = { afaire: 'À faire', encours: 'En cours', bloque: 'Bloqué' };
-  var g1 = {}, g2 = {}, pret = {};
+  var D = ADS_DONNEES;
+  var C = { meta: '#6F3EAA', metaSoft: 'rgba(111,62,170,.30)', google: '#4285F4', googleSoft: 'rgba(66,133,244,.30)',
+            ok: '#2A8F4D', bad: '#E85D4A' };
+  var fait = {};
 
   function fmt(n) { return n == null ? '—' : String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
-  function carte(l, v, s, vide, att) {
-    return '<div class="ads-carte"><h3>' + l + '</h3><div class="v' + (vide ? ' vide' : '') + '">' + v +
-           '</div><div class="s' + (att ? ' att' : '') + '">' + s + '</div></div>';
+  function tend(now, avant) {
+    if (!avant) return '';
+    var d = Math.round(100 * (now - avant) / avant);
+    return '<b class="' + (d >= 0 ? 'adsk-up' : 'adsk-down') + '">' + (d >= 0 ? '▲ +' : '▼ ') + d + ' %</b> vs 30 j précédents';
   }
-
-  function strategie(p) {
-    var d = ADS[p];
-    document.getElementById('ads-' + p + '-obj').textContent = d.objectif;
-    document.getElementById('ads-' + p + '-bud').textContent = d.budget;
-    document.getElementById('ads-' + p + '-budd').textContent = d.budgetDetail;
-    document.getElementById('ads-' + p + '-act').innerHTML = d.actions.map(function (a) {
-      return '<li><span class="ads-puce ' + a[1] + '">' + ETIQ[a[1]] + '</span><span>' + a[0] + '</span></li>';
-    }).join('');
-    var s = document.getElementById('ads-mois-' + p);
-    var cles = Object.keys(d.mois);
-    s.innerHTML = cles.map(function (k) { return '<option value="' + k + '">' + d.mois[k].nom + '</option>'; }).join('');
-    s.value = cles[cles.length - 1];
-    s.addEventListener('change', function () { rendre(p, s.value); });
-    return s.value;
-  }
-
-  function kpi(p, k) {
-    var m = ADS[p].mois[k], h = '';
-    var cpl = (m.depense && m.total) ? (m.depense / m.total) : null;
-    if (p === 'meta') {
-      h += carte('Demandes', m.total, 'formulaires reçus');
-      h += carte('Dépense', m.depense == null ? '—' : fmt(m.depense) + '<small>€</small>',
-                 m.depense == null ? 'à relever dans Ads Manager' : 'sur le mois', m.depense == null, m.depense == null);
-      h += carte('Coût par demande', cpl == null ? '—' : fmt(cpl) + '<small>€</small>',
-                 cpl == null ? 'dépense manquante' : 'dépense ÷ demandes', cpl == null, cpl == null);
-      var q = m.renseigne ? Math.round(100 * m.maison / m.renseigne) : null;
-      h += carte('Exploitables', q == null ? '—' : q + '<small>%</small>',
-                 m.renseigne ? ('habitent une maison, sur ' + m.renseigne + ' fiches') : 'logement non renseigné', q == null);
-    } else {
-      h += carte('Leads', m.total, m.formulaires + ' formulaires · ' + m.appels + ' appels');
-      h += carte('Dépense', m.depense == null ? '—' : fmt(m.depense) + '<small>CHF</small>',
-                 m.depense == null ? 'à relever dans Google Ads' : 'sur le mois', m.depense == null, m.depense == null);
-      h += carte('Coût par lead', cpl == null ? '—' : fmt(cpl) + '<small>CHF</small>',
-                 cpl == null ? 'dépense manquante' : 'dépense ÷ leads', cpl == null, cpl == null);
-      var pa = m.total ? Math.round(100 * m.appels / m.total) : 0;
-      h += carte('Part des appels', pa + '<small>%</small>', 'des contacts passent par le téléphone');
-    }
-    document.getElementById('ads-' + p + '-kpi').innerHTML = h;
-    document.getElementById('ads-' + p + '-titre-res').textContent = 'Résultats — ' + m.nom;
-    document.getElementById('ads-' + p + '-g2t').textContent = 'Répartition — ' + m.nom;
-  }
+  function tuile(l, v, s) { return '<div class="adsk-tile"><div class="l">' + l + '</div><div class="v">' + v + '</div><div class="s">' + s + '</div></div>'; }
+  function somme(a) { return a.reduce(function (x, y) { return x + y; }, 0); }
 
   var base = { responsive: true, maintainAspectRatio: false,
-    plugins: { legend: { display: false } },
-    scales: { x: { grid: { display: false }, ticks: { font: { size: 11 } } },
-              y: { beginAtZero: true, grid: { color: 'rgba(20,40,80,.07)' }, ticks: { font: { size: 11 }, precision: 0 } } } };
+               plugins: { legend: { labels: { boxWidth: 10, font: { size: 11 } } }, tooltip: { mode: 'index', intersect: false } },
+               scales: { x: { grid: { display: false }, ticks: { font: { size: 11 } } },
+                         y: { beginAtZero: true, grid: { color: 'rgba(20,40,80,.07)' }, ticks: { font: { size: 11 }, precision: 0 } } } };
+  function opts(extra) { var o = JSON.parse(JSON.stringify(base)); for (var k in (extra || {})) o[k] = extra[k]; return o; }
+  function carte(id, titre) { return '<div class="adsk-card"><h3>' + titre + '</h3><div class="adsk-chart sm"><canvas id="' + id + '"></canvas></div></div>'; }
 
-  function graphes(p, k) {
-    var d = ADS[p], cles = Object.keys(d.mois), c = COUL[p];
-    var vals = cles.map(function (x) { return d.mois[x].total; });
-    var coul = cles.map(function (x) { return x === k ? c : c + '44'; });
-    if (g1[p]) g1[p].destroy();
-    g1[p] = new Chart(document.getElementById('ads-' + p + '-g1'), { type: 'bar',
-      data: { labels: cles.map(function (x) { return d.mois[x].nom; }), datasets: [{ data: vals, backgroundColor: coul, borderRadius: 5 }] },
-      options: JSON.parse(JSON.stringify(base)) });
+  /* ───────── META ───────── */
+  function meta() {
+    var j = D.j30.meta, ex = D.exploitables.meta, dep = D.depense.meta, m = D.meta, hc = m.horsCible;
+    document.getElementById('adsk-meta-tiles').innerHTML =
+      tuile('Demandes', j.leads, tend(j.leads, j.avant)) +
+      tuile('Demandes exploitables', Math.round(100 * ex.ok / ex.renseigne) + '<small>%</small>', 'habitent une maison') +
+      tuile('Dépense', fmt(dep.montant) + '<small>€</small>', '<span class="adsk-stale">juillet</span> — août et septembre pas encore relevés') +
+      tuile('Coût par demande', (dep.montant / dep.leadsMeta).toFixed(0) + '<small>€</small>', '<span class="adsk-stale">juillet</span> · ' + dep.leadsMeta + ' demandes');
+    document.getElementById('adsk-meta-maj').innerHTML = 'Demandes à jour au <b>' + D.maj.sheet + '</b> · dépense : <b>' + D.maj.meta + '</b>';
 
-    var camp = d.mois[k].campagnes || {};
-    var noms = Object.keys(camp).sort(function (a, b) { return camp[b] - camp[a]; });
-    if (g2[p]) g2[p].destroy();
-    var o = JSON.parse(JSON.stringify(base));
-    o.indexAxis = 'y';
-    o.scales = { x: { beginAtZero: true, ticks: { precision: 0, font: { size: 11 } } }, y: { grid: { display: false }, ticks: { font: { size: 11 } } } };
-    g2[p] = new Chart(document.getElementById('ads-' + p + '-g2'), { type: 'bar',
-      data: { labels: noms, datasets: [{ data: noms.map(function (n) { return camp[n]; }), backgroundColor: c, borderRadius: 5 }] },
-      options: o });
+    new Chart(document.getElementById('adsk-meta-semaines'), { type: 'bar',
+      data: { labels: D.semaines.labels, datasets: [{ label: 'Demandes', data: D.semaines.meta, backgroundColor: C.meta, borderRadius: 4 }] },
+      options: opts({ plugins: { legend: { display: false } } }) });
+
+    document.getElementById('adsk-meta-ops').innerHTML =
+      carte('adsk-meta-cpl', 'Coût par demande, mois par mois') +
+      carte('adsk-meta-vol', 'Dépense et demandes, mois par mois') +
+      carte('adsk-meta-prod', 'Demandes par produit') +
+      carte('adsk-meta-hc', 'Demandes hors cible, par campagne');
+
+    new Chart(document.getElementById('adsk-meta-cpl'), { type: 'line',
+      data: { labels: m.mois, datasets: [{ label: '€ par demande', data: m.cpl, borderColor: C.meta, backgroundColor: 'rgba(111,62,170,.12)', fill: true, tension: .3, pointRadius: 4 }] },
+      options: opts({ plugins: { legend: { display: false } }, scales: { x: { grid: { display: false } }, y: { beginAtZero: false, suggestedMin: 25, suggestedMax: 50, ticks: { callback: function (v) { return v + ' €'; } } } } }) });
+
+    new Chart(document.getElementById('adsk-meta-vol'), { type: 'bar',
+      data: { labels: m.mois, datasets: [
+        { type: 'bar', label: 'Dépense (€)', data: m.depense, backgroundColor: C.metaSoft, yAxisID: 'y', borderRadius: 4 },
+        { type: 'line', label: 'Demandes', data: m.leads, borderColor: C.meta, backgroundColor: C.meta, tension: .3, pointRadius: 3, yAxisID: 'y2' } ] },
+      options: opts({ scales: { x: { grid: { display: false } }, y: { beginAtZero: true, position: 'left' }, y2: { beginAtZero: true, position: 'right', grid: { display: false }, ticks: { precision: 0 } } } }) });
+
+    new Chart(document.getElementById('adsk-meta-prod'), { type: 'bar',
+      data: { labels: D.produits.labels.slice(0, 3), datasets: [{ label: 'Demandes', data: D.produits.meta.slice(0, 3), backgroundColor: C.meta, borderRadius: 4 }] },
+      options: opts({ indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, ticks: { precision: 0 } }, y: { grid: { display: false } } } }) });
+
+    var taux = hc.labels.map(function (_, i) { return Math.round(100 * hc.hors[i] / hc.renseigne[i]); });
+    new Chart(document.getElementById('adsk-meta-hc'), { type: 'bar',
+      data: { labels: hc.labels, datasets: [{ label: '% hors cible', data: taux, backgroundColor: taux.map(function (t) { return t >= 15 ? C.bad : C.ok; }), borderRadius: 4 }] },
+      options: opts({ indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, max: 30, ticks: { callback: function (v) { return v + ' %'; } } }, y: { grid: { display: false } } } }) });
   }
 
-  function rendre(p, k) { kpi(p, k); graphes(p, k); }
+  /* ───────── GOOGLE ───────── */
+  function google() {
+    var j = D.j30.google, dep = D.depense.google, g = D.google, c = g.campagnes;
+    var totF = somme(g.formulaires), totA = somme(g.appels);
+    document.getElementById('adsk-google-tiles').innerHTML =
+      tuile('Leads', j.leads, tend(j.leads, j.avant)) +
+      tuile('Part des appels', Math.round(100 * totA / (totF + totA)) + '<small>%</small>', totA + ' appels · ' + totF + ' formulaires depuis mai') +
+      tuile('Dépense', fmt(dep.j30) + '<small>CHF</small>', '<span class="adsk-stale">' + dep.fenetre + '</span> — pas encore relevé depuis') +
+      tuile('Coût par conversion', fmt(dep.j30 / dep.conversionsAds) + '<small>CHF</small>', dep.conversionsAds + ' conversions comptées par Google');
+    document.getElementById('adsk-google-maj').innerHTML = 'Leads à jour au <b>' + D.maj.sheet + '</b> · dépense : <b>' + D.maj.google + '</b>';
 
+    new Chart(document.getElementById('adsk-google-semaines'), { type: 'bar',
+      data: { labels: D.semaines.labels, datasets: [{ label: 'Leads', data: D.semaines.google, backgroundColor: C.google, borderRadius: 4 }] },
+      options: opts({ plugins: { legend: { display: false } } }) });
+
+    document.getElementById('adsk-google-ops').innerHTML =
+      carte('adsk-g-fa', 'Formulaires et appels, mois par mois') +
+      carte('adsk-g-camp', 'Leads par campagne');
+
+    new Chart(document.getElementById('adsk-g-fa'), { type: 'bar',
+      data: { labels: g.mois, datasets: [
+        { label: 'Formulaires', data: g.formulaires, backgroundColor: C.google, stack: 's', borderRadius: 4 },
+        { label: 'Appels', data: g.appels, backgroundColor: C.googleSoft, stack: 's', borderRadius: 4 } ] },
+      options: opts({ scales: { x: { stacked: true, grid: { display: false } }, y: { stacked: true, beginAtZero: true, ticks: { precision: 0 } } } }) });
+
+    new Chart(document.getElementById('adsk-g-camp'), { type: 'bar',
+      data: { labels: c.labels, datasets: [
+        { label: 'Formulaires', data: c.formulaires, backgroundColor: C.google, stack: 's', borderRadius: 4 },
+        { label: 'Appels', data: c.appels, backgroundColor: C.googleSoft, stack: 's', borderRadius: 4 } ] },
+      options: opts({ indexAxis: 'y', scales: { x: { stacked: true, beginAtZero: true, ticks: { precision: 0 } }, y: { stacked: true, grid: { display: false } } } }) });
+  }
+
+  function rendre(p) {
+    if (fait[p]) return;
+    var sec = document.getElementById('adsk-' + p), panel = sec && sec.closest('.panel');
+    if (!panel || !panel.classList.contains('active')) return;
+    fait[p] = true;
+    if (p === 'meta') meta(); else google();
+  }
   ['meta', 'google'].forEach(function (p) {
-    var sec = document.getElementById('ads-mois-' + p);
-    if (!sec) return;
-    var panel = sec.closest('.panel');
-    function init() {
-      if (pret[p] || !panel.classList.contains('active')) return;
-      pret[p] = true;
-      rendre(p, strategie(p));
-    }
-    new MutationObserver(init).observe(panel, { attributes: true, attributeFilter: ['class'] });
-    strategie(p);
-    init();
+    var sec = document.getElementById('adsk-' + p); if (!sec) return;
+    new MutationObserver(function () { rendre(p); }).observe(sec.closest('.panel'), { attributes: true, attributeFilter: ['class'] });
+    rendre(p);
   });
 })();
 </script>
-
-
 
 <script>
 // ============ PANEL SWITCHING ============
