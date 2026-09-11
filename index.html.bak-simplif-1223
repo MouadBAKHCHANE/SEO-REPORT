@@ -2989,7 +2989,7 @@ h1, h2, h3, h4, h5, h6,
 .adsk-head h2 { font-size: 1.05rem; font-weight: 700; margin: 0; color: var(--text); }
 .adsk-head .adsk-maj { font-size: 0.68rem; color: var(--text-muted); }
 .adsk-head .adsk-maj b { color: var(--text-body); font-weight: 600; }
-.adsk-tiles { display:grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 14px; }
+.adsk-tiles { display:grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 14px; }
 .adsk-tile { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; min-width: 0; }
 .adsk-tile .l { font-size: 0.64rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-muted); font-weight: 700; margin-bottom: 6px; }
 .adsk-tile .v { font-size: 1.55rem; font-weight: 700; line-height: 1.05; color: var(--text); font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
@@ -2997,11 +2997,10 @@ h1, h2, h3, h4, h5, h6,
 .adsk-tile .s { font-size: 0.68rem; color: var(--text-muted); margin-top: 6px; line-height: 1.4; }
 .adsk-tile .s b { font-weight: 700; }
 .adsk-up { color: #2A8F4D; } .adsk-down { color: #E85D4A; } .adsk-warn { color: #E8A33D; }
-.adsk-stale { color: #E8A33D; font-weight: 700; }
 .adsk-tile.is-pending .v { color: var(--text-faint); }
 .adsk-tile.is-pending .s { color: #E8A33D; font-weight: 600; }
 .adsk-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px 12px; margin-bottom: 12px; }
-.adsk-card h3 { font-size: 0.82rem; font-weight: 700; margin: 0 0 10px; color: var(--text); }
+.adsk-card h3 { font-size: 0.82rem; font-weight: 700; margin: 0 0 2px; color: var(--text); }
 .adsk-card .adsk-why { font-size: 0.7rem; color: var(--text-muted); margin: 0 0 10px; }
 .adsk-chart { position: relative; height: 240px; }
 .adsk-chart.sm { height: 190px; }
@@ -3009,7 +3008,7 @@ h1, h2, h3, h4, h5, h6,
 .adsk-ops { margin-top: 18px; }
 .adsk-ops > h2 { font-size: 0.78rem; text-transform: uppercase; letter-spacing: .1em; color: var(--text-muted); font-weight: 700; margin: 0 0 10px; }
 .adsk-note { font-size: 0.7rem; color: var(--text-body); background: var(--surface-soft); border-left: 3px solid #E8A33D; padding: 9px 12px; border-radius: 0 8px 8px 0; margin-top: 10px; line-height: 1.5; }
-@media (max-width: 1100px) { .adsk-tiles { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1100px) { .adsk-tiles { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 760px)  { .adsk-tiles, .adsk-grid { grid-template-columns: 1fr; } }
 
 </style>
@@ -3073,7 +3072,7 @@ h1, h2, h3, h4, h5, h6,
 
         <!-- Actions (collapsible group) -->
         <div class="nav-section">
-            <button class="nav-group" type="button" onclick="this.classList.toggle('open')">
+            <button class="nav-group open" type="button" onclick="this.classList.toggle('open')">
                 <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
                 <span class="nav-label">Actions</span>
                 <svg class="nav-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
@@ -3095,7 +3094,7 @@ h1, h2, h3, h4, h5, h6,
 
         <!-- SEO (collapsible group) -->
         <div class="nav-section">
-            <button class="nav-group" type="button" onclick="this.classList.toggle('open')">
+            <button class="nav-group open" type="button" onclick="this.classList.toggle('open')">
                 <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
                 <span class="nav-label">SEO</span>
                 <svg class="nav-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
@@ -3138,7 +3137,7 @@ h1, h2, h3, h4, h5, h6,
 
         <!-- Paid Media (collapsible group) -->
         <div class="nav-section">
-            <button class="nav-group" type="button" onclick="this.classList.toggle('open')">
+            <button class="nav-group open" type="button" onclick="this.classList.toggle('open')">
                 <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11 5L6 9H2v6h4l5 4V5zM15.54 8.46a5 5 0 010 7.07"/></svg>
                 <span class="nav-label">Publicité (Ads)</span>
                 <svg class="nav-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
@@ -3158,7 +3157,7 @@ h1, h2, h3, h4, h5, h6,
 
         <!-- Entreprise (collapsible group) -->
         <div class="nav-section">
-            <button class="nav-group" type="button" onclick="this.classList.toggle('open')">
+            <button class="nav-group open" type="button" onclick="this.classList.toggle('open')">
                 <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
                 <span class="nav-label">Entreprise</span>
                 
@@ -3186,7 +3185,7 @@ h1, h2, h3, h4, h5, h6,
 
         <!-- WordPress (collapsible group) — MOVED UP after Entreprise -->
         <div class="nav-section">
-            <button class="nav-group" type="button" onclick="this.classList.toggle('open')">
+            <button class="nav-group open" type="button" onclick="this.classList.toggle('open')">
                 <svg class="nav-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path stroke-linecap="round" stroke-linejoin="round" d="M2 12h20M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10c-2.5-3-4-6.5-4-10s1.5-7 4-10z"/></svg>
                 <span class="nav-label">WordPress</span>
                 <svg class="nav-chevron" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
@@ -8485,27 +8484,213 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
             <div class="page-header">
                 <div>
                     <div class="page-title-row">
-                        <h1 class="page-title"><svg viewBox="0 0 24 24" width="26" height="26" style="vertical-align:-4px;margin-right:8px"><path fill="#4285F4" d="M12.5 4.7 5.3 17.2a3.4 3.4 0 0 0 5.9 3.4l7.2-12.5a3.4 3.4 0 0 0-5.9-3.4z"/><path fill="#34A853" d="M4.2 17.2a3.4 3.4 0 1 0 5.9 3.4 3.4 3.4 0 0 0-5.9-3.4z"/><path fill="#FBBC04" d="M12.5 4.7a3.4 3.4 0 0 1 5.9 3.4l-7.2 12.5-5.9-3.4z" opacity=".75"/></svg>Google Ads</h1>
-                        
+                        <h1 class="page-title">Google Ads — Stratégie &amp; actions</h1>
+                        <span class="badge" style="background:rgba(66,133,244,0.15);color:#4285F4">MAJ 16 juillet</span>
                     </div>
-                    <p class="page-subtitle">Ce que Google Ads rapporte, ce que ça coûte, et si ça s'améliore.</p>
+                    <p class="page-subtitle">Ce qui a été <strong>décidé et appliqué</strong> sur le compte <strong>NAOenergy (221-239-6660)</strong> : recentrage Genève + Vaud, coupe du gaspillage, fiabilisation du lead. Audit approfondi + ajustements appliqués en direct le <strong>24 juin 2026</strong> (recentrage validé par Charline).</p>
                 </div>
-
             </div>
 
+
+            <!-- ══════════ L'ESSENTIEL — Google Ads (bloc KPI, donnees dans ADS_DONNEES) ══════════ -->
             <section class="adsk" id="adsk-google" data-plateforme="google">
                 <div class="adsk-head">
-                    <h2>30 derniers jours</h2>
+                    <h2>L'essentiel — 30 derniers jours</h2>
                     <div class="adsk-maj" id="adsk-google-maj"></div>
                 </div>
-                <div class="adsk-tiles adsk-4" id="adsk-google-tiles"></div>
+                <div class="adsk-tiles" id="adsk-google-tiles"></div>
+
                 <div class="adsk-card">
-                    <h3>Leads Google Ads par semaine — formulaires et appels</h3>
+                    <h3>Leads par semaine — toutes sources</h3>
+                    <p class="adsk-why">Le seul graphe à lire sans explication : volume, part de chaque plateforme, et tendance.</p>
                     <div class="adsk-chart"><canvas id="adsk-google-semaines"></canvas></div>
                 </div>
-                <div class="adsk-grid" id="adsk-google-ops"></div>
+
+                <div class="adsk-ops">
+                    <h2>Pour le pilotage</h2>
+                    <div class="adsk-grid" id="adsk-google-ops"></div>
+                    <div class="adsk-card" style="margin-top:12px">
+                        <h3>Leads par produit et par plateforme</h3>
+                        <p class="adsk-why">Quelle plateforme produit quel produit. Meta fait la batterie et la clim ; Google fait le photovoltaïque, surtout par téléphone.</p>
+                        <div class="adsk-chart"><canvas id="adsk-google-produits"></canvas></div>
+                    </div>
+                    <div class="adsk-note"><b>Retour sur investissement : non mesuré.</b> Devis, contrats et chiffre d'affaires vivent dans Odoo, pas dans le Sheet. Le tableau de bord s'arrête au lead tant que ce lien n'est pas fait.</div>
+                </div>
             </section>
 
+            <!-- ===== Architecture du compte (ajout 27/06/2026) ===== -->
+            <h3 class="panel-h3">🗺️ Architecture du compte (en 6 couches)</h3>
+            <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6;margin-bottom:12px">De la structure jusqu'à la vente : comment le compte est <strong>organisé, piloté et mesuré</strong>. Doc de pilotage complet : <code>GOOGLE-ADS-ARCHITECTURE.md</code>.</div>
+            <pre class="code-block">┌──────────────────────────────────────────────────────────────┐
+│ COMPTE — NaoEnergy (221-239-6660) · ~2,4k CHF/mois · LEADS    │
+└──────────────────────────────────────────────────────────────┘
+
+① STRUCTURE    2 campagnes : PV Search · Batterie (Conv)
+               (+ 15 campagnes historiques en pause)
+
+② STRATÉGIE    Géo GE+VD · Max conversions · 40 négatifs ·
+               marque exclue (PV) · Partenaires recherche OFF
+               ⚠️ objectif « Trafic » → à passer Leads · mots-clés broad
+
+③ CRÉATION     Mots-clés (187 GSC) + Annonces RSA + Assets
+               angles : PRIX · Atmoce · SUBVENTIONS · local
+
+④ DESTINATION  PV → /solutions/panneaux-photovoltaiques/
+               Batterie → /solutions/batteries-de-stockage/   (forms inline tracés)
+
+⑤ TRACKING     clic(gclid) → #32 → cookie nao_attr → Typeform
+               → /merci- → #33 → GA4 + Google Ads + Meta → Odoo (à brancher)
+
+⑥ OUTILS       Google Ads · GA4 · Search Console · Typeform ·
+               Looker Studio · Odoo (CRM) · Meta</pre>
+            <div class="card" style="padding:14px 18px;margin-bottom:18px;border-left:3px solid #4285F4">
+                <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.8px;color:#4285F4;font-weight:800;margin-bottom:8px">🧭 Le fil rouge</div>
+                <div style="font-size:0.76rem;color:var(--text-body);line-height:1.6"><strong>Lead-gen local serré</strong> (GE/VD) · créa <strong>adossée aux vraies requêtes</strong> (l'angle « subventions » convertit déjà à <strong>10,69 % de CTR</strong> ; prix et Atmoce sous-exploités ; <strong>Pompe à chaleur &gt; 6 000 impr non captées</strong>) · tracking <strong>jusqu'à la vente (Odoo)</strong> pour piloter sur le <strong>ROI réel</strong>, pas sur le clic.</div>
+            </div>
+
+            <!-- ===== Stratégie ===== -->
+            <div style="margin-bottom:18px;padding:16px 18px;background:linear-gradient(135deg, rgba(66,133,244,0.06), rgba(52,168,83,0.06));border-radius:10px;border-left:3px solid #4285F4">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap">
+                    <span style="background:#4285F4;color:#fff;font-size:0.62rem;padding:3px 8px;border-radius:100px;font-weight:800;letter-spacing:0.5px">🎯 STRATÉGIE</span>
+                    <div style="font-size:0.9rem;font-weight:800;color:var(--text)">Concentrer le budget là où il rapporte</div>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+                    <div style="background:var(--surface-soft);border-radius:8px;padding:12px 14px">
+                        <div style="font-size:0.66rem;text-transform:uppercase;letter-spacing:0.8px;color:#4285F4;font-weight:800;margin-bottom:5px">1 · Recentrer</div>
+                        <div style="font-size:0.74rem;color:var(--text-body);line-height:1.55">Focus <strong>Genève + Vaud</strong> (zones d'agences · demande Charline) — le budget CHF 80/jour n'est plus dilué sur 5 cantons.</div>
+                    </div>
+                    <div style="background:var(--surface-soft);border-radius:8px;padding:12px 14px">
+                        <div style="font-size:0.66rem;text-transform:uppercase;letter-spacing:0.8px;color:#EA4335;font-weight:800;margin-bottom:5px">2 · Couper le gaspillage</div>
+                        <div style="font-size:0.74rem;color:var(--text-body);line-height:1.55">Stopper les clics payés sur les <strong>concurrents</strong> et la <strong>marque</strong> captés par la requête large (≈ <strong>250-300 CHF/mois</strong>).</div>
+                    </div>
+                    <div style="background:var(--surface-soft);border-radius:8px;padding:12px 14px">
+                        <div style="font-size:0.66rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:800;margin-bottom:5px">3 · Structurer</div>
+                        <div style="font-size:0.74rem;color:var(--text-body);line-height:1.55">Supprimer les <strong>doublons</strong>, garder une conversion « lead » propre, préparer l'entonnoir et l'agenda d'optimisation.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== KPI snapshot ===== -->
+            <div class="kpi-mini-row">
+                <div class="kpi-mini k-pass">
+                    <div class="kpi-mini-label">Cantons ciblés</div>
+                    <div class="kpi-mini-value">5 → 2</div>
+                </div>
+                <div class="kpi-mini k-pass">
+                    <div class="kpi-mini-label">Négatifs ajoutés</div>
+                    <div class="kpi-mini-value">40</div>
+                </div>
+                <div class="kpi-mini k-pass">
+                    <div class="kpi-mini-label">Doublon retiré</div>
+                    <div class="kpi-mini-value">✔</div>
+                </div>
+                <div class="kpi-mini k-warning">
+                    <div class="kpi-mini-label">CPL actuel · 30 j</div>
+                    <div class="kpi-mini-value">115 CHF</div>
+                </div>
+                <div class="kpi-mini k-warning">
+                    <div class="kpi-mini-label">Gaspillage estimé</div>
+                    <div class="kpi-mini-value">~280/mois</div>
+                </div>
+            </div>
+
+            <!-- ===== Actions 16 juillet (ajout) ===== -->
+            <div class="priority-header" style="border-left:4px solid #2A8F4D;color:#2A8F4D">
+                <span class="priority-dot" style="background:#2A8F4D"></span>
+                ✅ Nouvelles actions — 16 juillet 2026 (audit approfondi + réglages en direct)
+            </div>
+            <div class="kpi-mini-row">
+                <div class="kpi-mini k-pass">
+                    <div class="kpi-mini-label">Négatifs (total)</div>
+                    <div class="kpi-mini-value">40 → 85</div>
+                </div>
+                <div class="kpi-mini k-pass">
+                    <div class="kpi-mini-label">Mots-clés précis ajoutés</div>
+                    <div class="kpi-mini-value">+17</div>
+                </div>
+                <div class="kpi-mini k-pass">
+                    <div class="kpi-mini-label">Demandes · 30 j</div>
+                    <div class="kpi-mini-value">~16/mois</div>
+                </div>
+                <div class="kpi-mini k-warning">
+                    <div class="kpi-mini-label">Coût / demande · 30 j</div>
+                    <div class="kpi-mini-value">148 CHF</div>
+                </div>
+            </div>
+            <div style="margin-bottom:20px">
+                <div class="issue-item info" style="border-left-color:#2A8F4D"><span class="issue-badge" style="background:rgba(42,143,77,0.15);color:#2A8F4D">✅ Fait</span><div><strong>10 concurrents encore actifs bloqués</strong> (en « expression ») sur les 2 campagnes : <em>solstis, agena, ecotech, stg energy, swiss solar system, seic, e me energies, amax, grupo e</em> + un terme parasite (mcr e). → stoppe ~<strong>300 CHF/mois</strong> de clics concurrents qui ne convertissaient pas. <em>Les concurrents qui, eux, génèrent des demandes (helion, helvetia) sont volontairement gardés.</em></div></div>
+                <div class="issue-item info" style="border-left-color:#2A8F4D"><span class="issue-badge" style="background:rgba(42,143,77,0.15);color:#2A8F4D">✅ Fait</span><div><strong>17 mots-clés précis ajoutés</strong> pour lever le statut « Limitée » (Google signalait « pas assez de mots-clés pertinents ») : <strong>local</strong> (panneaux &amp; installation Genève / Vaud / Lausanne), <strong>subventions</strong> (batterie &amp; panneaux Vaud / Genève), <strong>prix</strong> (batterie 10 &amp; 15 kWh), et <strong>marques posées</strong> (Enphase — réactivée). → l'algorithme dispose de meilleures cibles, moins de dérive vers le hors-sujet.</div></div>
+                <div class="issue-item info"><span class="issue-badge">🎯 Décision</span><div><strong>Ne pas mettre en pause les mots-clés larges chers — et pourquoi.</strong> Les campagnes tournent en <strong>« Maximiser les conversions » à budget fixe</strong> : mettre un mot-clé en pause <strong>ne réduit pas la facture</strong> (le budget quotidien est dépensé de toute façon), ça ne fait que le redistribuer. Le vrai levier = les <strong>négatifs</strong> (qui réorientent l'argent vers de bonnes recherches) + les <strong>mots-clés précis</strong>. On <strong>observe ~2 semaines</strong> l'effet avant tout nouvel ajustement (ex. « autoconsommation solaire »).</div></div>
+                <div class="issue-item info"><span class="issue-badge">ℹ️ Précision</span><div><strong>L'objectif est déjà bon.</strong> Malgré le mot « Trafic » dans le nom des campagnes (reliquat historique), elles optimisent en réalité <strong>vers les demandes</strong> (appels + formulaires) via « Maximiser les conversions ». Rien à changer côté objectif.</div></div>
+                <div class="issue-item info" style="border-left-color:#2A8F4D"><span class="issue-badge" style="background:rgba(42,143,77,0.15);color:#2A8F4D">✅ Vérifié</span><div><strong>Aucun doublon de mots-clés entre groupes.</strong> Contrôle des <strong>77 mots-clés actifs</strong> : chacun est dans un seul groupe d'annonces, pas de concurrence interne (les versions redondantes étaient déjà en pause). Structure propre — rien à corriger.</div></div>
+            </div>
+
+            <!-- ===== Actions appliquées ===== -->
+            <div class="priority-header" style="border-left:4px solid #5A98AE;color:#3D7A8F">
+                <span class="priority-dot" style="background:#5A98AE"></span>
+                ✅ Actions appliquées le 24 juin — en direct sur le compte
+            </div>
+            <div style="margin-bottom:20px">
+                <div class="issue-item info" style="border-left-color:#2A8F4D"><span class="issue-badge" style="background:rgba(42,143,77,0.15);color:#2A8F4D">✅ Fait</span><div><strong>Ciblage géographique → Genève + Vaud.</strong> Les 2 campagnes (Batterie + Panneaux) passent de 5 cantons (Fribourg, Genève, Neuchâtel, Valais, Vaud) à <strong>Genève + Vaud uniquement</strong> (France toujours exclue). Tout le budget CHF 80/jour se concentre désormais sur les 2 zones prioritaires. <em>Vérifié en direct sur les 2 campagnes.</em></div></div>
+                <div class="issue-item info" style="border-left-color:#2A8F4D"><span class="issue-badge" style="background:rgba(42,143,77,0.15);color:#2A8F4D">✅ Fait</span><div><strong>40 mots-clés négatifs ajoutés.</strong> Exclusion des <strong>concurrents et régies</strong> + termes hors-sujet sur les 2 campagnes (viteos, groupe e, seic, romande energie, pronovo, solexis, swissgreen…) et, en plus, de <strong>la marque sur la campagne Panneaux</strong> (« naoenergy », « nao energy »…) qui ne convertissait pas côté Panneaux. → fin des clics payés inutiles.</div></div>
+                <div class="issue-item info" style="border-left-color:#2A8F4D"><span class="issue-badge" style="background:rgba(42,143,77,0.15);color:#2A8F4D">✅ Fait</span><div><strong>Doublon de mot-clé supprimé.</strong> « batterie solaire maison » était présent dans 2 groupes d'annonces et se cannibalisait ; retiré du groupe <strong>Batterie de stockage</strong> (64 clics / 167 CHF / <strong>0 conversion</strong>), conservé dans le groupe où il convertit.</div></div>
+            </div>
+
+            <!-- ===== Constats audit ===== -->
+            <div class="priority-header" style="border-left:4px solid #5A98AE;color:#3D7A8F">
+                <span class="priority-dot" style="background:#5A98AE"></span>
+                🔍 Ce que l'audit du compte a révélé
+            </div>
+            <div style="margin-bottom:20px">
+                <div class="issue-item info"><span class="issue-badge">Constat</span><div><strong>Le téléphone est le canal n°1.</strong> 12 des 19 conversions (30 derniers jours) sont des <strong>appels téléphoniques</strong> — à garder en tête pour tout arbitrage budgétaire.</div></div>
+                <div class="issue-item warning"><span class="issue-badge">⚠️ À corriger</span><div><strong>Tous les mots-clés en requête large (broad).</strong> Source du gaspillage : la pub se déclenchait sur des recherches de <strong>concurrents</strong> (viteos, groupe e, seic…) et de la <strong>marque</strong>, sans conversion. ≈ <strong>250-300 CHF/mois</strong> récupérables — déjà traité par les négatifs ci-dessus.</div></div>
+                <div class="issue-item warning"><span class="issue-badge">⚠️ À corriger</span><div><strong>Bucket « autres termes » très inefficace :</strong> 200 clics / <strong>677 CHF</strong> pour seulement 3 conversions (CPL ≈ <strong>225 CHF</strong>).</div></div>
+                <div class="issue-item warning"><span class="issue-badge">⚠️ Réglage</span><div><strong>Partenaires de recherche activés</strong> + objectif de campagne réglé sur <strong>« Trafic du site »</strong> au lieu de « Prospects ». Incohérent pour de la génération de leads.</div></div>
+                <div class="issue-item warning"><span class="issue-badge">⚠️ Réglage</span><div><strong>Recommandations Google appliquées automatiquement</strong> (4 appliquées du 15 au 21/06 sans validation) — risqué sur un petit budget.</div></div>
+            </div>
+
+            <!-- ===== Focus : Stratégie marque ===== -->
+            <div class="priority-header" style="border-left:4px solid #6F3EAA;color:#6F3EAA">
+                <span class="priority-dot" style="background:#6F3EAA"></span>
+                🏷️ Focus — Stratégie « marque » : payer sur son propre nom, ou pas ?
+            </div>
+            <div style="margin-bottom:20px;padding:16px 18px;background:var(--surface-soft);border-radius:10px">
+                <p style="margin:0 0 14px;font-size:0.78rem;color:var(--text-body);line-height:1.65"><strong>« La marque »</strong>, ce sont les internautes qui cherchent directement <strong>votre nom</strong> (« naoenergy », « naoenergy genève », « nao energy sa »…). Ils vous connaissent déjà — et vous sortez déjà <strong>n°1 en résultat naturel (gratuit)</strong>. La question : faut-il <strong>payer une pub</strong> pour apparaître sur votre propre nom ?</p>
+                <table style="width:100%;border-collapse:collapse;font-size:0.74rem;margin-bottom:14px">
+                    <thead>
+                        <tr style="background:var(--surface)">
+                            <th style="text-align:left;padding:9px 12px;font-weight:700;color:var(--text-muted);font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;width:20%">Option</th>
+                            <th style="text-align:left;padding:9px 12px;font-weight:700;color:var(--text-muted);font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;width:28%">En clair</th>
+                            <th style="text-align:left;padding:9px 12px;font-weight:700;color:#2A8F4D;font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;width:27%">Pour</th>
+                            <th style="text-align:left;padding:9px 12px;font-weight:700;color:#EA4335;font-size:0.6rem;text-transform:uppercase;letter-spacing:1px;width:25%">Contre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid var(--border)">
+                            <td style="padding:10px 12px;font-weight:700;vertical-align:top;color:var(--text)">A — Arrêter la pub marque</td>
+                            <td style="padding:10px 12px;vertical-align:top;color:var(--text-body)">Exclure votre nom partout (déjà fait sur la campagne Panneaux).</td>
+                            <td style="padding:10px 12px;vertical-align:top;color:var(--text-body)">On arrête de payer un clic quasi-gratuit · budget concentré sur les <strong>nouveaux clients</strong>.</td>
+                            <td style="padding:10px 12px;vertical-align:top;color:var(--text-body)">Un peu moins de contrôle du message / d'espace en haut de page.</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:10px 12px;font-weight:700;vertical-align:top;color:var(--text)">B — Garder (mini-campagne marque plafonnée)</td>
+                            <td style="padding:10px 12px;vertical-align:top;color:var(--text-body)">Une petite campagne dédiée, budget bridé, uniquement sur votre nom.</td>
+                            <td style="padding:10px 12px;vertical-align:top;color:var(--text-body)">Clics <strong>très peu chers</strong> et qui convertissent bien · contrôle du message et de la page · occupe plus de place · <strong>défend</strong> le nom face aux concurrents.</td>
+                            <td style="padding:10px 12px;vertical-align:top;color:var(--text-body)">On paie un peu pour du trafic en partie « gratuit ».</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="padding:12px 14px;background:rgba(66,133,244,0.06);border-radius:8px;border-left:3px solid #4285F4">
+                    <div style="font-size:0.66rem;text-transform:uppercase;letter-spacing:0.8px;color:#4285F4;font-weight:800;margin-bottom:5px">💡 Reco pour NAOenergy</div>
+                    <div style="font-size:0.74rem;color:var(--text-body);line-height:1.6"><strong>Aucun concurrent n'enchérit sur « naoenergy » aujourd'hui</strong> → l'argument défensif est faible. Recommandation : <strong>exclure la marque partout maintenant</strong> (budget 100 % vers de vrais nouveaux clients), et créer une mini-campagne marque <strong>plus tard</strong> seulement si un concurrent commence à enchérir sur votre nom.</div>
+                </div>
+            </div>
+
+            <div style="margin-top:6px">
+                <button type="button" onclick="showPanel('google_ads')" style="background:none;border:1px solid var(--border);border-radius:8px;padding:9px 14px;cursor:pointer;font-size:0.72rem;font-weight:700;color:#5A98AE;transition:background .15s" onmouseover="this.style.background='var(--surface-soft)'" onmouseout="this.style.background='none'">📊 Voir l'analyse détaillée du compte (état avant) →</button>
+            </div>
+
+            <div class="section-source">Compte Google Ads 221-239-6660 · audit approfondi + ajustements appliqués et vérifiés le 24 juin 2026 · recentrage Genève + Vaud validé par Charline.</div>
         </div>
 
         <!-- ============ PANEL : META ADS ============ -->
@@ -8516,23 +8701,580 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
                         <h1 class="page-title" style="display:flex;align-items:center;gap:11px"><svg viewBox="0 0 287.56 191" width="30" height="20" style="vertical-align:-2px;flex-shrink:0" aria-hidden="true"><path fill="#0081FB" d="M31.06,126c0,11,2.41,19.41,5.56,24.51A19,19,0,0,0,53.19,160c8.1,0,15.51-2,29.79-21.76,11.44-15.83,24.92-38,34-51.93l15.36-23.6c10.67-16.39,23-34.61,37.18-47C181.07,5.6,193.54,0,206.09,0c21.07,0,41.14,12.21,56.5,35.11,16.81,25.08,25,56.67,25,89.27,0,19.38-3.82,33.62-10.32,44.87C271,180.13,258.72,191,238.13,191V160c17.63,0,22-16.2,22-34.74,0-26.42-6.16-55.74-19.73-76.69-9.63-14.86-22.11-23.94-35.84-23.94-14.85,0-26.8,11.2-40.23,31.17-7.14,10.61-14.47,23.54-22.7,38.13l-9.06,16c-18.2,32.27-22.81,39.62-31.91,51.75C84.74,183,71.12,191,53.19,191c-21.27,0-34.72-9.21-43-23.09C3.34,156.6,0,141.76,0,124.85Z"/><path fill="#0064E0" d="M24.49,37.3C38.73,15.35,59.28,0,82.85,0c13.65,0,27.22,4,41.39,15.61,15.5,12.65,32,33.48,52.63,67.81l7.39,12.32c17.84,29.72,28,45,33.93,52.22,7.64,9.26,13,12,19.94,12,17.63,0,22-16.2,22-34.74l27.4-.86c0,19.38-3.82,33.62-10.32,44.87C271,180.13,258.72,191,238.13,191c-12.8,0-24.14-2.78-36.68-14.61-9.64-9.08-20.91-25.21-29.58-39.71L146.08,93.6c-12.94-21.62-24.81-37.74-31.68-45C107,40.71,97.51,31.23,82.34,31.23c-12.28,0-22.71,8.61-31.45,21.78Z"/><path fill="#0082FB" d="M82.34,31.23c-12.28,0-22.71,8.61-31.45,21.78C38.53,71.62,31.06,99.34,31.06,126c0,11,2.41,19.41,5.56,24.51L10.1,167.91C3.34,156.6,0,141.76,0,124.85,0,94.1,8.44,62.05,24.49,37.3,38.73,15.35,59.28,0,82.85,0Z"/></svg>Meta Ads</h1>
                         
                     </div>
-                    <p class="page-subtitle">Ce que Meta rapporte, ce que ça coûte, et si ça s'améliore.</p>
+                    <p class="page-subtitle">Pilotage quotidien des campagnes Meta · budget · objectifs · actions par date.</p>
+                </div>
+            </div>
+
+
+            <!-- ══════════ L'ESSENTIEL — Meta Ads (bloc KPI, donnees dans ADS_DONNEES) ══════════ -->
+            <section class="adsk" id="adsk-meta" data-plateforme="meta">
+                <div class="adsk-head">
+                    <h2>L'essentiel — 30 derniers jours</h2>
+                    <div class="adsk-maj" id="adsk-meta-maj"></div>
+                </div>
+                <div class="adsk-tiles" id="adsk-meta-tiles"></div>
+
+                <div class="adsk-card">
+                    <h3>Leads par semaine — toutes sources</h3>
+                    <p class="adsk-why">Le seul graphe à lire sans explication : volume, part de chaque plateforme, et tendance.</p>
+                    <div class="adsk-chart"><canvas id="adsk-meta-semaines"></canvas></div>
+                </div>
+
+                <div class="adsk-ops">
+                    <h2>Pour le pilotage</h2>
+                    <div class="adsk-grid" id="adsk-meta-ops"></div>
+                    <div class="adsk-card" style="margin-top:12px">
+                        <h3>Leads par produit et par plateforme</h3>
+                        <p class="adsk-why">Quelle plateforme produit quel produit. Meta fait la batterie et la clim ; Google fait le photovoltaïque, surtout par téléphone.</p>
+                        <div class="adsk-chart"><canvas id="adsk-meta-produits"></canvas></div>
+                    </div>
+                    <div class="adsk-note"><b>Retour sur investissement : non mesuré.</b> Devis, contrats et chiffre d'affaires vivent dans Odoo, pas dans le Sheet. Le tableau de bord s'arrête au lead tant que ce lien n'est pas fait.</div>
+                </div>
+            </section>
+
+            <!-- ============================================== -->
+            <!-- ===== SECTION 1 — HISTORIQUE 2026 (04.08) ==== -->
+            <!-- ============================================== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #6F3EAA">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px">
+                    <div style="font-size:0.95rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px">
+                        <span style="background:#6F3EAA;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">01</span>
+                        📅 Historique mensuel 2026
+                    </div>
+                    <span style="background:rgba(111,62,170,0.14);color:#6F3EAA;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Janvier &rarr; 4 août 2026</span>
+                </div>
+
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:20px">
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #6F3EAA">
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Demandes générées</div>
+                        <div style="font-size:1.6rem;font-weight:800;color:var(--text)">589</div>
+                        <div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">sur 7 mois</div>
+                    </div>
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #6F3EAA">
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Investissement total</div>
+                        <div style="font-size:1.6rem;font-weight:800;color:var(--text)">24 538 <span style="font-size:0.8rem;color:var(--text-muted);font-weight:600">€</span></div>
+                        <div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">≈ 3 500 € / mois</div>
+                    </div>
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #E8A33D">
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Coût moyen / demande</div>
+                        <div style="font-size:1.6rem;font-weight:800;color:#E8A33D">37,53 €</div>
+                        <div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">de 30,36 € à 47,69 € selon le mois</div>
+                    </div>
+                    <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #2A8F4D">
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Meilleur produit</div>
+                        <div style="font-size:1.6rem;font-weight:800;color:#2A8F4D">Batterie</div>
+                        <div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">30,45 € — 53 % du volume</div>
+                    </div>
+                </div>
+
+                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#6F3EAA;font-weight:700;margin:0 0 10px">📊 Volume de demandes et coût, mois par mois</div>
+                <div style="background:var(--surface-soft);border-radius:12px;padding:16px 18px;margin-bottom:16px">
+                    <div style="display:grid;grid-template-columns:70px 1fr 96px;align-items:center;gap:10px;margin-bottom:7px">
+                        <div style="font-size:0.72rem;font-weight:700;color:var(--text)">Janvier</div>
+                        <div style="background:var(--surface-soft);border-radius:5px;height:20px;overflow:hidden">
+                            <div style="width:92%;height:100%;background:linear-gradient(90deg,#E8A33D,#E8A33Dbb);border-radius:5px;display:flex;align-items:center;justify-content:flex-end;padding-right:7px"><span style="font-size:0.66rem;font-weight:800;color:#fff">107</span></div>
+                        </div>
+                        <div style="font-size:0.72rem;font-weight:800;color:#E8A33D;text-align:right">40,05 &euro; / lead</div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:70px 1fr 96px;align-items:center;gap:10px;margin-bottom:7px">
+                        <div style="font-size:0.72rem;font-weight:700;color:var(--text)">Février</div>
+                        <div style="background:var(--surface-soft);border-radius:5px;height:20px;overflow:hidden">
+                            <div style="width:67%;height:100%;background:linear-gradient(90deg,#E85D4A,#E85D4Abb);border-radius:5px;display:flex;align-items:center;justify-content:flex-end;padding-right:7px"><span style="font-size:0.66rem;font-weight:800;color:#fff">78</span></div>
+                        </div>
+                        <div style="font-size:0.72rem;font-weight:800;color:#E85D4A;text-align:right">47,69 &euro; / lead</div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:70px 1fr 96px;align-items:center;gap:10px;margin-bottom:7px">
+                        <div style="font-size:0.72rem;font-weight:700;color:var(--text)">Mars</div>
+                        <div style="background:var(--surface-soft);border-radius:5px;height:20px;overflow:hidden">
+                            <div style="width:100%;height:100%;background:linear-gradient(90deg,#2A8F4D,#2A8F4Dbb);border-radius:5px;display:flex;align-items:center;justify-content:flex-end;padding-right:7px"><span style="font-size:0.66rem;font-weight:800;color:#fff">116</span></div>
+                        </div>
+                        <div style="font-size:0.72rem;font-weight:800;color:#2A8F4D;text-align:right">31,75 &euro; / lead</div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:70px 1fr 96px;align-items:center;gap:10px;margin-bottom:7px">
+                        <div style="font-size:0.72rem;font-weight:700;color:var(--text)">Avril</div>
+                        <div style="background:var(--surface-soft);border-radius:5px;height:20px;overflow:hidden">
+                            <div style="width:72%;height:100%;background:linear-gradient(90deg,#E8A33D,#E8A33Dbb);border-radius:5px;display:flex;align-items:center;justify-content:flex-end;padding-right:7px"><span style="font-size:0.66rem;font-weight:800;color:#fff">84</span></div>
+                        </div>
+                        <div style="font-size:0.72rem;font-weight:800;color:#E8A33D;text-align:right">35,38 &euro; / lead</div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:70px 1fr 96px;align-items:center;gap:10px;margin-bottom:7px">
+                        <div style="font-size:0.72rem;font-weight:700;color:var(--text)">Mai</div>
+                        <div style="background:var(--surface-soft);border-radius:5px;height:20px;overflow:hidden">
+                            <div style="width:35%;height:100%;background:linear-gradient(90deg,#E8A33D,#E8A33Dbb);border-radius:5px;display:flex;align-items:center;justify-content:flex-end;padding-right:7px"><span style="font-size:0.66rem;font-weight:800;color:#fff">41</span></div>
+                        </div>
+                        <div style="font-size:0.72rem;font-weight:800;color:#E8A33D;text-align:right">43,84 &euro; / lead</div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:70px 1fr 96px;align-items:center;gap:10px;margin-bottom:7px">
+                        <div style="font-size:0.72rem;font-weight:700;color:var(--text)">Juin</div>
+                        <div style="background:var(--surface-soft);border-radius:5px;height:20px;overflow:hidden">
+                            <div style="width:79%;height:100%;background:linear-gradient(90deg,#2A8F4D,#2A8F4Dbb);border-radius:5px;display:flex;align-items:center;justify-content:flex-end;padding-right:7px"><span style="font-size:0.66rem;font-weight:800;color:#fff">92</span></div>
+                        </div>
+                        <div style="font-size:0.72rem;font-weight:800;color:#2A8F4D;text-align:right">30,36 &euro; / lead</div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:70px 1fr 96px;align-items:center;gap:10px;margin-bottom:7px">
+                        <div style="font-size:0.72rem;font-weight:700;color:var(--text)">Juillet</div>
+                        <div style="background:var(--surface-soft);border-radius:5px;height:20px;overflow:hidden">
+                            <div style="width:57%;height:100%;background:linear-gradient(90deg,#E8A33D,#E8A33Dbb);border-radius:5px;display:flex;align-items:center;justify-content:flex-end;padding-right:7px"><span style="font-size:0.66rem;font-weight:800;color:#fff">66</span></div>
+                        </div>
+                        <div style="font-size:0.72rem;font-weight:800;color:#E8A33D;text-align:right">38,33 &euro; / lead</div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:70px 1fr 96px;align-items:center;gap:10px;margin-bottom:7px">
+                        <div style="font-size:0.72rem;font-weight:700;color:var(--text)">Août <span style="font-size:0.66rem;color:var(--text-muted);font-weight:400">(4 j)</span></div>
+                        <div style="background:var(--surface-soft);border-radius:5px;height:20px;overflow:hidden">
+                            <div style="width:4%;height:100%;background:linear-gradient(90deg,#E85D4A,#E85D4Abb);border-radius:5px;display:flex;align-items:center;justify-content:flex-end;padding-right:7px"><span style="font-size:0.66rem;font-weight:800;color:#fff">5</span></div>
+                        </div>
+                        <div style="font-size:0.72rem;font-weight:800;color:#E85D4A;text-align:right">65,21 &euro; / lead</div>
+                    </div>
+                </div>
+
+                <div style="overflow-x:auto;margin:0 0 4px"><table class="data-table" style="font-size:0.78rem">
+                    <thead><tr><th>Mois</th><th class="num">Demandes</th><th class="num">Dépense demandes</th><th class="num">Coût / demande</th><th class="num">Trafic</th><th class="num">Notoriété</th><th class="num">Total dépensé</th><th class="num">Campagnes</th></tr></thead>
+                    <tbody><tr><td class="bold">Janvier</td><td class="num">107</td><td class="num">4 286 &euro;</td><td class="num" style="color:#E8A33D;font-weight:800">40,05 &euro;</td><td class="num">376</td><td class="num">162</td><td class="num">4 823 &euro;</td><td class="num">7</td></tr><tr><td class="bold">Février</td><td class="num">78</td><td class="num">3 720 &euro;</td><td class="num" style="color:#E85D4A;font-weight:800">47,69 &euro;</td><td class="num">836</td><td class="num">140</td><td class="num">4 695 &euro;</td><td class="num">5</td></tr><tr><td class="bold">Mars</td><td class="num">116</td><td class="num">3 683 &euro;</td><td class="num" style="color:#2A8F4D;font-weight:800">31,75 &euro;</td><td class="num">317</td><td class="num">154</td><td class="num">4 153 &euro;</td><td class="num">10</td></tr><tr><td class="bold">Avril</td><td class="num">84</td><td class="num">2 972 &euro;</td><td class="num" style="color:#E8A33D;font-weight:800">35,38 &euro;</td><td class="num">—</td><td class="num">148</td><td class="num">3 120 &euro;</td><td class="num">6</td></tr><tr><td class="bold">Mai</td><td class="num">41</td><td class="num">1 798 &euro;</td><td class="num" style="color:#E8A33D;font-weight:800">43,84 &euro;</td><td class="num">—</td><td class="num">117</td><td class="num">1 915 &euro;</td><td class="num">7</td></tr><tr><td class="bold">Juin</td><td class="num">92</td><td class="num">2 793 &euro;</td><td class="num" style="color:#2A8F4D;font-weight:800">30,36 &euro;</td><td class="num">—</td><td class="num">135</td><td class="num">2 928 &euro;</td><td class="num">6</td></tr><tr><td class="bold">Juillet</td><td class="num">66</td><td class="num">2 530 &euro;</td><td class="num" style="color:#E8A33D;font-weight:800">38,33 &euro;</td><td class="num">—</td><td class="num">47</td><td class="num">2 577 &euro;</td><td class="num">3</td></tr><tr><td class="bold">Août <span style="font-size:0.66rem;color:var(--text-muted);font-weight:400">(4 j)</span></td><td class="num">5</td><td class="num">326 &euro;</td><td class="num" style="color:#E85D4A;font-weight:800">65,21 &euro;</td><td class="num">—</td><td class="num">—</td><td class="num">326 &euro;</td><td class="num">2</td></tr>
+                        <tr style="background:var(--surface-soft);font-weight:800;border-top:2px solid var(--border)"><td>Total</td><td class="num">589</td><td class="num">22 107 €</td><td class="num">37,53 €</td><td class="num">1 528 €</td><td class="num">902 €</td><td class="num">24 538 €</td><td class="num">—</td></tr>
+                    </tbody>
+                </table></div>
+
+                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin:20px 0 8px">🏆 Le classement par produit</div>
+                <div style="overflow-x:auto;margin:0 0 4px"><table class="data-table" style="font-size:0.78rem">
+                    <thead><tr><th>Produit</th><th class="num">Demandes</th><th class="num">Dépensé</th><th class="num">Coût moyen</th></tr></thead>
+                    <tbody><tr><td class="bold">🔋 Batterie de stockage <span style='font-size:0.6rem;text-transform:uppercase;letter-spacing:0.5px;background:#2A8F4D22;color:#2A8F4D;padding:2px 6px;border-radius:100px;font-weight:800'>pilier</span></td><td class="num">312</td><td class="num">9 502 &euro;</td><td class="num" style="color:#2A8F4D;font-weight:800">30,45 &euro;</td></tr><tr><td class="bold">🔥 Pompe à chaleur (chauffage)</td><td class="num">166</td><td class="num">7 262 &euro;</td><td class="num" style="color:#E8A33D;font-weight:800">43,75 &euro;</td></tr><tr><td class="bold">❄️ Climatisation / PAC air-air <span style='font-size:0.6rem;text-transform:uppercase;letter-spacing:0.5px;background:#E8A33D22;color:#E8A33D;padding:2px 6px;border-radius:100px;font-weight:800'>nouveau</span></td><td class="num">57</td><td class="num">2 111 &euro;</td><td class="num" style="color:#E8A33D;font-weight:800">37,04 &euro;</td></tr><tr><td class="bold">🔁 Retargeting (leads)</td><td class="num">25</td><td class="num">1 041 &euro;</td><td class="num" style="color:#E8A33D;font-weight:800">41,62 &euro;</td></tr><tr><td class="bold">☀️ Photovoltaïque <span style='font-size:0.6rem;text-transform:uppercase;letter-spacing:0.5px;background:#E85D4A22;color:#E85D4A;padding:2px 6px;border-radius:100px;font-weight:800'>à arrêter</span></td><td class="num">18</td><td class="num">1 370 &euro;</td><td class="num" style="color:#E85D4A;font-weight:800">76,11 &euro;</td></tr><tr><td class="bold">🟢 ZEN <span style="font-size:0.66rem;color:var(--text-muted)">(autre client)</span></td><td class="num">11</td><td class="num">822 &euro;</td><td class="num" style="color:#8895A0;font-weight:800">74,70 &euro;</td></tr></tbody>
+                </table></div>
+                <div style="background:rgba(42,143,77,0.09);border-left:3px solid #2A8F4D;border-radius:8px;padding:12px 15px;margin:12px 0;font-size:0.76rem;color:var(--text-body);line-height:1.7">
+                    <strong>La batterie est le pilier du compte</strong> : 312 demandes, soit plus de la moitié du volume de l'année, au meilleur coût (30,45 €). À l'opposé, le <strong>photovoltaïque n'a produit que 18 demandes pour 1 370 €</strong> — sur Meta, ce produit ne trouve pas son public.
+                </div>
+
+                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#5A98AE;font-weight:700;margin:20px 0 8px">🔍 Juillet : une baisse de volume, pas une baisse de performance</div>
+                <div style="overflow-x:auto"><table class="data-table" style="font-size:0.78rem">
+                    <thead><tr><th>Campagne climatisation</th><th class="num">Juin</th><th class="num">Juillet</th><th class="num">Écart</th></tr></thead>
+                    <tbody>
+                        <tr><td class="bold">Clics reçus</td><td class="num">479</td><td class="num">468</td><td class="num" style="color:#2A8F4D;font-weight:800">&minus; 2 %</td></tr>
+                        <tr><td class="bold">Coût par clic</td><td class="num">2,04 €</td><td class="num">2,15 €</td><td class="num" style="color:#2A8F4D;font-weight:800">+ 5 %</td></tr>
+                        <tr><td class="bold">Demandes reçues</td><td class="num">44</td><td class="num">13</td><td class="num" style="color:#E85D4A;font-weight:800">&minus; 70 %</td></tr>
+                        <tr><td class="bold">Coût par demande</td><td class="num">22,23 €</td><td class="num">77,47 €</td><td class="num" style="color:#E85D4A;font-weight:800">+ 248 %</td></tr>
+                    </tbody>
+                </table></div>
+                <div style="background:rgba(42,143,77,0.09);border-left:3px solid #2A8F4D;border-radius:8px;padding:12px 15px;margin:12px 0;font-size:0.76rem;color:var(--text-body);line-height:1.7">
+                    <strong>Le trafic n'a pas bougé.</strong> Même volume de clics, même coût par clic. Ce qui a changé, c'est le <strong>filtre conditionnel ajouté au questionnaire en juillet</strong> (maison + panneaux solaires) : les personnes non éligibles ne vont plus jusqu'au bout du formulaire. <strong>La campagne ne s'est pas effondrée — elle a cessé de compter les demandes inexploitables.</strong>
+                </div>
+                <div style="background:rgba(232,168,46,0.10);border-left:3px solid #E8A33D;border-radius:8px;padding:12px 15px;margin:12px 0;font-size:0.76rem;color:var(--text-body);line-height:1.7">
+                    <strong>⚠️ Le chiffre qui tranche, à vérifier :</strong> sur les <strong>44 demandes de juin</strong>, combien répondaient « Maison » <em>et</em> « Oui » aux panneaux solaires ? Les réponses figurent dans le tableau de suivi des demandes. Si le total tourne autour de 13, alors juin coûtait déjà environ <strong>75 € la demande exploitable</strong> — soit exactement le niveau de juillet, et il n'y a rien à corriger sur ce plan.
+                </div>
+                <div style="overflow-x:auto"><table class="data-table" style="font-size:0.78rem">
+                    <thead><tr><th>Campagne</th><th class="num">Juin</th><th class="num">Juillet</th><th class="num">Août (4 j)</th><th>Ce qui se passe</th></tr></thead>
+                    <tbody>
+                        <tr><td class="bold">❄️ Climatisation</td><td class="num" style="color:#2A8F4D;font-weight:800">22,23 €<br><span style="font-size:0.66rem;font-weight:400;color:var(--text-muted)">44 demandes</span></td><td class="num" style="color:#E8A33D;font-weight:800">77,47 €<br><span style="font-size:0.66rem;font-weight:400;color:var(--text-muted)">13 demandes filtrées</span></td><td class="num">0<br><span style="font-size:0.66rem;color:var(--text-muted)">126 € dépensés</span></td><td style="white-space:normal">Filtre du questionnaire posé en juillet &middot; répétition à <strong>4,34</strong> : l'audience est trop étroite pour le volume visé</td></tr>
+                        <tr><td class="bold">🔋 Batterie</td><td class="num">26,70 €<br><span style="font-size:0.66rem;font-weight:400;color:var(--text-muted)">41 demandes</span></td><td class="num">28,73 €<br><span style="font-size:0.66rem;font-weight:400;color:var(--text-muted)">53 demandes</span></td><td class="num">40,05 €<br><span style="font-size:0.66rem;color:var(--text-muted)">5 demandes</span></td><td style="white-space:normal">Tient bon — répétition stable à 3,02</td></tr>
+                    </tbody>
+                </table></div>
+                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#5A98AE;font-weight:700;margin:20px 0 8px">🔍 Ce que l'historique enseigne</div>
+                <ul style="margin:0;padding-left:18px;font-size:0.76rem;color:var(--text-body);line-height:1.8">
+                    <li><strong>Juin est le mois le moins cher de l'année</strong> (30,36 €), juste devant mars (31,75 €). Février est le plus cher (47,69 €).</li>
+                    <li><strong>Un coût par demande qui monte n'est pas toujours une mauvaise nouvelle.</strong> Sur la climatisation, la hausse de juillet vient d'un filtre volontaire : moins de demandes, mais toutes exploitables. Le bon indicateur devient le <strong>coût par demande utile</strong>, pas le coût par demande brute.</li>
+                    <li><strong>La diversité des campagnes fait baisser le coût.</strong> Mars comptait 10 campagnes actives pour 116 demandes ; juillet n'en comptait plus que 3, et août 2.</li>
+                    <li><strong>Les campagnes vieillissent vite.</strong> Passé deux à trois mois en ligne, la répétition dépasse 3 et le coût décroche — c'est vrai pour la climatisation comme pour la PAC de janvier (35,31 € puis 49,01 € puis 246 €).</li>
+                    <li><strong>La notoriété coûte presque rien</strong> — 5 € par jour, un coût pour mille entre 0,73 € et 1,32 €, jusqu'à 125 000 personnes touchées en un mois. C'est le carburant du retargeting.</li>
+                </ul>
+
+                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin:22px 0 8px;padding-top:16px;border-top:1px dashed var(--border)">🚀 Plan d'action — août 2026</div>
+                <div style="overflow-x:auto;margin-bottom:4px"><table class="data-table" style="font-size:0.78rem">
+                    <thead><tr><th style="width:34px">#</th><th style="width:26%">Action</th><th>Pourquoi</th></tr></thead>
+                    <tbody>
+                        <tr><td class="num" style="font-weight:800;color:#E85D4A">1</td><td class="bold" style="white-space:normal">Compter les demandes éligibles de juin</td><td style="white-space:normal">Sur les 44 demandes de juin, combien répondaient « Maison » et « Oui » aux panneaux ? C'est le chiffre qui dit si le filtre de juillet a fait perdre des affaires ou seulement du bruit. Tout le reste en dépend.</td></tr>
+                        <tr><td class="num" style="font-weight:800;color:#E85D4A">2</td><td class="bold" style="white-space:normal">Relancer la climatisation avec l'offre d'août</td><td style="white-space:normal">Reprendre les 3 créations de juin en actualisant l'offre, garder le filtre du questionnaire, un seul groupe de publicités.</td></tr>
+                        <tr><td class="num" style="font-weight:800;color:#E8A33D">3</td><td class="bold" style="white-space:normal">Élargir le territoire pour retrouver du volume</td><td style="white-space:normal">Chaque personne voit aujourd'hui la publicité plus de 4 fois. Cantons entiers Vaud, Valais, Neuchâtel, Fribourg · âge 35-65+. Objectif : plus de personnes touchées, pas un meilleur coût — le coût est déjà bon.</td></tr>
+                        <tr><td class="num" style="font-weight:800;color:#E8A33D">4</td><td class="bold" style="white-space:normal">Maintenir la batterie sans y toucher</td><td style="white-space:normal">312 demandes à 30,45 € sur l'année, la répétition reste sous contrôle. C'est le produit à ne pas déranger.</td></tr>
+                        <tr><td class="num" style="font-weight:800;color:#E8A33D">5</td><td class="bold" style="white-space:normal">Remonter à 3 ou 4 campagnes actives</td><td style="white-space:normal">Les mois à 3 campagnes ou moins sont systématiquement les plus chers. Préparer la campagne pompe à chaleur pour la rentrée.</td></tr>
+                        <tr><td class="num" style="font-weight:800;color:#5A98AE">6</td><td class="bold" style="white-space:normal">Ne pas relancer le photovoltaïque sur Meta</td><td style="white-space:normal">18 demandes pour 1 370 € en trois mois. Ce budget est mieux placé sur la batterie ou la recherche Google.</td></tr>
+                        <tr><td class="num" style="font-weight:800;color:#5A98AE">7</td><td class="bold" style="white-space:normal">Renouveler les créations tous les 2 mois</td><td style="white-space:normal">Le décrochage arrive systématiquement au 3ᵉ mois. Anticiper plutôt que subir — sans jamais modifier une publicité qui fonctionne encore.</td></tr>
+                    </tbody>
+                </table></div>
+
+                <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.8px;color:#6F3EAA;font-weight:700;margin:24px 0 8px;padding-top:16px;border-top:1px dashed var(--border)">🎨 Les créations à reprendre</div>
+
+                <div style="background:rgba(90,152,174,0.10);border-left:3px solid #5A98AE;border-radius:8px;padding:13px 16px;margin-bottom:16px;font-size:0.76rem;color:var(--text-body);line-height:1.7">
+                    <strong>Les trois créations de juin annoncent la condition dès la première ligne</strong> — <em>« Vous avez une installation solaire en Suisse romande »</em>, <em>« Installation dans les cantons de Vaud, Valais, Neuchâtel et Fribourg en présence d'une installation solaire »</em>. Le tri commence donc <strong>avant le clic payant</strong>, et se termine dans le questionnaire. Ces textes sont à reprendre tels quels pour l'offre d'août, en actualisant simplement la date du bandeau promotionnel.
+                </div>
+
+                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:#5A98AE;font-weight:700;margin:0 0 8px">Été 2025 &mdash; 23 à 26 € la demande</div>
+                <div class="crea-grid">
+                    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+                        <div style="padding:11px 13px 9px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)">
+                            <div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#7CB1C4,#5A98AE);flex-shrink:0"></div>
+                            <div style="flex:1;min-width:0">
+                                <div style="font-size:0.7rem;font-weight:800;color:var(--text);line-height:1.1">naoenergy</div>
+                                <div style="font-size:0.58rem;color:var(--text-muted)">Sponsorisé</div>
+                            </div>
+                            <span style="font-size:0.55rem;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;background:#5A98AE22;color:#5A98AE;padding:3px 7px;border-radius:100px;white-space:nowrap">Été 2025</span>
+                        </div>
+                        <div style="padding:11px 13px;font-size:0.68rem;color:var(--text-body);line-height:1.55">💡 Rafraîchissez votre intérieur grâce à la pompe à chaleur air-air. Chaleur en hiver, fraîcheur en été avec une seule installation. Profitez d'un confort thermique optimal toute l'année, tout en réduisant vos factures d'énergie.<br><br>✏️ Contactez-nous pour recevoir une offre.</div>
+                        <div style="background:#33383D;padding:16px 14px;color:#fff">
+                            <div style="font-size:0.55rem;opacity:0.65;letter-spacing:0.4px;margin-bottom:5px">Pompe à chaleur air-air Mitsubishi MSZ-LN</div>
+                            <div style="font-size:0.92rem;font-weight:800;line-height:1.25">Rafraîchissez en été<br>Chauffez en hiver</div>
+                            <div style="display:flex;flex-wrap:wrap;gap:5px;margin:9px 0 0"><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">Hyper Heating</span><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">Ultra silencieuse</span><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">Économies toute saison</span><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">4 coloris</span><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">Capteur 3D I See Sensor</span></div>
+                            <div style="margin-top:11px;font-size:0.58rem;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.25);padding:4px 9px;border-radius:5px;display:inline-block">Frais d'installation offerts jusqu'au 31 juillet 2025</div>
+                        </div>
+                        <div style="padding:8px 13px;font-size:0.63rem;color:var(--text-muted);border-bottom:1px solid var(--border);text-align:center">Estimez votre projet maintenant &rarr;</div>
+                        <div style="padding:10px 13px;display:flex;align-items:center;gap:9px">
+                            <div style="flex:1;min-width:0">
+                                <div style="font-size:0.53rem;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);font-weight:700">Formulaire</div>
+                                <div style="font-size:0.68rem;font-weight:700;color:var(--text);line-height:1.25">Pompe à chaleur air-air</div>
+                            </div>
+                            <span style="font-size:0.62rem;font-weight:700;background:var(--surface-soft);border:1px solid var(--border);padding:5px 10px;border-radius:6px;white-space:nowrap;color:var(--text)">Obtenir un devis</span>
+                        </div>
+                        
+                    </div>
+                    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+                        <div style="padding:11px 13px 9px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)">
+                            <div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#7CB1C4,#5A98AE);flex-shrink:0"></div>
+                            <div style="flex:1;min-width:0">
+                                <div style="font-size:0.7rem;font-weight:800;color:var(--text);line-height:1.1">naoenergy</div>
+                                <div style="font-size:0.58rem;color:var(--text-muted)">Sponsorisé</div>
+                            </div>
+                            <span style="font-size:0.55rem;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;background:#5A98AE22;color:#5A98AE;padding:3px 7px;border-radius:100px;white-space:nowrap">Été 2025</span>
+                        </div>
+                        <div style="padding:11px 13px;font-size:0.68rem;color:var(--text-body);line-height:1.55">😊 Rafraîchissez votre maison avec le climatiseur Mitsubishi MSZ-LN. Facile d'installation et idéal en toute saison, il chauffe votre maison en hiver et la rafraîchit en été.<br><br>✅ 4 coloris · Silencieux · Filtration ultra-performante · Design · Classe A+++ · Télécommande infrarouge · Capteur 3D<br><br>🌱 Respirez mieux et consommez moins. #durablementdifferent</div>
+                        <div style="background:#8A7A6B;padding:16px 14px;color:#fff">
+                            <div style="font-size:0.55rem;opacity:0.65;letter-spacing:0.4px;margin-bottom:5px">Pompe à chaleur air-air Mitsubishi MSZ-LN</div>
+                            <div style="font-size:0.92rem;font-weight:800;line-height:1.25">Un air plus pur, plus sain.</div>
+                            <div style="display:flex;flex-wrap:wrap;gap:5px;margin:9px 0 0"><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">Confort thermique optimal en toute saison</span></div>
+                            <div style="margin-top:11px;font-size:0.58rem;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.25);padding:4px 9px;border-radius:5px;display:inline-block">Frais d'installation offerts jusqu'au 31 août 2025</div>
+                        </div>
+                        <div style="padding:8px 13px;font-size:0.63rem;color:var(--text-muted);border-bottom:1px solid var(--border);text-align:center">Demander mon offre maintenant &rarr;</div>
+                        <div style="padding:10px 13px;display:flex;align-items:center;gap:9px">
+                            <div style="flex:1;min-width:0">
+                                <div style="font-size:0.53rem;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);font-weight:700">Formulaire</div>
+                                <div style="font-size:0.68rem;font-weight:700;color:var(--text);line-height:1.25">Climatiseur Mitsubishi MSZ-LN</div>
+                            </div>
+                            <span style="font-size:0.62rem;font-weight:700;background:var(--surface-soft);border:1px solid var(--border);padding:5px 10px;border-radius:6px;white-space:nowrap;color:var(--text)">Obtenir un devis</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin:20px 0 8px">Juin 2026 &mdash; 22,23 € la demande &middot; à remettre en ligne telles quelles</div>
+                <div class="crea-grid crea-grid-3">
+                    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+                        <div style="padding:11px 13px 9px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)">
+                            <div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#7CB1C4,#5A98AE);flex-shrink:0"></div>
+                            <div style="flex:1;min-width:0">
+                                <div style="font-size:0.7rem;font-weight:800;color:var(--text);line-height:1.1">naoenergy</div>
+                                <div style="font-size:0.58rem;color:var(--text-muted)">Sponsorisé</div>
+                            </div>
+                            <span style="font-size:0.55rem;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;background:#2A8F4D22;color:#2A8F4D;padding:3px 7px;border-radius:100px;white-space:nowrap">Juin 2026</span>
+                        </div>
+                        <div style="padding:11px 13px;font-size:0.68rem;color:var(--text-body);line-height:1.55"><strong style="color:#2A8F4D">Vous avez une installation solaire en Suisse romande</strong> et vous souhaitez rafraîchir votre intérieur cet été ?<br>Optez pour le climatiseur réversible Mitsubishi chez naoenergy. Une solution économique et intelligente pour chauffer en hiver et rafraîchir en été.</div>
+                        <div style="background:#2A2A2C;padding:16px 14px;color:#fff">
+                            <div style="font-size:0.55rem;opacity:0.65;letter-spacing:0.4px;margin-bottom:5px">Pompe à chaleur air-air Mitsubishi MSZ-LN</div>
+                            <div style="font-size:0.92rem;font-weight:800;line-height:1.25">Rafraîchissez votre été,<br>avec la pompe à chaleur air-air.</div>
+                            <div style="display:flex;flex-wrap:wrap;gap:5px;margin:9px 0 0"><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">Classe A+++</span><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">SCOP jusqu'à 5,2</span><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">Économies toute l'année</span><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">Rafraîchit en été</span><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">Chauffe en hiver</span></div>
+                            <div style="margin-top:11px;font-size:0.58rem;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.25);padding:4px 9px;border-radius:5px;display:inline-block">Frais d'installation offerts jusqu'au 30 juin</div>
+                        </div>
+                        <div style="padding:8px 13px;font-size:0.63rem;color:var(--text-muted);border-bottom:1px solid var(--border);text-align:center">Demander mon offre maintenant &rarr;</div>
+                        <div style="padding:10px 13px;display:flex;align-items:center;gap:9px">
+                            <div style="flex:1;min-width:0">
+                                <div style="font-size:0.53rem;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);font-weight:700">Formulaire</div>
+                                <div style="font-size:0.68rem;font-weight:700;color:var(--text);line-height:1.25">Pompe à chaleur air-air Mitsubishi</div>
+                            </div>
+                            <span style="font-size:0.62rem;font-weight:700;background:var(--surface-soft);border:1px solid var(--border);padding:5px 10px;border-radius:6px;white-space:nowrap;color:var(--text)">Obtenir un devis</span>
+                        </div>
+                        <div style="font-size:0.66rem;color:#2A8F4D;font-weight:700;margin-top:9px;padding-top:8px;border-top:1px dashed var(--border)">🎯 Le filtre est dans la 1<sup>re</sup> ligne du texte</div>
+                    </div>
+                    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+                        <div style="padding:11px 13px 9px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)">
+                            <div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#7CB1C4,#5A98AE);flex-shrink:0"></div>
+                            <div style="flex:1;min-width:0">
+                                <div style="font-size:0.7rem;font-weight:800;color:var(--text);line-height:1.1">naoenergy</div>
+                                <div style="font-size:0.58rem;color:var(--text-muted)">Sponsorisé</div>
+                            </div>
+                            <span style="font-size:0.55rem;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;background:#2A8F4D22;color:#2A8F4D;padding:3px 7px;border-radius:100px;white-space:nowrap">Juin 2026</span>
+                        </div>
+                        <div style="padding:11px 13px;font-size:0.68rem;color:var(--text-body);line-height:1.55">Élégante et performante, la pompe à chaleur air-air Mitsubishi MSZ-LN rafraîchit votre intérieur l'été et le chauffe l'hiver.<br><strong style="color:#2A8F4D">Installation dans les cantons de Vaud, Valais, Neuchâtel et Fribourg en présence d'une installation solaire.</strong><br><br>🎁 Frais d'installation offerts jusqu'au 30 juin. Contactez nos experts.</div>
+                        <div style="background:#A9C9DC;padding:16px 14px;color:#1F3742">
+                            <div style="font-size:0.55rem;opacity:0.65;letter-spacing:0.4px;margin-bottom:5px">Pompe à chaleur air-air Mitsubishi MSZ-LN</div>
+                            <div style="font-size:0.92rem;font-weight:800;line-height:1.25">Rafraîchit en été · Chauffe en hiver</div>
+                            <div style="display:flex;flex-wrap:wrap;gap:5px;margin:9px 0 0"><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#1F3742;padding:2px 7px;border-radius:100px;white-space:nowrap">Ultra silencieux</span><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#1F3742;padding:2px 7px;border-radius:100px;white-space:nowrap">Économies d'énergie</span><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#1F3742;padding:2px 7px;border-radius:100px;white-space:nowrap">Classe A+++</span><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#1F3742;padding:2px 7px;border-radius:100px;white-space:nowrap">Pilotage à distance</span></div>
+                            <div style="margin-top:11px;font-size:0.58rem;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.25);padding:4px 9px;border-radius:5px;display:inline-block">Frais d'installation offerts jusqu'au 30 juin</div>
+                        </div>
+                        <div style="padding:8px 13px;font-size:0.63rem;color:var(--text-muted);border-bottom:1px solid var(--border);text-align:center">Demander une offre maintenant &rarr;</div>
+                        <div style="padding:10px 13px;display:flex;align-items:center;gap:9px">
+                            <div style="flex:1;min-width:0">
+                                <div style="font-size:0.53rem;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);font-weight:700">Formulaire</div>
+                                <div style="font-size:0.68rem;font-weight:700;color:var(--text);line-height:1.25">Rafraîchissez votre intérieur</div>
+                            </div>
+                            <span style="font-size:0.62rem;font-weight:700;background:var(--surface-soft);border:1px solid var(--border);padding:5px 10px;border-radius:6px;white-space:nowrap;color:var(--text)">Obtenir un devis</span>
+                        </div>
+                        <div style="font-size:0.66rem;color:#2A8F4D;font-weight:700;margin-top:9px;padding-top:8px;border-top:1px dashed var(--border)">🎯 Zones + prérequis solaire annoncés dans le texte</div>
+                    </div>
+                    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden">
+                        <div style="padding:11px 13px 9px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border)">
+                            <div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#7CB1C4,#5A98AE);flex-shrink:0"></div>
+                            <div style="flex:1;min-width:0">
+                                <div style="font-size:0.7rem;font-weight:800;color:var(--text);line-height:1.1">naoenergy</div>
+                                <div style="font-size:0.58rem;color:var(--text-muted)">Sponsorisé</div>
+                            </div>
+                            <span style="font-size:0.55rem;text-transform:uppercase;letter-spacing:0.6px;font-weight:800;background:#2A8F4D22;color:#2A8F4D;padding:3px 7px;border-radius:100px;white-space:nowrap">Juin 2026</span>
+                        </div>
+                        <div style="padding:11px 13px;font-size:0.68rem;color:var(--text-body);line-height:1.55">Le climatiseur réversible intelligent pour votre maison <strong style="color:#2A8F4D">en Suisse romande</strong> :<br>· classe A+++<br>· SCOP jusqu'à 5,2<br>· pilotage à distance<br>· rafraîchit l'été et chauffe l'hiver<br><br>Contactez les experts naoenergy pour un devis personnalisé.</div>
+                        <div style="background:#3A3F44;padding:16px 14px;color:#fff">
+                            <div style="font-size:0.55rem;opacity:0.65;letter-spacing:0.4px;margin-bottom:5px">Pompe à chaleur air-air Mitsubishi MSZ-LN</div>
+                            <div style="font-size:0.92rem;font-weight:800;line-height:1.25">Le climatiseur intelligent,<br>pour votre maison</div>
+                            <div style="display:flex;flex-wrap:wrap;gap:5px;margin:9px 0 0"><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">Classe A+++</span><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">SCOP jusqu'à 5,2</span><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">Rafraîchit en été</span><span style="font-size:0.6rem;background:rgba(255,255,255,0.16);color:#fff;padding:2px 7px;border-radius:100px;white-space:nowrap">Chauffe en hiver</span></div>
+                            <div style="margin-top:11px;font-size:0.58rem;background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.25);padding:4px 9px;border-radius:5px;display:inline-block">Frais d'installation offerts jusqu'au 31 juillet</div>
+                        </div>
+                        <div style="padding:8px 13px;font-size:0.63rem;color:var(--text-muted);border-bottom:1px solid var(--border);text-align:center">Demander une offre maintenant &rarr;</div>
+                        <div style="padding:10px 13px;display:flex;align-items:center;gap:9px">
+                            <div style="flex:1;min-width:0">
+                                <div style="font-size:0.53rem;text-transform:uppercase;letter-spacing:0.6px;color:var(--text-muted);font-weight:700">Formulaire</div>
+                                <div style="font-size:0.68rem;font-weight:700;color:var(--text);line-height:1.25">Climatiseur réversible Mitsubishi</div>
+                            </div>
+                            <span style="font-size:0.62rem;font-weight:700;background:var(--surface-soft);border:1px solid var(--border);padding:5px 10px;border-radius:6px;white-space:nowrap;color:var(--text)">Obtenir un devis</span>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div style="background:rgba(42,143,77,0.09);border-left:3px solid #2A8F4D;border-radius:8px;padding:13px 16px;margin-top:16px;font-size:0.76rem;color:var(--text-body);line-height:1.7">
+                    <strong>Il n'y a pas de nouvelle création à produire.</strong> L'angle « vous avez du solaire, climatisez avec votre propre électricité » existe déjà : c'est celui de juin, et il a produit 44 demandes à 22,23 €. Le travail d'août consiste à <strong>restaurer ces trois textes à l'identique</strong>, remettre le bouton « Obtenir un devis », actualiser le bandeau au 31 août 2026 — et leur redonner une audience assez large pour tenir plus de six semaines.
                 </div>
 
             </div>
 
-            <section class="adsk" id="adsk-meta" data-plateforme="meta">
-                <div class="adsk-head">
-                    <h2>30 derniers jours</h2>
-                    <div class="adsk-maj" id="adsk-meta-maj"></div>
+            <!-- ============================================== -->
+            <!-- ===== SECTION 2 — BUDGET & OBJECTIFS ========= -->
+            <!-- ============================================== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #5A98AE">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;flex-wrap:wrap;gap:8px">
+                    <div style="font-size:0.95rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px">
+                        <span style="background:#5A98AE;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">02</span>
+                        💰 Budget &amp; objectifs
+                    </div>
+                    <span style="background:rgba(90,152,174,0.14);color:#3D7A8F;padding:4px 10px;border-radius:100px;font-size:0.65rem;font-weight:700">Mai 2026 · MAJ 13 mai</span>
                 </div>
-                <div class="adsk-tiles adsk-4" id="adsk-meta-tiles"></div>
-                <div class="adsk-card">
-                    <h3>Demandes Meta par semaine</h3>
-                    <div class="adsk-chart"><canvas id="adsk-meta-semaines"></canvas></div>
+
+                <div class="meta-2col">
+
+                    <!-- ─────────── COLONNE GAUCHE : BUDGET ─────────── -->
+                    <div>
+                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#5A98AE;font-weight:800;margin-bottom:10px">💰 Budget</div>
+
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                            <div style="padding:14px 16px;background:var(--surface-soft);border-radius:10px">
+                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Budget total mois</div>
+                                <div style="font-size:1.6rem;font-weight:800;color:var(--text)">2 500 <span style="font-size:0.85rem;color:var(--text-muted);font-weight:600">CHF</span></div>
+                                <div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">enveloppe validée</div>
+                            </div>
+                            <div style="padding:14px 16px;background:rgba(90,152,174,0.08);border-radius:10px;border:1px solid rgba(90,152,174,0.28)">
+                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:#3D7A8F;font-weight:700;margin-bottom:6px">Objectif de campagne</div>
+                                <div style="font-size:1.05rem;font-weight:800;color:#3D7A8F;line-height:1.25;margin-top:3px">Génération<br>de leads</div>
+                                <div style="font-size:0.68rem;color:var(--text-muted);margin-top:6px">formulaire instantané</div>
+                            </div>
+                        </div>
+
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin:18px 0 8px;padding-top:14px;border-top:1px dashed var(--border)">Budget par produit</div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">
+                            <div style="padding:13px 15px;background:rgba(42,143,77,0.08);border-radius:10px;border:1px solid rgba(42,143,77,0.25)">
+                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:6px">Produit principal</div>
+                                <div style="font-size:1.45rem;font-weight:800;color:#2A8F4D">50 <span style="font-size:0.78rem;font-weight:600">&euro; / jour</span></div>
+                                <div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">produit de saison</div>
+                            </div>
+                            <div style="padding:13px 15px;background:var(--surface-soft);border-radius:10px">
+                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Produit secondaire</div>
+                                <div style="font-size:1.45rem;font-weight:800;color:var(--text)">30 <span style="font-size:0.78rem;color:var(--text-muted);font-weight:600">&euro; / jour</span></div>
+                                <div style="font-size:0.68rem;color:var(--text-muted);margin-top:4px">en continu</div>
+                            </div>
+                        </div>
+                        <div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:12px;text-align:center">80 &euro; / jour au total &middot; environ 2 480 &euro; sur le mois</div>
+
+                        <table style="width:100%;border-collapse:collapse;font-size:0.74rem">
+                            <thead>
+                                <tr style="background:var(--surface-soft)">
+                                    <th style="text-align:left;padding:8px 11px;font-weight:700;color:var(--text-muted);font-size:0.58rem;text-transform:uppercase;letter-spacing:0.8px">Saison</th>
+                                    <th style="text-align:left;padding:8px 11px;font-weight:700;color:#2A8F4D;font-size:0.58rem;text-transform:uppercase;letter-spacing:0.8px">Principal &middot; 50 &euro;</th>
+                                    <th style="text-align:left;padding:8px 11px;font-weight:700;color:var(--text-muted);font-size:0.58rem;text-transform:uppercase;letter-spacing:0.8px">Secondaire &middot; 30 &euro;</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom:1px solid var(--border)">
+                                    <td style="padding:8px 11px;font-weight:600">Printemps &ndash; &eacute;t&eacute;</td>
+                                    <td style="padding:8px 11px">&#10052;&#65039; Climatisation / PAC air-air</td>
+                                    <td style="padding:8px 11px">&#128267; Batterie</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:8px 11px;font-weight:600">Automne &ndash; hiver</td>
+                                    <td style="padding:8px 11px">&#128293; Pompe &agrave; chaleur</td>
+                                    <td style="padding:8px 11px">&#128267; Batterie</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.6;margin-top:10px;padding:10px 12px;background:rgba(90,152,174,0.08);border-left:3px solid #5A98AE;border-radius:8px">
+                            La <strong>batterie</strong> reste en second produit toute l'ann&eacute;e : c'est le meilleur co&ucirc;t par demande du compte (<strong>31,38 &euro;</strong>) et le seul r&eacute;gulier sur les cinq mois. Le produit principal, lui, suit la saison.
+                        </div>
+                    </div>
+
+                    <!-- ─────────── COLONNE DROITE : OBJECTIFS ─────────── -->
+                    <div>
+                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#3FB76C;font-weight:800;margin-bottom:10px">🎯 Objectifs</div>
+
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:8px">Benchmarks CPL cibles</div>
+                        <table style="width:100%;border-collapse:collapse;font-size:0.78rem;margin-bottom:16px">
+                            <thead>
+                                <tr style="background:var(--surface-soft)">
+                                    <th style="text-align:left;padding:9px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">Produit</th>
+                                    <th style="text-align:right;padding:9px 12px;font-weight:700;color:var(--text-muted);font-size:0.62rem;text-transform:uppercase;letter-spacing:1px">Coût par lead</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom:1px solid var(--border)">
+                                    <td style="padding:9px 12px;font-weight:600">🔋 Batterie</td>
+                                    <td style="padding:9px 12px;text-align:right"><strong style="color:var(--text)">25 — 35 CHF</strong></td>
+                                </tr>
+                                <tr style="border-bottom:1px solid var(--border)">
+                                    <td style="padding:9px 12px;font-weight:600">🔥 PAC</td>
+                                    <td style="padding:9px 12px;text-align:right"><strong style="color:var(--text)">35 — 45 CHF</strong></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:9px 12px;font-weight:600">☀️ PV</td>
+                                    <td style="padding:9px 12px;text-align:right"><strong style="color:var(--text)">à calibrer</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:8px;padding-top:10px;border-top:1px dashed var(--border)">KPIs funnel</div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+                            <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px">
+                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Lead → RDV</div>
+                                <div style="font-size:1.3rem;font-weight:800;color:var(--text)">45%</div>
+                                <div style="font-size:0.68rem;color:#2A8F4D;margin-top:4px">🟢 Excellent (industrie 20-30%)</div>
+                            </div>
+                            <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px">
+                                <div style="font-size:0.6rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:6px">Panier moyen</div>
+                                <div style="font-size:1.3rem;font-weight:800;color:var(--text)">35 000 <span style="font-size:0.7rem;color:var(--text-muted);font-weight:600">CHF</span></div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="adsk-grid" id="adsk-meta-ops"></div>
-            </section>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- ===== SECTION 3 — CRÉATIVES & ANGLES ========= -->
+            <!-- ============================================== -->
+            <div class="card" style="padding:22px 26px;margin-bottom:16px;border-left:4px solid #E8A82E">
+                <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+                    <div style="font-size:0.95rem;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px">
+                        <span style="background:#E8A82E;color:#fff;font-size:0.7rem;padding:4px 10px;border-radius:6px;letter-spacing:1px">03</span>
+                        🔎 Veille concurrence Suisse romande
+                    </div>
+                </div>
+
+                <!-- Pulse marché -->
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#B8821F;font-weight:800;margin-bottom:8px">Pulse marché (mai 2026)</div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));gap:10px;margin-bottom:14px">
+                    <div style="padding:12px 14px;background:rgba(63,183,108,0.10);border-radius:8px;border-left:3px solid #3FB76C">
+                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.8px;color:#2A8F4D;font-weight:700;margin-bottom:4px">🟢 Actifs</div>
+                        <div style="font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Helvetia Energy</strong> (12 ads · 10 mois)<br><strong style="color:var(--text)">Habit'Avenir</strong> (11 ads · 3 mois)<br><strong style="color:var(--text)">Solstis</strong> (1 ad · fresh)</div>
+                    </div>
+                    <div style="padding:12px 14px;background:rgba(120,120,120,0.08);border-radius:8px;border-left:3px solid var(--text-muted)">
+                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.8px;color:var(--text-muted);font-weight:700;margin-bottom:4px">⚫ Silencieux</div>
+                        <div style="font-size:0.74rem;color:var(--text-body);line-height:1.5">Helion · Younergy · Sunkraft<br><span style="color:var(--text-muted);font-style:italic">0 ad actif</span></div>
+                    </div>
+                    <div style="padding:12px 14px;background:rgba(238,77,77,0.08);border-radius:8px;border-left:3px solid #EE4D4D">
+                        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.8px;color:#C44;font-weight:700;margin-bottom:4px">🔴 Sortis du jeu</div>
+                        <div style="font-size:0.74rem;color:var(--text-body);line-height:1.5"><strong style="color:var(--text)">Tera Solar</strong><br><span style="color:var(--text-muted);font-style:italic">29 ads stoppées en 2025</span></div>
+                    </div>
+                </div>
+                <div style="padding:10px 14px;background:rgba(232,168,46,0.10);border-radius:8px;font-size:0.72rem;color:var(--text-body);line-height:1.5;margin-bottom:14px"><strong style="color:#B8821F">📍 Lecture stratégique :</strong> marché en consolidation. Habit'Avenir attaque agressivement (low-cost), Helvetia tient le milieu (10 mois online = winner ad), Solstis (re)démarre (premium 30 ans). NaoEnergy a une fenêtre claire pour s'imposer en <strong>premium qualité 10 ans</strong>.</div>
+
+                <!-- Format dominant -->
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#B8821F;font-weight:800;margin-bottom:8px;padding-top:8px;border-top:1px dashed var(--border)">Format dominant</div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));gap:10px;margin-bottom:14px">
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;text-align:center">
+                        <div style="font-size:1.5rem;margin-bottom:4px">🎬</div>
+                        <div style="font-size:0.78rem;font-weight:800;color:var(--text)">Vidéo 100%</div>
+                        <div style="font-size:0.66rem;color:var(--text-muted);margin-top:2px">Tous les concurrents actifs</div>
+                    </div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;text-align:center">
+                        <div style="font-size:1.5rem;margin-bottom:4px">⏱️</div>
+                        <div style="font-size:0.78rem;font-weight:800;color:var(--text)">15-90 sec</div>
+                        <div style="font-size:0.66rem;color:var(--text-muted);margin-top:2px">Reels 15-30s · Feed 60-90s</div>
+                    </div>
+                    <div style="padding:12px 14px;background:var(--surface-soft);border-radius:8px;text-align:center">
+                        <div style="font-size:1.5rem;margin-bottom:4px">📐</div>
+                        <div style="font-size:0.78rem;font-weight:800;color:var(--text)">1:1 + 9:16</div>
+                        <div style="font-size:0.66rem;color:var(--text-muted);margin-top:2px">Square Feed · Vertical Reels</div>
+                    </div>
+                </div>
+
+                <!-- Top 7 angles d'accroche -->
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#B8821F;font-weight:800;margin-bottom:8px;padding-top:8px;border-top:1px dashed var(--border)">Top 7 angles d'accroche qui marchent</div>
+                <table style="width:100%;border-collapse:collapse;font-size:0.74rem;margin-bottom:14px">
+                    <thead>
+                        <tr style="background:var(--surface-soft)">
+                            <th style="text-align:left;padding:8px 10px;font-weight:700;color:var(--text-muted);font-size:0.6rem;text-transform:uppercase;letter-spacing:1px">Angle</th>
+                            <th style="text-align:left;padding:8px 10px;font-weight:700;color:var(--text-muted);font-size:0.6rem;text-transform:uppercase;letter-spacing:1px">Exemple</th>
+                            <th style="text-align:left;padding:8px 10px;font-weight:700;color:var(--text-muted);font-size:0.6rem;text-transform:uppercase;letter-spacing:1px">Source</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;font-weight:600">💰 Prix bas concret</td><td style="padding:8px 10px;color:var(--text-body)">"Produisez votre électricité dès 7 990 CHF"</td><td style="padding:8px 10px;color:var(--text-muted)">Habit'Avenir</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;font-weight:600">🛡 Réduction du risque</td><td style="padding:8px 10px;color:var(--text-body)">"0 acompte, garantie 25 ans"</td><td style="padding:8px 10px;color:var(--text-muted)">Habit'Avenir</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;font-weight:600">🔑 Clé en main</td><td style="padding:8px 10px;color:var(--text-body)">"Sans sous-traitance, sans stress"</td><td style="padding:8px 10px;color:var(--text-muted)">Habit'Avenir</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;font-weight:600">✅ Qualification audience</td><td style="padding:8px 10px;color:var(--text-body)">"Propriétaire CH ?" → simulateur</td><td style="padding:8px 10px;color:var(--text-muted)">Helvetia Energy</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;font-weight:600">📍 Preuve sociale locale</td><td style="padding:8px 10px;color:var(--text-body)">"+20 000 panneaux près de chez vous"</td><td style="padding:8px 10px;color:var(--text-muted)">Tera Solar</td></tr>
+                        <tr style="border-bottom:1px solid var(--border)"><td style="padding:8px 10px;font-weight:600">📊 Économies chiffrées</td><td style="padding:8px 10px;color:var(--text-body)">"Jusqu'à 50% / 70% sur vos factures"</td><td style="padding:8px 10px;color:var(--text-muted)">Helvetia · Tera</td></tr>
+                        <tr><td style="padding:8px 10px;font-weight:600">🏛 Autorité ancienneté</td><td style="padding:8px 10px;color:var(--text-body)">"30 ans · fierté équipes"</td><td style="padding:8px 10px;color:var(--text-muted)">Solstis</td></tr>
+                    </tbody>
+                </table>
+
+                <!-- CTA dominants -->
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#B8821F;font-weight:800;margin-bottom:8px;padding-top:8px;border-top:1px dashed var(--border)">CTA dominants</div>
+                <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px">
+                    <span style="background:rgba(232,168,46,0.14);color:#B8821F;padding:6px 12px;border-radius:100px;font-size:0.72rem;font-weight:700">"Learn more"</span>
+                    <span style="background:rgba(232,168,46,0.14);color:#B8821F;padding:6px 12px;border-radius:100px;font-size:0.72rem;font-weight:700">"Simulez vos économies"</span>
+                    <span style="background:rgba(232,168,46,0.14);color:#B8821F;padding:6px 12px;border-radius:100px;font-size:0.72rem;font-weight:700">"Demandez votre devis"</span>
+                </div>
+                <div style="padding:10px 14px;background:rgba(63,183,108,0.10);border-radius:8px;font-size:0.72rem;color:var(--text-body);line-height:1.5;margin-bottom:14px"><strong style="color:#2A8F4D">💡 Insight :</strong> le <strong>simulateur</strong> bat le devis classique sur ce marché — pré-qualification + engagement progressif. NaoEnergy devrait avoir un <strong>simulateur d'économies</strong> en page d'atterrissage.</div>
+
+                <!-- Reco 5 angles à tester pour NaoEnergy -->
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#B8821F;font-weight:800;margin-bottom:8px;padding-top:8px;border-top:1px dashed var(--border)">5 angles à tester pour NaoEnergy</div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:12px;margin-bottom:14px">
+                    <div style="padding:14px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #5A98AE">
+                        <div style="font-size:0.7rem;font-weight:800;color:var(--text);margin-bottom:6px">🎂 Angle #1 — 10 ans NaoEnergy</div>
+                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">"10 ans d'expertise solaire en Suisse romande" — autorité + ancrage local. <strong style="color:var(--text)">Différenciateur unique</strong> à exploiter en 2026.</div>
+                    </div>
+                    <div style="padding:14px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #3FB76C">
+                        <div style="font-size:0.7rem;font-weight:800;color:var(--text);margin-bottom:6px">🛡 Angle #2 — Risque zéro premium</div>
+                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">"Garantie 25 ans · partenaires Enphase, Longi, Buderus" — différencier vs Habit'Avenir low-cost en jouant la <strong style="color:var(--text)">qualité partenaires</strong>.</div>
+                    </div>
+                    <div style="padding:14px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #E8A82E">
+                        <div style="font-size:0.7rem;font-weight:800;color:var(--text);margin-bottom:6px">✅ Angle #3 — Qualification GE/VD</div>
+                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">"Propriétaire à Genève ou Vaud ?" → simulateur d'économies. <strong style="color:var(--text)">Filtre les locataires</strong>, augmente la qualité du lead.</div>
+                    </div>
+                    <div style="padding:14px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #EE4D4D">
+                        <div style="font-size:0.7rem;font-weight:800;color:var(--text);margin-bottom:6px">📍 Angle #4 — Preuve sociale locale</div>
+                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">"X installations en Suisse romande · 3 agences à Genève, Crans, Renens" — concurrence Tera sur la <strong style="color:var(--text)">proximité</strong>.</div>
+                    </div>
+                    <div style="padding:14px;background:var(--surface-soft);border-radius:10px;border-top:3px solid #6F3EAA">
+                        <div style="font-size:0.7rem;font-weight:800;color:var(--text);margin-bottom:6px">⚡ Angle #5 — PV + autoconsommation</div>
+                        <div style="font-size:0.7rem;color:var(--text-body);line-height:1.5">Tarifs minimum rachat 2026 → focus <strong style="color:var(--text)">"Auto-consommez 70%+"</strong>. Anticipe le shift marché que les concurrents n'ont pas encore intégré.</div>
+                    </div>
+                </div>
+
+                <!-- À éviter -->
+                <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:1px;color:#C44;font-weight:800;margin-bottom:8px;padding-top:8px;border-top:1px dashed var(--border)">⛔ À ne PAS faire (anti-patterns)</div>
+                <ul style="margin:0 0 0 18px;padding:0;font-size:0.74rem;color:var(--text-body);line-height:1.7">
+                    <li>❌ <strong>Concurrencer Habit'Avenir sur le prix bas</strong> (7 990 CHF) — NaoEnergy = positionnement premium 35k panier, autre cible</li>
+                    <li>❌ <strong>Pubs purement image</strong> — 100% des concurrents actifs sont en vidéo, l'image seule sous-performe en BTP/énergie</li>
+                    <li>❌ <strong>Hooks génériques</strong> ("Passez au solaire") sans angle spécifique — manque de scroll-stop</li>
+                    <li>❌ <strong>CTA "Demandez un devis"</strong> en cold — préférer "Simulez vos économies" (engagement progressif)</li>
+                    <li>❌ <strong>Une seule créa par adset</strong> — Meta a besoin de 3-5 variantes pour optimiser</li>
+                </ul>
+            </div>
+
+            <!-- ============================================== -->
+            <!-- ===== SECTION 4 — ACTIONS PAR DATE (MOVED) ==== -->
+            <!-- Journal Actions par date moved to Vue d'ensemble (panel-overview) for unified view -->
+            <!-- ============================================== -->
 
         </div>
 
@@ -9494,8 +10236,9 @@ Sitemap: https://naoenergy.ch/sitemap_index.xml</pre>
 
 <!-- ============ Bloc KPI Ads — donnees + rendu (Chart.js) ============ -->
 <script>
+
 var ADS_DONNEES = {
-  maj: { sheet: "7 sept. 2026", meta: "juillet (dernier mois complet)", google: "23 juil. → 21 août" },
+  maj: { sheet: "7 sept. 2026", meta: "4 août 2026", google: "21 août 2026" },
 
   /* 30 derniers jours (8 août -> 7 sept) vs 30 precedents — Sheet, formulaires + appels */
   j30: {
@@ -9556,111 +10299,149 @@ var ADS_DONNEES = {
     partImpressions: null
   }
 };
+
 (function () {
   if (typeof Chart === 'undefined') return;
   var D = ADS_DONNEES;
-  var C = { meta: '#6F3EAA', metaSoft: 'rgba(111,62,170,.30)', google: '#4285F4', googleSoft: 'rgba(66,133,244,.30)',
-            ok: '#2A8F4D', bad: '#E85D4A' };
+  var C = { meta: '#6F3EAA', google: '#4285F4', autre: '#B4BDC6', ok: '#2A8F4D', warn: '#E8A33D', bad: '#E85D4A' };
   var fait = {};
 
-  function fmt(n) { return n == null ? '—' : String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+  function pct(a, b) { return b ? Math.round(100 * a / b) : null; }
   function tend(now, avant) {
     if (!avant) return '';
     var d = Math.round(100 * (now - avant) / avant);
-    return '<b class="' + (d >= 0 ? 'adsk-up' : 'adsk-down') + '">' + (d >= 0 ? '▲ +' : '▼ ') + d + ' %</b> vs 30 j précédents';
+    var cls = d >= 0 ? 'adsk-up' : 'adsk-down';
+    return '<b class="' + cls + '">' + (d >= 0 ? '▲ +' : '▼ ') + d + ' %</b> vs 30 j précédents (' + avant + ')';
   }
-  function tuile(l, v, s) { return '<div class="adsk-tile"><div class="l">' + l + '</div><div class="v">' + v + '</div><div class="s">' + s + '</div></div>'; }
-  function somme(a) { return a.reduce(function (x, y) { return x + y; }, 0); }
+  function fmt(n) { return n == null ? '—' : String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+  function tuile(l, v, s, cls) {
+    return '<div class="adsk-tile ' + (cls || '') + '"><div class="l">' + l + '</div><div class="v">' + v + '</div><div class="s">' + s + '</div></div>';
+  }
+
+  function tuiles(p) {
+    var j = D.j30[p], ex = D.exploitables[p], dep = D.depense[p];
+    var h = '';
+    h += tuile('Leads', j.leads, tend(j.leads, j.avant));
+    var e = pct(ex.ok, ex.renseigne);
+    h += tuile('Leads exploitables', (e == null ? '—' : e + '<small>%</small>'),
+               ex.renseigne >= 20 ? ('maison, sur ' + ex.renseigne + ' fiches renseignées') : ('<span class="adsk-warn">' + ex.renseigne + ' fiches seulement — non significatif</span>'),
+               (e != null && e < 85 && ex.renseigne >= 20) ? '' : '');
+    if (p === 'google') {
+      h += tuile('Dépense', fmt(dep.j30) + '<small>CHF</small>', 'fenêtre mesurée ' + dep.fenetre);
+      h += tuile('Coût par lead', '—', 'sur le mois aligné — <b>à compléter</b> avec le rapport mensuel', 'is-pending');
+      h += tuile('Coût par conversion Ads', fmt(dep.j30 / dep.conversionsAds) + '<small>CHF</small>', dep.conversionsAds + ' conversions comptées par Google, même fenêtre');
+    } else {
+      h += tuile('Dépense', fmt(dep.montant) + '<small>€</small>', 'dernier mois complet connu : <b>' + dep.moisRef + '</b>');
+      h += tuile('Coût par lead', (dep.montant / dep.leadsMeta).toFixed(2).replace('.', ',') + '<small>€</small>', dep.leadsMeta + ' demandes Meta en ' + dep.moisRef);
+      h += tuile('Août · septembre', '—', 'dépense Meta <b>à compléter</b> depuis Ads Manager', 'is-pending');
+    }
+    document.getElementById('adsk-' + p + '-tiles').innerHTML = h;
+    document.getElementById('adsk-' + p + '-maj').innerHTML =
+      'Leads : Sheet au <b>' + D.maj.sheet + '</b> · dépense ' + (p === 'meta' ? 'Meta au <b>' + D.maj.meta + '</b>' : 'Google au <b>' + D.maj.google + '</b>');
+  }
 
   var base = { responsive: true, maintainAspectRatio: false,
                plugins: { legend: { labels: { boxWidth: 10, font: { size: 11 } } }, tooltip: { mode: 'index', intersect: false } },
                scales: { x: { grid: { display: false }, ticks: { font: { size: 11 } } },
                          y: { beginAtZero: true, grid: { color: 'rgba(20,40,80,.07)' }, ticks: { font: { size: 11 }, precision: 0 } } } };
   function opts(extra) { var o = JSON.parse(JSON.stringify(base)); for (var k in (extra || {})) o[k] = extra[k]; return o; }
-  function carte(id, titre) { return '<div class="adsk-card"><h3>' + titre + '</h3><div class="adsk-chart sm"><canvas id="' + id + '"></canvas></div></div>'; }
 
-  /* ───────── META ───────── */
-  function meta() {
-    var j = D.j30.meta, ex = D.exploitables.meta, dep = D.depense.meta, m = D.meta, hc = m.horsCible;
-    document.getElementById('adsk-meta-tiles').innerHTML =
-      tuile('Demandes', j.leads, tend(j.leads, j.avant)) +
-      tuile('Demandes exploitables', Math.round(100 * ex.ok / ex.renseigne) + '<small>%</small>', 'habitent une maison') +
-      tuile('Dépense', fmt(dep.montant) + '<small>€</small>', '<span class="adsk-stale">juillet</span> — août et septembre pas encore relevés') +
-      tuile('Coût par demande', (dep.montant / dep.leadsMeta).toFixed(0) + '<small>€</small>', '<span class="adsk-stale">juillet</span> · ' + dep.leadsMeta + ' demandes');
-    document.getElementById('adsk-meta-maj').innerHTML = 'Demandes à jour au <b>' + D.maj.sheet + '</b> · dépense : <b>' + D.maj.meta + '</b>';
+  function semaines(p) {
+    new Chart(document.getElementById('adsk-' + p + '-semaines'), { type: 'bar',
+      data: { labels: D.semaines.labels, datasets: [
+        { label: 'Meta', data: D.semaines.meta, backgroundColor: C.meta, stack: 's' },
+        { label: 'Google', data: D.semaines.google, backgroundColor: C.google, stack: 's' },
+        { label: 'Site & SEO', data: D.semaines.autre, backgroundColor: C.autre, stack: 's' } ] },
+      options: opts({ scales: { x: { stacked: true, grid: { display: false } }, y: { stacked: true, beginAtZero: true, ticks: { precision: 0 } } } }) });
+  }
 
-    new Chart(document.getElementById('adsk-meta-semaines'), { type: 'bar',
-      data: { labels: D.semaines.labels, datasets: [{ label: 'Demandes', data: D.semaines.meta, backgroundColor: C.meta, borderRadius: 4 }] },
-      options: opts({ plugins: { legend: { display: false } } }) });
+  function produits(p) {
+    new Chart(document.getElementById('adsk-' + p + '-produits'), { type: 'bar',
+      data: { labels: D.produits.labels, datasets: [
+        { label: 'Meta', data: D.produits.meta, backgroundColor: C.meta, stack: 's' },
+        { label: 'Google', data: D.produits.google, backgroundColor: C.google, stack: 's' },
+        { label: 'Site & SEO', data: D.produits.autre, backgroundColor: C.autre, stack: 's' } ] },
+      options: opts({ indexAxis: 'y', scales: { x: { stacked: true, beginAtZero: true, ticks: { precision: 0 } }, y: { stacked: true, grid: { display: false } } } }) });
+  }
 
+  function carte(id, titre, why, sm) {
+    return '<div class="adsk-card"><h3>' + titre + '</h3><p class="adsk-why">' + why + '</p><div class="adsk-chart' + (sm ? ' sm' : '') + '"><canvas id="' + id + '"></canvas></div></div>';
+  }
+
+  function opsMeta() {
+    var m = D.meta, hc = m.horsCible;
     document.getElementById('adsk-meta-ops').innerHTML =
-      carte('adsk-meta-cpl', 'Coût par demande, mois par mois') +
-      carte('adsk-meta-vol', 'Dépense et demandes, mois par mois') +
-      carte('adsk-meta-prod', 'Demandes par produit') +
-      carte('adsk-meta-hc', 'Demandes hors cible, par campagne');
+      carte('adsk-meta-cpl', 'Coût par lead, mois par mois', 'Ce que coûte une demande. Sous 35 € c\'est bon, au-dessus de 45 € il faut agir.', true) +
+      carte('adsk-meta-hc', 'Demandes hors cible, par campagne', 'Appartements et locataires : impossibles à équiper. Seuil d\'alerte à 15 %.', true) +
+      carte('adsk-meta-vol', 'Dépense et demandes, mois par mois', 'Si la dépense monte et les demandes stagnent, on paie plus cher.', true) +
+      carte('adsk-meta-prod', 'Demandes Meta par produit', 'Le mix réel : batterie d\'abord, climatisation ensuite.', true);
 
     new Chart(document.getElementById('adsk-meta-cpl'), { type: 'line',
-      data: { labels: m.mois, datasets: [{ label: '€ par demande', data: m.cpl, borderColor: C.meta, backgroundColor: 'rgba(111,62,170,.12)', fill: true, tension: .3, pointRadius: 4 }] },
-      options: opts({ plugins: { legend: { display: false } }, scales: { x: { grid: { display: false } }, y: { beginAtZero: false, suggestedMin: 25, suggestedMax: 50, ticks: { callback: function (v) { return v + ' €'; } } } } }) });
-
-    new Chart(document.getElementById('adsk-meta-vol'), { type: 'bar',
-      data: { labels: m.mois, datasets: [
-        { type: 'bar', label: 'Dépense (€)', data: m.depense, backgroundColor: C.metaSoft, yAxisID: 'y', borderRadius: 4 },
-        { type: 'line', label: 'Demandes', data: m.leads, borderColor: C.meta, backgroundColor: C.meta, tension: .3, pointRadius: 3, yAxisID: 'y2' } ] },
-      options: opts({ scales: { x: { grid: { display: false } }, y: { beginAtZero: true, position: 'left' }, y2: { beginAtZero: true, position: 'right', grid: { display: false }, ticks: { precision: 0 } } } }) });
-
-    new Chart(document.getElementById('adsk-meta-prod'), { type: 'bar',
-      data: { labels: D.produits.labels.slice(0, 3), datasets: [{ label: 'Demandes', data: D.produits.meta.slice(0, 3), backgroundColor: C.meta, borderRadius: 4 }] },
-      options: opts({ indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, ticks: { precision: 0 } }, y: { grid: { display: false } } } }) });
+      data: { labels: m.mois, datasets: [{ label: 'Coût par lead (€)', data: m.cpl, borderColor: C.meta, backgroundColor: 'rgba(111,62,170,.12)', fill: true, tension: .3, pointRadius: 4 }] },
+      options: opts({ plugins: { legend: { display: false }, annotation: undefined }, scales: { x: { grid: { display: false } }, y: { beginAtZero: false, suggestedMin: 25, suggestedMax: 50 } } }) });
 
     var taux = hc.labels.map(function (_, i) { return Math.round(100 * hc.hors[i] / hc.renseigne[i]); });
     new Chart(document.getElementById('adsk-meta-hc'), { type: 'bar',
-      data: { labels: hc.labels, datasets: [{ label: '% hors cible', data: taux, backgroundColor: taux.map(function (t) { return t >= 15 ? C.bad : C.ok; }), borderRadius: 4 }] },
+      data: { labels: hc.labels, datasets: [{ label: '% hors cible', data: taux, backgroundColor: taux.map(function (t) { return t >= 15 ? C.bad : C.ok; }) }] },
       options: opts({ indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, max: 30, ticks: { callback: function (v) { return v + ' %'; } } }, y: { grid: { display: false } } } }) });
+
+    new Chart(document.getElementById('adsk-meta-vol'), { type: 'bar',
+      data: { labels: m.mois, datasets: [
+        { type: 'bar', label: 'Dépense (€)', data: m.depense, backgroundColor: 'rgba(111,62,170,.35)', yAxisID: 'y' },
+        { type: 'line', label: 'Demandes', data: m.leads, borderColor: C.ok, backgroundColor: C.ok, tension: .3, pointRadius: 3, yAxisID: 'y2' } ] },
+      options: opts({ scales: { x: { grid: { display: false } }, y: { beginAtZero: true, position: 'left', ticks: { precision: 0 } }, y2: { beginAtZero: true, position: 'right', grid: { display: false }, ticks: { precision: 0 } } } }) });
+
+    new Chart(document.getElementById('adsk-meta-prod'), { type: 'bar',
+      data: { labels: D.produits.labels.slice(0, 3), datasets: [{ label: 'Demandes Meta', data: D.produits.meta.slice(0, 3), backgroundColor: C.meta }] },
+      options: opts({ indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true, ticks: { precision: 0 } }, y: { grid: { display: false } } } }) });
   }
 
-  /* ───────── GOOGLE ───────── */
-  function google() {
-    var j = D.j30.google, dep = D.depense.google, g = D.google, c = g.campagnes;
-    var totF = somme(g.formulaires), totA = somme(g.appels);
-    document.getElementById('adsk-google-tiles').innerHTML =
-      tuile('Leads', j.leads, tend(j.leads, j.avant)) +
-      tuile('Part des appels', Math.round(100 * totA / (totF + totA)) + '<small>%</small>', totA + ' appels · ' + totF + ' formulaires depuis mai') +
-      tuile('Dépense', fmt(dep.j30) + '<small>CHF</small>', '<span class="adsk-stale">' + dep.fenetre + '</span> — pas encore relevé depuis') +
-      tuile('Coût par conversion', fmt(dep.j30 / dep.conversionsAds) + '<small>CHF</small>', dep.conversionsAds + ' conversions comptées par Google');
-    document.getElementById('adsk-google-maj').innerHTML = 'Leads à jour au <b>' + D.maj.sheet + '</b> · dépense : <b>' + D.maj.google + '</b>';
-
-    new Chart(document.getElementById('adsk-google-semaines'), { type: 'bar',
-      data: { labels: D.semaines.labels, datasets: [{ label: 'Leads', data: D.semaines.google, backgroundColor: C.google, borderRadius: 4 }] },
-      options: opts({ plugins: { legend: { display: false } } }) });
-
+  function opsGoogle() {
+    var g = D.google, c = g.campagnes;
     document.getElementById('adsk-google-ops').innerHTML =
-      carte('adsk-g-fa', 'Formulaires et appels, mois par mois') +
-      carte('adsk-g-camp', 'Leads par campagne');
+      carte('adsk-g-fa', 'Formulaires et appels, mois par mois', 'Google produit plus d\'appels que de formulaires. Ne compter que les formulaires cache la moitié du résultat.', true) +
+      carte('adsk-g-camp', 'Leads par campagne — formulaires + appels', 'Le photovoltaïque convertit presque uniquement par téléphone.', true) +
+      carte('adsk-g-cpl', 'Coût par lead, par campagne', 'À compléter avec la dépense mensuelle du rapport Google Ads.', true) +
+      carte('adsk-g-is', 'Part d\'impressions perdue faute de budget', 'Combien de recherches on rate parce que le budget du jour est épuisé.', true);
 
     new Chart(document.getElementById('adsk-g-fa'), { type: 'bar',
       data: { labels: g.mois, datasets: [
-        { label: 'Formulaires', data: g.formulaires, backgroundColor: C.google, stack: 's', borderRadius: 4 },
-        { label: 'Appels', data: g.appels, backgroundColor: C.googleSoft, stack: 's', borderRadius: 4 } ] },
-      options: opts({ scales: { x: { stacked: true, grid: { display: false } }, y: { stacked: true, beginAtZero: true, ticks: { precision: 0 } } } }) });
+        { label: 'Formulaires', data: g.formulaires, backgroundColor: C.google },
+        { label: 'Appels', data: g.appels, backgroundColor: 'rgba(66,133,244,.35)' } ] },
+      options: opts({ scales: { x: { grid: { display: false } }, y: { beginAtZero: true, ticks: { precision: 0 } } } }) });
 
     new Chart(document.getElementById('adsk-g-camp'), { type: 'bar',
       data: { labels: c.labels, datasets: [
-        { label: 'Formulaires', data: c.formulaires, backgroundColor: C.google, stack: 's', borderRadius: 4 },
-        { label: 'Appels', data: c.appels, backgroundColor: C.googleSoft, stack: 's', borderRadius: 4 } ] },
+        { label: 'Formulaires', data: c.formulaires, backgroundColor: C.google, stack: 's' },
+        { label: 'Appels', data: c.appels, backgroundColor: 'rgba(66,133,244,.35)', stack: 's' } ] },
       options: opts({ indexAxis: 'y', scales: { x: { stacked: true, beginAtZero: true, ticks: { precision: 0 } }, y: { stacked: true, grid: { display: false } } } }) });
+
+    function attente(id, msg) {
+      var cv = document.getElementById(id), w = cv.parentElement;
+      w.innerHTML = '<div style="height:100%;display:flex;align-items:center;justify-content:center;text-align:center;padding:0 20px"><div style="font-size:.72rem;color:#E8A33D;font-weight:600;line-height:1.6">' + msg + '</div></div>';
+    }
+    if (g.depenseMois) { /* rendu a implementer une fois les donnees presentes */ } else {
+      attente('adsk-g-cpl', 'En attente du rapport mensuel Google Ads<br><span style="font-weight:400;color:var(--text-muted)">script « Rapport mensuel tableau de bord », à exécuter en début de mois</span>');
+    }
+    if (g.partImpressions) { } else {
+      attente('adsk-g-is', 'En attente du rapport mensuel Google Ads<br><span style="font-weight:400;color:var(--text-muted)">la campagne Batterie est signalée « limitée par le budget »</span>');
+    }
   }
 
   function rendre(p) {
     if (fait[p]) return;
-    var sec = document.getElementById('adsk-' + p), panel = sec && sec.closest('.panel');
+    var sec = document.getElementById('adsk-' + p);
+    var panel = sec && sec.closest('.panel');
     if (!panel || !panel.classList.contains('active')) return;
     fait[p] = true;
-    if (p === 'meta') meta(); else google();
+    tuiles(p); semaines(p); produits(p);
+    if (p === 'meta') opsMeta(); else opsGoogle();
   }
   ['meta', 'google'].forEach(function (p) {
-    var sec = document.getElementById('adsk-' + p); if (!sec) return;
-    new MutationObserver(function () { rendre(p); }).observe(sec.closest('.panel'), { attributes: true, attributeFilter: ['class'] });
+    var sec = document.getElementById('adsk-' + p);
+    if (!sec) return;
+    var panel = sec.closest('.panel');
+    new MutationObserver(function () { rendre(p); }).observe(panel, { attributes: true, attributeFilter: ['class'] });
     rendre(p);
   });
 })();
@@ -9681,13 +10462,7 @@ function showPanel(target) {
     if (panel) panel.classList.add('active');
     document.querySelectorAll('.nav-item, .nav-child').forEach(n => n.classList.remove('active'));
     const navBtn = document.querySelector('.nav-item[data-target="' + target + '"], .nav-child[data-target="' + target + '"]');
-    if (navBtn) {
-        navBtn.classList.add('active');
-        // le groupe replie s'ouvre pour montrer ou l'on se trouve
-        var __kids = navBtn.closest('.nav-children');
-        var __grp = __kids && __kids.previousElementSibling;
-        if (__grp && __grp.classList.contains('nav-group')) __grp.classList.add('open');
-    }
+    if (navBtn) navBtn.classList.add('active');
     window.scrollTo({ top: 0, behavior: 'smooth' });
     var __m = document.querySelector('main.main');
     if (__m) { __m.scrollTo({ top: 0, behavior: 'smooth' }); }
@@ -10461,21 +11236,12 @@ function naoSearchInit() {
         document.querySelectorAll('.sidebar .nav-section').forEach(function (sec) {
             var grp = sec.querySelector('.nav-group');
             if (searching && grp) grp.classList.add('open');
-            if (!searching && grp) grp.classList.remove('open');
             var visible = Array.prototype.filter.call(
                 sec.querySelectorAll('.nav-item[data-target], .nav-child[data-target]'),
                 function (b) { return b.style.display !== 'none'; }
             ).length;
             sec.style.display = (searching && visible === 0) ? 'none' : '';
         });
-
-        // 2bis) recherche effacee : on ne laisse ouvert que le groupe du panneau actif
-        if (!searching) {
-            var __act = document.querySelector('.sidebar .nav-child.active');
-            var __k = __act && __act.closest('.nav-children');
-            var __g = __k && __k.previousElementSibling;
-            if (__g && __g.classList.contains('nav-group')) __g.classList.add('open');
-        }
 
         // 3) masquer les intitules de sous-groupe quand on cherche
         document.querySelectorAll('.sidebar .nav-sub-label').forEach(function (l) {
